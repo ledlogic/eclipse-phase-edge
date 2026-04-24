@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BINGE | Eclipse Phase — Session 02 GM Reference</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- NAV PLACEHOLDER — run inject_nav.py to populate -->
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-02-binge.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>BINGE <span class="city">PATHFINDER CITY</span></h1>
+  <div class="header-sub">PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED</div>
+  <div class="stats-bar">
+    <span class="stat-chip">LOCATION: PATHFINDER CITY — GUSEV CRATER · MARS</span>
+    <span class="stat-chip triad">FACTION: SHUI FONG TRIAD</span>
+    <span class="stat-chip danger">THREAT: GUT EATER ASYNC — ACTIVE</span>
+    <span class="stat-chip ozma">SHADOW: PROJECT OZMA — MONITORING</span>
+    <span class="stat-chip">REGISTER: INVESTIGATION / SOCIAL / HORROR</span>
+    <span class="stat-chip teal">BRIDGE: YETTI DEBRIEF → VESTA DEAD DROP</span>
+  </div>
+</header>
+
+
+<div class="main-grid">
+
+  <!-- ══ WELCOME / FIREWALL BRIEF ═════════════════════════════════════════ -->
+  <div class="section-label">◈ WELCOME TO FIREWALL — CONTEXT</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      Every player character is a sentinel — an agent-on-call for Firewall, a shadowy network dedicated to protecting transhumanity and counteracting x-risks. Sentinels are grouped into ad-hoc special-ops teams. Firewall operations are managed by proxies, who maintain its decentralized infrastructure. Sentinels are recruited from every faction; those not ideologically loyal are hired as mercenaries.
+    </div>
+    <div class="mission-goal">
+      <strong>SESSION HOOK</strong>
+      The team receives a contract to investigate a missing persons case. Jake Carter summons them to Pathfinder City — a domed city 40 km from the Martian Pandora Gate — and directs them to the <em>Heavenly Hand</em>, a Shui Fong–controlled mahjong casino. Order the house specialty: an <strong style="color:var(--accent)">Antoniadi Crater</strong> (Peppoli wine, Beurre blanc emulsion) to signal your presence.
+    </div>
+  </div>
+
+  <!-- ══ PROXY ════════════════════════════════════════════════════════════ -->
+  <div class="section-label">◈ PROXY — JAKE CARTER</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      <strong style="color:var(--textbright)">Jake Carter</strong> (real name: Jae Park) — Mars-born Korean agridome redneck, terraforming technician, smuggler, Barsoomian courier, Firewall asset. Covers as a Tharsis League terraforming engineer. Unusually hands-on for a proxy.
+    </div>
+    <div class="env-grid">
+      <div class="env-stat"><div class="env-key">SERVER</div><div class="env-val">Sola</div></div>
+      <div class="env-stat"><div class="env-key">ROLE</div><div class="env-val">Router</div></div>
+      <div class="env-stat"><div class="env-key">SPECIALTY</div><div class="env-val">Martian Outback, TQZ</div></div>
+      <div class="env-stat"><div class="env-key">COVER</div><div class="env-val teal">Tharsis Terraforming Office</div></div>
+      <div class="env-stat"><div class="env-key">ALIASES</div><div class="env-val">Carter Napier, Carson Park</div></div>
+      <div class="env-stat"><div class="env-key">AGE (AF 10)</div><div class="env-val">38</div></div>
+    </div>
+  </div>
+
+  <!-- ══ SETTING — PATHFINDER CITY ════════════════════════════════════════ -->
+  <div class="section-label teal">◈ SETTING — PATHFINDER CITY &amp; MA'ADIM RESEARCH PARK</div>
+  <div class="brief-panel">
+    <div class="brief-text teal">
+      Pathfinder City is the fastest-growing habitat in the solar system — glommed onto the wall of Gusev Crater, 40 km from the Martian Gate. Low polycarbonate domes over breathable (if low-pressure) atmosphere. New skyscrapers pierce the dome at the crater wall, giving top floors an unfiltered Martian horizon view. Under its shiny veneer: its own secrets.
+    </div>
+    <div class="brief-text teal" style="margin-top:0.6rem;">
+      <strong style="color:var(--textbright)">Ma'adim Research Park</strong> surrounds the gate itself — pressurized canyon, armed to the teeth. Herzog Security has tagged and authorized everything within 25 km. Decontamination chambers, research labs, defensive systems aimed both outward <em>and</em> inward at the gate. The PCs are not the only ones after Nkomo — Herzog investigators are also working the disappearances. Their leads are cold, but if they hear about the PCs' investigation, they may take renewed interest.
+    </div>
+    <div class="note-box">
+      Herzog, Pathfinder's security contractor, are smart and well-equipped. Infiltrators shouldn't expect meek resistance from their infosec specialists. Getting in a stand-up firefight with them is unwise.
+    </div>
+  </div>
+
+  <!-- ══ INVESTIGATION OVERVIEW ════════════════════════════════════════════ -->
+  <div class="section-label danger">◈ INVESTIGATION OVERVIEW — GM TRUTH</div>
+  <div class="brief-panel">
+    <div class="mission-goal danger">
+      <strong>WHAT IS ACTUALLY HAPPENING</strong>
+      Vilho Nkomo is an async infected with a gut eater (which calls itself S. Pain). He murdered Xuetao Espada, stole his Float drug stash, and is now using the stash to attract victims — Float addicts whose brains he allows the gut eater to consume. His romantic partner Evgeny Mardones is unknowingly covering up the crimes. Lixia Lok of Project Ozma is watching from the shadows, concerned an exsurgent is loose.
+    </div>
+    <div class="mission-goal" style="margin-top:0.6rem;">
+      <strong>WHAT THE PLAYERS KNOW</strong>
+      Hang Slaoui (Shui Fong sub-boss) has hired them to find Xuetao Espada, a drug dealer who has gone missing along with her drugs and profits. She doesn't know he's dead. Five of Espada's clients have also disappeared. Two victims have been found with eaten brains and missing cortical stacks.
+    </div>
+
+    <!-- DISAPPEARANCE TRACKER -->
+    <div style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:3px; color:var(--danger); margin-top:1rem; margin-bottom:0.4rem;">DISAPPEARED CLIENTS — 5 OF 5</div>
+    <div class="disappear-grid">
+      <div class="disappear-item"><div class="disappear-num">MISSING 1/5</div><div class="disappear-name">Xuetao Espada</div><div class="disappear-loc">DEALER — KILLED BY NKOMO</div></div>
+      <div class="disappear-item"><div class="disappear-num">MISSING 2/5</div><div class="disappear-name">Journey</div><div class="disappear-loc">CLIENT — STICKY FINGERS</div></div>
+      <div class="disappear-item"><div class="disappear-num">MISSING 3/5</div><div class="disappear-name">Bevstajka</div><div class="disappear-loc">CLIENT — OUTLAND</div></div>
+      <div class="disappear-item"><div class="disappear-num">MISSING 4/5</div><div class="disappear-name">Panagiota</div><div class="disappear-loc">CLIENT — 1851</div></div>
+      <div class="disappear-item"><div class="disappear-num">MISSING 5/5</div><div class="disappear-name">Violeta</div><div class="disappear-loc">CLIENT — 1851</div></div>
+    </div>
+  </div>
+
+  <!-- ══ CLUE CHAIN ════════════════════════════════════════════════════════ -->
+  <div class="section-label">◈ CLUE CHAIN — INVESTIGATION FLOW</div>
+  <div class="side-panel">
+    <div class="clue-chain">
+      <div class="clue-item">
+        <div class="clue-node triad">HANG SLAOUI</div>
+        <div class="clue-text">Hires team to find Espada. Provides Espada's address and her shipment tracking data — all converge on Pathfinder City outskirts coordinates. Doesn't know he's dead. Wants the drugs, profits, and Espada's cortical stack.</div>
+      </div>
+      <div class="clue-item">
+        <div class="clue-node">ESPADA'S RESIDENCE</div>
+        <div class="clue-text">No Espada. No drugs. Hacked and wiped security system. Remnants of disassembler/cleaner nanoswarms. On superior Perceive: bloody footprint outside — extremely large shoe size. Paused video on the vid term (zero-g Sumo). Place is disheveled but suspiciously clean.</div>
+      </div>
+      <div class="clue-item">
+        <div class="clue-node">ESPADA'S NEIGHBORHOOD</div>
+        <div class="clue-text">Public cameras show a large tattooed bruiser morph (Mardones) coming and going around the time the security was deactivated. Research can match boot brand to the bloody footprint.</div>
+      </div>
+      <div class="clue-item">
+        <div class="clue-node teal">FLOAT DRUG</div>
+        <div class="clue-text">Float is a nootropic made in triad labs — Shui Fong dominate the market. Someone new is offering Float for sale (Nkomo, via anonymous account). A Moderate G-Rep favor connects to this account and Nkomo's victim-finding operation.</div>
+      </div>
+      <div class="clue-item">
+        <div class="clue-node">STICKY FINGERS</div>
+        <div class="clue-text">Mardones's bruiser morph is spotted surveilling Espada for ~1 hour the last night Espada was present, then leaving. Over past 2 months: Mardones is spotted sporadically, each time following one of Espada's clients out. At least one client is now missing.</div>
+      </div>
+      <div class="clue-item">
+        <div class="clue-node teal">MESH ID TRAIL</div>
+        <div class="clue-text">Knowing the times Mardones is at clubs, his mesh ID can be pulled from club mesh logs (Research –30, 1 hour). This mesh ID can then be used to track his physical location (Research: Tracking –30) to his home.</div>
+      </div>
+      <div class="clue-item">
+        <div class="clue-node danger">MARDONES / NKOMO</div>
+        <div class="clue-text">The trail of clues points to Mardones as the murderer/thief — with little indication of Nkomo's involvement. Nkomo is paranoid, may use Browse Thoughts on anyone approaching. Try to set up an innocuous-seeming cooperative Nkomo first.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LOCATIONS ═════════════════════════════════════════════════════════ -->
+  <div class="section-label triad">◈ LOCATIONS — PATHFINDER CITY NIGHTLIFE</div>
+  <div class="rooms-section">
+
+    <!-- HEAVENLY HAND -->
+    <div class="room-card triad-room" data-num="01">
+      <div class="room-header">
+        <div>
+          <div class="room-name">Heavenly Hand</div>
+          <div class="room-subtitle">SHUI FONG MAHJONG CASINO</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag triad">SHUI FONG</span>
+          <span class="tag social">MEET POINT</span>
+          <span class="tag npc">HANG SLAOUI</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description triad-desc">
+          More upscale than you'd expect near hypercorp offices — mahjong players are calmer than usual, but uniformed Herzog Security patrols outside seem overpowered for the clientele. A greeter in a purple-to-red festival kimono invites the team to an open low-stakes mahjong table where other Guanxi Ops team members can be recognized. A classic sign: <em>CHINA STATE SPORTS COMMISSION — NO GAMBLING, NO DRINKING, AND NO SMOKING</em> (唔可以賭博，唔可以飲酒，同埋唔可以食煙) — flouted brazenly. Mid-brawl at an adjacent table: someone has four winds but the player to his left shows a fifth tile. Punches. Knives. Chinese Burn by Curve on the speakers. Hovering strobe lights.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ HANG SLAOUI — THE BRIEFING <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="dialogue-line">
+            <span class="dl-label npc">HANG</span>
+            <span class="dl-text"><em>"It is getting too flashy for my taste out here, lets go in my office."</em> — British-Cantonese accent. She pulls the team into a spacious, dark, minimalist-furnished back room. E-secured door — the fight sounds vanish perfectly. Rare video game parlour artifacts: analog pinball, pachinko machines. No biological material anywhere. Several sentry bots glow in the corners. She does not offer drinks.</span>
+          </div>
+          <div style="margin-top:0.6rem; font-size:0.85rem; color:var(--text);">
+            <strong style="color:var(--triad); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px; display:block; margin-bottom:4px;">WHAT SHE WANTS</strong>
+            Espada has no official address. Shipments sent to his aliased addresses by different couriers all converge on the same Mars geocoordinates — outskirts of Pathfinder City — before packages were hijacked or stolen. She wants back: the drugs, the profits, and Espada himself (or his cortical stack). She shows the team a holographic photo of the Shui Fong boss. Her shipments all bear her mark: a vertical dragon.
+          </div>
+          <div class="note-box triad" style="margin-top:0.5rem;">
+            The Guanxi Ops team worked together in the past to recover a senior 14K triad boss's cortical stack, requiring infiltration of three major triad factions. Hang doesn't say it, but the implication hangs: don't make this as messy as that.
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SHUI FONG — FACTION NOTES <span>▾</span></button>
+        <div class="collapse-content">
+          <div style="font-size:0.85rem; color:var(--text); line-height:1.6;">
+            <strong style="color:var(--triad)">Shui Fong</strong> (水房幫 — Water Room Gang / Wo On Lok) — one of the main Triad groups, operating especially in Hong Kong, Macau, and Chinese diaspora communities. Smaller than 14K. Sells vice to the desperate: drugs, narcoalgorithms, prostitution, illicit XPs. Once in debt, the indenture is forced into pit fighting or drug transport. Carries deep grudges against 14K (mutual). Main Mars habitat: Valles-New Shanghai.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESPADA'S RESIDENCE -->
+    <div class="room-card" data-num="02">
+      <div class="room-header">
+        <div>
+          <div class="room-name">Espada's Residence</div>
+          <div class="room-subtitle">CONVERTED SHIPPING CONTAINER — DOME OUTSKIRTS SLUM</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag clue">CRIME SCENE</span>
+          <span class="tag clue">NANOSWARM REMNANTS</span>
+          <span class="tag clue">BLOODY FOOTPRINT</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          Espada's converted cargo container is unlocked. No sign of him or the drugs. Nkomo killed Espada here and took the stash. Mardones later dropped disassembler and cleaner nanoswarms to remove the body and evidence — but unwittingly tracked blood outside. A video still plays on the vid term: zero-g Sumo wrestling, a Yobidashi announcing competitors' names in the silence between points. The place is disheveled but suspiciously free of dirt, dust, and small debris.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="test-item"><div class="test-skill">RESEARCH</div><div class="test-desc">Espada's innocuous mesh profile hasn't been updated in days. His last login was from his home address.</div></div>
+          <div class="test-item"><div class="test-skill">G-REP (MINOR)</div><div class="test-desc">Espada is on good terms with Shui Fong. No reason to betray them, no known ties to other groups.</div></div>
+          <div class="test-item"><div class="test-skill">INTERFACE / INFOSEC</div><div class="test-desc">The security system was hacked and deactivated several days ago by Nkomo. All sensors and logs were erased.</div></div>
+          <div class="test-item"><div class="test-skill">PERCEIVE</div><div class="test-desc">The place is disheveled but surprisingly free of dirt, dust, and small debris. Audio-video paused on Martian jazz remake of "Mama Said Knock You Out."</div></div>
+          <div class="test-item"><div class="test-skill warn">PERCEIVE (SUP.)</div><div class="test-desc">A bloody footprint outside the front door. The shoe size is <strong style="color:var(--danger)">extremely large</strong>.</div></div>
+          <div class="test-item"><div class="test-skill">NANODETECTOR<br>(EXOTIC 40)</div><div class="test-desc">Remnants of disassembler and cleaner swarms used within the past few days.</div></div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ ESPADA'S NEIGHBORHOOD <span>▾</span></button>
+        <div class="collapse-content">
+          <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Espada's neighbors are poor and mind their own business.</div>
+          <div class="test-item"><div class="test-skill">RESEARCH</div><div class="test-desc">Functional public cameras around the time the security was deactivated show a <strong style="color:var(--warn)">large tattooed bruiser morph</strong> (Mardones) coming and going.</div></div>
+          <div class="test-item"><div class="test-skill teal">RESEARCH (FOLLOW-UP)</div><div class="test-desc">Matches Mardones's boot brand to the bloody footprint outside.</div></div>
+        </div>
+
+        <div class="note-box danger" style="margin-top:0.5rem;">
+          The cleanup was good but not perfect. The nanoswarm remnants and the bloody footprint are the two forensic threads that point outward from this scene. Everything else has been sanitized.
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKY FINGERS -->
+    <div class="room-card" data-num="03">
+      <div class="room-header">
+        <div>
+          <div class="room-name">Sticky Fingers</div>
+          <div class="room-subtitle">NIGHTCLUB — CENTRALIZED DEPRAVITY</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag clue">MARDONES SPOTTED</span>
+          <span class="tag clue">CLIENT: JOURNEY</span>
+          <span class="tag social">ALL FACTIONS</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          Music at over 80 dB — floor and loose clothing vibrate. A full-word poem in Greek explores synonyms of degeneracy in the shape of a naughty party. Attendees from almost every faction on Mars, all rep types. Owner is Romeo Cash (knows Hang Slaoui). Romeo has a portrait of the Shui Fong boss in his office. The last night Espada was here, Mardones's bruiser morph is in the crowd — watching him discreetly for about an hour, then leaving.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="test-item"><div class="test-skill">RESEARCH</div><div class="test-desc">Mardones's bruiser morph spotted on the last night Espada was present — watched him ~1 hour, then left. Over 2 months: Mardones appears sporadically, each time surveilling Espada then following one of his drug-buying clients out of the club. At least one client now missing.</div></div>
+          <div class="test-item"><div class="test-skill warn">RESEARCH –30<br>(1 HR TIMEFRAME)</div><div class="test-desc">Knowing the times Mardones is present, his mesh ID can be gleaned from the club's mesh logs.</div></div>
+          <div class="test-item"><div class="test-skill">C-REP (MINOR)<br>or RESEARCH</div><div class="test-desc">Police investigating five disappearances in the past months. Several missing are known Float users and Espada clients.</div></div>
+          <div class="test-item"><div class="test-skill warn">C-REP (MODERATE)</div><div class="test-desc">Herzog investigating two unsolved murders linked to disappearances. Both: serious head wounds, missing brains and cortical stacks. Victims were high on Float. No suspects. Herzog wants this out of the media.</div></div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ ROMEO CASH — OWNER <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="npc-card triad-npc">
+            <div class="npc-name">Romeo Cash</div>
+            <div class="npc-role triad">NIGHTCLUB OWNER · SYLPH MORPH</div>
+            <div class="npc-text">Runs a lucrative establishment. First Impression, Striking Looks (Level 1). Knows Hang Slaoui. Has a portrait of the Shui Fong boss. Knows everyone. Slaoui can provide camera footage from inside the club if the PCs ask.</div>
+            <div class="npc-stats">
+              <span class="npc-stat">DECEPTION 70</span>
+              <span class="npc-stat">IMPERSONATION 75</span>
+              <span class="npc-stat">INFOSEC 70</span>
+              <span class="npc-stat">KINESICS 45</span>
+              <span class="npc-stat triad">g-rep 40</span>
+              <span class="npc-stat">FRAY 60</span>
+              <span class="npc-stat">PERSUASION 50</span>
+            </div>
+            <div class="npc-secret">Implants include Emotional Dampers, Enhanced Pheromones, Skinflex, Skillware. Carries Covert Ops Tool, Kaos AI, anonymous accounts ×2. Armor 5/7.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRISKY BUSINESS -->
+    <div class="room-card teal-room" data-num="04">
+      <div class="room-header">
+        <div>
+          <div class="room-name">Frisky Business</div>
+          <div class="room-subtitle">YUPPIE / SCIENTIST / BUSINESS BAR</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag clue">MARDONES WORKED HERE</span>
+          <span class="tag clue">CLIENT: JOURNEY</span>
+          <span class="tag npc">NATALIE VAGABOND</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description teal-desc">
+          Video feeds of financials, technology programs, and ancient science fiction vids. Music: postfall Thievery Corporation. Quiet bar with heavy-duty security. Owner Natalie Vagabond is not gang-related — relies on r-rep. If PCs look heavily armed, she asks their business, large bouncer behind her. Mardones worked security here — spoke little to staff or clients, discussed things with bouncers or about Somantics. Usually just a stern look and calm suggestion to move troublemakers.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="test-item"><div class="test-skill">SOCIAL / PERSUASION</div><div class="test-desc">Natalie confirms Mardones worked security here. Spoke little, focused on bouncers and Somantics discussions. Usually resolved trouble with presence alone.</div></div>
+          <div class="test-item"><div class="test-skill">C-REP (MINOR)<br>or RESEARCH</div><div class="test-desc">Police investigating five disappearances. Several are known Float users and Espada clients. Client Journey (2/5) was last seen here.</div></div>
+          <div class="test-item"><div class="test-skill warn">C-REP (MODERATE)</div><div class="test-desc">Herzog investigating two unsolved murders — head wounds, missing brains and cortical stacks, both high on Float. No suspects. Kept out of media.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTLAND -->
+    <div class="room-card" data-num="05">
+      <div class="room-header">
+        <div>
+          <div class="room-name">Outland</div>
+          <div class="room-subtitle">BELTER ANARCHIST CLUB — OWNER: HANZA MALTHE</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag clue">CLIENT: BEVSTAJKA</span>
+          <span class="tag social">BELTER VIBE</span>
+          <span class="tag npc">CONNOR LENNOX</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          Smell: a mixture of clay, wet rust, metallic flavor. Mostly same-sex couples or interspecies groups without discernible tells. Focus on libations over vibrations — the music floor is loud and inviting but largely vacant, most patrons drinking and watching the few dancers. Bouncer Connor Lennox: <em>"Cover's 15 creds. No trouble, guys, or you're out, no warning, no refund… I already got two fines tonight for injuring patrons, so don't even test me."</em>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="test-item"><div class="test-skill">C-REP (MINOR)<br>or RESEARCH</div><div class="test-desc">Five disappearances under investigation. Several are Float users and Espada clients. Bevstajka (3/5) was a client of Espada.</div></div>
+          <div class="test-item"><div class="test-skill warn">C-REP (MODERATE)</div><div class="test-desc">Herzog investigating two unsolved murders — head wounds, missing brains and cortical stacks, Float involved. No suspects.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1851 -->
+    <div class="room-card" data-num="06">
+      <div class="room-header">
+        <div>
+          <div class="room-name">1851</div>
+          <div class="room-subtitle">INFOMORPH / BIOSLEEVE BAR — RUN BY BETACASING</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag clue">CLIENTS: PANAGIOTA &amp; VIOLETA</span>
+          <span class="tag npc">BETACASING</span>
+          <span class="tag social">INFORMORPHS</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          Locals think the name refers to history — it's actually an address of a pre-Fall establishment in North America. Run by a Galatea Synth going androgynously by Betacasing. Most clientele are infomorphs or former infomorphs seeking to meet and reconnect in temporarily rented biosleeves. All drinks served by automation with infomorph waiters.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="test-item"><div class="test-skill">C-REP (MINOR)<br>or RESEARCH</div><div class="test-desc">Five disappearances under investigation. Panagiota (4/5) and Violeta (5/5) were both clients of Espada — last known location: 1851.</div></div>
+          <div class="test-item"><div class="test-skill warn">C-REP (MODERATE)</div><div class="test-desc">Herzog investigating two unsolved murders — head wounds, missing brains and cortical stacks, Float involved. No suspects.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /rooms-section nightlife -->
+
+  <!-- ══ KEY NPCS ═══════════════════════════════════════════════════════════ -->
+  <div class="section-label danger">◈ KEY NPCs — ANTAGONISTS</div>
+  <div class="side-panel">
+    <div class="npc-grid">
+
+      <div class="npc-card danger-npc">
+        <div class="npc-name">Evgeny Mardones</div>
+        <div class="npc-role danger">FREELANCE SECURITY · BRUISER MORPH</div>
+        <div class="npc-text">Nkomo's romantic partner. Unaware of Nkomo's infections. Covering up Nkomo's crimes. Russian accent. His bruiser morph is well-known in city nightlife. 6'7" (slightly shorter than Hafþór Björnsson), 200 kg. Large morph rules apply.</div>
+        <ul class="npc-bullets">
+          <li class="triad">Works security at Frisky Business, Outland, and 1851</li>
+          <li class="danger">Dropped nanoswarms at Espada's residence to clean the crime scene</li>
+          <li>Large tattooed bruiser — easily identified from security footage</li>
+          <li>Lives in an airlocked, mazelike cheap-housing complex just outside the dome</li>
+          <li>Can also be nabbed at his nightclub security jobs</li>
+        </ul>
+        <div class="npc-stats">
+          <span class="npc-stat danger">LARGE MORPH</span>
+          <span class="npc-stat">SHOCK GLOVE</span>
+          <span class="npc-stat">REACH ADVANTAGE</span>
+          <span class="npc-stat">+1d10 MELEE DV</span>
+        </div>
+        <div class="npc-secret">The trail of clues points to Mardones as the murderer — with little indication of Nkomo's actual involvement. This is intentional. Steer the PCs toward Mardones's home first.</div>
+      </div>
+
+      <div class="npc-card danger-npc">
+        <div class="npc-name">Vilho Nkomo</div>
+        <div class="npc-role danger">XENOZOOLOGIST · ASYNC · GUT EATER HOST</div>
+        <div class="npc-text">Infected with a gut eater (calls itself S. Pain). Murdered Xuetao Espada, stole Float stash, using stash to attract and kill Float addicts. Extremely paranoid. Romantic partner of Mardones.</div>
+        <ul class="npc-bullets">
+          <li class="danger">May use Browse Thoughts on anyone approaching Mardones at home or a club</li>
+          <li>Will pretend to know nothing about the murders — claims Mardones asked him to help move drugs</li>
+          <li class="danger">Will attempt to lure one PC alone — the 2-person airlocks in Mardones's complex are ideal</li>
+          <li class="danger">Once alone: uses Basilisk Stare to freeze the target, then allows gut eater to eat their brain</li>
+          <li class="danger">If taken out: the gut eater evacuates his body and attempts to force its way into a new host</li>
+        </ul>
+        <div class="npc-stats">
+          <span class="npc-stat danger">ASYNC (PSI-CHI)</span>
+          <span class="npc-stat danger">GUT EATER HOST</span>
+          <span class="npc-stat">BROWSE THOUGHTS</span>
+          <span class="npc-stat">BASILISK STARE</span>
+          <span class="npc-stat">BLOCK PAIN</span>
+        </div>
+        <div class="npc-secret">If PCs pose as Float buyers, Nkomo arranges a deal in a sensor-free parking garage stairwell — Mardones nearby as backup. He will surreptitiously scan buyers' intentions first. If a fight starts, he uses Pain on the most threatening opponent.</div>
+      </div>
+
+      <div class="npc-card triad-npc">
+        <div class="npc-name">Hang Slaoui</div>
+        <div class="npc-role triad">SHUI FONG SUB-BOSS</div>
+        <div class="npc-text">She/her. Hires the PCs to find Espada — doesn't know he's dead. Wants back: the drugs, the profits, and Espada or his cortical stack. British-Cantonese accent. Operates from the back room of the Heavenly Hand. No biological material in her personal space. Sentry bots in every corner.</div>
+        <ul class="npc-bullets">
+          <li class="triad">Can provide camera footage from inside Sticky Fingers if asked</li>
+          <li>Does not offer drinks. Minimalist personal aesthetic</li>
+          <li>Has connections throughout Pathfinder City's nightlife and underworld</li>
+        </ul>
+      </div>
+
+      <div class="npc-card ozma-npc">
+        <div class="npc-name">Lixia Lok</div>
+        <div class="npc-role ozma">PROJECT OZMA INVESTIGATOR</div>
+        <div class="npc-text">Drawn by the two victims found with eaten brains. Concerned an exsurgent is loose. Will surveil the PCs and step in if the gut eater is revealed. Passes herself off as a Consortium Oversight agent. Will not hesitate to erase memories or kill PCs to cover tracks.</div>
+        <ul class="npc-bullets">
+          <li class="ozma">Pulls in Ozma resources to keep the situation under wraps</li>
+          <li class="danger">Will erase PCs' memories or kill them to protect Ozma secrecy</li>
+          <li>Has unnerving intelligence on situations no one else should know about</li>
+        </ul>
+        <div class="npc-secret">Project Ozma has unlimited resources and impeccable intel. They have pulled the rug from beneath Firewall more times than can be counted. The one good thing: they are very good at covering their tracks — which often means erasing Firewall involvement as well. Don't like attention.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ MARDONES'S HOME ═══════════════════════════════════════════════════ -->
+  <div class="section-label danger">◈ ENDGAME — MARDONES'S RESIDENCE</div>
+  <div class="rooms-section">
+    <div class="room-card danger-room" data-num="07">
+      <div class="room-header">
+        <div>
+          <div class="room-name">Mardones's Home</div>
+          <div class="room-subtitle">AIRLOCKED MAZE-COMPLEX — DOME EXTERIOR</div>
+        </div>
+        <div class="room-tags">
+          <span class="tag threat">NKOMO — BASILISK STARE</span>
+          <span class="tag threat">GUT EATER</span>
+          <span class="tag trap">2-PERSON AIRLOCK TRAP</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description danger-desc">
+          An airlocked and mazelike cheap-housing complex just outside the dome. Two-person airlocks are the chokepoint — ideal for Nkomo's trap. Try to set up an innocuous-seeming, cooperative Nkomo first. He is paranoid and may Browse Thoughts on any PC approaching. Once he has one PC alone in a two-person airlock, he uses Basilisk Stare to freeze them, then allows the gut eater to consume their brain. If Nkomo is taken out, the gut eater evacuates and attempts a new host.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ NKOMO'S SLEIGHTS <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="sleight-card">
+            <div class="sleight-name">BASILISK STARE</div>
+            <div class="sleight-meta">ACTION: TASK · DURATION: SUSTAINED · INFECTION MOD: 6</div>
+            <div class="sleight-text">Eye contact with the target immobilizes them. As long as gaze is locked (minor blinking aside), they cannot move, avert their eyes, or undertake any action (including mesh and mental). Nkomo must also limit his movement — half base move and/or quick physical actions, with REF Check to maintain eye contact. If target is attacked, moved, or jostled, eye contact is lost. Cannot affect extra targets unless he has more than one set of eyes.</div>
+          </div>
+          <div class="sleight-card" style="margin-top:0.5rem;">
+            <div class="sleight-name">BROWSE THOUGHTS</div>
+            <div class="sleight-meta">ACTION: COMPLEX · DURATION: SUSTAINED · INFECTION MOD: 4</div>
+            <div class="sleight-text">Scans the target's surface thoughts — general sense of what's running through their mind. Superior successes provide deeper detail. Not a full Deep Scan — just a read on current thoughts. Used paranoid surveillance before any interaction.</div>
+          </div>
+          <div class="sleight-card" style="margin-top:0.5rem;">
+            <div class="sleight-name">BLOCK PAIN</div>
+            <div class="sleight-meta">ACTION: COMPLEX · DURATION: MINUTES · INFECTION MOD: 4</div>
+            <div class="sleight-text">Impedes the target's pain receptors. For WIL÷5 minutes, target ignores effects of one wound (+1 per superior success). Cumulative with other pain editing, max 3 wounds. Used to drive away the most threatening PC if a fight breaks out.</div>
+          </div>
+          <div class="note-box danger" style="margin-top:0.6rem;">
+            <strong>Psi Targeting Rules:</strong> Cannot target synthmorphs, bots, or vehicles. Pods and biomorphs with cyberbrains: −30 modifier for async. Line of sight required. Walls with combined Armor/DR of 100+ block sleights. Ranged combat modifiers for cover and hidden targets apply to Psi Tests.
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GUT EATER — S. PAIN <span>▾</span></button>
+        <div class="collapse-content">
+          <div style="font-size:0.85rem; color:var(--text); line-height:1.6;">
+            Calls itself <strong style="color:var(--danger)">S. Pain</strong>. Resides in Nkomo's gut. If Nkomo is taken out, the gut eater evacuates his body and attempts to force its way into a new host — this is the moment the session pivots from investigation to horror. The PCs are in a tight, airlocked maze with a brain-eating parasite looking for a new home.
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ ALTERNATE APPROACH — POSING AS FLOAT BUYERS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">If the PCs contact Nkomo posing as Float buyers, he arranges a deal in a sensor-free parking garage stairwell, with Mardones nearby as backup. He surreptitiously scans their intentions (Browse Thoughts) before interacting. If a fight starts, he uses Block Pain on the most threatening opponent to drive them away, creating distance and confusion.</span>
+          </div>
+        </div>
+
+        <div class="note-box danger" style="margin-top:0.5rem;">
+          <strong>Mardones — Large Morph Rules:</strong> Easier to hit and spot (+10). Reach advantage vs. medium-sized targets (doubled vs. small, tripled vs. very small). +1d10 DV in melee. Can wield two-handed weapons one-handed. −20 with non-integrated very-small/small gear. +10 to SOM checks. Double damage from falls; inflicts double in collisions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PROJECT OZMA ═══════════════════════════════════════════════════════ -->
+  <div class="section-label ozma">◈ PROJECT OZMA — SHADOW PRESENCE</div>
+  <div class="brief-panel">
+    <div class="brief-text" style="border-left-color:var(--ozma);">
+      Ozma is a high-level black-budget operation working at the Consortium's highest levels — or perhaps above them. Decades before the Fall: a SETI project. Now: TITANs, exsurgent virus, x-risks, dead aliens. Unlimited resources. Impeccable intel. They show up completely prepared for situations no one else should know about. They've pulled the rug out from beneath Firewall more times than can be counted.
+    </div>
+    <div class="mission-goal ozma">
+      <strong>LOK'S ROLE THIS SESSION</strong>
+      Lixia Lok is here because two victims were found with their brains eaten. She believes an exsurgent is loose. She will surveil the PCs throughout the investigation without revealing herself. If the gut eater is exposed, she steps in — as a Consortium Oversight agent. She pulls resources to contain the situation. She will erase memories or kill PCs if necessary to prevent public knowledge of the exsurgent.
+    </div>
+    <div class="note-box ozma">
+      The one good thing about Ozma: they are very good at covering their tracks — which often means erasing evidence of Firewall involvement as well. This session's Ozma thread is the <em>LOK SEED</em> — her presence here, watching the same investigation, plants the forward thread that escalates into the Iapetus arc.
+    </div>
+  </div>
+
+  <!-- ══ FLOAT — DRUG NOTES ════════════════════════════════════════════════ -->
+  <div class="section-label">◈ FLOAT — DRUG NOTES</div>
+  <div class="side-panel">
+    <div class="brief-text" style="border-left-color:var(--purple); font-family:'Crimson Pro',serif; font-size:0.95rem; color:var(--text); line-height:1.7; padding-left:0.9rem;">
+      Float is the latest popular drug to hit the streets of Mars. A nootropic made in triad drug labs — Shui Fong dominate the market. The two murder victims with eaten brains were both high on Float when killed. Nkomo uses Float as his lure: distributing it anonymously to attract vulnerable, isolated addicts.
+    </div>
+    <div class="test-item" style="margin-top:0.8rem;"><div class="test-skill">RESEARCH</div><div class="test-desc">Float is a Shui Fong nootropic. Shui Fong dominate the market.</div></div>
+    <div class="test-item"><div class="test-skill">G-REP (MINOR/MOD)</div><div class="test-desc">Someone new is offering Float for sale. A Moderate favor connects to the anonymous account Nkomo is using to arrange deals and find new victims.</div></div>
+  </div>
+
+  <!-- ══ FORWARD THREADS ═══════════════════════════════════════════════════ -->
+  <div class="section-label teal">◈ FORWARD THREADS</div>
+  <div class="side-panel">
+    <div class="thread-item ozma">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong class="ozma">LOK SEED.</strong> Lixia Lok has now seen the PCs operate. Whether she helped or erased them, Ozma has filed a report. The thread that escalates into the Iapetus Cold Station arc starts here — Ozma's interest in the PCs is now active.</div>
+    </div>
+    <div class="thread-item danger">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong class="danger">Gut Eater Containment.</strong> Was S. Pain fully contained? If the gut eater escaped Nkomo and found a new host — or was never fully confirmed destroyed — this is an open x-risk thread. Firewall will want to know.</div>
+    </div>
+    <div class="thread-item triad">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong class="triad">Shui Fong Relationship.</strong> How the team handled Hang Slaoui's contract shapes their standing with the Shui Fong. Did they return the drugs? Espada's stack? Did they tell her the truth about how he died — and what killed the other clients?</div>
+    </div>
+    <div class="thread-item active">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong>Herzog Awareness.</strong> If Herzog's investigation overlapped with the PCs' — or if the PCs left evidence — Pathfinder's security contractor is now aware that outside agents were working this case. Their leads were cold before. They may not be now.</div>
+    </div>
+  </div>
+
+  <!-- ══ GM NOTES ═══════════════════════════════════════════════════════════ -->
+  <div class="section-label">◈ GM NOTES — SESSION STRUCTURE</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      The session runs as a classic investigation with a social entry point (Hang Slaoui, the Heavenly Hand) followed by a crime scene (Espada's residence) and a nightlife circuit (Sticky Fingers → Frisky Business → Outland → 1851) that builds the picture of both Mardones and the pattern of disappearances. The trail intentionally points to Mardones as the killer — with Nkomo kept innocuous-seeming for as long as possible.
+    </div>
+    <div class="mission-goal">
+      <strong>PACING NOTE</strong>
+      The horror pivot is the 2-person airlock. Everything before it is detective work — methodical, social, satisfying. The moment a PC is alone with Nkomo in a sealed two-person airlock, the genre changes. The Basilisk Stare is the signal. Do not telegraph it — let the players think they have the situation contained before Nkomo makes his move.
+    </div>
+    <div class="note-box danger" style="margin-top:0.8rem;">
+      If the gut eater escapes Nkomo and attempts a new host, the scene becomes containment horror. The PCs are in an airlocked maze, one or more may be fighting for their body, and Lixia Lok may be watching from outside — deciding whether to help or clean up.
+    </div>
+    <div class="note-box ozma" style="margin-top:0.6rem;">
+      Lok should not feel like an ally. Even if she assists, her assistance should feel like being studied by something vastly better-resourced and completely unaccountable. The PCs should leave this session with the uncomfortable feeling that Ozma got more out of this encounter than they did.
+    </div>
+  </div>
+
+</div><!-- /main-grid -->
+
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<script>
+function toggleCollapse(btn) {
+  const c = btn.nextElementSibling;
+  const open = c.classList.contains('open');
+  c.classList.toggle('open', !open);
+  const arr = btn.querySelector('span');
+  if (arr) arr.textContent = open ? '▾' : '▴';
+}
+</script>
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

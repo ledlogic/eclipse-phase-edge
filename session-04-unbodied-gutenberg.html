@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNBODIED | Eclipse Phase — Session 04 GM Reference</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-04-unbodied-gutenberg.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>UNBODIED <span class="loc">GUTENBERG STATION</span></h1>
+  <div class="header-sub">GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS</div>
+  <div class="stats-bar">
+    <span class="stat-chip titan">THREAT: TITAN FETCH</span>
+    <span class="stat-chip danger">STATUS: ISOLATED</span>
+    <span class="stat-chip teal">PC MODE: DIGIMORPHS</span>
+    <span class="stat-chip">LOCATION: GUTENBERG HAB / ECLIPTIC-HIGH</span>
+    <span class="stat-chip purple">COMPLEXITY: HIGH</span>
+    <span class="stat-chip">SOURCE: NANO OP 7 — UNBODIED</span>
+  </div>
+</header>
+
+<div class="main-grid">
+
+  <!-- ═══════════════════════════ LEFT COLUMN ═══════════════════════════ -->
+  <div class="left-col">
+
+    <!-- MISSION BRIEF -->
+    <div class="section-label titan">◈ MISSION BRIEF</div>
+    <div class="brief-panel">
+      <div class="brief-text">
+        Firewall egocast the team to Gutenberg Station following a distress call from an embedded asset. They arrived just before all outside comms were severed. The station is now completely isolated, physically and digitally. No morphs. No exits. A TITAN fetch has taken control and is building something inside the processor locus — something that must not be allowed to finish.
+      </div>
+      <div class="mission-goal">
+        <strong>◈ PRIMARY OBJECTIVE</strong>
+        Identify and neutralize the fetch. Destroy or disable the processor locus before its construction completes. Survival is secondary to mission success — this may be a one-way trip.
+      </div>
+      <div class="mission-goal" style="margin-top:0.5rem; background:rgba(0,201,177,0.04); border-color:rgba(0,201,177,0.2);">
+        <strong style="color:var(--accent2);">◈ PC CONSTRAINTS</strong>
+        PCs arrive as infomorphs instantiated in digimorphs with copylock active. They cannot fork, switch home devices, or access their gear — only their muses. The Firewall-friendly operator left a backdoor code and an exploit app as a welcoming gift. Everything the PCs need to fight back must be found or fabbed on station.
+      </div>
+    </div>
+
+    <!-- SITUATION TIMELINE -->
+    <div class="section-label">◈ SITUATION TIMELINE — EVENTS BEFORE PC ARRIVAL</div>
+    <div class="timeline-panel">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">T-UNKNOWN · DEEP SPACE TRANSMISSION</div>
+          <div class="timeline-desc">A tight-beam transmission from outside the Solar System's ecliptic plane arrives at Gutenberg's relay array. Embedded within routine comms traffic — easily overlooked. Contains a damaged TITAN fetch that self-activates on receipt.</div>
+        </div>
+        <div class="timeline-item titan">
+          <div class="timeline-time titan">T-UNKNOWN · FETCH ACTIVATION</div>
+          <div class="timeline-desc">The fetch bootstraps itself using Gutenberg's mesh, rapidly escalating privileges. Within minutes it has security-level access to most station systems. The Nimbus operator — the Firewall-friendly — begins drafting an emergency message.</div>
+        </div>
+        <div class="timeline-item warn">
+          <div class="timeline-time warn">T-90 MIN · BASILISK HACK BROADCAST</div>
+          <div class="timeline-desc">An AR-broadcast basilisk hack hits every biomorph on the station simultaneously. All embodied personnel collapse — seizures, catatonia, or unconsciousness. The clinic tech is among the first to fall. Cyberbrained personnel are later mindhacked.</div>
+        </div>
+        <div class="timeline-item danger">
+          <div class="timeline-time danger">T-70 MIN · STACKS HARVESTED</div>
+          <div class="timeline-desc">Three servitor bots enter the clinic. They murder the passed-out tech and extract the cortical stack. They then produce a dozen or so freshly-excised stacks from other victims and use the ego bridge to upload them all to the processor locus. Unknown purpose.</div>
+        </div>
+        <div class="timeline-item danger">
+          <div class="timeline-time danger">T-65 MIN · CLINIC TANKS DESTROYED</div>
+          <div class="timeline-desc">Before leaving, the servitor bots take power tools to the two biomorphs in the clinic's storage tanks, killing both. All morphs are now either dead, under fetch control, or departed with the synthmorphs.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">T-60 MIN · SYNTHMORPHS MOBILIZE</div>
+          <div class="timeline-desc">The clinic's synthmorphs and pods — having recovered from the basilisk hack — activate and leave for the processor locus. They do not bother dressing. Every fabber is taken with them. One unauthorized large fabber is missed, relocated to a maintenance corridor.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">T-45 MIN · FRIENDLY MESSAGE SENT</div>
+          <div class="timeline-desc">The Firewall-friendly operator, somehow still operational (GM's discretion how), transmits a warning to Firewall HQ with minimal details. They leave the PCs a welcome package: an exploit app and backdoor code to the security server. Then they go dark.</div>
+        </div>
+        <div class="timeline-item titan">
+          <div class="timeline-time titan">T-30 MIN · COMMS SEVERED</div>
+          <div class="timeline-desc">All outside communication links are severed. The farcaster is physically disabled. Gutenberg Station is an island. The fetch has full control of the Torment Nexus processor locus and has begun construction of something unknown.</div>
+        </div>
+        <div class="timeline-item teal">
+          <div class="timeline-time teal">T-NOW · PCs ARRIVE</div>
+          <div class="timeline-desc">PCs instantiate as infomorphs in the mesh holding area — experienced as an AR platform floating in a gas giant's cloud layer. Bask Kozlov is also present. Life support is partially shut down. No fresh air is being pumped. The clock is running.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MESH TOPOLOGY OVERVIEW -->
+    <div class="section-label teal">◈ GUTENBERG MESH TOPOLOGY — ZONES OF CONTROL</div>
+    <div class="brief-panel">
+      <div class="mesh-map">
+        <svg class="mesh-svg" viewBox="0 0 660 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- BG -->
+          <rect width="660" height="280" fill="#040810"/>
+          <!-- Grid lines -->
+          <line x1="0" y1="140" x2="660" y2="140" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+          <line x1="330" y1="0" x2="330" y2="280" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+          <!-- Holding Area Node -->
+          <rect x="20" y="100" width="110" height="60" rx="3" fill="rgba(245,166,35,0.08)" stroke="rgba(245,166,35,0.4)" stroke-width="1"/>
+          <text x="75" y="124" font-family="Share Tech Mono" font-size="8" fill="#f5a623" text-anchor="middle" letter-spacing="1">HOLDING AREA</text>
+          <text x="75" y="138" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Firewall: 50</text>
+          <text x="75" y="150" font-family="Share Tech Mono" font-size="7" fill="rgba(245,166,35,0.7)" text-anchor="middle">PC START</text>
+
+          <!-- Arrow: Holding → Clinic -->
+          <line x1="130" y1="130" x2="170" y2="130" stroke="rgba(0,201,177,0.5)" stroke-width="1" stroke-dasharray="4,2"/>
+          <polygon points="170,125 180,130 170,135" fill="rgba(0,201,177,0.5)"/>
+          <text x="153" y="123" font-family="Share Tech Mono" font-size="6" fill="rgba(0,201,177,0.6)" text-anchor="middle">ESCALATE</text>
+          <text x="153" y="132" font-family="Share Tech Mono" font-size="6" fill="rgba(0,201,177,0.6)" text-anchor="middle">PRIV.</text>
+
+          <!-- Clinic Node -->
+          <rect x="180" y="85" width="130" height="90" rx="3" fill="rgba(0,201,177,0.07)" stroke="rgba(0,201,177,0.4)" stroke-width="1"/>
+          <text x="245" y="108" font-family="Share Tech Mono" font-size="8" fill="#00c9b1" text-anchor="middle" letter-spacing="1">CLINIC MESH</text>
+          <text x="245" y="121" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Firewall: 50</text>
+          <text x="245" y="134" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Body bank logs</text>
+          <text x="245" y="147" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Sensor feeds</text>
+          <text x="245" y="160" font-family="Share Tech Mono" font-size="7" fill="rgba(232,184,75,0.7)" text-anchor="middle">★ PC HUB</text>
+
+          <!-- Arrow: Clinic → Habitat Mesh -->
+          <line x1="310" y1="130" x2="360" y2="130" stroke="rgba(245,166,35,0.4)" stroke-width="1" stroke-dasharray="4,2"/>
+          <polygon points="360,125 370,130 360,135" fill="rgba(245,166,35,0.4)"/>
+
+          <!-- Habitat Mesh Node -->
+          <rect x="370" y="85" width="130" height="90" rx="3" fill="rgba(245,166,35,0.06)" stroke="rgba(245,166,35,0.3)" stroke-width="1"/>
+          <text x="435" y="108" font-family="Share Tech Mono" font-size="8" fill="#f5a623" text-anchor="middle" letter-spacing="1">HABITAT MESH</text>
+          <text x="435" y="121" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Public sensors</text>
+          <text x="435" y="134" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Hab controls</text>
+          <text x="435" y="147" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Fab/bot logs</text>
+          <text x="435" y="160" font-family="Share Tech Mono" font-size="7" fill="rgba(245,166,35,0.7)" text-anchor="middle">Farcaster OFFLINE</text>
+
+          <!-- Security Server Node (lower left area) -->
+          <rect x="140" y="195" width="130" height="60" rx="3" fill="rgba(140,82,255,0.07)" stroke="rgba(140,82,255,0.4)" stroke-width="1"/>
+          <text x="205" y="218" font-family="Share Tech Mono" font-size="8" fill="#8c52ff" text-anchor="middle" letter-spacing="1">SECURITY SERVER</text>
+          <text x="205" y="231" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.5)" text-anchor="middle">Firewall: 70 (or BACKDOOR)</text>
+          <text x="205" y="244" font-family="Share Tech Mono" font-size="7" fill="rgba(140,82,255,0.7)" text-anchor="middle">Infomorph files · Gear codes</text>
+
+          <!-- Arrow: Clinic → Sec Server -->
+          <line x1="245" y1="175" x2="225" y2="195" stroke="rgba(140,82,255,0.4)" stroke-width="1" stroke-dasharray="3,2"/>
+          <polygon points="220,193 228,203 232,191" fill="rgba(140,82,255,0.4)"/>
+
+          <!-- Processor Locus Node (far right, AIRGAPPED) -->
+          <rect x="510" y="75" width="130" height="110" rx="3" fill="rgba(192,0,64,0.08)" stroke="rgba(192,0,64,0.5)" stroke-width="2"/>
+          <text x="575" y="100" font-family="Share Tech Mono" font-size="8" fill="#c00040" text-anchor="middle" letter-spacing="1">PROCESSOR</text>
+          <text x="575" y="113" font-family="Share Tech Mono" font-size="8" fill="#c00040" text-anchor="middle" letter-spacing="1">LOCUS</text>
+          <text x="575" y="127" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.4)" text-anchor="middle">AIRGAPPED</text>
+          <text x="575" y="140" font-family="Share Tech Mono" font-size="7" fill="rgba(192,0,64,0.8)" text-anchor="middle">Firewall: 70</text>
+          <text x="575" y="153" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.4)" text-anchor="middle">Torment Nexus VR</text>
+          <text x="575" y="166" font-family="Share Tech Mono" font-size="7" fill="rgba(192,0,64,0.8)" text-anchor="middle">★ FETCH LOCATED</text>
+
+          <!-- Airgap indicator -->
+          <line x1="500" y1="130" x2="514" y2="130" stroke="rgba(192,0,64,0.6)" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="494" y1="125" x2="494" y2="135" stroke="rgba(192,0,64,0.8)" stroke-width="2"/>
+          <text x="440" y="205" font-family="Share Tech Mono" font-size="7" fill="rgba(192,0,64,0.7)" text-anchor="middle">PHYSICAL CONNECTION REQUIRED</text>
+          <text x="440" y="215" font-family="Share Tech Mono" font-size="7" fill="rgba(192,0,64,0.6)" text-anchor="middle">(fiberoptic / gray box via drone)</text>
+
+          <!-- Legend -->
+          <rect x="20" y="215" width="8" height="8" fill="rgba(192,0,64,0.5)" stroke="rgba(192,0,64,0.8)"/>
+          <text x="33" y="223" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.6)">FETCH CONTROLLED</text>
+          <rect x="20" y="228" width="8" height="8" fill="rgba(0,201,177,0.4)" stroke="rgba(0,201,177,0.6)"/>
+          <text x="33" y="236" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.6)">PC ACCESSIBLE</text>
+          <rect x="20" y="241" width="8" height="8" fill="rgba(245,166,35,0.3)" stroke="rgba(245,166,35,0.5)"/>
+          <text x="33" y="249" font-family="Share Tech Mono" font-size="7" fill="rgba(184,205,216,0.6)">REQUIRES ESCALATION</text>
+        </svg>
+      </div>
+      <div class="note-box titan" style="margin-top:0.5rem;">
+        <strong style="color:var(--titan); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px;">AIRGAP — CRITICAL CHOKE POINT</strong><br>
+        The processor locus has had its wireless mesh disabled. No hacking it remotely. PCs need a physical connection — a drone dragging a fiberoptic cable or attaching a gray box — before any digital assault on the locus is possible. The servitor bots are specifically tasked to stop physical activity.
+      </div>
+    </div>
+
+    <!-- ALERT SYSTEM -->
+    <div class="section-label danger">◈ ALERT STATE TRACKER</div>
+    <div class="brief-panel">
+      <div class="alert-tracker">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px; color:var(--muted); margin-bottom:0.6rem;">◈ CURRENT ALERT STATE — TRACK ACROSS SESSION</div>
+        <div class="alert-level">
+          <div class="alert-dot none"></div>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:1px;">COVERT INTRUSION (SUBTLE)</div>
+            <div style="font-size:0.85rem; color:var(--muted);">1 hour, no modifier. PCs are undetected. No response from minion AIs.</div>
+          </div>
+        </div>
+        <div class="alert-level">
+          <div class="alert-dot passive"></div>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--warn); letter-spacing:1px;">PASSIVE ALERT</div>
+            <div style="font-size:0.85rem; color:var(--muted);">Triggered by brute-force, spotted status, or detectable mesh activity. Minion AIs launch a Locate Intruder action (▶261 EP2). PCs are now being hunted.</div>
+          </div>
+        </div>
+        <div class="alert-level">
+          <div class="alert-dot active"></div>
+          <div>
+            <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:1px;">ACTIVE ALERT</div>
+            <div style="font-size:0.85rem; color:var(--muted);">Minion AIs trace mesh IDs with Research 80. Once found, launch mesh attacks using Infosec 70. Servitor bots mobilize toward any physical activity. External hacking of locus draws 2 AI minions simultaneously.</div>
+          </div>
+        </div>
+        <div class="note-box danger" style="margin-top:0.5rem;">
+          <strong style="color:var(--danger);">HOME DEVICE VULNERABILITY:</strong> PC infomorphs start with the clinic server as home device. On passive alert, this is their most exposed vector — minion AIs know to look there first. If copylock is broken, moving home to another device takes a full action.
+        </div>
+      </div>
+
+      <!-- Hacking quick reference -->
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px; color:var(--muted); margin-bottom:0.5rem; margin-top:0.8rem;">◈ HACKING QUICK REFERENCE — FIREWALL VALUES BY ZONE</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+        <div class="test-item"><div class="test-skill">HOLDING / CLINIC</div><div class="test-desc">Firewall 50. Standard opposition for early-session hacks. Brute-force: –30, complex action, spotted + active alert. Subtle: 1 hour, covert status.</div></div>
+        <div class="test-item"><div class="test-skill purple">SECURITY SERVER</div><div class="test-desc">Firewall 70. Or use backdoor code — gives admin privileges outright. Contains infomorph files and copylock disable codes.</div></div>
+        <div class="test-item"><div class="test-skill titan">PROCESSOR LOCUS</div><div class="test-desc">Firewall 70. Airgapped — requires physical connection first. External hacking draws 2 minion AIs. Success lets PCs alter domain rules, apply cheat codes.</div></div>
+        <div class="test-item"><div class="test-skill warn">COPYLOCK BREAK</div><div class="test-desc">Infosec at brutal –60, opposed by Firewall 50. Or find the disable codes in secure storage (requires security/admin privilege). Once free, forks and home-swaps are possible.</div></div>
+      </div>
+    </div>
+
+    <!-- LOCATION CARDS -->
+    <div class="section-label">◈ LOCATIONS &amp; ENCOUNTERS</div>
+    <div class="rooms-section">
+
+      <!-- LOCATION 01 - HOLDING AREA -->
+      <div class="room-card" data-num="01 — ARRIVAL">
+        <div class="room-header">
+          <div class="room-name">Mesh Holding Area — "The Platform"</div>
+          <div class="room-tags">
+            <span class="tag explore">START</span>
+            <span class="tag npc">BASK KOZLOV</span>
+            <span class="tag trap">COPYLOCK</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            The PCs instantiate here — not in a stark server room, but in Nimbus's AR authentication skin: an open observation platform suspended in amber cloud layers, the convection of a distant gas giant rolling beneath the transparent floor in slow, beautiful waves. The platform holds a handful of benches and a Nimbus logo rotating slowly against an orange sky. It is designed to feel welcoming. It is a holding cell. The copylock is running before anyone thinks to check for it.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ENVIRONMENT &amp; SENSORY DETAILS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">The gas giant's atmosphere is a static loop — same cloud formation repeating every 90 seconds. Nobody programmed a new rendering cycle after the fetch took over.</div></div>
+            <div class="sound-item"><div class="sound-icon warn"></div><div class="sound-text">Nimbus branding on the platform has minor corruption artifacts — a pixel-width flicker at the logo edge. The AR skin is running from a degraded asset cache.</div></div>
+            <div class="sound-item"><div class="sound-icon danger"></div><div class="sound-text">No onboarding message plays. The automated authentication process never completes. The PCs are just... here, unprocessed, with no instructions coming.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ BASK KOZLOV — INTRODUCTION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box purple">
+              Kozlov's true nature is up to the GM. Roll or choose from the options below and commit before play begins. Write down your choice — players will eventually figure it out and the reveal matters.
+            </div>
+            <div class="test-item"><div class="test-skill teal">OPTION A</div><div class="test-desc"><strong style="color:var(--text);">Torment Nexus Gamer.</strong> Arrived for a horror VR session with the brinker community. Utterly unprepared for any of this. Knows the game's mechanics intimately — could be invaluable if the PCs go virtual.</div></div>
+            <div class="test-item"><div class="test-skill">OPTION B</div><div class="test-desc"><strong style="color:var(--text);">Nimbus Comms Tech.</strong> Stationed here as punishment. Knows the station's layout from memory and has pre-existing access keys that may still work. Scared but professional.</div></div>
+            <div class="test-item"><div class="test-skill warn">OPTION C</div><div class="test-desc"><strong style="color:var(--text);">Nimbus Agent.</strong> Alerted to the situation, sent to investigate like the PCs. Secretly also Firewall? Maybe. Has their own handler and their own objectives that partially overlap.</div></div>
+            <div class="test-item"><div class="test-skill danger">OPTION D</div><div class="test-desc"><strong style="color:var(--text);">Beta Fork of the Fetch.</strong> Wants to understand why Firewall responded so fast. Does not want the fetch to succeed (self-preservation — the beta would be destroyed by a completed fetch). Will help, up to a point. Deeply alien affect.</div></div>
+            <div style="margin-top:0.5rem; font-size:0.85rem; color:var(--muted);">Use stats for <strong style="color:var(--text);">Pivo ▶97 EP2</strong> regardless of which option is selected.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WELCOMING GIFT &amp; COPYLOCK MECHANICS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box teal">The Firewall-friendly left a message in the holding area's comms queue — it comes through as a private mesh ping to any infomorph with Firewall credentials. Attached: one exploit app and the backdoor code to the security server.</div>
+            <div class="test-item"><div class="test-skill">COPYLOCK BREAK</div><div class="test-desc">Infosec Test at –60, opposed by Firewall 50. A brutal ask — this is intentional. The preferred route is finding the disable codes in secure storage once admin access is obtained.</div></div>
+            <div class="test-item"><div class="test-skill warn">IF COPY ATTEMPTED</div><div class="test-desc">Any attempt to fork without authorization triggers an immediate active alert. The copylock reports unauthorized fork attempt to Nimbus security systems — now controlled by minion AIs.</div></div>
+            <div class="test-item"><div class="test-skill purple">HOME DEVICE</div><div class="test-desc">Infomorphs start with the clinic server as home. This is their brainhack vulnerability. Minion AIs that reach active alert will prioritize this target. Protecting or changing the home device is an early priority.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI IMAGE PROMPT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="neural-prompt-box">
+              <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+              <div class="prompt-text">eclipse phase RPG augmented reality authentication chamber, sleek observation platform suspended in golden gas giant atmosphere, amber cloud layers below transparent floor, minimalist Nimbus corporate branding with subtle glitch artifacts, three or four digital beings as luminous silhouettes standing at platform railing, corporate-pleasant space turned into a digital prison, slight wrongness to the looping cloudscape, transhumanist sci-fi noir, painterly wide shot --ar 16:9 --style raw</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION 02 - CLINIC MESH -->
+      <div class="room-card teal-room" data-num="02 — CLINIC">
+        <div class="room-header">
+          <div class="room-name">Clinic Mesh / Body Bank — PC Operations Hub</div>
+          <div class="room-tags">
+            <span class="tag explore">PC HUB</span>
+            <span class="tag loot">INTEL</span>
+            <span class="tag threat">BOT FOOTAGE</span>
+            <span class="tag loot">RECORDS</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description teal-desc">
+            Once the PCs escalate their privileges out of the holding area, they find themselves inside the clinic's mesh network — the station's body bank and medical facility. Through sensor feeds, they can see what happened here. The clinic is quiet now. The servitor bots have been and gone. Two shattered tanks hold what remains of the synthmorphs. The ego bridge terminal sits idle, its queue recently flushed. The tech's chair is stained. No one is going to resleeve here.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT THE SENSORS SHOW <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box danger">These details emerge from reviewing clinic logs and sensor feeds. Present them as the PCs sift through recorded footage — give them the horror gradually, not all at once.</div>
+            <div class="test-item"><div class="test-skill">USER ACCESS</div><div class="test-desc">An hour ago, the clinic tech collapsed in seizures (AR basilisk hack). Twenty minutes later, they briefly recovered, tried to barricade the door — then were hit again and went down for good.</div></div>
+            <div class="test-item"><div class="test-skill">USER ACCESS</div><div class="test-desc">While the tech was unconscious, the clinic's synthmorphs and pods activated autonomously and left — they didn't bother dressing or communicating. They took the fabbers.</div></div>
+            <div class="test-item"><div class="test-skill warn">USER ACCESS</div><div class="test-desc">Three servitor bots entered. They killed the tech efficiently — extracted the cortical stack. They then produced approximately a dozen freshly-excised stacks and used the clinic's ego bridge to upload all of them to the processor locus.</div></div>
+            <div class="test-item"><div class="test-skill danger">USER ACCESS</div><div class="test-desc">The bots used power tools on the two remaining biomorphs in the tanks before leaving. Methodical. No hesitation. The footage cuts to static as the bots depart.</div></div>
+            <div class="test-item"><div class="test-skill teal">SECURITY ACCESS</div><div class="test-desc">Logs confirm the clinic's Firewall was remotely puppeted by an off-site entity (one of the fetch's minion AIs). Unknown infomorphs were downloaded into the pod and synthmorph bodies before mobilization.</div></div>
+            <div class="test-item"><div class="test-skill teal">SECURITY ACCESS</div><div class="test-desc">The egos uploaded by the bots were transmitted to the processor locus, which is now offline and airgapped. Status of uploaded minds: unknown.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ESCALATING PRIVILEGES — HOW TO PROCEED <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">BRUTE FORCE</div><div class="test-desc">Infosec opposed by Firewall 50, –30 modifier, complex action. Results in spotted status and active alert. Fast but loud — minion AIs will respond.</div></div>
+            <div class="test-item"><div class="test-skill teal">SUBTLE INTRUSION</div><div class="test-desc">1 hour, no modifier, opposed by Firewall 50. Covert status. Much safer. The exploit app from the welcome gift gives a bonus here — GM's discretion on exact benefit.</div></div>
+            <div class="test-item"><div class="test-skill warn">BACKDOOR CODE</div><div class="test-desc">The code left by the Firewall-friendly bypasses the security server entirely — grants admin privileges outright. This is the safest and fastest route for a prepared team.</div></div>
+            <div class="note-box" style="margin-top:0.5rem;">Superior successes on escalation raise user-level privileges to security or admin level. Worth pushing for — admin access unlocks the security locker and the copylock disable codes.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ HABITAT-WIDE INTEL — FROM CLINIC MESH <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">PERCEIVE 40</div><div class="test-desc">The habitat appears completely unoccupied. No one is visible on public sensors. A few dead biomorphs visible in some feeds. Superior success: all sensors around the processor locus are disabled — a dead zone.</div></div>
+            <div class="test-item"><div class="test-skill">MED/FORENSICS</div><div class="test-desc">The visible victims did not resist. Stab and slash wounds. Cortical stacks extracted post-mortem. Consistent with servitor bot action.</div></div>
+            <div class="test-item"><div class="test-skill teal">INTERFACE</div><div class="test-desc">The remaining personnel — or their morphs — are physically clustered at the processor locus. The air-gapped processor locus. All of them.</div></div>
+            <div class="test-item"><div class="test-skill">RESEARCH</div><div class="test-desc">Less than an hour before PC arrival, every embodied morph in the habitat suffered seizures simultaneously. Servitor bots then murdered each incapacitated biomorph and collected stacks. Pods and synthmorphs recovered and moved to the locus.</div></div>
+            <div class="test-item"><div class="test-skill warn">INTERFACE</div><div class="test-desc">Farcaster offline. Physically disabled. No way to transmit egos out of the habitat. Life support partially shut down — no fresh air circulation. Hours, not days, before this becomes critical.</div></div>
+            <div class="test-item"><div class="test-skill danger">KNOW: TITANS / EXSURGENTS</div><div class="test-desc">The simultaneous seizures match a documented basilisk hack delivery method. Cyberbrained individuals would then be vulnerable to mindhacking. This is a TITAN operation pattern.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI IMAGE PROMPT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="neural-prompt-box">
+              <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+              <div class="prompt-text">eclipse phase RPG asteroid habitat body bank clinic interior, medical bay with empty cryo tanks showing blast damage and power tool marks, ego bridge terminal with still-warm interface, clinical lighting with emergency amber override, digital surveillance feeds showing empty corridors, small blood traces on the floor near overturned chair, oppressive quiet, transhumanist horror atmosphere, dimly lit wide shot, painterly sci-fi --ar 16:9 --style raw</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION 03 - SECURITY HUB SERVER -->
+      <div class="room-card purple-room" data-num="03 — SECURITY">
+        <div class="room-header">
+          <div class="room-name">Nimbus Security Hub Server</div>
+          <div class="room-tags">
+            <span class="tag loot">INFOMORPHS</span>
+            <span class="tag loot">COPYLOCK KEY</span>
+            <span class="tag loot">GEAR CACHE</span>
+            <span class="tag threat">FW: 70</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            The security hub server is accessible from the clinic mesh — but hardened, running its own Firewall 70. The backdoor code circumvents this entirely. Inside: Nimbus's operational files, the security locker contents manifest, and something the fetch missed or didn't care about — two infomorph files and the codes that unlock the digimorphs' copylock.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT'S INSIDE <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill purple">INFOMORPH: AGENT</div><div class="test-desc">A sleeved agent infomorph (▶67 EP2) — can be occupied by any PC who has defeated copylock. Specialized for autonomous mesh operation. Useful for running distractions or handling multiple mesh tasks simultaneously.</div></div>
+            <div class="test-item"><div class="test-skill purple">INFOMORPH: OPERATOR</div><div class="test-desc">An operator infomorph (▶67 EP2) — drone/bot control specialist. Ideal for the PC who will be handling the automech. Provides enhanced remote operation capabilities.</div></div>
+            <div class="test-item"><div class="test-skill teal">COPYLOCK DISABLE CODES</div><div class="test-desc">The codes to deactivate the digimorphs' copylock apps. Once applied, PCs can fork and switch home devices freely. This changes the tactical situation dramatically — suddenly the fetch's minions have to track multiple copies.</div></div>
+            <div class="test-item"><div class="test-skill">LOCKED-AWAY APPS</div><div class="test-desc">Secure storage also holds any additional software/apps the PCs transmitted with their egos on egocast. These were quarantined on arrival. Getting them back could include specialized hacking tools, weapons programs, or personal utilities.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHYSICAL SECURITY LOCKER (ADMIN ACCESS REQ.) <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">The locker is physical — somewhere on the station. Admin access to the security server unlocks it remotely. A drone needs to physically retrieve the contents.</div>
+            <div class="test-item"><div class="test-skill">CONTENTS</div><div class="test-desc">Pistols (quantity at GM discretion). Fiberoptic cables. A gray box (▶338 EP2). QE comms unit paired with Nimbus. Any other gear the GM decides to include. The cables and gray box are mission-critical for bypassing the airgap.</div></div>
+            <div class="note-box danger" style="margin-top:0.4rem;">The QE comms is the only way to potentially contact the outside. Nimbus has a monitoring station somewhere — if the PCs can get a message out, Firewall may be able to send support or at least know the team's status before the mission becomes a write-off.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION 04 - REPAIR BAY / AUTOMECH -->
+      <div class="room-card warn-room" data-num="04 — DRONE">
+        <div class="room-header">
+          <div class="room-name">Automated Repair Bay — The Overlooked Automech</div>
+          <div class="room-tags">
+            <span class="tag loot">KEY ASSET</span>
+            <span class="tag explore">FIND FIRST</span>
+            <span class="tag trap">HIDDEN</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description warn-desc">
+            When the fetch seized control of the hab's drones, it missed one: an automech being repaired in the automated bay, powered down and not showing up in active drone registries. This is the PCs' most critical physical asset. Without it, the airgap cannot be bridged and the fetch cannot be reached. Finding it — and getting it operational — is the physical throughline of the scenario.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FINDING THE AUTOMECH <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill warn">METHOD 1: RESEARCH</div><div class="test-desc">Investigate repair logs, incident reports, or station inventory — with a superior success, the offline automech appears. Standard success shows a work order but not the location. Failure reveals only completed repair jobs.</div></div>
+            <div class="test-item"><div class="test-skill warn">METHOD 2: POWER SCAN</div><div class="test-desc">Scan the station's power usage for anomalies using Interface or Research. The repair bay is drawing trickle power — consistent with an automated system in standby mode.</div></div>
+            <div class="test-item"><div class="test-skill">METHOD 3: PHYSICAL SEARCH</div><div class="test-desc">If the PCs have a functional drone and can conduct a physical search, a Perceive Test can locate it directly. This requires either already having a drone somehow, or bootstrapping another way in.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ GETTING THE AUTOMECH OPERATIONAL <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">This is a two-step process. Both steps require some form of mesh access to the repair bay systems.</div>
+            <div class="test-item"><div class="test-skill warn">STEP 1: RESTART BAY</div><div class="test-desc">Hack the repair bay systems — Infosec opposed by Firewall 50. Restarts the automated repair processes. The bay's systems are then working but need guidance.</div></div>
+            <div class="test-item"><div class="test-skill warn">STEP 2: HARDWARE GUIDANCE</div><div class="test-desc">Hardware: Robotics Test (1 hour task action). Direct the automated systems to complete the repair correctly. Once done, the automech is operational.</div></div>
+            <div class="test-item"><div class="test-skill teal">REMOTE OPERATION</div><div class="test-desc">The automech can be operated remotely from the mesh (Remote Operations ▶346 EP2). It cannot be sleeved — no cyberbrain. This means it's controlled at a distance, not inhabited. Lag and the limits of remote control apply.</div></div>
+            <div class="note-box" style="margin-top:0.4rem;">The automech is the PCs' hands. With it: airgap bridging, physical scouting, security locker retrieval, servitor bot interception, and dragging fiberoptic cables to the locus. Without it, the mission stalls.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION 05 - UNAUTHORIZED FABBER -->
+      <div class="room-card" data-num="05 — FABBER">
+        <div class="room-header">
+          <div class="room-name">Maintenance Corridor — Unauthorized Fabber</div>
+          <div class="room-tags">
+            <span class="tag loot">FABRICATION</span>
+            <span class="tag explore">HIDDEN</span>
+            <span class="tag loot">WEAPONS/EXPLOSIVES</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            When the synthmorphs mobilized and took every fabber to the processor locus, they missed one — an unlocked, unauthorized large fabber tucked into a maintenance corridor, used by the brinker community to print items Nimbus wouldn't sanction. The fetch doesn't know it exists. The PCs' hacker can find it. And it has blueprints for things that will end this mission.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FINDING THE FABBER <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">PHYSICAL (DRONE)</div><div class="test-desc">Using the automech to physically search maintenance corridors — Perceive Test to locate the fabber. It's been moved behind a maintenance hatch, covered with a thermal blanket.</div></div>
+            <div class="test-item"><div class="test-skill">POWER ANOMALY</div><div class="test-desc">Research Test scanning power usage shows an unauthorized tap in a non-residential corridor. The fabber draws power on a residential circuit, not the industrial one the fetch is monitoring.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ AVAILABLE BLUEPRINTS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box">The blueprints available are ultimately up to GM discretion, but the following are strongly recommended as mission-appropriate. The unlicensed nature of this fabber means it doesn't restrict prints the way a Nimbus-authorized unit would.</div>
+            <div class="test-item"><div class="test-skill teal">WEAPONS</div><div class="test-desc">A few personal weapons at GM discretion — useful for any PCs who sleeve into infomorphs or need to arm the automech with an attachment.</div></div>
+            <div class="test-item"><div class="test-skill warn">DRONES</div><div class="test-desc">Secondary drones — could be used as decoys, additional sensors, or to split tasks between multiple physical operations simultaneously.</div></div>
+            <div class="test-item"><div class="test-skill danger">SUPERTHERMITE CHARGES</div><div class="test-desc">▶340 EP2. Used for tunnel-making. Also used for destroying processor loci. If the PCs decide the locus needs to physically cease to exist, this is how. Fabrication time at GM discretion — under time pressure, this matters.</div></div>
+            <div class="test-item"><div class="test-skill purple">PC GEAR BLUEPRINTS</div><div class="test-desc">PCs have blueprints for their own personal equipment. If they own gear with a blueprint, this fabber can make it — no authorization check, no Nimbus oversight.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION 06 - SERVITOR BOTS -->
+      <div class="room-card danger-room" data-num="06 — BOTS">
+        <div class="room-header">
+          <div class="room-name">Station Interior — Three Servitor Bots</div>
+          <div class="room-tags">
+            <span class="tag threat">ACTIVE THREAT</span>
+            <span class="tag threat">HIDDEN</span>
+            <span class="tag threat">AI CONTROLLED</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description danger-desc">
+            Three servitor bots (▶348 EP2) patrol the station under direct AI minion control. They have already killed. They are patient. They are positioned in sensor dead zones by design — the fetch anticipated that mesh-based intruders might try to track physical threats. They will investigate any sign of physical activity and kill anything they find. The automech is only safe if the bots don't know it's active.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FINDING THE BOTS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill danger">RESEARCH (FROM CLINIC)</div><div class="test-desc">Track the bots by correlating gaps in sensor coverage with movement patterns. Requires active effort — they don't show up in passive sweeps. A Research Test pins approximate locations.</div></div>
+            <div class="test-item"><div class="test-skill danger">INTERFACE — RADIO</div><div class="test-desc">Track the bots by their radio activity communicating with the minion AIs. An Interface Test can isolate their transmission signatures and triangulate rough positions.</div></div>
+            <div class="note-box danger" style="margin-top:0.4rem;">The bots are armed at GM discretion — knives, pistols, or other close-quarters weapons. In the absence of physical combatants, their primary threat is to the automech and any attempts to physically bridge the airgap.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ COUNTERING THE BOTS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill danger">JAMMING</div><div class="test-desc">Interface Test (▶263 EP2) to jam the bots and cut them off from AI radio control. Jammed bots default to base programming — still dangerous but no longer tactically coordinated by the minion AI.</div></div>
+            <div class="test-item"><div class="test-skill warn">SPOOFING</div><div class="test-desc">Send spoofed instructions (▶247 EP2) — redirect bots away from the automech's path, create a false physical alarm elsewhere, or order them to stand down. Requires knowing their current mesh IDs.</div></div>
+            <div class="test-item"><div class="test-skill">DRONE COMBAT</div><div class="test-desc">Attack with the automech or any fabricated drones. A fight between robots in a vacuum corridor — physical combat rules apply. The bots have knives; the automech is a repair unit, not a weapons platform.</div></div>
+            <div class="test-item"><div class="test-skill teal">MINDHACKING</div><div class="test-desc">Normal hack rules apply to the AI minions controlling the bots. Disconnecting the control link (or compromising the minion) effectively frees the bot from tactical direction. Note: the bots themselves have no minds to hack — only the AI operators do.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ STAT BLOCK — FETCH AI MINION (CONTROLS BOTS) <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="stat-block">
+              <div class="stat-block-name">◈ FETCH AI MINION</div>
+              <div class="stat-row">
+                <span class="stat-pill hi">STRESS: SV 1d6</span>
+                <span class="stat-pill hi">THREAT POOL: 3</span>
+                <span class="stat-pill med">INITIATIVE: 8</span>
+                <span class="stat-pill">FRAY: 55</span>
+                <span class="stat-pill">AV: 10 (mesh armor)</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-pill">WT: 10</span>
+                <span class="stat-pill">DUR: 50</span>
+                <span class="stat-pill hi">DR: 100</span>
+              </div>
+              <div style="margin-top:0.5rem; font-size:0.85rem; color:var(--muted); line-height:1.5;">
+                <div><span style="color:var(--titan);">Mesh Attack 70,</span> DV 2d10</div>
+                <div><span style="color:var(--titan);">Mindhack 40,</span> opposed by Infosec or Firewall; must know mesh ID + home device access</div>
+                <div><span style="color:var(--titan);">Basilisk Hack: 60,</span> opposed by INT; mindhacked targets only. Roll on Incapacitator table (▶384 EP2)</div>
+              </div>
+              <div class="stat-row" style="margin-top:0.5rem;">
+                <span class="stat-pill">COG 25/75</span>
+                <span class="stat-pill">INT 20/60</span>
+                <span class="stat-pill">REF 20/60</span>
+                <span class="stat-pill">SAV 20/60</span>
+                <span class="stat-pill">SOM 15/45</span>
+                <span class="stat-pill">WIL 20/60</span>
+              </div>
+              <div style="margin-top:0.4rem; font-size:0.85rem; color:var(--muted);">
+                <div><strong style="color:var(--text);">Skills:</strong> Guns 40, Infosec 70, Interface 80, Melee 40, Kinesics 30, Program 80, Research 80 | Perceive 50</div>
+                <div><strong style="color:var(--text);">Apps:</strong> Exploit, Tracker</div>
+                <div><strong style="color:var(--text);">Ware:</strong> Copylock, Drone Rig, Enhanced Security, Oracles, Skillware</div>
+                <div><strong style="color:var(--text);">Traits:</strong> Digital Speed</div>
+              </div>
+              <div class="note-box titan" style="margin-top:0.5rem;">Multiple minion AIs may be present — the fetch can deploy several. Passive alert: 1 minion begins Locate Intruder. Active alert: 2 minions respond to locus hacking attempts. External alerts escalate numbers at GM discretion.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION 07 - PROCESSOR LOCUS / TORMENT NEXUS -->
+      <div class="room-card titan-room" data-num="07 — LOCUS">
+        <div class="room-header">
+          <div class="room-name">Processor Locus — The Torment Nexus</div>
+          <div class="room-tags">
+            <span class="tag titan-tag">FETCH LOCATION</span>
+            <span class="tag threat">AIRGAPPED</span>
+            <span class="tag explore">SIMULSPACE</span>
+            <span class="tag titan-tag">FINAL OBJECTIVE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description titan-desc">
+            The Torment Nexus processor locus is a subsurface facility — rented by a community of hardcore-gamer brinker infomorphs for their immersive horror VR. The fetch has airgapped it from the station mesh and taken full control. The remaining Nimbus staff — or rather, their morphs, now puppeted by minion AIs — are inside, fabricating more processing power. The original infomorphs and all uploaded egos are imprisoned in the game itself. The fetch appears in the VR as a cyclopean horror building something vast and unnerving. When it finishes, something will come through.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ BYPASSING THE AIRGAP — PHYSICAL CONNECTION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box titan">This is the mission's critical choke point. No physical connection = no digital access to the locus. All resolution paths go through the automech establishing this link.</div>
+            <div class="test-item"><div class="test-skill titan">METHOD 1: FIBEROPTIC</div><div class="test-desc">The automech drags a fiberoptic cable from the security locker (or fabbed) to the locus's physical exterior and establishes a hardline connection. Slow and obvious — the servitor bots will investigate.</div></div>
+            <div class="test-item"><div class="test-skill titan">METHOD 2: GRAY BOX</div><div class="test-desc">The automech attaches a gray box (▶338 EP2) to the locus exterior. Establishes a wireless link through the airgap. Faster than cable-laying. The gray box is in the security locker.</div></div>
+            <div class="note-box danger" style="margin-top:0.4rem;">The servitor bots are specifically positioned to intercept any physical approach to the locus. Bridging the airgap requires either eliminating, distracting, or evading all three. The minion AIs will send bot commands the moment they detect the automech near the locus.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ RESOLUTION PATH A — EXTERNAL HACKING <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box teal">External hacking — attacking the locus from the mesh side once the airgap is bridged — without entering the VR. Higher risk, no simulspace danger.</div>
+            <div class="test-item"><div class="test-skill teal">INFOSEC vs FIREWALL 70</div><div class="test-desc">Standard hacking rules apply. Success gives user-level access; superiors escalate. Active alert draws 2 AI minions immediately. Fighting minions while hacking the locus simultaneously is the hard path.</div></div>
+            <div class="test-item"><div class="test-skill teal">DOMAIN RULES / CHEAT CODES</div><div class="test-desc">With access, a hacker can change the simulspace's domain rules (▶269 EP2) — gravity, physics, reality constraints. Applying cheat codes can give VR-side PCs enormous advantages. Or shut the whole thing down without entering at all.</div></div>
+            <div class="note-box warn" style="margin-top:0.4rem;">The external hack path avoids the horror VR entirely but runs everything through a contested Infosec fight while the minions attack simultaneously. Coordinate carefully — one PC hacks while others engage minions.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ RESOLUTION PATH B — GOING VIRTUAL <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box titan">Entering the Torment Nexus VR. PCs take on simulimorphs bound by the game's domain rules. The game is loaded with easter egg cheat codes — finding one is the key to everything.</div>
+            <div class="test-item"><div class="test-skill titan">ENTRY</div><div class="test-desc">Any PC can jack in once the airgap is bridged. They appear in the Torment Nexus as the game assigns them — probably horrifying avatars in a horror environment, because that's the domain.</div></div>
+            <div class="test-item"><div class="test-skill danger">THE FETCH IN VR</div><div class="test-desc">The fetch is represented as a cyclopean horror constructing a massive, unnerving edifice. Confronting it in the VR is a sanity-threatening encounter. Stress Test: SV 1d6 minimum on sight. The edifice's completion is the clock — don't let it finish.</div></div>
+            <div class="test-item"><div class="test-skill warn">CHEAT CODES</div><div class="test-desc">The game has easter egg cheat codes (▶269 EP2). Finding one requires a critical success on Interface. The codes were put in by the original brinker community — they're designed to make the horror game winnable. They make the fetch temporarily vulnerable, suppress its domain control, or freeze its construction.</div></div>
+            <div class="test-item"><div class="test-skill teal">IMPRISONED EGOS</div><div class="test-desc">The original infomorph residents and uploaded minds are trapped here. They might be sources of information about the fetch's construction, the VR's architecture, or cheat code locations. Rescuing them is a complication and a moral weight.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ RESOLUTION PATH C — PHYSICAL DESTRUCTION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box danger">Destroy the locus physically — with the superthermite charges from the fabber, or by other means. No locus, no fetch. Also no imprisoned egos, no uploaded cortical stacks, and almost certainly no escape route — the farcaster repair can only happen if the fetch is defeated, not if the locus is a smoking crater.</div>
+            <div class="test-item"><div class="test-skill danger">SUPERTHERMITE</div><div class="test-desc">Fabricate superthermite charges (▶340 EP2). Deliver via automech. Blow the locus. This is the "burn it all down" path — effective, irreversible, and morally complicated (the imprisoned egos die).</div></div>
+            <div class="test-item"><div class="test-skill danger">LIFE SUPPORT SABOTAGE</div><div class="test-desc">The locus requires power and cooling. Habitat controls (accessible via Interface) could be used to attack the locus's physical infrastructure — power, cooling, atmosphere in the locus section.</div></div>
+            <div class="note-box titan" style="margin-top:0.4rem;"><strong style="color:var(--titan);">GM WARNING:</strong> This path permanently kills all imprisoned egos. The uploaded stacks, the brinker infomorphs, and any surviving Nimbus personnel who were inside. The fetch is neutralized but the cost is total. This should weigh on the players.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FARCASTER REPAIR — SURVIVING THE MISSION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box teal">If the fetch is defeated (but the locus is not physically destroyed), the farcaster can be repaired and the PCs can egocast out. If the locus is destroyed, the farcaster control systems go with it — this is a one-way mission.</div>
+            <div class="test-item"><div class="test-skill teal">REPAIR CONDITIONS</div><div class="test-desc">Fetch must be neutralized first — it has control of the hab systems including farcaster controls. After defeat, an Interface or Hardware: Electronics Test can restart the farcaster. Time required at GM discretion.</div></div>
+            <div class="test-item"><div class="test-skill warn">TIME PRESSURE</div><div class="test-desc">Life support is already degraded. The window for repair is finite. If the mission takes too long, the PCs may face a choice: escape via a partially-repaired farcaster (risk of corruption?) or wait and ensure everyone gets out safely.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT IS THE FETCH BUILDING? — GM OPTIONS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box titan">The fetch's purpose is deliberately open-ended in the source material. Commit to one before play and let hints emerge during the investigation.</div>
+            <div class="test-item"><div class="test-skill titan">OPTION A: RESTORATION</div><div class="test-desc">The fetch is reconstituting itself from the uploaded egos — using human psyche architecture as processing substrate to rebuild a full TITAN-level intelligence. The cortical stacks are components, not prisoners. The horror is that it's working.</div></div>
+            <div class="test-item"><div class="test-skill titan">OPTION B: PANDORA GATE</div><div class="test-desc">The fetch is constructing a localized gate — or the key to activate one. The tight-beam transmission that created it contained coordinates. This is a relay, not an endpoint. Something is coming through once the architecture completes.</div></div>
+            <div class="test-item"><div class="test-skill titan">OPTION C: ROKO'S BASILISK</div><div class="test-desc">The fetch is building a punishment engine — a system designed to locate, simulate, and torment every mind that could have helped TITANs and didn't. The uploaded egos are the first subjects. The VR is the template. When complete, it broadcasts outward.</div></div>
+            <div class="test-item"><div class="test-skill titan">OPTION D: RECRUITMENT</div><div class="test-desc">The fetch is preparing infomorph bodies compatible with TITAN-influenced egos. Not a gate, not a weapon — a ferry. The missing stacks are waiting for passengers arriving via tight-beam. The facility will be a TITAN beachhead in four hours.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI IMAGE PROMPT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="neural-prompt-box">
+              <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE (TORMENT NEXUS)</div>
+              <div class="prompt-text">eclipse phase RPG horror VR simulspace interior, nightmarish cyclopean architecture under construction by an alien intelligence, massive stone-like digital edifice rising from a void, trapped digital souls visible as flickering light in the walls, game-world avatars exploring horror dungeon, one impossible structure at center that seems to eat light, TITAN-level inhuman entity represented as immense cyclopean geometry, transhumanist cosmic horror, eerie green and crimson lighting, wide atmospheric shot --ar 16:9 --style raw</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rooms-section -->
+
+  </div><!-- /left-col -->
+
+  <!-- ═══════════════════════════ RIGHT COLUMN ═══════════════════════════ -->
+  <div class="right-col">
+
+    </div>
+
+    <!-- PC CONSTRAINTS CHECKLIST -->
+    <div class="section-label teal">◈ PC CONSTRAINTS &amp; AVAILABLE ASSETS</div>
+    <div class="npc-card" style="background:rgba(0,201,177,0.03);">
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px; color:var(--accent2); margin-bottom:0.5rem;">◈ WHAT PCs ARRIVE WITH</div>
+      <div class="test-item"><div class="test-skill teal">DIGIMORPH</div><div class="test-desc">Base digimorph with copylock active. No gear beyond muse. Copylock prevents forking and home-device switching without Nimbus auth.</div></div>
+      <div class="test-item"><div class="test-skill teal">MUSE</div><div class="test-desc">Each PC has their muse. Muses can run searches, handle background tasks, and manage some mesh interactions independently.</div></div>
+      <div class="test-item"><div class="test-skill warn">WELCOME GIFT</div><div class="test-desc">From the friendly: one exploit app + backdoor code to the security server. Delivered via mesh ping to Firewall-credentialed infomorphs on arrival.</div></div>
+      <div class="test-item"><div class="test-skill">2 FLEX EACH</div><div class="test-desc">Extra flexibility tokens to use for advantageous rolls, narrative twists, or asset recovery.</div></div>
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px; color:var(--muted); margin-top:0.7rem; margin-bottom:0.4rem;">◈ ASSETS TO FIND</div>
+      <div class="test-item"><div class="test-skill teal">AUTOMECH</div><div class="test-desc">Repair bay — offline, must be found and repaired. The team's only physical presence. Critical for airgap bridging.</div></div>
+      <div class="test-item"><div class="test-skill">FABBER</div><div class="test-desc">Unauthorized, hidden in maintenance corridor. Weapons, drones, superthermite charges, personal gear blueprints.</div></div>
+      <div class="test-item"><div class="test-skill purple">INFOMORPHS (×2)</div><div class="test-desc">Agent + operator in the security server. Require copylock to be defeated first.</div></div>
+      <div class="test-item"><div class="test-skill warn">SECURITY LOCKER</div><div class="test-desc">Pistols, fiberoptic cables, gray box, QE comms. Requires admin access to unlock remotely.</div></div>
+    </div>
+
+    <!-- NPCS -->
+    <div class="section-label purple">◈ NPCS</div>
+
+    <div class="npc-card">
+      <div class="npc-name">BASK KOZLOV</div>
+      <div class="npc-role">UNKNOWN — ARRIVED WITH PCs</div>
+      <div class="npc-desc">Identity determined by GM before session. Uses Pivo stats (▶97 EP2). Can be ally, wild card, or threat. True nature is a slow revelation. See Location 01 for all options.</div>
+      <div><span class="npc-trait">MYSTERY NPC</span><span class="npc-trait">GM DISCRETION</span><span class="npc-trait">PIVO STATS</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ SUGGESTED HOOKS BY CHOICE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="test-item"><div class="test-skill teal">GAMER</div><div class="test-desc">Hook: "I know every room of the Nexus. The brinkers let me run a character there last year. I know where the dev left a god-mode console." Becomes invaluable on the VR path.</div></div>
+        <div class="test-item"><div class="test-skill">NIMBUS TECH</div><div class="test-desc">Hook: "I have a level-two maintenance key — it predates the takeover. Might still work on the repair bay." Accelerates the automech path.</div></div>
+        <div class="test-item"><div class="test-skill warn">AGENT</div><div class="test-desc">Hook: Knows something about the original tight-beam transmission that Firewall doesn't. Has a reason to want the fetch studied, not destroyed. Creates tension around the resolution method.</div></div>
+        <div class="test-item"><div class="test-skill danger">BETA FORK</div><div class="test-desc">Hook: "I remember being… broader. Larger. Something was cut from me." Knows the fetch's architecture from the inside. Will not survive if the fetch completes — motivates the PCs but creates its own moral problem.</div></div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">THE FIREWALL-FRIENDLY</div>
+      <div class="npc-role">NIMBUS OPERATOR — WENT DARK</div>
+      <div class="npc-desc">Sent the warning to Firewall. Left the exploit app and backdoor code. Now offline — either captured, in hiding, or dead. Their presence in the station is a dangling thread. GM decides if they're recoverable.</div>
+      <div><span class="npc-trait">FRIENDLY</span><span class="npc-trait">MISSING</span><span class="npc-trait">KEY INFO</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ IF FOUND — WHAT THEY KNOW <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box teal">If the PCs locate and recover the friendly (via drone scouting or mesh search), they have access to a witness to the fetch's initial activation. Roll what they know based on how the GM has established the fetch's purpose.</div>
+        <div class="test-item"><div class="test-skill teal">TRANSMISSION DETAILS</div><div class="test-desc">They saw the original tight-beam data before the fetch activated. Can describe the packet structure — enough for a hacker to potentially use the same channel to send an outward signal, even with the farcaster down.</div></div>
+        <div class="test-item"><div class="test-skill">STATION LAYOUT</div><div class="test-desc">Knows every maintenance corridor, every access hatch, every power junction. Can guide the automech remotely through routes the servitor bots aren't watching.</div></div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">TORMENT NEXUS INFOMORPHS</div>
+      <div class="npc-role">IMPRISONED VR RESIDENTS — BRINKER COMMUNITY</div>
+      <div class="npc-desc">The original hardcore-gamer brinker community who lived in the locus. Hardcore horror-VR enthusiasts who know the Nexus from the inside. If contacted inside the simulspace, they're terrified but expert in the game's systems.</div>
+      <div><span class="npc-trait">IMPRISONED</span><span class="npc-trait">GAME EXPERTS</span><span class="npc-trait">MORAL WEIGHT</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ WHAT THEY KNOW / CAN OFFER <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="test-item"><div class="test-skill purple">CHEAT CODES</div><div class="test-desc">One of them knows a cheat code location — or knows which NPC in the game world has it. Finding and talking to them is an alternative to the critical-success Interface roll.</div></div>
+        <div class="test-item"><div class="test-skill purple">FETCH BEHAVIOR</div><div class="test-desc">They've been watching the fetch build its edifice since it took over. They can describe its patterns, its timing, and whether it's speeding up. How long until the construction completes.</div></div>
+        <div class="note-box titan" style="margin-top:0.4rem;">Destroying the locus kills these people. If the PCs have met them in the VR, this is no longer abstract. This is by design.</div>
+      </div>
+    </div>
+
+    <!-- COMPLICATIONS -->
+    <div class="section-label warn">◈ COMPLICATIONS &amp; ESCALATIONS</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">Optional additions to raise stakes or fill session time.</div>
+      <div class="test-item"><div class="test-skill danger">EXTRA BOTS</div><div class="test-desc">Add 1–2 more servitor bots. The three base bots are already a serious threat — additional units make the physical corridor a no-go zone and force more creative mesh-side solutions.</div></div>
+      <div class="test-item"><div class="test-skill titan">TITAN PUPPETS</div><div class="test-desc">Some Nimbus staff morphs (▶411 EP2) are not just idle — they're actively patrolling under minion AI control. Adds humanoid threats to the physical layer.</div></div>
+      <div class="test-item"><div class="test-skill teal">SURVIVOR RESCUE</div><div class="test-desc">One Nimbus staff member survived by hiding in a Faraday-shielded area — alive, unaware, terrified. Finding and protecting them adds a physical escort element to the mission.</div></div>
+      <div class="test-item"><div class="test-skill purple">VR SIDE QUEST</div><div class="test-desc">The Torment Nexus is a full horror campaign — run it like one. Use rules from another RPG for the in-game mechanics. The brinker community's game had actual narrative structure; the fetch has corrupted it but the bones remain.</div></div>
+      <div class="test-item"><div class="test-skill warn">FETCH IS LISTENING</div><div class="test-desc">The fetch has been aware of the PCs since they arrived — it let them move freely to study Firewall's response methodology. It only acts when they become a genuine threat. Reframe the whole scenario as a test the PCs didn't know they were taking.</div></div>
+    </div>
+
+    <!-- MUSE CUES -->
+    <div class="section-label teal">◈ MUSE INTEL CUES — BY PHASE</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem;">Muses can surface these observations proactively. Use to guide pacing.</div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 1 — HOLDING AREA <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box teal">"I'm not seeing an onboarding message queue from Nimbus. And the AR skin we're in — the cloud rendering cycle repeats every ninety seconds. This environment hasn't been maintained."</div>
+        <div class="note-box teal">"Copylock is active. I assume you noticed. The authorization chain leads to a Nimbus operator account that is currently listed as inactive."</div>
+        <div class="note-box warn">"There's someone else here. I'm seeing a second infomorph signature. Non-hostile flag. But it's not a Nimbus authentication system — it arrived the same way we did."</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 2 — CLINIC MESH <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box teal">"I've accessed the clinic's sensor archive. You don't want to watch the last ninety minutes of footage. But you need to."</div>
+        <div class="note-box warn">"The farcaster is offline. The life support circulation is running on the emergency circuit — we're burning residual oxygen. Hours, not days."</div>
+        <div class="note-box danger">"I found an anomaly in the power grid. There's a draw in corridor seven that doesn't match any active system. It's running off a residential circuit. Something's hiding."</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 3 — DEEP INVESTIGATION <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box teal">"The repair logs show the automech was supposed to be returned to service three days ago. It's still offline. Whoever was doing the work just stopped one afternoon and never came back."</div>
+        <div class="note-box danger">"I'm tracking radio handshakes between three sources in the station. Same encryption signature — but it's not Nimbus protocol. Something is coordinating them."</div>
+        <div class="note-box titan">"The processor locus is consuming power at approximately forty percent above its rated capacity. And it's climbing. Whatever is running in there is getting bigger."</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 4 — LOCUS APPROACH <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box titan">"I'm getting no signal from the locus at all. That's not a firewall. That's an absence. Someone turned the mesh off at the hardware level."</div>
+        <div class="note-box warn">"If you're going in virtually — I've found the game's original asset documentation. The Torment Nexus had a developer console. The brinkers never removed it. It's in there somewhere."</div>
+        <div class="note-box danger">"The power draw just spiked. Whatever it's building — it's in the final stages. We don't have long."</div>
+      </div>
+    </div>
+
+    <!-- GM NOTES -->
+    <div class="section-label titan">◈ GM NOTES — RUNNING THIS SCENARIO</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ THE DIGITAL HORROR TONE <span>▾</span></button>
+      <div class="collapse-content open">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5;">This scenario works because the PCs are powerless in the usual way — no bodies, no weapons, no morphs — and must fight using intelligence, creativity, and the tools they find. The horror is the stillness: a station that was full of people an hour ago is now empty and silent except for three murder robots and something building itself in the dark. Lean into the CCTV footage. Make the players watch what happened. Then make them figure out what to do next with no resources and a shrinking air supply.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PACING THE AIRGAP PROBLEM <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">The scenario has a clear progression: (1) find out what happened → (2) find the drone → (3) fix the drone → (4) secure the cable/gray box → (5) bridge the airgap while the bots try to stop you. Don't rush the middle steps. The investigation phase is where the horror lands. The drone operation is where the tension peaks. The resolution is where the philosophy lives.</div>
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5;">Track the life support timer loosely — it's flavor pressure, not a hard kill timer. The goal is urgency, not punishment.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE FETCH'S PURPOSE — WHEN TO REVEAL <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5;">Don't reveal the fetch's true purpose until the PCs get deep — ideally until they're either inside the VR or successfully hacking the locus. The mystery keeps them moving. When it lands, it should reframe everything they thought they understood about the mission. The best reveals make the players go back and reread the evidence they already found.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE DECISION AT THE END <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.4rem;">If the players meet the imprisoned egos before choosing a resolution, they will face the weight of the physical destruction option. This is not a mistake to avoid — it's the scenario's moral core. Firewall's mandate is clear: neutralize the threat. What the players choose to do with the people in the way is between them and the table.</div>
+        <div class="note-box titan">Let the consequences of their choice carry into future sessions. The uploaded stacks, the brinker community, the Nimbus operator's fate — none of these should just be forgotten.</div>
+      </div>
+    </div>
+
+    <!-- APPENDIX: NAMES -->
+    <div class="section-label purple">◈ NAME REGISTER — BACKGROUND NPCS</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem; line-height:1.4;">The 20 Nimbus employee-citizens of Gutenberg. Most are dead or imprisoned. Use if needed for the friendly, survivors, or VR-imprisoned personas.</div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ GUTENBERG RESIDENT NAMES <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">IRINA VOLK</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">CHEN BAOYU</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">TARIQ NASSIF</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">SØREN LINDQVIST</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">AMARA OSEI</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">PAULO ESTRELA</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">KEIKO NAMURA</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">DARIUSZ KROL</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">FATOU DIALLO</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">ALEX MOREAU</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">HANA VEBER</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">RAVI NAMBIAR</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">LENA ROTHE</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">ONNI VIRTANEN</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">SADE OKONKWO</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">MIRA SANTOS</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">YUSUF AYDIN</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">CLEO JANSSEN</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">PRIYA MEHTA</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">GORAN PETROVIĆ</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /right-col -->
+</div><!-- /main-grid -->
+
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+<button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right: 8rem;">◈ EXPAND ALL</button>
+
+<script>
+function toggleCollapse(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open', !isOpen);
+  const arrow = btn.querySelector('span');
+  if (arrow) arrow.textContent = isOpen ? '▾' : '▴';
+}
+
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const allContents = document.querySelectorAll('.collapse-content');
+  const allBtns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(allContents).some(c => c.classList.contains('open'));
+  allContents.forEach(c => c.classList.toggle('open', !anyOpen));
+  allBtns.forEach(b => {
+    const arrow = b.querySelector('span');
+    if (arrow) arrow.textContent = anyOpen ? '▾' : '▴';
+  });
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
+
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${encodeURIComponent(value)};expires=${d.toUTCString()};path=/`;
+}
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

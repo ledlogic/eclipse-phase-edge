@@ -1,0 +1,96 @@
+{
+  "campaign": "ECLIPSE PHASE — TIME OF OUR LIVES",
+  "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS",
+  "sessions": [
+    {
+      "id": "session-01",
+      "file": "session-01-better-on-the-inside.html",
+      "number": "01",
+      "title": "Better on the Inside",
+      "location": "YETTI EXOPLANET · GATE",
+      "status": "complete",
+      "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"
+    },
+    {
+      "id": "session-02",
+      "file": "session-02-binge.html",
+      "number": "02",
+      "title": "Binge",
+      "location": "PATHFINDER CITY · MARS",
+      "status": "complete",
+      "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"
+    },
+    {
+      "id": "session-03",
+      "file": "session-03-dead-drop-vesta.html",
+      "number": "03",
+      "title": "Dead Drop at Vesta",
+      "location": "VESTA · MAIN BELT",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"
+    },
+    {
+      "id": "session-04",
+      "file": "session-04-unbodied-gutenberg.html",
+      "number": "04",
+      "title": "Unbodied",
+      "location": "GUTENBERG · HIGH BELT",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"
+    },
+    {
+      "id": "session-05",
+      "file": "session-05-cold-station.html",
+      "number": "05",
+      "title": "Cold Station",
+      "location": "IAPETUS · SATURN",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"
+    },
+    {
+      "id": "session-06",
+      "file": "session-06-signal-zero.html",
+      "number": "06",
+      "title": "Signal Zero",
+      "location": "FK7 · KUIPER",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"
+    },
+    {
+      "id": "session-07",
+      "file": "session-07-cry-for-help.html",
+      "number": "07",
+      "title": "Cry for Help",
+      "location": "ARROKOTH · 44 AU",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"
+    },
+    {
+      "id": "session-08",
+      "file": "session-08-requiem-for-orcus.html",
+      "number": "08",
+      "title": "Requiem for Orcus",
+      "location": "ORCUS · 39 AU",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"
+    },
+    {
+      "id": "session-09",
+      "file": "session-09-still-life-with-teeth.html",
+      "number": "09",
+      "title": "Still Life with Teeth",
+      "location": "KBO 2119-HR4 · ~52 AU",
+      "status": "upcoming",
+      "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
+      "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"
+    }
+  ]
+}

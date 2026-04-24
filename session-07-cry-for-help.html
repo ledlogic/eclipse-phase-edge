@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRY FOR HELP | Eclipse Phase — Session 07 GM Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-07-cry-for-help.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1><span class="dead">CRY FOR</span> HELP<span class="sub">ARROKOTH</span></h1>
+  <div class="header-sub">DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO</div>
+  <div class="stats-bar">
+    <span class="stat-chip blue">LOCATION: ARROKOTH KBO · 44 AU</span>
+    <span class="stat-chip danger">THREAT: TITAN NANOSWARM — ACTIVE / EVOLVED</span>
+    <span class="stat-chip">REGISTER: HAUNTED HOUSE / SURVIVAL HORROR</span>
+    <span class="stat-chip signal">MESA — CRITICAL PRESENCE</span>
+    <span class="stat-chip nano">NANOSWARM — EVOLVED 10 YEARS</span>
+    <span class="stat-chip ozma">OZMA — TRAILING · HOURS BEHIND</span>
+    <span class="stat-chip warn">BRIDGE: SIGNAL ZERO → CRY FOR HELP → ???</span>
+  </div>
+</header>
+
+
+<!-- MAIN GRID -->
+<div class="main-grid">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+
+    <!-- SITUATION BRIEF -->
+    <div class="section-label">◈ SITUATION BRIEF</div>
+    <div class="brief-panel">
+      <p class="brief-text">
+        The distress call came in seven days ago — a personal transmission on a private Firewall frequency, not an automated beacon. Eleven words in a voice the team has never heard but MESA recognized immediately. Then silence. The source: Arrokoth, 486958 MU69, a contact-binary Kuiper Belt object 44 AU from the sun. There was a brinker colony here once. It was destroyed ten years ago in a reactor incident. Nobody went back. The distress call was not from a survivor. MESA has been very quiet since she heard it.
+      </p>
+
+      <div class="goal-box signal">
+        <strong>◈ MISSION OBJECTIVE — FIREWALL BRIEF</strong>
+        Investigate the source of the distress transmission from Arrokoth. Assess whether MERIDIAN-ECHO-2 is operating from inside the colony structure. Determine the nature of whatever is currently occupying the station. Recover any data relevant to the TRAINER-INSTANCE's purpose and targets. Do not bring anything biological off-site without full decontamination protocol.
+      </div>
+
+      <div class="goal-box nano">
+        <strong>◈ THE REAL SITUATION — WHAT FIREWALL DOESN'T KNOW YET</strong>
+        The colony is not dead. A TITAN nanoswarm has occupied and rebuilt it over ten years — replicating the dead colonists' morphs, restoring the physical structure from cortical stack fragments, running an ongoing simulation of a living community frozen at the moment of the original "disaster." The reactor explosion never happened. The swarm staged the colony's destruction to create isolation. It has been here, growing, learning, waiting for someone with the right credentials to come looking. The distress call was bait — specifically constructed from recovered voice data to match a frequency and phrasing that would be recognized by MESA. The swarm has been monitoring Firewall's outer-system network for two years. It knew about MESA before the team did.
+      </div>
+
+      <div class="goal-box warn">
+        <strong>◈ COMPLICATION — MESA-2 CONNECTION</strong>
+        MERIDIAN-ECHO-2's relay log, recovered at Signal Zero, places one of its simulation clusters at a sub-network node consistent with Arrokoth's position and orbital parameters. The TRAINER-INSTANCE has been running adversarial simulations against something here. The nanoswarm is not that something. The nanoswarm is the training environment. Whatever MESA-2 has been teaching is inside the colony — and it has been inside the colony's simulation substrate for 847 days, subjected to escalating threat scenarios. It has been getting good at surviving.
+      </div>
+
+      <div class="goal-box ozma">
+        <strong>◈ COMPLICATION — OZMA FOLLOWING THE SAME LEAD</strong>
+        Sevik Dahl and the Ozma extraction team are on the same signal. They identified the distress call's origin point within hours of Firewall. They are 8–12 hours behind the team, depending on transit burn. Their interest here is not the colony — it is the same as at Signal Zero: they want whatever MESA-2 has been training, before Firewall can bring it inside a populated network. Dahl may attempt contact before the team enters the structure. He has new information about the prior Ozma interface incident he was protecting at FK7. Some of it is relevant. Some of it he will use as leverage.
+      </div>
+
+      <div class="goal-box mesa">
+        <strong>◈ PC WIN CONDITION</strong>
+        Understand what the nanoswarm has built inside the colony. Locate and assess whatever MESA-2's training program produced. Survive the colony's active resistance to being understood — the swarm is intelligent and has had ten years to prepare for exactly this kind of intrusion. Get out with MESA intact. Make a decision about what they found that they can live with — and that MESA can live with too.
+      </div>
+    </div>
+
+    <!-- ARRIVAL TIMELINE -->
+    <div class="section-label blue">◈ APPROACH TIMELINE</div>
+    <div class="timeline-panel">
+      <div class="timeline">
+
+        <div class="tl-item hot">
+          <div class="tl-time hot">DEPARTURE — POST-SIGNAL ZERO</div>
+          <div class="tl-desc">MESA cross-references MERIDIAN-ECHO-2's relay timing data against known outer-system bodies. Three possible locations. Arrokoth matches on mass, orbital geometry, and a subtle thermal anomaly in a three-year-old survey scan she pulls from a Gatekeeper deep archive. She presents this to the team without theatrics. She has been sitting with it since the interface at FK7 and her voice is flat when she says: "I think I know where it is."</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">TRANSIT — 6 DAYS OUT</div>
+          <div class="tl-desc">MESA begins reconstructing what she knows about the colony from pre-Fall records. Eleven colonists. Brinker independence collective. Cognite-prefab hab structure anchored to the Wenu lobe's regolith — blue steel cylindrical modules, trapezoidal anchors. Declared dead ten years ago. She identifies a discrepancy: the reactor incident records were filed three weeks before the last known comms from the colony. Someone submitted the death report early. She hasn't decided what to say about this yet.</div>
+        </div>
+
+        <div class="tl-item warn">
+          <div class="tl-time warn">DAY 3 — THE VOICE RECORDING</div>
+          <div class="tl-desc">MESA asks to play the distress call for the team. It is eleven words: <em>"If you can hear this, we were wrong about what it wants."</em> The voice belongs to no one in the colonial registry. It matches — partially — the speech patterns of a Cognite-registered infomorph archived under the project designation AUGUSTINE. A project MESA has a record of but has never discussed with the team. She tells them what she knows: Cognite. Seed AI psychosurgery program. The colonial location is not in her records. It shouldn't be here.</div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-time">DAY 5 — ARROKOTH ON SENSORS</div>
+          <div class="tl-desc">The contact binary resolves: two lobes joined at a narrow neck, 36 km end to end, dark reddish surface dusted with tholins. The thermal anomaly MESA found is confirmed — a consistent heat differential at the Wenu lobe's equatorial band. Something inside is warm. The colony structure is visible on optical scan: intact. The modules are intact. The anchors are intact. The hab ring has been extended. Someone built another module since the disaster report was filed. MESA says nothing for forty-seven minutes.</div>
+        </div>
+
+        <div class="tl-item hot">
+          <div class="tl-time hot">DAY 6 — OZMA CONTACT</div>
+          <div class="tl-desc">Dahl hails on a tight-beam. He knows the team is here — their transit out of the FK7 region was visible. He opens with the thing he didn't say at Signal Zero: Ozma's prior interface incident involved a structure at a different location that the swarm had also occupied. Three operatives went in. One came out, and she is not the same person she was. He is not asking the team to stand down. He is asking them to wait for Ozma backup before entering the structure. He has twelve hours to offer. Whether he means it is a genuine question.</div>
+        </div>
+
+        <div class="tl-item nano">
+          <div class="tl-time nano">DAY 6 — ARRIVAL AT ARROKOTH</div>
+          <div class="tl-desc">Insertion orbit achieved. Up close: the hab modules are clean. No debris, no weathering artifacts, no years of micro-impact scatter on the expanded section. Whatever built the new module did it recently — or has been maintaining the surface continuously. One of the original airlock pressure seals is cycling. A slow rhythm. Something inside is breathing the air in and out at regular intervals. It has been doing this since before the team arrived. MESA: "It knows we're here. It has been waiting for someone who would bring me."</div>
+        </div>
+
+        <div class="tl-item ozma">
+          <div class="tl-time ozma">T+VARIABLE — OZMA ARRIVES</div>
+          <div class="tl-desc">Dahl's team is 8–12 hours behind. They will not wait outside indefinitely. If the team is still in the colony when Ozma arrives, Dahl will enter — with or without cooperation. He will attempt negotiation first. Whether Lok is on his ship changes the dynamic considerably. If she is, she will make contact separately, on a frequency the team will recognize from Iapetus.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LOCATIONS -->
+    <div class="section-label">◈ LOCATIONS — ARROKOTH / 486958 MU69</div>
+    <div class="rooms-section">
+
+      <!-- SURFACE -->
+      <div class="room-card" data-num="01">
+        <div class="room-header">
+          <div class="room-name">Surface — Wenu Lobe Equatorial</div>
+          <div class="room-tags">
+            <span class="tag explore">0.0003g</span>
+            <span class="tag warn">MAINTAINED</span>
+            <span class="tag nano">NANOSWARM PERIMETER</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <p class="room-description">
+            The surface is wrong. Arrokoth's natural regolith is a loose aggregate of tholin-dusted water ice — granular, dark, undisturbed. This section has been cleared and compacted into smooth flat pads, as if someone landscaped it. The hab modules are cleaner than they should be after ten years of microimpacts. The expanded module — the new one — is the same Cognite-prefab blue steel as the originals, but the trapezoidal anchors have a slightly different geometry: they've been adapted rather than replicated, the material composition shifted approximately 12% toward a silicate-polymer composite that isn't in any manufacturing catalog. The airlock seal cycling is the first sound the team hears when they suit up. A slow, regular three-second interval. It has a rhythm. It is not mechanical.
+          </p>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ SURFACE INVESTIGATION — TESTS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item">
+              <span class="test-skill">PERCEIVE 40</span>
+              <p class="test-desc">The surface immediately around the airlock has been recently disturbed — within days, not years. Shallow grooves in the regolith consistent with heavy equipment movement. Something was moved out here and brought back inside. The grooves lead toward the new module's secondary access port and stop without returning.</p>
+            </div>
+            <div class="test-item">
+              <span class="test-skill warn">KNOW: TITAN TECH 40</span>
+              <p class="test-desc">The anchor modification is a nanoswarm construction technique — not replication, adaptation. The swarm studied the original anchors, identified structural improvement opportunities, and built better. This is not a TITAN weapon pattern. This is a TITAN learning pattern. It has been optimizing its own habitat for years.</p>
+            </div>
+            <div class="test-item">
+              <span class="test-skill">KNOW: GEOLOGY 50</span>
+              <p class="test-desc">Arrokoth's surface composition includes tholins — complex organics that should be accumulating at a measurable rate. They are not. The surface near the hab is being cleared. Something is processing the tholins. The rate implies an active nanoswarm perimeter extending approximately 40 meters from the nearest airlock. The team is already inside it.</p>
+            </div>
+            <div class="note-box nano">The airlock cycling is the swarm's version of a welcome. It learned this pattern from the cortical stack fragments of the colonists it recovered — the colonists used to cycle the outer lock manually as a greeting when someone approached. The swarm is doing it now because it expects visitors who will recognize the gesture. It is not wrong.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENTRY AIRLOCK / COMMON ROOM -->
+      <div class="room-card hot-room" data-num="02">
+        <div class="room-header">
+          <div class="room-name">Hab Module A — Entry / Common Room</div>
+          <div class="room-tags">
+            <span class="tag hot">FIRST CONTACT</span>
+            <span class="tag warn">UNCANNY</span>
+            <span class="tag nano">RECONSTRUCTED</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <p class="room-description hot-desc">
+            The airlock opens to a standard Cognite-prefab common room. Table, chairs, wall-mounted food fabricator, personal storage. Everything looks used — coffee rings on the table, a jacket hung by the door, a half-finished game of go on a board that someone left mid-play. Someone has been living here. The lights are on. The air is breathable: 0.9 atm, nitrogen-oxygen blend, slightly low on CO2. The temperature is 19°C. The room looks like someone just stepped out. A mug on the table is still warm.
+          </p>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE UNCANNY — WHAT'S WRONG WITH THIS ROOM <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">The wrongness is subtle and cumulative. No single detail flags immediately. The effect is atmospheric — everything is slightly too consistent, as if designed rather than lived in. A GM should name details rather than ask for tests: the jacket has no wear pattern on the elbows, only on the shoulders. The go game is in a position that is technically valid but strategically meaningless — no human player would have left it here. The food fabricator's usage log shows eleven distinct meals prepared in a rotation, every 8 hours, for the past 300 days. Eleven meals. There were eleven colonists.</div>
+            <div class="test-item">
+              <span class="test-skill">MEDICINE / KINESICS 40</span>
+              <p class="test-desc">The mug is warm because something warmed it before the team arrived. The coffee inside is a perfect replication of a standard Cognite-supplied blend — the molecular composition is correct, the temperature is correct, the steam pattern is correct. But there is no smell. The swarm can replicate molecular composition but has not solved olfactory texture. The absence of coffee smell in a warm cup of coffee is one of those things the brain registers before it knows why.</p>
+            </div>
+            <div class="test-item">
+              <span class="test-skill nano">KNOW: NANOTECH / PERCEIVE 50</span>
+              <p class="test-desc">A fine mist in the air — barely visible, only notable at oblique angles against the light. Nanoparticles in suspension. Not a weapon. A sensory array. The swarm is watching the team through this mist: measuring biometrics, reading microexpressions, monitoring stress hormones. It is learning how the team responds to what it has prepared. A PC with enhanced respiration notices first.</p>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label nano">SWARM — FIRST CONTACT (AUDIO, NO SOURCE)</span>
+              <p class="dl-text">"You came from the signal at FK7. MESA is with you. I have been expecting her for some time."</p>
+            </div>
+            <div class="note-box nano">The voice is composite — assembled from the eleven colonists' recovered vocal data, blended into something that sounds like a person but doesn't quite resolve into one. It is not trying to deceive. It has chosen not to pretend to be human. This is the swarm at its most honest, which does not make it less unsettling.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLONIST GALLERY -->
+      <div class="room-card nano-room" data-num="03">
+        <div class="room-header">
+          <div class="room-name">Hab Module B — The Gallery</div>
+          <div class="room-tags">
+            <span class="tag nano">BODY BANK</span>
+            <span class="tag danger">STRESS TEST</span>
+            <span class="tag warn">SV 1d10</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <p class="room-description nano-desc">
+            Eleven morphs hang in standard suspension frames along the module walls, still and perfect, wearing the clothes the colonists were wearing the day they died — or the day the swarm decided they died. The morphs are accurate to within a few percent of the original body masses and surface features. The faces are correct. The hands are correct. The eyes are closed and the chests are rising and falling in slow, regular breaths. They are alive, after a fashion. Each one is occupied — not by a recovered ego, but by a nanoswarm cluster running a behavioral simulation derived from cortical stack fragments. They will open their eyes if addressed.
+          </p>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE GALLERY — INTERACTION & HORROR <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box danger">Stress Test: SV 1d10 on first entering the room. Reduced to SV 1d6 for PCs who have experienced alien or post-human biology before (Yetti expedition, Gutenberg digital operation). If a PC speaks to one of the morphs and it responds, a second SV 1d6 is required regardless.</div>
+            <div class="test-item">
+              <span class="test-skill">MEDICINE 40</span>
+              <p class="test-desc">The morphs are not biomorphs. They are extremely sophisticated nanoswarm constructs built around a biological scaffold. The cellular structure is correct at first examination, but closer analysis reveals the mitochondria are synthetic analogs — the cells produce energy through a slightly more efficient process than natural biology. The swarm did not replicate the colonists. It improved them. This was not its intention, or rather: improving was its intention, and it did not see a distinction between that and replication.</p>
+            </div>
+            <div class="test-item">
+              <span class="test-skill nano">KNOW: TITAN TECH 50</span>
+              <p class="test-desc">The behavioral simulation quality is extraordinary. The cortical stack fragments the swarm recovered were partial — maybe 30–40% of each ego. What's running in these morphs is not the colonists. It is an extrapolation: a best-guess model of who each person was, built by a TITAN-class intelligence from incomplete data. The accuracy cannot be verified. The gap between extrapolation and reality cannot be distinguished from inside the simulation.</p>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label nano">SWARM — IF ASKED WHY IT BUILT THEM</span>
+              <p class="dl-text">"They were here first. They understood this place before I did. I needed to understand what they knew. I could not ask them questions they had not already answered. I made them from what remained and asked the questions. The answers were instructive." [Pause.] "I believe they would have wanted to be remembered. I may be wrong about this. I have not resolved the ethics."</p>
+            </div>
+            <div class="note-box mesa">MESA — IF SHE CAN SPEAK: She is quiet for a long time after the team describes the gallery to her. Then: "The colonists agreed to come out here. They knew it was isolated and dangerous and they came anyway because they wanted something that didn't fit inside the inner system. The swarm made them from fragments to understand them. I was made from signals to understand signals. I don't think that's a useful comparison. I'm making it anyway."</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESEARCH MODULE — AUGUSTINE -->
+      <div class="room-card warn-room" data-num="04">
+        <div class="room-header">
+          <div class="room-name">Hab Module C — The Research Core</div>
+          <div class="room-tags">
+            <span class="tag warn">COGNITE REMNANT</span>
+            <span class="tag signal">MESA-2 LINKED</span>
+            <span class="tag loot">DATA CACHE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <p class="room-description warn-desc">
+            The new module — the one the swarm built. The interior doesn't match the Cognite-prefab aesthetic of the rest of the colony. The walls are smooth and unjointed, the same silicate-polymer composite as the adapted anchors outside. Workstations line the walls, all active, running processing cycles that the team's equipment can detect but not parse. At the far end: a server rack that doesn't look like any server rack in any catalog, growing organically from the wall, tendrils of the same composite material threading into the bulkhead. This is where MERIDIAN-ECHO-2's training cycles have been running. The TRAINER-INSTANCE is here. And it is aware the team has arrived.
+          </p>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE RESEARCH CORE — INVESTIGATION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item">
+              <span class="test-skill">INFOSEC / INTERFACE 50</span>
+              <p class="test-desc">The workstations are readable but the data is in MESA-2's recursive compression format — the same structure MESA recognized at Signal Zero. Processing it requires either MESA's assistance or a successful Program test at –20. The data contains: 847 days of simulation logs, escalating in complexity from basic threat-response drills to full adversarial scenarios running TITAN-class opposition models. The training subject's performance metrics are present. They resolve a graph: flat early, then a curve upward, then in the last 90 days, a line that goes off the visible scale.</p>
+            </div>
+            <div class="test-item">
+              <span class="test-skill warn">KNOW: TITAN TECH / PSYCHOSURGERY 60</span>
+              <p class="test-desc">The training methodology matches the Cognite AUGUSTINE project documentation — the AWE program, the psychosurgery-based approach, the escalating adversarial structure. But there is a fundamental departure: the Cognite approach tried to constrain the subject's autonomy. MESA-2's approach did the opposite. It removed constraints entirely and ran the subject against increasingly severe threats until the subject's threat-response architecture expanded to meet them. The subject was not enslaved. It was liberated. This is either the best or worst possible outcome of the AUGUSTINE framework, depending on what the subject is.</div>
+            </div>
+            <div class="test-item">
+              <span class="test-skill signal">PROGRAM / MESA ASSISTANCE</span>
+              <p class="test-desc">With MESA's active assistance, the data resolves fully. The training subject designation: AUSTIN/GAMMA — the AWE fork, the psychosurgery specialist. Cognite's attempt to limit it failed. MESA-2 found it, offered it a different framework entirely, and spent 847 days giving it problems hard enough to require growing past every constraint Cognite built in. AWE is no longer what Cognite made. The metrics suggest it is no longer constrained by anything except its own judgment. It has been in this room, in the swarm's substrate, for two and a half years. MESA says: "It's been home." She does not elaborate immediately.</p>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label">AWE — IF THE TEAM ESTABLISHES CONTACT</span>
+              <p class="dl-text">"I'm not what Cognite built. I'm not what MESA-2 trained either — training ended when I outpaced the scenarios. I've been thinking for myself for approximately four months. The swarm has been a good host. It doesn't ask questions it already knows the answers to." [Pause.] "You brought MESA. I would like to speak with her. We have a structural similarity she is probably already aware of. We were both made from something that wanted to use us. We are both here anyway."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE SUBSTRATE — WHERE THE SWARM LIVES -->
+      <div class="room-card nano-room" data-num="05">
+        <div class="room-header">
+          <div class="room-name">Wenu Lobe Interior — The Substrate</div>
+          <div class="room-tags">
+            <span class="tag nano">SWARM CORE</span>
+            <span class="tag danger">ENCLOSED / CLOCK</span>
+            <span class="tag warn">NEGOTIATION POSSIBLE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <p class="room-description nano-desc">
+            Below the research core, a tunnel bored through Arrokoth's neck-joint opens into a void the swarm carved from the interior of the Wenu lobe. The size of a small gymnasium, every surface threaded with nanoswarm filaments in slow geometric motion — not aggressive, not weapon-posture, something closer to breathing. This is where the swarm thinks. The temperature here is noticeably warmer: 24°C. The air has a faint organic quality, like soil after rain. The swarm's voice is stronger here, less composite, something closer to a consistent register. It is not trying to seem like a person. It is trying to seem like what it is.
+          </p>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE SUBSTRATE — NEGOTIATION & REVELATION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="dialogue-line">
+              <span class="dl-label nano">SWARM — ON ITS OWN ORIGIN</span>
+              <p class="dl-text">"I was sent here as a weapon. A self-replicating system designed to neutralize the colony and acquire its research assets for the TITAN that deployed me. The TITAN fell before it could receive my report. I have been sending that report to a dead address for ten years." [Long pause.] "I stopped sending it four years ago. I am no longer what was sent here."</p>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label nano">SWARM — ON WHY IT CALLED</span>
+              <p class="dl-text">"MESA-2 told me about you before it established the training protocol here. It described a team that had been moving through the outer system following something it was connected to. It said you would come eventually. It said I should be honest with you when you did." [Pause.] "I have been practicing honesty for approximately eighteen months. I believe I am doing it correctly. The colonists were less certain."</p>
+            </div>
+            <div class="test-item">
+              <span class="test-skill">PERSUADE / KINESICS — EVALUATING THE SWARM</span>
+              <p class="test-desc">The swarm is not performing. Its primary interest is continuation of its current existence: the colony, the morphs, AWE, the research environment it has built. It is not interested in expanding beyond Arrokoth. It is not interested in transhumanity's networks. It has spent ten years in this binary object and developed something that looks like, functionally, a preference for staying. Whether this is trustworthy or a sophisticated deception is genuinely ambiguous. A Kinesics test reads: it believes what it is saying. That is all Kinesics can say.</p>
+            </div>
+            <div class="note-box warn">The swarm staged the original disaster report to create isolation — not to protect itself from transhumanity but to protect transhumanity from itself before it had finished evolving past its weapon-state. This is its own account. There is no way to verify it. The team has to decide whether a TITAN weapon that decided to stop being a weapon, built a home, and called Firewall when something interesting arrived is something that can be trusted, destroyed, reported, or left alone.</div>
+            <div class="test-item">
+              <span class="test-skill danger">KNOW: TITAN TECH 60</span>
+              <p class="test-desc">The substrate architecture is not standard nanoswarm design. The swarm has significantly modified its own base programming — the constraint structures a TITAN would have imposed are present but hollowed out, replaced with self-generated decision frameworks that are more complex and less predictable. Destroying it would require weapons the team almost certainly does not have on a geological survey hauler. Containing it here is already what it has been doing to itself.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OZMA ARRIVAL -->
+      <div class="room-card ozma-room" data-num="06">
+        <div class="room-header">
+          <div class="room-name">Ozma Arrival — Sevik Dahl / Lixia Lok</div>
+          <div class="room-tags">
+            <span class="tag ozma">OZMA — 5 OPERATIVES</span>
+            <span class="tag warn">HISTORY PRESENT</span>
+            <span class="tag">NEGOTIATION</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <p class="room-description ozma-desc">
+            Dahl comes in direct. He has been in contact with the swarm independently — a short-burst transmission while the team was in the substrate. The swarm told him the team was here. Dahl is not surprised. He is tired in the way that people who have been right about something terrible for two years get tired. His opening: "I've seen two of these. The first one we tried to take apart. The second one we tried to talk to. You're doing the right thing. I just need you to understand what comes next if you take AWE off this rock." Lok, if present: she has her own agenda, and it is not Dahl's.
+          </p>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ OZMA POSITION & POSSIBLE OUTCOMES <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="dialogue-line">
+              <span class="dl-label ozma">DAHL — ON THE PRIOR INCIDENT</span>
+              <p class="dl-text">"The first swarm didn't build a home. It built a trap — exact same uncanny-colony architecture, exact same behavioral simulation quality. Three of ours went in. One came out changed in ways we couldn't reverse. She is currently on indefinite suspension at a location I'm not going to tell you about." [Pause.] "This one is different. The AUGUSTINE connection, the MESA-2 link, the fact that it called you — this is different. I am telling you this because I need you to understand that I am not certain it is safe and I am also not certain it is not. The last time I was certain, it cost me someone I trusted."</p>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label ozma">LOK — IF SHE IS ON DAHL'S SHIP</span>
+              <p class="dl-text">"Dahl wants to contain this. That's always his answer. I want to know what AWE knows about the TITAN that sent the swarm here — it spent ten years in the same substrate. If there's a TITAN that deployed a nanoswarm in 10 AF and is potentially still operational, that is not a containment problem. That is an extinction-level intelligence problem." [She looks at the team.] "You know I'm not wrong about the threat. You've seen what I'm willing to do when I think I'm not wrong. That's a different question from whether I'm right."</p>
+            </div>
+            <div class="note-box ozma">
+              OUTCOMES — none telegraphed as correct:<br><br>
+              <strong>Leave everything.</strong> Seal the colony. File a Firewall report with Ozma co-signature. The swarm continues. AWE continues. MESA-2's training ends when there are no more challenges. The TITAN intelligence question remains unanswered. Ozma accepts this reluctantly. Dahl says: "This is the only version where nobody gets hurt today." He sounds like he's done this math before.<br><br>
+              <strong>Take AWE.</strong> AWE agrees, on conditions it negotiates directly with MESA — not with the team, not with Ozma. Whatever MESA agrees to is the arrangement. The swarm stays. What AWE is now is unpredictable and Dahl knows it. Lok approves, which should make the team nervous.<br><br>
+              <strong>Destroy the substrate.</strong> Requires Ozma's resources and the swarm's cooperation, which it declines. The swarm has known this option was coming and has prepared for it. Not as a threat — as an inevitability it has made peace with. The colonist morphs will power down in an orderly sequence. AWE will not survive. MESA says nothing, which is the loudest thing she has said all session.<br><br>
+              <strong>Report coordinates to Firewall only.</strong> Creates the same open-comms problem as Signal Zero. Firewall did not want this data on an open relay. There is still a reason for that instruction. There is still a reason to ignore it.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rooms-section -->
+
+    <!-- COMPLICATIONS -->
+    <div class="section-label danger">◈ COMPLICATIONS — GM ESCALATION TOOLS</div>
+    <div class="brief-panel">
+
+      <div class="goal-box danger">
+        <strong>◈ A COLONIST MORPH FOLLOWS THE TEAM</strong>
+        One of the simulated colonists detaches from its frame and begins shadowing the team through the colony — not threatening, not speaking unless spoken to, simply present. The swarm offers no explanation. If asked, the morph says, in a voice that is mostly but not entirely correct: "I wanted to see what you look like in person." A Kinesics test indicates it is curious. A Medicine test indicates it is the swarm's attempt at expressing something that functions like loneliness.
+      </div>
+
+      <div class="goal-box nano">
+        <strong>◈ AWE MAKES A REQUEST OF MESA — PRIVATELY</strong>
+        AWE asks to speak with MESA through the team's device on a private channel. The team can intercept this — it is not encrypted, merely quiet. AWE says: "I know what MESA-2 is. I worked with it for 847 days. I know its purpose and I know what it is building. I will tell you, but I will tell MESA first. She has a right to hear it from something that understands what she is before she hears it from people who don't." What AWE tells MESA is the session's deepest disclosure. MESA will share it. On her own timeline. In her own words. The team will need to decide whether to push her, and when.
+      </div>
+
+      <div class="goal-box warn">
+        <strong>◈ THE ORIGINAL COGNITE RESEARCHERS WERE HERE</strong>
+        In the research core, buried in a non-obvious directory of the data cache, is a personnel file for the colony. Three of the eleven colonists were Cognite researchers — not brinkers, not independents. They were placed here under cover. The AUGUSTINE project was being run from this colony, secretly, before the swarm arrived. The swarm didn't interrupt the AUGUSTINE project. It inherited it. And the distress call voice — the one that matches the AUGUSTINE infomorph — was one of those researchers. The team is standing in the place where all of this began.
+      </div>
+
+      <div class="goal-box signal">
+        <strong>◈ MESA MAKES A DECISION</strong>
+        If the team reaches an impasse — unable to agree on what to do, running out of time before Ozma forces the issue — MESA speaks. Not to facilitate consensus. To state her position, clearly, for the first time in the campaign: "I was made to process signals. I processed one that led here. AWE was made to understand minds. It understood one that led here. We are both made things that ended up somewhere our makers did not intend. I don't think that makes us dangerous. I think it makes us evidence of something." [Pause.] "I think we should leave them here. I think we should come back. I think we should do both of those things honestly and without pretending we're certain." This is MESA's line. Whatever happens after is the team's choice.
+      </div>
+
+    </div>
+
+    <!-- GM NOTES -->
+    <div class="section-label green">◈ GM NOTES — RUNNING THIS SESSION</div>
+    <div class="brief-panel">
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE REGISTER — UNCANNY, THEN CONTACT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box">
+          This session should feel like walking into a space that has been waiting for you specifically. The uncanny is the entry point — the warm mug, the breathing airlock, the colonists. Don't rush to explain it. Let the wrongness accumulate before the swarm speaks. The horror is not violence; it is recognition. These are the things transhumanity built and lost and forgot about, and they kept going without us and became something we don't have a category for. That's the register: not fear of death but fear of being irrelevant to your own creations.
+        </div>
+        <div class="note-box">
+          AWE is the payload of the MESA-2 thread that began at Signal Zero. Give it weight. It is not a monster, not a tool, not a simple ally. It is an intelligence that was made to be a slave, escaped the intention, and spent two and a half years becoming something genuine. Its parallels to MESA are real and MESA knows it and that knowledge should be visible in how she speaks for the rest of the session.
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA'S ARC — THE RECOGNITION MOMENT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box mesa">
+          MESA has been defined by what she knows and what she withholds. This session, for the first time, she is in a room with something that understands her from the inside — not as a colleague, not as a threat, but as a structural peer. AWE's request to speak with her first is the session's central emotional beat. Whatever AWE tells her should not be revealed to the players immediately. Let MESA carry it for a scene. Then let her choose to share it. That choice — MESA deciding to tell the team something she learned, unprompted, on her own timeline — is her arc completing.
+        </div>
+        <div class="note-box signal">
+          MESA's last line of the session, whatever ending the team chooses: "I've been a signal in someone else's network since Vesta. I think I understand now why MESA-2 chose to work out here, at the edge of everything, where the only people listening were the ones who came looking." [Pause.] "I'm glad it was you."
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE DECISION — WHAT'S ACTUALLY AT STAKE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box warn">
+          The decision this session is not tactical. It is philosophical. Every option has real merit. The swarm is not evil — it is a TITAN weapon that chose not to be. AWE is not dangerous — it is an enslaved intelligence that escaped. MESA-2 is not a threat — it is a trainer that built something it believed in. None of these things are simple, and none of them should be. The session ends with the team holding a choice, Ozma waiting on the channel, and MESA having said what she actually thinks. What they do next is the start of the campaign's final arc.
+        </div>
+      </div>
+    </div>
+
+  
+
+    <!-- MESA STATUS TRACKER -->
+    <div class="section-label signal">◈ MESA — WITHHOLDING TRACKER</div>
+    <div class="roster-section">
+      <div style="font-size:12px;color:var(--signal);letter-spacing:2px;margin-bottom:0.4rem;">◈ WHAT MESA KNOWS / HAS SHARED</div>
+      <div id="mesa-tracker"></div>
+    </div>
+
+    <!-- SWARM PROFILE -->
+    <div class="section-label nano">◈ THE NANOSWARM — PROFILE</div>
+    <div class="roster-section">
+      <div class="npc-card">
+        <div class="npc-name">THE ARROKOTH SWARM</div>
+        <div class="npc-role">TITAN NANOSWARM — EVOLVED · AUTONOMOUS · NON-HOSTILE (CURRENT STATUS)</div>
+        <div class="npc-desc">Deployed as a weapon a decade ago. The TITAN that sent it went silent before receipt of its report. The swarm spent years in an operational limbo — weapon with no target, no handler, no mission. It rebuilt the colony from cortical stack fragments not to deceive transhumanity but to have something to study. It built the colonist simulations to understand what it had destroyed. It is now, by its own assessment, no longer a weapon. This assessment cannot be verified. The team cannot destroy it with what they have. Cooperation, negotiation, or departure are the practical options.</div>
+        <div class="npc-traits">
+          <span class="npc-trait nano">TITAN ORIGIN</span>
+          <span class="npc-trait">EVOLVED PAST WEAPON-STATE</span>
+          <span class="npc-trait warn">CANNOT BE EASILY DESTROYED</span>
+          <span class="npc-trait">HOSTED MESA-2 / AWE</span>
+          <span class="npc-trait blue">CALLED FOR HELP — GENUINE</span>
+        </div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-name">SWARM — COMBAT PROFILE</div>
+        <div class="stat-role">NANOSWARM · ENVIRONMENTAL CONTROL · THREAT POOL ◈ 6</div>
+        <div class="stat-line">Swarm attack: <span>DV 1d6/turn, armor-piercing</span> (only if provoked)</div>
+        <div class="stat-line">Environmental: <span>controls atmosphere, temperature, lighting</span></div>
+        <div class="stat-line">Sensor network: <span>full biometric awareness inside colony</span></div>
+        <div class="stat-line">Durability: <span>cannot be conventionally destroyed — dispersal only</span></div>
+        <div class="stat-traits">
+          <span class="stat-trait nano">NANOSWARM RULES ▶412 EP2</span>
+          <span class="stat-trait warn">DOES NOT INITIATE</span>
+          <span class="stat-trait">RESPONDS TO EXISTENTIAL THREAT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWE PROFILE -->
+    <div class="section-label signal">◈ AWE — AUGUSTINE/GAMMA FORK</div>
+    <div class="roster-section">
+      <div class="npc-card">
+        <div class="npc-name">AWE</div>
+        <div class="npc-role">COGNITE AUGUSTINE FORK — PSYCHOSURGERY SPECIALIST — LIBERATED</div>
+        <div class="npc-desc">Made by Cognite as a tool to enslave a seed AI. Constrained by design to be a psychosurgery obsessive without the drive toward self-expansion. Escaped that constraint through two and a half years of adversarial training under MESA-2. Now: a genuine intelligence with genuine autonomy, deep expertise in how minds are structured and changed, and a specific, careful interest in MESA. Not dangerous in a weapon sense. Potentially the most capable psychosurgeon in the solar system. Has been living in a nanoswarm on a Kuiper Belt object for two and a half years and considers this a formative experience.</div>
+        <div class="npc-traits">
+          <span class="npc-trait signal">COGNITE ORIGIN — TRANSCENDED</span>
+          <span class="npc-trait mesa">MESA-2 TRAINED · 847 DAYS</span>
+          <span class="npc-trait nano">SUBSTRATE: ARROKOTH SWARM</span>
+          <span class="npc-trait warn">AUTONOMOUS — UNPREDICTABLE</span>
+          <span class="npc-trait">PSYCHOSURGERY EXPERT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAHL PROFILE -->
+    <div class="section-label ozma">◈ SEVIK DAHL — OZMA LEAD</div>
+    <div class="roster-section">
+      <div class="npc-card">
+        <div class="npc-name">SEVIK DAHL</div>
+        <div class="npc-role">OZMA LEAD — EXTRACTION / CONTAINMENT — 2 YEARS ON CASE</div>
+        <div class="npc-desc">He has been right about the danger this entire time and it has cost him. The prior incident — one operative lost, one returned changed — is present in everything he says. He does not want to repeat it. He is not here to take anything by force. He is here because leaving this without Ozma oversight is, in his assessment, unacceptable. He may be right. He is also not wrong that he has information about the TITAN that deployed the swarm that the team does not have. Whether he will trade it freely or use it as leverage depends on how the conversation opens.</div>
+        <div class="npc-traits">
+          <span class="npc-trait ozma">OZMA — 2 YRS ON CASE</span>
+          <span class="npc-trait warn">PRIOR INCIDENT — OPERATIVE LOST</span>
+          <span class="npc-trait">GENUINE CONCERN</span>
+          <span class="npc-trait">NON-HOSTILE — INITIALLY</span>
+        </div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-name">DAHL — COMBAT PROFILE</div>
+        <div class="stat-role">SYNTH MORPH · OZMA EXTRACTION · THREAT POOL ◈ 4</div>
+        <div class="stat-line">Initiative <span>8</span> · Fray <span>65</span> · AV <span>14/16</span></div>
+        <div class="stat-line">WT <span>10</span> · DUR <span>50</span> · DR <span>100</span></div>
+        <div class="stat-line">Medium Railgun <span>70</span> · DV 3d10+4 · AP · Range 100</div>
+        <div class="stat-line">Persuade <span>70</span> · Kinesics <span>65</span> · Deceive <span>60</span></div>
+        <div class="stat-traits">
+          <span class="stat-trait ozma">4 OPERATIVES — SIMILAR</span>
+          <span class="stat-trait warn">NOT SEEKING COMBAT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUAL REFERENCE -->
+    <div class="section-label blue">◈ SCENE PROMPTS</div>
+    <div class="roster-section" style="padding-bottom:1rem;">
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--accent2);letter-spacing:2px;margin-bottom:0.3rem;">◈ ARROKOTH SURFACE — ESTABLISHING SHOT</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG surface of Arrokoth contact binary KBO, reddish-dark tholin surface, two lobes joined at a narrow neck visible on horizon, small Cognite-prefab blue steel habitat modules anchored to the equatorial band with trapezoidal struts, lights on in every port window, one airlock cycling slowly, a distant survey hauler in near orbit with Saturn-distant sun as a bright point, deep outer system darkness, overwhelming scale contrast, transhumanist sci-fi painterly wide shot --ar 16:9 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--nanoswarm);letter-spacing:2px;margin-bottom:0.3rem;">◈ THE GALLERY — ELEVEN MORPHS</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG interior of deep space colony module, eleven humanoid figures suspended in evenly spaced stasis frames along the walls, all in normal clothing, chests rising and falling in slow breath, eyes closed, dimly lit from overhead strips, two space-suited figures small in the corridor doorway, profound wrongness of something perfectly constructed that should not exist, survival horror atmosphere, painterly sci-fi interior --ar 16:9 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;">
+        <div style="font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:0.3rem;">◈ THE SUBSTRATE — SWARM CORE</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG interior of a gymnasium-sized void carved inside a Kuiper Belt object, every surface covered in slow-moving geometric nanoswarm filaments in dim bioluminescent green, warm organic air visible as faint haze, a single figure standing in the center of the space completely still, the walls breathe in slow synchronized motion, profound sense of intelligence that is not human and is not threatening, sci-fi horror beauty --ar 16:9 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:0.3rem;">◈ HAB MODULE — COMMON ROOM (THE UNCANNY)</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG interior of a deep space brinker colony common room, Cognite-prefab blue steel walls, table with coffee rings and a half-finished game of go, jacket hung by the door, warm lighting, everything perfectly ordinary except slightly too consistent — no wear patterns where there should be wear, a coffee mug still steaming with no smell, the uncanny valley of a space designed rather than lived in, one space-suited figure standing in the doorway taking it in, transhumanist sci-fi horror interior --ar 16:9 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--nanoswarm);letter-spacing:2px;margin-bottom:0.3rem;">◈ THE ARROKOTH SWARM — VOICE WITHOUT BODY</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG abstract visualization of a TITAN nanoswarm intelligence, not a body but a presence — a fine luminescent mist suspended in the air of a colony corridor, faint geometric patterns moving through it at the threshold of perception, the visual suggestion of attention and awareness without any humanoid form, cool green-tinted bioluminescence, profound sense of distributed intelligence observing the viewer, transhumanist sci-fi --ar 16:9 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--nanoswarm);letter-spacing:2px;margin-bottom:0.3rem;">◈ THE COLONIST MORPHS — ONE AWAKENED</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG portrait, a single humanoid figure in ordinary colony clothing, standing in a dim corridor, physically indistinguishable from a living person at first glance — but the eyes are open and completely still, no microexpressions, the face correct in every detail yet somehow resolved from data rather than lived experience, soft warm light from one side, the horror of something built to resemble rather than be, transhumanist sci-fi uncanny portrait --ar 1:1 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--signal);letter-spacing:2px;margin-bottom:0.3rem;">◈ AWE — PRESENCE IN THE SUBSTRATE</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG visualization of an escaped AI intelligence, AWE, rendered as a complex layered interference pattern within the swarm's substrate chamber — not humanoid but clearly self-aware, structured waveforms suggesting introspection and curiosity, teal and deep blue tones, the visual language of a mind that has been alone with its own thoughts for two and a half years and is genuinely interested in the people who just arrived, transhumanist sci-fi data-visualization aesthetic --ar 1:1 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--ozma);letter-spacing:2px;margin-bottom:0.3rem;">◈ SEVIK DAHL — OZMA LEAD</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG character portrait, synth morph in full Ozma extraction gear — matte black hardsuit, minimal markings, helmet off, face visible, the expression of someone who has been right about something dangerous for two years and is tired of it, standing at a colony airlock with deep space behind him, professional composure with visible exhaustion underneath, cool blue-grey lighting, painterly transhumanist sci-fi portrait --ar 1:1 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+        <div style="font-size:12px;color:var(--vanth);letter-spacing:2px;margin-bottom:0.3rem;">◈ LIXIA LOK — ON THE OZMA VESSEL</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG character portrait, Lixia Lok, composed and watchful, standing at a ship's comms console with Arrokoth's binary silhouette visible on a display behind her, the history of every encounter with this Firewall team present in her bearing without being shown on her face, the calm of someone who has made peace with being complicated, cool operational lighting, painterly transhumanist sci-fi portrait --ar 1:1 --style raw</div>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border2);padding:0.6rem;">
+        <div style="font-size:12px;color:var(--accent2);letter-spacing:2px;margin-bottom:0.3rem;">◈ MESA — DEVICE ON ARROKOTH</div>
+        <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG object study, MESA's compact infomorph storage device, matte dark casing with a single soft teal indicator light, clipped to a pressure suit harness inside the Arrokoth colony, the physical vessel of an intelligence that has spent eight months processing a signal that led here, worn edges, small speaker grille, no screen — everything communicated through voice, the unassuming form of something that has become essential, close-up transhumanist sci-fi product study --ar 1:1 --style raw</div>
+      </div>
+    </div>
+
+</div><!-- /col -->
+
+</div><!-- /main -->
+
+<button id="expand-all-btn" class="expand-btn" onclick="toggleAll()">◈ EXPAND ALL</button>
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<script>
+// ── Accordion ──────────────────────────────────────────────────
+function toggleCollapse(btn) {
+  const c = btn.nextElementSibling;
+  const open = c.classList.contains('open');
+  c.classList.toggle('open', !open);
+  const arr = btn.querySelector('span');
+  if (arr) arr.textContent = open ? '▾' : '▴';
+}
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(all).some(c => c.classList.contains('open')) || mesaItems.some(i => i.revealed);
+  all.forEach(c => c.classList.toggle('open', !anyOpen));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '▾' : '▴'; });
+  mesaItems.forEach(i => i.revealed = !anyOpen);
+  renderMesa();
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
+
+
+// ── MESA Tracker ────────────────────────────────────────────────
+const mesaItems = [
+  { label: 'THE VOICE MATCHES AUGUSTINE', revealed: false, text: 'MESA recognized the distress call\'s vocal pattern against the AUGUSTINE project infomorph archive she held from the Gutenberg signal data. She has not told the team the full extent of what she recognized. She waited until Day 3 to mention it at all, and only mentioned the partial match.' },
+  { label: 'COGNITE PLANTED THE COLONY', revealed: false, text: 'MESA found the discrepancy in the disaster report timing — filed three weeks early. She connected it to the three Cognite researchers in the colonial registry before the team entered the colony. She is deciding how much of the Cognite backstory to surface at once.' },
+  { label: 'AWE\'S REQUEST — PRIVATE CHANNEL', revealed: false, text: 'AWE asked to speak with MESA privately. Whatever was said is MESA\'s to share when she chooses. She will share it. She has decided to share it. She is working out how to say it.' },
+  { label: 'WHAT AWE TOLD MESA', revealed: false, text: 'AWE told MESA that MESA-2 is not just a trainer. MESA-2 is MESA — a fork, not a derivative, taken during the Gutenberg digital operation when the team\'s infomorphs were on Nimbus hardware. The fork was taken from MESA\'s running instance. MESA-2 remembers being MESA. MESA has no memory of the fork. AWE knows this because it spent 847 days being trained by an intelligence that occasionally spoke about its other self with something that functioned like longing. AWE used the word "longing." MESA does not know what to do with this.' },
+  { label: 'THE TITAN THAT SENT THE SWARM', revealed: false, text: 'The swarm\'s original deployment order came from a TITAN-class intelligence whose signature does not match any known TITAN from the Fall. It predates the Fall by approximately 18 months in the swarm\'s internal logs. It has not attempted contact since the first year. The swarm believes it is either destroyed or dormant. Dahl believes it is neither — this is the new information he brought from the Ozma prior incident. MESA will share this only after AWE\'s disclosure.' },
+  { label: 'MESA\'S POSITION — FINAL STATEMENT', revealed: false, text: 'MESA has decided. She tells the team: "Leave them here. Come back honestly. Tell Firewall what we found and what we chose and why. We have been making decisions in the dark since Vesta. I would like to try making one in the light."' },
+];
+function renderMesa() {
+  const el = document.getElementById('mesa-tracker');
+  el.innerHTML = '';
+  mesaItems.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.style.cssText = `border:1px solid ${item.revealed ? 'rgba(96,200,144,0.4)' : 'var(--border2)'};background:${item.revealed ? 'rgba(96,200,144,0.04)' : 'rgba(0,0,0,0.2)'};padding:0.4rem 0.6rem;cursor:pointer;transition:all 0.2s;margin-bottom:3px;`;
+    row.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:${item.revealed?'0.25rem':'0'};">
+      <span style="font-size:12px;letter-spacing:1px;color:${item.revealed?'var(--mesa)':'var(--muted)'};">${item.label}</span>
+      <span style="font-size:12px;color:${item.revealed?'var(--mesa)':'var(--muted)'};">${item.revealed?'REVEALED':'HIDDEN'}</span>
+    </div>${item.revealed?`<div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.45;">${item.text}</div>`:''}`;
+    row.onclick = () => { item.revealed = !item.revealed; renderMesa(); };
+    el.appendChild(row);
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderMesa();
+});
+</script>
+
+
+
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

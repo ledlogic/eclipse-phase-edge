@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BETTER ON THE INSIDE | Eclipse Phase — Session 01 GM Reference</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- NAV PLACEHOLDER — run inject_nav.py to populate -->
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-01-better-on-the-inside.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>BETTER <span>ON THE</span> <span>INSIDE</span><span class="sub">Yetti Exoplanet</span></h1>
+  <div class="header-sub">YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE</div>
+  <div class="stats-bar">
+    <span class="stat-chip teal">LOCATION: YETTI EXOPLANET — GATE COMPLEX</span>
+    <span class="stat-chip warn">ATMOSPHERE: 99% NITROGEN · –4°C · 0.5 ATM</span>
+    <span class="stat-chip danger">THREAT: PARASITOID EGGS — HIBERNATING</span>
+    <span class="stat-chip">OPERATOR: PATHFINDER — MARTIAN GATE</span>
+    <span class="stat-chip">GRAVITY: 0.8G</span>
+    <span class="stat-chip danger">WINDOW: 2 HOURS — HARD CUTOFF</span>
+  </div>
+</header>
+
+
+<div class="main-grid">
+
+  <!-- ══ PROXY & MISSION ══════════════════════════════════════════════════ -->
+  <div class="section-label teal">◈ PROXY — JAKE CARTER</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      <strong style="color:var(--textbright)">Jake Carter</strong> (real name: Jae Park) — Mars-born Korean agridome redneck, terraforming technician, smuggler, Barsoomian courier, Firewall asset. Politically outer-system autonomist but Martian to the bone. Covers as a Tharsis League terraforming engineer. Unusual for a proxy: hands-on, field-present, shows up in person.
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.6rem; font-size:0.85rem;">
+      <div><span style="color:var(--accent2); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px;">SERVER</span><br>Sola</div>
+      <div><span style="color:var(--accent2); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px;">ROLE</span><br>Router</div>
+      <div><span style="color:var(--accent2); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px;">SPECIALTY</span><br>Martian Outback, TQZ</div>
+      <div><span style="color:var(--accent2); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px;">ALIASES</span><br>Carter Napier, Carson Park</div>
+    </div>
+    <div class="note-box teal" style="margin-top:0.8rem;">
+      Tonight Jake runs as <strong>Gatemaster</strong> — your sherpa into the world on the other side of the Yetti Gate. He has secured the contract, arranged the morph rentals, and set the 2-hour Pathfinder window. He will not be stepping through.
+    </div>
+  </div>
+
+  <!-- ══ MISSION BRIEF ════════════════════════════════════════════════════ -->
+  <div class="section-label">◈ MISSION BRIEF</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      Gatekeeper discovered the exoplanet Yetti two weeks ago. The gate opens into a tunnel system of apparent intelligent construction. Gatekeeper is sending a first-in team to explore the complex. Equipment and morph expenses are covered.
+    </div>
+    <div class="mission-goal">
+      <strong>PRIMARY OBJECTIVE</strong>
+      Explore and document the complex. Return with samples, recordings, and any recoverable artifacts before the gate closes.
+    </div>
+    <div class="mission-goal" style="background:rgba(217,79,61,0.05); border-color:rgba(217,79,61,0.2); margin-top:0.5rem;">
+      <strong style="color:var(--danger);">GM ONLY — WHAT IS ACTUALLY HERE</strong>
+      The Yetti complex is a sealed tomb created by a medieval, simian-like species. A century ago, a plague of opportunistic rodent parasitoids killed millions, ending a dynasty (and the species). The tomb commemorates the death of a great queen and quarantines the hibernating parasitoid eggs. The team does not know this.
+    </div>
+
+    <!-- ENVIRONMENT -->
+    <div class="env-grid">
+      <div class="env-stat"><div class="env-key">GRAVITY</div><div class="env-val">0.8G</div></div>
+      <div class="env-stat"><div class="env-key">PRESSURE</div><div class="env-val">0.5 ATM</div></div>
+      <div class="env-stat"><div class="env-key">ATMOSPHERE</div><div class="env-val warn">99% NITROGEN</div></div>
+      <div class="env-stat"><div class="env-key">TEMPERATURE</div><div class="env-val">–4°C</div></div>
+      <div class="env-stat"><div class="env-key">OXYGEN</div><div class="env-val danger">NONE — SEALED SUITS REQUIRED</div></div>
+      <div class="env-stat"><div class="env-key">GATE WINDOW</div><div class="env-val danger">2 HOURS — NO EXTENSIONS</div></div>
+    </div>
+
+    <div class="note-box" style="margin-top:0.8rem;">
+      Pathfinder gate scheduling is ironclad. The 2-hour window is set to the second. Once the gate closes, it closes. Miss it and that's your problem — no emergency extensions, no wiggle room. This is on-brand for a Pathfinder contract; Gatekeeper would never run it this tight.
+    </div>
+  </div>
+
+  <!-- ══ GATE CONTEXT ══════════════════════════════════════════════════════ -->
+  <div class="section-label teal">◈ PANDORA GATES — LORE</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      The first gate was discovered after the Fall on Saturn's moon Pandora. Within a year Titanian explorers activated it and traveled beyond the Solar System. Four more gates followed: near Mercury, on Mars, Oberon, and Eris. Hundreds of planets have been discovered — some habitable, some bearing alien life. The Martian Gate at Ma'adim Vallis is under Consortium/Pathfinder control.
+    </div>
+    <div class="mission-goal">
+      <strong>THE YETTI GATE</strong>
+      The Yetti Gate originates from the Martian Gate at Ma'adim Vallis, operated by Pathfinder. The simians who built this tomb revered the gate as an ancient thing — it had been here for centuries before they found it. They worshipped it. They never managed to activate it.
+    </div>
+  </div>
+
+  <!-- ══ SESSION TIMELINE ══════════════════════════════════════════════════ -->
+  <div class="section-label">◈ SESSION TIMELINE — 2 HOUR WINDOW</div>
+  <div class="timeline-panel">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">T+00:00</div>
+        <div class="timeline-desc">Gate materializes team in the Gate Room. 2-hour HUD countdown begins. Gate closes behind them — the black sphere ripples with green static and goes dark.</div>
+      </div>
+      <div class="timeline-item warn">
+        <div class="timeline-time warn">T+00:05 (if triggered)</div>
+        <div class="timeline-desc">Downward tunnel collapse — DV 3d10 AP. Fissures open to surface. Oxygen begins slowly returning to sealed areas. Parasitoid hibernation clocks start ticking.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">T+00:10–00:30</div>
+        <div class="timeline-desc">Journey Room exploration. Hidden door discovery and breach (20 min if solo SOM check).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">T+00:30–01:00</div>
+        <div class="timeline-desc">Tunnel murals. Fork decision: Crown Room (down) or Retinue Room (up). Both rooms take approximately 20–30 minutes with engagement.</div>
+      </div>
+      <div class="timeline-item warn">
+        <div class="timeline-time warn">T+~00:05 (after collapse)</div>
+        <div class="timeline-desc">Parasitoids begin waking in Crown and Retinue Rooms. ~5 minutes after room entry if collapse occurred first. Already awake if second room visited.</div>
+      </div>
+      <div class="timeline-item danger">
+        <div class="timeline-time danger">T+~01:00+ (if collapse)</div>
+        <div class="timeline-desc">Dodecapedes enter via surface fissures. Clicking heard in Exit Tunnel switchbacks. Oxygen smell draws them inward.</div>
+      </div>
+      <div class="timeline-item danger">
+        <div class="timeline-time danger">T+02:00 — HARD</div>
+        <div class="timeline-desc">Gate reopens for exactly 1 minute. This is the only exit. The Exit Tunnel stone cannot be cleared in time. The team must return through the tomb.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ROOMS ═════════════════════════════════════════════════════════════ -->
+  <div class="section-label teal">◈ LOCATIONS — ROOM BY ROOM</div>
+  <div class="rooms-section">
+
+    <!-- ROOM 01: GATE ROOM -->
+    <div class="room-card" data-num="01">
+      <div class="room-header">
+        <div class="room-name">Gate Room</div>
+        <div class="room-tags">
+          <span class="tag explore">ENTRY POINT</span>
+          <span class="tag loot">MURALS</span>
+          <span class="tag bio">MUMMIFIED GUARDS</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          An unlit hexagonal chamber of dressed black basalt fitted without mortar — seams fine as paper cuts. The Pandora gate hums behind the team, its black sphere rippling with green static. Wall murals depict six-limbed orangutan-like figures with digitigrade legs in metal armor, worshipping the gate itself. Two mummified guards stand at attention, armor and iron glaives intact. Nitrogen preservation is near-perfect. The air reads 99% nitrogen.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GM ATMOSPHERE <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="dialogue-line">
+            <span class="dl-label env">VISUAL</span>
+            <span class="dl-text">The gate materializes you inside absolute darkness. Suit lights cut through nitrogen fog to reveal a circular chamber of dressed stone — black basalt fitted without mortar, seams fine as paper cuts. The Pandora gate hums behind you, its black sphere rippling with green static. On the walls: murals of six-limbed ape-like figures worshipping the gate itself, carved in a style of obsessive, reverent detail. Two mummified guards stand at attention in metal-and-leather armor, their poses unnervingly casual.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">The air reads 99% nitrogen. If your mask slips, you have maybe thirty seconds. A 2-hour countdown appears on your HUD. The gate spits green static and goes dark behind you.</span>
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SOUNDS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">Low, subsonic hum from the gate — felt in the chest more than heard</div></div>
+          <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">Subtle creak of stone settling — centuries of pressure</div></div>
+          <div class="sound-item warn"><div class="sound-icon warn"></div><div class="sound-text">The faint whisper-static of the mesh trying to find a signal and failing</div></div>
+          <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">The click of suit O₂ indicators confirming seal integrity</div></div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="test-item"><div class="test-skill">KNOW: ASTROBIOLOGY</div><div class="test-desc">Species that made the paintings could likely see in ultraviolet wavelengths.</div></div>
+          <div class="test-item"><div class="test-skill">KNOW: XENO-ARCH</div><div class="test-desc">Murals suggest pre-industrial reverence for the gate — they found it, could not activate it, and built a religion around it.</div></div>
+          <div class="test-item"><div class="test-skill">PERCEIVE</div><div class="test-desc">Two exits: one passage slopes upward (immediately blocked), one curves downward toward the Journey Room.</div></div>
+        </div>
+
+        <div class="note-box teal">
+          Two tunnels exit the chamber. The upward passage is blocked and impassable. The downward passage curves 100m to the Journey Room — halfway down is an unstable section.
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM 02: GATE TUNNELS -->
+    <div class="room-card warn-room" data-num="02">
+      <div class="room-header">
+        <div class="room-name">Gate Tunnels — Unstable Section</div>
+        <div class="room-tags">
+          <span class="tag trap">STRUCTURAL TRAP</span>
+          <span class="tag danger">DV 3D10 AP</span>
+          <span class="tag threat">COLLAPSE TRIGGER</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description warn-desc">
+          Halfway down the 100m passage to the Journey Room, the ceiling and walls are cracked and bowed under centuries of pressure. Passing through on foot triggers a partial collapse. The last person through triggers a cave-in regardless of Athletics result.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ MECHANICS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="test-item"><div class="test-skill">PERCEIVE</div><div class="test-desc">Modified for visibility — notes cracked and bowed ceiling and walls. Allows preparation before attempting.</div></div>
+          <div class="test-item"><div class="test-skill warn">ATHLETICS</div><div class="test-desc">Safe passage for all but the last person. Last person triggers partial collapse no matter what.</div></div>
+          <div class="test-item"><div class="test-skill danger">FRAY</div><div class="test-desc">Reduces DV 3d10 AP by half on collapse trigger. Everyone within 5m is at risk.</div></div>
+          <div class="test-item"><div class="test-skill">KNOW: ENGINEERING<br>or GEOLOGY</div><div class="test-desc">Passing this way again may trigger a complete collapse.</div></div>
+        </div>
+
+        <div class="note-box danger">
+          <strong>GM ONLY:</strong> This cave-in opens unseen fissures to the surface throughout the complex — returning a small amount of oxygen to the tomb's atmosphere and waking the parasitoids from hibernation. Biomorphs without enhanced respiration will still asphyxiate. These fissures also allow dodecapedes to enter the tunnel after the party passes, leading to a hostile encounter at the Exit Tunnel.
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM 03: JOURNEY ROOM -->
+    <div class="room-card" data-num="03">
+      <div class="room-header">
+        <div class="room-name">Journey Room</div>
+        <div class="room-tags">
+          <span class="tag explore">AFTERLIFE SUPPLIES</span>
+          <span class="tag loot">FOOD / WEAPONS</span>
+          <span class="tag puzzle">HIDDEN DOOR</span>
+          <span class="tag bio">MUMMIFIED GUARDS</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          An oval room of cracked, polished stone packed with rows of spherical barrels covered in red waxy material. Inside: preserved plant-protein foodstuffs — edible to transhumans. Two mummified six-limbed simians in metal and leather armor are attached to the walls by aluminum bands. Their muscle contractions indicate nerve agent death. No other trauma. Iron glaives at their feet. No visible exits — the hidden door is opposite the entrance.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GM ATMOSPHERE <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="dialogue-line">
+            <span class="dl-label env">VISUAL</span>
+            <span class="dl-text">An oval chamber of cracked polished stone, every surface decorated. Rows of spherical barrels line the walls, sealed with a red waxy resin that has held for a century. On either side of the entrance, two mummified guards are pinned to the walls by aluminum banding, their muscle contractions frozen mid-spasm.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label sfx">SFX</span>
+            <span class="dl-text">If a barrel is opened: a wet, pressurized hiss, then a wave of fermented protein stench — a deep, fungal, aged-cheese funk hitting the back of your throat even through rebreather seals.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">Medicine test on the guards: nerve agent. No trauma, no wounds — just every muscle in their bodies clenched at once. Someone didn't want these two to abandon their post.</span>
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="test-item"><div class="test-skill">KNOW: ASTROBIOLOGY</div><div class="test-desc">Barrels contain plant-based protein foodstuffs. Edible to transhumans.</div></div>
+          <div class="test-item"><div class="test-skill">MEDICINE</div><div class="test-desc">Guards died from nerve agent — intense muscle contractions, no wounds or trauma.</div></div>
+          <div class="test-item"><div class="test-skill">KNOW: XENO-ARCH</div><div class="test-desc">Technology is pre-industrial age.</div></div>
+          <div class="test-item"><div class="test-skill danger">PERCEIVE –30<br>or KNOW: ENG<br>or RADAR</div><div class="test-desc">Finds hidden doorway opposite entrance. Must be manually broken open.</div></div>
+          <div class="test-item"><div class="test-skill">SOM CHECK</div><div class="test-desc">Break open hidden door. Timeframe: 20 minutes, –5 per superior success.</div></div>
+        </div>
+
+        <div class="note-box">
+          <strong>Loot:</strong> Iron glaives — DV 2d10, Reach, Two-Handed. Preserved foodstuffs (curious xeno-archaeology value). Red waxy barrel resin (chemical analysis opportunity).
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM 04: JOURNEY ROOM TUNNEL -->
+    <div class="room-card" data-num="04">
+      <div class="room-header">
+        <div class="room-name">Journey Room Tunnel — Mural Passage</div>
+        <div class="room-tags">
+          <span class="tag explore">MURALS</span>
+          <span class="tag puzzle">FORK — CROWN OR RETINUE</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          A narrow upward-sloping tunnel beyond the Journey Room's hidden door. Every centimeter of wall space is covered in pigmented murals: a grand procession of six-limbed simians in layered robes carrying astrolabes, ceremonial weapons, and sealed pots — all marching toward a central image of a royal orgy at the center of a stylized planet cross-section. After 50 meters the tunnel forks: up to the Retinue Room, down to the Crown Room.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GM ATMOSPHERE <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">Every centimeter of this tunnel has been painted. A procession — hundreds of figures, all six-limbed, robed in layered geometrics. They carry star charts, sealed vessels, weapons. They are all moving toward something. At the fork — which way? You can't read the script. But the imagery makes the Crown Room quite clear.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label sfx">SFX</span>
+            <span class="dl-text">The hidden door grinds stone against stone — a sound like tectonic patience — as it swings open.</span>
+          </div>
+        </div>
+
+        <div class="note-box teal">
+          <strong>Fork Decision:</strong> Up = Retinue Room (servants' quarters). Down = Crown Room (queen's chamber, the central mystery). The mural imagery clearly signposts the Crown Room for anyone reading the visual language carefully — but does not translate the script.
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM 05: CROWN ROOM -->
+    <div class="room-card danger-room" data-num="05">
+      <div class="room-header">
+        <div class="room-name">Crown Room</div>
+        <div class="room-tags">
+          <span class="tag threat">PARASITOIDS — WAKING</span>
+          <span class="tag danger">TRAP — ACID GEL POT</span>
+          <span class="tag loot">ARTIFACTS / EGGS</span>
+          <span class="tag bio">VIABLE EGGS IN 5 CORPSES</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description danger-desc">
+          Twenty-four carved ivory blocks, each bearing a decayed body in repose — different ages, dressed in scarves and beadwork gems. Toys, astrolabes, daggers, dye pots, fertility totems, vellum scrolls surround them. In the center: one large sealed pot — honeysuckle-sweet even through rebreathers. Wall murals depict lurid sexual acts and feasting. Four parasitoids sleep hidden among the pots. The entrance stone requires a SOM –30 to move. A single trapped exit leads to the Exit Tunnel.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GM ATMOSPHERE <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="dialogue-line">
+            <span class="dl-label env">VISUAL</span>
+            <span class="dl-text">Twenty-four ivory blocks arranged in a ring. On each one, a body — different ages, different forms, dressed in beadwork and straps of incomprehensible beauty. In the center: a sealed pot, 1.1 meters tall. The walls are murals of feasting and sex and celebration — a death room that looks like a party.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label env">SMELL</span>
+            <span class="dl-text">A faint sweet smell that penetrates even sealed masks at close range — honeysuckle. The sealed pot's lure compound.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">Medicine test on the bodies: five show blunt-force trauma. Four show post-mortem organ extraction. Eleven are children. Then your scanner flags something inside those bludgeoned corpses — small, round, organic. Eggs. Still viable.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label alert">TRAP</span>
+            <span class="dl-text">If the pot is touched: a low, pressurized WHUMP — then everything within 5m is coated in burning acid gel. DV as per trap stats. The sweetness now tastes like copper through sealed lips.</span>
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="test-item"><div class="test-skill warn">SOM –30</div><div class="test-desc">Move the entrance stone blocking the Crown Room doorway.</div></div>
+          <div class="test-item"><div class="test-skill">MEDICINE</div><div class="test-desc">5 bodies: blunt-force trauma. 4 bodies: post-mortem organ extraction. 11 bodies: children with signs of disease (no longer contagious).</div></div>
+          <div class="test-item"><div class="test-skill danger">MEDICINE CRIT</div><div class="test-desc">Discovers parasitoid eggs inside the five bludgeoned corpses. Still viable.</div></div>
+          <div class="test-item"><div class="test-skill warn">SOM –30</div><div class="test-desc">Move the trapped exit door to the Exit Tunnel — triggers stone slab, DV 3d10; FRAY halves.</div></div>
+          <div class="test-item"><div class="test-skill">PERCEIVE</div><div class="test-desc">Notes four parasitoids sleeping among the pots around the walls. ~5 min before they wake if collapse occurred.</div></div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ PARASITOIDS — STAGE 2: FRIENDS <span>▾</span></button>
+        <div class="collapse-content">
+          <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">
+            Four parasitoids wake approximately 5 minutes after the party enters. If the Retinue Room was visited first, they are already awake and hiding. Stage 2 behavior: curious, non-hostile unless threatened. They investigate suit seams, antenna mounts, boot material with scientific intensity.
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">Six-legged, three-tailed, size of a large rabbit. Wide dark eyes that reflect suit lights like amber fire. The one on your shoulder is grooming your antenna mount. Another is investigating your boot seam with intense scientific curiosity. They are, objectively, extremely cute. Gatekeeper would pay a lot of credits for a live specimen. Just saying.</span>
+          </div>
+          <div class="note-box danger" style="margin-top:0.5rem;">
+            <strong>Sting Moment:</strong> A brief pinch, barely registering on pain sensors. One slips back into the fur pile. Suit reads: minor breach, sealed. You almost didn't notice.
+          </div>
+        </div>
+
+        <div class="note-box danger">
+          <strong>Loot / Evidence:</strong> Intact burial goods — daggers, astrolabes, pots of still-brilliant pigment, toys, vellum scrolls. Parasitoid eggs (5, viable, in bludgeoned corpses). Live parasitoid specimens (high value). The sealed pot (acid gel trap, honeysuckle lure compound).
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM 06: RETINUE ROOM -->
+    <div class="room-card" data-num="06">
+      <div class="room-header">
+        <div class="room-name">Retinue Room</div>
+        <div class="room-tags">
+          <span class="tag trap">SMOKE TRAP</span>
+          <span class="tag threat">PARASITOIDS ×5 — WAKING</span>
+          <span class="tag bio">THROAT-CUT SERVANTS</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description">
+          Rows of naked servant corpses with minimal jewelry — combs, stone icons, scraps of cloth. Most had their throats cut. Three rotted parasitoids lie among them, long dead. Moving the entrance stone sprays the doorway with cadmium-colored exothermic smoke (DV 2d10, Fray halves, within 3m). Five live parasitoids wake as the PCs explore. Another sealed doorway leads to the Exit Tunnel.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GM ATMOSPHERE <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="dialogue-line">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">Rows of bodies. Naked, arranged with care — a comb here, an icon there. Most have their throats opened. Three small shapes, rotted to husks, lie curled against the dead. Then one of those shapes isn't a husk. It blinks at you. Then a second. Then you realize the room is full of amber eyes.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label sfx">TRAP</span>
+            <span class="dl-text">A metallic SNAP and hiss of exothermic smoke billowing — cadmium-colored, burning — as the door stone moves.</span>
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SKILL TESTS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="test-item"><div class="test-skill warn">SOM +20</div><div class="test-desc">Easy check to move the entrance stone — but moving it triggers the smoke trap.</div></div>
+          <div class="test-item"><div class="test-skill warn">FRAY</div><div class="test-desc">Reduces DV 2d10 exothermic smoke trap by half. Everyone within 3m at risk.</div></div>
+          <div class="test-item"><div class="test-skill">PERCEIVE</div><div class="test-desc">Most individuals killed by throat-cutting.</div></div>
+          <div class="test-item"><div class="test-skill danger">MEDICINE –20</div><div class="test-desc">A third of the corpses had organs removed post-mortem.</div></div>
+        </div>
+
+        <div class="note-box">
+          Parasitoids here (Stage 2: Friends) behave identically to Crown Room specimens. If this was visited second, they are already awake and moving freely through the room. Tiny claws on suit material. Amber eyes catching every light.
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOM 07: EXIT TUNNEL -->
+    <div class="room-card danger-room" data-num="07">
+      <div class="room-header">
+        <div class="room-name">Exit Tunnel</div>
+        <div class="room-tags">
+          <span class="tag threat">DODECAPEDES</span>
+          <span class="tag danger">SEALED EXIT</span>
+          <span class="tag trap">CROWN DOOR TRAP</span>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="room-description danger-desc">
+          Both Crown and Retinue Rooms have sealed exits into tunnels that join and slope toward the surface. The exit doors require SOM –30 to move (AV 6/10, DR 200). The Crown Room door is trapped — triggers a stone slab, DV 3d10, Fray halves. The tunnel goes 60 meters with multiple switchbacks, undecorated and rough. It ends at a large stone cemented in place — too large to remove in the time allotted. This is not the way out.
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ GM ATMOSPHERE <span>▾</span></button>
+        <div class="collapse-content open">
+          <div class="dialogue-line">
+            <span class="dl-label gm">GM</span>
+            <span class="dl-text">The exit tunnel is rough and ugly — whoever built this tomb didn't waste artistry here. Your lights show 60 meters of switchbacks going up. The stone at the top is mortared shut. You're not going out this way.</span>
+          </div>
+          <div class="dialogue-line" style="margin-top:0.4rem;">
+            <span class="dl-label alert">THREAT</span>
+            <span class="dl-text">Then you hear it. Clicking. Fast clicking, from multiple sources, getting closer. The collapse opened fissures to the surface. The fissures let oxygen in. And oxygen means something was waiting out there — and now it can smell you.</span>
+          </div>
+        </div>
+
+        <button class="collapse-btn" onclick="toggleCollapse(this)">▾ SOUNDS — DODECAPEDE APPROACH <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="sound-item danger"><div class="sound-icon danger"></div><div class="sound-text">Skittering — fast, many-legged, wrong — echoing from the switchbacks above</div></div>
+          <div class="sound-item danger"><div class="sound-icon danger"></div><div class="sound-text">Click-clack of chitin on stone, moving in coordinated bursts</div></div>
+          <div class="sound-item danger"><div class="sound-icon danger"></div><div class="sound-text">Sharp, sour chemical smell — dodecapede acid glands venting as they prepare to attack</div></div>
+        </div>
+
+        <div class="note-box danger">
+          <strong>The Only Exit Is the Gate.</strong> The team must return through the tomb — back through the Crown/Retinue Rooms, through the Journey Room, and up the downward passage (risk of complete collapse) to the Gate Room. The countdown is running.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /rooms-section -->
+
+  <!-- ══ COMPLICATIONS ══════════════════════════════════════════════════════ -->
+  <div class="section-label danger">◈ COMPLICATIONS</div>
+  <div class="side-panel">
+    <div class="thread-item active">
+      <div class="thread-num">C1</div>
+      <div class="thread-text"><strong>Dodecapede Incursion.</strong> If the downward tunnel collapsed, surface fissures allowed a number of dodecapedes to enter the Exit Tunnel. They are drawn by the oxygen now leaking through. They will encounter the party if the Exit Tunnel is investigated or used as an escape route.</div>
+    </div>
+    <div class="thread-item danger">
+      <div class="thread-num">C2</div>
+      <div class="thread-text"><strong>Parasitoid Sting.</strong> One or more PCs may have received a minor suit breach from an apparently-friendly parasitoid. The breach was sealed. Whether this constitutes infection, inoculation, or nothing is a campaign-level decision for the GM. Leave it ambiguous.</div>
+    </div>
+    <div class="thread-item active">
+      <div class="thread-num">C3</div>
+      <div class="thread-text"><strong>Tunnel Collapse Return.</strong> Passing back through the unstable section — now further destabilized by the first collapse — risks a complete cave-in that may seal the entire downward passage permanently.</div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-num">C4</div>
+      <div class="thread-text"><strong>Live Specimen Temptation.</strong> The parasitoids are Stage 2: Friends. They are extremely cute. Gatekeeper would pay well for a live specimen. The gate contract almost certainly prohibits unauthorized biological material. And the eggs in the bludgeoned corpses are viable.</div>
+    </div>
+  </div>
+
+  <!-- ══ THREAD HOOKS ════════════════════════════════════════════════════════ -->
+  <div class="section-label teal">◈ FORWARD THREADS</div>
+  <div class="side-panel">
+    <div class="thread-item active">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong style="color:var(--accent2);">Parasitoid Biology.</strong> Whatever the team recovered — eggs, live specimens, or just secondhand exposure — the biology of the Yetti parasitoid is now in Firewall's data stream. This is a long thread. It will resurface.</div>
+    </div>
+    <div class="thread-item active">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong style="color:var(--accent2);">Pathfinder's Interest.</strong> Pathfinder gets first claim on anything brought back through the Martian Gate per contract. Whether the team honored that contract is a question for Session 02 onwards. What they declared, what they hid, and what Pathfinder suspects are three different things.</div>
+    </div>
+    <div class="thread-item">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong style="color:var(--accent);">The Gate's Age.</strong> The simians found the gate centuries ago and could not activate it. That means the gate existed — and was non-functional — long before their civilization. Something placed it there and turned it off. Something turned it back on.</div>
+    </div>
+    <div class="thread-item danger">
+      <div class="thread-num">→</div>
+      <div class="thread-text"><strong style="color:var(--danger);">The Queen's Tomb.</strong> The Crown Room was a deliberate quarantine — the eggs were sealed inside the bodies, inside the sealed tomb, inside an alien planet. Someone went to extraordinary lengths to contain the parasitoids. The plague that ended the dynasty was not an accident.</div>
+    </div>
+  </div>
+
+  <!-- ══ GM NOTES ═══════════════════════════════════════════════════════════ -->
+  <div class="section-label">◈ GM NOTES — SESSION STRUCTURE</div>
+  <div class="brief-panel">
+    <div class="brief-text">
+      The session's structural pressure is the countdown. Everything the players experience, they experience under a 2-hour clock they cannot negotiate with. The tomb was designed to keep things <em>in</em>, not out — that inversion is the horror. The parasitoids being friendly is the knife: they're cute, they're valuable, and at least one of them has already gotten inside a suit seam.
+    </div>
+    <div class="mission-goal">
+      <strong>PACING NOTE</strong>
+      The collapse is a choice the players make (pass through the unstable section) with consequences they cannot fully anticipate. Do not rush it. Let the Perceive test happen. Let someone read the ceiling. Then let them decide. The last-person-triggers-collapse rule is the session's best moment — whoever goes last knows what they're signing up for.
+    </div>
+    <div class="note-box teal" style="margin-top:0.8rem;">
+      The parasitoids should feel like a reward before they feel like a threat. Let the players get attached. Let them name one. The sting moment should almost go unnoticed. That's the whole thing.
+    </div>
+  </div>
+
+</div><!-- /main-grid -->
+
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<script>
+function toggleCollapse(btn) {
+  const c = btn.nextElementSibling;
+  const open = c.classList.contains('open');
+  c.classList.toggle('open', !open);
+  const arr = btn.querySelector('span');
+  if (arr) arr.textContent = open ? '▾' : '▴';
+}
+</script>
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

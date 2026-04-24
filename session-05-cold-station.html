@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COLD STATION | Eclipse Phase — Session 05 GM Reference</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-05-cold-station.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>COLD STATION <span class="loc">IAPETUS</span></h1>
+  <div class="header-sub">POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA</div>
+  <div class="stats-bar">
+    <span class="stat-chip">LOCATION: IAPETUS, SATURNIAN SYSTEM</span>
+    <span class="stat-chip warn">THREAT: OZMA MOLE</span>
+    <span class="stat-chip danger">STATUS: QUARANTINED</span>
+    <span class="stat-chip green">REGISTER: SOCIAL / INVESTIGATION</span>
+    <span class="stat-chip ozma">LIXIA LOK — ACTIVE ASSET</span>
+    <span class="stat-chip">SESSION 05 OF ARC</span>
+  </div>
+</header>
+
+
+<div class="main-grid">
+
+  <!-- ══════════════════════ LEFT COLUMN ══════════════════════ -->
+  <div class="left-col">
+
+    <!-- MISSION BRIEF -->
+    <div class="section-label">◈ SITUATION BRIEF</div>
+    <div class="brief-panel">
+      <div class="brief-text">
+        The team egocasts out of Gutenberg Station directly into quarantine. They instantiate in unfamiliar morphs on a decommissioned ice-mining installation on Iapetus — now a Firewall black site running under a dead corporate registration. The debrief is routine protocol after TITAN exposure. Except it isn't. Someone has already worked the room before the team arrived. The inquisitor is compromised. The process is a trap dressed as procedure.
+      </div>
+      <div class="mission-goal">
+        <strong>◈ OFFICIAL OBJECTIVE (WHAT FIREWALL SAYS)</strong>
+        Standard post-exposure psychological and integrity assessment following a TITAN fetch encounter. Duration: indefinite. The team is considered potentially compromised until cleared. MESA's storage device is flagged as a possible contamination vector and is held separately under secure analysis.
+      </div>
+      <div class="mission-goal warn" style="margin-top:0.5rem;">
+        <strong>◈ REAL SITUATION (WHAT IS ACTUALLY HAPPENING)</strong>
+        Project Ozma fed Firewall fabricated evidence implicating the team. Simultaneous rep deposits in all PC accounts suggest a coordinated handler. MESA's device is flagged not because it's dangerous, but because Ozma wants it. The debrief is designed to run long enough for an Ozma retrieval team to identify and acquire the Gutenberg signal data — and if the team figures it out, they become a liability.
+      </div>
+      <div class="mission-goal ozma" style="margin-top:0.5rem;">
+        <strong>◈ PC WIN CONDITION</strong>
+        Expose the planted evidence, identify Lok as the Ozma mole, and force Firewall to acknowledge the debrief is compromised — before Ozma extracts what it came for and the team is quietly disappeared into indefinite quarantine.
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section-label">◈ SITUATION TIMELINE</div>
+    <div class="timeline-panel">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">T-UNKNOWN · OZMA FLAGS GUTENBERG</div>
+          <div class="timeline-desc">Project Ozma identifies the Gutenberg tight-beam signal origin as a matter of extreme sensitivity. The PCs' intervention — and recovery of MESA — puts them directly in Ozma's interest. A decision is made to neutralize the team's credibility before they can report.</div>
+        </div>
+        <div class="timeline-item ozma">
+          <div class="timeline-time ozma">T-72 HRS · REP DEPOSITS PLANTED</div>
+          <div class="timeline-desc">Simultaneous anonymous rep deposits arrive in all PC accounts. Identical amounts. Untraceable source — or rather, traceable to a dead-end shell that Ozma salted specifically to look like a handler's payment. Firewall's automated monitoring flags the pattern within hours.</div>
+        </div>
+        <div class="timeline-item warn">
+          <div class="timeline-time warn">T-48 HRS · FIREWALL OPENS INVESTIGATION</div>
+          <div class="timeline-desc">Firewall's internal review board initiates a formal inquiry. MESA's storage device is flagged as a possible contamination vector — the rep deposits make the team's judgment suspect, and bringing back an unknown infomorph from a TITAN-compromised station looks worse in that context.</div>
+        </div>
+        <div class="timeline-item ozma">
+          <div class="timeline-time ozma">T-36 HRS · LOK ARRIVES ON STATION</div>
+          <div class="timeline-desc">Lixia Lok arrives at the Iapetus facility ahead of the team under a Firewall-adjacent cover identity: a Firewall router with oversight credentials. She has had 36 hours to build relationships with station staff, identify sympathetic contacts, and establish her position before the subjects arrive.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">T-NOW · TEAM INSTANTIATES</div>
+          <div class="timeline-desc">PCs egocast in from Gutenberg (or a relay point). They instantiate in standard quarantine morphs — plain, functional, identical. Personal gear is held in secure storage. MESA's device is already separated. The inquisitor — Voss — is waiting. Lok is somewhere on station, watching.</div>
+        </div>
+        <div class="timeline-item danger">
+          <div class="timeline-time danger">T+UNKNOWN · OZMA EXTRACTION WINDOW</div>
+          <div class="timeline-desc">Lok has a finite window before Firewall's own review process catches the fabrication — she estimates 48–72 hours. If she can access MESA's device and copy the Gutenberg signal data before then, Ozma wins regardless of what happens to her cover afterward.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATION OVERVIEW -->
+    <div class="section-label">◈ COLD STATION — IAPETUS FACILITY</div>
+    <div class="brief-panel">
+      <div style="font-size:0.88rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">
+        <strong style="color:var(--text);">Official designation:</strong> Cassini Extraction Node 7 — registered to a Solaris subsidiary that dissolved fourteen years ago. The facility was an ice-mining operation: three pressurized tunnels bored into Iapetus's regolith, a processing chamber, a hab block, and a comms mast. Firewall acquired it quietly and uses it for exactly this — holding people they're not sure about, far from anywhere that matters.
+      </div>
+      <div style="font-size:0.88rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">
+        Outside: Iapetus's stark two-tone surface — the dark Cassini Regio on one side, bright ice highlands on the other. The facility sits in the transition zone. Saturn hangs in the sky, vast and ringed, perpetually present. The view through any external port is genuinely beautiful and deeply isolating in equal measure.
+      </div>
+
+      <!-- Station map SVG -->
+      <div style="background:#030508; border:1px solid var(--border); padding:0.75rem; margin-bottom:0.6rem;">
+        <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+          <rect width="640" height="220" fill="#030508"/>
+          <!-- Grid -->
+          <line x1="0" y1="110" x2="640" y2="110" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+
+          <!-- Tunnel A — INTAKE/QUARANTINE -->
+          <rect x="20" y="70" width="110" height="80" rx="2" fill="rgba(126,184,212,0.06)" stroke="rgba(126,184,212,0.35)" stroke-width="1"/>
+          <text x="75" y="97" font-family="Share Tech Mono" font-size="7" fill="#7eb8d4" text-anchor="middle" letter-spacing="1">TUNNEL A</text>
+          <text x="75" y="109" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">INTAKE /</text>
+          <text x="75" y="120" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">QUARANTINE</text>
+          <text x="75" y="133" font-family="Share Tech Mono" font-size="7" fill="rgba(126,184,212,0.7)" text-anchor="middle">PC CELLS</text>
+
+          <!-- Connector A→Central -->
+          <line x1="130" y1="110" x2="165" y2="110" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+          <!-- Central Hub — PROCESSING CHAMBER -->
+          <rect x="165" y="55" width="120" height="110" rx="2" fill="rgba(160,196,160,0.05)" stroke="rgba(160,196,160,0.3)" stroke-width="1"/>
+          <text x="225" y="85" font-family="Share Tech Mono" font-size="7" fill="#a0c4a0" text-anchor="middle" letter-spacing="1">CENTRAL HUB</text>
+          <text x="225" y="97" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Debrief room</text>
+          <text x="225" y="109" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Common area</text>
+          <text x="225" y="121" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Station ops</text>
+          <text x="225" y="133" font-family="Share Tech Mono" font-size="7" fill="rgba(160,196,160,0.7)" text-anchor="middle">★ MAIN ACTION</text>
+
+          <!-- Connector Central→Tunnel B -->
+          <line x1="285" y1="110" x2="320" y2="110" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+          <!-- Tunnel B — SECURE STORAGE -->
+          <rect x="320" y="70" width="110" height="80" rx="2" fill="rgba(212,184,112,0.05)" stroke="rgba(212,184,112,0.3)" stroke-width="1"/>
+          <text x="375" y="97" font-family="Share Tech Mono" font-size="7" fill="#d4b870" text-anchor="middle" letter-spacing="1">TUNNEL B</text>
+          <text x="375" y="109" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">SECURE</text>
+          <text x="375" y="120" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">STORAGE</text>
+          <text x="375" y="133" font-family="Share Tech Mono" font-size="7" fill="rgba(212,184,112,0.8)" text-anchor="middle">MESA DEVICE</text>
+
+          <!-- Connector Central→Tunnel C -->
+          <line x1="430" y1="110" x2="465" y2="110" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+          <!-- Tunnel C — COMMS / LOK -->
+          <rect x="465" y="70" width="110" height="80" rx="2" fill="rgba(144,64,192,0.06)" stroke="rgba(144,64,192,0.35)" stroke-width="1"/>
+          <text x="520" y="97" font-family="Share Tech Mono" font-size="7" fill="#9040c0" text-anchor="middle" letter-spacing="1">TUNNEL C</text>
+          <text x="520" y="109" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">COMMS /</text>
+          <text x="520" y="120" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">LOK BERTH</text>
+          <text x="520" y="133" font-family="Share Tech Mono" font-size="7" fill="rgba(144,64,192,0.8)" text-anchor="middle">★ OZMA OPS</text>
+
+          <!-- Surface access -->
+          <line x1="225" y1="55" x2="225" y2="25" stroke="rgba(126,184,212,0.25)" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="225" y="18" font-family="Share Tech Mono" font-size="7" fill="rgba(126,184,212,0.5)" text-anchor="middle">SURFACE ACCESS / COMMS MAST</text>
+
+          <!-- Legend -->
+          <rect x="20" y="170" width="7" height="7" fill="rgba(126,184,212,0.4)" stroke="rgba(126,184,212,0.6)"/>
+          <text x="32" y="177" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.55)">PC AREA</text>
+          <rect x="90" y="170" width="7" height="7" fill="rgba(212,184,112,0.4)" stroke="rgba(212,184,112,0.6)"/>
+          <text x="102" y="177" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.55)">MESA / OBJECTIVE</text>
+          <rect x="220" y="170" width="7" height="7" fill="rgba(144,64,192,0.4)" stroke="rgba(144,64,192,0.6)"/>
+          <text x="232" y="177" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.55)">OZMA ASSET</text>
+        </svg>
+      </div>
+
+      <div class="note-box ice">
+        <strong style="color:var(--ice); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px;">STATION ATMOSPHERE</strong><br>
+        Everything here is designed to feel temporary — folding furniture, modular partitions, lighting that's adequate but not comfortable. The ice walls sweat faintly where the heating elements are uneven. Saturn is always visible from the common area's single port window. The station has four permanent staff: two ops techs, a medic, and the inquisitor Voss. Plus Lok, who has been here 36 hours and already knows where everything is.
+      </div>
+    </div>
+
+    <!-- SCENE CARDS -->
+    <div class="section-label">◈ SCENES &amp; ENCOUNTERS</div>
+    <div class="rooms-section">
+
+      <!-- SCENE 01 — INTAKE -->
+      <div class="room-card" data-num="01 — INTAKE">
+        <div class="room-header">
+          <div class="room-name">Quarantine Intake — Tunnel A</div>
+          <div class="room-tags">
+            <span class="tag explore">START</span>
+            <span class="tag warn">DISORIENTATION</span>
+            <span class="tag social">FIRST CONTACT</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            Instantiation is always disorienting. In an unfamiliar morph it's worse. The PCs come online in Tunnel A — four narrow individual cells separated by frosted polycarbonate partitions, standard restraint-capable berths, a shared hygiene alcove. A medic runs a baseline scan before anyone is permitted to move freely. The morphs they're in are bland generic biomorphs — plain, functional, stripped of personal affect. It feels like borrowing someone else's body. It feels like being assessed before you've been allowed to speak.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT THEY'D EXPECT — PROTOCOL KNOWLEDGE CHECKS <span>▾</span></button>
+          <div class="collapse-content open">
+            <div class="note-box green">Offer these checks freely at instantiation — before anything else happens. Experienced Firewall operatives know what a standard continuity scrub looks like. Let them establish that baseline themselves, so the wrongness registers as wrongness rather than novelty.</div>
+            <div class="test-item"><div class="test-skill green">KNOW: FIREWALL (ANY)</div><div class="test-desc"><strong style="color:var(--text);">Free, no roll.</strong> Post-TITAN exposure protocol — called the continuity scrub informally — is standard procedure. The team would expect: egocast to a secure facility, instantiation in a quarantine morph (not their own), psychological assessment, memory review, possible psychosurgery scan, personal gear held separately, muse permitted but monitored. Duration days to weeks. None of this is a surprise. They've likely heard of it even if they haven't been through it.</div></div>
+            <div class="test-item"><div class="test-skill green">KNOW: FIREWALL 40</div><div class="test-desc">The facility type is standard — a decommissioned installation repurposed for black-site use, far from civilian traffic. Remote location is protocol: contamination risk, deniability, no witnesses if something goes wrong with the subject. The Saturnian system is a common region for this — far enough out, enough legitimate traffic to hide an egocast transit.</div></div>
+            <div class="test-item"><div class="test-skill green">KNOW: FIREWALL 50</div><div class="test-desc">Standard scrub timeline: intake and baseline scan (day 1), full psychological debrief covering mission events (day 1–2), memory integrity review — often including a passive psychosurgical scan (day 2–3), analysis of any recovered items or infomorphs (48–72 hours minimum for anything TITAN-adjacent), clearance decision (day 3–5 if clean). Rep or financial records are not normally part of a contamination review. That belongs to a loyalty investigation — a different process entirely, with different procedural rights.</div></div>
+            <div class="test-item"><div class="test-skill green">KNOW: FIREWALL 60 / f-rep 40</div><div class="test-desc">A loyalty investigation and a contamination scrub are formally distinct processes under Firewall's internal protocols. Running them simultaneously — or disguising one as the other — is a procedural violation. A sentinel has the right to know which process they're in. The fact that rep deposits were flagged before the team arrived means a loyalty inquiry was opened before the contamination review was even initiated. That ordering is backwards and irregular.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ SOMETHING IS WRONG — TELLS ON ARRIVAL <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">These are the details that don't fit the expected procedure. Each one is a small wrongness. Together they form a pattern. Players who asked the protocol questions above will feel these land harder.</div>
+            <div class="test-item"><div class="test-skill warn">TELL 1 — REP DEPOSITS (FREE)</div><div class="test-desc">Voss discloses the rep deposits in the intake briefing — before the debrief even starts. In a standard contamination scrub, financial records are irrelevant and wouldn't be raised. They belong in a loyalty investigation. The PCs are being told they're in a scrub, but the first question is a loyalty-investigation question. These are not the same process.</div></div>
+            <div class="test-item"><div class="test-skill warn">TELL 2 — MESA SEPARATED (FREE)</div><div class="test-desc">MESA's device is not in secure storage with the team's gear. It is "undergoing separate analysis." Standard protocol holds recovered items in common secure storage pending review — separating MESA specifically, before the debrief has even begun, implies the analysis was initiated before the team arrived. Someone flagged it in advance. That requires prior knowledge of the device's existence.</div></div>
+            <div class="test-item"><div class="test-skill warn">TELL 3 — ANALYSIS SPEED (RESEARCH / INTERFACE 40)</div><div class="test-desc">Ask Renaud or Voss when the MESA analysis is expected to conclude. Either will say it's already been submitted — filed this morning. The device arrived yesterday. Standard exsurgent-adjacent analysis takes 24–48 hours minimum under Firewall's own protocol. An 8-hour turnaround either means the analysis was pre-written, or someone cut corners so badly it's not worth the paper it's filed on. Either possibility is alarming.</div></div>
+            <div class="test-item"><div class="test-skill warn">TELL 4 — THE STRANGER (PERCEIVE / KINESICS 40)</div><div class="test-desc">Lok passes through during intake. She doesn't introduce herself. She's clearly at ease on the station in a way that suggests she has been here for days, not hours. A routing oversight officer has no operational role in a post-exposure debrief — their work is administrative and would normally be completed before or after the subject's presence, not during. She has no reason to be present at intake. She is here because she wants to see the team arrive.</div></div>
+            <div class="test-item"><div class="test-skill danger">TELL 5 — THE MORPH (MEDICINE: BIOTECH 40)</div><div class="test-desc">The quarantine morphs are standard issue — that's expected. But they are also very slightly undersized in the mesh inserts department. Not broken, not missing — just the previous generation of implant, the kind that make certain types of passive mesh monitoring harder to detect from the inside. Standard scrub morphs use current-generation inserts. These morphs are better for the people watching than for the people wearing them.</div></div>
+            <div class="note-box danger" style="margin-top:0.5rem;"><strong style="color:var(--danger);">GM NOTE:</strong> Don't volunteer all five tells. Surface them in response to player questions and actions. Tell 1 and 2 should land automatically. Tells 3–5 reward players who push back, ask questions, or make specific checks. A team that finds all five before Session 1 of the debrief begins is a team that knows exactly what they're walking into — and that's a more interesting scenario, not an easier one.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ENVIRONMENT &amp; FIRST IMPRESSIONS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">The morphs have no personal customization — no tattoos, no mods, no distinguishing features. They are as close to interchangeable as morphs can be. Firewall does this deliberately: strip away identity, make the subject feel like a subject.</div></div>
+            <div class="sound-item"><div class="sound-icon warn"></div><div class="sound-text">Personal gear is logged and held in secure storage. Muses are permitted but operating under a monitoring flag — any outgoing research queries are logged. Firewall tells them this. It is the only thing they are told upfront.</div></div>
+            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">MESA's device is not in the secure storage with their gear. When they ask — and they will ask — they are told it is undergoing separate analysis. The medic says this without affect. It is clearly a prepared answer.</div></div>
+            <div class="sound-item"><div class="sound-icon ozma"></div><div class="sound-text">Lok passes through Tunnel A during the intake, nominally checking in with the medic. She makes easy, unremarkable small talk. She does not introduce herself to the PCs. She clocks each of them in a single sweep and continues past.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE REP DEPOSITS — FIRST CONFRONTATION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">Present the rep deposit accusation early — ideally in the intake briefing from Voss. Don't let the PCs wonder what the debrief is actually about. Let them know they're suspected of being bought, and watch how they respond.</div>
+            <div class="dialogue-line warn">
+              <span class="dl-label warn">VOSS — INQUISITOR</span>
+              <span class="dl-text"><em>[Reading from a slate, not looking up]</em> "Standard disclosure: in the seventy-two hours prior to your egocast from the Gutenberg vicinity, simultaneous anonymous rep deposits were logged across all four accounts. Identical amounts. The source traces to a shell with no prior activity. You understand why this is a problem." <em>[Now looks up]</em> "We're not accusing. We're verifying."</span>
+            </div>
+            <div class="test-item"><div class="test-skill">KINESICS</div><div class="test-desc">Voss is not uncomfortable delivering this. He believes the process. He is not the problem — he is the mechanism. A good-faith inquisitor running a compromised inquiry.</div></div>
+            <div class="test-item"><div class="test-skill warn">RESEARCH (MUSE)</div><div class="test-desc">A muse query on the rep deposits returns the shell account details — but the query is logged. If the PCs start digging through official channels, Lok will know within the hour.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI IMAGE PROMPT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="neural-prompt-box">
+              <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+              <div class="prompt-text">eclipse phase RPG quarantine intake facility inside an asteroid ice-mining installation, narrow frosted polycarbonate cell partitions, generic biomorph figures sitting on restraint berths looking disoriented, institutional cold white and blue lighting, condensation on ice walls, a medic with a handheld scanner in doorway, the feel of a waiting room designed to make you feel like a suspect, transhumanist sci-fi clinical atmosphere, wide shot --ar 16:9 --style raw</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 02 — DEBRIEF ROOM -->
+      <div class="room-card green-room" data-num="02 — DEBRIEF">
+        <div class="room-header">
+          <div class="room-name">Debrief Room — Central Hub</div>
+          <div class="room-tags">
+            <span class="tag social">INTERROGATION</span>
+            <span class="tag explore">INVESTIGATION</span>
+            <span class="tag warn">VOSS NPC</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            A converted processing chamber: the original extraction equipment pushed to one wall, a folding table, four chairs, a recording node on a tripod in the corner. The room is slightly too cold. The table is slightly too small for the number of people at it. Everything about the space communicates that this is a temporary arrangement — that Firewall didn't build this place to make anyone comfortable, and it shows.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DEBRIEF STRUCTURE — THREE SESSIONS <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box">Run the debrief as three distinct sessions with free-roaming time between them. Each session escalates — Voss is a methodical inquisitor who follows evidence, and the planted evidence is well-constructed. The PCs need to work against the clock between sessions.</div>
+            <div class="test-item"><div class="test-skill">SESSION 1: GUTENBERG ACCOUNT</div><div class="test-desc">Standard after-action review. Voss wants a full account of the Gutenberg mission. The PCs are cooperative witnesses at this stage — nothing is formally accusatory. Voss is professional and thorough. The recording node captures everything.</div></div>
+            <div class="test-item"><div class="test-skill warn">SESSION 2: REP DEPOSITS</div><div class="test-desc">Voss presents the financial evidence. He has a prepared analysis showing the deposit timing relative to the Gutenberg mission — it looks like payment for information provided to an unknown party. He asks for explanations. Anything the PCs said in Session 1 is now being compared against this framing.</div></div>
+            <div class="test-item"><div class="test-skill danger">SESSION 3: MESA ANALYSIS</div><div class="test-desc">The "analysis" of MESA's device returns a finding: anomalous data packets suggesting possible exsurgent contamination. The report is fabricated — produced by Lok using station access she obtained in her first 36 hours. If the PCs can't discredit it before this session, the quarantine becomes indefinite.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ VOSS — RUNNING THE INQUISITOR <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box green">Voss is not an enemy. He is a well-designed trap mechanism being operated by someone with bad intentions. If the PCs can show him the planted evidence is fabricated, he will act on it — he cares about the integrity of the process more than the outcome.</div>
+            <div class="dialogue-line">
+              <span class="dl-label">VOSS — ON THE DEPOSITS</span>
+              <span class="dl-text">"I'm not interested in what you didn't do. I'm interested in what someone wanted it to look like you did, and why the timing is this precise. Help me understand the precision."</span>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label">VOSS — ON MESA</span>
+              <span class="dl-text">"The analysis is preliminary. I'm aware. I'm also aware that preliminary findings from a TITAN-adjacent exposure tend to become permanent records very quickly in this process. I'm telling you this as information, not as a threat."</span>
+            </div>
+            <div class="test-item"><div class="test-skill green">PERSUADE / RAPPORT</div><div class="test-desc">Voss responds to specificity and evidence. General protestations of innocence move him zero. A specific, verifiable counter-claim against the rep deposit trail will get his attention — particularly if the PCs can show the shell account was created after the Gutenberg mission, not before.</div></div>
+            <div class="test-item"><div class="test-skill">KINESICS</div><div class="test-desc">Voss is confident in his methodology but he's not entirely comfortable with the MESA analysis result. Something about its speed and specificity bothers him, though he hasn't articulated why. He can be nudged toward doubt if the PCs give him a concrete reason.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE FABRICATED MESA ANALYSIS — HOW IT WAS MADE <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box ozma">This is the scenario's central McGuffin. The report looks legitimate — it uses Firewall's own diagnostic template, has proper header authentication, and references specific data from MESA's device that Lok accessed. The tells are subtle.</div>
+            <div class="test-item"><div class="test-skill warn">RESEARCH 50</div><div class="test-desc">The analysis report was filed only 8 hours after the device arrived at the station. Standard exsurgent contamination analysis takes 24–48 hours minimum. Either the device was pre-flagged before arrival, or the analysis was already written.</div></div>
+            <div class="test-item"><div class="test-skill warn">INFOSEC 50</div><div class="test-desc">The report's metadata shows it was composed on a station terminal — but the station's official analysis lab has a different terminal signature. It was written in Tunnel C. Lok's berth is in Tunnel C.</div></div>
+            <div class="test-item"><div class="test-skill">MEDICINE: PSYCHOSURGERY 40</div><div class="test-desc">The specific "contamination indicators" cited in the report don't match known exsurgent signatures. They match a theoretical profile — the kind a trained analyst would invent if they needed the report to look conclusive without being checkable against actual reference data.</div></div>
+            <div class="note-box danger" style="margin-top:0.4rem;">Finding any one of these is enough to take to Voss. Finding all three ends the debrief. The difficulty is getting access to the report and Tunnel C without Lok knowing the PCs are looking.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 03 — COMMON AREA -->
+      <div class="room-card" data-num="03 — COMMON">
+        <div class="room-header">
+          <div class="room-name">Common Area — Between Sessions</div>
+          <div class="room-tags">
+            <span class="tag social">FREE ROAM</span>
+            <span class="tag ozma">LOK PRESENT</span>
+            <span class="tag explore">INVESTIGATION HUB</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            The common area is a narrow rectangular space between Tunnel A and the central hub: four bolted chairs, a food dispensary that makes everything taste the same, and that single port window with Saturn in it. This is where the PCs have unsupervised time between debrief sessions. It is also where Lok has been spending most of her hours since arrival — approachable, seemingly idle, occasionally helpful. She is very good at this.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ LOK IN THE COMMON AREA — BEHAVIOR <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box ozma">Lok's goal in the common area is to gather information about what the PCs know and build enough trust that they share it voluntarily. She is patient, genuinely warm, and her cover as a Firewall router is solid. She does not push. She listens.</div>
+            <div class="dialogue-line ozma">
+              <span class="dl-label ozma">LIXIA LOK — OPENING</span>
+              <span class="dl-text"><em>[Looking out the window, coffee in hand, not turning around]</em> "Saturn's better from Titan, actually — closer, more detail in the rings. But there's something about the distance here. Like the whole system is a diagram of itself." <em>[Beat]</em> "You were on Gutenberg. That must have been something."</span>
+            </div>
+            <div class="dialogue-line ozma">
+              <span class="dl-label ozma">LOK — IF ASKED WHY SHE'S HERE</span>
+              <span class="dl-text">"Routing oversight. Firewall uses this station irregularly — I'm here to review the facility's operational logs from the past quarter, make sure nothing's drifted out of protocol. Bureaucratic, but someone has to." <em>[Wry half-smile]</em> "And then your team came in and made it interesting."</span>
+            </div>
+            <div class="test-item"><div class="test-skill">KINESICS</div><div class="test-desc">Lok is relaxed in a way that is practiced rather than natural — the relaxation of someone who has done this many times. She is genuinely interested in the PCs, but the interest has a quality of assessment to it. Hard to place. Easier to detect in someone who already knows what Ozma is.</div></div>
+            <div class="test-item"><div class="test-skill warn">RESEARCH — LOK'S FILE</div><div class="test-desc">A muse query on Lixia Lok returns a thin Firewall file: routing oversight background, two prior facility reviews, unremarkable operational record. The file is real — Ozma maintains deep-cover legends with actual documented history. One tell: the file has a redaction flag at the bottom, category code that an experienced Firewall operative would recognize as an Ozma adjacency marker.</div></div>
+            <div class="test-item"><div class="test-skill warn">KNOW: OZMA / RESEARCH 60</div><div class="test-desc">The category code in Lok's file — if recognized — matches Ozma's internal classification system for embedded assets. This is the thread that unravels everything. Finding it requires either knowing what to look for or a high Research roll with a specific query about the redaction.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT LOK IS TRYING TO LEARN <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill ozma">PRIORITY 1</div><div class="test-desc">Does MESA's fork contain usable data about the Gutenberg tight-beam signal origin? Lok needs to know before she accesses the device — she doesn't want to extract something that won't give Ozma what it needs.</div></div>
+            <div class="test-item"><div class="test-skill ozma">PRIORITY 2</div><div class="test-desc">How much did the team actually understand about what the fetch was doing? Did they identify the tight-beam's origin coordinates? Is that knowledge already in Firewall's system or only in the PCs' heads?</div></div>
+            <div class="test-item"><div class="test-skill ozma">PRIORITY 3</div><div class="test-desc">Which PC is the most likely to share information freely? She'll spend more time with that person and less with the paranoid ones.</div></div>
+            <div class="note-box warn" style="margin-top:0.4rem;">If a PC shares something substantive with Lok, she will use it — but not immediately and not obviously. She files it and adjusts her strategy. The players should only realize what they handed her when it's too late.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 04 — SECURE STORAGE / MESA -->
+      <div class="room-card warn-room" data-num="04 — STORAGE">
+        <div class="room-header">
+          <div class="room-name">Secure Storage — Tunnel B / MESA's Device</div>
+          <div class="room-tags">
+            <span class="tag loot">MESA DEVICE</span>
+            <span class="tag warn">RESTRICTED ACCESS</span>
+            <span class="tag ozma">LOK TARGET</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description warn-desc">
+            Tunnel B is locked down — keycard access, a second biometric layer, and a passive monitoring sweep every four hours. MESA's device is here, in an evidence locker with a tamper log. The PCs' personal gear is also in this tunnel, locked in individual cages. They are not permitted unescorted access. The station medic has a key. Voss has a key. Lok does not officially have a key — but she has had 36 hours and she is very good at what she does.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ACCESSING TUNNEL B <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">PERSUADE — VOSS</div><div class="test-desc">Request supervised access to their personal gear on procedural grounds — they need specific items for the debrief. Voss may grant this if the request is reasonable. Does not give access to MESA's locker.</div></div>
+            <div class="test-item"><div class="test-skill">PERSUADE — MEDIC</div><div class="test-desc">The medic (Tal Renaud) is more flexible than Voss and less politically aware. A friendly approach and a plausible reason could get a PC five minutes of unsupervised time in the storage area — not near MESA, but near enough to observe the evidence locker setup.</div></div>
+            <div class="test-item"><div class="test-skill warn">INFOSEC 50</div><div class="test-desc">The monitoring sweep runs on a predictable four-hour cycle. Hacking the schedule — via a muse query that looks like a maintenance check — allows a PC to identify a 20-minute window where the sweep is at its narrowest angle. The query is logged.</div></div>
+            <div class="test-item"><div class="test-skill danger">PHYSICAL BREACH</div><div class="test-desc">Breaking into Tunnel B without authorization ends the cooperative phase of the debrief immediately. Voss will treat this as evidence of guilt. Worth it only if the PCs have no other play and need to physically access MESA before Lok does.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA'S DEVICE — IF ACCESSED <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">MESA's fork is in storage — not deleted, not corrupted, but inactive and sealed. The PCs cannot activate her during the debrief without triggering the analysis protocol again. But they can check the device's tamper log.</div>
+            <div class="test-item"><div class="test-skill warn">INTERFACE 40</div><div class="test-desc">The tamper log shows the device was accessed once since arriving on station — 22 hours ago. The access point was a portable reader, not the station's official analysis terminal. Someone brought their own equipment.</div></div>
+            <div class="test-item"><div class="test-skill warn">INFOSEC 50</div><div class="test-desc">The portable reader's device signature is recoverable from the log. Cross-referencing it against station equipment manifests reveals it isn't in the manifest — it was brought to the station by someone, not issued here. Lok arrived with a personal equipment case.</div></div>
+            <div class="note-box green" style="margin-top:0.4rem;">This evidence — tamper log + non-manifest device signature — is concrete enough for Voss. Combined with the fabricated analysis report's metadata, it builds a picture he cannot dismiss.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 05 — TUNNEL C / LOK'S BERTH -->
+      <div class="room-card ozma-room" data-num="05 — TUNNEL C">
+        <div class="room-header">
+          <div class="room-name">Tunnel C — Comms Bay &amp; Lok's Berth</div>
+          <div class="room-tags">
+            <span class="tag ozma">OZMA OPS</span>
+            <span class="tag threat">HIGH RISK</span>
+            <span class="tag loot">KEY EVIDENCE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description ozma-desc">
+            The comms bay is Tunnel C's main function — the equipment that keeps Cold Station in contact with the outer system. Lok's assigned berth is at the far end of the tunnel, adjacent to the comms hardware. This is not a coincidence. She selected it. From her berth she has passive access to the station's outgoing traffic logs, and she has been using the comms infrastructure to route encrypted packets to an Ozma relay station in the Saturnian L4 cluster. The packets are small and timed to look like routine maintenance pings.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT'S IN LOK'S BERTH <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box ozma">Lok does not leave things lying around. Her berth is clean to the point of being deliberately characterless — exactly as much personality as her cover requires, no more. The evidence is in the equipment, not the objects.</div>
+            <div class="test-item"><div class="test-skill ozma">PORTABLE READER DEVICE</div><div class="test-desc">The device she used to access MESA. It is not in her berth — she has moved it. A Perceive Test during a search finds it concealed in a maintenance panel in the comms bay, behind a panel that requires a tool to open. She chose a hiding spot that is technically accessible to any station occupant.</div></div>
+            <div class="test-item"><div class="test-skill ozma">OUTGOING TRAFFIC LOG</div><div class="test-desc">The comms bay terminal shows a pattern of small encrypted packets sent at irregular intervals — but the intervals follow a non-random distribution. Anyone with Know: Cryptography or a high Infosec roll recognizes this as a burst-transmission pattern used for covert relay communication.</div></div>
+            <div class="test-item"><div class="test-skill ozma">THE FABRICATED REPORT TERMINAL</div><div class="test-desc">The report metadata showing Tunnel C as its composition point is the most damning piece. The terminal in question is the comms bay workstation — technically multi-user, practically only accessed by Lok in the past 36 hours. Access logs confirm this.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ IF LOK REALIZES SHE'S BEEN FOUND <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box danger">Lok is professional enough to maintain cover under moderate suspicion. She will not break on a single piece of evidence. But if the PCs confront her directly — or bring evidence to Voss in front of her — her behavior changes. She becomes very still. Very controlled. And she starts calculating exits.</div>
+            <div class="dialogue-line ozma">
+              <span class="dl-label ozma">LOK — CONFRONTED DIRECTLY</span>
+              <span class="dl-text"><em>[Long pause. The warmth in her expression doesn't disappear — it just becomes clearly procedural, something she is maintaining rather than feeling]</em> "That's an interesting interpretation of the evidence. I'd want to understand what you think I was trying to achieve." <em>[Genuinely curious, the way a predator is curious]</em> "Before you take it to Voss."</span>
+            </div>
+            <div class="test-item"><div class="test-skill danger">LOK'S FALLBACK</div><div class="test-desc">If cornered, Lok will attempt to negotiate rather than fight. She has leverage: she knows what the Gutenberg signal is and what Ozma knows about it. She will offer to trade that information for a clean exit — no report to Firewall, no record of her presence here.</div></div>
+            <div class="test-item"><div class="test-skill danger">IF NEGOTIATIONS FAIL</div><div class="test-desc">Lok is armed. She is not looking for a fight — a fight in this facility creates too many complications — but she will not allow herself to be detained. Use Lixia Lok stats from Binge (▶NanoOp5) if combat occurs. She will attempt to reach the surface access point and activate an emergency egocast protocol.</div></div>
+            <div class="note-box warn" style="margin-top:0.4rem;"><strong style="color:var(--warn);">GM NOTE:</strong> Letting Lok escape is a valid outcome — it creates a recurring antagonist, she knows the PCs' faces and capabilities, and the Ozma thread remains live into Dead Drop. Capturing her is better but requires extraordinary preparation. Killing her loses the intelligence she carries.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCENE 06 — RESOLUTION -->
+      <div class="room-card green-room" data-num="06 — RESOLUTION">
+        <div class="room-header">
+          <div class="room-name">Resolution — Clearing the Team</div>
+          <div class="room-tags">
+            <span class="tag social">CLIMAX</span>
+            <span class="tag green">CLEARANCE</span>
+            <span class="tag ozma">LOK OUTCOME</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description">
+            The debrief ends one of three ways: the PCs build a sufficient evidence case and Voss acts on it, clearing the team and opening a Firewall internal inquiry into Lok; the PCs fail to surface the fabrication in time and the quarantine is extended indefinitely; or something messier happens in Tunnel C and the station becomes a crisis management situation. The first is the clean win. The other two are still playable.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ CLEARANCE PATH — EVIDENCE REQUIRED <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box green">Voss needs a minimum of two independent evidence threads to act. One is not enough — he's methodical and will want corroboration. Three threads constitutes a formal finding that requires immediate action.</div>
+            <div class="test-item"><div class="test-skill green">THREAD 1</div><div class="test-desc">Rep deposit shell account created after the Gutenberg mission timestamp — pre-planted evidence, not payment. Verifiable via mesh timestamp data that a muse can retrieve with a careful, unlogged query (offline research, no mesh connection).</div></div>
+            <div class="test-item"><div class="test-skill green">THREAD 2</div><div class="test-desc">MESA analysis report composed on Tunnel C terminal, not the analysis lab — metadata evidence. Requires access to the report file, which Voss has. A PC who can frame a specific procedural question gets Voss to pull the metadata himself.</div></div>
+            <div class="test-item"><div class="test-skill green">THREAD 3</div><div class="test-desc">MESA device tamper log showing unauthorized access via a non-manifest portable reader, timestamped to Lok's presence window. Requires access to Tunnel B.</div></div>
+            <div class="note-box" style="margin-top:0.4rem;">Threads 1 and 2 can be obtained without Lok knowing. Thread 3 requires entering Tunnel B, which risks Lok noticing. If the PCs can get Voss to pull Thread 2 himself by asking the right question, they may not need Thread 3 at all.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ AFTERMATH — WHAT HAPPENS NEXT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill green">LOK CAPTURED</div><div class="test-desc">Firewall has an active Ozma asset in custody. This is extremely rare and extremely valuable. The PCs are cleared, decorated in Firewall terms, and quietly told never to discuss what happened here. MESA's device is returned. The Gutenberg data thread leads to Dead Drop at Vesta.</div></div>
+            <div class="test-item"><div class="test-skill warn">LOK ESCAPES</div><div class="test-desc">Firewall acknowledges the planted evidence and clears the team — but Lok is loose. She knows the PCs identified her. She will appear again, later, in a different face. MESA is returned. The Gutenberg thread continues. The PCs have made a real enemy.</div></div>
+            <div class="test-item"><div class="test-skill danger">QUARANTINE EXTENDED</div><div class="test-desc">The team failed to surface the fabrication in time. They remain on Iapetus, in quarantine, while Lok completes her extraction. MESA's data is copied. Lok departs cleanly. Firewall's inquiry continues. The PCs have to find another way out — perhaps by getting a message to their handler from inside the facility.</div></div>
+            <div class="note-box warn" style="margin-top:0.4rem;"><strong style="color:var(--warn);">MESA NOTE:</strong> Regardless of outcome, MESA's device should eventually be returned to the PCs — either now or in the next session. She is a campaign asset. If Lok copied the data, MESA herself is intact; Ozma has a read-only snapshot of the signal data but not the fork. The difference matters later.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rooms-section -->
+
+<!-- CLEARANCE TRACKER -->
+    <div class="section-label warn">◈ EVIDENCE TRACKER — CLEARANCE THREADS</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Track which evidence threads the PCs have found and presented to Voss. Two threads minimum required for clearance.</div>
+      <div class="clearance-track">
+        <div class="clearance-row">
+          <div class="clearance-pip red" id="pip1"></div>
+          <div style="font-size:0.85rem; color:var(--text); flex:1;">THREAD 1 — Rep shell account post-dates mission</div>
+          <button onclick="cyclePip('pip1')" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:1px 5px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">CYCLE</button>
+        </div>
+        <div class="clearance-row">
+          <div class="clearance-pip red" id="pip2"></div>
+          <div style="font-size:0.85rem; color:var(--text); flex:1;">THREAD 2 — Report composed in Tunnel C, not analysis lab</div>
+          <button onclick="cyclePip('pip2')" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:1px 5px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">CYCLE</button>
+        </div>
+        <div class="clearance-row">
+          <div class="clearance-pip red" id="pip3"></div>
+          <div style="font-size:0.85rem; color:var(--text); flex:1;">THREAD 3 — MESA device tamper log / non-manifest reader</div>
+          <button onclick="cyclePip('pip3')" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:1px 5px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">CYCLE</button>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); margin-top:0.3rem; letter-spacing:1px;">◈ RED = NOT FOUND &nbsp; AMBER = FOUND, NOT PRESENTED &nbsp; GREEN = PRESENTED TO VOSS</div>
+      </div>
+    </div>
+
+    <!-- LOK SUSPICION TRACKER -->
+    <div class="section-label ozma">◈ LOK SUSPICION TRACKER</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Track how much Lok suspects the PCs are onto her. As this rises, her behavior changes.</div>
+      <div class="clearance-track" style="border-color:rgba(144,64,192,0.2); background:rgba(144,64,192,0.025);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--ozma); margin-bottom:0.4rem; letter-spacing:1px;">SUSPICION LEVEL: <span id="suspicion-label">LOW — COVER INTACT</span></div>
+        <div style="display:flex; gap:4px; margin-bottom:0.5rem;">
+          <div class="clearance-pip" id="sp1" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
+          <div class="clearance-pip" id="sp2" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
+          <div class="clearance-pip" id="sp3" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
+          <div class="clearance-pip" id="sp4" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
+          <div class="clearance-pip" id="sp5" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
+        </div>
+        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+          <button onclick="setSuspicion(1)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(144,64,192,0.3); color:var(--ozma); cursor:pointer;">+1</button>
+          <button onclick="setSuspicion(-1)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">–1</button>
+          <button onclick="setSuspicion(0)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(255,255,255,0.08); color:var(--muted); cursor:pointer;">RESET</button>
+        </div>
+        <div id="suspicion-behavior" style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-top:0.5rem; font-family:'Crimson Pro',serif;">Lok is relaxed and cooperative. Spends time in common area. Actively building rapport with the most communicative PC.</div>
+      </div>
+    </div>
+
+    <!-- NPCS -->
+    <div class="section-label">◈ NPCS</div>
+
+    <!-- LIXIA LOK -->
+    <div class="npc-card">
+      <div class="npc-name">LIXIA LOK</div>
+      <div class="npc-role">PROJECT OZMA INVESTIGATOR — COVER: FIREWALL ROUTER</div>
+      <div class="npc-desc">Encountered previously in Binge (NanoOp5) posing as Consortium Oversight — but these PCs have not met her. A thin Firewall file exists with a buried Ozma adjacency marker. She is patient, warm, and operating on a 48-hour extraction window. Her cover is solid. Her leverage is real. She knows more about the Gutenberg signal than anyone in this room admits.</div>
+      <div><span class="npc-trait ozma">OZMA ASSET</span><span class="npc-trait warn">COVER: ROUTER</span><span class="npc-trait">THIN FILE</span><span class="npc-trait danger">ARMED</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ LOK STAT BLOCK (FROM BINGE) <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="stat-block">
+          <div class="stat-block-name">◈ LIXIA LOK — PROJECT OZMA</div>
+          <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.4rem;">Cover: Consortium Oversight (Binge) / Firewall Router (here). Stats from NanoOp5 Binge. Adapt as needed.</div>
+          <div class="stat-row">
+            <span class="stat-pill hi">OZMA INVESTIGATOR</span>
+            <span class="stat-pill med">COVER: DEEP LEGEND</span>
+          </div>
+          <div class="note-box ozma" style="margin-top:0.4rem;">Full stats in Binge source material. Key capabilities for this scenario: Deceive (high), Kinesics (high), Infosec (moderate), armed with a concealed sidearm. Will not initiate combat. Will not allow detention.</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT LOK KNOWS (GM ONLY) <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="test-item"><div class="test-skill ozma">GUTENBERG SIGNAL</div><div class="test-desc">Ozma has partial data on the tight-beam origin. The Gutenberg relay received a signal from beyond the ecliptic — but Ozma doesn't know from where precisely. MESA's data would fill the gap. This is worth any cost to Lok's cover.</div></div>
+        <div class="test-item"><div class="test-skill ozma">THE FETCH</div><div class="test-desc">Lok knows what a TITAN fetch is and how rare self-activating ones are. The team destroying it — or surviving contact with it — marks them as extraordinary. She has filed a detailed report on their capabilities already.</div></div>
+        <div class="test-item"><div class="test-skill ozma">OZMA'S INTEREST</div><div class="test-desc">Ozma believes the tight-beam signal is not TITAN in origin — or at least, not only TITAN. Something else is using the same channel. The fetch may have been bait rather than the actual threat. Lok will not share this. It is Ozma's most sensitive current intelligence.</div></div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI PORTRAIT PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — CHARACTER PORTRAIT</div>
+          <div class="prompt-text">eclipse phase RPG character portrait, Lixia Lok, East Asian woman in her late thirties in a practical Firewall administrator cover identity, short efficient haircut, unremarkable station-wear clothing in greys and blues, expression of genuine warmth that is clearly also a professional tool, holding a coffee cup, standing near a porthole with Saturn visible in background, the specific quality of someone who is always slightly more alert than they appear, soft cold station lighting, detailed sci-fi character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VOSS -->
+    <div class="npc-card">
+      <div class="npc-name">ARDAL VOSS</div>
+      <div class="npc-role">FIREWALL INQUISITOR — COLD STATION LEAD</div>
+      <div class="npc-desc">A methodical, fair-minded inquisitor who has been running post-exposure debriefs for eleven years. He is not an enemy — he genuinely believes in the process. He is also running a compromised inquiry without knowing it, which is the particular horror of his position. He will act correctly when given evidence. Getting him evidence is the problem.</div>
+      <div><span class="npc-trait green">GOOD FAITH</span><span class="npc-trait warn">PROCESS-BOUND</span><span class="npc-trait">METHODICAL</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ HOW TO WORK WITH VOSS <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box green">Voss is the PCs' best asset if handled correctly. He cares about the process working — meaning if the process has been subverted, he wants to know. Frame evidence as process integrity questions, not accusations against Lok personally.</div>
+        <div class="test-item"><div class="test-skill green">WORKS: SPECIFIC QUESTIONS</div><div class="test-desc">"Can you check the metadata on the MESA analysis report — specifically which terminal it was composed on?" This is a process question. Voss will do it himself. When he finds the answer, it's his discovery, not an accusation the PCs made.</div></div>
+        <div class="test-item"><div class="test-skill green">WORKS: TIMELINE CHALLENGES</div><div class="test-desc">Pointing out that the analysis was filed in 8 hours when standard protocol requires 24–48 is a procedural observation. Voss is irritated by procedural shortcuts. This gets his attention without requiring him to believe the PCs.</div></div>
+        <div class="test-item"><div class="test-skill danger">DOESN'T WORK: ACCUSATIONS</div><div class="test-desc">"Lok is Ozma" with no evidence gets the PCs nowhere — and if Lok is present, she will respond with calm, gracious confusion that makes the accusation look paranoid. Voss is not impressed by accusations. He is impressed by paper trails.</div></div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI PORTRAIT PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — CHARACTER PORTRAIT</div>
+          <div class="prompt-text">eclipse phase RPG character portrait, Ardal Voss, Northern European man in his mid-fifties, thinning grey hair cropped close, Firewall administrative clothing in dark grey, expression of patient professional focus, holding a data slate, seated at a folding table in a repurposed industrial space, the look of someone who has heard every story and is still interested in whether this one is true, cold station lighting, detailed character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAL RENAUD -->
+    <div class="npc-card">
+      <div class="npc-name">TAL RENAUD</div>
+      <div class="npc-role">STATION MEDIC — COLD STATION</div>
+      <div class="npc-desc">The station's medic and the most approachable person on the facility. Not political, not agenda-driven — just doing a job in a cold place far from anywhere. Has keys to Tunnel B for medical access. Is susceptible to genuine human connection, which is rare in this facility and which Lok has already noticed and protected against by building a friendly rapport with Renaud herself.</div>
+      <div><span class="npc-trait green">APPROACHABLE</span><span class="npc-trait warn">LOK HAS RAPPORT</span><span class="npc-trait">TUNNEL B KEY</span></div>
+    </div>
+
+    <!-- MUSE CUES -->
+    <div class="section-label teal" style="color:var(--accent);">◈ MUSE INTEL CUES — BY PHASE</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">All muse queries are logged. These cues can be surfaced freely — but anything that touches the evidence trail should be flagged to the player as a logged query.</div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 1 — INTAKE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box">"The rep deposits — I've pulled the shell account registration. It was created four days ago. Your Gutenberg egocast arrived three days ago. The shell is older than the mission by one day, but younger than the departure briefing. Someone built this before you left but after you were assigned."</div>
+        <div class="note-box warn">"MESA's device is in Tunnel B under a dual-biometric lock. Standard protocol for quarantined exosurgent-adjacent material. The analysis report was filed this morning. I'd expect that process to take at least another day."</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 2 — INVESTIGATION <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box">"I've been watching station mesh traffic passively — not querying, just observing packet volume. Tunnel C is generating small outbound traffic bursts every four to seven hours. Each burst is under two kilobytes. The pattern is consistent with encrypted relay communication."</div>
+        <div class="note-box ozma">"Lixia Lok's Firewall file — I found a redaction code at the bottom. Category 7-R. I don't have a reference for that code in standard Firewall taxonomy. It reads like an external classification insertion."</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 3 — LATE GAME <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box warn">"The extraction window is closing — if Lok has a scheduled relay contact and she hasn't transmitted the MESA data yet, her next window is in approximately six hours. After that the relay station moves out of optimal range for another eighteen."</div>
+        <div class="note-box danger">"I've mapped Lok's movements since she arrived. She hasn't been to the analysis lab once. The MESA analysis report was filed by her credentials but the lab terminal logs don't show her present. She wasn't there."</div>
+      </div>
+    </div>
+
+    <!-- GM NOTES -->
+    <div class="section-label warn">◈ GM NOTES — RUNNING THIS SCENARIO</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ THE PARANOIA REGISTER <span>▾</span></button>
+      <div class="collapse-content open">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">This scenario runs on social tension and information asymmetry, not combat. The PCs are at a structural disadvantage — they're in unfamiliar bodies, their gear is locked away, their queries are logged, and the most dangerous person in the room is being charming at them. Lean into the claustrophobia. Saturn is beautiful and it is very far away and nobody knows the team is here.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">The key GM discipline is maintaining Lok's warmth even as she tightens the trap. She is not a villain in the way she presents. She is a professional doing a job she believes in, for an organization whose goals she genuinely serves. That's what makes her frightening.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PACING THE THREE SESSIONS <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Each debrief session should be about twenty minutes of real time. The investigation happens between sessions — in the common area, in corridors, in quiet conversations with Renaud. Give the players space between sessions to think and move. The clock pressure comes from knowing Session 3 ends the cooperative phase.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE OZMA REVELATION <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.4rem;">When the PCs expose Lok — or when she realizes they have — let the scene breathe. This is the first time the campaign has put an Ozma face in the room. She is not flustered. She is not desperate. She assesses, calculates, and decides. Her offer to trade Ozma intelligence for a clean exit is genuine — she has real information and she knows it. Whether the PCs trust it is their call.</div>
+        <div class="note-box ozma">If Lok escapes: she knows the team by capability and face. She will appear again. Perhaps as an ally. Perhaps as a problem. That ambiguity is the best thing she leaves behind.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ BRIDGE TO DEAD DROP AT VESTA <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.4rem;">After clearance, Firewall gives the team their next mission: follow up on the Gutenberg signal. MESA — once reactivated — provides the direction: she knows where to find the dead drop of her own analysis data. The trail leads to Vesta. The team egocasts out of Iapetus into Dead Drop at Vesta.</div>
+        <div class="note-box green">MESA's first words on reactivation should be disorienting — she's been in storage, she doesn't know how much time has passed, and she immediately asks whether the signal is still active. That question carries the campaign forward.</div>
+      </div>
+    </div>
+
+    <!-- VISUAL REFERENCE -->
+    <div class="section-label">◈ VISUAL REFERENCE — PORTRAIT PROMPTS</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none;">◈ COLD STATION — ESTABLISHING SHOT <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="neural-prompt-box" style="margin-bottom:0.5rem;">
+          <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+          <div class="prompt-text">eclipse phase RPG exterior establishing shot, small decommissioned ice-mining installation on Iapetus's two-tone surface, three pressurized tunnel entrances visible as low domes against dark regolith, a single comms mast with blinking relay light, Saturn hanging enormous and ringed in the black sky above, stark beauty of deep isolation, the facility small and temporary-looking against the scale of the ringed planet, transhumanist sci-fi landscape, painterly wide shot --ar 16:9 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ COMMON AREA WITH SATURN VIEW <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+          <div class="prompt-text">eclipse phase RPG interior common area of a remote Firewall black site, narrow rectangular space with bolted chairs and a single porthole showing Saturn and its rings in crisp detail, modular folding furniture, food dispensary unit on one wall, institutional cold blue-white lighting, two figures in generic biomorphs sitting apart from each other not speaking, the specific atmosphere of people who don't know if they trust each other yet, isolated transhumanist sci-fi interior --ar 16:9 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ TAL RENAUD — MEDIC PORTRAIT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — CHARACTER PORTRAIT</div>
+          <div class="prompt-text">eclipse phase RPG character portrait, Tal Renaud, non-binary person in their early forties with close-cropped natural hair and warm dark skin, wearing a station medic's practical clothing with a bioscanner clipped to one hip, expression of genuine uncomplicated kindness — someone who went into medicine because they like people and ended up in a strange job, faint tiredness around the eyes, soft station interior lighting, detailed sci-fi character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div><!-- /left-col -->
+</div><!-- /main-grid -->
+
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+<button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right:8rem;">◈ EXPAND ALL</button>
+
+<script>
+// ── Accordion ──────────────────────────────────────────────────
+function toggleCollapse(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open', !isOpen);
+  const arrow = btn.querySelector('span');
+  if (arrow) arrow.textContent = isOpen ? '▾' : '▴';
+}
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(all).some(c => c.classList.contains('open'));
+  all.forEach(c => c.classList.toggle('open', !anyOpen));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '▾' : '▴'; });
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
+
+// ── Evidence pip tracker ───────────────────────────────────────
+const pipStates = { pip1: 0, pip2: 0, pip3: 0 };
+const pipColors = ['#c04040', '#d4b870', '#a0c4a0'];
+function cyclePip(id) {
+  pipStates[id] = (pipStates[id] + 1) % 3;
+  document.getElementById(id).style.background = pipColors[pipStates[id]];
+  document.getElementById(id).style.boxShadow = `0 0 5px ${pipColors[pipStates[id]]}80`;
+}
+
+// ── Suspicion tracker ──────────────────────────────────────────
+let suspicionLevel = 0;
+const suspicionData = [
+  { label: 'LOW — COVER INTACT', behavior: 'Lok is relaxed and cooperative. Spends time in common area. Actively building rapport with the most communicative PC.' },
+  { label: 'GUARDED — SOMETHING NOTICED', behavior: 'Lok spends less time in common area. More time in Tunnel C. Begins accelerating her timeline — may attempt MESA access earlier than planned.' },
+  { label: 'ALERT — PCs ARE LOOKING', behavior: 'Lok is cordial but no longer warm. She is buying time. She has begun preparing her exit protocol. Her relay transmissions increase in frequency.' },
+  { label: 'HIGH — COVER COMPROMISED', behavior: 'Lok is professional and controlled. She knows the window is closing. She will make her offer to trade intelligence before the PCs can present evidence to Voss.' },
+  { label: 'CRITICAL — EXTRACTION MODE', behavior: 'Lok has abandoned cover. She is focused entirely on reaching the surface comms mast and activating her emergency egocast. She is armed and will use it if cornered.' }
+];
+function setSuspicion(delta) {
+  if (delta === 0) suspicionLevel = 0;
+  else suspicionLevel = Math.max(0, Math.min(4, suspicionLevel + delta));
+  const pips = ['sp1','sp2','sp3','sp4','sp5'];
+  pips.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (i < suspicionLevel) {
+      el.style.background = '#9040c0';
+      el.style.boxShadow = '0 0 5px rgba(144,64,192,0.7)';
+      el.style.borderColor = 'rgba(144,64,192,0.5)';
+    } else {
+      el.style.background = 'var(--muted)';
+      el.style.boxShadow = 'none';
+      el.style.borderColor = 'rgba(144,64,192,0.3)';
+    }
+  });
+  document.getElementById('suspicion-label').textContent = suspicionData[suspicionLevel].label;
+  document.getElementById('suspicion-behavior').textContent = suspicionData[suspicionLevel].behavior;
+}
+
+// ── Cookies ────────────────────────────────────────────────────
+function setCookie(name, value, days) {
+  const d = new Date(); d.setTime(d.getTime() + days*24*60*60*1000);
+  document.cookie = `${name}=${encodeURIComponent(value)};expires=${d.toUTCString()};path=/`;
+}
+function getCookie(name) {
+  const m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+// ── Roster ─────────────────────────────────────────────────────
+
+</script>
+
+
+
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

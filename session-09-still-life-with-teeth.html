@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STILL LIFE WITH TEETH | Eclipse Phase — Session 09 GM Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════ HEADER ═══════════════════════ -->
+
+
+
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-09-still-life-with-teeth.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>STILL LIFE <span class="hot">WITH TEETH</span><span class="sub">KBO 2119-HR4</span></h1>
+  <div class="header-sub">SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT</div>
+  <div class="stats-bar">
+    <div class="stat-chip">LOCATION: KBO 2119-HR4</div>
+    <div class="stat-chip freeze">CHRONO-STOP FIELD ACTIVE</div>
+    <div class="stat-chip eater">SILICON PREDATOR — LOOSE</div>
+    <div class="stat-chip warn">STATION: NATAGLACIAL-7 — DARK</div>
+    <div class="stat-chip ice">SURVEY CORP: AUROCHS DEEP MINING</div>
+    <div class="stat-chip mesa">MESA — PRESENT / CRITICAL</div>
+    <div class="stat-chip ozma">OZMA — NOT YET</div>
+    <div class="stat-chip">REGISTER: SURVIVAL / HORROR / EXISTENTIAL</div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════ SESSION CLOCKS ═══════════════════════ -->
+<div class="section-label warn">◈ SESSION CLOCKS</div>
+<div class="clock-section">
+  <div class="clock-name">ATMOSPHERE — MODULE D (SURVIVORS)</div>
+  <div class="clock-label">8-HOUR CLOCK · TICK EVERY ~50 MINUTES</div>
+  <div class="clock-track" id="atmo-clock">
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip" onclick="this.classList.toggle('filled')"></div>
+  </div>
+  <div class="clock-name">SPORE CASES HATCHED</div>
+  <div class="clock-label">MARK ON EACH SYSTEM POWER-UP · 8 TOTAL</div>
+  <div class="clock-track">
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+    <div class="clock-pip freeze-pip" onclick="this.classList.toggle('filled')"></div>
+  </div>
+  <div class="clock-name">TIP FIELD — STILL ACTIVE?</div>
+  <div class="clock-label">CROSS OUT WHEN SHUT DOWN OR DESTROYED</div>
+  <div style="width:100%; height:18px; border:1px solid rgba(104,152,200,0.4); background:rgba(104,152,200,0.08); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--freeze); letter-spacing:2px; cursor:pointer;" onclick="this.style.background='rgba(160,48,48,0.1)'; this.style.color='var(--danger)'; this.style.borderColor='rgba(160,48,48,0.4)'; this.textContent='◈ FIELD COLLAPSED';">◈ ACTIVE — CLICK TO MARK SHUTDOWN</div>
+</div>
+
+<!-- ═══════════════════════ MAIN CONTENT ═══════════════════════ -->
+<div class="main-grid">
+<div class="left-col">
+
+  <!-- SITUATION BRIEF -->
+  <div class="section-label">◈ SITUATION BRIEF</div>
+  <div class="brief-panel">
+    <p class="brief-text">
+      Firewall's response to the Vanth report arrives three days out from Orcus. Not from the usual relay — from a proxy the team has never used, which means someone higher up the sentinel hierarchy has read what was filed and decided this one needs personal handling. The message is short. There is a survey installation on KBO 2119-HR4, registered to Aurochs Deep Mining Consortium, running a piece of proprietary geophysical hardware called a <em>Temporal Isolation Projector</em>. The station went dark eleven days ago. Firewall wants to know why. Routine enough for a first read. The second read is less comfortable: the Temporal Isolation Projector — a TIP unit, in Aurochs' internal documentation — does not appear in any public patent or regulatory filing. Firewall's technology analysis division has seen one reference to it before, in a recovered Consortium black-budget proposal, and flagged it then as a potential existential-class weapon system dressed up as a mining tool. The proposal was shelved. Apparently it wasn't.
+    </p>
+    <p class="brief-text freeze">
+      KBO 2119-HR4 is a carbonaceous contact-binary object roughly 340 kilometres across — unremarkable, surveyed once in the twenties, subsequently ignored. What makes it of interest to a deep mining operation is its unusual core composition: an anomalously dense metallic interior, rich in platinum-group metals, sitting beneath roughly 80 kilometres of silicate rock and ice. Getting to that core economically requires getting through the mantle without boring through it. The TIP unit does this by projecting a temporal-stasis field across the outer body of the planetoid in a seam pattern — the team's briefing document calls it "stitched like the exterior of a tennis ball" — which arrests all physical and chemical processes within its envelope to an arbitrary depth. The core, not enclosed in the field, continues along its orbital path. Differential movement between the frozen shell and the moving core creates a series of access shafts along the seam boundaries. Elegant. Horrifying. Completely unregulated.
+    </p>
+    <div class="goal-box">
+      <strong>◈ FIREWALL MISSION BRIEF</strong>
+      Reach NATAGLACIAL-7, the Aurochs survey station on KBO 2119-HR4. Determine the status of the installation and its 14-person crew. Assess the TIP unit — specifically whether it has been tested at scale, what data it has generated, and whether its specifications could be repurposed for use against inhabited structures. Recover or destroy that data. Do not return the TIP technical documentation to the inner system.
+    </div>
+    <div class="goal-box warn">
+      <strong>◈ WHAT FIREWALL DOESN'T KNOW</strong>
+      The station went dark because something came out of the core. The TIP field cracked open 80 kilometres of silicate rock that had been sealed, isolated, and geologically static for four billion years. Whatever was sealed inside it is no longer inside it. It hatched. It is hungry. The 14-person crew learned this eleven days ago. The team is walking into something that has had eleven days to eat.
+    </div>
+    <div class="goal-box freeze">
+      <strong>◈ THE TIP UNIT — WEAPON POTENTIAL</strong>
+      A TIP unit scaled up by a factor of roughly 80 would produce a temporal-stasis envelope large enough to enclose a standard O'Neill cylinder habitat. Applied correctly, it would freeze all biological and mechanical activity within the enclosed volume while leaving the habitat's orbital trajectory unaffected. The people inside would be suspended indefinitely, alive in the moment of freezing, until the field is collapsed — or until it isn't. Aurochs' engineers know this. It is in their own risk assessment, marked as a secondary-use case under the heading "enforcement applications." Firewall knows this is real. The team needs to understand it before they decide what to do with the hardware.
+    </div>
+  </div>
+
+  <!-- THE THING — WHAT CAME OUT -->
+  <div class="section-label eater">◈ THE SILICON PREDATOR — WHAT IT IS</div>
+  <div class="brief-panel">
+    <p class="brief-text">
+      The scientific community does not have a name for it because, until eleven days ago, the scientific community did not know it existed. The Aurochs survey team has twelve pages of increasingly fragmented notes, the last of which ends mid-sentence. What follows is reconstructed from those notes and from what the team will be able to observe directly.
+    </p>
+    <div class="stat-block">
+      <div class="stat-block-name">LITHOHEX — SILICON PREDATOR</div>
+      <div class="stat-block-type">XENOBIOLOGICAL ENTITY · SUBSURFACE ORIGIN · MINERAL-METABOLIC LIFECYCLE · NON-SAPIENT / HIGHLY REACTIVE</div>
+      <div class="stat-row">
+        <div class="stat-entry">SPEED: <span>Very Fast (microgravity, 6-legged locomotion)</span></div>
+        <div class="stat-entry">SIZE: <span>0.4–0.8m body, legs up to 1.5m</span></div>
+        <div class="stat-entry">SENSES: <span>EM field detection (primarily), vibration, heat</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-entry">ARMOUR: <span>Silicate shell — equivalent to light combat plate</span></div>
+        <div class="stat-entry">ATTACK: <span>Mandible clamp (anchors to substrate/target) + acid-flux secretion</span></div>
+        <div class="stat-entry">WEAKNESS: <span>Extreme cold, EMP disrupts EM sensing, no infil vs non-silicon</span></div>
+      </div>
+      <p class="stat-ability">
+        <strong>SILICON METABOLISM:</strong> The Lithohex cannot digest organics. It processes silicon-based compounds — silicate rock, semiconductor substrates, glass, ceramic composites. It digests by secreting a highly acidic flux compound onto the target surface, dissolving the silicon matrix, and absorbing the resulting silicate slurry through a ventral feeding structure. The process takes 8–15 minutes for a standard electronics module, 3–6 hours for a structural panel. It does not eat people. It eats the electronics around people, and it does not stop if a person is in the way.
+      </p>
+      <p class="stat-ability">
+        <strong>WASTE PRODUCT:</strong> The metabolic byproduct of silicon digestion is a high-temperature vitrified globule — a small, irregular glass bead, ranging from marble-sized to roughly fist-sized, deposited wherever the creature has fed. These globules are scattered throughout every space a Lithohex has occupied. They are sharp. They are everywhere. They are the first thing the team sees when they enter a compromised module.
+      </p>
+      <p class="stat-ability">
+        <strong>REPRODUCTION:</strong> The initial hatching produced a single creature from a dormant spore-case the size of a large boulder. The spore-case has since fractured into secondary dormant units, approximately 8–12 of which the team will find distributed throughout the station, in warm enclosed spaces near active electronics. Secondary hatching is triggered by the EM emissions of active hardware — specifically by semiconductor switching frequencies. If the team powers up station systems, things will hatch. If they leave them cold, the secondary spores remain dormant. This is the session's central dilemma.
+      </p>
+      <p class="stat-ability">
+        <strong>SOCIAL BEHAVIOUR:</strong> Not sapient. Does not communicate. Does not coordinate. Does not feel threatened by anything except extreme cold and electromagnetic disruption. It investigates active electronics the way a moth investigates a light source: compulsively, persistently, and without apparent concept of danger. Multiple individuals do not cooperate — they compete for the same food source, which can be useful. Two Lithohex in the same module will fight over the same terminal before they notice the team.
+      </p>
+      <p class="stat-ability">
+        <strong>DETECTION:</strong> The EM-sensing organs are lateral and face-mounted. The creature can detect operating electronics at up to 40 metres through standard bulkhead material. Powered-down equipment produces no useful signal. Personnel in synthmorphs or with active muse-hardware register as a faint signal — enough to attract attention if the creature is within roughly 10 metres and there is no more compelling source nearby.
+      </p>
+    </div>
+    <div class="note-box eater">The Lithohex is not a monster in the horror-movie sense. It is an animal doing what animals do. It happens to be an animal that treats the entire technological substrate of transhumanity as food. The dread comes not from malice but from indifference — the session's creatures are not trying to harm anyone. They just don't distinguish between a circuit board and a person attached to one.</div>
+  </div>
+
+  <!-- THE STATION -->
+  <div class="section-label ice">◈ NATAGLACIAL-7 — STATION LAYOUT &amp; STATUS</div>
+  <div class="brief-panel">
+    <p class="brief-text ice-desc">
+      NATAGLACIAL-7 is a modular deep-survey installation: six pressurised habitat rings connected by access corridors, anchored to the surface of KBO 2119-HR4 by deep-bore pitons. From a distance it is unremarkable — any outer-system survey station looks roughly like this. Up close, something is wrong with its surface. The exterior panels are covered in protrusions: irregular, glassy, catching the distant sun and throwing back cold light. Not ice. Too smooth, too rounded, too warm. The glass globules have been deposited even on the hull exterior, through ventilation gaps and external cable runs. The station looks like it has grown spines.
+    </p>
+    <div class="map-schematic">
+      NATAGLACIAL-7 — STATION SCHEMATIC<br>
+      ══════════════════════════════════════════════<br>
+      [A] DOCKING &amp; AIRLOCK RING   — <span class="zone-warn">PARTIAL POWER · GLOBULE DEPOSIT MODERATE</span><br>
+      [B] CREW HABITATION            — <span class="zone-dead">POWER DOWN · 6 DORMANT SPORE CASES · AIR INTACT</span><br>
+      [C] SCIENCE &amp; SURVEY OPS     — <span class="zone-dead">TOTAL POWER LOSS · FULL GLOBULE COVERAGE · ONE ACTIVE PREDATOR</span><br>
+      [D] ENGINEERING &amp; LIFE SUPP  — <span class="zone-warn">EMERGENCY POWER ONLY · CREW BARRICADED HERE</span><br>
+      [E] TIP CONTROL HUB            — <span class="zone-hot">FIELD STILL ACTIVE · PRIMARY PREDATOR NESTING HERE · EXTREMELY HOT</span><br>
+      [F] DEEP-BORE ACCESS SHAFT     — <span class="zone-freeze">WITHIN TIP FIELD BOUNDARY · TIME ARRESTS AT ~40m DEPTH</span><br>
+      ══════════════════════════════════════════════<br>
+      <span class="zone-warn">◈ EXTERIOR HULL — GLASS SPIKE COVERAGE ~60% — VISIBLE FROM APPROACH</span>
+    </div>
+    <div class="goal-box ice">
+      <strong>◈ THE SURVIVORS</strong>
+      Three crew members are still alive in Module D: Engineering. They barricaded themselves in using stripped-out panel sections bolted over the internal hatches, after they understood that the creature was following active electronics. They have been running on minimal emergency power for nine days — just enough to maintain atmosphere and heat, not enough to attract the creature. They are alive because they turned everything off. They are also slowly running out of air recycling capacity, because the air recycler is a silicon-substrate system and switching it to full capacity will draw the creature to Module D. They have eight to twelve hours of adequate atmosphere left. They know this.
+    </div>
+  </div>
+
+  <!-- SCENES -->
+  <div class="section-label">◈ SCENES — STRUCTURE &amp; SEQUENCE</div>
+  <div class="scenes-section">
+
+    <!-- SCENE 1 -->
+    <div class="scene-card freeze-card" data-num="01">
+      <div class="scene-header">
+        <div class="scene-name">Approach — The Spiked Station</div>
+        <div class="scene-tags">
+          <span class="tag freeze">ARRIVAL</span>
+          <span class="tag ice">RECON</span>
+          <span class="tag warn">FIRST SIGN</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description freeze-desc">
+          The approach gives the team its first look at KBO 2119-HR4 — a dark, irregularly-shaped object tumbling slowly against the stars at 52 AU from the sun. The sun is barely a bright star here. The station is illuminated only by the GS-Perennial's approach lights and its own wan running lights. The hull panels pick up the light and return it wrong — not the flat matte of station composites, but something glittering, uneven, textured. At three kilometres, MESA names it: "The exterior surface has been coated with a vitrified deposit. The material reads as silicon-oxide glass with trace metallic inclusions. It is not structural. It is waste." A pause. "Something has been eating the station from inside."
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ APPROACH DETAIL &amp; FIRST OBSERVATIONS ▾</button>
+        <div class="collapse-content">
+          <div class="note-box freeze">The TIP field is visible from the right approach angle as a faint shimmer — a slight distortion at the surface, following the seam-lines of the temporal boundary in a great-circle pattern that bisects the object at roughly 45 degrees. It looks like the stitching on a tennis ball drawn in very faint heat-haze. The team will recognise what they're seeing if anyone has Academics: Physics or Exotic Technology experience. MESA will flag it as anomalous and request the technical briefing document.</div>
+          <div class="test-item"><div class="test-skill freeze">EXOTIC TECH 40</div><div class="test-desc">Identify the shimmer as a temporal-isolation field boundary and understand what it implies about the scale of operation underway.</div></div>
+          <div class="test-item"><div class="test-skill ice">PERCEIVE 30</div><div class="test-desc">At closer range, notice that the glass protrusions on the hull are not uniform — they are densest near external port windows, cable conduit exits, and antenna mounts. Wherever electronics interfaced with the exterior.</div></div>
+          <div class="test-item"><div class="test-skill">PILOT 40</div><div class="test-desc">Navigate to docking ring without contacting the hull spurs, which are structurally fragile but extremely sharp and could damage the Perennial's hull coating at low speed.</div></div>
+          <div class="note-box warn">Have MESA describe the station quietly, without drama. The horror here is aesthetic — the wrongness of a station that looks like it has grown coral. No jump scares on approach. Save the creature encounters for inside.</div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — ON APPROACH</span>
+            <span class="dl-text">"I've run the spectral analysis on the hull deposits. The glass composition matches metabolic waste product from a silicon-processing organism — if I'm reading this correctly, the station's exterior semiconductor coatings have been partially digested through the vent and gap structure. The organism has been active here for approximately ten to fourteen days. The station's last transmission was eleven days ago. The correlation is not a coincidence."</span>
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label freeze">MESA — ON THE TIP FIELD</span>
+            <span class="dl-text">"The temporal isolation field is still active. The seam pattern is consistent with the briefing parameters — boundary follows the object's great-circle geometry at approximately 42 degrees from the rotational pole. Everything within the field envelope to a depth of 80 kilometres is experiencing arrested time. The core is still moving. The shaft access points are still open." [Pause.] "Someone left the device on."</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 2 -->
+    <div class="scene-card eater-card" data-num="02">
+      <div class="scene-header">
+        <div class="scene-name">Module A — Docking Ring</div>
+        <div class="scene-tags">
+          <span class="tag eater">FIRST CONTACT</span>
+          <span class="tag warn">GLOBULE EVIDENCE</span>
+          <span class="tag freeze">ENVIRONMENT</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description eater-desc">
+          The docking ring is still pressurised. The airlock cycles correctly. The first thing the team sees when they step inside is the floor — glass everywhere. Small rounded beads, larger irregular lumps, the odd piece still showing a translucent skin where it hasn't fully vitrified, all catching the suit lamps in tiny cold flashes. They crunch underfoot in microgravity — except in microgravity they don't crunch, they skitter, tumbling in slow arcs, filling the air with a faint crystalline clatter when anyone moves. The walls tell the story: the control panels along the docking ring have been eaten. Not destroyed — dissolved. The screens, the bezels, the sensor arrays. Clean circular damage where the creature set its body down and fed, surrounding each panel in a dry glass moat. The structural alloys are intact. The semiconductor internals are gone.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ FIRST ENCOUNTER NOTES ▾</button>
+        <div class="collapse-content">
+          <p class="scene-description eater-desc">The docking ring currently has no active creature. But one passed through recently — within the last 18 hours, based on the freshness of some of the glass deposits. The creature is in Module C or Module E (Science Ops or TIP Hub). The team can map its path by following the globule trail.</p>
+          <div class="test-item"><div class="test-skill">MEDICINE: FORENSICS 40</div><div class="test-desc">Read the glass deposits as a trail — note the gradient of vitrification (newer deposits are slightly tacky) and determine the creature's most recent passage route and approximate time.</div></div>
+          <div class="test-item"><div class="test-skill warn">PERCEIVE 50</div><div class="test-desc">Spot a secondary spore case in the docking ring's overhead cable management tray — a rounded, matte-dark mass the size of a large grapefruit, completely still, nestled against a warm circuit junction. It is dormant. Touching it does nothing. Activating the junction will hatch it in approximately 90 seconds.</div></div>
+          <div class="test-item"><div class="test-skill ice">ACADEMICS: XENOBIOLOGY 30</div><div class="test-desc">Identify the waste globules as consistent with an organismal silicon-metabolism process and begin forming a correct hypothesis about what the creature is and isn't eating.</div></div>
+          <div class="note-box eater">This is the scene where the aesthetic horror lands. The glass everywhere. The half-eaten panels. The way the creature's passage is legible in the damage pattern — methodical, not frantic. Describe it slowly. Let the team process the environment before they encounter the creature itself.</div>
+          <div class="note-box warn">The spore cases are the session's slow-burn escalation mechanic. The team will find more of them as they go deeper. The question of whether to power up station systems — and what hatches if they do — should start becoming clear here.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 3 -->
+    <div class="scene-card" data-num="03">
+      <div class="scene-header">
+        <div class="scene-name">Module D — The Survivors</div>
+        <div class="scene-tags">
+          <span class="tag social">SURVIVORS</span>
+          <span class="tag warn">CLOCK</span>
+          <span class="tag warm">HUMAN</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description warm-desc">
+          The team will find the barricade in Module D before they find the people behind it — bolted panel sections, stripped cabling looped through the bolt-catches, and on one side a handwritten note in marker: <em>3 ALIVE. NOT POWERED. IF YOU'RE READING THIS LEAVE THE LIGHTS OFF.</em> The survivors are Dr. Ilara Sventhe (station biologist, she was the one who understood first what the creature was), Yusuf Calantoro (engineering chief, he built the barricade), and a survey tech whose name the team will learn is Pesei Makoa, who has not spoken in four days and does not make eye contact. Ilara will do all the talking.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ ILARA'S BRIEFING — WHAT SHE KNOWS ▾</button>
+        <div class="collapse-content">
+          <div class="npc-card">
+            <div class="npc-name">DR. ILARA SVENTHE</div>
+            <div class="npc-role">STATION BIOLOGIST — AUROCHS DEEP MINING / XENOBIOLOGY CONTRACT</div>
+            <div class="npc-desc">She has been running on emergency rations and diminishing hope for eleven days. She is not hysterical. She has been composing a species description in her head for nine of those days because that is how she handles trauma — by scientifically categorising it. She is ready to brief someone. She just needs that someone to exist. When the team arrives she will talk for approximately four minutes without pausing. Let her.</div>
+            <div class="npc-traits">
+              <span class="npc-trait warm">FUNCTIONAL UNDER STRESS</span>
+              <span class="npc-trait ice">OBSERVANT — EXTENSIVE NOTES</span>
+              <span class="npc-trait eater">UNDERSTANDS THE CREATURE</span>
+              <span class="npc-trait warn">KNOWS ABOUT THE TIP SCALE-UP</span>
+            </div>
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label warm">ILARA — INITIAL DEBRIEF</span>
+            <span class="dl-text">"Eleven days ago the TIP unit cracked the primary seam boundary at a depth of 78 kilometres and the access shaft opened into a natural void cavity in the silicate layer. The core team went down to survey it. Dr. Preem sent up a sample container with what he described as 'an anomalous mineralogical deposit' — a hollow silicate sphere approximately 90 centimetres in diameter with an unusual internal structure. Four hours later the station lost contact with the core team. Two hours after that, we found the first glass on the floor in Science Ops."</span>
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label warm">ILARA — ON THE CREATURE</span>
+            <span class="dl-text">"It's not aggressive. That's the terrible thing. It walked through Perrin while he was sleeping in his bunk and it ate the muse interface on his wall panel and it didn't touch him at all — not until he woke up and grabbed his emergency torch, which has a semiconductor array in the handle, and then it grabbed the torch. It's following the electronics. If you carry powered equipment it will find you. If you go dark it walks past you. Six of our people died because they couldn't bring themselves to go dark. They kept their comms on."</span>
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label warn">ILARA — ON THE TIP UNIT</span>
+            <span class="dl-text">"The TIP field is still running because the control hub is in Module E and something is living in Module E and none of us was going to walk in there to switch it off. But here's what you need to know — and I need you to understand this, because Aurochs' investors were never supposed to know this and I shouldn't know it and I read it in the project lead's desk files when I was looking for any way out of this: the TIP unit at this scale is a proof of concept. The next version is seventy times larger. The patent application describes 'habitat management and enforcement applications.' Aurochs built this thing as a weapons system. The mining was proof of concept."</span>
+          </div>
+          <div class="note-box warn">Ilara is the session's conscience. She understands the full threat picture — both the creature and the weapon — and she is willing to help the team with everything she has. What she wants in exchange is simple: get her and Yusuf and Pesei off this rock. Do not leave them here. She will say this once, plainly, and then she will not repeat it. She has enough dignity left to ask once.</div>
+          <div class="note-box eater">Yusuf Calantoro is silent and helpful — he will guide the team through the station's engineering layout, flag the spore case locations he has mapped, and do whatever structural work the team needs. He has been channelling grief into competence for nine days. Pesei Makoa watched the creature eat a colleague who was still talking. He is present but inaccessible. He is not a resource. He is a reason to get out.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 4 -->
+    <div class="scene-card eater-card" data-num="04">
+      <div class="scene-header">
+        <div class="scene-name">Module C — Science Ops</div>
+        <div class="scene-tags">
+          <span class="tag eater">CREATURE ACTIVE</span>
+          <span class="tag warn">SPORE CASES ×3</span>
+          <span class="tag ice">DATA RECOVERY</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description eater-desc">
+          The Science Ops module is the most comprehensively eaten space in the station. Every terminal surface has been digested. The glass coverage is so dense that the floor is no longer visible — a shifting crystalline mat that the team must wade through, globules tumbling in slow arcs in the microgravity, the light from suit lamps catching thousands of tiny refractions. In the middle of it, feeding on what was once the station's primary server array, is the original Lithohex — the one that came out of the core. It is the size of a large dog, six legs ending in chitinous anchoring claws, a broad flat body with a matte silicate surface, and a head that is mostly feeding apparatus — wide, radially-symmetrical, currently pressed flat against the server rack. It is ignoring the team. It is eating.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ NAVIGATING MODULE C ▾</button>
+        <div class="collapse-content">
+          <div class="note-box eater">This is the first moment of direct encounter with the primary organism. Do not rush it. The team has 60 seconds of grace — the creature is feeding and the team has been briefed to go dark. If they are fully powered down, they can observe the creature at close range without being detected. Let them look at it. This is alien life. It is remarkable. The terror and the wonder should coexist here, the same way they have at every weird encounter in this campaign.</div>
+          <div class="test-item"><div class="test-skill eater">STEALTH 50 (GROUP)</div><div class="test-desc">All team members maintain a dark electronic profile while moving through Module C. Active muses, powered weapons, and running mesh implants increase the threshold by 20 each. Failure means the creature's EM sensors twitch toward the team. It doesn't attack — it investigates, moving toward the active signal source. The team has one action to redirect it before it gets within range.</div></div>
+          <div class="test-item"><div class="test-skill ice">INFOSEC / HARDWARE: ELECTRONICS 40</div><div class="test-desc">The server array the creature is feeding on contains recoverable data — specifically, the TIP unit's engineering logs and the Aurochs corporate risk assessment that includes the weapons-use projections. The data can be pulled from the server's cold-storage partition, which the creature has not yet reached, using a hardwired data spike. This requires 3 minutes of work and proximity to the creature. The partition is directly beneath it.</div></div>
+          <div class="test-item"><div class="test-skill warn">PERCEIVE 40</div><div class="test-desc">Spot three dormant spore cases in Module C — one in the overhead cable run, one behind the empty equipment rack, one wedged into the ventilation exchanger above the secondary terminal bank. All three are close to warm electronic junctions. Powering up any terminal in this module will begin hatching all three within 90 seconds.</div></div>
+          <div class="note-box warn">The data recovery task is the scene's central tension: the team needs to be very close to a feeding apex-predator for three full minutes, completely electronically dark, in a room that is also a hatchery. The players will feel this. That is correct.</div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — IF CONSULTED ON THE CREATURE</span>
+            <span class="dl-text">"It's extraordinary. Endogenous biology in a sealed silicate system — I don't know how it persisted. The metabolic state must have been essentially suspended, similar to a cryptobiotic dormancy, for potentially millions of years. The TIP field opened the seam and the thermal gradient change triggered activation." [Very quietly.] "This should be the most important scientific discovery in the history of transhumanity. I'm aware that is not the most relevant observation right now."</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 5 -->
+    <div class="scene-card danger-card" data-num="05">
+      <div class="scene-header">
+        <div class="scene-name">Module E — TIP Control Hub</div>
+        <div class="scene-tags">
+          <span class="tag eater">PRIMARY NEST</span>
+          <span class="tag freeze">FIELD CONTROLS</span>
+          <span class="tag danger">EXTREME HAZARD</span>
+          <span class="tag warn">WEAPON INTEL</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description">
+          Module E is the hottest space in the station — not because of heat in the conventional sense, but because the TIP unit's power draw is enormous and the module is warm, full of running electronics, and the creature knows it. The primary Lithohex has established something that might charitably be called a nest here: it returns to Module E between feeding excursions, and has been depositing glass waste continuously for eleven days. The entire module is encased in glass. The walls, the ceiling, the TIP control consoles, the structural struts — all of it coated in a dense glass matrix that has hardened into a crystalline lattice, partially sealing the module into a kind of organic glass-cathedral. It is beautiful in a way that is deeply, completely wrong.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ TIP HUB — ENCOUNTER &amp; OPTIONS ▾</button>
+        <div class="collapse-content">
+          <p class="scene-description">The creature is present in Module E. It will not leave voluntarily while the TIP unit is running — the power draw is too attractive. The team cannot operate the TIP controls without getting past it. There are several approaches:</p>
+          <div class="goal-box warn">
+            <strong>◈ APPROACH: DRAW IT OUT</strong>
+            If the team powers up a system elsewhere in the station — Science Ops, Habitation, the primary comms relay — the creature will be drawn toward the new EM source. This clears Module E for roughly 8–12 minutes. It also begins hatching any dormant spore cases near the powered-up system. The team gets access to the TIP controls at the cost of new active creatures elsewhere.
+          </div>
+          <div class="goal-box eater">
+            <strong>◈ APPROACH: FIGHT IT</strong>
+            The primary creature can be killed, but not easily. Its silicate armour is resistant to kinetic weapons; it is vulnerable to shaped-charge demolition charges (Yusuf has two), cryogenic agent (the station's fire suppression has residual cryo-foam in Module F), or EMP (disrupts its sensing organs, causes disorientation for ~30 seconds, and it will flail destructively in that period). A direct fight in an enclosed glass-shard environment is bad for everyone. The team will take cuts and impact damage just from the glass the creature dislodges.
+          </div>
+          <div class="goal-box freeze">
+            <strong>◈ APPROACH: USE THE FIELD AGAINST IT</strong>
+            The TIP field boundary runs through the access shaft in Module F. A creature lured into the shaft and pushed past the temporal boundary will be frozen in the field. It won't be dead — just stopped, suspended in the moment of crossing the threshold. This is elegant and deeply strange and MESA will note that it is also a small demonstration of exactly what the weapon version of this technology would do to a habitat full of people. The team should feel that parallel.
+          </div>
+          <div class="note-box freeze">Regardless of how they deal with the creature, the team needs to make a decision about the TIP unit: shut it down, or leave it running. Shutting it down collapses the temporal field — the access shafts close, the mining operation ends, and any creature currently inside the field boundary is instantly returned to normal time. It also destroys the only working TIP hardware in existence. Leaving it running preserves the technology for study but also means whatever is still inside the core access shafts remains accessible — and the team doesn't know what else might be dormant down there.</div>
+          <div class="weapon-box">
+            <div class="weapon-name">◈ TIP UNIT — TECHNICAL DATA (IF RECOVERED)</div>
+            <div class="weapon-desc">The control console, once the creature is dealt with, contains the full Aurochs engineering specification. It confirms everything Ilara said. The Phase Two projector design is 80× the current scale, mounting on a high-delta-V platform, powered by two clustered fusion reactors. Field projection range: up to 800 metres from the platform. Projected coverage diameter: 2.2 kilometres — sufficient to enclose a standard cylinder or torus habitat. Estimated freeze depth: unlimited (full enclosure). The field is designed to be invisible to standard sensor sweeps until activated. The project codename is AMBER LATTICE. Two Consortium corporate divisions have approved Phase Two funding. Construction has not yet begun. The team is holding the only extant copy of this specification. What they do with it is the session's final question.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 6 -->
+    <div class="scene-card freeze-card" data-num="06">
+      <div class="scene-header">
+        <div class="scene-name">Module F — The Deep Bore Shaft</div>
+        <div class="scene-tags">
+          <span class="tag freeze">INSIDE THE FIELD</span>
+          <span class="tag ice">STRANGE PHYSICS</span>
+          <span class="tag optional">OPTIONAL / EXPLORATORY</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description freeze-desc">
+          No one has been down the shaft since the creature came up it. The TIP field boundary is at approximately 40 metres depth — marked by a faint shimmer across the shaft diameter, the same heat-haze distortion the team saw from orbit. Above it: normal time, the station, the creature, the mess. Below it: stopped time. The shaft walls below the boundary show the rock in the exact moment the TIP field engaged — a millimetre-thin layer of loose silicate dust frozen in mid-drift. A tiny crack in the rock wall at 55 metres, crossed by the boundary, shows the crack stopped on one side and propagating normally on the other. Everything below the boundary is four billion years old in the moment it's stopped in.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ INSIDE THE FIELD ▾</button>
+        <div class="collapse-content">
+          <p class="scene-description freeze-desc">A person crossing the temporal boundary does not stop — the field only arrests matter in place relative to the surrounding geological substrate. Moving bodies passing through the boundary are excluded from the stasis effect. This is why the mining access works: equipment can travel in and out. A person descending the shaft below the boundary enters a place where time, for the rock around them, has stopped, but they themselves continue normally.</p>
+          <div class="note-box freeze">This scene is optional but offers a profoundly strange experience. Below the boundary, the team is inside stopped time. The silence is absolute — no vibration, no geological micro-tremors, no thermal creep in the rock. The shaft walls feel carved from glass. At 70 metres depth, the void cavity where the spore-case was found is still open, and the original case — the large boulder-sized primary — is still there, cracked open, the hinge of the hatch still frozen in the moment of opening. Whatever came out of it walked upward through the TIP boundary and into normal time. Whatever else might be in the secondary cavities deeper in the core has not been surveyed.</div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — ON CROSSING THE BOUNDARY</span>
+            <span class="dl-text">"I am processing this very carefully. I am in a place where time has stopped, and I am the only thing moving. I have — some feelings about this that I am not going to describe at length because we are in a crisis. But I want to note that this is the strangest thing I have experienced in this body, and that is a meaningful statement given everything." [Pause.] "The void cavity at 70 metres shows secondary chamber formations. At least three additional chambers, sealed. I cannot determine if they are also occupied. We have no way of knowing without opening them." [Longer pause.] "I think we should not open them."</span>
+          </div>
+          <div class="note-box eater">MESA is right. There are secondary chambers. The team may discover signs of them — regular ovoid shapes in the cavity wall, the same dimensions as the primary case — but the session's scope does not require opening them. The implication is enough. The system may have been seeded with multiple specimens. The TIP device has opened access to all of them. Shutting it down re-seals the shaft. Leaving it on doesn't.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 7 -->
+    <div class="scene-card warn-card" data-num="07">
+      <div class="scene-header">
+        <div class="scene-name">The Decision — What to Do With AMBER LATTICE</div>
+        <div class="scene-tags">
+          <span class="tag warn">EXISTENTIAL CHOICE</span>
+          <span class="tag mesa">MESA</span>
+          <span class="tag freeze">WEAPON THREAT</span>
+          <span class="tag hot">ARC CONSEQUENCE</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description warn-desc">
+          Before anyone leaves the station, the team has to decide what to do with three things: the TIP unit itself, the engineering data, and the creatures. These are not abstract policy questions. They are standing in Module E with a Firewall mission brief that says "recover or destroy" the data, survivors who deserve to leave, and MESA who has an opinion she has been composing since she first saw the field boundary from orbit. This is the session's final scene and it should be run as a real conversation, not a skill roll.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ DECISION MATRIX &amp; MESA'S POSITION ▾</button>
+        <div class="collapse-content">
+          <div class="goal-box freeze">
+            <strong>◈ OPTION: DESTROY THE TIP UNIT</strong>
+            Yusuf has the demolition charges. Destroying the control hub collapses the field, reseals the shaft, and eliminates the only working prototype — along with its engineering logs if those haven't already been copied. Aurochs loses their proof of concept. Phase Two is set back by years, possibly permanently. The silicon predators, if any remain in the field-enclosed zone, are re-sealed below the closed shaft. What's already loose in the station is still a problem — but manageable.
+          </div>
+          <div class="goal-box eater">
+            <strong>◈ OPTION: PRESERVE THE TIP UNIT</strong>
+            Leave it running. File a report. Let Firewall or another body decide what to do with a working temporal-isolation projector sitting on a rock at 52 AU. The creatures in the station still have to be dealt with. The secondary chambers below the boundary remain accessible. Someone will come back here. Firewall, Ozma, Aurochs, someone. The question is who arrives first.
+          </div>
+          <div class="goal-box warn">
+            <strong>◈ OPTION: COPY THE DATA AND DESTROY THE HARDWARE</strong>
+            The team retains the full AMBER LATTICE specification. They have evidence of a weapons program. They have leverage, if they choose to use it, over Aurochs. They have the technical specification for something that could freeze a habitat. They are now the only people in the solar system with that specification, besides whatever Aurochs has on their secured servers. This is the most dangerous outcome from a Firewall perspective — and the one that most resembles how the MERIDIAN-PRIME thread has been accumulating, session by session, in this team's hands.
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — HER POSITION, STATED ONCE</span>
+            <span class="dl-text">"I've been thinking about the report we filed at Vanth. About what we said and what we omitted and why. I want to say something clearly, which is that I think the pattern we've been running — hold the dangerous thing, decide later, carry it ourselves — has a cost that we haven't fully accounted for yet. Every time we keep the thing, we become a little more responsible for what it does next." [Long pause.] "I'm not telling you to destroy it. I'm telling you that I understand if you do. And I'm telling you that if you keep it, I'd like us to talk about why, specifically. Not 'it might be useful.' Why. What we actually intend to do with a weapon that stops time." [Quiet.] "I'll support whatever you decide. I wanted you to make the decision knowing that I've been thinking about it."</span>
+          </div>
+          <div class="note-box warn">The AMBER LATTICE decision is designed to echo everything the campaign has asked about authority, knowledge, and responsibility since Vesta. The team has been accumulating powerful and dangerous information since Session 03. This is the question the campaign has been building toward: at what point does holding the thing make you the threat? MESA's framing is the correct one. Let the players sit with it.</div>
+          <div class="note-box">
+            <strong>CONSEQUENCE PREVIEW:</strong> If the team destroys the hardware and data — Aurochs' Phase Two program faces a significant setback; Firewall is grateful; the team gains rep and resources for the final arc. If they copy the data — they now hold AMBER LATTICE; this information will matter in the final arc in ways that depend on who the team shares it with. If they do nothing and report the situation — Firewall sends a recovery team; Aurochs corporate security arrives; the station becomes a contested site. Any of these are valid. The final arc accommodates all of them.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 8 -->
+    <div class="scene-card mesa-card" data-num="08">
+      <div class="scene-header">
+        <div class="scene-name">Departure — The Specimen Question</div>
+        <div class="scene-tags">
+          <span class="tag mesa">MESA</span>
+          <span class="tag eater">XENOBIOLOGY</span>
+          <span class="tag warn">ETHICAL</span>
+          <span class="tag optional">OPTIONAL</span>
+        </div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description mesa-desc">
+          At some point before the team boards the Perennial, MESA raises something she has been holding since Module C. She does not frame it as a request. She frames it as a question, because she genuinely does not know the answer and wants the team to think with her. The Lithohex is, as far as anyone in the solar system knows, the only documented non-terrestrial life form with a verifiable endogenous biology — not a TITAN construct, not a xenomorph artifact, not a simulation. Something that evolved on its own, billions of years ago, in a sealed rock, 52 AU from the sun. It is also an active threat to every semiconductor-dependent system in transhumanity. Both of these things are true. MESA is not asking to take one home. She is asking what the team thinks should happen to it — and whether, if they destroy the station, they are comfortable with what that means.
+        </p>
+        <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ MESA — THE FULL QUESTION ▾</button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA</span>
+            <span class="dl-text">"I've been trying to think about this the right way. The creature in Module E — the original — came out of 80 kilometres of rock it's been sealed in for four billion years. It didn't come here. We opened the rock. We cracked the seal. We brought the technology that woke it up." [Pause.] "I'm not saying it's our fault eleven people died. I'm saying that the creature did not choose to be here and it is not doing anything other than what it evolved to do and that those facts don't make it safe but they do make it — something other than a monster." [Longer pause.] "Ilara wants to document it. She asked me privately. She wants to write the species description. She's been composing it for nine days. I think she should be allowed to do that." [Very quiet.] "And then I think we need to talk about whether we leave it alive."</span>
+          </div>
+          <div class="note-box mesa">There is no correct answer to this question. MESA is not lobbying for a decision — she is doing what she has done since Session 03: helping the team think carefully about things they might otherwise act on quickly. If the team decides to destroy the Lithohex and the spore cases — that is defensible and probably wise. If the team decides to seal the station and report the organism's existence for supervised scientific study — that is also defensible and creates a complication. If the team takes a non-viable tissue sample for Ilara to analyze — that is possible and MESA will facilitate it. What matters is that the decision is made consciously, with the team understanding that they are making a choice about a living thing that has done nothing wrong to them as a species, only to transhumanity's tools.</div>
+          <div class="dialogue-line">
+            <span class="dl-label warm">ILARA — IF ASKED</span>
+            <span class="dl-text">"I know what you're going to decide. I'd just like to take a tissue sample first, if that's possible. I have the collection equipment in Module D's storage. Whatever happens after — at least it existed somewhere other than eleven pages of notes that nobody outside this room will ever read." [She looks at the wall.] "Its name — if you're going to let me name it — is Lithovorus silicophagus. Silicon-eater. I'd like it to be named."</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end scenes-section -->
+
+  <!-- GM NOTES -->
+  <div class="section-label">◈ GM NOTES — RUNNING THIS SESSION</div>
+  <div class="brief-panel">
+    <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')" style="border-top:none;">◈ REGISTER — WHAT THIS SESSION IS FOR ▾</button>
+    <div class="collapse-content open">
+      <p class="note-box">This session runs on two registers simultaneously. On the surface it is a survival horror scenario with a classic structure: trapped station, active predator, limited resources, clock. Below the surface it is asking the campaign's central question in its most concrete form yet: what do you do with a technology that could freeze an O'Neill cylinder full of people, and who gets to make that decision? The creature is not an obstacle to that question — it is the demonstration model. The thing that hatched when the rock was opened is the living proof of what happens when you crack something sealed. AMBER LATTICE does the same thing to habitats that the TIP field did to the silicate layer: it opens the rock, and you don't know what's inside until the seal is broken.</p>
+      <p class="note-box eater">The Lithohex should never be played as a slasher-movie monster. It is an animal. It is indifferent, not malicious. The horror comes from its scale of effect — not the individual encounter, but what it means that it exists. If the session does its job, the table will feel the strangeness of hating a creature that has done nothing wrong by its own nature. That discomfort is the session's gift to the final arc.</p>
+      <p class="note-box freeze">The TIP field is the session's most important element for the arc. The team will understand — viscerally, from standing inside it — what this technology can do. Abstract geopolitical threat becomes physical experience: you crossed a boundary, time stopped around you, you kept moving, you understood. When the AMBER LATTICE specification describes doing this to a habitat, the team will not need an explanation of why that is unacceptable. They were inside one.</p>
+      <p class="note-box mesa">MESA has been carrying the weight of the campaign's accumulated knowledge since Vesta. This session gives her the space to say, plainly, what she thinks about the pattern of decisions the team has made. Not an accusation — an observation. She is the one who logs the mission reports, maintains the threat files, and remembers every omission from every Firewall transmission. She is also the one who named a xenobiological organism silicon-eater in her internal notes at 3 AM in a dead science station. Both of these things are MESA. Use them both.</p>
+    </div>
+    <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ PACING — CLOCKS AND ESCALATION ▾</button>
+    <div class="collapse-content">
+      <p class="note-box warn">The session has two clocks: the survivors' atmosphere supply (8–12 hours), and the spore hatching mechanic (triggered by powered systems). Neither clock should be secret — Ilara knows her atmosphere situation and will tell the team, and the team will learn the spore hatching mechanic from Ilara's briefing in Scene 3. Informed pressure is better than hidden pressure. The players should feel the urgency, not discover they were underwater.</p>
+      <p class="note-box eater">Spore hatchings are the escalation tool. Start with none active beyond the primary creature. Each time the team powers up a system, one or more hatch. By the midpoint, there should be 2–3 active Lithohex in the station. By the final push to Module E, the station should feel genuinely dangerous. But never more creatures than the team can plausibly manage — the goal is pressure, not TPK.</p>
+      <p class="note-box">The session ends when the team, the survivors, and whatever data or samples they've chosen to carry are aboard the Perennial and the station is behind them — destroyed, sealed, or left for someone else to deal with. That last act of looking back at the station (now dark, or burning, or still running) is the session's final image. Give it a moment.</p>
+    </div>
+    <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ FINAL ARC SETUP — WHAT THIS SESSION ESTABLISHES ▾</button>
+    <div class="collapse-content">
+      <p class="note-box signal">Whatever the team does with AMBER LATTICE becomes the central complication of the final arc. A weapon that can freeze habitats is a threat to every populated structure in the solar system, and the team is now the only people who have encountered the prototype and understand its full implications. Whether they destroy it, report it, or carry it, the consequences shape the final arc's opening condition.</p>
+      <p class="note-box ozma">Dahl, if the team accepted his arrangement at Vanth, receives a message three days after departure: Ozma has flagged KBO 2119-HR4 as a point of interest. They don't know about the Lithohex. They know about the TIP technology. Dahl's message to the team is two words: <em>"How bad?"</em></p>
+      <p class="note-box mesa">MESA's question about the Lithohex — the specimen, the name, the existence-outside-a-dead-station question — is not resolved here. Ilara's tissue sample, if taken, travels with the team. So does the question of whether Lithovorus silicophagus gets to exist in the scientific record, and under what circumstances, and whether Aurochs' deep bore operation will eventually open another shaft, somewhere else, into another sealed cavity, and whether anyone will be watching.</p>
+    </div>
+  </div>
+
+</div><!-- end main-grid content -->
+
+<!-- ═══════════════════════ CLOCKS / NPCS / REFERENCE / TRACKERS ═══════════════════════ -->
+  <!-- KEY NPCs -->
+  <div class="section-label warm">◈ KEY NPCs</div>
+  <div class="brief-panel" style="padding:0.8rem 1rem;">
+    <div class="npc-card">
+      <div class="npc-name">ILARA SVENTHE</div>
+      <div class="npc-role">STATION BIOLOGIST — AUROCHS / XENOBIOLOGY CONTRACT</div>
+      <div class="npc-desc">Nine days of scientific grief compressed into a species description she has not been able to write down. Will provide the best briefing the team has ever received from a traumatised civilian if given two minutes of uninterrupted space. Wants: to live, to publish, to name the thing that killed her colleagues.</div>
+      <div class="npc-traits">
+        <span class="npc-trait warm">FUNCTIONAL UNDER STRESS</span>
+        <span class="npc-trait ice">FULL FIELD NOTES — IN HEAD</span>
+        <span class="npc-trait warn">KNOWS AMBER LATTICE EXISTS</span>
+        <span class="npc-trait eater">WANTS TISSUE SAMPLE</span>
+      </div>
+      <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ PORTRAIT PROMPT ▾</button>
+      <div class="collapse-content">
+        <div class="note-box ice" style="font-family:'Share Tech Mono',monospace; font-size:0.85rem; line-height:1.7;">woman, mid-40s, Nordic features, exhausted but sharp-eyed, short silver-streaked dark hair matted from days in a helmet, fine-boned face with deep stress lines, wearing a partially-unzipped orange-and-grey survey suit with an Aurochs patch on the shoulder, holding a battered field notebook pressed to her chest, emergency lighting casting amber shadows, background of a darkened science module with glass globules scattered across the floor, photorealistic, cinematic, Eclipse Phase aesthetic, hard sci-fi, no weapons</div>
+      </div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-name">YUSUF CALANTORO</div>
+      <div class="npc-role">ENGINEERING CHIEF — AUROCHS SURVEY / STATION SYSTEMS</div>
+      <div class="npc-desc">Built the barricade. Has been keeping the survivors alive through engineering competence and suppressed grief. Knows the station's layout better than anyone. Has two shaped-charge demolition units. Does not talk about the eight colleagues who didn't make it to Module D.</div>
+      <div class="npc-traits">
+        <span class="npc-trait ice">STATION SYSTEMS EXPERT</span>
+        <span class="npc-trait warn">DEMOLITION CHARGES ×2</span>
+        <span class="npc-trait warm">RELIABLE UNDER PRESSURE</span>
+      </div>
+      <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ PORTRAIT PROMPT ▾</button>
+      <div class="collapse-content">
+        <div class="note-box ice" style="font-family:'Share Tech Mono',monospace; font-size:0.85rem; line-height:1.7;">man, early 50s, broad-shouldered, East African features, close-cropped grey hair, heavy stubble, calm weathered face carrying visible grief behind steady eyes, wearing a scuffed grey engineering coverall with improvised tool loops, grease-stained hands, one hand resting on a bulkhead panel he has clearly welded shut himself, dim emergency red lighting, background of a reinforced module hatch barricaded with stripped metal panels, photorealistic, cinematic, Eclipse Phase aesthetic, hard sci-fi</div>
+      </div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-name">PESEI MAKOA</div>
+      <div class="npc-role">SURVEY TECHNICIAN — AUROCHS / CONTRACT</div>
+      <div class="npc-desc">Present. Not available. Watched something that cannot be described happen four days ago and has been processing it since. Will follow instructions. Will not speak. Will not be left behind.</div>
+      <div class="npc-traits">
+        <span class="npc-trait danger">ACUTE STRESS RESPONSE</span>
+        <span class="npc-trait warm">FUNCTIONAL (SIMPLE TASKS)</span>
+      </div>
+      <button class="collapse-btn" onclick="this.nextElementSibling.classList.toggle('open')">◈ PORTRAIT PROMPT ▾</button>
+      <div class="collapse-content">
+        <div class="note-box ice" style="font-family:'Share Tech Mono',monospace; font-size:0.85rem; line-height:1.7;">young person, late 20s, Polynesian features, slight build, blank thousand-yard stare, dark eyes unfocused and directed at nothing, sitting with knees pulled to chest against a bulkhead, wearing a crumpled survey technician uniform, hands loosely clasped, no expression — not sadness, not fear, just absence, very dim red emergency light, background of a small pressurised module interior with stripped-out panels, photorealistic, cinematic, Eclipse Phase aesthetic, hard sci-fi, psychological realism</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REF: LITHOHEX -->
+  <div class="section-label eater">◈ LITHOHEX — QUICK REFERENCE</div>
+  <div class="brief-panel" style="padding:0.8rem 1rem;">
+    <div class="note-box eater" style="margin-bottom:0.4rem;"><strong>ATTRACTED BY:</strong> Active electronics, EM emissions from running hardware, semiconductor switching freq. Active muse = medium signature. Running weapon system = high signature. Powered terminal = beacon.</div>
+    <div class="note-box freeze" style="margin-bottom:0.4rem;"><strong>IGNORED BY:</strong> Completely dark biologicals with no active implants, powered-down equipment, cold surfaces, organic material generally.</div>
+    <div class="note-box warn" style="margin-bottom:0.4rem;"><strong>KILLS BY:</strong> Collateral — it grabs the powered device, the person holding the device gets dragged, crushed, or suffocated. Direct attack is rare and only when cornered. Flee when unpowered.</div>
+    <div class="note-box danger" style="margin-bottom:0.4rem;"><strong>STOPS WHEN:</strong> Extreme cold (cryo-foam, 50°C below ambient), strong EMP (disoriented 30s, destructive flailing), complete electronics deprivation in area (creature moves on), temporal field (frozen at boundary).</div>
+    <div class="note-box" style="margin-bottom:0;"><strong>GLASS GLOBULES:</strong> Everywhere it has fed. Sharp, skittering in microgravity. Cutting hazard. Also: evidence trail. Follow the glass.</div>
+  </div>
+
+  <!-- AMBER LATTICE STATUS -->
+  <div class="section-label freeze">◈ AMBER LATTICE — STATUS TRACKER</div>
+  <div class="clock-section">
+    <div class="clock-label" style="margin-bottom:0.5rem;">MARK TEAM DECISIONS AS MADE</div>
+    <div style="margin-bottom:0.4rem;">
+      <div style="font-size:12px; color:var(--text); letter-spacing:2px; margin-bottom:0.2rem;">TIP HARDWARE</div>
+      <div style="display:flex; gap:4px;">
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(104,152,200,0.3); font-size:12px; color:var(--freeze); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'INTACT')">INTACT</div>
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(200,168,64,0.3); font-size:12px; color:var(--warn); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'DESTROYED')">DESTROYED</div>
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(112,48,168,0.3); font-size:12px; color:var(--ozma); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'REPORTED')">REPORTED</div>
+      </div>
+    </div>
+    <div style="margin-bottom:0.4rem;">
+      <div style="font-size:12px; color:var(--text); letter-spacing:2px; margin-bottom:0.2rem;">ENGINEERING DATA</div>
+      <div style="display:flex; gap:4px;">
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(96,200,144,0.3); font-size:12px; color:var(--mesa); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'HELD')">TEAM HOLDS</div>
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(200,168,64,0.3); font-size:12px; color:var(--warn); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'DELETED')">DELETED</div>
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(160,48,48,0.3); font-size:12px; color:var(--danger); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'FW-FILED')">FILED W/FW</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:12px; color:var(--text); letter-spacing:2px; margin-bottom:0.2rem;">LITHOHEX SPECIMEN</div>
+      <div style="display:flex; gap:4px;">
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(224,120,40,0.3); font-size:12px; color:var(--eater); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'SAMPLE')">SAMPLE TAKEN</div>
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(160,48,48,0.3); font-size:12px; color:var(--danger); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'DESTROYED')">ALL DESTROYED</div>
+        <div style="flex:1; padding:3px 6px; border:1px solid rgba(160,184,200,0.3); font-size:12px; color:var(--accent2); text-align:center; cursor:pointer; letter-spacing:1px;" onclick="toggle_decision(this,'SEALED')">SEALED IN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARC THREAD STATUS -->
+  <div class="section-label signal">◈ ARC THREAD STATUS — ENTERING SESSION 09</div>
+  <div class="brief-panel" style="padding:0.8rem 1rem;">
+    <div class="note-box signal"><strong>MESA:</strong> Full member of the team. Has been thinking about the pattern of the team's decisions. Will say so in Session 09.</div>
+    <div class="note-box ozma"><strong>DAHL:</strong> Direct contact established (if deal accepted at Vanth). Will message team re: KBO 2119-HR4 within 3 days of departure. Knows about TIP technology from Ozma signals intel. Does not know about the creature.</div>
+    <div class="note-box mesa"><strong>AWE / ARROKOTH:</strong> AWE has sent its message toward MERIDIAN-PRIME's bearing. No response received yet. The swarm at Arrokoth is alive and watching.</div>
+    <div class="note-box warn"><strong>FIREWALL REPORT:</strong> Filed at Vanth. Contents shaped what resources Firewall provides. Whatever was omitted is still omitted.</div>
+    <div class="note-box ice"><strong>LOK:</strong> Went to find Dahl after the conversation at Vanth. What she told him is not yet visible. Its effects will be.</div>
+  </div>
+
+</div><!-- end right-col content -->
+</div><!-- end main-grid -->
+
+<button class="expand-btn" onclick="document.querySelectorAll('.collapse-content').forEach(el=>el.classList.add('open'))">◈ EXPAND ALL</button>
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<script>
+  function toggle_decision(el, val) {
+    const wasActive = el.style.fontWeight === 'bold';
+    el.parentElement.querySelectorAll('div').forEach(d => {
+      d.style.fontWeight = '';
+      d.style.opacity = '1';
+    });
+    if (!wasActive) {
+      el.style.fontWeight = 'bold';
+      el.parentElement.querySelectorAll('div').forEach(d => {
+        if (d !== el) d.style.opacity = '0.35';
+      });
+    }
+  }
+
+</script>
+
+
+
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

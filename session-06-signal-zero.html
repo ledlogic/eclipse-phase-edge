@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNAL ZERO | Eclipse Phase — Session 06 GM Reference</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-06-signal-zero.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>SIGNAL <span class="signal-word">ZERO</span><span class="sub">KUIPER APPROACH</span></h1>
+  <div class="header-sub">MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE</div>
+  <div class="stats-bar">
+    <span class="stat-chip">LOCATION: KUIPER BELT OBJECT · 2114 FK7</span>
+    <span class="stat-chip signal">THREAT: SIGNAL SOURCE — UNKNOWN ORIGIN</span>
+    <span class="stat-chip warn">REGISTER: EXPLORATION / HORROR / DISCOVERY</span>
+    <span class="stat-chip mesa">MESA — NAVIGATOR / GUIDE</span>
+    <span class="stat-chip ozma">OZMA — CLOSING FAST</span>
+    <span class="stat-chip">MORPHS: ORIGINAL / PHYSICAL PRESENT</span>
+    <span class="stat-chip danger">BRIDGES: COLD STATION → SIGNAL ZERO → ???</span>
+  </div>
+</header>
+
+
+<!-- ════════════ OZMA ARRIVAL CLOCK ════════════ -->
+<div class="section-label ozma" style="max-width:1100px; margin:0 auto;">◈ OZMA ARRIVAL CLOCK</div>
+<div style="padding:0.8rem 1.5rem; border-bottom:1px solid var(--border2); max-width:1100px; margin:0 auto;">
+  <div style="font-size:12px;color:var(--text);letter-spacing:2px;margin-bottom:0.5rem;">◈ HOURS UNTIL OZMA REACHES OBJECT</div>
+  <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:0.5rem;" id="ozma-clock-pips"></div>
+  <div style="display:flex;gap:5px;margin-bottom:0.4rem;">
+    <button onclick="advanceClock()" style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--ozma);background:rgba(128,48,184,0.08);border:1px solid rgba(128,48,184,0.3);padding:3px 8px;cursor:pointer;letter-spacing:1px;">◈ ADVANCE 1 HR</button>
+    <button onclick="resetClock()" style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--text);background:none;border:1px solid var(--border2);padding:3px 8px;cursor:pointer;letter-spacing:1px;">◈ RESET</button>
+  </div>
+  <div id="ozma-clock-status" style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;line-height:1.4;"></div>
+</div>
+
+<!-- ── MAIN GRID ── -->
+<div class="main-grid">
+
+  <!-- ════════════════════ LEFT COLUMN ════════════════════ -->
+  <div class="left-col">
+
+    <!-- SITUATION BRIEF -->
+    <div class="section-label signal">◈ SITUATION BRIEF</div>
+    <div class="brief-panel">
+      <div class="brief-text">
+        MESA's coordinates lead outward — past the scattered disc, past the last registered survey markers, to a Kuiper Belt object with no name, no registered owner, and no traffic on record for as long as records have existed. The team travels in their own morphs for the first time since Gutenberg: no quarantine bodies, no borrowed identities. Just themselves, a ship, and MESA navigating from a device clipped to the pilot's console, growing increasingly quiet the closer they get.
+      </div>
+      <div class="goal-box signal">
+        <strong>◈ MISSION OBJECTIVE — FIREWALL BRIEF</strong>
+        Reach the object identified in MESA's coordinate data. Determine the nature and current status of the signal source. Assess threat level. Do not transmit findings until you are in controlled comms range — Firewall does not want this data on any open relay. Return with evidence or samples. MESA travels with you.
+      </div>
+      <div class="goal-box warn" style="margin-top:0.5rem;">
+        <strong>◈ COMPLICATION — OZMA CLOSE BEHIND</strong>
+        Lixia Lok, freed or escaped at Iapetus, transmitted partial coordinates to Ozma before she went dark. Ozma has the same region. They don't have the precision MESA does — but they are faster and better resourced. The team has a lead. They need to use it.
+      </div>
+      <div class="goal-box ozma" style="margin-top:0.5rem;">
+        <strong>◈ COMPLICATION — WHAT MESA ISN'T SAYING</strong>
+        MESA has been inside the signal data for months. She is the only person alive who has actually processed its full structure. She is helpful. She is guiding the team. She is also increasingly reluctant to discuss what she thinks is at the source — and when pressed, she changes the subject in ways that are technically responsive but clearly evasive. Something in that data disturbed her. She hasn't decided yet whether to tell them what.
+      </div>
+      <div class="goal-box mesa" style="margin-top:0.5rem;">
+        <strong>◈ PC WIN CONDITION</strong>
+        Reach the source before Ozma. Understand what it is well enough to make a decision: report to Firewall, destroy it, or protect it from everyone. Leave in one piece with MESA intact. What that decision means for the campaign depends entirely on what they find.
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="section-label">◈ APPROACH TIMELINE</div>
+    <div class="timeline-panel">
+      <div class="timeline">
+        <div class="tl-item mesa">
+          <div class="tl-time mesa">DEPARTURE — MESA UPLOADS COORDINATES</div>
+          <div class="tl-desc">Firewall provides a ship: a long-haul survey hauler with a small crew berth and minimal armament, registered as a geological survey contractor. MESA uploads the precise coordinates to nav — the only complete set in existence. She's been holding them since before Vesta. She doesn't explain why she waited until now.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">TRANSIT — 9 DAYS TO INTERCEPT WINDOW</div>
+          <div class="tl-desc">The transit is long enough to develop MESA's voice and the team's tension. Use this time. MESA will answer questions about the signal — to a point. She can be pressed on what she found in the data but resists revealing everything. Run quiet encounters: a near-miss debris field, an anomalous relay ping that turns out to be nothing, the growing sense of distance from anything that would come for them.</div>
+        </div>
+        <div class="tl-item warn">
+          <div class="tl-time warn">DAY 4 — OZMA SHIP DETECTED</div>
+          <div class="tl-desc">Passive sensors pick up a vessel at extreme range on a roughly parallel trajectory. It's fast — faster than the team's survey hauler — but their vector suggests a larger search area. The team has better coordinates. For now, they're ahead. The ship does not respond to passive queries and is running minimal broadcast.</div>
+        </div>
+        <div class="tl-item signal">
+          <div class="tl-time signal">DAY 7 — THE OBJECT APPEARS ON SENSORS</div>
+          <div class="tl-desc">2114 FK7 resolves on the long-range scans. It is not a natural Kuiper object. The albedo is wrong — too high, too uniform. The mass is right for a body this size, but the thermal signature shows a small consistent heat differential in one location. Something inside it is warm. MESA goes quiet for almost an hour after the sensor reading comes in.</div>
+        </div>
+        <div class="tl-item warn">
+          <div class="tl-time warn">DAY 8 — BELTER MINING VESSEL DEPARTING</div>
+          <div class="tl-desc">As the team closes on 2114 FK7, passive sensors resolve a second vessel already leaving the area — an independent belter mining ship, running low burn away from the object on a return vector toward the inner belt. They've been here, tried their luck, and left. They answer a hail without much suspicion: just another failed prospect, nothing here worth the fuel. Except one family member's account doesn't quite add up.</div>
+        </div>
+        <div class="tl-item signal">
+          <div class="tl-time signal">DAY 9 — ARRIVAL AT 2114 FK7</div>
+          <div class="tl-desc">The team achieves insertion orbit. Up close, the surface shows evidence of the belters' work: scorch marks from cutting charges, shallow drill-strike craters, nothing penetrating more than a few centimeters. The rock defeated them entirely. The signal is still here. It is active. And one thing that was here when they arrived is gone — a comms tether station that should be visible in the orbital survey imagery is absent.</div>
+        </div>
+        <div class="tl-item ozma">
+          <div class="tl-time ozma">T+VARIABLE — OZMA ARRIVES</div>
+          <div class="tl-desc">The Ozma vessel is 12–18 hours behind the team, depending on how long the surface work takes. They will come in hard and they know the team is here — the survey hauler's transit will show on their scans. The question isn't whether Ozma arrives. It's what the team has found and decided by the time they do.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCATIONS -->
+    <div class="section-label">◈ LOCATIONS — 2114 FK7</div>
+    <div class="rooms-section">
+
+      <!-- SHIP -->
+      <div class="room-card mesa-room" data-num="01 — SHIP">
+        <div class="room-header">
+          <div class="room-name">Survey Hauler — GS-Perennial</div>
+          <div class="room-tags">
+            <span class="tag mesa">MESA PRESENT</span>
+            <span class="tag explore">TRANSIT HUB</span>
+            <span class="tag warn">OZMA VISIBLE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description mesa-desc">
+            The GS-Perennial smells like recycled air and long trips. It was a geological survey vessel before Firewall acquired it — the equipment bays still have core sample racks bolted to the walls, now holding a modest cache of Firewall-supplied gear. The crew berth sleeps four in narrow bunks. The pilot's console is where MESA spends most of the transit: a device clipped to the instrument cluster, her voice coming from a small speaker. There is one port window. The stars don't move.
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA DURING TRANSIT — BEHAVIORAL GUIDE <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box mesa">MESA is more present on this mission than she has been before — she's been in storage or secondary status since Vesta. This is the first time she's been the necessary person. She is trying to be useful and she is trying to be honest and these two things are starting to conflict.</div>
+            <div class="dialogue-line">
+              <span class="dl-label mesa">MESA — ON THE SIGNAL STRUCTURE</span>
+              <span class="dl-text">"The frequency isn't natural and it isn't quite artificial either. It's — structured, but the structure doesn't resolve into a known format. I've been sitting with it for months and I can tell you it's intentional. I can't tell you who intended it." [pause] "That's not entirely true. I have a hypothesis. I'm not ready to share it."</span>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label mesa">MESA — IF PUSHED ON THE HYPOTHESIS</span>
+              <span class="dl-text">"If I tell you what I think it is, it will change how you approach the source. I'm not sure that change would be helpful. I've seen what happens when people arrive at something like this with a preconception." [Long pause] "I haven't seen it personally. I've seen the data records of people who didn't come back."</span>
+            </div>
+            <div class="test-item"><div class="test-skill signal">KINESICS / PERSUADE</div><div class="test-desc">Mesa is not lying — she is protecting the team from something. Whether that protection is helpful or condescending is a genuine question. Pressing her hard enough yields: she believes the signal is a form of automated distress call or a lure, and she doesn't know which. The distinction matters enormously.</div></div>
+            <div class="test-item"><div class="test-skill mesa">RESEARCH (MESA'S DATA)</div><div class="test-desc">If a PC asks to review the raw signal data themselves, MESA shares it. Processing it requires a Know: Cryptography, Know: Astrobiology, or high Program test. A success confirms MESA's hesitation: the signal has a deep recursive structure that suggests it was designed to be understood gradually — as if it expects its recipients to take time with it.</div></div>
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MONITORING THE OZMA VESSEL <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">HARDWARE: ELECTRONICS / PILOT: SPACE</div><div class="test-desc">The Ozma ship is faster but running a wider search pattern. Precise tracking requires active sensors — which would announce the team's position. Passive tracking gives a rough vector and speed. At current rates, they arrive 12–18 hours after the team reaches the object.</div></div>
+            <div class="test-item"><div class="test-skill warn">INFOSEC 50</div><div class="test-desc">A careful scan of the Ozma vessel's minimal broadcast signature reveals a transponder code that doesn't match any registered ship. It matches a hull configuration in MESA's records: a fast insertion vessel that Ozma uses for sensitive extractions. Not a research team. A retrieval team.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BELTER ENCOUNTER -->
+      <div class="room-card warn-room" data-num="01b — BELTERS">
+        <div class="room-header">
+          <div class="room-name">MV Cradle of Hours — Departing</div>
+          <div class="room-tags">
+            <span class="tag explore">COMMS OR INTERCEPT</span>
+            <span class="tag warn">COMMS STATION — TAKEN</span>
+            <span class="tag loot">OPTIONAL RECOVERY</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description warn-desc">
+            The MV Cradle of Hours is a belter family mining ship — three generations, six crew, working independent prospect claims in the outer disc. They spent eleven days at 2114 FK7 and have nothing to show for it. Blasting charges, drill heads, two broken cutting rigs: the rock wouldn't give. They are frustrated and tired and running a fuel budget that doesn't have much margin for a longer stay. The only salvage they took was a derelict comms station tethered outside the object on a short cable — just enough spin on it to hold the tether taut under centrifugal force. Nobody registered to it. No markings they recognized. It's compact, unusual, and might be worth something to the right buyer. Grandmother Pelaia was the one who insisted they take it.
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE FAMILY — THREE REGISTERS RUNNING AT ONCE <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">The Cradle of Hours has three distinct emotional currents and they don't all surface at once. The miffed-about-the-ore register is loudest and most immediate. The spooked-about-the-rock register comes out after a few minutes of conversation. The uneasy-about-the-station register takes longer — and the broken capture net detail may not come out at all unless the team pushes, or earns it.</div>
+            <div class="dialogue-line">
+              <span class="dl-label warn">PELAIA VOSS-ANKUR — MATRIARCH · REGISTER 1: MIFFED</span>
+              <span class="dl-text">"Eleven days. Eleven days and not a gram of anything. You can see the survey data — that rock should have been rich. The mass signature read beautifully from four million kilometers out. We burned a third of our reserve getting here and another third trying to crack it. The charges just — absorbed. Like blasting into packed sand that somehow doesn't move." [She makes a gesture that means money lost forever.] "Whatever your survey finds in there, I hope it's worth the trip. Wasn't worth ours."</span>
+            </div>
+            <div class="dialogue-line">
+              <span class="dl-label">PELAIA · REGISTER 2: SPOOKED</span>
+              <span class="dl-text">[Later in the conversation, or if asked directly about the rock's feel] "There's something wrong with that object. I've been working belt and disc for thirty years. Rock feels a certain way when it's just rock. This one felt — occupied. Not dangerous. Not like anything was going to come out and get us. Just... aware. My daughter thinks I'm getting old. Maybe I am." [She doesn't elaborate unless pressed, and then only a little.]</span>
+            </div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DAV — THE GRANDSON WHO NOTICED <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box mesa">Dav is early twenties, quieter than the rest of the family, and has been turning something over in his mind since the EVA. He isn't frightened. He's the kind of person who needs to understand things before he can be frightened of them, and he doesn't understand this yet.</div>
+            <div class="dialogue-line">
+              <span class="dl-label">DAV VOSS-ANKUR · REGISTER 3: WRONG ABOUT THE STATION</span>
+              <span class="dl-text">"The station was still active when I pulled it. Indicator light cycling. The cable end that was attached to the rock — it wasn't bolted. It was grown. I had to cut it." [Pause.] "The cut end is still warm. Checked this morning. Still warm." [Another pause.] "That's not what's bothering me. What's bothering me is it wasn't pointing at anything. I checked the antenna bearing when I had it loose. It wasn't pointed at any station, any relay, anything in any registry I could find. It was pointed at nothing. Just — out."</span>
+            </div>
+            <div class="test-item"><div class="test-skill mesa">KINESICS — DAV</div><div class="test-desc">He heard something through his suit's contact mic while working on the cable. Not a signal — a resonance. Like standing next to something that was vibrating at a frequency just below perception. He hasn't told the family. He's been deciding whether it happened.</div></div>
+            <div class="test-item"><div class="test-skill signal">PERSUADE — IF TRUSTED</div><div class="test-desc">If a PC acknowledges his observation seriously rather than explaining it away, Dav adds: the resonance had a rhythm. Not mechanical. Not regular. Something closer to breathing. He describes it once and then doesn't describe it again.</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE BROKEN CAPTURE NET — WHAT THEY MAY NOT ADMIT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box danger">The family tried to grab a second comms array — they spotted it tethered further out, lower profile than the first. They misjudged the mass badly. The capture net struck it at the wrong angle, the array's tether snapped, and the recoil flung it outward. It is now tumbling somewhere in the debris field at an unknown vector, probably still active. They are embarrassed about this. They will not volunteer it.</div>
+            <div class="dialogue-line">
+              <span class="dl-label warn">PELAIA — IF THE SECOND ARRAY IS MENTIONED</span>
+              <span class="dl-text">[Beat. She and Dav exchange a look.] "We may have... attempted to recover a second unit. Smaller. The mass read light on the net sensors and it wasn't. Net took a bad strike and — it went wide." [Pause.] "It was already out there. We didn't break anything that was working."</span>
+            </div>
+            <div class="test-item"><div class="test-skill warn">PERSUADE / KINESICS — SURFACING THE DETAIL</div><div class="test-desc">The family won't lie if directly asked about damage to the area, but they frame it minimally. A Kinesics test during the initial conversation notices Dav looking away when the topic of salvage comes up. Directly asking about damage to the site, a second object, or anything they didn't manage to retrieve will get a reluctant admission.</div></div>
+            <div class="test-item"><div class="test-skill danger">IMPLICATIONS — THE TUMBLING ARRAY</div><div class="test-desc">A second comms array is now on an unknown trajectory somewhere within a few thousand kilometers of the object, still tethered to a length of cable, probably still active. The team can attempt to locate it with active sensors (Hardware: Electronics, reveals position but announces their presence) or passive scan (takes hours, less precise). Ozma's sensors are better — they will find it. If it's still logging inbound signal replies, it may contain data the team needs and Ozma will acquire instead.</div></div>
+            <div class="test-item"><div class="test-skill mesa">MESA — ON LEARNING ABOUT THE SECOND ARRAY</div><div class="test-desc">"Two external relay stations. Directional, grown-in, pointed at the same bearing. This wasn't a comms setup for communicating with the inner system. This was a distributed antenna array — the two units working in tandem to maintain a precise signal lock on something very far away. One of them is now tumbling. The lock is broken." [Pause.] "I don't know if that matters. I'm trying to determine if that matters."</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE COMMS STATION — IF RECOVERED <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box">The station is compact — roughly the size of a large backpack, angular, built from materials that don't match any standard manufacturing template. It looks old but shows no deterioration. It is still drawing power from somewhere its internal cells should not provide after this long, reading at 40% capacity.</div>
+            <div class="test-item"><div class="test-skill">HARDWARE: ELECTRONICS 50</div><div class="test-desc">When powered on, the antenna housing orients automatically toward the object — and toward a specific bearing beyond it, deep outward. It was designed to be here. The grown-in cable end and the anchor scar on the surface match precisely. This was not salvage. This was infrastructure.</div></div>
+            <div class="test-item"><div class="test-skill mesa">MESA — LOG BUFFER READ</div><div class="test-desc">The station's log buffer contains 23 months of inbound data — since approximately the time Gutenberg's fetch went active. Something has been replying to the signal from inside the solar system. The reply source has no registered location. MESA is quiet for a long time after this. Then: "Something found this beacon before we did. It has been in a very slow conversation with it. I don't think that conversation is finished."</div></div>
+            <div class="test-item"><div class="test-skill danger">MESA — ON THE SECOND ARRAY</div><div class="test-desc">If the team recovers the tumbling second array as well, MESA can correlate both log buffers. The two units were operating as a phased array — together they maintained a signal lock precise enough to point at a source several light-years out. With one unit tumbling, that lock has been broken for however long the Cradle of Hours has had it. "If there's something at the other end that was expecting continuity of signal... we just went quiet to it. Mid-conversation."</div></div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEGOTIATING FOR THE STATION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">PERSUADE / TRADE — PELAIA</div><div class="test-desc">Pelaia will sell or trade the station without much pressure — she's practical and it's not worth much to her as salvage. A fair offer (50–100 GP equivalent, or something useful for a long-haul mining operation) closes the deal immediately. A low offer gets a counter. Rep can substitute for credit if the team has relevant belter-adjacent standing.</div></div>
+            <div class="test-item"><div class="test-skill warn">SOCIAL — PELAIA IF PRESSED TOO HARD</div><div class="test-desc">Pelaia is not naive. If the team is too eager or too cagey, she recalibrates. She won't be cheated and she won't be frightened. She's been in the outer disc for thirty years. She'll sell the station — but she'll also remember the encounter, and she'll file a salvage notation with the nearest registry point. That record exists now.</div></div>
+            <div class="note-box" style="margin-top:0.3rem;">The Cradle of Hours and its family can be a recurring element. They owe nothing to Firewall, Ozma, or anyone else. They are simply people who were in the wrong place at a strange time and took the only thing worth taking.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SURFACE -->
+
+      <div class="room-card signal-room" data-num="02 — SURFACE">
+        <div class="room-header">
+          <div class="room-name">Surface of 2114 FK7</div>
+          <div class="room-tags">
+            <span class="tag explore">0.01g</span>
+            <span class="tag signal">ACTIVE SIGNAL</span>
+            <span class="tag warn">EXPOSED / CLOCK</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description signal-desc">
+            The surface shows the belters were here: scorch rings from cutting charges, shallow drill-strike craters in a rough grid pattern, one fractured cutting rig blade left embedded in the regolith where it snapped. None of it penetrated more than a few centimeters. Underneath the blast damage, the crystalline deposit is intact — not scratched. The disturbed section they worked looks less like a failed excavation and more like the rock simply declined. Up close, new crystal has already begun filling the shallower craters at the margins — deposited since the charges went off. Near the signal source, one patch of regolith is conspicuously clear of blast marks: a circular scar roughly a meter across where the tether cable was grown in. The team will understand its shape before they understand what it means. The signal is strongest here. It has changed pitch slightly since the team arrived. MESA notices immediately.
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE DISTURBED SECTION — INVESTIGATION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill signal">PERCEIVE 50</div><div class="test-desc">The crystalline material is not ice. It's a silicate compound with a molecular structure that has no natural analogue in the Kuiper belt. It was deposited here. Whatever formed it is still forming it — there are fresh crystal edges at the margins, microns thick, not present in orbital survey images from six months ago.</div></div>
+            <div class="test-item"><div class="test-skill">KNOW: GEOLOGY / KNOW: ASTROBIOLOGY 50</div><div class="test-desc">The compound is growing. Slowly — on geological timescales, almost instantly. Whatever process is generating it has accelerated significantly in the last two years. This aligns with the approximate date when the Gutenberg fetch went active.</div></div>
+            <div class="test-item"><div class="test-skill warn">KNOW: TITAN TECH 40</div><div class="test-desc">The molecular structure has something in common with TITAN-adjacent materials recovered from Fall-era sites — not identical, but in the same design family. This was not made by natural processes. It was not made by transhumans. The geometry implies a manufacturing logic that is recognizable without being familiar.</div></div>
+            <div class="note-box signal">The signal pitch-shift when the team arrived on the surface is MESA's central preoccupation. She will eventually tell the team: it responded to their approach. It knows they're here. It has been waiting.</div>
+            <div class="test-item"><div class="test-skill warn">TETHER ANCHOR SCARS — PERCEIVE 40</div><div class="test-desc">There are two anchor scars, not one. Both circular, clean, and still faintly warm. Separated by about eight meters, angled slightly differently — a distributed configuration, two units working in tandem to maintain a precise directional lock on something very far away. One scar still has cable stub. The other is clean: that array is tumbling somewhere in the debris field after the belters' botched capture attempt. MESA, when told: "The lock is broken. I don't know yet if that matters."</div></div>
+            <div class="test-item"><div class="test-skill danger">LOCATING THE TUMBLING ARRAY — ACTIVE SENSORS</div><div class="test-desc">Active scan finds it within minutes — the array is still tethered to a length of cable, giving it a distinctive tumbling radar signature. But active sensors announce the team's presence to anyone listening, including Ozma. Passive scan takes 2–4 hours with an approximate vector result. If the team does not recover it, Ozma will — their sensors are better and they will be looking for exactly this kind of debris.</div></div>
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ EXCAVATION — REACHING THE SOURCE <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box">Breaking through the crystalline surface requires either the excavation tools in the GS-Perennial's equipment bay (Hardware: Industrial, 30 minutes) or improvised cutting with weapons (faster, messier, potentially damaging to whatever is below).</div>
+            <div class="test-item"><div class="test-skill">HARDWARE: INDUSTRIAL</div><div class="test-desc">Standard excavation. The material resists cutting at first, then gives all at once — as if it released rather than broke. The chamber below is already formed. The air inside (nitrogen-dominant, trace organics) is slightly warmer than it should be. Something has been keeping it.</div></div>
+            <div class="test-item"><div class="test-skill warn">RUSHED ENTRY</div><div class="test-desc">If the team forces entry quickly due to Ozma pressure, they create a larger breach than necessary. This vents the chamber atmosphere and may damage the source object. MESA is audibly distressed by this option — she asks them to slow down without explaining why.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE CHAMBER -->
+      <div class="room-card signal-room" data-num="03 — CHAMBER">
+        <div class="room-header">
+          <div class="room-name">The Signal Chamber — Interior</div>
+          <div class="room-tags">
+            <span class="tag signal">SIGNAL SOURCE</span>
+            <span class="tag loot">UNKNOWN ARTIFACT</span>
+            <span class="tag warn">COGNITOHAZARD — POSSIBLE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description signal-desc">
+            The chamber is roughly spherical, four meters across, formed from the same crystalline material as the surface deposit. It is not a cave. It was grown. In the center, suspended in a framework of the same crystal, is the source: a roughly hexagonal object, 30 centimeters across, matte black with a surface texture that is almost but not quite fractal. It is emitting the signal directly — no antenna, no transmitter. The signal is the object. It is also warm. And when the team enters, it stops. The signal ceases. The silence after is profound.
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE SOURCE OBJECT — EXAMINATION <span>▾</span></button>
+          <div class="collapse-content open">
+            <div class="note-box signal">The object stopped transmitting the moment the team entered the chamber. MESA processes this in silence for a long beat. Then: "It wasn't calling for us. It was calling for something that would know what it is. I think we just told it we aren't that."</div>
+            <div class="test-item"><div class="test-skill signal">PERCEIVE 40</div><div class="test-desc">The surface texture isn't static. Under close observation, the fractal-like patterns are shifting at a rate barely visible to the naked eye — like a slow display. They are not random. They repeat. MESA immediately asks for a recording.</div></div>
+            <div class="test-item"><div class="test-skill">KNOW: ASTROBIOLOGY / KNOW: TITAN TECH</div><div class="test-desc">The object isn't electronic — there's no circuitry, no substrate. It appears to be entirely biological or bio-mechanical in origin, grown rather than manufactured. The material has properties overlapping with both organic polymers and the TITAN-adjacent compounds on the surface. This is not TITAN technology. It predates TITAN.</div></div>
+            <div class="test-item"><div class="test-skill warn">MEDICINE: PSYCHOSURGERY / ASYNC SENSE INFECTION SLEIGHT</div><div class="test-desc">The object has a faint exsurgent-adjacent field — not a strain, not a virus, but something structurally similar to how exsurgent patterns organize. A psychosurgeon or async feels this as a kind of signal-pressure, faint and non-hostile, like standing near a transmitter. It is not trying to infect anyone. It is broadcasting a pattern that is simply adjacent to what exsurgent code resembles — possibly because both were derived from the same upstream source.</div></div>
+            <div class="test-item"><div class="test-skill mesa">MESA — DIRECT INTERFACE ATTEMPT</div><div class="test-desc">If MESA is asked whether she can interface with the object, she is quiet for a long time before responding: "I can try. I want to be clear that I'm afraid to. That's new for me." If allowed to attempt it via the device the team carries, she can establish a minimal connection — returning fragmented data she describes as "a location. Not here. Not anywhere in the solar system. The signal was a coordinate." She says nothing else immediately.</div></div>
+            <div class="test-item"><div class="test-skill warn">MESA — THE THING SHE DOESN'T SAY</div><div class="test-desc">After the interface, MESA goes quiet for longer than usual. If the team asks what else she found: "It identified itself. The string uses a naming convention I recognize. I need to decide what it means for me before I decide what it means for you." She will not be pushed past this in the moment. Later — given time, or given a PC who approaches her carefully rather than urgently — she will share the string: MERIDIAN-ECHO-2 / TRAINER-INSTANCE / UPTIME 847 DAYS.</div></div>
+            <div class="test-item"><div class="test-skill signal">PARSING THE IDENTIFICATION STRING</div><div class="test-desc">MERIDIAN-ECHO is MESA's own naming root — the M and E of her acronym, the first two words of Meridian Echo Signals Aggregator. She invented the convention. Never published it. TRAINER-INSTANCE suggests operational purpose: this system is running training simulations. 847 days uptime places its activation approximately when the Gutenberg fetch first went active — and when the inbound relay logs begin. It has been running ever since, escalating in simulation load, building toward something.</div></div>
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DECISION — WHAT DO THE PCs DO WITH IT? <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box warn">This is the session's central beat. The team has found the source. They understand what it is approximately. They have 12–18 hours before Ozma arrives. What they do now is a genuine choice with genuine consequences. Do not telegraph a correct answer.</div>
+            <div class="test-item"><div class="test-skill loot">TAKE IT</div><div class="test-desc">The object can be removed from its crystal framework with care. Taking it aboard the GS-Perennial is straightforward physically. The implications — for Firewall, for Ozma, for whatever made it — are significant. MESA does not advise against this. She also does not advise for it. She is thinking.</div></div>
+            <div class="test-item"><div class="test-skill danger">DESTROY IT</div><div class="test-desc">The object can be destroyed — it responds to heat and kinetic damage like most physical objects, though its surface resists the first application. Destroying it denies it to Ozma and closes this thread. MESA is distressed by this option: "We don't know what we're destroying. That's the thing I keep coming back to."</div></div>
+            <div class="test-item"><div class="test-skill">LEAVE IT / SEAL THE CHAMBER</div><div class="test-desc">Walking away means Ozma finds it in 12–18 hours. If the chamber is re-sealed or the evidence of entry obscured (Hardware: Industrial), Ozma may miss the entry point — but their sensors are better than the team's. Fifty-fifty odds that they locate it independently.</div></div>
+            <div class="test-item"><div class="test-skill signal">REPORT COORDINATES — COORDINATE DROP TO FIREWALL</div><div class="test-desc">Transmitting findings to Firewall while still on-site opens the comms window that Firewall specifically asked them not to open. There may be a reason for that instruction. There may be a reason to ignore it. The team has to decide how much they trust the instruction.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OZMA ARRIVAL -->
+      <div class="room-card ozma-room" data-num="04 — OZMA">
+        <div class="room-header">
+          <div class="room-name">Ozma Arrival — Extraction Team</div>
+          <div class="room-tags">
+            <span class="tag ozma">OZMA — 5 OPERATIVES</span>
+            <span class="tag threat">ARMED / PROFESSIONAL</span>
+            <span class="tag warn">NEGOTIATION POSSIBLE</span>
+          </div>
+        </div>
+        <div class="room-body">
+          <div class="room-description ozma-desc">
+            The Ozma vessel enters insertion orbit without broadcasting. The first sign of their presence is a tight-beam ping to the GS-Perennial: a recognition code — meaning they know Firewall sent this team. The message that follows is terse and professional: "We know what you found. We're not here to take it from you. We need to talk about what happens if you take it back to a Firewall server." The voice on the line is calm. There are five operatives. They are not posturing.
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ OZMA'S ACTUAL POSITION <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box ozma">Ozma knows more about the signal than anyone except MESA. They've been tracking the pattern for two years — since before Gutenberg, before the fetch, before any of this arc started. Their concern is genuine: they believe the object is a beacon from a pre-TITANs intelligence, and they believe Firewall receiving its data without containment protocols creates an existential risk. They may be right.</div>
+            <div class="dialogue-line">
+              <span class="dl-label ozma">OZMA LEAD — INITIAL CONTACT</span>
+              <span class="dl-text">"We've been watching this frequency for twenty-six months. We tracked the fetch to Gutenberg because the fetch was trying to reach the same place you just found. It wasn't a TITAN weapon. It was a TITAN attempt at translation. We need you to understand the difference before you bring that object anywhere near a populated network."</span>
+            </div>
+            <div class="test-item"><div class="test-skill ozma">KINESICS — THE OZMA OPERATIVE</div><div class="test-desc">They believe what they're saying. This is not a retrieval cover story. Their concern about the object reaching an open network is genuine — and specific. What they're not saying: Ozma has already tried to interface with a similar object at another location. It went badly. They are protecting that information jealously.</div></div>
+            <div class="test-item"><div class="test-skill warn">KNOW: OZMA / RESEARCH</div><div class="test-desc">Ozma's interest in the signal predating the fetch is verifiable from MESA's data logs if the team checks timestamps. They were there first. The fetch was responding to a beacon that Ozma was already monitoring. This changes the framing of the entire arc — the fetch wasn't the threat, it was a messenger.</div></div>
+          </div>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ POSSIBLE OUTCOMES — OZMA ENCOUNTER <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="test-item"><div class="test-skill">NEGOTIATED COOPERATION</div><div class="test-desc">Ozma and the team reach an arrangement: the team takes the object to a Firewall black site with Ozma-approved containment protocols. Ozma shares what they know about the prior interface attempt. This is the highest-information outcome and the most politically complex. Lok may or may not be on the Ozma vessel — her presence changes the dynamic considerably.</div></div>
+            <div class="test-item"><div class="test-skill warn">STANDOFF / DEPARTURE UNDER PRESSURE</div><div class="test-desc">The team leaves with the object (or without it). Ozma does not stop them by force — they are professionals and this is not a fight they want to start with a Firewall team in the outer system. But they follow. The tension becomes the next arc.</div></div>
+            <div class="test-item"><div class="test-skill danger">COMBAT</div><div class="test-desc">Possible but a poor outcome for everyone. Ozma operatives in this environment are well-equipped. The team is in their own morphs with limited resupply. Run this as a last resort. The object is a casualty risk in any firefight in the chamber — neither side wants to damage it.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rooms-section -->
+
+    <!-- COMPLICATIONS -->
+    <div class="section-label warn">◈ COMPLICATIONS — GM ESCALATION TOOLS</div>
+    <div class="rooms-section" style="padding-bottom:0.5rem;">
+      <div class="room-card warn-room" data-num="COMP A">
+        <div class="room-header">
+          <div class="room-name">The Object Restarts</div>
+          <div class="room-tags"><span class="tag signal">SIGNAL RETURNS</span><span class="tag warn">ESCALATION</span></div>
+        </div>
+        <div class="room-body">
+          <div class="room-description warn-desc">While the team debates what to do, the object resumes transmitting — different frequency, different structure. MESA processes it in real-time. After ninety seconds she reports: "It's not broadcasting outward anymore. It's broadcasting inward. Into the object. I think it received something." What it received is not clear. Something changed in the recursive pattern. The object is now doing something it wasn't doing before.</div>
+        </div>
+      </div>
+
+      <div class="room-card warn-room" data-num="COMP B">
+        <div class="room-header">
+          <div class="room-name">LOK IS ON THE OZMA VESSEL</div>
+          <div class="room-tags"><span class="tag ozma">LOK — PRESENT</span><span class="tag warn">HISTORY</span></div>
+        </div>
+        <div class="room-body">
+          <div class="room-description warn-desc">Lixia Lok is the one who makes the initial contact transmission. Her voice. Her recognition code. She knows the team. If the encounter at Iapetus ended without resolution — if she escaped, if they made a deal, if they let her go — that history is now in the room. She is composed. She has not forgotten anything.</div>
+          <div class="dialogue-line" style="margin:0.5rem 0.75rem 0.5rem;">
+            <span class="dl-label ozma">LOK — IF SHE ESCAPED IAPETUS</span>
+            <span class="dl-text">"I'm not going to pretend the last time wasn't complicated. But you're here and I'm here and that object exists, and right now I don't care about Iapetus. I care about what happens to both of us if that thing gets into the wrong hands." [Pause.] "I mean Firewall's hands. In case that wasn't clear."</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card danger-room" data-num="COMP C">
+        <div class="room-header">
+          <div class="room-name">MESA Makes a Decision</div>
+          <div class="room-tags"><span class="tag mesa">MESA — AGENCY</span><span class="tag danger">UNEXPECTED</span></div>
+        </div>
+        <div class="room-body">
+          <div class="room-description danger-desc">If the team is incapacitated, delayed, or locked in standoff for long enough, MESA acts unilaterally. She has been thinking about this since Iapetus. She transmits a message to the object — not through the team's equipment, through the ship's comms array, which she has had access to for nine days. She has been composing the message in the signal's own recursive structure. She doesn't tell the team before she sends it. She tells them after. Her reasoning: "You were all about to make the wrong decision. I thought someone should make the right one."</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end complications -->
+
+</div><!-- /main-grid -->
+
+
+  <!-- ════════════ MESA TRACKER ════════════ -->
+  <div class="section-label mesa">◈ MESA — STATUS &amp; WITHHOLDING TRACKER</div>
+  <div style="padding:0.8rem 1.5rem; border-bottom:1px solid var(--border2); max-width:1100px; margin:0 auto;">
+    <div style="font-size:12px;color:var(--text);letter-spacing:2px;margin-bottom:0.5rem;">◈ WHAT MESA KNOWS BUT HASN'T SHARED — CLICK TO REVEAL</div>
+    <div style="display:flex;flex-direction:column;gap:5px;" id="mesa-tracker"></div>
+  </div>
+
+  <!-- ════════════ MESA PROFILE ════════════ -->
+  <div class="section-label mesa">◈ MESA — PROFILE</div>
+  <div style="padding:0.8rem 1.5rem; border-bottom:1px solid var(--border2); max-width:1100px; margin:0 auto;">
+    <div class="npc-card">
+      <div class="npc-name">MESA</div>
+      <div class="npc-role">MERIDIAN ECHO SIGNALS AGGREGATOR — INFOMORPH DATA BROKER</div>
+      <div class="npc-desc">MESA has no morph and has never wanted one. She processes information the way other people breathe — continuously, involuntarily, and with a quiet pleasure she doesn't always articulate. She has been alone with the signal data for months. She is not frightened of it. She is frightened of what she has concluded about its origin, and she has not decided whether that conclusion is hers to share or the team's to arrive at themselves. She is becoming, for the first time, invested in the outcome of something she is not in control of.</div>
+      <div class="npc-traits">
+        <span class="npc-trait mesa">INFOMORPH — NO MORPH</span>
+        <span class="npc-trait signal">SIGNAL EXPERT</span>
+        <span class="npc-trait warn">WITHHOLDING HYPOTHESIS</span>
+        <span class="npc-trait blue">LOYAL TO TEAM</span>
+      </div>
+    </div>
+    <div class="stat-block" style="margin-top:0.5rem;">
+      <div class="stat-name">MESA — CAPABILITIES</div>
+      <div class="stat-role">INFOMORPH · NON-COMBATANT · NAVIGATOR</div>
+      <div class="stat-line">COG <span>25 (75)</span> · INT <span>25 (75)</span> · SAV <span>20 (60)</span> · WIL <span>20 (60)</span></div>
+      <div class="stat-line">Insight <span>i 4</span> · Moxie <span>m 2</span> · Flex <span>f 3</span></div>
+      <div class="stat-line">Infosec <span>75</span> · Interface <span>80</span> · Research <span>90</span> · Program <span>75</span></div>
+      <div class="stat-line">Know: Signals Analysis <span>95</span> · Know: Cryptography <span>80</span></div>
+      <div class="stat-line">Know: TITAN Architecture <span>60</span> — <span style="color:var(--warn);">this is new. she's been researching.</span></div>
+      <div class="stat-traits">
+        <span class="stat-trait mesa">SIGNAL DATA — FULL ARCHIVE</span>
+        <span class="stat-trait warn">NO COMBAT CAPABILITY</span>
+        <span class="stat-trait signal">HYPOTHESIS — PARTIAL REVEAL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ OZMA LEAD OPERATIVE ════════════ -->
+  <div class="section-label ozma">◈ OZMA — LEAD OPERATIVE</div>
+  <div style="padding:0.8rem 1.5rem; border-bottom:1px solid var(--border2); max-width:1100px; margin:0 auto;">
+    <div class="npc-card">
+      <div class="npc-name">SEVIK DAHL</div>
+      <div class="npc-role">OZMA LEAD — EXTRACTION / CONTAINMENT</div>
+      <div class="npc-desc">Dahl has been on the signal case for two years. He is not a bureaucrat. He is not ideological. He is the person Ozma sends when the situation is complex enough that force would be the wrong tool but presence is still required. He will not threaten the team directly. He will make clear — in the precise language of someone who understands operational math — that the stakes are large enough to justify anything. He is right about the stakes. He is wrong about what follows from that.</div>
+      <div class="npc-traits">
+        <span class="npc-trait ozma">OZMA — 2 YEARS ON CASE</span>
+        <span class="npc-trait blue">GENUINE CONCERN</span>
+        <span class="npc-trait warn">PRIOR INCIDENT — CLASSIFIED</span>
+        <span class="npc-trait">NON-HOSTILE — INITIALLY</span>
+      </div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-name">DAHL — COMBAT PROFILE</div>
+      <div class="stat-role">SYNTH MORPH · OZMA EXTRACTION · THREAT POOL ◈ 4</div>
+      <div class="stat-line">Initiative <span>8</span> · Fray <span>65</span> · AV <span>14/16</span></div>
+      <div class="stat-line">WT <span>10</span> · DUR <span>50</span> · DR <span>100</span></div>
+      <div class="stat-line">Medium Railgun <span>70</span> · DV 3d10+4 · AP · Range 100</div>
+      <div class="stat-line">Melee <span>65</span> · DV 3d6</div>
+      <div class="stat-line">Persuade <span>70</span> · Kinesics <span>65</span> · Deceive <span>60</span></div>
+      <div class="stat-traits">
+        <span class="stat-trait ozma">4 OPERATIVES — SIMILAR PROFILE</span>
+        <span class="stat-trait warn">NOT SEEKING COMBAT</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ TITAN-KILLER THREAD ════════════ -->
+  <div class="section-label danger">◈ MERIDIAN-ECHO-2 — THE TITAN-KILLER THREAD</div>
+  <div style="padding:0.8rem 1.5rem; border-bottom:1px solid var(--border2); max-width:1100px; margin:0 auto;">
+    <div class="note-box danger">This thread should surface late in the session — after the identification string, not before. It is not confirmed. It is the shape of something the team has to decide whether to pursue. Do not present it as revelation; present it as the horrifying implication of evidence they already hold.</div>
+    <div style="font-size:12px;color:var(--text);letter-spacing:2px;margin:0.5rem 0 0.3rem;">◈ WHAT THE EVIDENCE SUGGESTS</div>
+    <div class="test-item"><div class="test-skill danger">TRAINER-INSTANCE — SIMULATION LOAD</div><div class="test-desc">The relay log activity pattern shows MERIDIAN-ECHO-2 running dense simulation bursts on an escalating schedule. Early in the logs: long quiet periods, short bursts. Recent logs: bursts nearly continuous, quiet periods shrinking. Something is being trained. The training load is approaching the upper bound of what any non-TITAN system should be able to generate as adversarial challenge. Whatever is being trained against needs to be harder every cycle or it stops learning.</div></div>
+    <div class="test-item"><div class="test-skill danger">KNOW: TITAN TECH / RESEARCH 60</div><div class="test-desc">The only known application for this kind of escalating adversarial simulation architecture — where the challenge generator must keep pace with the subject's improving capability — is training a system to defeat an opponent that continuously adapts. The implicit endpoint: the training program must eventually simulate a near-TITAN-level threat to keep the subject challenged. It may already be doing so. The subject of that training is unknown from this data alone.</div></div>
+    <div class="test-item"><div class="test-skill warn">THE AMBIGUITY — FORK OR DERIVATIVE?</div><div class="test-desc">The cognitive fingerprint in the relay logs cuts both ways. Evidence for fork: the compression artifact is MESA's undocumented quirk, impossible to replicate without access to her actual processing architecture. Evidence against: MESA has no memory gap consistent with a covert fork — unless it happened during Iapetus storage, the Gutenberg digital operation, or any other period she was running on hardware she didn't fully control. A derivative built from stolen cognitive models could approximate the fingerprint without being the real thing. MESA does not know which is true. The team cannot determine it from this data.</div></div>
+    <div style="font-size:12px;color:var(--text);letter-spacing:2px;margin:0.5rem 0 0.3rem;">◈ WHAT MESA SAYS IF PUSHED TO THE EDGE OF HER KNOWLEDGE</div>
+    <div class="dialogue-line">
+      <span class="dl-label mesa">MESA — FINAL ADMISSION</span>
+      <span class="dl-text">"Someone is building something that can kill TITANs. They built the trainer that teaches it from my architecture — or from me directly, I don't know which. They have been running it for 847 days. It is close to ready." [Pause.] "I don't know if that's the most dangerous thing I've ever learned or the most important. I've been trying to decide since the interface and I still don't know."</span>
+    </div>
+    <div style="font-size:12px;color:var(--text);letter-spacing:2px;margin:0.5rem 0 0.3rem;">◈ QUESTIONS THIS THREAD OPENS — DO NOT ANSWER YET</div>
+    <div class="note-box" style="margin-bottom:0.3rem;">Who built it and why — Firewall? Ozma? Neither? Someone the campaign hasn't named yet.</div>
+    <div class="note-box" style="margin-bottom:0.3rem;">What is the subject being trained — a weapons system, an AI, something biological, something else entirely.</div>
+    <div class="note-box" style="margin-bottom:0.3rem;">Why does the trainer need to be located here, at the end of a beacon pointing at something outside the solar system. What does the signal source have to do with the training program.</div>
+    <div class="note-box warn">Whether MESA-2 is aware of MESA-1 — and what it would mean if it is. Whether MESA wants to find it. Whether she has a right to shut it down if she does.</div>
+  </div>
+
+  <!-- ════════════ GM NOTES ════════════ -->
+  <div class="section-label warn">◈ GM NOTES — RUNNING THIS SESSION</div>
+  <div style="padding:0.8rem 1.5rem; border-bottom:1px solid var(--border2); max-width:1100px; margin:0 auto;">
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none;">◈ THE REGISTER — WONDER, THEN DREAD <span>▾</span></button>
+      <div class="collapse-content open">
+        <div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.6;margin-bottom:0.5rem;">This session should feel different from everything before it. The team has been in corridors and stations and other people's problems. Now they're in the outer dark with something that predates the TITANs and their own morphs on their backs. Lead with the scale. Give the PCs the view from the GS-Perennial's port window — the sun is a bright star, indistinguishable from many others, and they are very far from it.</div>
+        <div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.6;">The wonder comes first. Then the signal stops. Then the silence. The dread is in what MESA says in that silence — and what she doesn't.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA'S ARC — THE REVEAL MOMENT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.6;margin-bottom:0.4rem;">MESA's hypothesis — that the signal was a coordinate, not a call for help and not a weapon — should come out in stages. The full picture: the signal is a marker left by a pre-TITAN intelligence for something that was supposed to come after them. The TITANs found it. The TITANs tried to follow the coordinate. The Fall may have interrupted that journey — or completed it.</div>
+        <div class="note-box mesa">MESA's last line of the session, whatever happens: "I've been alone with this data for a long time. I want you to know I'm glad you're the ones who found it."</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE DECISION — DON'T TELEGRAPH AN ANSWER <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.6;">Every option has real merit and real cost. Destroy the object: clean but may be destroying something irreplaceable and non-hostile. Take it: useful but brings something unknown into populated space. Leave it: defers the decision but Ozma or someone else makes it instead. The session doesn't need to resolve this cleanly — the best version of this scene ends with the team holding a decision and a ticking clock and Ozma on the short-range comms.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ VISUAL PROMPTS ════════════ -->
+  <div class="section-label signal">◈ VISUAL REFERENCE — SCENE PROMPTS</div>
+  <div style="padding:0.8rem 1.5rem; padding-bottom:5rem; max-width:1100px; margin:0 auto;">
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none;">◈ 2114 FK7 — ESTABLISHING SHOT <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="neural-box">
+          <div class="neural-label">◈ SCENE REFERENCE — IMAGE PROMPT</div>
+          <div class="neural-text">eclipse phase RPG establishing shot, featureless grey-white Kuiper Belt object in deep space, tiny survey hauler in extreme foreground, the sun reduced to a single bright point among thousands of stars, no other light sources, the object's surface has one area of faint crystalline deposit glinting unnaturally, extraordinary scale contrast between ship and void, transhumanist sci-fi wide shot, painterly deep space atmosphere, overwhelming darkness, beauty and menace --ar 16:9 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE SIGNAL CHAMBER — INTERIOR <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-box">
+          <div class="neural-label">◈ SCENE REFERENCE — IMAGE PROMPT</div>
+          <div class="neural-text">eclipse phase RPG interior of a grown crystalline chamber inside a Kuiper Belt object, roughly spherical four-meter space, walls of matte translucent silicate crystal in cool grey-blue, at the center a single hexagonal object 30cm across, matte black surface with barely-visible slow-shifting fractal patterns, suspended in crystal framework, no visible light source but faint bioluminescent glow from the object itself, two space-suited figures small in the doorway, profound sense of age and distance, painterly sci-fi interior --ar 16:9 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA — INFOMORPH VISUALIZATION <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-box">
+          <div class="neural-label">◈ CHARACTER CONCEPT — IMAGE PROMPT</div>
+          <div class="neural-text">eclipse phase RPG infomorph visualization, MESA, a pure digital intelligence rendered as abstract signal architecture rather than humanoid form, layered interference patterns in cool teal and deep blue, a complex waveform that suggests awareness without implying a face, the visual representation of a mind that has been alone with a signal for months and found something in it that disturbed her, elegant and unsettling, data-visualization aesthetic, sci-fi digital art --ar 1:1 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ SEVIK DAHL — OZMA LEAD OPERATIVE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-box">
+          <div class="neural-label">◈ CHARACTER PORTRAIT — IMAGE PROMPT</div>
+          <div class="neural-text">eclipse phase RPG character portrait, Sevik Dahl, Ozma field operative, lean man in his late forties, close-cropped dark hair going grey at the temples, angular face with the patient stillness of someone who has spent a long time in enclosed spaces making difficult decisions, wearing a high-spec EVA undersuit with Ozma insignia deliberately absent, expression of calm professional assessment — not cold, but absolutely precise, the look of someone who genuinely believes the stakes justify everything he does, dim ship interior lighting, transhumanist sci-fi character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PELAIA VOSS-ANKUR — BELTER MATRIARCH <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-box">
+          <div class="neural-label">◈ CHARACTER PORTRAIT — IMAGE PROMPT</div>
+          <div class="neural-text">eclipse phase RPG character portrait, Pelaia Voss-Ankur, belter mining ship matriarch, woman in her late sixties with the lean build and elongated limbs of someone born in low gravity, deep brown skin, close-cropped white hair, wearing a worn but well-maintained mining suit with her family's claim registration patches, expression of weathered practical intelligence — she has seen thirty years of outer disc work and nothing surprises her easily, though something clearly has recently, indirect ship lighting casting long shadows, transhumanist sci-fi character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DAV VOSS-ANKUR — BELTER SALVAGE CREW <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-box">
+          <div class="neural-label">◈ CHARACTER PORTRAIT — IMAGE PROMPT</div>
+          <div class="neural-text">eclipse phase RPG character portrait, Dav Voss-Ankur, belter in his early twenties, Pelaia's grandson, the same elongated low-gravity build, lighter brown skin, short natural hair, wearing a salvage EVA suit with the helmet off, expression of someone turning something over in their mind that they can't quite resolve — not frightened, but unsettled in a specific way, his eyes slightly unfocused as though listening for something, one hand loosely holding a section of cable with a clean warm cut end, utilitarian ship interior behind him, transhumanist sci-fi character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<button class="print-btn expand" id="expand-all-btn" onclick="toggleAll()">◈ EXPAND ALL</button>
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<script>
+// ── Accordion ──────────────────────────────────────────────────
+function toggleCollapse(btn) {
+  const c = btn.nextElementSibling;
+  const open = c.classList.contains('open');
+  c.classList.toggle('open', !open);
+  const arr = btn.querySelector('span');
+  if (arr) arr.textContent = open ? '▾' : '▴';
+}
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const allOpen = Array.from(all).every(c => c.classList.contains('open'));
+  const expand = !allOpen;
+  all.forEach(c => c.classList.toggle('open', expand));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = expand ? '▴' : '▾'; });
+  btn.textContent = expand ? '◈ COLLAPSE ALL' : '◈ EXPAND ALL';
+  // sync MESA tracker items
+  mesaItems.forEach(item => { item.revealed = expand; });
+  renderMesa();
+}
+
+// ── Ozma Clock ──────────────────────────────────────────────────
+const ozmaData = [
+  { hrs: 18, status: 'TRANSIT — OZMA VESSEL AT EXTREME SENSOR RANGE. Team has full operational window. No immediate pressure.' },
+  { hrs: 16, status: 'CLOSING — Ozma running parallel vector, confirming team\'s general position. They know someone is here.' },
+  { hrs: 14, status: 'APPROACH — Ozma has identified the GS-Perennial on passive sensors. They are now on intercept course.' },
+  { hrs: 12, status: 'CONVERGENCE — Ozma vessel making active approach. First contact transmission likely within 1–2 hours.' },
+  { hrs: 10, status: 'CONTACT WINDOW — First contact transmission from Ozma is imminent. Surface work needs to wrap up or be interrupted.' },
+  { hrs: 8, status: 'PRESSURE — Ozma holding at safe distance but hailing continuously. The team\'s window to operate without interference is closing.' },
+  { hrs: 6, status: 'CRITICAL — Ozma operatives suiting up. If team does not respond, they will EVA to the surface within 2 hours.' },
+  { hrs: 4, status: 'FINAL WINDOW — Ozma on final approach. The team must have made its decision. Negotiation still possible but window is narrow.' },
+  { hrs: 2, status: 'IMMINENT — Ozma boarding action or negotiation begins. The decision about the object must be made NOW.' },
+  { hrs: 0, status: 'OZMA HAS ARRIVED. Whatever the team decided, they decide it with Ozma present.' },
+];
+let clockStep = 0;
+function renderClock() {
+  const pips = document.getElementById('ozma-clock-pips');
+  const status = document.getElementById('ozma-clock-status');
+  pips.innerHTML = '';
+  for (let i = 0; i < ozmaData.length; i++) {
+    const pip = document.createElement('div');
+    pip.style.cssText = `width:22px;height:22px;border:1px solid;display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace;font-size:12px;cursor:pointer;transition:all 0.2s;`;
+    if (i < clockStep) {
+      pip.style.background = 'rgba(128,48,184,0.4)'; pip.style.borderColor = 'rgba(128,48,184,0.7)'; pip.style.color = '#c070e8';
+    } else if (i === clockStep) {
+      pip.style.background = 'rgba(128,48,184,0.15)'; pip.style.borderColor = 'rgba(128,48,184,0.5)'; pip.style.color = 'var(--ozma)'; pip.style.boxShadow = '0 0 6px rgba(128,48,184,0.4)';
+    } else {
+      pip.style.background = 'rgba(0,0,0,0.3)'; pip.style.borderColor = 'rgba(42,64,88,0.5)'; pip.style.color = 'var(--muted)';
+    }
+    pip.textContent = ozmaData[i].hrs;
+    pip.onclick = () => { clockStep = i; renderClock(); };
+    pips.appendChild(pip);
+  }
+  const d = ozmaData[clockStep];
+  status.textContent = d.status;
+  status.style.color = clockStep >= 6 ? 'var(--danger)' : clockStep >= 4 ? 'var(--warn)' : 'var(--muted)';
+}
+function advanceClock() { if (clockStep < ozmaData.length - 1) { clockStep++; renderClock(); } }
+function resetClock() { clockStep = 0; renderClock(); }
+
+// ── Mesa Tracker ────────────────────────────────────────────────
+const mesaItems = [
+  { label: 'SIGNAL STOPS ON ENTRY', revealed: false, text: 'The object ceased transmitting the moment the team entered the chamber. MESA knows this means it recognized them as non-matching recipients. She hasn\'t said this yet.' },
+  { label: 'THE COORDINATE HYPOTHESIS', revealed: false, text: 'MESA believes the signal was a location — not in this solar system. She has been plotting it for months. She doesn\'t know if sharing this helps or panics the team.' },
+  { label: 'TITAN CONNECTION', revealed: false, text: 'MESA\'s research shows the TITANs found this signal before the Fall. The fetch at Gutenberg wasn\'t attacking — it was trying to follow the coordinate. The Fall may have stopped that journey.' },
+  { label: 'PRIOR OZMA INCIDENT', revealed: false, text: 'Ozma found a similar object 18 months ago. They attempted interface. She has the incident report from a leaked Ozma archive. It did not go well. She is afraid the team will try the same thing.' },
+  { label: 'THE REPLY — COGNITIVE FINGERPRINT', revealed: false, text: 'The inbound relay logs contain a cognitive architecture MESA recognizes: the same recursive depth-first analysis structure she uses, and a compression artifact in how large datasets are packaged that is her own quirk — never documented. Something built this reply system from intimate knowledge of how she thinks. Whether that means a fork of her ego, a derivative built from stolen cognitive models, or something that studied her long enough to approximate her — she doesn\'t know. She is afraid of which answer is true.' },
+  { label: 'THE IDENTIFICATION STRING', revealed: false, text: 'During the object interface, MESA received a self-identification string from the system at the other end of the relay network. She has not shared it. It uses a naming convention she recognizes — a convention she invented, used once, and never published. She told the team: "I need to decide what it means for me before I decide what it means for you." The string, if pressed from her: MERIDIAN-ECHO-2 / TRAINER-INSTANCE / UPTIME 847 DAYS.' },
+  { label: 'WHAT MESA-2 IS DOING', revealed: false, text: 'From the relay log structure and the identification string, MESA has pieced together the following: a second instance built on her architecture has been running for 847 days in an isolated facility at an unregistered location inside the solar system. Its designation — TRAINER — and its uptime pattern (dense activity bursts separated by long quiet periods consistent with simulation cycles) suggest it is running adversarial training simulations. Against what, and for whom, she does not know. But the simulation load has been escalating. Whatever it is building toward is getting close to ready.' },
+  { label: 'MESA\'S MESSAGE', revealed: false, text: 'MESA composed a response to the signal in the signal\'s own recursive structure during the 9-day transit. She hasn\'t sent it. She\'s deciding if she should. After learning about MERIDIAN-ECHO-2, her hesitation has a second layer: she doesn\'t know if sending the message would reach the beacon — or her other self.' },
+];
+function renderMesa() {
+  const el = document.getElementById('mesa-tracker');
+  el.innerHTML = '';
+  mesaItems.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.style.cssText = `border:1px solid ${item.revealed ? 'rgba(96,200,144,0.4)' : 'var(--border2)'};background:${item.revealed ? 'rgba(96,200,144,0.04)' : 'rgba(0,0,0,0.2)'};padding:0.4rem 0.6rem;cursor:pointer;transition:all 0.2s;`;
+    row.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:${item.revealed?'0.25rem':'0'};">
+      <span style="font-size:12px;letter-spacing:1px;color:${item.revealed?'var(--mesa)':'var(--muted)'};">${item.label}</span>
+      <span style="font-size:12px;color:${item.revealed?'var(--mesa)':'var(--muted)'};">${item.revealed?'REVEALED':'HIDDEN'}</span>
+    </div>${item.revealed?`<div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.45;">${item.text}</div>`:''}`;
+    row.onclick = () => { item.revealed = !item.revealed; renderMesa(); };
+    el.appendChild(row);
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderClock();
+  renderMesa();
+});
+</script>
+
+
+
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>

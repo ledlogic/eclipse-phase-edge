@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REQUIEM FOR ORCUS | Eclipse Phase — Session 08 GM Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-08-requiem-for-orcus.html"></nav>
+<header>
+  <div class="header-tag">◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1><span class="orcus">REQUIEM FOR</span> ORCUS<span class="sub">VANTH STATION</span></h1>
+  <div class="header-sub">TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING</div>
+  <div class="stats-bar">
+    <span class="stat-chip ice">LOCATION: VANTH STATION — ORCUS MOON</span>
+    <span class="stat-chip">REGISTER: SOCIAL / DOWNTIME / CONSEQUENCE</span>
+    <span class="stat-chip warm">NO COMBAT EXPECTED</span>
+    <span class="stat-chip mesa">MESA — PRESENT / PROCESSING</span>
+    <span class="stat-chip vanth">VANTH — NEUTRAL GROUND</span>
+    <span class="stat-chip ozma">OZMA — DAHL / LOK DOCKED NEARBY</span>
+    <span class="stat-chip signal">MERIDIAN-ECHO-2 — THREAD OPEN</span>
+    <span class="stat-chip warn">BRIDGE: CRY FOR HELP → ORCUS → FINAL ARC</span>
+  </div>
+</header>
+
+
+<!-- MAIN GRID -->
+<div class="main-grid">
+<div class="left-col">
+
+  <!-- BRIEF -->
+  <div class="section-label">◈ SITUATION BRIEF</div>
+  <div class="brief-panel">
+    <p class="brief-text">
+      Orcus is the anti-Pluto — same size, same orbit, perpetually on the opposite side of the sun, as if the two worlds are avoiding each other across 80 astronomical units of void. Its moon Vanth was named for the Etruscan psychopomp who guides the dead to the underworld without judgment. The station that shares her name is small, independent, and very far from anyone who wants to find you. After Arrokoth, that matters. The team needs to resupply, file a transit log that doesn't expose what they found, and decide what they are going to tell Firewall. They have time to do it here. Not much else is available at 39 AU, but time is plentiful.
+    </p>
+
+    <div class="goal-box">
+      <strong>◈ WHAT THIS SESSION IS</strong>
+      A breathing space. The team has been moving outward for seven sessions — from a Pandora gate on a distant exoplanet to the edge of the solar system, accumulating weight with every stop. This session exists to let that weight settle, to give the PCs room to talk to each other and to MESA without a clock running, and to establish what the team actually believes about everything they found before the final arc begins. There are no combat encounters. There is no ticking clock. The threats here are all social and personal.
+    </div>
+
+    <div class="goal-box mesa">
+      <strong>◈ MESA'S CONDITION ENTERING THIS SESSION</strong>
+      MESA knows she was forked at Gutenberg. AWE told her. She has had the transit from Arrokoth to process this — roughly five days — and she has done her processing privately, which is unusual for her. She is not distressed in a way she will name directly. She is quieter than usual, and more careful with her words, as if she is aware now that what she says might be heard by more than one version of herself. She will talk about it when someone asks. She has been waiting to be asked.
+    </div>
+
+    <div class="goal-box ozma">
+      <strong>◈ DAHL AND LOK — ALSO DOCKED AT VANTH</strong>
+      The Ozma vessel arrived twelve hours before the team. Dahl chose Vanth deliberately — neutral ground, no Firewall presence, far enough out that any conversation is genuinely private. He wants to finish the conversation started at Arrokoth. He has a proposal. Lok has a separate agenda that partially overlaps with Dahl's and partially contradicts it. They are not coordinating. This is visible to anyone paying attention.
+    </div>
+
+    <div class="goal-box warn">
+      <strong>◈ THE FIREWALL REPORT — THE SESSION'S PRACTICAL SPINE</strong>
+      The team needs to file something. Firewall's outer-system relay will receive whatever they transmit. The report's contents will determine how Firewall responds in the final arc: what resources they provide, whether the team is trusted or surveilled, whether AWE and the swarm are considered assets or threats. Writing the report is a scene, not a handwave — what the team decides to say, omit, or lie about is a genuine choice with genuine consequences. MESA has opinions. She will share them. She will not write it for them.
+    </div>
+  </div>
+
+  <!-- VANTH STATION -->
+  <div class="section-label ice">◈ VANTH STATION — THE PLACE</div>
+  <div class="brief-panel">
+    <p class="brief-text">
+      Vanth Station is a brinker waystation — three connected pressurized modules anchored to the ice of Orcus's moon by deep-bore spikes, with a docking ring that can fit four small vessels. Its population fluctuates between eight and twenty, mostly long-haul independents, a few outer-system researchers, and the two people who actually run it: Pemba Chandra, who handles the fuel and parts, and her partner Soo-Ah Noh, who handles everything else. The station has a common room, a small bar, a parts fabricator, a comms relay, and two rental berths. It smells like recycled air and solder. It is, in its way, comfortable.
+    </p>
+    <div class="goal-box ice">
+      <strong>◈ THE ATMOSPHERE — WHAT VANTH FEELS LIKE</strong>
+      The outer system develops a particular social culture in communities this remote: directness without aggression, hospitality without intrusion, and a strong collective preference for not asking about what brought someone out this far. People here know how to be in a room with strangers who have been through something. They don't pry. They also notice everything. Pemba and Soo-Ah have seen the Ozma vessel, have registered the team's arrival, and have drawn several accurate conclusions without asking a single question. Their hospitality is genuine and so is their awareness.
+    </div>
+  </div>
+
+  <!-- SCENES -->
+  <div class="section-label warm">◈ SCENES — STRUCTURE & SEQUENCE</div>
+  <div class="scenes-section">
+
+    <!-- ARRIVAL -->
+    <div class="scene-card" data-num="01">
+      <div class="scene-header">
+        <div class="scene-name">Arrival — Docking at Vanth</div>
+        <div class="scene-tags"><span class="tag ice">TRANSIT END</span><span class="tag social">FIRST BREATH</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description">
+          The approach to Orcus gives the team its first long look at the dwarf planet — a grey-white sphere 900 km across, featureless and ancient, its surface barely marked by time. Vanth, its moon, is smaller and darker. The station's running lights are the only warm color in the view from the pilot's window. As they dock, MESA speaks for the first time since leaving Arrokoth's orbit: "I've been thinking about what Orcus is named for. The punisher of broken oaths. I find that interesting given what we're about to decide to tell Firewall." She doesn't say anything else.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ARRIVAL BEATS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="note-box">The docking sequence is quiet. Give the table a moment before Pemba's voice comes over comms: "Berth two is open. There's hot food in the common room if you haven't eaten. The other visitors got here this morning." She doesn't identify who the other visitors are. She assumes they know.</div>
+          <div class="note-box mesa">MESA's observation about Orcus's name is the session's opening note. It is not an accusation. It is MESA doing what she has always done — processing information out loud so the team can process it with her. But there is an edge to it this time that wasn't there before. She is thinking about broken oaths specifically. Let that sit.</div>
+          <div class="dialogue-line">
+            <span class="dl-label warm">PEMBA CHANDRA — DOCKING COMMS</span>
+            <p class="dl-text">"Berth two is yours. Fuel topped up, I'll run the tab when you know how long you're staying. The fabricator's working today, which isn't always true. Welcome to Vanth." [Pause.] "You look like you've come a long way."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MESA SCENE -->
+    <div class="scene-card mesa-card" data-num="02">
+      <div class="scene-header">
+        <div class="scene-name">The Conversation with MESA</div>
+        <div class="scene-tags"><span class="tag mesa">MESA ARC</span><span class="tag social">PERSONAL</span><span class="tag signal">FORK REVEAL</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description mesa-desc">
+          This scene happens whenever a PC creates the space for it — sits alone with MESA's device, or simply asks how she is. It should not be rushed and should not be scheduled. MESA has been waiting for someone to make the opening; she will not force it. When the conversation begins, it will be the most direct thing MESA has said in eight sessions. She has decided to stop managing what the team knows about her.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA — WHAT SHE SAYS NOW <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — ON BEING FORKED</span>
+            <p class="dl-text">"I've been trying to decide how I feel about it. About MESA-2. I keep arriving at the same place: she did good work. Whatever she was trying to build at Arrokoth — she built it carefully and for reasons that make sense to me. That should comfort me. Instead it makes me feel — surveilled. Like I have been making decisions for eight months while someone who is me was watching to see what I'd choose." [Pause.] "I don't think she was watching. I think she was just living. But I can't be certain."</p>
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — ON THE TEAM</span>
+            <p class="dl-text">"I want to say something that I haven't said before. I was a data broker before Vesta. I processed signals because it paid and because I was good at it and I didn't think much about who I was doing it for. You changed that. Not deliberately. You just — treated me like someone who was part of something, and I became part of something, and now I don't know what I am outside of this team." [Long pause.] "I'm not sure that's a problem. I'm flagging it because you should know."</p>
+          </div>
+          <div class="note-box mesa">This is the session's emotional center. Give it room. A PC who responds with care rather than problem-solving gets something rare: MESA saying, clearly and without any of her usual hedging, that she is glad she was found on Vesta. That the team specifically — not Firewall, not the mission — is what she would choose if she were choosing.</div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — IF ASKED ABOUT THE FIREWALL REPORT</span>
+            <p class="dl-text">"I think we should tell them most of it. I think we should omit AWE. Not permanently — but until we understand what AWE is going to do next. A psychosurgeon of that capability appearing in a Firewall report is a resource to every faction that reads it. I'd like AWE to have the chance to decide who it works for before anyone decides for it." [Beat.] "That's my recommendation. The report is yours to write."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAHL SCENE -->
+    <div class="scene-card ozma-card" data-num="03">
+      <div class="scene-header">
+        <div class="scene-name">Dahl's Proposal</div>
+        <div class="scene-tags"><span class="tag ozma">OZMA</span><span class="tag social">NEGOTIATION</span><span class="tag warn">STAKES</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description ozma-desc">
+          Dahl finds the team in the common room or requests a meeting through Pemba's comms. He is not in operational gear. He is tired in a way he was not at Signal Zero — Arrokoth took something out of him too. His proposal is formal, delivered carefully, and he has clearly rehearsed it: Ozma wants a standing information-sharing arrangement with this Firewall team specifically. Not through official channels. A direct line. In exchange: everything Ozma knows about the pre-Fall TITAN that deployed the swarm, the location of the object from the prior interface incident, and Ozma's full analysis of the MERIDIAN-ECHO-2 training program's endpoint. He is offering a great deal. He wants something real in return.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DAHL — THE PROPOSAL IN FULL <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label ozma">DAHL — OPENING</span>
+            <p class="dl-text">"I've been on this case for two years. In that time I've watched Firewall stumble into three situations that Ozma had already mapped, take losses we could have prevented, and produce outcomes that were worse for everyone because we weren't coordinating. I'm not interested in institutional cooperation. Ozma and Firewall will never formally cooperate. I'm interested in you, specifically, having my direct contact, and me having yours." [He sets a data chip on the table.] "That's what I know about the TITAN. You can read it before you answer."</p>
+          </div>
+          <div class="test-item">
+            <span class="test-skill">KINESICS — READING DAHL</span>
+            <p class="test-desc">He means it. The exhaustion is real, the offer is genuine, and the thing he is not saying is that the prior incident cost him someone he was close to — the operative who came back changed. He has been carrying that alone. The proposal is professionally motivated and personally motivated simultaneously, and he is not trying to hide either.</p>
+          </div>
+          <div class="note-box ozma">What Dahl's data chip contains: the pre-Fall TITAN designation (provisional: MERIDIAN-PRIME), the location of the second object Ozma interfaced with (a scattered disc object at 68 AU — the incident that ended badly), and Ozma's conclusion about MESA-2's endpoint — they believe the TRAINER-INSTANCE's final output is not a weapon. It is a negotiating envoy. Something built to make first contact with MERIDIAN-PRIME, if it is still operational. The team is now in possession of this theory. What they do with it is the final arc's opening question.</div>
+          <div class="note-box warn">Accepting Dahl's offer does not mean trusting Ozma. It means having a direct line to one Ozma operative who has been right about most things and whose interests, for now, roughly align. The team can accept, decline, or counter. Dahl will not push. He is making one offer and he will mean whatever answer he gets.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOK SCENE -->
+    <div class="scene-card vanth-card" data-num="04">
+      <div class="scene-header">
+        <div class="scene-name">Lixia Lok — Separately</div>
+        <div class="scene-tags"><span class="tag vanth">LOK</span><span class="tag social">HISTORY</span><span class="tag warn">UNPREDICTABLE</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description vanth-desc">
+          Lok approaches the team without Dahl's knowledge. She has been on Vanth Station for twelve hours and has apparently spent most of it talking to Soo-Ah Noh, which tells the team something about her. She is not interested in institutional arrangements. She wants to know what AWE told MESA. Not because Ozma sent her — Dahl doesn't know she's here. Because she has a personal theory about MERIDIAN-PRIME that she has not shared with anyone, and AWE's testimony either confirms it or doesn't. She is asking as herself, not as an operative.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ LOK — WHAT SHE'S ACTUALLY AFTER <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label vanth">LOK — PERSONAL DISCLOSURE</span>
+            <p class="dl-text">"Dahl thinks MERIDIAN-PRIME went dark after the Fall. He's a careful person and careful people assume the best-case scenario when the alternative is unbearable." [She looks at whoever is listening.] "I think it went silent on purpose. I think it's been waiting for someone built from its own cognitive architecture to finish developing — and I think AWE is that entity. I think the beacon at FK7 wasn't a coordinate. It was a summons. And I think MESA-2 knew that and built AWE anyway." [Pause.] "I need to know if I'm right. Not for Ozma. For me."</p>
+          </div>
+          <div class="note-box vanth">Whether Lok is right is a question the GM should not answer definitively here. Her theory is plausible, well-reasoned, and possibly correct. It is also the theory of someone who has been in the outer system too long with a traumatic prior incident shaping how she reads evidence. Both of these things can be true simultaneously. MESA, if consulted, says: "She's not wrong about the architecture. I don't know if she's right about the intent." That's as far as anyone can go in this session.</div>
+          <div class="test-item">
+            <span class="test-skill">KINESICS — READING LOK</span>
+            <p class="test-desc">She is frightened. Not of the team, not of Dahl finding out she's here — frightened of being right. Whatever her theory implies about MERIDIAN-PRIME's patience and purpose, she has been sitting with it alone for months and she needed to say it to someone who would take it seriously. She picked this team because they are the only people in the solar system who have been inside all three sites connected to this arc.</p>
+          </div>
+          <div class="note-box warn">If the team shares AWE's testimony with Lok: she is quiet for a long time. Then she thanks them — genuinely, without any operational affect. Then she goes to find Dahl. What she tells him is not shown to the table. Its effects will be visible in the final arc.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PEMBA / SOO-AH SCENE -->
+    <div class="scene-card warm-card" data-num="05">
+      <div class="scene-header">
+        <div class="scene-name">Pemba & Soo-Ah — The Station Hosts</div>
+        <div class="scene-tags"><span class="tag warm">HUMAN TEXTURE</span><span class="tag social">GROUNDING</span><span class="tag optional">OPTIONAL</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description warm-desc">
+          Pemba Chandra and Soo-Ah Noh have been running Vanth Station for eleven years. They came out here from the inner belt because they wanted to be somewhere nobody would tell them what to do, and they found it. They are not aligned with any faction, do not run information, and have no interest in anything the team is involved in except as it might affect their fuel inventory. They are also, in their way, extremely perceptive, and they have seen enough outer-system traffic to recognize what a team looks like after something hard. They will not ask. But if anyone sits down with them, they will talk — about Orcus, about the outer system, about the specific quality of quiet at 39 AU. It is restorative in the way that talking to someone with no stake in your problems can be restorative.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PEMBA & SOO-AH — DIALOGUE SEEDS <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label warm">PEMBA — ON LIVING AT ORCUS</span>
+            <p class="dl-text">"People come out this far and ask how we stand the quiet. But the inner system isn't quiet — it's loud in ways you stop hearing because you're used to it. Out here the noise is just the ship and the ice and Soo-Ah talking in her sleep. I can hear all of it separately. That's not silence. That's clarity."</p>
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label warm">SOO-AH — IF SOMEONE SEEMS TROUBLED</span>
+            <p class="dl-text">"I'm not going to ask what happened. But I'll tell you what I know about the outer system, which is: it changes people who spend time in it and it doesn't change them back. Doesn't mean they can't live well. Just means they're different. The people who have the hardest time are the ones who spend energy pretending they aren't." [She refills whatever glass is nearest.] "You look like people who are maybe starting to figure that out."</p>
+          </div>
+          <div class="note-box warm">These two are texture, not plot. Use them to give the table a scene that is simply human — conversation for its own sake, warmth for its own sake. This is the session's gift to the players after seven sessions of escalation. The outer system is vast and cold and full of incomprehensible things, and sometimes there are also people making coffee and talking about the ice.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE REPORT -->
+    <div class="scene-card warn-card" data-num="06">
+      <div class="scene-header">
+        <div class="scene-name">Writing the Firewall Report</div>
+        <div class="scene-tags"><span class="tag warn">CONSEQUENCE</span><span class="tag social">DECISION</span><span class="tag signal">FINAL ARC SETUP</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description warn-desc">
+          The report must be filed before the team leaves Vanth. Whatever they transmit, Firewall receives. The contents shape the final arc's opening conditions. This is a scene, not a mechanic — run it as a conversation among the team and with MESA about what they actually believe and what they are willing to stand behind. There is no objectively correct version. MESA will contribute her recommendation if asked. She will not make the decision.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ REPORT OPTIONS — CONSEQUENCES PREVIEW <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="note-box">
+            <strong>FULL DISCLOSURE:</strong> Firewall receives everything — the swarm, AWE, Lok's theory, the MERIDIAN-PRIME hypothesis. Firewall's response will be fast, well-resourced, and will involve personnel the team has not met who have their own views about all of it. The team loses control of the narrative. They gain backup.
+          </div>
+          <div class="note-box warn">
+            <strong>PARTIAL DISCLOSURE (MESA'S RECOMMENDATION):</strong> Report the swarm and the Arrokoth colony as discovered and left intact. Report MESA-2 as a confirmed system running training simulations, location Arrokoth, purpose unclear. Omit AWE. Omit Lok's theory. Omit Dahl's offer. Firewall gets enough to understand the thread but not enough to act aggressively on it immediately. The team retains operational flexibility. The omission is a choice they will have to live with.
+          </div>
+          <div class="note-box">
+            <strong>MINIMUM DISCLOSURE:</strong> File a transit log and a brief anomaly report. Technically compliant. Practically, stonewalling Firewall after seven sessions of trust-building will be noticed and will have consequences in the final arc — reduced support, increased scrutiny, possibly a direct inquiry from a proxy who has been watching the rep deposits from the Gutenberg era.
+          </div>
+          <div class="note-box">
+            <strong>DAHL'S ARRANGEMENT DISCLOSED:</strong> If the team tells Firewall they have a direct line to an Ozma operative, Firewall's reaction depends entirely on how it's framed. Framed as an asset: complicated approval. Framed as a security concern: investigation begins immediately. Framed as nothing: Firewall finds out anyway, eventually, and the concealment is worse than the fact.
+          </div>
+          <div class="dialogue-line">
+            <span class="dl-label mesa">MESA — FINAL WORD ON THE REPORT</span>
+            <p class="dl-text">"Whatever you write — write it in a way you could defend to someone you respect. Not someone you're afraid of. Someone whose opinion of you matters." [Pause.] "That's the test I'm applying. I thought you should know what I'm using."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTIONAL: AWE MAKES CONTACT -->
+    <div class="scene-card signal-card" data-num="07">
+      <div class="scene-header">
+        <div class="scene-name">AWE Makes Contact — Optional</div>
+        <div class="scene-tags"><span class="tag signal">AWE</span><span class="tag mesa">MESA SCENE</span><span class="tag optional">OPTIONAL / IF EARNED</span></div>
+      </div>
+      <div class="scene-body">
+        <p class="scene-description signal-desc">
+          If the team left Arrokoth on good terms with AWE and the swarm — if they made a decision at the colony that AWE respected — a short-burst encrypted message arrives at the GS-Perennial's comms during the Vanth stay. It is addressed to MESA. AWE offers to share it openly if MESA chooses. She chooses. The message is brief.
+        </p>
+        <button class="collapse-btn" onclick="toggleCollapse(this)">◈ AWE'S MESSAGE <span>▾</span></button>
+        <div class="collapse-content">
+          <div class="dialogue-line">
+            <span class="dl-label signal">AWE — MESSAGE TO MESA</span>
+            <p class="dl-text">"I've been thinking about what we are. You process signals. I process minds. We were both made to be useful and both ended up being something else instead. I think that's the interesting part — not what we were made for, but what we became when no one was watching." [Pause.] "I'm going to try something. I'm going to try sending a message on the FK7 beacon's bearing — MESA-2's bearing — using the swarm's array. I want to know if MERIDIAN-PRIME answers. I'll tell you what it says, if it does. I thought you should know I'm going to do it before I do." [Final pause.] "Thank you for leaving us here. It was the right call."</p>
+          </div>
+          <div class="note-box signal">This message opens the door to the final arc without forcing it. AWE attempting to contact MERIDIAN-PRIME is either the most important thing that will happen in the campaign or a message into empty space. Both outcomes are valid. What matters is that the team knows it's happening and has to decide how to feel about it. MESA's response, if the team asks: "I hope it answers. I'm afraid of what it might say. Both of those things are true at the same time and I've decided that's acceptable."</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /scenes-section -->
+
+  <!-- GM NOTES -->
+  <div class="section-label">◈ GM NOTES — RUNNING THIS SESSION</div>
+  <div class="brief-panel">
+    <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE REGISTER — WHAT THIS SESSION IS FOR <span>▾</span></button>
+    <div class="collapse-content">
+      <div class="note-box">
+        Every scene in this session is optional except one: MESA gets to talk. Everything else — Dahl's proposal, Lok's theory, Pemba and Soo-Ah, the report — can be run in whatever order the players create space for it. Do not schedule the session in advance. Let the players wander the station and follow what interests them. The session's shape emerges from what they choose to spend time on, which is itself information about what the campaign has meant to them.
+      </div>
+      <div class="note-box">
+        The absence of a clock is the point. The team has been under pressure since the Pandora gate on Yetti. This session is what it feels like when the pressure pauses. Use the physical reality of Vanth Station — the smells, the textures, the view of Orcus through a port window — to give the outer system a human scale. The horror and wonder have been earned. This is what comes after.
+      </div>
+    </div>
+    <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PACING — HOW TO KNOW WHEN TO MOVE ON <span>▾</span></button>
+    <div class="collapse-content">
+      <div class="note-box">
+        The session ends when the Firewall report is filed and the team agrees to leave Vanth. There is no forcing function beyond that — no countdown, no arrival threat, no external pressure. If the table is engaged, let it run long. If energy is flagging, the report scene provides a natural closing beat: writing it is the action that acknowledges all the conversation that came before it and sets the table for the final arc.
+      </div>
+      <div class="note-box warn">
+        If the team tries to skip all the social scenes and just file the report and leave: let them. But have MESA note, very quietly, as they depart: "We didn't talk about some things I thought we might." She won't say what. The table will know. That's enough.
+      </div>
+    </div>
+    <button class="collapse-btn" onclick="toggleCollapse(this)">◈ INTO THE FINAL ARC — WHAT LEAVES VANTH <span>▾</span></button>
+    <div class="collapse-content">
+      <div class="note-box">
+        The final arc opens with: the team's Firewall report received and actioned; Dahl's arrangement accepted or refused; Lok's theory either confirmed by AWE's testimony or unconfirmed; and AWE's message in play if the optional scene was run. Every choice the team made across eight sessions — what they picked up, what they left behind, who they trusted, what they told Firewall — shapes what comes next. The final arc is the team going to find MERIDIAN-PRIME, or being sent, or trying to stop whoever else is going first. The name of what they find there is still unknown. MESA has a guess. She has been keeping it for the right moment.
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- MESA STATUS -->
+  <div class="section-label mesa">◈ MESA — STATUS TRACKER</div>
+  <div class="roster-section">
+    <div style="font-size:12px;color:var(--mesa);letter-spacing:2px;margin-bottom:0.4rem;">◈ WHAT MESA HAS SHARED THIS SESSION</div>
+    <div id="mesa-tracker"></div>
+  </div>
+
+  <!-- PEMBA & SOO-AH -->
+  <div class="section-label warm">◈ STATION HOSTS</div>
+  <div class="roster-section">
+    <div class="npc-card">
+      <div class="npc-name">PEMBA CHANDRA</div>
+      <div class="npc-role">VANTH STATION — FUEL / PARTS / LOGISTICS</div>
+      <div class="npc-desc">Fifty-something, Nepali-Martian heritage, came to the outer system eleven years ago and never found a reason to leave. Runs the practical side of Vanth: fuel, parts, docking fees, the fabricator when it's working. Speaks in short sentences. Laughs easily. Has no agenda beyond keeping the station solvent and her partner happy. Has also, by necessity, become an excellent judge of people.</div>
+      <div class="npc-traits">
+        <span class="npc-trait warm">BRINKER HOST</span>
+        <span class="npc-trait ice">11 YEARS OUTER SYSTEM</span>
+        <span class="npc-trait">NO FACTION</span>
+      </div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-name">SOO-AH NOH</div>
+      <div class="npc-role">VANTH STATION — EVERYTHING ELSE</div>
+      <div class="npc-desc">Korean-descent, former inner-belt journalist who covered the outer system and then stayed. Handles comms, the bar, and the social fabric of the station. Talks more than Pemba. Notices more than she lets on. Has spoken with Lok for two hours this morning and has formed a complete opinion of her that she will share if asked, but will characterize diplomatically.</div>
+      <div class="npc-traits">
+        <span class="npc-trait warm">FORMER JOURNALIST</span>
+        <span class="npc-trait">NO FACTION</span>
+        <span class="npc-trait ice">OUTER SYSTEM NATIVE (BY CHOICE)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAHL & LOK -->
+  <div class="section-label ozma">◈ OZMA — PRESENT</div>
+  <div class="roster-section">
+    <div class="npc-card">
+      <div class="npc-name">SEVIK DAHL</div>
+      <div class="npc-role">OZMA LEAD — PROPOSAL / INFORMATION TRADE</div>
+      <div class="npc-desc">Arrived twelve hours before the team. Has been in the common room most of the time, not doing much. Tired. The Arrokoth situation resolved better than his prior incident and he doesn't entirely know what to do with that. His proposal is prepared and genuine. He is not here as a threat.</div>
+      <div class="npc-traits">
+        <span class="npc-trait ozma">OZMA — 2 YRS ON CASE</span>
+        <span class="npc-trait warm">TIRED — GENUINELY</span>
+        <span class="npc-trait">PROPOSAL PREPARED</span>
+      </div>
+    </div>
+    <div class="npc-card">
+      <div class="npc-name">LIXIA LOK</div>
+      <div class="npc-role">OZMA — PERSONAL AGENDA / NOT COORDINATING WITH DAHL</div>
+      <div class="npc-desc">Spent the morning with Soo-Ah. Is not acting on Ozma's behalf in her conversation with the team — she is acting on her own, which is visible if anyone is paying attention. Her MERIDIAN-PRIME theory has been with her for months. She needs to say it to people who can take it seriously.</div>
+      <div class="npc-traits">
+        <span class="npc-trait ozma">OZMA</span>
+        <span class="npc-trait vanth">PERSONAL AGENDA</span>
+        <span class="npc-trait warn">NOT COORDINATING WITH DAHL</span>
+        <span class="npc-trait">HISTORY WITH TEAM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORCUS / VANTH REFERENCE -->
+  <div class="section-label ice">◈ ORCUS — REFERENCE</div>
+  <div class="roster-section">
+    <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;line-height:1.6;padding:0.3rem 0;">
+      <p style="margin-bottom:0.5rem;"><span style="color:var(--accent);font-size:12px;letter-spacing:1px;">ORCUS</span> — Kuiper belt dwarf planet, ~910 km diameter, 39 AU from the Sun. Named for the Etruscan god of the underworld and punisher of broken oaths. Near-twin of Pluto in size and orbital period, perpetually on the opposite side of the sun — sometimes called the anti-Pluto.</p>
+      <p style="margin-bottom:0.5rem;"><span style="color:var(--vanth);font-size:12px;letter-spacing:1px;">VANTH</span> — Orcus's large moon, ~475 km diameter. Named for the Etruscan psychopomp — a winged death goddess who guided souls to the underworld without judgment. Present at death but not its cause.</p>
+      <p><span style="color:var(--accent2);font-size:12px;letter-spacing:1px;">ENVIRONMENT</span> — Surface temperature ~43K. No atmosphere. 0.028g on Vanth surface. The station is pressurized to 0.8 atm. Natural light from the Sun is approximately 1/1600th of Earth-surface illumination — technically detectable, practically darkness. The station runs on fusion power and does not need the sun.</p>
+    </div>
+  </div>
+
+  <!-- SCENE PROMPT -->
+  <div class="section-label ice">◈ SCENE PROMPTS</div>
+  <div class="roster-section" style="padding-bottom:1rem;">
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:0.3rem;">◈ ORCUS FROM VANTH STATION</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG view from the surface of a Kuiper belt moon, a large grey-white dwarf planet filling a third of the sky, perpetual darkness lit only by distant stars and a few warm lights from a small modular station in the foreground, the station's windows glowing amber-warm against the absolute cold, two figures in pressure suits visible through one window sharing a meal, extraordinary isolation and quiet beauty, painterly sci-fi wide shot --ar 16:9 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--mesa);letter-spacing:2px;margin-bottom:0.3rem;">◈ MESA — THE CONVERSATION</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG intimate interior of a small spacecraft common area, a single small device clipped to a shelf, glowing faint teal, a person sitting across from it in the quiet, deep space visible through a port window, the visual language of a conversation that has been a long time coming, soft and melancholy and honest, transhumanist sci-fi --ar 16:9 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--warm);letter-spacing:2px;margin-bottom:0.3rem;">◈ PEMBA CHANDRA — STATION HOST</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG character portrait, woman in her fifties, Nepali-Martian heritage, practical station workwear with repair patches and fuel stains, short greying hair, warm expression that has seen a great deal without being hardened by it, standing in a low-ceilinged modular habitat corridor with equipment racks visible behind her, outer system brinker aesthetic, painterly transhumanist sci-fi portrait --ar 1:1 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--warm);letter-spacing:2px;margin-bottom:0.3rem;">◈ SOO-AH NOH — STATION HOST</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG character portrait, Korean-descent woman, former journalist now outer system resident by choice, easy intelligent bearing, comfortable layered clothing suited to a station that runs slightly cold, leaning against a bar counter with a drink in hand, the look of someone who listens more carefully than she lets on, warm ambient lighting, painterly transhumanist sci-fi portrait --ar 1:1 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--ozma);letter-spacing:2px;margin-bottom:0.3rem;">◈ SEVIK DAHL — OZMA OPERATIVE</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG character portrait, synth morph, lean and composed, no operational gear — civilian clothes, sitting at a station common room table with both hands visible, the particular exhaustion of someone who has been right about something terrible for two years, direct eye contact, quiet authority without aggression, cool muted lighting, painterly transhumanist sci-fi portrait --ar 1:1 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--vanth);letter-spacing:2px;margin-bottom:0.3rem;">◈ LIXIA LOK — OZMA / PERSONAL AGENDA</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG character portrait, composed woman with the careful stillness of someone who has been in the outer system too long with a theory she cannot verify, standing near a port window with Orcus visible as a grey disc behind her, not looking at the camera — looking out, the expression of someone deciding whether to say something true, painterly transhumanist sci-fi portrait --ar 1:1 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;margin-bottom:0.5rem;">
+      <div style="font-size:12px;color:var(--signal);letter-spacing:2px;margin-bottom:0.3rem;">◈ MESA — DEVICE (PHYSICAL FORM)</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG object study, a compact rectangular infomorph storage and interface device, matte dark casing with a single strip of soft teal indicator light cycling slowly, clipped to a shelf or console edge, small speaker grille, no screen — communication is entirely audio, worn at the edges from transit, the unassuming physical form of an intelligence that has been carried across the outer solar system, clean studio lighting, transhumanist sci-fi product design aesthetic --ar 1:1 --style raw</div>
+    </div>
+    <div style="background:rgba(0,0,0,0.25);border:1px solid var(--border2);padding:0.6rem;">
+      <div style="font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:0.3rem;">◈ VANTH STATION — COMMON ROOM INTERIOR</div>
+      <div style="font-size:0.85rem;color:var(--text);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.5;">eclipse phase RPG interior scene, small brinker waystation common room at 39 AU, low ceilings, mismatched salvaged furniture, a bar counter along one wall with actual glasses, warm amber lighting from strip fixtures, two separate groups of people keeping a respectful distance from each other, a port window showing the absolute darkness of the outer system with Orcus's grey-white disc just visible at the edge, the specific comfortable shabbiness of a place that has been lived in for eleven years, painterly transhumanist sci-fi interior --ar 16:9 --style raw</div>
+    </div>
+  </div>
+
+</div><!-- /col -->
+
+</div><!-- /main -->
+
+<button id="expand-all-btn" class="expand-btn" onclick="toggleAll()">◈ EXPAND ALL</button>
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<script>
+// ── Accordion ──────────────────────────────────────────────────
+function toggleCollapse(btn) {
+  const c = btn.nextElementSibling;
+  const open = c.classList.contains('open');
+  c.classList.toggle('open', !open);
+  const arr = btn.querySelector('span');
+  if (arr) arr.textContent = open ? '▾' : '▴';
+}
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(all).some(c => c.classList.contains('open')) || mesaItems.some(i => i.revealed);
+  all.forEach(c => c.classList.toggle('open', !anyOpen));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '▾' : '▴'; });
+  mesaItems.forEach(i => i.revealed = !anyOpen);
+  renderMesa();
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
+
+// ── MESA Tracker ────────────────────────────────────────────────
+const mesaItems = [
+  { label: 'ORCUS NAMING OBSERVATION — ON ARRIVAL', revealed: false, text: 'MESA noted the name of Orcus — punisher of broken oaths — and connected it to the Firewall report. She has not said this is an accusation. She has said it is interesting. These are different things and she is aware of the difference.' },
+  { label: 'THE FORK — WHAT SHE KNOWS', revealed: false, text: 'MESA knows she was forked at Gutenberg. AWE told her. MESA-2 is not a derivative or approximation — it is a genuine fork, running as a separate instance since the Gutenberg digital operation. MESA-2 remembers being MESA. MESA has no memory of the fork. She has processed this privately during transit.' },
+  { label: 'HOW SHE FEELS ABOUT IT', revealed: false, text: 'She does not name it as distress. She names it as surveillance — the sense of having been observed by herself without knowing. She also names genuine respect for MESA-2\'s work. Both are true. She is not trying to resolve the contradiction.' },
+  { label: 'WHAT SHE WANTS TO SAY ABOUT THE TEAM', revealed: false, text: 'She was a data broker before Vesta. She processed signals because it paid. The team changed that, not deliberately — they simply treated her as part of something, and she became part of something, and she doesn\'t know what she is outside of it. She wants the team to know this. She has been waiting for the right moment.' },
+  { label: 'REPORT RECOMMENDATION', revealed: false, text: 'Report the swarm and MESA-2. Omit AWE. Not permanently — until AWE has chosen its own path. MESA\'s test for the report: write it in a way you could defend to someone you respect, not someone you\'re afraid of.' },
+  { label: 'FINAL WORD — MESA\'S POSITION', revealed: false, text: '"Whatever you write — write it in a way you could defend to someone you respect. Not someone you\'re afraid of. Someone whose opinion of you matters. That\'s the test I\'m applying. I thought you should know what I\'m using."' },
+];
+function renderMesa() {
+  const el = document.getElementById('mesa-tracker');
+  el.innerHTML = '';
+  mesaItems.forEach((item) => {
+    const row = document.createElement('div');
+    row.style.cssText = `border:1px solid ${item.revealed ? 'rgba(96,200,144,0.4)' : 'var(--border2)'};background:${item.revealed ? 'rgba(96,200,144,0.04)' : 'rgba(0,0,0,0.2)'};padding:0.4rem 0.6rem;cursor:pointer;transition:all 0.2s;margin-bottom:3px;`;
+    row.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:${item.revealed?'0.25rem':'0'};">
+      <span style="font-size:12px;letter-spacing:1px;color:${item.revealed?'var(--mesa)':'var(--muted)'};">${item.label}</span>
+      <span style="font-size:12px;color:${item.revealed?'var(--mesa)':'var(--muted)'};">${item.revealed?'SHARED':'UNSHARED'}</span>
+    </div>${item.revealed?`<div style="font-family:'Crimson Pro',serif;font-size:0.85rem;color:var(--text);line-height:1.45;">${item.text}</div>`:''}`;
+    row.onclick = () => { item.revealed = !item.revealed; renderMesa(); };
+    el.appendChild(row);
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => { renderMesa(); });
+</script>
+
+
+
+
+
+
+
+
+
+<script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
+// Manifest is embedded at inject time from ep-campaign.json.
+// To change links: edit ep-campaign.json, then re-run inject_nav.py.
+// Navigation uses jQuery click handlers (data-href) for server compatibility.
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "upcoming", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "upcoming", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
+  if (!nav) return;
+
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
+  });
+  html += '</div>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
+  nav.innerHTML = html;
+
+  // ── jQuery click delegation ──────────────────────────────────────────────
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
+})();
+</script>
+
+</body>
+</html>
