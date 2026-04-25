@@ -429,6 +429,64 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; 
 .muse-label:hover  { opacity: 0.72; }
 .muse-label:active { opacity: 0.5; }
 
+
+/* ── LEGAL FOOTER ────────────────────────────────────────── */
+.ep-legal-footer {
+  border-top: 1px solid var(--border);
+  background: var(--deep);
+  padding: 1.5rem 2rem 2rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+}
+.ep-legal-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ep-legal-title {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--accent);
+  opacity: 0.5;
+}
+.ep-legal-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text);
+  opacity: 0.45;
+  line-height: 1.8;
+}
+.ep-legal-text a {
+  color: var(--accent2);
+  opacity: 1;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(126,200,160,0.3);
+}
+.ep-legal-text a:hover { opacity: 1; border-bottom-color: var(--accent2); }
+.ep-legal-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+.ep-legal-badge {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--text);
+  opacity: 0.25;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 2px 6px;
+}
+@media print { .ep-legal-footer { display: none; } }
+
 /* ── PRINT MEDIA ─────────────────────────────────────────── */
 @media print {
   @page { size: A4; margin: 10mm; }
