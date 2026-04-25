@@ -183,6 +183,22 @@
       <div class="test-item"><div class="test-skill warn">LIMIT</div><div class="test-desc">One-use. Once redeemed it's gone. A sentinel who spends their chit on gear before the session escalates can't use it again if they lose that gear in the hull corridor.</div></div>
       <div class="test-item"><div class="test-skill teal">NARRATIVE VALUE</div><div class="test-desc">If players ask how Firewall pre-staged this: Aiko has been a relay asset for four years. Firewall pre-authorised the chit when MESA's alert came in, before the sentinels were even briefed. Whoever made that call knew Vesta well enough to know Aiko would still be at her stall. That's either impressive or a little too confident.</div></div>
     </div>
+
+    <div style="margin-top:0.6rem; border:1px solid rgba(245,166,35,0.3); background:rgba(245,166,35,0.04); padding:0.6rem 0.8rem;">
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.5rem;">◈ HOW THEY RECEIVED THE MISSION — DELIVERY MECHANICS</div>
+      <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">
+        The sentinels were not briefed in person. There was no handler meeting, no secure dead drop, no voice call. The briefing arrived as an <strong style="color:var(--textbright);">encrypted fork of the Cerean proxy's infomorph</strong> — a compressed ego fragment containing only the operational brief — transmitted through a relay node and loaded directly into each sentinel's muse during egocast transit to Vesta. By the time resleeving was complete, the infomorph fork had executed, delivered its payload, and deleted itself. It left no record and no return address.
+      </div>
+      <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">
+        The muse now holds the operational details: MESA's alias, the hotel booking, the challenge phrase for Aiko and Devraj, the extraction contact aboard the <em>Kessler Patience</em>. Everything the sentinels know, they received in transit. They have never spoken to the Cerean proxy directly and have no mechanism to reach back. Aiko and Orin Deschamps are the only two authorised contact points on Vesta. If something goes wrong that isn't covered in the brief, the sentinels improvise.
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;">
+        <div class="test-item"><div class="test-skill">WHY NO RETURN CONTACT</div><div class="test-desc">Firewall runs lean. Contact threads are vulnerabilities. The proxy who sent the brief doesn't know if it was received until the operation either succeeds or the sentinels egocast off Vesta. That's the design. It's also why MESA's alert was taken seriously — she went dark on a frequency Firewall only uses for one-way emergency signals.</div></div>
+        <div class="test-item"><div class="test-skill teal">WHAT THE MUSE KNOWS</div><div class="test-desc">The briefing as loaded into the muse covers: objectives, MESA's alias and location, commercial cover identities, the challenge phrase, Aiko and Devraj as authorised spend contacts, Orin Deschamps and the <em>Kessler Patience</em> departure window (T+40min from session start). The muse does not know Cognite is involved — that's field intelligence, not pre-mission intel.</div></div>
+        <div class="test-item"><div class="test-skill warn">WHAT NOBODY TOLD THEM</div><div class="test-desc">That Sable Index pre-positioned before MESA disappeared. That VSC-REG-0442 was filed before the sentinels were briefed. That Cognite recognised the Gutenberg frequency from their own Kuiper Belt experiment. That the fork on the data spike is damaged. The proxy either didn't know these things or assessed them as field-discoverable. The sentinels find all of it themselves.</div></div>
+        <div class="test-item"><div class="test-skill danger">IF PLAYERS ASK WHO SENT IT</div><div class="test-desc">The Cerean proxy. That's the routing identifier — whether it's a person operating from Ceres, a mesh node, or a rotating infomorph with no fixed address is deliberately unclear. The proxy's voice was part of the briefing fork. The sentinels know what it sounds like. They have no way to verify whether they'd recognise the same entity if they encountered it again. Firewall doesn't do introductions.</div></div>
+      </div>
+    </div>
   </div>
 
   <!-- BACKGROUND -->
@@ -195,257 +211,148 @@
     </div>
   </div>
 
-  <!-- BUREAUCRACY SIDEBAR -->
+  <!-- BUREAUCRACY SIDEBAR — moved to Appendix F -->
   <div class="section-label" style="color:#8c52ff;">◈ VESTA STATION — PERMIT &amp; BUREAUCRACY GUIDE</div>
   <div class="brief-panel" style="border-color: rgba(140,82,255,0.2);">
-    <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">
-      Vesta has no unified permit office. Three bodies hold overlapping jurisdiction and do not coordinate. The practical result is that any permit requiring cross-authority sign-off takes longer than anyone says it will, costs more than anyone quotes, and usually requires knowing someone. Locals navigate it by rep and relationship. Visitors lose days.
-    </div>
-
-    <!-- Three authorities -->
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.8rem;">
-      <div style="border:1px solid rgba(245,166,35,0.2); padding:0.5rem 0.6rem; background:rgba(245,166,35,0.03);">
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.3rem;">VCC</div>
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; margin-bottom:0.4rem;">VESTA COOPERATIVE COUNCIL</div>
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Habitat access, residential registration, atmospheric zone permits, physical infrastructure. Level 3, mid-ring. Slow. Paper-heavy. Issued VSC-REG-0442.</div>
-        <div style="margin-top:0.4rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:1px;">REP: c-rep / f-rep</div>
-      </div>
-      <div style="border:1px solid rgba(0,201,177,0.2); padding:0.5rem 0.6rem; background:rgba(0,201,177,0.03);">
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.3rem;">ECB</div>
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; margin-bottom:0.4rem;">EXTROPIAN COMMERCE BOARD</div>
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Business licences, market stall registration, freight manifests, contractor permits. Fast and fee-based. Openly transactional — expedite fees are posted. Sable Index front registered here.</div>
-        <div style="margin-top:0.4rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:1px;">REP: e-rep / g-rep</div>
-      </div>
-      <div style="border:1px solid rgba(220,53,69,0.2); padding:0.5rem 0.6rem; background:rgba(220,53,69,0.03);">
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:2px; margin-bottom:0.3rem;">VSC</div>
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; margin-bottom:0.4rem;">VESTA STATION CONSTABULARY</div>
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Weapons permits, security contractor licences, stack extraction authorisations, synthmorph registration (post-0442). Docking Ring counter. Understaffed. Half their revenue is permit fees.</div>
-        <div style="margin-top:0.4rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:1px;">REP: c-rep (grudging)</div>
-      </div>
-    </div>
-
-    <!-- Permit table -->
-    <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ COMMON PERMITS — COST, TIME &amp; REP SHORTCUTS</div>
-    <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom:0.7rem;">
-      <thead>
-        <tr style="border-bottom:1px solid rgba(140,82,255,0.2);">
-          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:28%;">PERMIT</th>
-          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:12%;">AUTHORITY</th>
-          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:10%;">BASE COST</th>
-          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:12%;">STD. TIME</th>
-          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:14%;">EXPEDITE COST</th>
-          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem;">REP SHORTCUT</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Short-stay hab registration</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent);">VCC</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">2 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Same day</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">—</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">c-rep 10 skips queue</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Commercial survey / cover licence</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2);">ECB</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">10 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">1–2 days</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+8 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">e-rep 20 same day</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Market stall / vendor registration</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2);">ECB</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">5 GP / month</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">2–3 days</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+5 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">g-rep 15 no wait</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Sidearm carry permit (kinetic)</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">15 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">3–5 days</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+20 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">c-rep 30 or VSC contact</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Security contractor licence</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC + ECB</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">30 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">1 week</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+25 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">c-rep 40 + e-rep 20</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Stack extraction authorisation</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">25 GP + med lic.</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">1 week</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">Not available</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">No shortcut. VSC tracks these.</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Synthmorph 90-day registration (post-0442)</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">8 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Same day</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">—</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Cannot be skipped — VSC logs biometrics on arrival</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Outer hull / EVA access permit</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent);">VCC + VSC</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">12 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">2 days</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+15 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">f-rep 20 or freight contact bypasses VCC sign-off</td>
-        </tr>
-        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Freight manifest amendment</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2);">ECB</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">3 GP</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">4 hours</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+3 GP (1 hour)</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">g-rep 10 same hour</td>
-        </tr>
-        <tr style="background:rgba(255,255,255,0.015);">
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Mesh log suppression waiver</td>
-          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent);">VCC</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">Technically exists</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">2 weeks</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--warn);">Not available</td>
-          <td style="padding:0.3rem 0.5rem; color:var(--text);">In practice: never approved. Buy Infosec instead.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Rep mechanics note -->
-    <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ USING REP IN PLACE OF PERMITS</div>
-    <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
-      Rep can substitute for, accelerate, or quietly replace most permit processes. The following applies at Vesta under normal conditions — GMs may tighten restrictions if the Audit VSC-REG-0442 is actively being enforced.
-    </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.6rem;">
-      <div>
-        <div class="test-item"><div class="test-skill">c-rep 10–20</div><div class="test-desc">Skip queue at VCC or VSC counter. No faster processing — just no wait.</div></div>
-        <div class="test-item"><div class="test-skill">c-rep 30+</div><div class="test-desc">Same-day approval on most single-authority permits. Staff expedite without being asked.</div></div>
-        <div class="test-item"><div class="test-skill teal">e-rep 20+</div><div class="test-desc">ECB fast-track on anything commercial. Fee still applies but paperwork evaporates.</div></div>
-        <div class="test-item"><div class="test-skill teal">g-rep 15+</div><div class="test-desc">Freight and docking contacts can push EVA and hull access through without full VCC review.</div></div>
-      </div>
-      <div>
-        <div class="test-item"><div class="test-skill warn">f-rep 20+</div><div class="test-desc">Firewall's shadow network on Vesta can quietly pre-clear commercial cover identities. PCs' cover was handled this way before arrival.</div></div>
-        <div class="test-item"><div class="test-skill warn">f-rep 30+</div><div class="test-desc">Access to VCC internal filing system — enough to check who filed VSC-REG-0442 and whether the redaction is genuine or inserted post-filing.</div></div>
-        <div class="test-item"><div class="test-skill danger">CROSS-AUTHORITY PERMITS</div><div class="test-desc">Anything needing both VCC and VSC sign-off (EVA access, security licences) requires rep or contacts at <em>both</em> bodies separately. One doesn't recognise the other's approvals.</div></div>
-      </div>
-    </div>
-
-    <!-- Practical note -->
-    <div style="border-left:2px solid rgba(140,82,255,0.4); padding:0.4rem 0.7rem; background:rgba(140,82,255,0.04); font-size:0.85rem; color:var(--text); line-height:1.5;">
-      <strong style="color:#8c52ff; font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px;">GM NOTE — VSC-REG-0442 COMPLICATIONS</strong><br>
-      Since the new audit regulations came in, synthmorph arrivals are logged on entry and cross-referenced against the 90-day registry within 6 hours. Any synthmorph PC who hasn't registered is flagged automatically — not arrested, but flagged. The Sable Index worker-pod unit is already on the list, which is how a careful PC (Research 50, exceptional: f-rep 30+) can confirm that Sable Index has an active synthmorph asset somewhere on the station. Stack extraction tools now require a medical licence on the permit — Devraj has one forged copy he'll rent for 10 GP/day. Don't ask where it came from.
+    <div style="border-left:3px solid rgba(140,82,255,0.5); padding:0.5rem 0.8rem; background:rgba(140,82,255,0.04); font-size:0.85rem; color:var(--text); line-height:1.6;">
+      <span style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px;">◈ SEE APPENDIX F</span><br>
+      Full permit tables, rep shortcuts, VSC-REG-0442 timeline, and the three-authority breakdown (VCC / ECB / VSC) are in <strong style="color:var(--textbright);">Appendix F — Vesta Permit &amp; Bureaucracy Guide</strong> at the end of this document.<br>
+      <span style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted);">Quick ref: Commercial survey permit 10 GP / 1–2 days (ECB) · Sidearm carry 15 GP / 3–5 days (VSC) · VSC-REG-0442 effective T-4 days · Standard review bypassed — five days instead of thirty to sixty.</span>
     </div>
   </div>
 
   <!-- MUSE CUES -->
   <div class="section-label teal">◈ MUSE INTEL CUES — BY SCENE</div>
   <div class="brief-panel">
-    <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.7rem;">Muses deliver intel privately — in a character's inner ear, as a soft overlay, or a quiet ping. Use the character's muse name from the roster. These are suggestions; adjust timing to the table's pace. A muse speaks when the character is ready to hear it, not necessarily when the GM is ready to say it.</div>
+
+    <!-- Muse name inputs -->
+    <div id="muse-setup" style="border:1px solid rgba(0,201,177,0.3); background:rgba(0,201,177,0.04); padding:0.7rem 0.8rem; margin-bottom:0.8rem;">
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.5rem;">◈ ENTER MUSE NAMES — CUES WILL UPDATE AS YOU TYPE</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.4rem;">
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#f5a623; margin-bottom:0.2rem;">SENTINEL 01</div>
+          <input id="muse-1" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#f5a623; background:rgba(245,166,35,0.06); border:1px solid rgba(245,166,35,0.3); border-bottom:2px solid #f5a623; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#00c9b1; margin-bottom:0.2rem;">SENTINEL 02</div>
+          <input id="muse-2" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#00c9b1; background:rgba(0,201,177,0.06); border:1px solid rgba(0,201,177,0.3); border-bottom:2px solid #00c9b1; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; margin-bottom:0.2rem;">SENTINEL 03</div>
+          <input id="muse-3" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#8c52ff; background:rgba(140,82,255,0.06); border:1px solid rgba(140,82,255,0.3); border-bottom:2px solid #8c52ff; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#ffc107; margin-bottom:0.2rem;">SENTINEL 04</div>
+          <input id="muse-4" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#ffc107; background:rgba(255,193,7,0.06); border:1px solid rgba(255,193,7,0.3); border-bottom:2px solid #ffc107; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+      </div>
+      <div style="font-size:0.75rem; color:var(--muted); font-family:'Share Tech Mono',monospace;">Click any muse label in the cues below to cycle which sentinel's muse speaks that line. Names save to browser storage.</div>
+    </div>
+
+    <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.7rem;">Muses deliver intel privately — in a character's inner ear, as a soft overlay, or a quiet ping. Click any muse label to reassign it to a different sentinel. These are suggestions; adjust timing to the table's pace.</div>
 
     <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.4rem;">◈ SCENE 01 — REGOLITH ARMS, ROOM 14</div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="0" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>That lock was defeated professionally. Estimated time to open: under ninety seconds. Whoever did it has done it before.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="1" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>Room 14 was registered under "Noor Yazdan." Checked out 72 hours ago. The booking record has a commercial survey permit attached — same cover classification as your own arrival.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="2" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>I'm reading one mesh signature in that room. No backup signal. She came alone.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — if they find the mesh relay node</span>
+      <span class="muse-label dl-label teal" data-cue="3" onclick="cycleMuse(this)">◈ — if they find the mesh relay node</span>
       <span class="dl-text"><em>This node was active 48 hours ago. Compressed ego-backup transmission — large payload, fast burn. Whoever sent it wasn't planning to come back for the hardware. The destination address is scrubbed, but the transmission fingerprint is consistent with a Firewall protocol I have on record.</em></span>
     </div>
 
     <hr class="divider"/>
     <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.4rem;">◈ SCENE 02 — COPPERVEIN MARKET</div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="4" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>Three individuals, eleven o'clock, moving against the foot traffic. No purchases, no browsing. They've checked four hab-unit numbers in the last six minutes. I don't have IDs — they're running mesh suppression.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — on first entering the market</span>
+      <span class="muse-label dl-label teal" data-cue="5" onclick="cycleMuse(this)">◈ — on first entering the market</span>
       <span class="dl-text"><em>Your Firewall requisition chit is loaded and ready. Challenge phrase: "I'm looking for something from the Meridian collection." Authorised contacts: Aiko Strand, ceramic vendor, upper stall tier — and Devraj Mistry, black market, lower tier near the junction. 25 GP available. One use.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — unprompted, if no one has mentioned vacsuits</span>
+      <span class="muse-label dl-label teal" data-cue="6" onclick="cycleMuse(this)">◈ — unprompted, if no one has mentioned vacsuits</span>
       <span class="dl-text"><em>I've reviewed the session objectives. The exterior hull corridor is pressurised but the docking strut interface is not guaranteed. I'd recommend at least one vacsuit in the group before we go anywhere near the outer hull. Devraj stocks emergency grade. They're not elegant but they seal.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — after Aiko mentions the audit</span>
-      <span class="dl-text"><em>VSC-REG-0442. Filed eighteen days ago. Requesting party redacted under commercial confidentiality clause. I can try to cross-reference the filing structure if you want — it'll take a few minutes and leave a query trace.</em></span>
+      <span class="muse-label dl-label teal" data-cue="7" onclick="cycleMuse(this)">◈ — after Aiko mentions the audit</span>
+      <span class="dl-text"><em>VSC-REG-0442. Filed seven days ago. Ratified in five days — standard review is thirty to sixty. Requesting party redacted under commercial confidentiality clause. I can try to cross-reference the filing structure if you want — it'll take a few minutes and leave a query trace.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — if the Sable Index team is spotted</span>
+      <span class="muse-label dl-label teal" data-cue="8" onclick="cycleMuse(this)">◈ — if the Sable Index team is spotted</span>
       <span class="dl-text"><em>One of those three just queried the hab directory. They're looking for unit 4-Delta-7. Same unit listed in MESA's partial transmission. They have maybe a twenty-minute lead on you if they move now.</em></span>
     </div>
 
     <hr class="divider"/>
     <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ SCENE 03 — HAB 4-DELTA-7</div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="9" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>The lock is commercial grade, VSC standard. Infosec 40 to ghost it quietly. Alternatively I can trip the fire suppression alert in the adjacent unit — gives you thirty seconds while the corridor clears. Your call.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — on the aquarium screensaver</span>
+      <span class="muse-label dl-label teal" data-cue="10" onclick="cycleMuse(this)">◈ — on the aquarium screensaver</span>
       <span class="dl-text"><em>That program is running active processes behind the display layer. It's not decorative. I'd recommend not touching it until you know what it's doing — or until you're ready for it to know you're here.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — after MESA's fork is recovered</span>
+      <span class="muse-label dl-label teal" data-cue="11" onclick="cycleMuse(this)">◈ — after MESA's fork is recovered</span>
       <span class="dl-text"><em>The fork is intact but degraded — I'm reading approximately 60% coherence. She's aware. She's been aware for three days. I'd recommend talking to her before running any analysis.</em></span>
     </div>
 
     <hr class="divider"/>
     <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:2px; margin-bottom:0.4rem;">◈ SCENE 04 — SABLE INDEX FRONT / VANEK</div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="12" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>"Vesta Salvage Assessors" — registered fourteen months ago. Commercial survey license, standard Extropian filing. No actual salvage equipment on the permit manifest. The registered contact address is a mail forwarding service on Luna.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — if Vanek mentions Firewall</span>
+      <span class="muse-label dl-label teal" data-cue="13" onclick="cycleMuse(this)">◈ — if Vanek mentions Firewall</span>
       <span class="dl-text"><em>He said the word. He used it deliberately and watched your face when he did. I'd recommend not confirming or denying. He's testing whether you'll flinch.</em></span>
     </div>
 
     <hr class="divider"/>
     <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--warn); letter-spacing:2px; margin-bottom:0.4rem;">◈ SCENE 06 — HULL CORRIDOR / EXTRACTION</div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="14" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>Gravity just dropped to zero. Adjusting your proprioception overlay now. The anchor points are marked on your AR — every two meters, yellow triangles. Use them in sequence. Do not push off a flat surface.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — on the Kessler Patience</span>
+      <span class="muse-label dl-label teal" data-cue="15" onclick="cycleMuse(this)">◈ — on the Kessler Patience</span>
       <span class="dl-text"><em>I have a match in Firewall's emergency extraction registry. Extropian ore freighter, the Kessler Patience. Captain Orin Deschamps. There's a handshake code attached — do you want me to broadcast it or do you want to do it manually?</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — departure countdown</span>
+      <span class="muse-label dl-label teal" data-cue="16" onclick="cycleMuse(this)">◈ — departure countdown</span>
       <span class="dl-text"><em>The Kessler Patience undocks in [X] minutes. I'm telling you this because you haven't started moving yet.</em></span>
     </div>
 
     <hr class="divider"/>
     <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:2px; margin-bottom:0.4rem;">◈ AMBIENT — USE ANYWHERE</div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="17" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>Mesh surveillance density just increased in this zone. Someone queried the commercial logging node thirty seconds ago. I don't know who — the query was clean. But someone knows we're in this corridor.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME]</span>
+      <span class="muse-label dl-label teal" data-cue="18" onclick="cycleMuse(this)">◈</span>
       <span class="dl-text"><em>You've been in this location for [X] minutes. I mention this because Sable Index was on a schedule when they arrived on Vesta, and they appear to still be on one.</em></span>
     </div>
     <div class="dialogue-line">
-      <span class="dl-label teal">[MUSE NAME] — quiet moment, unprompted</span>
+      <span class="muse-label dl-label teal" data-cue="19" onclick="cycleMuse(this)">◈ — quiet moment, unprompted</span>
       <span class="dl-text"><em>MESA's transmission fragment is still in our buffer. I've been running pattern analysis on the signal she found. I don't want to alarm you. But I think you should look at this when there's time.</em></span>
     </div>
   </div>
@@ -1446,51 +1353,264 @@
   <div class="section-label">◈ BELTER SETTING NOTES</div>
   <div class="side-panel">
     <div style="font-size:0.85rem; color:var(--text); line-height:1.6;">
-      <strong style="color:var(--text)">MICROGRAV TRANSITION (ROOM 06):</strong> When the chase reaches the exterior hull corridor, gravity drops to 0.0g. Athletics (Walker) no longer applies — all physical movement uses Free Fall. Characters without micrograv experience roll at –20. The team's micrograv specialist rolls at +20. This is the session's physical climax and their defining moment.</p>
+
+      <!-- VESTA INTERIOR DESCRIPTION -->
+
       <hr class="divider"/>
-      <div style="margin-bottom:0.6rem;">
-        <strong style="color:var(--text)">GRAVITY — ZONE REFERENCE:</strong>
-        <span style="color:var(--text);"> Vesta's surface gravity is 0.025g — negligible. All usable gravity on the station is centrifuge-generated, which means it varies by zone and drops to zero the moment you leave the ring.</span>
-        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.5rem;">
-          <thead>
-            <tr style="border-bottom:1px solid var(--border);">
-              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">ZONE</th>
-              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">GRAVITY</th>
-              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">SKILL MODIFIER</th>
-              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">NOTES</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Docking Ring / Coppervein Market / Hotel</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--accent2); font-family:'Share Tech Mono',monospace;">0.3g</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--warn);">–10 (surface-trained)</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Centrifuge ring, Level 4. Consistent along the corridor. Vesta natives and Low Gravity adapted characters unaffected. Things fall slowly — combat trained for 1g will overshoot.</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);">
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Service Level / Maintenance Shafts</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--accent2); font-family:'Share Tech Mono',monospace;">0.15g</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--warn);">–15 (surface-trained)</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Radially inward from the ring. Gravity drops noticeably in vertical shafts and access tunnels. Loose objects migrate to low points unpredictably.</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Exterior Hull Corridor / Docking Strut Alpha-7</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--danger); font-family:'Share Tech Mono',monospace;">0.0g</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--danger);">–20 (no Free Fall) / +20 (micrograv specialist)</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Beyond the pressure door. Full micrograv. Athletics (Walker) does not apply — all movement uses Free Fall. Anchor points every 2 metres. Everything loose becomes a projectile.</td>
-            </tr>
-            <tr style="background:rgba(255,255,255,0.02);">
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Transition Corridor (Ring → Hull)</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--warn); font-family:'Share Tech Mono',monospace;">0.3g → 0.0g</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--warn);">Graduated over ~30m</td>
-              <td style="padding:0.3rem 0.5rem; color:var(--text);">Gravity drops across roughly thirty metres of corridor approaching the hull pressure door. Characters who don't notice will feel increasingly light-footed, then suddenly weightless. Disorienting without preparation.</td>
-            </tr>
-          </tbody>
-        </table>
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.5rem;">◈ CANONICAL VESTA LORE — RIMWARD SOURCE MATERIAL</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+        <div style="border:1px solid rgba(0,201,177,0.2); padding:0.5rem 0.6rem; background:rgba(0,201,177,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin-bottom:0.3rem;">VESTA PRIME</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">The main colony. A Cole bubble habitat — a smaller asteroid was hollowed, spun for gravity, and towed into orbit around Vesta. The Docking Ring District is a surface beehive hab, not Vesta Prime itself. Most of the permanent population lives in Vesta Prime. The PCs are operating in the transit and commercial layer, one step removed from the main habitation.</div>
+        </div>
+        <div style="border:1px solid rgba(140,82,255,0.2); padding:0.5rem 0.6rem; background:rgba(140,82,255,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:1px; margin-bottom:0.3rem;">STARWARE SHIPYARDS</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">A major hypercorp operating a massive shipyard facility in an orbit opposite Vesta Prime. Sells to everyone — Jovians, Titanians, independents. This is why Vesta is a genuine cross-system transit hub and not just a Belt waystation. It also explains the VSC's tolerance for a wide range of commercial actors: Starware brings money and traffic that the entire station depends on.</div>
+        </div>
+        <div style="border:1px solid rgba(220,53,69,0.2); padding:0.5rem 0.6rem; background:rgba(220,53,69,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--danger); letter-spacing:1px; margin-bottom:0.3rem;">THE BRANSON-VESTA DISASTER</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">A bioconservative cult manufactured plasma bombs and accidentally destroyed their own habitat when an attack on the local government caused a cascading blowout — cracking the spinning habitat in half. 50,000+ residents resleeved. 400 permanently died when backups and cortical stacks were destroyed. Described in the core rulebook as "still quite fresh." This is why Vesta's weapons permit process is slow and the VSC tracks stack extraction tools. The station has trauma that shaped its current bureaucracy.</div>
+        </div>
+        <div style="border:1px solid rgba(255,193,7,0.2); padding:0.5rem 0.6rem; background:rgba(255,193,7,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--warn); letter-spacing:1px; margin-bottom:0.3rem;">THE DWELLER — SOUTH POLE HOOK</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">An ultra-wealthy oligarch of unknown identity bought out a mining settlement in the Rheasilvia Crater at Vesta's South Pole and converted it into a private underground estate guarded by automated defensive systems. Ships come and go irregularly but never stop at Vesta's other stations. Nobody knows who or what the Dweller is. The local miners gossip about it constantly. This is a ready-made Arc mystery hook if the campaign returns to Vesta.</div>
+        </div>
       </div>
-      <p style="margin-bottom:0.5rem;"><strong style="color:var(--text)">LANGUAGE:</strong> Belter Creole is a mixed pidgin (Portuguese, English, Mandarin, Malay, Arabic base). Characters without Know: Belter Culture at 40+ miss cultural subtext — vendors assume they're inner-system tourists and price accordingly.</p>
+
+
+
+      <hr class="divider"/>
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.5rem;">◈ WHAT THEY'RE ACTUALLY MINING — VESTA GEOLOGY</div>
+
+      <div style="font-size:0.78rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
+        Vesta is one of the few asteroids that fully <strong style="color:var(--textbright);">differentiated</strong> — it melted early in solar system history and separated into distinct layers like a planet. This is what makes it worth mining: the iron-nickel isn't scattered through undifferentiated rock. It concentrates where it should, the way it does on worlds. Rimward confirms mining targets as <em>"nickel, iron, and valuable metals"</em> from the differentiated mantle. The geology says exactly what that means.
+      </div>
+
+      <!-- Geology cross-section grid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+
+        <div style="border:1px solid rgba(245,166,35,0.25); padding:0.5rem 0.6rem; background:rgba(245,166,35,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px; margin-bottom:0.3rem;">IRON-NICKEL — PRIMARY COMMERCIAL TARGET</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">The main commodity. Concentrated at the crust-mantle contact zone and in the metallic core (estimated 90–220km diameter). Structural metal for shipbuilding — which is exactly why Starware positioned its main shipyard facility in Vesta's orbit. The ore coming out of these mines isn't glamorous. It's bulk commodity iron-nickel at industrial scale. The miners are shift workers, not prospectors.</div>
+        </div>
+
+        <div style="border:1px solid rgba(0,201,177,0.25); padding:0.5rem 0.6rem; background:rgba(0,201,177,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin-bottom:0.3rem;">PYROXENE-BEARING ROCK — SECONDARY PRODUCT</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">The basaltic crust runs 10–20km thick and is layered: surface regolith (howardites), basaltic lava flows (eucrites), then deeper plutonic pyroxene and orthopyroxene-rich rock (diogenites). Processed for ceramics, construction aggregate, radiation shielding, and raw fill material. <strong style="color:var(--textbright);">Aiko's handmade ceramics at the Coppervein Market are almost certainly made from processed pyroxene and basaltic silicate slag</strong> — local material, local craft.</div>
+        </div>
+
+        <div style="border:1px solid rgba(140,82,255,0.25); padding:0.5rem 0.6rem; background:rgba(140,82,255,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:1px; margin-bottom:0.3rem;">OLIVINE — DEEP MANTLE (RHEASILVIA SHAFTS)</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">The Rheasilvia impact crater at the South Pole punched through the entire crust — 20–40km — and into the upper mantle, exposing olivine (magnesium-iron silicate). Industrial abrasive, refractories, possible platinum-group trace elements in associated rock. The Dweller bought a mining settlement in the Rheasilvia Crater. The deepest, most geologically anomalous location on the asteroid. The settlement with the best access to mantle-depth material. That is not a coincidence.</div>
+        </div>
+
+        <div style="border:1px solid rgba(220,53,69,0.25); padding:0.5rem 0.6rem; background:rgba(220,53,69,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--danger); letter-spacing:1px; margin-bottom:0.3rem;">WHAT VESTA ISN'T — NO GOLD RUSH HERE</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">Vesta is a V-type asteroid, not an M-type. M-type metallic asteroids (the broken cores of early protoplanets) are the ones worth trillions — pure iron-nickel with platinum, gold, iridium, uranium. V-type means basaltic crust over a differentiated body. There's iron-nickel here, but it's not the El Dorado of the Belt. Vesta's wealth is in volume and logistics position, not in exceptional mineral density. The workers know this. The resentment is built in.</div>
+        </div>
+
+      </div>
+
+      <!-- Vestan interior cross-section key -->
+      <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:2px; margin-bottom:0.4rem;">◈ VESTA INTERIOR — LAYER KEY (SURFACE TO CORE)</div>
+      <table style="width:100%; border-collapse:collapse; font-size:0.76rem; margin-bottom:0.7rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem; width:20%;">LAYER</th>
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem; width:22%;">COMPOSITION</th>
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem; width:18%;">DEPTH</th>
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem;">MINING PRODUCT / NOTE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Surface regolith</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Howardites, brecciated rock</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--muted); font-family:'Share Tech Mono',monospace; font-size:10px;">0–2 km</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Aggregate, fill material, radiation shielding. The rock the hab corridors are carved from.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Upper crust</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Basaltic lava flows, eucrites</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--muted); font-family:'Share Tech Mono',monospace; font-size:10px;">2–8 km</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Ceramic feedstock, construction silicates. Aiko's material.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Deep crust</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Pyroxene, orthopyroxene, diogenites</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--muted); font-family:'Share Tech Mono',monospace; font-size:10px;">8–20 km</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Industrial minerals, refractories. Primary current mining depth for most operations.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Upper mantle</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Olivine (Mg-Fe silicate)</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--muted); font-family:'Share Tech Mono',monospace; font-size:10px;">20–60 km</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Exposed only at Rheasilvia. Abrasives, refractories, possible PGM traces. The Dweller's domain.</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,0.02);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Core</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Iron-nickel metallic</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--muted); font-family:'Share Tech Mono',monospace; font-size:10px;">~90–220 km dia.</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">The ultimate target. Nobody is drilling there yet. The concentrations that matter are at the crust-mantle contact.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="border-left:2px solid rgba(245,166,35,0.4); padding:0.4rem 0.7rem; background:rgba(245,166,35,0.03); font-size:0.76rem; color:var(--text); line-height:1.55; margin-bottom:0.7rem;">
+        <strong style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px;">◈ THE WALL TEXTURE PAYOFF</strong><br>
+        The rock the PCs are walking through — the walls of the hab corridors, the ceiling of the Coppervein Market, the columns the vendors have built their stalls around — is Vestan basalt and pyroxenite. It's not grey granite. It's darker, slightly greenish in some lights from the pyroxene content, and in places where the bore cut through a richer seam there's a faint iridescence from plagioclase crystals catching the strip lighting. The miners left their mark in the rock. You can read the geology in the walls if you know what you're looking at.
+      </div>
+
+      <hr class="divider"/>
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.5rem;">◈ POPULATION &amp; SOCIAL DENSITY</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+        <div style="border:1px solid rgba(245,166,35,0.2); padding:0.5rem 0.6rem; background:rgba(245,166,35,0.03); text-align:center;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:22px; color:var(--accent); font-weight:bold; line-height:1.2;">~180k</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px; margin:0.2rem 0;">PERMANENT</div>
+          <div style="font-size:0.75rem; color:var(--text); line-height:1.5;">Belter-born or long-term residents. Ore workers, environmental techs, market vendors, mesh crews, Starware shipyard labour. Some families three generations deep in the Docking Ring.</div>
+        </div>
+        <div style="border:1px solid rgba(0,201,177,0.2); padding:0.5rem 0.6rem; background:rgba(0,201,177,0.03); text-align:center;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:22px; color:var(--accent2); font-weight:bold; line-height:1.2;">~40k</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin:0.2rem 0;">SEMI-PERMANENT</div>
+          <div style="font-size:0.75rem; color:var(--text); line-height:1.5;">Multi-year permit contractors, franchise operators, ECB-registered commercial entities with rotating staff, hypercorp personnel from the non-Consortium corps that cluster here for independence.</div>
+        </div>
+        <div style="border:1px solid rgba(140,82,255,0.2); padding:0.5rem 0.6rem; background:rgba(140,82,255,0.03); text-align:center;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:22px; color:#8c52ff; font-weight:bold; line-height:1.2;">~30k</div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:1px; margin:0.2rem 0;">TRANSIENT (PEAK)</div>
+          <div style="font-size:0.75rem; color:var(--text); line-height:1.5;">Egocast arrivals awaiting morph availability, freight crews on layover, cross-system traffic stopping for repair and resupply. The Regolith Arms caters to this tier. So does the cheap end of the Coppervein Market.</div>
+        </div>
+      </div>
+
+      <div style="border:1px solid rgba(245,166,35,0.3); padding:0.4rem 0.7rem; background:rgba(245,166,35,0.04); font-size:0.76rem; color:var(--text); line-height:1.55; margin-bottom:0.5rem;">
+        <strong style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px;">◈ CANONICAL TOTAL: 250,000 — SOURCE: RIMWARD P.29</strong><br>
+        Vesta is the second-most massive asteroid in the Main Belt. Its 250,000 population is spread across Vesta Prime (the main Cole bubble habitat in orbit), several beehive and dome habitats on the surface, and the Starware shipyard facility. The Docking Ring District where the session takes place is one node in a larger inhabited body, not the whole station. This makes the PCs more anonymous — 250,000 is large enough that nobody knows everyone.
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+        <div style="border-left:2px solid rgba(245,166,35,0.4); padding:0.4rem 0.6rem; background:rgba(245,166,35,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px; margin-bottom:0.3rem;">BIG ENOUGH TO...</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">Move completely anonymously through the Coppervein Market. Sustain a three-month commercial cover without any scrutiny. Justify severe VSC understaffing. Make Hako's 23 filings in a year unremarkable to anyone but Hako.</div>
+        </div>
+        <div style="border-left:2px solid rgba(0,201,177,0.4); padding:0.4rem 0.6rem; background:rgba(0,201,177,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin-bottom:0.3rem;">SMALL ENOUGH THAT...</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">The egocast hub is the one chokepoint — Petra sees everyone who arrives that way. A corp-sec team with the wrong permit loadout gets noticed by people whose job is to notice things. Council Member 4's dissent is known among anyone who follows council business.</div>
+        </div>
+      </div>
+
+      <hr class="divider"/>
+      <p style="margin-bottom:0.5rem;"><strong style="color:var(--text)">LANGUAGE:</strong> Primary languages on Vesta are <strong style="color:var(--textbright);">Arabic, Hindi, and Russian</strong> — reflecting the historical composition of Vesta's pre-Fall and early post-Fall population waves. Characters without Know: Vesta Culture or a relevant language at 40+ will miss register and subtext. Vendors clock inner-system visitors by their accent before they open their mouths.</p>
       <p style="margin-bottom:0.5rem;"><strong style="color:var(--text)">MESH SURVEILLANCE:</strong> Vesta's commercial zones have dense surveillance mote coverage. Assume everything in public is logged. Private spaces require active mesh suppression (gray box or equivalent). Vesta's sec-corps is locally owned and moderately corrupt — bribes work, threats don't.</p>
-      <p><strong style="color:var(--text)">POLITICAL TEXTURE:</strong> Vesta is nominally Extropian but deeply sympathetic to Outer Alliance independence. Anti-inner-system sentiment is polite but present. Corp-sec types from Luna or Mars are noticed and resented quietly. PCs who signal Outer System affiliation will find doors open.</p>
+      <p><strong style="color:var(--text)">POLITICAL TEXTURE:</strong> Vesta is <strong style="color:var(--textbright);">Independent</strong>, governed by a rudimentary parliamentary cyberdemocracy — the VCC is its legislative body. It is not Extropian, though Extropian commerce infrastructure (the ECB) operates here because Vesta welcomes anyone who brings trade. Vesta is home to a cluster of non-Consortium, non-Extropian hypercorps who value the independence precisely because it means neither bloc controls their operations. Anti-inner-system sentiment is polite but persistent. Corp-sec types from Luna or Mars are noticed and resented quietly. PCs who signal genuine Outer System or independent affiliation will find doors open.</p>
+      <hr class="divider"/>
+            <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.5rem;">◈ WHAT VESTA FEELS LIKE INSIDE</div>
+
+      <p style="margin-bottom:0.5rem;">Vesta is not a constructed station. It is a hollowed and adapted asteroid, which means the interior architecture follows the rock rather than any engineering ideal. The inhabited sections use centrifuge rings carved or bored into the rock at different depths, spinning independently inside the asteroid's body. Gravity depends entirely on which ring you're in and how deep. Nothing is rectangular. The corridors follow the grain of the bore. Rooms are irregular. Ceilings dip. Floors have lips and steps where the boring equipment took a slightly different angle.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; margin-bottom:0.7rem;">
+        <div style="border-left:2px solid var(--accent); padding:0.4rem 0.6rem; background:rgba(245,166,35,0.04);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px; margin-bottom:0.3rem;">THE SMELL</div>
+          <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">Rock dust, recycled air, and the sharp chemical signature of industrial lubricants and atmospheric processors that have been running for decades without full replacement. Not unpleasant once you're used to it. Belters don't notice it. Inner-system visitors smell it immediately and then stop smelling it within a few hours — which is the moment the station has decided it owns you.</div>
+        </div>
+        <div style="border-left:2px solid var(--accent); padding:0.4rem 0.6rem; background:rgba(245,166,35,0.04);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:1px; margin-bottom:0.3rem;">THE SOUND</div>
+          <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">The centrifuge hum is constant in the Docking Ring — a low-frequency groan felt more than heard, transmitted through the floor and walls and prefab fittings that were never quite properly damped. You stop noticing it the same way you stop noticing your heartbeat. Then something shifts slightly in the rotation balance and the frequency changes a quarter-tone and everyone in the ring notices without knowing why they noticed.</div>
+        </div>
+        <div style="border-left:2px solid var(--accent2); padding:0.4rem 0.6rem; background:rgba(0,201,177,0.04);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin-bottom:0.3rem;">THE LIGHT</div>
+          <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">In the commercial areas it's warm and deliberate — vendors run their own ambient rigs, and the Coppervein Market has a layered quality from dozens of individual stall setups that creates something almost atmospheric. In the hab corridors it's functional strips that flicker occasionally. In the service level it's industrial, biased toward green from decades of bioluminescent drift. In the hull corridors it's emergency orange and nothing else.</div>
+        </div>
+        <div style="border-left:2px solid var(--accent2); padding:0.4rem 0.6rem; background:rgba(0,201,177,0.04);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin-bottom:0.3rem;">THE SPACE</div>
+          <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">Prefab panels cover the irregular rock contours, but not all of it. There are gaps. Things grow in the gaps — mostly lichen that the environmental systems technically don't acknowledge exists. The overall effect is of a space made by a machine that didn't care what the result looked like, covered over by humans who did their best and ran out of materials about two thirds of the way through.</div>
+        </div>
+      </div>
+
+
+
+
+      <hr class="divider"/>
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.5rem;">◈ COGNITE ON VESTA — INFLUENCE LEVEL &amp; METHODS</div>
+
+      <div style="font-size:0.78rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
+        Cognite has no official presence on Vesta. No office, no registered subsidiary, no listed personnel. Vesta is Independent — Consortium hypercorps are tolerated as commercial actors but cannot embed the way they do on Mars or Luna. What Cognite has instead is reach without footprint: monitoring infrastructure baked into the mesh, shell entities in the commercial registry, and Sable Index as a deniable operational arm. Their influence on Vesta is indirect, metered, and designed to be invisible until it needs to not be.
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+
+        <div style="border:1px solid rgba(140,82,255,0.25); padding:0.5rem 0.6rem; background:rgba(140,82,255,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:1px; margin-bottom:0.3rem;">WHAT COGNITE ACTUALLY IS — CANONICAL</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">The dominant force in transhuman neuroscience. Research portfolio: mental augmentations, psychosurgery, nootropics, AI, and cognitive science. HQ at <strong style="color:var(--textbright);">Thought station (Venus orbit)</strong> and <strong style="color:var(--textbright);">Phobos (Mars moon)</strong>. Key Planetary Consortium member. Their marketing is aggressive — they sell cognitive filters and mandatory psychosurgery to regimes looking to manage political dissent, and don't publish customer numbers. Best known publicly for the Menton morph. Best known to Firewall for Project Futura, TITAN-influenced input attack research, and Project Psiclone (Watts-MacLeod exsurgent strain). <em>Source: EP1 p.70, EP2 p.164</em></div>
+        </div>
+
+        <div style="border:1px solid rgba(140,82,255,0.25); padding:0.5rem 0.6rem; background:rgba(140,82,255,0.03);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:1px; margin-bottom:0.3rem;">WHY VESTA MATTERS TO COGNITE</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.55;">Vesta is the largest Independent polity in the inner Belt and a major egocast transit hub — meaning a significant fraction of cross-system ego traffic passes through its receiving infrastructure. Cognite's interest is not in Vesta's economy or governance. It is in the <strong style="color:var(--textbright);">relay infrastructure</strong> and the data it generates, and in the <strong style="color:var(--textbright);">Gutenberg Station signal frequency</strong> that MESA detected bouncing through Vesta's mesh. Vesta is a monitoring position, not an operational one. VSC-REG-0442 was the first time they moved from passive to active.</div>
+        </div>
+
+      </div>
+
+      <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ COGNITE'S FIVE LEVERS ON VESTA</div>
+      <table style="width:100%; border-collapse:collapse; font-size:0.76rem; margin-bottom:0.7rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem; width:22%;">LEVER</th>
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem; width:18%;">VISIBILITY</th>
+            <th style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); text-align:left; padding:0.3rem 0.5rem;">HOW IT WORKS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Mesh monitoring flags</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--accent2); font-family:'Share Tech Mono',monospace; font-size:10px;">INVISIBLE</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Automated pattern-matching embedded in commercial mesh monitoring infrastructure. Watching for specific query signatures — particularly anyone cross-referencing deep-ecliptic relay frequencies. This is what MESA tripped. It fires silently; Cognite receives a notification, not the VSC.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Shell entity network</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--warn); font-family:'Share Tech Mono',monospace; font-size:10px;">HIDDEN</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Meridian Compliance Partners and ~14 identical structures registered through a Luna law firm. Used to file regulatory amendments (VSC-REG-0442), secure commercial licences, and move money without Cognite's name appearing. Research 50–60 to trace. Research 60+ exceptional: the full network becomes visible.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Resleeving provider agreements</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--warn); font-family:'Share Tech Mono',monospace; font-size:10px;">SUSPECTED</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Both licensed resleeving providers on Vesta run intake scans for insurance liability. Whether either holds a quiet scanning agreement with Cognite for IP marker detection is unconfirmed — but assessed as elevated probability given active Sable Index presence. If flagged, notification goes to Vanek, not VSC. Window before action: ~6–12 hours.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">Sable Index (Vanek)</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--danger); font-family:'Share Tech Mono',monospace; font-size:10px;">ACTIVE / DENIABLE</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Shell contractor. No fixed HQ. Vanek assembles freelancer teams per contract. Current cover: "Vesta Salvage Assessors" — ECB-registered, three months old. Reports to Oksana Chetverikova (Cognite VP) directly. Mission on Vesta: intelligence gathering, not termination. Secondary objective is to assess Firewall's knowledge level. He is not under instruction to kill anyone unless the data spike is at risk.</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,0.02);">
+            <td style="padding:0.3rem 0.5rem; color:var(--textbright);">VSC-REG-0442</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--danger); font-family:'Share Tech Mono',monospace; font-size:10px;">ACTIVE / LEGAL</td>
+            <td style="padding:0.3rem 0.5rem; color:var(--text);">Filed before MESA surfaced as a problem. Extended mesh log retention 7→30 days, mandatory synthmorph registration, medical licence for stack extraction tools, passive biometric scan on arrivals. Gives Cognite a 30-day retroactive window into Vesta's commercial mesh. The audit is their legal infrastructure on Vesta. It means everything the PCs do in public is logged and retrievable.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ WHAT COGNITE CANNOT DO ON VESTA</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+        <div style="border:1px solid rgba(255,255,255,0.08); padding:0.4rem 0.6rem; background:rgba(0,0,0,0.2);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--accent2); margin-bottom:0.2rem;">CANNOT DIRECT VSC</div>
+          <div style="font-size:0.74rem; color:var(--text); line-height:1.5;">VSC is locally owned and independent. Cognite can create legal conditions (the audit) that VSC is obliged to enforce, but cannot instruct them. A COP-12 filed against Sable Index creates a VSC liability that Cognite cannot simply make disappear.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.08); padding:0.4rem 0.6rem; background:rgba(0,0,0,0.2);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--accent2); margin-bottom:0.2rem;">CANNOT CONTROL VCC</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.5;">The parliamentary cyberdemocracy is genuinely independent. Four council members signed the VSC-REG-0442 NDA without knowing who they were signing with. Council Member 4's reservation is a real crack. Cognite's regulatory leverage is real but it required an NDA to conceal it — the institution itself is not captured.</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.08); padding:0.4rem 0.6rem; background:rgba(0,0,0,0.2);">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--accent2); margin-bottom:0.2rem;">CANNOT OPERATE OPENLY</div>
+          <div style="font-size:0.76rem; color:var(--text); line-height:1.5;">Vesta's anti-inner-system sentiment is not decorative. A Cognite office on Vesta would face commercial boycotts, VCC oversight, and the kind of attention that makes operations impossible. Everything they do here has to be at arm's length. Sable Index is as close as they get to a physical presence.</div>
+        </div>
+      </div>
+
+      <div style="border-left:2px solid rgba(140,82,255,0.5); padding:0.4rem 0.7rem; background:rgba(140,82,255,0.05); font-size:0.76rem; color:var(--text); line-height:1.55; margin-bottom:0.7rem;">
+        <strong style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; letter-spacing:1px;">◈ THE HONEST ASSESSMENT</strong><br>
+        Cognite's influence on Vesta is <strong style="color:var(--textbright);">significant but brittle</strong>. They have monitoring infrastructure, a legal instrument (the audit), one operational team (Vanek), and a 30-day data window. What they do not have is institutional control, law enforcement compliance, or the ability to act without cover. The moment VSC-REG-0442 is traced back to Cognite — which requires Research 60 or f-rep 30+ — their legal cover on Vesta collapses. The NDA that protects them also names them. Council Member 4 already had doubts. A VCC-CIN pointing at the audit timing gives those doubts institutional legs. Cognite's position on Vesta is strong enough to run one operation. It is not strong enough to survive scrutiny.
+      </div>
+
+
       <hr class="divider"/>
       <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--warn); letter-spacing:2px; margin-bottom:0.4rem;">◈ HULL MATERIALS — KNOW BEFORE YOU FIRE</div>
       <p style="margin-bottom:0.5rem;"><strong style="color:var(--text)">REGOLITH ZONES</strong> (carved tunnels, hab blocks, the hotel): Walls are meters of asteroid rock. Flechette rounds, stray shots, and even micrometeorites do nothing to structural integrity. Whatever is in the room with you will not be fine, but the station will.</p>
@@ -1560,6 +1680,84 @@
         </tbody>
       </table>
       <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px;">DR VALUES ARE COMMUNITY ESTIMATES — ADJUST TO YOUR TABLE. BREACH RISK ASSUMES EXTERIOR-FACING SURFACES ONLY.</div>
+      <hr class="divider"/>
+      <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:2px; margin-bottom:0.4rem;">◈ ZONE-BY-ZONE TEXTURE</div>
+
+      <div style="margin-bottom:0.5rem; padding:0.4rem 0.6rem; border:1px solid rgba(245,166,35,0.2); background:rgba(245,166,35,0.03);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); margin-bottom:0.2rem;">DOCKING RING — 0.3g</div>
+        <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">Outermost inhabited ring, closest to the surface, spinning fast enough for about a third of Earth gravity. Enough to keep things on the floor and liquids in cups — but not enough to feel normal. Your gait is wrong. You bounce slightly if you're not careful. Things fall slower than your nervous system expects. Inner-system visitors describe it as being slightly drunk without the pleasant parts. Belters born into this range feel completely at home. Ceiling in commercial areas: four metres. In hab corridors: two and a half. The rock is always visible somewhere — raw and sealed with transparent resin, or covered in cheap prefab panelling that doesn't quite fit.</div>
+      </div>
+
+      <div style="margin-bottom:0.5rem; padding:0.4rem 0.6rem; border:1px solid rgba(0,201,177,0.2); background:rgba(0,201,177,0.03);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent2); margin-bottom:0.2rem;">SERVICE LEVEL — 0.15g</div>
+        <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">One ring deeper, spinning slower. Where the infrastructure lives — pipes, conduit, mesh relay nodes, environmental processors, grey water. Movement here is a learned skill. You can't walk normally; you shuffle or drift between anchor points. Experienced workers move in long loping strides that look strange until you realise they're perfectly efficient. Newcomers either over-commit and float past their destination or under-commit and have to pull themselves back. The transition corridor from the Docking Ring drops 0.3g to 0.15g over about thirty metres of low-friction coated prefab — vertiginous even for experienced Belters. You don't fall. You just become wrong for about fifteen seconds while your body figures out the new rules.</div>
+      </div>
+
+      <div style="margin-bottom:0.7rem; padding:0.4rem 0.6rem; border:1px solid rgba(220,53,69,0.2); background:rgba(220,53,69,0.03);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--danger); margin-bottom:0.2rem;">HULL CORRIDORS &amp; EXTERIOR — 0.0g</div>
+        <div style="font-size:0.78rem; color:var(--text); line-height:1.55;">The connective tissue between the station and its docking struts. Vesta has 0.025g of natural surface pull but treat it as zero for all practical purposes. Tether-and-anchor movement. The prefab concrete gives way to raw regolith here, sealed with a coating that reflects emergency lighting in dull orange. The rock is cold — not dramatically cold, but you notice it through a suit. Sound behaves differently: the structural groans and vibrations of the spinning rings are audible as transmitted resonance through the rock. The exterior always sounds like the station is alive and considering something.</div>
+      </div>
+
+      <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:2px; margin-bottom:0.4rem;">◈ SPECIFIC LOCATION TEXTURES</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.7rem;">
+        <div style="font-size:0.76rem; color:var(--text); line-height:1.5; border-left:2px solid rgba(245,166,35,0.3); padding-left:0.5rem;">
+          <span style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--accent);">REGOLITH ARMS:</span> In the inner section of the Docking Ring where the rock curves more sharply — corridors are noticeably bowed, the floor slopes two or three degrees in a way you'd only notice after walking it a few times. Rooms are small. Walls are prefab concrete over raw rock. You can hear the person in the next room if they're not trying to be quiet.
+        </div>
+        <div style="font-size:0.76rem; color:var(--text); line-height:1.5; border-left:2px solid rgba(0,201,177,0.3); padding-left:0.5rem;">
+          <span style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--accent2);">COPPERVEIN MARKET:</span> In the widest section of the ring, where the bore was generous. Four metres of ceiling. Irregular columns of raw rock between the stalls — whoever bored this section hit a harder stratum and went around it. The columns have been incorporated: vendors use them, light fixtures bolt to them, someone painted a mural on the largest one that has been partially covered by subsequent generations of permits and mesh-tag advertisements.
+        </div>
+      </div>
+
+      <div style="border-left:2px solid rgba(245,166,35,0.4); padding:0.4rem 0.7rem; background:rgba(245,166,35,0.03); font-size:0.78rem; color:var(--text); line-height:1.55; margin-bottom:0.7rem;">
+        <span style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--accent);">◈ IF PLAYERS ASK WHAT VESTA FEELS LIKE:</span> It feels like a place that works, grudgingly, because the people in it understand its specific requirements and have spent years learning to accommodate them. It is not hostile. It is indifferent the way rock is indifferent. The rock was here before them and will be here after. The station is something that happened to the rock, and the rock is still deciding what it thinks about that.
+      </div>
+
+      <hr class="divider"/>
+      <strong style="color:var(--text)">MICROGRAV TRANSITION (ROOM 06):</strong> When the chase reaches the exterior hull corridor, gravity drops to 0.0g. Athletics (Walker) no longer applies — all physical movement uses Free Fall. Characters without micrograv experience roll at –20. The team's micrograv specialist rolls at +20. This is the session's physical climax and their defining moment.</p>
+      <hr class="divider"/>
+      <div style="margin-bottom:0.6rem;">
+        <strong style="color:var(--text)">GRAVITY — ZONE REFERENCE:</strong>
+        <span style="color:var(--text);"> Vesta's surface gravity is 0.025g — negligible. All usable gravity on the station is centrifuge-generated, which means it varies by zone and drops to zero the moment you leave the ring.</span>
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.5rem;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border);">
+              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">ZONE</th>
+              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">GRAVITY</th>
+              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">SKILL MODIFIER</th>
+              <th style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px; color:var(--accent); text-align:left; padding:0.3rem 0.5rem;">NOTES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Docking Ring / Coppervein Market / Hotel</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--accent2); font-family:'Share Tech Mono',monospace;">0.3g</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--warn);">–10 (surface-trained)</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Centrifuge ring, Level 4. Consistent along the corridor. Vesta natives and Low Gravity adapted characters unaffected. Things fall slowly — combat trained for 1g will overshoot.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02);">
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Service Level / Maintenance Shafts</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--accent2); font-family:'Share Tech Mono',monospace;">0.15g</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--warn);">–15 (surface-trained)</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Radially inward from the ring. Gravity drops noticeably in vertical shafts and access tunnels. Loose objects migrate to low points unpredictably.</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Exterior Hull Corridor / Docking Strut Alpha-7</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--danger); font-family:'Share Tech Mono',monospace;">0.0g</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--danger);">–20 (no Free Fall) / +20 (micrograv specialist)</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Beyond the pressure door. Full micrograv. Athletics (Walker) does not apply — all movement uses Free Fall. Anchor points every 2 metres. Everything loose becomes a projectile.</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);">
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Transition Corridor (Ring → Hull)</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--warn); font-family:'Share Tech Mono',monospace;">0.3g → 0.0g</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--warn);">Graduated over ~30m</td>
+              <td style="padding:0.3rem 0.5rem; color:var(--text);">Gravity drops across roughly thirty metres of corridor approaching the hull pressure door. Characters who don't notice will feel increasingly light-footed, then suddenly weightless. Disorienting without preparation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
       <hr class="divider"/>
       <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:2px; margin-bottom:0.4rem;">◈ REG04-23-FIREARMS — VESTA STATION WEAPONS ORDINANCE</div>
       <p style="margin-bottom:0.5rem;">Semi-automatic and burst-group weapons must be station-locked to single-shot mode before entering Vesta Station commercial or docking zones. Lock servicing is available at any licensed armourer — fee: 30 credits per weapon, reversible on departure. Weapons brought aboard unlocked are subject to confiscation and a 200 credit fine. Repeat offences escalate to detention.</p>
@@ -2380,12 +2578,169 @@
 
 </div>
 <!-- ==================== END APPENDIX E ==================== -->
+<!-- ==================== APPENDIX F — PERMIT & BUREAUCRACY GUIDE ==================== -->
+<div style="margin: 2rem 1.5rem 0; border-top: 1px solid var(--border);">
+  <div style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#8c52ff; letter-spacing:3px; margin: 1.2rem 0 0.4rem;">◈ APPENDIX F — VESTA STATION PERMIT &amp; BUREAUCRACY GUIDE</div>
+  <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">Full permit tables, authority breakdown, rep shortcuts, and VSC-REG-0442 operational notes. Three bodies hold overlapping jurisdiction and do not coordinate.</div>
+  <div class="brief-panel" style="border-color: rgba(140,82,255,0.2);">
+    <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">
+      Vesta has no unified permit office. Three bodies hold overlapping jurisdiction and do not coordinate. The practical result is that any permit requiring cross-authority sign-off takes longer than anyone says it will, costs more than anyone quotes, and usually requires knowing someone. Locals navigate it by rep and relationship. Visitors lose days.
+    </div>
+
+    <!-- Three authorities -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.8rem;">
+      <div style="border:1px solid rgba(245,166,35,0.2); padding:0.5rem 0.6rem; background:rgba(245,166,35,0.03);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:2px; margin-bottom:0.3rem;">VCC</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; margin-bottom:0.4rem;">VESTA COOPERATIVE COUNCIL</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Habitat access, residential registration, atmospheric zone permits, physical infrastructure. Level 3, mid-ring. Slow. Paper-heavy. Issued VSC-REG-0442.</div>
+        <div style="margin-top:0.4rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent); letter-spacing:1px;">REP: c-rep / f-rep</div>
+      </div>
+      <div style="border:1px solid rgba(0,201,177,0.2); padding:0.5rem 0.6rem; background:rgba(0,201,177,0.03);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.3rem;">ECB</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; margin-bottom:0.4rem;">EXTROPIAN COMMERCE BOARD</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Business licences, market stall registration, freight manifests, contractor permits. Fast and fee-based. Openly transactional — expedite fees are posted. Sable Index front registered here.</div>
+        <div style="margin-top:0.4rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:1px;">REP: e-rep / g-rep</div>
+      </div>
+      <div style="border:1px solid rgba(220,53,69,0.2); padding:0.5rem 0.6rem; background:rgba(220,53,69,0.03);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:2px; margin-bottom:0.3rem;">VSC</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; margin-bottom:0.4rem;">VESTA STATION CONSTABULARY</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">Weapons permits, security contractor licences, stack extraction authorisations, synthmorph registration (post-0442). Docking Ring counter. Understaffed. Half their revenue is permit fees.</div>
+        <div style="margin-top:0.4rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger); letter-spacing:1px;">REP: c-rep (grudging)</div>
+      </div>
+    </div>
+
+    <!-- Permit table -->
+    <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ COMMON PERMITS — COST, TIME &amp; REP SHORTCUTS</div>
+    <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom:0.7rem;">
+      <thead>
+        <tr style="border-bottom:1px solid rgba(140,82,255,0.2);">
+          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:28%;">PERMIT</th>
+          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:12%;">AUTHORITY</th>
+          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:10%;">BASE COST</th>
+          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:12%;">STD. TIME</th>
+          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem; width:14%;">EXPEDITE COST</th>
+          <th style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); letter-spacing:1px; text-align:left; padding:0.3rem 0.5rem;">REP SHORTCUT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Short-stay hab registration</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent);">VCC</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">2 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Same day</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">—</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">c-rep 10 skips queue</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Commercial survey / cover licence</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2);">ECB</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">10 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">1–2 days</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+8 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">e-rep 20 same day</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Market stall / vendor registration</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2);">ECB</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">5 GP / month</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">2–3 days</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+5 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">g-rep 15 no wait</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Sidearm carry permit (kinetic)</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">15 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">3–5 days</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+20 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">c-rep 30 or VSC contact</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Security contractor licence</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC + ECB</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">30 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">1 week</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+25 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">c-rep 40 + e-rep 20</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Stack extraction authorisation</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">25 GP + med lic.</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">1 week</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">Not available</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">No shortcut. VSC tracks these.</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Synthmorph 90-day registration (post-0442)</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--danger);">VSC</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">8 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Same day</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">—</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Cannot be skipped — VSC logs biometrics on arrival</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.015);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Outer hull / EVA access permit</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent);">VCC + VSC</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">12 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">2 days</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+15 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">f-rep 20 or freight contact bypasses VCC sign-off</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Freight manifest amendment</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2);">ECB</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">3 GP</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">4 hours</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">+3 GP (1 hour)</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">g-rep 10 same hour</td>
+        </tr>
+        <tr style="background:rgba(255,255,255,0.015);">
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Mesh log suppression waiver</td>
+          <td style="padding:0.3rem 0.5rem; font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent);">VCC</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">Technically exists</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">2 weeks</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--warn);">Not available</td>
+          <td style="padding:0.3rem 0.5rem; color:var(--text);">In practice: never approved. Buy Infosec instead.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Rep mechanics note -->
+    <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#8c52ff; letter-spacing:2px; margin-bottom:0.4rem;">◈ USING REP IN PLACE OF PERMITS</div>
+    <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
+      Rep can substitute for, accelerate, or quietly replace most permit processes. The following applies at Vesta under normal conditions — GMs may tighten restrictions if the Audit VSC-REG-0442 is actively being enforced.
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.6rem;">
+      <div>
+        <div class="test-item"><div class="test-skill">c-rep 10–20</div><div class="test-desc">Skip queue at VCC or VSC counter. No faster processing — just no wait.</div></div>
+        <div class="test-item"><div class="test-skill">c-rep 30+</div><div class="test-desc">Same-day approval on most single-authority permits. Staff expedite without being asked.</div></div>
+        <div class="test-item"><div class="test-skill teal">e-rep 20+</div><div class="test-desc">ECB fast-track on anything commercial. Fee still applies but paperwork evaporates.</div></div>
+        <div class="test-item"><div class="test-skill teal">g-rep 15+</div><div class="test-desc">Freight and docking contacts can push EVA and hull access through without full VCC review.</div></div>
+      </div>
+      <div>
+        <div class="test-item"><div class="test-skill warn">f-rep 20+</div><div class="test-desc">Firewall's shadow network on Vesta can quietly pre-clear commercial cover identities. PCs' cover was handled this way before arrival.</div></div>
+        <div class="test-item"><div class="test-skill warn">f-rep 30+</div><div class="test-desc">Access to VCC internal filing system — enough to check who filed VSC-REG-0442 and whether the redaction is genuine or inserted post-filing.</div></div>
+        <div class="test-item"><div class="test-skill danger">CROSS-AUTHORITY PERMITS</div><div class="test-desc">Anything needing both VCC and VSC sign-off (EVA access, security licences) requires rep or contacts at <em>both</em> bodies separately. One doesn't recognise the other's approvals.</div></div>
+      </div>
+    </div>
+
+    <!-- Practical note -->
+    <div style="border-left:2px solid rgba(140,82,255,0.4); padding:0.4rem 0.7rem; background:rgba(140,82,255,0.04); font-size:0.85rem; color:var(--text); line-height:1.5;">
+      <strong style="color:#8c52ff; font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px;">GM NOTE — VSC-REG-0442 COMPLICATIONS</strong><br>
+      Since the new audit regulations came in, synthmorph arrivals are logged on entry and cross-referenced against the 90-day registry within 6 hours. Any synthmorph PC who hasn't registered is flagged automatically — not arrested, but flagged. The Sable Index worker-pod unit is already on the list, which is how a careful PC (Research 50, exceptional: f-rep 30+) can confirm that Sable Index has an active synthmorph asset somewhere on the station. Stack extraction tools now require a medical licence on the permit — Devraj has one forged copy he'll rent for 10 GP/day. Don't ask where it came from.
+    </div>
+  </div>
+</div>
+<!-- ==================== END APPENDIX F ==================== -->
+
 
 
 <button class="print-btn" onclick="window.print()">◈ PRINT</button>
 <button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right: 8rem;">◈ EXPAND ALL</button>
 
 <script>
+
 // ── Accordion ────────────────────────────────────────────────────────────────
 function toggleCollapse(btn) {
   const content = btn.nextElementSibling;
@@ -2475,5 +2830,7 @@ function toggleAll() {
 })();
 </script>
 
+<script>const cueAssignments = [0,1,2,3, 0,1,2,3,0, 0,1,2, 0,1, 0,1,2, 0,1,2];</script>
+<script src="ep-muse.js"></script>
 </body>
 </html>

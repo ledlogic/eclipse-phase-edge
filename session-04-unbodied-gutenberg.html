@@ -752,32 +752,99 @@
     </div>
 
     <!-- MUSE CUES -->
+        <div id="muse-setup" style="border:1px solid rgba(0,201,177,0.3); background:rgba(0,201,177,0.04); padding:0.7rem 0.8rem; margin-bottom:0.8rem;">
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.5rem;">◈ ENTER MUSE NAMES — CUES WILL UPDATE AS YOU TYPE</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.4rem;">
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#f5a623; margin-bottom:0.2rem;">SENTINEL 01</div>
+          <input id="muse-1" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#f5a623; background:rgba(245,166,35,0.06); border:1px solid rgba(245,166,35,0.3); border-bottom:2px solid #f5a623; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#00c9b1; margin-bottom:0.2rem;">SENTINEL 02</div>
+          <input id="muse-2" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#00c9b1; background:rgba(0,201,177,0.06); border:1px solid rgba(0,201,177,0.3); border-bottom:2px solid #00c9b1; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; margin-bottom:0.2rem;">SENTINEL 03</div>
+          <input id="muse-3" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#8c52ff; background:rgba(140,82,255,0.06); border:1px solid rgba(140,82,255,0.3); border-bottom:2px solid #8c52ff; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#ffc107; margin-bottom:0.2rem;">SENTINEL 04</div>
+          <input id="muse-4" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#ffc107; background:rgba(255,193,7,0.06); border:1px solid rgba(255,193,7,0.3); border-bottom:2px solid #ffc107; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+      </div>
+      <div style="font-size:0.75rem; color:var(--muted); font-family:'Share Tech Mono',monospace;">Click any muse label in the cues below to cycle which sentinel's muse speaks that line. Names save to browser storage.</div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.7rem;">Muses deliver intel privately — in a character's inner ear, as a soft overlay, or a quiet ping. Click any muse label to reassign it to a different sentinel.</div>
     <div class="section-label teal">◈ MUSE INTEL CUES — BY PHASE</div>
     <div class="npc-card">
       <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem;">Muses can surface these observations proactively. Use to guide pacing.</div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 1 — HOLDING AREA <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box teal">"I'm not seeing an onboarding message queue from Nimbus. And the AR skin we're in — the cloud rendering cycle repeats every ninety seconds. This environment hasn't been maintained."</div>
-        <div class="note-box teal">"Copylock is active. I assume you noticed. The authorization chain leads to a Nimbus operator account that is currently listed as inactive."</div>
-        <div class="note-box warn">"There's someone else here. I'm seeing a second infomorph signature. Non-hostile flag. But it's not a Nimbus authentication system — it arrived the same way we did."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="12" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈</span>
+      <span class="dl-text"><em>"I'm not seeing an onboarding message queue from Nimbus. And the AR skin we're in — the cloud rendering cycle repeats every ninety seconds. This environment hasn't been maintained."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="13" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈</span>
+      <span class="dl-text"><em>"Copylock is active. I assume you noticed. The authorization chain leads to a Nimbus operator account that is currently listed as inactive."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="14" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
+      <span class="dl-text"><em>"There's someone else here. I'm seeing a second infomorph signature. Non-hostile flag. But it's not a Nimbus authentication system — it arrived the same way we did."</em></span>
+    </div>
       </div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 2 — CLINIC MESH <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box teal">"I've accessed the clinic's sensor archive. You don't want to watch the last ninety minutes of footage. But you need to."</div>
-        <div class="note-box warn">"The farcaster is offline. The life support circulation is running on the emergency circuit — we're burning residual oxygen. Hours, not days."</div>
-        <div class="note-box danger">"I found an anomaly in the power grid. There's a draw in corridor seven that doesn't match any active system. It's running off a residential circuit. Something's hiding."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="15" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
+      <span class="dl-text"><em>"I've accessed the clinic's sensor archive. You don't want to watch the last ninety minutes of footage. But you need to."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="16" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈</span>
+      <span class="dl-text"><em>"The farcaster is offline. The life support circulation is running on the emergency circuit — we're burning residual oxygen. Hours, not days."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="17" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈</span>
+      <span class="dl-text"><em>"I found an anomaly in the power grid. There's a draw in corridor seven that doesn't match any active system. It's running off a residential circuit. Something's hiding."</em></span>
+    </div>
       </div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 3 — DEEP INVESTIGATION <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box teal">"The repair logs show the automech was supposed to be returned to service three days ago. It's still offline. Whoever was doing the work just stopped one afternoon and never came back."</div>
-        <div class="note-box danger">"I'm tracking radio handshakes between three sources in the station. Same encryption signature — but it's not Nimbus protocol. Something is coordinating them."</div>
-        <div class="note-box titan">"The processor locus is consuming power at approximately forty percent above its rated capacity. And it's climbing. Whatever is running in there is getting bigger."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="18" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
+      <span class="dl-text"><em>"The repair logs show the automech was supposed to be returned to service three days ago. It's still offline. Whoever was doing the work just stopped one afternoon and never came back."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="19" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
+      <span class="dl-text"><em>"I'm tracking radio handshakes between three sources in the station. Same encryption signature — but it's not Nimbus protocol. Something is coordinating them."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="20" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈</span>
+      <span class="dl-text"><em>"The processor locus is consuming power at approximately forty percent above its rated capacity. And it's climbing. Whatever is running in there is getting bigger."</em></span>
+    </div>
       </div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 4 — LOCUS APPROACH <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box titan">"I'm getting no signal from the locus at all. That's not a firewall. That's an absence. Someone turned the mesh off at the hardware level."</div>
-        <div class="note-box warn">"If you're going in virtually — I've found the game's original asset documentation. The Torment Nexus had a developer console. The brinkers never removed it. It's in there somewhere."</div>
-        <div class="note-box danger">"The power draw just spiked. Whatever it's building — it's in the final stages. We don't have long."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="21" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈</span>
+      <span class="dl-text"><em>"I'm getting no signal from the locus at all. That's not a firewall. That's an absence. Someone turned the mesh off at the hardware level."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="22" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
+      <span class="dl-text"><em>"If you're going in virtually — I've found the game's original asset documentation. The Torment Nexus had a developer console. The brinkers never removed it. It's in there somewhere."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="23" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
+      <span class="dl-text"><em>"The power draw just spiked. Whatever it's building — it's in the final stages. We don't have long."</em></span>
+    </div>
       </div>
     </div>
 
@@ -939,6 +1006,7 @@ function setCookie(name, value, days) {
   });
 })();
 </script>
-
+<script>const cueAssignments = [0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3];</script>
+<script src="ep-muse.js"></script>
 </body>
 </html>

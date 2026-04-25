@@ -639,23 +639,72 @@
     </div>
 
     <!-- MUSE CUES -->
+        <div id="muse-setup" style="border:1px solid rgba(0,201,177,0.3); background:rgba(0,201,177,0.04); padding:0.7rem 0.8rem; margin-bottom:0.8rem;">
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.5rem;">◈ ENTER MUSE NAMES — CUES WILL UPDATE AS YOU TYPE</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.4rem;">
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#f5a623; margin-bottom:0.2rem;">SENTINEL 01</div>
+          <input id="muse-1" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#f5a623; background:rgba(245,166,35,0.06); border:1px solid rgba(245,166,35,0.3); border-bottom:2px solid #f5a623; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#00c9b1; margin-bottom:0.2rem;">SENTINEL 02</div>
+          <input id="muse-2" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#00c9b1; background:rgba(0,201,177,0.06); border:1px solid rgba(0,201,177,0.3); border-bottom:2px solid #00c9b1; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; margin-bottom:0.2rem;">SENTINEL 03</div>
+          <input id="muse-3" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#8c52ff; background:rgba(140,82,255,0.06); border:1px solid rgba(140,82,255,0.3); border-bottom:2px solid #8c52ff; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#ffc107; margin-bottom:0.2rem;">SENTINEL 04</div>
+          <input id="muse-4" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#ffc107; background:rgba(255,193,7,0.06); border:1px solid rgba(255,193,7,0.3); border-bottom:2px solid #ffc107; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+      </div>
+      <div style="font-size:0.75rem; color:var(--muted); font-family:'Share Tech Mono',monospace;">Click any muse label in the cues below to cycle which sentinel's muse speaks that line. Names save to browser storage.</div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.7rem;">Muses deliver intel privately — in a character's inner ear, as a soft overlay, or a quiet ping. Click any muse label to reassign it to a different sentinel.</div>
     <div class="section-label teal" style="color:var(--accent);">◈ MUSE INTEL CUES — BY PHASE</div>
     <div class="npc-card">
       <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">All muse queries are logged. These cues can be surfaced freely — but anything that touches the evidence trail should be flagged to the player as a logged query.</div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 1 — INTAKE <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box">"The rep deposits — I've pulled the shell account registration. It was created four days ago. Your Gutenberg egocast arrived three days ago. The shell is older than the mission by one day, but younger than the departure briefing. Someone built this before you left but after you were assigned."</div>
-        <div class="note-box warn">"MESA's device is in Tunnel B under a dual-biometric lock. Standard protocol for quarantined exosurgent-adjacent material. The analysis report was filed this morning. I'd expect that process to take at least another day."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="6" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
+      <span class="dl-text"><em>"The rep deposits — I've pulled the shell account registration. It was created four days ago. Your Gutenberg egocast arrived three days ago. The shell is older than the mission by one day, but younger than the departure briefing. Someone built this before you left but after you were assigned."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="7" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
+      <span class="dl-text"><em>"MESA's device is in Tunnel B under a dual-biometric lock. Standard protocol for quarantined exosurgent-adjacent material. The analysis report was filed this morning. I'd expect that process to take at least another day."</em></span>
+    </div>
       </div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 2 — INVESTIGATION <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box">"I've been watching station mesh traffic passively — not querying, just observing packet volume. Tunnel C is generating small outbound traffic bursts every four to seven hours. Each burst is under two kilobytes. The pattern is consistent with encrypted relay communication."</div>
-        <div class="note-box ozma">"Lixia Lok's Firewall file — I found a redaction code at the bottom. Category 7-R. I don't have a reference for that code in standard Firewall taxonomy. It reads like an external classification insertion."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="8" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈</span>
+      <span class="dl-text"><em>"I've been watching station mesh traffic passively — not querying, just observing packet volume. Tunnel C is generating small outbound traffic bursts every four to seven hours. Each burst is under two kilobytes. The pattern is consistent with encrypted relay communication."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="9" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈</span>
+      <span class="dl-text"><em>"Lixia Lok's Firewall file — I found a redaction code at the bottom. Category 7-R. I don't have a reference for that code in standard Firewall taxonomy. It reads like an external classification insertion."</em></span>
+    </div>
       </div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHASE 3 — LATE GAME <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box warn">"The extraction window is closing — if Lok has a scheduled relay contact and she hasn't transmitted the MESA data yet, her next window is in approximately six hours. After that the relay station moves out of optimal range for another eighteen."</div>
-        <div class="note-box danger">"I've mapped Lok's movements since she arrived. She hasn't been to the analysis lab once. The MESA analysis report was filed by her credentials but the lab terminal logs don't show her present. She wasn't there."</div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="10" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
+      <span class="dl-text"><em>"The extraction window is closing — if Lok has a scheduled relay contact and she hasn't transmitted the MESA data yet, her next window is in approximately six hours. After that the relay station moves out of optimal range for another eighteen."</em></span>
+    </div>
+        <div class="dialogue-line">
+      <span class="muse-label dl-label" data-cue="11" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
+      <span class="dl-text"><em>"I've mapped Lok's movements since she arrived. She hasn't been to the analysis lab once. The MESA analysis report was filed by her credentials but the lab terminal logs don't show her present. She wasn't there."</em></span>
+    </div>
       </div>
     </div>
 
@@ -851,6 +900,7 @@ function getCookie(name) {
   });
 })();
 </script>
-
+<script>const cueAssignments = [0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3];</script>
+<script src="ep-muse.js"></script>
 </body>
 </html>
