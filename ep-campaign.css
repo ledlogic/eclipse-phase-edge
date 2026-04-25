@@ -201,6 +201,17 @@ h1 .city, h1 .ozma, h1 .loc {
 .timeline-time.warn   { color: var(--warn); }
 .timeline-time.danger { color: var(--danger); }
 .timeline-time.ozma   { color: var(--ozma); }
+/* ── TIMELINE — EXTENDED MODIFIERS ──────────────────────── */
+.timeline-item.mesa::before   { background: var(--mesa,   #60c890); }
+.timeline-item.signal::before { background: var(--signal, #50e8c8); }
+.timeline-item.hot::before    { background: var(--accent, #f5a623); }
+.timeline-item.nano::before   { background: var(--warn,   #c8a04a); }
+.timeline-time.mesa   { color: var(--mesa,   #60c890); }
+.timeline-time.signal { color: var(--signal, #50e8c8); }
+.timeline-time.hot    { color: var(--accent, #f5a623); }
+.timeline-time.nano   { color: var(--warn,   #c8a04a); }
+
+
 .timeline-desc { font-size: 0.88rem; color: var(--text); }
 
 /* ── ROOM / LOCATION CARDS ───────────────────────────────── */
@@ -395,6 +406,28 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; 
   box-shadow: 0 0 20px rgba(245,166,35,0.4); transition: box-shadow 0.2s;
 }
 .print-btn:hover { box-shadow: 0 0 30px rgba(245,166,35,0.7); }
+
+
+/* ── MUSE LABEL BADGES ───────────────────────────────────── */
+/* Interactive sentinel-assignment badges in muse cue sections */
+.muse-label {
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 2px 7px;
+  border: 1px solid;
+  border-radius: 2px;
+  white-space: nowrap;
+  user-select: none;
+  transition: opacity 0.15s, background 0.15s;
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+.muse-label:hover  { opacity: 0.72; }
+.muse-label:active { opacity: 0.5; }
 
 /* ── PRINT MEDIA ─────────────────────────────────────────── */
 @media print {

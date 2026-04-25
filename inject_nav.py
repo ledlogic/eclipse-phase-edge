@@ -10,6 +10,10 @@ For each session HTML file listed in ep-campaign.json:
 
 Run from the directory containing ep-campaign.json and the HTML files.
 To update links: edit ep-campaign.json only, then re-run this script.
+
+Companion files (run separately):
+  ep-muse.js      — shared muse name system, localStorage cross-page persistence
+  inject_muse.py  — applies muse cue badges to session files
 """
 
 import json, re, sys
