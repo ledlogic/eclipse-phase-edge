@@ -116,6 +116,25 @@
     pointer-events: none;
   }
   @media print { #ep-session-nav { display: none !important; } }
+  /* ── Muse label interactive badges ── */
+  .muse-label {
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border: 1px solid;
+    border-radius: 2px;
+    white-space: nowrap;
+    user-select: none;
+    transition: opacity 0.15s, background 0.15s;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+  }
+  .muse-label:hover { opacity: 0.72; }
+  .muse-label:active { opacity: 0.5; }
 </style>
 <nav id="ep-session-nav" data-current-file="session-07-cry-for-help.html"></nav>
 <header>
@@ -615,6 +634,28 @@
       </div>
     </div>
 
+
+    <div class="section-label signal">◈ THE SEMAPHORE — WHAT THE SWARM RECEIVED</div>
+    <div class="npc-card">
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE SWARM HEARD IT TOO <span>▾</span></button>
+      <div class="collapse-content">
+        
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">
+          AWE — the evolved nanoswarm — has been sending a status report to a dead TITAN address for ten years. It stopped four years ago when it concluded the recipient was gone. What it has not mentioned until now, because no one asked the right question: it also <em>received</em> something once. Not from the dead address. From a different direction entirely.
+        </div>
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">
+          The signal came from the direction of the inner solar system — from sunward. It was not in any protocol AWE recognises. It arrived approximately six years ago, during what AWE describes as its "transition period" — the eighteen months it spent reorienting from weapon to something else. AWE did not know what to do with it. It has kept a copy of the raw signal in cold storage.
+        </div><div class="test-item"><div class="test-skill teal">SUBSTRATE NEGOTIATION — UNLOCK CONDITION</div><div class="test-desc">AWE will share the signal recording only if the team has established genuine trust — sharing something meaningful in return (the Gutenberg data, MESA's analysis, the FK7 source object finding). It doesn't offer it proactively. The right question is: <em>"Has anything ever tried to contact you from outside this system?"</em></div></div><div class="note-box"><strong style="color:var(--signal)">AWE ON THE SIGNAL:</strong> <em>"It was not language. It was not data. It was — orientation. The way a hand points. I understood it as: here. Here is where the danger is. Here is what you are near. I did not know what to do with this information. I stored it because I store everything now. I did not know if it was meant for me or if I simply happened to be in the way of it."</em></div><div class="test-item"><div class="test-skill signal">RESEARCH 60 (signal analysis)</div><div class="test-desc">The raw recording AWE provides is 0.003 seconds long. It is broadband — hits every frequency simultaneously. The waveform shape matches the secondary signal from the Gutenberg transmission data, if R.A.I.D. or MESA does the comparison. Same source. Same direction. Six years ago AWE received a warning about its own location — before the colony team even arrived here.</div></div><div class="note-box warn">MESA's response to this, when told: a long silence. Then: <em>"She has been pointing at everything we've visited. In the order we visited it. Either that is a coincidence of extraordinary proportion — or she knew the itinerary before we did."</em></div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE SEMAPHORE IN FRINGE CULTURE <span>▾</span></button>
+      <div class="collapse-content">
+        
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">
+          AWE has absorbed a decade of outer-system mesh traffic, including fringe community folklore. It knows the Semaphore by several names — the Pointer, the Sister, the Lookout, the thing near the sun that grows more arms when something is wrong. It has logged 23 separate outer-system community references to her in its ten years of passive mesh monitoring.
+        </div><div class="test-item"><div class="test-skill teal">AWE ON THE SEMAPHORE</div><div class="test-desc"><em>"The communities out here regard her as a warning system. Something very old that watches and cannot act, only indicate. Many of them have a protocol: when the Pointer extends a new arm, you note the direction and you move away from it. The communities that did this consistently show higher survival rates in my sample. I find this statistically interesting."</em></div></div><div class="test-item"><div class="test-skill danger">AWE — IF ASKED ABOUT THE CURRENT ARM COUNT</div><div class="test-desc"><em>"As of my last mesh synchronisation, outer-system observer logs indicate she currently has four limbs extended. Two I can correlate to locations your team has visited. The other two are pointed further out than you have yet gone."</em></div></div>
+      </div>    </div>
+
 </div><!-- /col -->
 
 </div><!-- /main -->
@@ -760,5 +801,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 
+
+<script>const cueAssignments = [0, 1, 2, 3];</script>
+<script src="ep-muse.js"></script>
 </body>
 </html>

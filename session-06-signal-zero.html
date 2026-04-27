@@ -114,6 +114,25 @@
     pointer-events: none;
   }
   @media print { #ep-session-nav { display: none !important; } }
+  /* ── Muse label interactive badges ── */
+  .muse-label {
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border: 1px solid;
+    border-radius: 2px;
+    white-space: nowrap;
+    user-select: none;
+    transition: opacity 0.15s, background 0.15s;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+  }
+  .muse-label:hover { opacity: 0.72; }
+  .muse-label:active { opacity: 0.5; }
 </style>
 <nav id="ep-session-nav" data-current-file="session-06-signal-zero.html"></nav>
 <header>
@@ -620,6 +639,28 @@
     </div>
   </div>
 
+
+    <div class="section-label signal">◈ THE SEMAPHORE — SHE WAS ALREADY POINTING HERE</div>
+    <div class="npc-card">
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ELEVEN MONTHS <span>▾</span></button>
+      <div class="collapse-content">
+        
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">
+          An Extropian belt-mining cooperative runs a small observatory relay at 38 AU — primarily for navigation, secondarily because its operators are curious people who log everything. Eleven months ago their log shows an anomalous notation: the solar-proximate figure they call the Semaphore — a recurring legend in outer-system fringe culture — extended what appeared to be a new limb. The limb pointed in the direction of FK7-class Kuiper coordinates.
+        </div>
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">
+          The notation was filed and ignored. The cooperative's operators have seen the Semaphore change position before — it always means something dangerous is coming from wherever she points, and there's nothing anyone at 38 AU can do about something at 52 AU. You note it. You move on. You don't sleep quite as well for a while.
+        </div><div class="test-item"><div class="test-skill teal">RESEARCH 50</div><div class="test-desc">Pulling outer-system observatory logs — available on the Extropian open mesh — returns the cooperative's notation alongside three other similar observations from different observers over the same eleven-month window. They were not in contact with each other. They all describe the same new limb pointing in the same direction. Nobody filed a formal report.</div></div><div class="note-box signal">MESA processes this in silence when told. Then: <em>"She was pointing here before the source object started transmitting. Before anyone knew this location existed. She saw it first."</em> A long pause. <em>"I find that either deeply reassuring or deeply alarming. I cannot currently determine which."</em></div><div class="test-item"><div class="test-skill warn">KNOW: TITAN TECH / KNOW: ASTROBIOLOGY</div><div class="test-desc">The source object stopped transmitting when the team arrived — MESA said "it wasn't calling for us." The Semaphore was pointing here for eleven months before that. If the object was transmitting a signal and the Semaphore detected it, she was pointing at the signal, not the object. She was trying to flag an incoming broadcast before anyone received it. She failed to stop the Gutenberg one. She may have been trying to stop this one too — by pointing at its source so someone would get here first and interrupt it.</div></div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT THE SOURCE OBJECT'S SILENCE MEANS <span>▾</span></button>
+      <div class="collapse-content">
+        
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">
+          The object stopped transmitting the moment the team entered the chamber. MESA's reading: <em>"It wasn't calling for us."</em> But there is another interpretation. It stopped because it was answered. Not by the team — by the Semaphore's pointing. Something sunward registered the team's arrival at this location and sent a signal of its own — too faint and too fast for the team's equipment to catch, but enough for something ancient and sensitive near the Sun to acknowledge.
+        </div><div class="note-box">This is not confirmable in this session. It is a seed. MESA will return to it at Vanth. <strong style="color:var(--signal)">Do not over-explain it here.</strong> Let the silence after the object stops transmitting carry the weight. The players will remember it.</div><div class="test-item"><div class="test-skill signal">◈ MUSE</div><div class="test-desc">The object is silent. The chamber is silent. The GS-Perennial's hull creaks once from thermal expansion. Outside the port window the sun is a star indistinguishable from the others. Something near it has been watching this location for nearly a year. We just walked into what it was watching.</div></div>
+      </div>    </div>
+
 <button class="print-btn expand" id="expand-all-btn" onclick="toggleAll()">◈ EXPAND ALL</button>
 
 <footer class="ep-legal-footer">
@@ -804,5 +845,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 
+
+<script>const cueAssignments = [0, 1, 2, 3];</script>
+<script src="ep-muse.js"></script>
 </body>
 </html>

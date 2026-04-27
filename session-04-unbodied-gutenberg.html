@@ -151,6 +151,60 @@
       </div>
     </div>
 
+
+    <!-- TRAVEL TO GUTENBERG -->
+    <div class="section-label">◈ GETTING TO GUTENBERG</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ TRAVEL OPTIONS — VESTA TO HIGH BELT <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="test-item">
+          <div class="test-skill teal">EGOCAST</div>
+          <div class="test-desc">The canonical entry — and the one the session is built around. Firewall transmits the team's egos directly to Gutenberg's farcaster receiving terminal. No ship, no transit time, no physical exposure. They arrive as infomorphs instantiated in digimorphs. Yeva and her employer egocast close behind — possibly using a different relay, possibly on the same beam.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill">SHIP TRANSIT</div>
+          <div class="test-desc">Physical travel from Vesta to High Belt: weeks, not days. Possible as a hybrid — ship partway, egocast the final leg from a waypoint relay. Adds downtime roleplaying between sessions but undermines the urgency framing. The Kessler Patience is an ore freighter, not a fast courier — Deschamps going to the High Belt is plausible but slow.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill warn">YEVA TIMING</div>
+          <div class="test-desc">If Yeva and her employer egocast, the interesting question is when they arrive relative to the team. Simultaneously = they're all in the Platform together from the start. 20 minutes later = they arrive mid-investigation as a complication. With advance access = they're already inside when the team gets there, which raises immediate questions about who they work for.</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ YEVA'S EMPLOYER — FACTION OPTIONS <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="test-item">
+          <div class="test-skill ozma">OZMA</div>
+          <div class="test-desc">They want to observe and study what the fetch is building — not destroy it. Goal conflicts directly with Resolution Path C (physical destruction) and creates tension around Path B (VR entry). Luz is the natural contact point. The employer has better intel about the tight-beam transmission origin than Firewall does — they've seen this signal before.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill warn">FIREWALL PROXY</div>
+          <div class="test-desc">A second team sent because Firewall wasn't confident the first was enough. The employer is backup — which is insulting to the sentinels and the employer knows it. Probably has a second exploit app and better gear codes, which they'll trade for intel access. Inter-team friction is built in.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill danger">CRIMINAL (SHUI FONG)</div>
+          <div class="test-desc">They want the cortical stacks. All the uploaded minds in the locus represent valuable egos — workers, brinker infomorphs — that can be ransomed or sold. Goal conflicts with Path C (destruction kills them) and complicates Path B (rescuing the egos might mean handing them to someone worse). Connects to session-02 Shui Fong threads. Flash and Luz both have the rep history to make this personal.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUTENBERG GOVERNANCE -->
+    <div class="section-label">◈ GUTENBERG — GOVERNANCE &amp; JURISDICTION</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">Gutenberg is an <strong style="color:var(--textbright);">Extropian station</strong> — no central government, no VSC equivalent, no station authority to call. Everything runs on private contract law. Three entities hold overlapping operational presence.</div>
+      <div class="test-item">
+        <div class="test-skill teal">NIMBUS OPERATIONS</div>
+        <div class="test-desc">The de facto authority. Nimbus holds the mesh infrastructure contract, the body bank licence, the farcaster operating agreement, and communications relay rights. They are the landlord, the ISP, and the security contractor simultaneously. Right now Nimbus is compromised — the fetch has admin-level access to every system Nimbus runs. There is no Nimbus authority to appeal to. The fetch IS Nimbus, functionally.</div>
+      </div>
+      <div class="test-item">
+        <div class="test-skill">BRINKER COMMUNITY</div>
+        <div class="test-desc">The hardcore-VR infomorph community who rented the processor locus from Nimbus on a long-term lease. They had their own internal governance — informal, consent-based, typical brinker autonomist structure. Their contract with Nimbus gave them physical sovereignty over the locus interior. Legally they still hold that lease. In practice they're imprisoned inside their own rented space.</div>
+      </div>
+      <div class="test-item">
+        <div class="test-skill warn">EXTROPIAN CONTRACT LAW</div>
+        <div class="test-desc">No cavalry is coming because there is no one with jurisdiction to send one. The farcaster being physically disabled means Nimbus's parent network can't intervene remotely. The QE comms unit in the security locker is the only way to reach anyone outside — and it pairs with a Nimbus monitoring station, not an emergency service. If the team gets a message out, Firewall hears it. Nobody else has standing to act.</div>
+      </div>
+    </div>
+
     <!-- SITUATION TIMELINE -->
     <div class="section-label">◈ SITUATION TIMELINE — EVENTS BEFORE PC ARRIVAL</div>
     <div class="timeline-panel">
@@ -686,7 +740,7 @@
     <div class="section-label teal">◈ PC CONSTRAINTS &amp; AVAILABLE ASSETS</div>
     <div class="npc-card" style="background:rgba(0,201,177,0.03);">
       <div style="font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:2px; color:var(--accent2); margin-bottom:0.5rem;">◈ WHAT PCs ARRIVE WITH</div>
-      <div class="test-item"><div class="test-skill teal">DIGIMORPH</div><div class="test-desc">Base digimorph with copylock active. No gear beyond muse. Copylock prevents forking and home-device switching without Nimbus auth.</div></div>
+      <div class="test-item"><div class="test-skill teal">DIGIMORPH</div><div class="test-desc">Base digimorph with copylock active. No gear beyond muse. <strong style="color:var(--textbright);">Copylock</strong> is meshware running on the digimorph that prevents the ego from being copied, forked, or moved to a different home device without Nimbus authorisation. Normally released during onboarding — but the fetch took over before that happened. Consequences: (1) No forking — can't split up or run parallel instances. (2) Home device locked to the clinic server — if a minion AI finds and brainhacks it, there is nowhere to run. (3) Cannot sleeve into any other infomorph without breaking it first. Breaking copylock: brutal Infosec at –60, opposed by Firewall 50 — or find the disable codes in the security server once admin access is obtained. Once broken, the tactical situation changes dramatically: forking opens up and minion AIs must track multiple instances simultaneously.</div></div>
       <div class="test-item"><div class="test-skill teal">MUSE</div><div class="test-desc">Each PC has their muse. Muses can run searches, handle background tasks, and manage some mesh interactions independently.</div></div>
       <div class="test-item"><div class="test-skill warn">WELCOME GIFT</div><div class="test-desc">From the friendly: one exploit app + backdoor code to the security server. Delivered via mesh ping to Firewall-credentialed infomorphs on arrival.</div></div>
       <div class="test-item"><div class="test-skill">2 FLEX EACH</div><div class="test-desc">Extra flexibility tokens to use for advantageous rolls, narrative twists, or asset recovery.</div></div>
@@ -868,6 +922,34 @@
       <div class="collapse-content">
         <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.4rem;">If the players meet the imprisoned egos before choosing a resolution, they will face the weight of the physical destruction option. This is not a mistake to avoid — it's the scenario's moral core. Firewall's mandate is clear: neutralize the threat. What the players choose to do with the people in the way is between them and the table.</div>
         <div class="note-box titan">Let the consequences of their choice carry into future sessions. The uploaded stacks, the brinker community, the Nimbus operator's fate — none of these should just be forgotten.</div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PLAYER SPOTLIGHT — ROLE BY CHARACTER <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.8rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">R.A.I.D. can technically run every phase of this session alone. The following restructuring ensures each player has an exclusive contribution. Assign these roles before play begins.</div>
+        <div class="test-item">
+          <div class="test-skill warn">FLASH</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">VR COMBAT SPECIALIST.</strong> Flash's ego skills (physicals, Military Ops 75, Weapons 75) are irrelevant in mesh space — but translate directly inside the Torment Nexus simulspace. He's the one who goes in. Pain Regulator means the horror environment's psychological damage is suppressed. Military Ops lets him read the fetch's construction patterns as tactical intel. His job: fight through the VR horror architecture, find the developer console cheat codes, clock the fetch's completion timer. Entrance hook: Flash is the only one who recognises the copylock encryption signature — it's the same architecture used on black-market cortical stack trade routes (Know: Black Markets 60 / Smuggling 40). He can't crack it, but he identifies that it has a hardwired disable code — because smugglers always leave themselves a backdoor. This gives R.A.I.D. the specific vector to look for.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill teal">LUZ</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">PSYCHOSURGERY / SOCIAL LEAD.</strong> Two exclusive contributions. First: the Firewall-friendly operator went dark but left a fragment in the mesh — not a message, a damaged partial fork. Luz's Psychosurgery 80 is the only way to reconstruct enough of it to extract what it knows (station layout, transmission details, bot patrol patterns). Failed roll = partial/wrong intel. Critical success = the fork is stable enough to assist for the rest of the session. Second: Bask Kozlov. Use the Beta Fork option (Option D) — his deeply alien affect reads to Kinesics and Persuade, not hacking. Luz's Kinesics 80 and Persuade 80 make her the only one who can reliably get useful intel out of him before he becomes a threat. Kozlov is the key to the VR path — only Luz can earn his cooperation. Additionally: once Flash contacts the imprisoned egos in the VR, Luz (connected from outside) can run emergency Psychosurgery triage to keep them functional enough to share cheat code locations.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill mesa">NOVA</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">AUTOMECH OPERATOR / PHYSICAL LAYER.</strong> Drone Affinity trait means no Integration Test when operating the automech. Once Nova slots into the Operator infomorph from the security server, Remote Operations stacks with his existing skill. Nova IS the team's hands for the entire session — the automech is his body. The three servitor bots are his antagonists. His tactical decisions: jam one, spoof another, fight the third? Sharpshooter and Melee Mastery don't apply but his situational awareness does — Situational Awareness trait triggers on arrival, noticing the AR loop artifact and a third infomorph signature trying not to be one. His throughline: shepherd the automech from the repair bay to the locus exterior while countering all three bots, under time pressure, while R.A.I.D. hacks from the mesh side.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill signal">R.A.I.D.</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">MESH ARCHITECT / LOCUS HACKER.</strong> Interface 80, Research 80, Program 80, Infosec 80 — he runs privilege escalation, the power-anomaly scan, fabber location, and automech work order. The moment Nova attaches the gray box, R.A.I.D. begins the locus hack: Infosec 80 vs Firewall 70 while two minion AIs counterattack simultaneously. Enhanced Security meshware (–10 to brainhack attempts) matters here. Critical additional role: domain rules manipulation. Once inside the locus mesh, R.A.I.D. can alter simulspace physics (▶269 EP2) — suppressing the fetch's control, changing gravity, freezing construction. These changes directly buff Flash's VR performance. The two players are in mechanical symbiosis: R.A.I.D. hacks the rules of reality from outside while Flash fights inside. Drone Whisperer trait lets R.A.I.D. spend Flex on Nova's automech tests — he can support all three other players simultaneously.</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ COPYLOCK — TACTICAL TIMELINE <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">Copylock is the session's structural gear-shift. Everything before breaking it is constrained. Everything after it opens up. Don't let the PCs break it in the first 20 minutes — the tension of the locked state is the session's first act.</div>
+        <div class="test-item"><div class="test-skill danger">LOCKED</div><div class="test-desc">Home device = clinic server. One instance per PC. Minion AIs know exactly where to hit. No forking, no home-swap. This is the horror state.</div></div>
+        <div class="test-item"><div class="test-skill warn">BREAKING IT</div><div class="test-desc">Either brute Infosec at –60 (loud, risky, may trigger alert) or find disable codes in the security server via admin access (the intended path — requires backdoor code first). Flash's recognition of the encryption type points R.A.I.D. to the right server node.</div></div>
+        <div class="test-item"><div class="test-skill teal">UNLOCKED</div><div class="test-desc">Forking opens. Home-swap possible. Minion AIs now have to track multiple instances. R.A.I.D. can run a distraction fork while hacking the locus. Luz can send a fork into VR alongside Flash. The fetch's tactical advantage shrinks significantly — which is why it'll respond hard the moment copylock breaks.</div></div>
       </div>
     </div>
 
