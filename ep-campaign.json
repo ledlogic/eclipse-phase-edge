@@ -38,9 +38,10 @@
       "number": "04",
       "title": "Unbodied",
       "location": "GUTENBERG · HIGH BELT",
-      "status": "upcoming",
+      "status": "current",
       "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E",
-      "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"
+      "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS",
+      "progress": 80
     },
     {
       "id": "session-05",
