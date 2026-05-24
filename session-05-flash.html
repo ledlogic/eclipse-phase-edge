@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLASH — SESSION 05 BRIEFING · COLD STATION</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<style>
+
+/* ── FLASH-SPECIFIC OVERRIDES ──────────────────────────────── */
+body {
+  background: #03060a;
+}
+
+/* Amber accent for this doc — differentiates from GM refs */
+:root {
+  --flash: #f5a623;
+  --flash-dim: rgba(245,166,35,0.15);
+  --flash-border: rgba(245,166,35,0.3);
+  --flash-glow: 0 0 12px rgba(245,166,35,0.25);
+  --ice: #7eb8d4;
+}
+
+/* ── PAGE WRAPPER ─────────────────────────────────────────── */
+.flash-wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── EYEBROW ──────────────────────────────────────────────── */
+.flash-eyebrow {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+/* ── CALLSIGN HEADER ──────────────────────────────────────── */
+.callsign-block {
+  border-left: 3px solid var(--flash);
+  padding: 1.2rem 1.4rem 1.2rem 1.6rem;
+  margin-bottom: 2rem;
+  background: var(--flash-dim);
+  position: relative;
+}
+.callsign-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -3px; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, transparent, var(--flash), transparent);
+  animation: flashPulse 3s ease-in-out infinite;
+}
+@keyframes flashPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.callsign-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--flash);
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+}
+.callsign-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--flash);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  text-shadow: var(--flash-glow);
+}
+.callsign-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+/* ── STAT CHIPS ───────────────────────────────────────────── */
+.flash-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+.flash-chip {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.flash-chip.hi {
+  border-color: var(--flash-border);
+  color: var(--flash);
+  background: var(--flash-dim);
+}
+.flash-chip.warn {
+  border-color: rgba(232,184,75,0.3);
+  color: var(--warn);
+}
+.flash-chip.danger {
+  border-color: rgba(217,79,61,0.3);
+  color: var(--danger);
+}
+
+/* ── SECTION DIVIDER ──────────────────────────────────────── */
+.flash-section {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--flash);
+  opacity: 0.7;
+  border-bottom: 1px solid var(--flash-border);
+  padding-bottom: 0.3rem;
+  margin: 2rem 0 1rem;
+}
+
+/* ── BODY TEXT ────────────────────────────────────────────── */
+.flash-prose {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.flash-prose em {
+  color: var(--textbright);
+  font-style: italic;
+}
+.flash-prose strong {
+  color: var(--flash);
+  font-style: normal;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.88em;
+  letter-spacing: 1px;
+}
+
+/* ── KNOWLEDGE BOX ────────────────────────────────────────── */
+.know-box {
+  border: 1px solid var(--flash-border);
+  background: rgba(245,166,35,0.04);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+.know-box::before {
+  content: '◈ YOU KNOW THIS';
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--flash);
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.know-box p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── WARNING BOX ──────────────────────────────────────────── */
+.warn-box {
+  border: 1px solid rgba(232,184,75,0.3);
+  background: rgba(232,184,75,0.04);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.8rem;
+}
+.warn-box::before {
+  content: '◈ WATCH THIS';
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--warn);
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.warn-box p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── SKILL CALLOUT ────────────────────────────────────────── */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.skill-item {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.skill-item.hot {
+  border-color: var(--flash-border);
+  background: var(--flash-dim);
+}
+.skill-name {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  flex: 1;
+}
+.skill-item.hot .skill-name {
+  color: var(--flash);
+}
+.skill-val {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: var(--textbright);
+  font-weight: bold;
+}
+.skill-item.hot .skill-val {
+  color: var(--flash);
+  text-shadow: 0 0 6px rgba(245,166,35,0.4);
+}
+
+/* ── DIALOGUE ─────────────────────────────────────────────── */
+.flash-dialogue {
+  border-left: 2px solid var(--flash-border);
+  padding: 0.7rem 1rem;
+  margin: 0.8rem 0;
+  background: rgba(245,166,35,0.025);
+}
+.flash-dialogue .speaker {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--flash);
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
+.flash-dialogue .line {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--textbright);
+  line-height: 1.6;
+}
+
+/* ── ROUTE BLOCK ──────────────────────────────────────────── */
+.route-block {
+  border: 1px solid var(--border);
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+}
+.route-header {
+  background: rgba(255,255,255,0.02);
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.route-tag {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 2px 6px;
+  border: 1px solid;
+}
+.route-tag.flash-tag {
+  color: var(--flash);
+  border-color: var(--flash-border);
+  background: var(--flash-dim);
+}
+.route-tag.alt-tag {
+  color: var(--muted);
+  border-color: var(--border);
+}
+.route-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--textbright);
+  letter-spacing: 1px;
+  flex: 1;
+}
+.route-body {
+  padding: 0.7rem 0.8rem;
+}
+.route-body p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 0.4rem;
+}
+.route-body p:last-child { margin: 0; }
+
+/* ── COUNTDOWN PANEL ──────────────────────────────────────── */
+.countdown-panel {
+  border: 1px solid rgba(217,79,61,0.3);
+  background: rgba(217,79,61,0.04);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+.countdown-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--danger);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+.countdown-panel p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── MESA BOX ─────────────────────────────────────────────── */
+.mesa-box {
+  border: 1px solid rgba(0,201,177,0.3);
+  background: rgba(0,201,177,0.04);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+.mesa-box::before {
+  content: '◈ MESA';
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.mesa-box p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── SCAN LINE SEPARATOR ──────────────────────────────────── */
+.scan-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--flash-border), transparent);
+  margin: 2rem 0;
+}
+
+/* ── PRINT ────────────────────────────────────────────────── */
+.print-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--flash);
+  background: rgba(245,166,35,0.08);
+  border: 1px solid var(--flash-border);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+  z-index: 50;
+}
+.print-btn:hover { background: rgba(245,166,35,0.15); }
+@media print { .print-btn { display: none; } }
+
+</style>
+</head>
+<body>
+
+<div class="flash-wrapper">
+
+  <div class="flash-eyebrow">◈ ECLIPSE PHASE 2E · FIREWALL BELTER CAMPAIGN · SESSION 05 · PLAYER BRIEF</div>
+
+  <!-- CALLSIGN HEADER -->
+  <div class="callsign-block">
+    <div class="callsign-label">SENTINEL CALLSIGN</div>
+    <div class="callsign-name">FLASH</div>
+    <div class="callsign-sub">VESTA DOCKING RING · COLD STATION · SESSION 05 INTRODUCTION</div>
+  </div>
+
+  <!-- CHIPS -->
+  <div class="flash-chips">
+    <span class="flash-chip hi">LOCATION: VESTA · KNOWN GROUND</span>
+    <span class="flash-chip hi">ROLE: PHYSICAL LEAD</span>
+    <span class="flash-chip warn">THREAT: OZMA CLOSURE TEAM</span>
+    <span class="flash-chip warn">CLOCK: 12 HOURS TO HOLD ORDER</span>
+    <span class="flash-chip danger">HANDLER: DARK</span>
+    <span class="flash-chip">MESA: DEVICE WITH TEAM</span>
+  </div>
+
+  <!-- ══ SITUATION ══ -->
+  <div class="flash-section">◈ SITUATION — WHAT FLASH KNOWS</div>
+
+  <p class="flash-prose">
+    You're back on Vesta. The last time you were here you were sourcing morphs, running errands in the Docking Ring, and learning the maintenance tunnel layout well enough to move through it in the dark. That was three sessions ago. You were here long enough to know this place — the ceiling bounce-points, the fuel manifold access hatches, the way foot traffic moves around the parts exchange at peak-cycle. You remember things like that. You always do.
+  </p>
+
+  <p class="flash-prose">
+    That familiarity is now the team's most valuable operational asset. Because someone is closing the net around you, and they are doing it on your ground.
+  </p>
+
+  <div class="know-box">
+    <p>Your Firewall handler has gone silent. Two days ago, three days ago — it doesn't matter exactly when, because the silence is total. No acknowledgement, no hold signal, nothing. You have <strong>MESA'S DEVICE</strong> aboard the ship. You have the Gutenberg data. And you have a rep-flag on your mesh ID that is going to look, to anyone pulling your file, like payment from an unknown handler — which is exactly what it is designed to look like.</p>
+  </div>
+
+  <p class="flash-prose">
+    The rep deposits are fabricated. You know this the way you know anything about yourself — it simply isn't true, and true things and untrue things feel different. Someone built a paper trail that makes the team look bought. Someone wanted Firewall watching you instead of helping you. This is not a coincidence. This is <strong>PROJECT OZMA</strong>, doing what it does.
+  </p>
+
+  <div class="warn-box">
+    <p>You have approximately twelve hours before a transit hold order activates on the ship's berth. After that, Berth 44 locks and you don't leave under your own power. This is the session's clock. You don't know the number exactly — but you feel it. Vesta has a specific texture when something is wrong, and right now, Vesta feels wrong.</p>
+  </div>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ THE GROUND ══ -->
+  <div class="flash-section">◈ YOUR GROUND — THE DOCKING RING</div>
+
+  <p class="flash-prose">
+    Vesta's Docking Ring runs at roughly <strong>0.025G</strong>. Not quite micrograv — more than the open void, less than anything you'd call weight. You know this gravity the way you know your own breathing. You know what happens when someone who doesn't know this environment pushes off a surface with too much confidence. You know the ceiling-bounce routes. You know which corridor sections have awkward clearance angles that slow down someone running at ground level. You know the maintenance tunnels that bypass the main commercial strip entirely.
+  </p>
+
+  <p class="flash-prose">
+    You've moved through this ring before. You sourced equipment here. You know the service access code for Sub-Level 2. You know where Berth 44 is from the service-side as well as the main approach. Nobody coming in from outside to run a closure operation knows this place the way you do. That asymmetry is real. Use it.
+  </p>
+
+  <!-- MAP SVG -->
+  <div style="background:#030508; border:1px solid rgba(245,166,35,0.15); padding:0.75rem; margin: 1rem 0;">
+    <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+      <rect width="640" height="200" fill="#030508"/>
+
+      <!-- Ring corridor suggestion -->
+      <path d="M 50 160 Q 320 15 590 160" fill="none" stroke="rgba(245,166,35,0.07)" stroke-width="16"/>
+      <path d="M 50 160 Q 320 15 590 160" fill="none" stroke="rgba(245,166,35,0.2)" stroke-width="1" stroke-dasharray="5,4"/>
+
+      <!-- AIRLOCK / ENTRY -->
+      <rect x="15" y="120" width="90" height="58" rx="2" fill="rgba(126,184,212,0.06)" stroke="rgba(126,184,212,0.35)" stroke-width="1"/>
+      <text x="60" y="140" font-family="Share Tech Mono" font-size="7" fill="#7eb8d4" text-anchor="middle" letter-spacing="1">AIRLOCK 7</text>
+      <text x="60" y="152" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">WATCHER HERE</text>
+      <text x="60" y="164" font-family="Share Tech Mono" font-size="7" fill="rgba(126,184,212,0.7)" text-anchor="middle">ENTRY POINT</text>
+      <line x1="105" y1="149" x2="145" y2="135" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+      <!-- TRANSIT HUB -->
+      <rect x="145" y="95" width="115" height="65" rx="2" fill="rgba(200,80,80,0.05)" stroke="rgba(200,80,80,0.3)" stroke-width="1"/>
+      <text x="202" y="115" font-family="Share Tech Mono" font-size="7" fill="#c04040" text-anchor="middle" letter-spacing="1">TRANSIT HUB</text>
+      <text x="202" y="127" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">OZMA ASSETS</text>
+      <text x="202" y="139" font-family="Share Tech Mono" font-size="7" fill="rgba(200,80,80,0.7)" text-anchor="middle">★ MAIN THREAT</text>
+      <text x="202" y="151" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.4)" text-anchor="middle">AVOID OR CLEAR</text>
+
+      <!-- MAINTENANCE TUNNELS — highlighted -->
+      <rect x="270" y="55" width="115" height="65" rx="2" fill="rgba(245,166,35,0.08)" stroke="rgba(245,166,35,0.45)" stroke-width="1.5"/>
+      <text x="327" y="75" font-family="Share Tech Mono" font-size="7" fill="#f5a623" text-anchor="middle" letter-spacing="1">MAINT. TUNNELS</text>
+      <text x="327" y="87" font-family="Share Tech Mono" font-size="7" fill="rgba(245,166,35,0.7)" text-anchor="middle">FLASH ROUTE</text>
+      <text x="327" y="99" font-family="Share Tech Mono" font-size="7" fill="rgba(245,166,35,0.5)" text-anchor="middle">CODE KNOWN</text>
+      <text x="327" y="111" font-family="Share Tech Mono" font-size="7" fill="rgba(245,166,35,0.9)" text-anchor="middle">★ YOUR PATH</text>
+      <line x1="385" y1="87" x2="420" y2="100" stroke="rgba(245,166,35,0.35)" stroke-width="1"/>
+
+      <!-- BERTH 44 -->
+      <rect x="420" y="90" width="110" height="65" rx="2" fill="rgba(144,64,192,0.06)" stroke="rgba(144,64,192,0.35)" stroke-width="1"/>
+      <text x="475" y="110" font-family="Share Tech Mono" font-size="7" fill="#9040c0" text-anchor="middle" letter-spacing="1">BERTH 44</text>
+      <text x="475" y="122" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">SHIP + MESA</text>
+      <text x="475" y="134" font-family="Share Tech Mono" font-size="7" fill="rgba(200,80,80,0.8)" text-anchor="middle">★ OBJECTIVE</text>
+      <text x="475" y="146" font-family="Share Tech Mono" font-size="7" fill="rgba(144,64,192,0.7)" text-anchor="middle">SERVICE HATCH ↓</text>
+
+      <!-- Legend -->
+      <rect x="15" y="180" width="7" height="7" fill="rgba(245,166,35,0.5)" stroke="rgba(245,166,35,0.7)"/>
+      <text x="27" y="187" font-family="Share Tech Mono" font-size="6" fill="rgba(245,166,35,0.7)">FLASH ADVANTAGE ZONE</text>
+      <rect x="220" y="180" width="7" height="7" fill="rgba(200,80,80,0.4)" stroke="rgba(200,80,80,0.6)"/>
+      <text x="232" y="187" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.5)">THREAT ZONE</text>
+      <rect x="340" y="180" width="7" height="7" fill="rgba(144,64,192,0.4)" stroke="rgba(144,64,192,0.6)"/>
+      <text x="352" y="187" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.5)">OBJECTIVE</text>
+    </svg>
+  </div>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ WHAT YOU BRING ══ -->
+  <div class="flash-section">◈ WHAT YOU BRING TO THIS SESSION</div>
+
+  <p class="flash-prose">
+    Other sessions have belonged to other people. Infomorph operations were R.A.I.D's ground. Social navigation is Luz's register. This session is yours — physically, tactically, spatially. The skills that define Flash are the skills this scenario was built around. That's not accidental.
+  </p>
+
+  <div class="skill-grid">
+    <div class="skill-item hot">
+      <span class="skill-name">ATHLETICS</span>
+      <span class="skill-val">80</span>
+    </div>
+    <div class="skill-item hot">
+      <span class="skill-name">FREEFALL · LOW-G</span>
+      <span class="skill-val">+20 ADV</span>
+    </div>
+    <div class="skill-item hot">
+      <span class="skill-name">MELEE</span>
+      <span class="skill-val">80</span>
+    </div>
+    <div class="skill-item hot">
+      <span class="skill-name">GUNS</span>
+      <span class="skill-val">80</span>
+    </div>
+    <div class="skill-item hot">
+      <span class="skill-name">PERCEIVE</span>
+      <span class="skill-val">80</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-name">RING KNOWLEDGE</span>
+      <span class="skill-val">FREE</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-name">TUNNEL CODE</span>
+      <span class="skill-val">KNOWN</span>
+    </div>
+    <div class="skill-item">
+      <span class="skill-name">COLLAR RELEASE</span>
+      <span class="skill-val">HARDWARE</span>
+    </div>
+  </div>
+
+  <p class="flash-prose">
+    The Ozma assets on station have <strong>FREEFALL: 35</strong>. You have a minimum of <strong>+20</strong> in this environment based on session precedent — more if you play the ceiling routes. In a foot chase in Vesta's ring, you are operating in a different category from anyone pursuing you. They know this. It's why they want to intercept rather than chase.
+  </p>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ ROUTES ══ -->
+  <div class="flash-section">◈ TWO PATHS — YOUR CALL</div>
+
+  <p class="flash-prose">
+    Coming through Airlock 7, you have an immediate decision. You'll spot the watcher at the coffee stand — you clock this kind of stillness. They are going to relay your direction. The question is whether you let them relay the right direction.
+  </p>
+
+  <div class="route-block">
+    <div class="route-header">
+      <div class="route-tag flash-tag">FLASH ROUTE</div>
+      <div class="route-name">Sub-Level 2 Maintenance Tunnels → Berth 44 Service Hatch</div>
+    </div>
+    <div class="route-body">
+      <p>You know the Sub-Level 2 access point. Three bays down from the fuel manifold service station — there's a panel behind the work-light cluster that responds to the maintenance code you picked up in Session 03. That code runs on a 90-day cycle. You don't know if it's turned over, but you know the section with the faulty lock panel if it has.</p>
+      <p>The tunnel bypasses the Transit Hub entirely. It deposits you at Berth 44's service-side — the maintenance hatch at the hull base, not the main docking collar. This is significant: the hold order Lok filed locks the collar. The service hatch is a different authorization layer. You can board your own ship through a door they don't know about.</p>
+      <p>Five minutes, off-mesh, no surveillance, no acquisition team. This is the clean line. The cost is time and the uncertainty of that access code.</p>
+    </div>
+  </div>
+
+  <div class="route-block">
+    <div class="route-header">
+      <div class="route-tag alt-tag">ALTERNATE</div>
+      <div class="route-name">Main Ring Corridor → Transit Hub → Berth 44 Approach</div>
+    </div>
+    <div class="route-body">
+      <p>Faster by two minutes. The direct line. The Trade Hub has two Ozma assets — good people, belt-adapted, but not ring-native and not a match for you in this gravity. They want a quiet intercept, not a chase. They're positioned to funnel you into a low-witness gap near the parts exchange.</p>
+      <p>If the team needs a decoy element — drawing the assets while others take the tunnel — the main corridor is how you run that split. Your Perceive 80 reads the hub before you're deep into it. Your Freefall advantage means that if they clock you and move, you are simply not catchable once you've taken three seconds of ceiling space.</p>
+      <p>The risk: if they report your direction before you clear them, Lok repositions to the berth approach. Now you're dealing with her instead of two field operatives.</p>
+    </div>
+  </div>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ THE COLLAR RELEASE ══ -->
+  <div class="flash-section">◈ THE COLLAR RELEASE — IF IT COMES TO THAT</div>
+
+  <p class="flash-prose">
+    If the hold order activates before you reach the ship, or if Lok's team has physically staked the berth approach, there is a last-option play: the external collar release. This is outside the ship, on the berth structure, in Vesta's microgravity. Twelve meters of ceiling traverse from the service access, a recessed junction panel behind a maintenance cover, thirty seconds of physical work.
+  </p>
+
+  <p class="flash-prose">
+    In any other environment this would be a contested mess. Here, it is your scene. You move out there and you are operating in a space where anyone following you is at serious disadvantage — no footholds, no stable positions, and Vesta's 0.025G means a misaimed push puts them tumbling for twenty seconds with no recovery. You have used this before. You'll use it again if you need to.
+  </p>
+
+  <div class="warn-box">
+    <p>A port authority response bot will be dispatched once the hold order locks. Roughly four minutes before it arrives. The collar release takes thirty seconds once you're at the junction panel. The clock pressure is the transit time to get there, not the work itself.</p>
+  </div>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ LOK ══ -->
+  <div class="flash-section">◈ LIXIA LOK — YOU DON'T KNOW HER</div>
+
+  <p class="flash-prose">
+    You haven't met Lixia Lok. The rest of the team may have encountered her in Pathfinder City during the Binge operation, but you weren't in those rooms. What you know is that there is an Ozma field lead coordinating this closure personally — mobile, on the ring, managing from position rather than from a command node. This is someone who prefers to be close to the problem.
+  </p>
+
+  <p class="flash-prose">
+    She will intercept if your path allows it. Not to fight — to talk. She wants one conversation before you leave Vesta, and she has something genuine to offer: she controls the hold order, and she can pull it. Her price is a copy of MESA's signal data. Not the device. Not MESA. Just the data.
+  </p>
+
+  <div class="flash-dialogue">
+    <div class="speaker">LOK — IF SHE REACHES YOU</div>
+    <div class="line">"I'm not going to tell you to stop. You're clearly not going to. I'm going to tell you what you're carrying, because you're about to take it somewhere and you should know what it is before you hand it to Firewall. Thirty seconds. That's all I'm asking for."</div>
+  </div>
+
+  <p class="flash-prose">
+    Whether to hear her out is not a tactical question. It's a character question. She's dangerous in the way that competent people are dangerous — not because she'll kill you, but because she knows things. What Flash does in that moment says something real about who Flash is.
+  </p>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ MESA ══ -->
+  <div class="flash-section">◈ MESA — WHAT SHE IS, WHY SHE MATTERS</div>
+
+  <div class="mesa-box">
+    <p>MESA is an infomorph — a digital person, a Firewall data broker, currently stored on a physical device aboard your ship. She has been in storage since Gutenberg. She doesn't know how much time has passed. She doesn't know about the rep deposits, or Lok, or Vesta. She's been in a box while all of this happened around her.</p>
+  </div>
+
+  <p class="flash-prose">
+    She's the reason Ozma is closing the net. What she recorded at Gutenberg — the tight-beam signal, its coordinates, the secondary signal braided around it — is intelligence that Ozma has classified as sensitive enough to plant evidence against a Firewall team to acquire. Think about what that means for a moment.
+  </p>
+
+  <p class="flash-prose">
+    When you get the ship clear of Vesta, MESA gets reactivated. Her first words will probably be a question. The question will tell you where the campaign goes next.
+  </p>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ WHAT YOU DON'T KNOW ══ -->
+  <div class="flash-section">◈ WHAT FLASH DOESN'T KNOW YET</div>
+
+  <p class="flash-prose">
+    There is something in the Gutenberg signal that Ozma has been keeping from Firewall for decades. The secondary signal — the one braided around the TITAN fetch's carrier wave — didn't come from outside the solar system. It came from sunward. From inside. Whatever sent the warning that reached Gutenberg was already here, already present, already known to Ozma under a classification heading that predates most current organizations.
+  </p>
+
+  <p class="flash-prose">
+    Flash doesn't know this yet. MESA will be the one who names it. This session is the last session before the campaign leaves the Belt entirely and goes out toward the Kuiper. What you're carrying off Vesta is the map.
+  </p>
+
+  <div class="scan-sep"></div>
+
+  <!-- ══ TONE NOTE ══ -->
+  <div class="flash-section">◈ REGISTER — HOW THIS PLAYS</div>
+
+  <p class="flash-prose">
+    The previous session — Gutenberg — was infomorphs and information warfare. The session before that was social pressure and paranoid investigation. This one is physical. It's a race through familiar terrain with a clock running and someone you've never met trying to intercept you before you clear the dock.
+  </p>
+
+  <p class="flash-prose">
+    Flash is good at this. Not invulnerable — good. The ring works in your favour when you let it. The low-G is a tool you know how to use. The maintenance tunnels are a route you've already walked. Your job in this session is to lead — to be the person who knows where to go and moves first while the rest of the team follows.
+  </p>
+
+  <div class="flash-dialogue">
+    <div class="speaker">THE GM — TO YOU, BEFORE SESSION</div>
+    <div class="line">This session was built around what Flash does. The maintenance route, the ring knowledge, the low-G advantages, the collar release — these are Flash moments written into the structure, not things you have to find. When the door opens and you step into the ring, you already know this place. Let that be true out loud. Lead the team. They're following you home.</div>
+  </div>
+
+</div><!-- /flash-wrapper -->
+
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+</body>
+</html>
