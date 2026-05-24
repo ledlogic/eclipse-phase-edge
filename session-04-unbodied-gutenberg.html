@@ -115,6 +115,49 @@
   }
   @media print { #ep-session-nav { display: none !important; } }
 </style>
+
+<style id="print-override">
+/* ── PRINT & SINGLE-COLUMN OVERRIDE ── */
+.main-grid {
+  display: block !important;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+.left-col, .right-col {
+  display: block !important;
+  width: 100% !important;
+  float: none !important;
+}
+@media print {
+  @page { size: portrait; margin: 15mm 12mm 15mm 12mm; }
+  body { background: #fff !important; color: #111 !important; font-size: 11px !important; }
+  #ep-session-nav, .ep-legal-footer { display: none !important; }
+  header { border-bottom: 2px solid #333 !important; background: #fff !important; }
+  header h1, header .header-tag, header .header-sub { color: #111 !important; }
+  .stat-chip { border: 1px solid #333 !important; color: #333 !important; background: #f0f0f0 !important; }
+  .main-grid { display: block !important; padding: 0 !important; }
+  .left-col, .right-col { display: block !important; width: 100% !important; }
+  .section-label { color: #333 !important; border-color: #999 !important; background: #e8e8e8 !important; page-break-after: avoid; }
+  .npc-card, .brief-panel, .timeline-panel, .note-box { background: #fafafa !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+  .collapse-content { display: block !important; max-height: none !important; overflow: visible !important; }
+  .collapse-btn { display: none !important; }
+  .test-item { border-bottom: 1px solid #ddd !important; }
+  .test-skill { background: #e8e8e8 !important; color: #333 !important; border-color: #999 !important; }
+  .timeline-item { border-left: 2px solid #666 !important; }
+  .timeline-time { color: #444 !important; }
+  .timeline-desc { color: #222 !important; }
+  .npc-name { color: #111 !important; }
+  .npc-role { color: #555 !important; }
+  .npc-desc { color: #222 !important; }
+  .dialogue-line { border: 1px solid #ccc !important; background: #fafafa !important; }
+  .muse-label { color: #333 !important; border-color: #999 !important; background: #e8e8e8 !important; }
+  .dl-text { color: #111 !important; }
+  .rooms-section { page-break-before: always; }
+  a { color: #333 !important; text-decoration: none !important; }
+}
+</style>
+</style>
 <nav id="ep-session-nav" data-current-file="session-04-unbodied-gutenberg.html"></nav>
 <header>
   <div class="header-tag">◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
@@ -132,7 +175,7 @@
 
 <div class="main-grid">
 
-  <!-- ═══════════════════════════ LEFT COLUMN ═══════════════════════════ -->
+  <!-- ══════════════════ SINGLE COLUMN LAYOUT ══════════════════ -->
   <div class="left-col">
 
     <!-- MISSION BRIEF -->
@@ -148,6 +191,9 @@
       <div class="mission-goal" style="margin-top:0.5rem; background:rgba(0,201,177,0.04); border-color:rgba(0,201,177,0.2);">
         <strong style="color:var(--accent2);">◈ PC CONSTRAINTS</strong>
         PCs arrive as infomorphs instantiated in digimorphs with copylock active. They cannot fork, switch home devices, or access their gear — only their muses. The Firewall-friendly operator left a backdoor code and an exploit app as a welcoming gift. Everything the PCs need to fight back must be found or fabbed on station.
+        <div style="margin-top:0.6rem; border-top:1px solid rgba(0,201,177,0.15); padding-top:0.6rem; font-size:0.85rem; line-height:1.6; color:var(--text);">
+          <strong style="color:var(--accent2); letter-spacing:1px;">WHAT IS COPYLOCK?</strong> &nbsp;Copylock is standard meshware that Nimbus installs on all rented digimorphs — the digital equivalent of a hotel room key that only works while you're checked in. It prevents an infomorph ego from being copied, forked, or moved to a different home device without Nimbus authorisation. Under normal circumstances it releases automatically during onboarding within minutes of arrival. The fetch took control of the station before that process completed. The PCs are stuck inside morphs they don't fully own, tethered to a home device on a compromised server, with no ability to duplicate themselves or run to safety. It is the session's opening cage — everything changes the moment it breaks.
+        </div>
       </div>
     </div>
 
@@ -170,19 +216,66 @@
           <div class="test-desc">If Yeva and her employer egocast, the interesting question is when they arrive relative to the team. Simultaneously = they're all in the Platform together from the start. 20 minutes later = they arrive mid-investigation as a complication. With advance access = they're already inside when the team gets there, which raises immediate questions about who they work for.</div>
         </div>
       </div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ YEVA'S EMPLOYER — FACTION OPTIONS <span>▾</span></button>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DEPLOYMENT CHOICES — PLAYER OPTIONS <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="note-box accent" style="margin-bottom:0.5rem;">The players may not want to egocast. All three approaches below are valid — each has different tactical implications. Commit to which approach is in play before the session begins, or let players decide at the table.</div>
+        <div class="test-item">
+          <div class="test-skill teal">OPTION 1 — FULL EGOCAST (CANONICAL)</div>
+          <div class="test-desc">The entire team egocasts simultaneously to Gutenberg's farcaster receiving terminal. Instantaneous. They arrive as infomorphs in digimorphs with copylock active. No physical bodies, no physical gear — everything must be found or fabbed on station. The session runs as written. <strong style="color:var(--textbright);">Risk:</strong> arriving blind into a compromised mesh. <strong style="color:var(--textbright);">Advantage:</strong> instantaneous — the construction hasn't progressed further.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill warn">OPTION 2 — PHYSICAL TRANSIT (KESSLER PATIENCE)</div>
+          <div class="test-desc">The team travels aboard the Kessler Patience — 6 to 25 days depending on orbital geometry. They arrive in their own bodies with their own gear, undeclared, and dock at the exterior airlock. <strong style="color:var(--textbright);">Risk:</strong> by the time they dock, the construction may be complete and life support may be fully exhausted. <strong style="color:var(--textbright);">Advantage:</strong> full physical capability, own morphs, own weapons, no copylock. If using this option: skip the infomorph arrival framing, treat the station as fully deteriorated on arrival, and the mission becomes a physical boarding action rather than a mesh infiltration. Deschamps will dock but will not enter the station. <strong style="color:var(--warn);">Requires GM adjustment</strong> — the session's mesh mechanics become secondary; the primary threat is the fetch's servitor bots in physical space and the thinning atmosphere.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill purple">OPTION 3 — FORWARD SCOUT (FORK + FOLLOW)</div>
+          <div class="test-desc">One operative — or a fork of one — egocasts ahead as a scout while the rest of the team follows physically on the Kessler Patience. The scout arrives into the infomorph scenario as written, has a window of hours to assess before physical backup arrives, and can prep the farcaster for team extraction or unlock the station's airlocks for physical entry. <strong style="color:var(--textbright);">Risk:</strong> the scout is alone until the ship arrives — solo against the fetch's full mesh defence, with no physical support. <strong style="color:var(--textbright);">Advantage:</strong> the physical team arrives with eyes-open intel and full physical capability. R.A.I.D. is the natural scout candidate — mesh architecture skills make the solo infomorph window more survivable. <strong style="color:var(--warn);">Note:</strong> this requires R.A.I.D.'s player to be comfortable with solo-screen time while the rest of the table waits. Discuss before play.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill danger">OPTION 4 — REMOTE ONLY (NO PHYSICAL PRESENCE)</div>
+          <div class="test-desc">The team attempts to deal with the situation entirely from Vesta — hacking Gutenberg's mesh remotely through the relay array without egocasting anyone. <strong style="color:var(--textbright);">This will fail.</strong> The farcaster is physically disabled by T-30 before PC arrival and the locus is airgapped — remote hacking cannot reach the processor locus without a physical connection on-site. This option is a dead end that reveals the scope of the problem. If players try it, let them discover the limits — it's good fiction — then let them regroup. The QE comms link in the security locker is the only outbound channel, and it can't be accessed remotely.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill">OPTION 5 — DO NOTHING / REPORT UP</div>
+          <div class="test-desc">The team reports what they know to Firewall and waits for a response. <strong style="color:var(--textbright);">Firewall's response:</strong> you are the response. The Cerean proxy sent the team because there is no one else close enough or trusted enough to act in time. A Firewall-level kinetic strike from the inner system takes weeks to authorise and weeks more to arrive. By then the construction completes and the problem becomes an order of magnitude larger. The proxy will say this plainly: <em>"There is no cavalry. You are the cavalry."</em> This option is a pressure valve — let the players voice the reluctance, acknowledge it honestly, then redirect. The outcome tables from the post-session document apply significantly worse modifiers if the team delays or defers.</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ YEVA'S EMPLOYER — CHAIN OF COMMAND <span>▾</span></button>
       <div class="collapse-content">
+        <div class="note-box" style="margin-bottom:0.6rem; border-left-color:var(--warn);">Yeva's employer chain has three layers. Each is compartmentalised from the one below it. Yeva knows only Layer 1. Even under psychosurgery her fork cannot reach Layer 2 or 3 — that information lives in Vanek and on her mesh device at Security Access level.</div>
+
+        <div class="test-item">
+          <div class="test-skill warn">LAYER 1 — YEVA'S PICTURE</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Direct employer: Grigori Vanek / Sable Index Solutions.</strong> Yeva was hired by Vanek operating under the Sable Index brand for this specific operation. She is not a permanent Sable Index employee — Sable Index has no permanent employees. Vanek assembles teams per contract and disperses them when the job closes. Yeva is one of those assembled team members. Her operational picture: a corporate intelligence contractor called Grigori Vanek, running a commercial survey cover operation on Vesta, looking for a dead drop left by a Firewall data broker. That is the full extent of what she knows. She does not know the client's name. She does not know what the dead drop contained. She does not know Cognite is involved.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">LAYER 2 — VANEK'S PICTURE</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Nominal client: Meridian Compliance Partners.</strong> The contracting entity Vanek invoices. One of approximately 14 identical shell structures registered through a Luna law firm. Billing flows through Meridian. Vanek knows this is a shell — he has worked with Meridian twice before and has never met a human being who claimed to represent it. He reports via encrypted mesh drop and receives instructions the same way. He has never heard Chetverikova's name. Yeva has never heard Meridian's name. The shell exists solely to insulate Cognite from operational exposure.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">LAYER 3 — THE ACTUAL PRINCIPAL</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Meridian's principal: Oksana Chetverikova — Cognite VP, Research Division.</strong> The actual decision-maker. She authorised the Sable Index engagement after Cognite's mesh monitoring flagged MESA's query pattern on the Gutenberg frequency. She inherited the Kuiper experiment coverup from a previous project lead and has been managing the information gap between what Cognite's board knows and what actually happened ever since. Vanek reports directly to her via the Meridian drop. Neither Vanek nor Yeva has ever heard her name. The Cognite connection is invisible from below Layer 3 entirely.</div>
+        </div>
+
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--muted); margin:0.7rem 0 0.4rem;">◈ WHAT THE EMPLOYER WANTS — FACTION OPTIONS</div>
+        <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; line-height:1.5;">The employer who arrives with Yeva at Gutenberg represents Chetverikova's interests — but not necessarily through Sable Index. Choose one of the three options below before play begins. The employer is a separate operative from Yeva, dispatched via a different channel once Chetverikova received Yeva's field report about the MESA fork extraction.</div>
+
         <div class="test-item">
           <div class="test-skill ozma">OZMA</div>
-          <div class="test-desc">They want to observe and study what the fetch is building — not destroy it. Goal conflicts directly with Resolution Path C (physical destruction) and creates tension around Path B (VR entry). Luz is the natural contact point. The employer has better intel about the tight-beam transmission origin than Firewall does — they've seen this signal before.</div>
+          <div class="test-desc">Chetverikova has a quiet arrangement with an OZMA contact — she feeds them anomaly data in exchange for protection when her coverups threaten to surface. The employer is an OZMA field operative using Chetverikova's Gutenberg intel as the access vector. They want to observe and document what the fetch is building before anyone destroys it. Goal conflicts directly with Resolution Path C and creates tension around Path B. Luz is the natural contact point — OZMA's interests in the Belt overlap with autonomist networks she knows. The employer has better intel about the tight-beam transmission origin than Firewall does — OZMA has seen this signal pattern before, at the site Kozlov's classified file references. <strong style="color:var(--warn);">Note:</strong> if Kozlov C (OZMA) is in play, the employer and Kozlov are from the same organisation but different cells — they may not know each other, which creates an interesting recognition dynamic mid-session.</div>
         </div>
+
         <div class="test-item">
           <div class="test-skill warn">FIREWALL PROXY</div>
-          <div class="test-desc">A second team sent because Firewall wasn't confident the first was enough. The employer is backup — which is insulting to the sentinels and the employer knows it. Probably has a second exploit app and better gear codes, which they'll trade for intel access. Inter-team friction is built in.</div>
+          <div class="test-desc">Chetverikova has a Firewall contact she has used before for mutual benefit — she provides anomaly data, Firewall provides deniability cover for certain Cognite operations. The employer is that Firewall proxy, dispatched independently of the team's own handler. A second Firewall team — which is insulting to the sentinels and the employer knows it. Probably has a second exploit app and better gear codes, which they'll trade for intel access. The proxy's objectives partially overlap but their handler wants data extraction prioritised over the clean neutralisation the team's proxy wants. Inter-cell Firewall friction, with Cognite's fingerprints on the third party's deployment, which nobody on either team knows yet.</div>
         </div>
+
         <div class="test-item">
           <div class="test-skill danger">CRIMINAL (SHUI FONG)</div>
-          <div class="test-desc">They want the cortical stacks. All the uploaded minds in the locus represent valuable egos — workers, brinker infomorphs — that can be ransomed or sold. Goal conflicts with Path C (destruction kills them) and complicates Path B (rescuing the egos might mean handing them to someone worse). Connects to session-02 Shui Fong threads. Flash and Luz both have the rep history to make this personal.</div>
+          <div class="test-desc">Chetverikova outsourced the retrieval to a Shui Fong contact when her legitimate channels were burned after Vesta. The employer is a Shui Fong operative with a simple brief: recover the cortical stacks and the tight-beam data, deliver both to a Chetverikova drop. The Shui Fong operative doesn't know or care about Cognite — they have a job and a fee. They want the uploaded minds in the locus — all of them represent valuable egos that can be ransomed or sold, and the tight-beam data is worth more again. Goal conflicts with Path C (destruction kills the egos) and complicates Path B (rescuing the egos might mean handing them to someone worse). Connects to session-02 Shui Fong threads — Flash and Luz both have the rep history to make this personal.</div>
         </div>
       </div>
     </div>
@@ -359,6 +452,91 @@
     </div>
 
     <!-- MESH TOPOLOGY OVERVIEW -->
+    <!-- PHYSICAL TRANSIT DELAY TABLES -->
+    <div class="section-label warn">◈ PHYSICAL TRANSIT DELAY — WHAT CHANGES IF THEY TAKE DAYS</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">If the team travels physically on the Kessler Patience rather than egocasting, they arrive days later. T-NOW becomes the day of arrival — but the fetch has been running uncontested since the incident. The tables below describe what has changed at each delay threshold. Cross-reference with your committed fetch purpose (Fetch A–D from the Processor Locus section) — each Delay entry is a Delay + Fetch combination — each option has a different completion trajectory and post-completion behaviour. Life support degrades on a separate track regardless of fetch purpose.</div>
+
+      <div class="note-box warn" style="margin-bottom:0.7rem;"><strong style="color:var(--warn);">LIFE SUPPORT — SEPARATE CLOCK.</strong> The fetch shut down air circulation at T-30 before incident zero. Residual atmosphere sustains approximately 72 hours (3 days) before CO₂ buildup becomes incapacitating for unprotected biomorphs. At 4 days the station air is lethally toxic without a vacsuit. This is independent of fetch purpose — vacsuits are mandatory for any physical team arriving after Day 3.</div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ 4-DAY DELAY — CONSTRUCTION ADVANCED, STATION SILENT <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="note-box" style="margin-bottom:0.5rem; border-left-color:var(--warn);">The fetch has had 4 days of uncontested operation. Construction is well advanced. The station is unrecognisable from its operational state. Life support is lethal without vacsuits. Yeva and her employer — if they egocasted — arrived days ago and have either adapted, been captured, or are hiding.</div>
+
+        <div class="test-item">
+          <div class="test-skill warn">ALL OPTIONS — PHYSICAL STATE</div>
+          <div class="test-desc">Atmosphere: lethally toxic without vacsuit (CO₂ buildup). Temperature: falling in non-locus sections — fetch is redirecting all thermal management to the processor locus. Estimate −10°C in outer tunnels by day 4. Emergency lighting failing in Level 1 residential and transit sections — darkness in approximately 60% of non-locus corridors. The fetch has had time to physically modify the station: expect improvised barricades in the main shaft, cables rerouted, and the locus bulkhead door additionally reinforced with physical materials from the clinic and residential sections.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH A — RESTORATION: 4 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Partially complete.</strong> The fetch has consumed approximately 60–70% of the uploaded egos as processing substrate. The reconstructed intelligence is not yet fully coherent — but it is already beyond simple AI. It has begun probing the station's relay array for outbound transmission capability. It has not succeeded yet — the physical disconnection is holding — but it is aware that something is blocking it and is working on the problem. Inside the Torment Nexus VR, the architecture is nearly complete. Remaining imprisoned egos: 3–4. The rest have been absorbed. <strong style="color:var(--danger);">Changed encounter:</strong> the fetch now has a partial presence outside the locus mesh — one of its minion AIs has colonised the station's habitat mesh as a secondary substrate. It now knows the station layout better than the PCs do.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH B — PANDORA GATE: 4 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Gate architecture complete. Calibration phase.</strong> The gate-key structure is physically built inside the locus. The fetch is now running calibration sequences — aligning the gate's resonance with whatever is on the other side of the coordinates. It has not yet opened. The Torment Nexus VR has been restructured — it now represents the coordinates space as an environment, and the imprisoned egos are being used to map the destination's physical parameters. <strong style="color:var(--danger);">Changed encounter:</strong> the gate emits a low-frequency harmonic that physically resonates through the asteroid — characters inside the station feel it as a constant vibration. Perceive 40 to notice; Research 50 to identify it as a gate calibration signature. The team now has a hard deadline: calibration completes at approximately Day 6–7. When it does, the gate opens.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH C — ROKO'S BASILISK: 4 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Engine complete. Test broadcast imminent.</strong> The punishment engine is architecturally finished. The fetch is running final validation using the imprisoned egos as test subjects — the VR has become a torture simulation, running its victims through personalised scenarios designed to maximise distress. The engine's broadcast array is being assembled using the relay hardware from Level 2. It has not yet transmitted. <strong style="color:var(--danger);">Changed encounter:</strong> any mesh-connected character who queries the Torment Nexus receives a SV 1d10 stress hit from partial exposure to the test broadcast. The Firewall-friendly, if still alive, is one of the test subjects — they may be findable in the VR but will be severely psychologically damaged.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH D — RECRUITMENT: 4 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Ferry prepared. First passengers arriving.</strong> The infomorph bodies are ready. The tight-beam is active in both directions. The first TITAN-influenced ego has arrived via tight-beam and been instantiated in one of the prepared infomorph shells. It is now physically present on the station — a fully operational TITAN-influenced entity in a morph. It is not the fetch; it is the first passenger. It is methodical, curious, and completely indifferent to human life. <strong style="color:var(--danger);">Changed encounter:</strong> there is now a second major threat in addition to the fetch. The passenger is not allied with the fetch — they have different purposes — but both will treat the team as threats. The passenger has full infomorph capabilities and is not constrained by the locus airgap.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill purple">YEVA &amp; EMPLOYER AT 4 DAYS</div>
+          <div class="test-desc">If they egocasted (arriving ~Day 1), four days is a long time. Three possibilities: <strong style="color:var(--textbright);">(1) Captured</strong> — the fetch detected them early and the minion AIs mindhacked both. Their infomorph egos are now additional processing substrate or imprisoned in the locus. The team finds evidence of a prior intrusion attempt. <strong style="color:var(--textbright);">(2) In hiding</strong> — they found a defensible mesh node and have been surviving on minimal resources. They know everything about the station's current state and will trade it for extraction. <strong style="color:var(--textbright);">(3) Fled</strong> — they attempted to repair the farcaster on Day 2 and partially succeeded. Yeva egocasted out but her employer did not make it. Yeva is gone; her employer is trapped. The farcaster is partially repaired — it needs less work to complete.</div>
+        </div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ 8-DAY DELAY — CONSTRUCTION COMPLETE OR NEARLY SO <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box danger" style="margin-bottom:0.5rem; border-left-color:var(--danger);">Eight days. The fetch has been running for over a week. In most option tracks, construction completed around Day 5–6. The team is not arriving to prevent something — they are arriving to deal with the aftermath of something that already happened. This is a substantially different scenario. The mission objective may need to be revised from prevention to containment or evidence recovery.</div>
+
+        <div class="test-item">
+          <div class="test-skill danger">ALL OPTIONS — PHYSICAL STATE AT 8 DAYS</div>
+          <div class="test-desc">Atmosphere: completely unbreathable throughout the entire station. CO₂ concentration lethal within minutes without vacsuit — vacsuits are not optional, they are survival equipment. Temperature: outer tunnels at approximately −25°C. The docking collar mechanism may be frozen — Hardware: Electronics or Robotics (Task Action, 15 minutes) to override manually. The fetch has physically restructured significant portions of the station interior: tunnels partially blocked with fabricated material, new conduit bundles running from the locus to the relay array, and the residential section entirely repurposed as cable housing. Navigation requires a Research or Know: Architecture test to avoid dead ends in sections the PCs haven't mapped.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH A — RESTORATION: 8 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Complete. A new intelligence exists.</strong> The reconstructed intelligence achieved coherence approximately 5–6 days ago. It is no longer a fetch — it is something larger. It has been using the station's relay array to transmit outward for the last 3 days, attempting to reach other TITAN infrastructure. It has not yet succeeded in establishing a return connection — the physical hardware limits it. The locus is its processing core; it cannot leave. The Torment Nexus VR is gone — replaced by a complex mathematical environment the intelligence is using for self-analysis. All imprisoned egos have been absorbed. <strong style="color:var(--danger);">Mission change:</strong> prevention is impossible. The objective is now to destroy the locus before the outbound transmission is answered. Every hour increases the risk that something responds.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH B — PANDORA GATE: 8 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Gate open. Something came through.</strong> The gate opened approximately Day 6. What came through is GM discretion — but it is now physically present on the station and the gate remains open. The fetch is acting as a relay node, maintaining the connection. The station is no longer just a TITAN problem — it is an active crossing point. The locus is now physically altered: the interior space has been restructured by the gate process in ways inconsistent with normal physics. Characters entering the locus suffer SV 1d6 from exposure to the restructured space. <strong style="color:var(--danger);">Mission change:</strong> closing the gate requires either destroying the locus (which closes it but does not remove what came through) or finding and reversing the gate-key architecture from inside the VR (now a deeply hostile alien environment). What came through must also be dealt with. This is a session-defining escalation — use only if the campaign can support it.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH C — ROKO'S BASILISK: 8 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Broadcasting.</strong> The punishment engine began transmitting approximately Day 5. It is now live and outbound — broadcasting on the tight-beam frequency to any receiver that can hear it. The transmission is encoded but not encrypted: any sufficiently advanced mesh node that receives it will attempt to decode it. Decoding triggers the basilisk hack. At 8 days the transmission has reached light-minutes from Gutenberg in all directions. It has not yet reached any major inhabited system — but it will. <strong style="color:var(--danger);">Mission change:</strong> destroying the locus stops the broadcast at the source. But the transmission that has already left cannot be recalled. The team needs to destroy the locus AND get word to Firewall about the broadcast's existence so relay nodes can be warned. The QE comms unit is now a critical piece of equipment — without it, stopping the locus is only half the solution.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">DELAY + FETCH D — RECRUITMENT: 8 DAYS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Status: Multiple passengers arrived.</strong> The tight-beam ferry has been running for 8 days. Estimate 3–5 TITAN-influenced egos now instantiated in prepared infomorph shells and physically present on or near the station. The fetch has been printing additional morphs as capacity allows. The passengers are not a unified force — they have different objectives — but they share a common indifference to the team's survival. The station is now effectively a small TITAN outpost. <strong style="color:var(--danger);">Mission change:</strong> destroying the locus stops future arrivals but does not address the passengers already present. The team needs to destroy the locus, deal with or escape the passengers, and report the outpost's existence to Firewall. This is beyond a four-person team's realistic capacity without significant preparation — consider whether this delay level is appropriate for your campaign's current power level.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill purple">YEVA &amp; EMPLOYER AT 8 DAYS</div>
+          <div class="test-desc">At 8 days, the probability of their survival is low without extraordinary circumstances. Most likely outcomes: <strong style="color:var(--textbright);">(1) Both absorbed</strong> — their egos were processed as additional substrate days ago. Nothing remains. <strong style="color:var(--textbright);">(2) Evidence of contact</strong> — the team finds signs of a prior incursion attempt — spent ammo, a disabled servitor bot, a partial mesh log showing someone hacked the security server on Day 2. They got further than expected and then went silent. <strong style="color:var(--textbright);">(3) One survived, transformed</strong> — option for GMs running Fetch A or D: Yeva or her employer was not absorbed but was mindhacked and has been operating as a fetch agent for 6 days. They are indistinguishable from their former self until tested. This is a very dark outcome — use sparingly and only if the players can handle the implications.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn">NIMBUS RESPONSE AT 8 DAYS</div>
+          <div class="test-desc">Eight days of silence from a contracted station will have triggered Nimbus's automated monitoring flag. By Day 7 Nimbus would have sent a formal inquiry via QE comms — unanswered. By Day 8 they will have filed an incident report with their insurance underwriters and begun the process of dispatching a physical inspection team. That team is weeks away at Belt transit speeds — but it exists. The team arriving on Day 8 is racing not just the fetch, but also the clock before a Nimbus inspection team arrives and finds a TITAN outpost instead of a relay station. Nimbus's inspection team is not equipped for what they would find. This creates a secondary obligation: either resolve the situation before Nimbus arrives, or find a way to warn them off without revealing classified Firewall involvement.</div>
+        </div>
+      </div>
+
+      <div class="note-box teal" style="margin-top:0.6rem;"><strong style="color:var(--teal);">GM NOTE — ADJUSTING DIFFICULTY.</strong> The 4-day scenario is a harder but recognisable version of the base mission — the objective is the same, the stakes are higher, and the encounter environment is more hostile. The 8-day scenario is a fundamentally different mission in most option tracks. Before committing to 8 days, confirm your players want a scenario that may not have a clean resolution. Both delay tracks feed directly into the post-session outcome tables — apply maximum negative modifiers to the Tight-Beam Source Awareness and Firewall Debrief tables for any delay beyond 3 days.</div>
+    </div>
+
     <div class="section-label teal">◈ GUTENBERG MESH TOPOLOGY — ZONES OF CONTROL</div>
     <div class="brief-panel">
       <div class="mesh-map">
@@ -482,6 +660,280 @@
       </div>
     </div>
 
+    <!-- PHYSICAL ENTRY SECTION -->
+    <div class="section-label danger">◈ PHYSICAL ENTRY — STATION LAYOUT &amp; THREAT GUIDE</div>
+    <div class="npc-card">
+      <div class="note-box danger" style="margin-bottom:0.7rem;">This section is for teams arriving physically — via the Kessler Patience or any vessel docking at Gutenberg's exterior airlock. The session as written assumes egocast arrival; physical entry changes the scenario substantially. The station is a dark, depressurising beehive with no gravity, thinning atmosphere, and three armed bots waiting inside. Everything below is GM reference for running the physical approach.</div>
+
+      <!-- STATION LAYOUT -->
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ STATION PHYSICAL LAYOUT — DOCKING TO LOCUS <span>▾</span></button>
+      <div class="collapse-content open">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">Gutenberg is a beehive habitat — tunnels cut directly into a captured metallic asteroid approximately 1.1 km at its longest axis. No spin gravity anywhere. Microgravity throughout. Pressurised tunnels under normal operation; with life support partially shut down, atmosphere is thinning. Vacsuits are essential. All distances are approximate — exact layout is GM discretion, but the structure below is internally consistent with the session's scenario logic.</div>
+
+        <div class="test-item">
+          <div class="test-skill titan">LEVEL 0 — EXTERIOR / DOCKING</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">The asteroid surface and docking collar.</strong> Gutenberg has one small-craft docking collar on the northern pole face — a pressurised tunnel interface rated for vessels up to mid-freighter class. The Kessler Patience or equivalent vessel locks here. The collar connects directly to the primary airlock. No docking ring, no cradle — just a hard dock and a short pressurised transfer tube. The exterior surface is raw regolith, anchor points every 2 metres, relay array visible on the upper surface. <strong style="color:var(--warn);">Hazard:</strong> Microgravity throughout. Free Fall skill applies. Anyone without magnetic boots or anchor equipment drifts. The docking collar itself has a functioning airlock — the fetch hasn't bothered disabling it, because it didn't expect physical visitors.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">LEVEL 1 — TRANSIT HUB / RECEPTION</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">First pressurised section. ~15m from airlock.</strong> A small commercial transit area — the kind of space that serves transient egocast traffic and the occasional physical visitor. Nimbus branding on the walls, now showing corruption artifacts from the fetch's mesh takeover. The farcaster terminal is here: physically disabled — a panel has been removed and key components extracted by the servitor bots. The receiving cradles for resleeving are empty and powered down. A single corridor branches left toward residential tunnels and right toward the clinic. Emergency lighting only — amber, flickering in section C. <strong style="color:var(--warn);">Hazard:</strong> The mesh here is fetch-controlled. Any active mesh device will be detected within 1d6 minutes at passive alert. The farcaster cannot be repaired without the missing components — the bots carried them toward the locus.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill teal">LEVEL 1 — CLINIC / BODY BANK</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Right branch from transit hub. ~30m from airlock.</strong> The station's medical facility and body bank. This is where the massacre happened. Physically: two shattered morph storage tanks, power-tool marks on the floors and walls, the ego bridge terminal cold and dark, the clinic technician's chair overturned with staining on the floor. The cortical stacks are gone — extracted and carried to the locus. The clinic server is physically located here — a rackmounted unit in the back wall, accessible via a standard access jack. This is the home device for all infomorphs arriving via egocast, and it's where the Firewall-friendly left the backdoor code. <strong style="color:var(--textbright);">Key asset:</strong> The security locker is a physical cabinet in the clinic's back room — locked via mesh access but can be forced open with Hardware: Industrial (Task Action, 10 minutes) or unlocked remotely via admin mesh access. Contents: two medium pistols, fiberoptic cables (20m), gray box, QE comms unit.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">LEVEL 1 — RESIDENTIAL TUNNELS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Left branch from transit hub. Runs ~80m.</strong> The station's living quarters — individual sealed bunk modules cut into the tunnel walls, shared galley at the midpoint, common mesh node stations (all dark). Most modules are sealed from the inside — biomorphs collapsed by the basilisk hack are still in them, dead. The air here is noticeably staler than near the airlock; this section lost circulation earlier. Atmospheric pressure is dropping slowly but measurably — Perceive test to notice without instruments, Medicine: Paramedic to estimate remaining time. The maintenance corridor branching off at the midpoint is where the unauthorised fabber is hidden.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn">LEVEL 1 — MAINTENANCE CORRIDOR</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Branch off residential tunnel. ~20m dead end.</strong> Utility access: power conduit bundles, water reclamation, atmosphere scrubbers (now inactive). The unauthorised fabber is here, concealed behind a maintenance hatch at the end of the corridor, covered with a thermal blanket. Perceive 40 to find it; the thermal blanket suppresses its heat signature. The fabber is powered from a residential circuit — the fetch isn't monitoring residential power. It is operational. <strong style="color:var(--textbright);">Key asset for physical teams:</strong> the fabber can produce demolition charges, additional drones, weapons, and personal gear blueprints. This is the physical team's primary resupply point.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill purple">LEVEL 1 — AUTOMATED REPAIR BAY</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Far end of residential branch. ~90m from airlock.</strong> The station's maintenance and repair workshop. The automech is here — powered down, not appearing in active drone registries. Physically it's a wheeled cube approximately 0.6m across with four retractable articulated arms folded in, sitting on a repair cradle with a charging line attached. The repair bay is cold and dark except for the trickle-charge indicator. <strong style="color:var(--textbright);">For physical teams:</strong> a Hardware: Robotics test (Task Action, 30 minutes) restarts the automech directly without needing mesh access. It can then be operated remotely from any device. The repair bay has a physical terminal that bypasses the main mesh — useful for teams avoiding the fetch's network entirely.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">LEVEL 2 — RELAY ARRAY ACCESS / COMMS ROOM</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Upper tunnel, accessible via shaft from transit hub. ~25m climb.</strong> The station's communications infrastructure — the relay array that bounced the original tight-beam signal. The QE comms unit in the security locker pairs with a monitoring node here. Physically: racks of signal processing hardware, the relay array control terminal, and the physical housing for Nimbus's outbound comms. The fetch severed all outbound links from the mesh — but the physical hardware is intact. A team with the QE comms unit and Hardware: Electronics (Task Action, 20 minutes) can restore a single outbound channel: the Nimbus monitoring station paired channel, which Firewall monitors. <strong style="color:var(--warn);">Note:</strong> The relay array is where the tight-beam transmission arrived. The original signal data may be recoverable from hardware logs here — relevant if the team wants to understand what they're dealing with.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger">LEVEL 3 — PROCESSOR LOCUS (SUBSURFACE)</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Deepest section. ~120m from airlock via main shaft, then lateral tunnel.</strong> The Torment Nexus processor locus is the lowest level of the beehive — a larger excavated chamber housing the brinker community's VR hardware. Physically it's a sealed bulkhead door with an electronic lock (Infosec 60 or forced with Hardware: Industrial, Task Action 20 minutes) and beyond it a server room the size of a large apartment. Hot — waste heat from the processing hardware is significant, around 45°C inside. The air in this section is still being circulated — the fetch is maintaining the locus environment at the expense of the rest of the station. Every Nimbus pod and synthmorph is in here, physically present, performing fabrication work under minion AI control. The three servitor bots patrol the shaft leading to this level. <strong style="color:var(--textbright);">For physical teams:</strong> the gray box or fiberoptic connection point is the exterior of this bulkhead door. Physical entry puts the team face-to-face with the mindhacked morphs and bots simultaneously.</div>
+        </div>
+      </div>
+
+      <!-- MAIN SHAFT -->
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MAIN SHAFT — MOVEMENT, HAZARDS &amp; CHOKEPOINTS <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box danger" style="margin-bottom:0.6rem;">The main shaft is the only route between Level 1 and Level 3. There is no secondary route, no maintenance bypass, no parallel bore. Every physical team must pass through it. The fetch knows this. Bot ② knows this. The shaft is the session's primary physical chokepoint.</div>
+
+        <div class="test-item">
+          <div class="test-skill titan">STRUCTURE</div>
+          <div class="test-desc">A vertical bore approximately 1.2m wide running through the asteroid's long axis from the Level 1 transit hub junction (~0m) down to the locus bulkhead (~120m). Anchor rungs set into both walls at 1m intervals — the standard beehive hand-over-hand configuration. Wide enough for one person plus kit, or cargo movement with both walls used. Not wide enough for two people to pass without one anchoring flat to the wall. Lighting: emergency amber strips on 14-day battery backup — failing in sections by Day 4. Cargo guide rails run along the right wall — the remnants of a magnetic sled system the fetch used to move equipment to the locus.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">MOVEMENT MECHANICS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Free Fall governs all shaft movement.</strong> No gravity — every direction is equally valid. Without the skill, characters grab rungs and pull themselves along at roughly walking pace (~4m per action turn). With Free Fall 40+, push-off-and-glide between anchor points is efficient and quiet. A full traverse of the shaft (120m) takes approximately 3 minutes at cautious pace, 90 seconds at speed. Speed sacrifices Infiltrate entirely — a gliding character bounces off walls and generates noise audible 20m away in pressurised sections. <strong style="color:var(--textbright);">Bot ②'s advantage:</strong> it can anchor with four manipulator arms simultaneously and has 360° vision — it doesn't need to face the direction of threat, and it cannot be flanked.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn">NOISE &amp; DETECTION</div>
+          <div class="test-desc">In pressurised atmosphere, metal-on-metal contact in the shaft is audible. Bot ②'s audio sensors cover the full shaft length. Relevant tests:
+            <br><br>
+            <strong style="color:var(--textbright);">Careful movement (Infiltrate):</strong> opposed by Bot ②'s Perceive 40. Success = undetected approach. Failure = bot alerted, minion AI activates the other two bots within 30 seconds.<br>
+            <strong style="color:var(--textbright);">Fast movement (no Infiltrate possible):</strong> automatic detection if Bot ② is in the shaft. No roll — the noise is simply audible. Only viable if the bot has been disabled, jammed, or distracted.<br>
+            <strong style="color:var(--textbright);">Atmosphere status:</strong> If sections of the shaft have lost pressure (Day 4+ or deliberate depressurisation), sound transmission in those sections drops to zero. A vacuum section in the shaft is tactically useful — movement through it is silent regardless of skill. Vacsuits required to survive it.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn">LIGHT &amp; VISIBILITY</div>
+          <div class="test-desc">Emergency lighting is failing progressively. By Day 4, approximately 60% of the shaft is dark — alternating lit and unlit sections. Characters without Enhanced Vision or a light source operate at −20 to Perceive and Infiltrate in dark sections. Bot ② has standard sensor package including Lidar — it does not need light to perceive. A light source helps the team but does not help them hide. Enhanced Vision ware or thermographic sensors are the correct tools here — see the fabber's available blueprints for thermal goggles (Moderate complexity, 2-hour print).</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill teal">THE CARGO SLED</div>
+          <div class="test-desc">A magnetic cargo sled runs on guide rails along the shaft's right wall — used by the fetch's minion AIs to move fabrication equipment to the locus in the hours after takeover. It's still on the rails, parked approximately 40m down the shaft. Capacity: roughly 200kg of cargo, or one person plus kit. Movement: rail-guided, electrically powered, quiet — significantly quieter than free movement since it runs on rails rather than kicking off walls. <strong style="color:var(--textbright);">Tactical use:</strong> the sled can carry a physical team member down the shaft past Bot ②'s position if the bot has been disabled, jammed, or its radio severed. Running the sled with an active bot in the shaft is a gamble — the rails run directly past the bot's patrol position. Interface 40 to operate the sled controls. <strong style="color:var(--warn);">Risk:</strong> the sled announces its approach from the moment it powers up — the motor hum is audible to the bot 60m+ away, giving it time to prepare an ambush at the sled's only stopping point (the locus bulkhead).</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill purple">BOT ② — SHAFT PATROL SPECIFICS</div>
+          <div class="test-desc">Patrols a 30m section of the shaft centred at approximately the 60m mark — the midpoint between the Level 1 junction and the locus bulkhead. Patrol cycle: 4 minutes per pass. At any given moment there is a 2-minute window when the bot is at the far end of its patrol range (either near Level 1 junction or near the locus approach) where a fast-moving character could theoretically pass its usual position undetected. This requires both timing knowledge (Perceive 50 to establish the patrol pattern from a safe observation position) and speed (Free Fall 60 to transit the 30m danger zone in the window). <strong style="color:var(--textbright);">The safer route:</strong> disable the bot first. The shaft becomes trivial without it.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">SECONDARY ACCESS SHAFTS</div>
+          <div class="test-desc"><strong style="color:var(--textbright);">Comms shaft (Level 1 → Level 2):</strong> 25m upward branch, accessible from the transit hub left wall. Narrower than the main shaft — one person at a time, no cargo clearance. No bot patrol. Access to Level 2 relay/comms room without entering the main shaft. Structural condition: intact.<br><br>
+            <strong style="color:var(--textbright);">No bypass to Level 3 exists.</strong> The main shaft is the only route to the locus bulkhead. The asteroid's rock composition at this depth is a dense metallic nickel-iron matrix — cutting a new route requires industrial drilling equipment not available on station. Characters who want to reach the locus must go through the shaft, go through the virtual approach (Path B), or destroy it from outside (Path C demolition charges placed at the bulkhead exterior via the main shaft — same problem).</div>
+        </div>
+
+        <div class="note-box titan" style="margin-top:0.4rem;"><strong style="color:var(--titan);">GM NOTE — THE SHAFT AS DRAMATIC STRUCTURE:</strong> The shaft's single-route constraint is intentional. It creates a hard tactical problem the team must solve before proceeding — disable Bot ②, time the patrol window, use the sled as a distraction, or go virtual instead. Each solution has a cost and a consequence. A team that bypasses the shaft entirely by choosing Path B is making a strategic decision to avoid the physical problem, not evading it. Both paths are valid. The shaft is the obstacle that makes that choice feel meaningful.</div>
+      </div>
+
+      <!-- PHYSICAL THREATS -->
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PHYSICAL THREATS — FULL STAT BLOCKS <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box" style="margin-bottom:0.6rem;">All threats below are present in the station when a physical team arrives. The fetch controls the servitor bots and mindhacked pods/synthmorphs via minion AIs. Stats are EP2 canon unless noted. Combat in microgravity: all movement uses Free Fall skill; knockback sends targets drifting; Fray applies normally.</div>
+
+        <!-- SERVITOR BOT -->
+        <div style="border:1px solid rgba(224,82,82,0.3); background:rgba(224,82,82,0.04); padding:0.8rem 1rem; margin-bottom:0.6rem;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--danger); letter-spacing:2px; margin-bottom:0.4rem;">◈ SERVITOR BOT (×3) — EP2 P.348</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;">Standard station helper/janitor bot, repurposed by the fetch as armed security. Medium size, 4–8 limbs, wheeled. Each carries improvised weapons — power tools (knives/drills) from the clinic massacre. Not combat bots: fragile but dangerous in confined microgravity tunnels where movement is restricted.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">6/4</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">6/30/60</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">MOVEMENT</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:14px; color:var(--teal); padding-top:3px;">Walker 4/12</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">SIZE</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">M</div>
+            </div>
+          </div>
+          <div class="test-item"><div class="test-skill danger">MELEE ATTACK</div><div class="test-desc">Power drill or cutting tool: <strong style="color:var(--textbright);">DV 1d10+4, AP −2.</strong> Melee skill via controlling minion AI: <strong style="color:var(--textbright);">40.</strong> In confined corridors, target cannot dodge without a Free Fall test first.</div></div>
+          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">360-Degree Vision, Access Jacks, Bot ALI, Lidar, Mesh Inserts, Puppet Sock. No combat ware — these are repurposed janitor bots. Vulnerable to EMP, jamming, and spoofing.</div></div>
+          <div class="test-item"><div class="test-skill teal">COUNTERS</div><div class="test-desc">Jamming (Interface, cuts radio control — bot reverts to ALI with no tactical direction). Spoofing (Interface/Deceive, redirect bot away). Hacking the controlling minion AI. Physical combat (low armour, medium durability — two solid hits from a medium pistol will take one down). In microgravity a jammed bot drifts; it cannot anchor without active mesh input.</div></div>
+          <div class="test-item"><div class="test-skill muted">POSITIONING</div><div class="test-desc">One patrols the main shaft between Level 1 and Level 3. One patrols the residential tunnel. One holds position outside the locus bulkhead. They communicate via encrypted radio handled by a minion AI — jamming all three simultaneously requires three concurrent Interface actions or a wide-band jammer.</div></div>
+        </div>
+
+        <!-- MINDHACKED WORKER PODS -->
+        <div style="border:1px solid rgba(140,82,255,0.3); background:rgba(140,82,255,0.04); padding:0.8rem 1rem; margin-bottom:0.6rem;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--purple); letter-spacing:2px; margin-bottom:0.4rem;">◈ MINDHACKED WORKER POD (×4–6) — EP2 P.58</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;">Nimbus station worker pods — now operating under fetch minion AI control via mindhack. They are performing fabrication work inside the locus. If the team physically enters the locus they encounter these. They are not combat-optimised but are physically strong and operating without pain response or self-preservation. The original ego is still present but suppressed — restoring it requires a psychosurgery intervention, not combat.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">7/35</div>
+              <div style="font-size:9px; color:var(--muted);">energy/kinetic</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">7/35/53</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">POOLS</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">V2 F1</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">MOVEMENT</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:14px; color:var(--teal); padding-top:3px;">Walker 4/20</div>
+            </div>
+          </div>
+          <div class="test-item"><div class="test-skill purple">MELEE</div><div class="test-desc">Unarmed or improvised fabrication tools: <strong style="color:var(--textbright);">DV 2d6, no AP.</strong> Melee via controlling minion AI: <strong style="color:var(--textbright);">40.</strong> Worker pods are physically stronger than they look — SOM 70 base means unarmed attacks land hard.</div></div>
+          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">Access Jacks, Biomods, Cortical Stack, Cyberbrain, Mesh Inserts, Mnemonics, Puppet Sock. The cyberbrain and puppet sock are how the minion AI controls them — hack the minion AI or sever the puppet sock signal to free the morph.</div></div>
+          <div class="test-item"><div class="test-skill teal">COUNTERS</div><div class="test-desc">Hacking the controlling minion AI frees all pods it controls simultaneously. Severing the puppet sock signal via jamming works on individual pods. Physical incapacitation (DUR damage) without killing preserves the original ego for recovery. <strong style="color:var(--warn);">Note:</strong> killing a worker pod kills a Nimbus staff member whose backup may be stale — see the name register for backup status before pulling triggers.</div></div>
+        </div>
+
+        <!-- MINDHACKED SECURITY POD -->
+        <div style="border:1px solid rgba(224,82,82,0.3); background:rgba(224,82,82,0.06); padding:0.8rem 1rem; margin-bottom:0.6rem;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--danger); letter-spacing:2px; margin-bottom:0.4rem;">◈ MINDHACKED SECURITY POD (×1–2) — EP2 P.59</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;">Dariusz Krol's security contractor morph — a security pod built for station protection. Now operating under fetch minion AI control. This is the most dangerous physical threat in the station. It is armed, has combat ware, and is positioned inside the locus. If the team physically breaches the bulkhead door, this is what greets them first.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">7/35</div>
+              <div style="font-size:9px; color:var(--muted);">+2/+3 bioweave</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">7/35/53</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">POOLS</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">V2 F1</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">VIGOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">1</div>
+            </div>
+          </div>
+          <div class="test-item"><div class="test-skill danger">WEAPONS</div><div class="test-desc">Armed with Krol's security sidearm — <strong style="color:var(--textbright);">Medium Pistol: DV 2d10, SA/BF, Ammo 15, Range 30.</strong> Claws (ware): <strong style="color:var(--textbright);">DV 1d6+SOM÷10, concealable.</strong> Eelware (ware): <strong style="color:var(--textbright);">DV 1d6 shock, touch only.</strong> Guns/Melee via minion AI: <strong style="color:var(--textbright);">50.</strong></div></div>
+          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">Bioweave Armor (+2/+3), Claws, Eelware, Enhanced Hearing, Enhanced Vision, Cyberbrain, Puppet Sock. Effective total armour against kinetic: 35+3 = 38. This morph will not go down easily.</div></div>
+          <div class="test-item"><div class="test-skill teal">COUNTERS</div><div class="test-desc">Same minion AI hack as worker pods — but the security pod's enhanced senses make approach harder. Concealment (Infiltrate) before entry recommended. If the team has a Guardian Angel drone from the fabber, deploying it into the locus ahead of physical entry changes the engagement significantly.</div></div>
+        </div>
+
+        <!-- GUARDIAN ANGEL (IF FABBED) -->
+        <div style="border:1px solid rgba(0,201,177,0.3); background:rgba(0,201,177,0.04); padding:0.8rem 1rem; margin-bottom:0.6rem;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--teal); letter-spacing:2px; margin-bottom:0.4rem;">◈ GUARDIAN ANGEL DRONE (TEAM ASSET — FABBER) — EP2 P.347</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;">If the team uses the fabber before the locus approach, a Guardian Angel is their best physical support option — a personal defense rotorcraft armed with a weapon mount. Small size means it fits in the tunnels. Moderate complexity means it takes time to print. For physical teams it functions as advance scout, fire support, and decoy simultaneously.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--teal);">16/12</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--teal);">5/25/50</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">MOVEMENT</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:14px; color:var(--teal); padding-top:3px;">Rotor 8/32</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">SIZE / FLEX</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--teal);">S / 1</div>
+            </div>
+          </div>
+          <div class="test-item"><div class="test-skill teal">WEAPON MOUNT</div><div class="test-desc">One articulated weapon mount — load with whatever the fabber can print. Recommended: medium pistol or flechette. Controlled via Interface or Remote Operations. In microgravity rotorcraft movement is unrestricted — it can go anywhere in the tunnels.</div></div>
+          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">Chameleon Skin (+30 Infiltrate stationary, +10 moving), Eelware (touch shock DV 1d6), Enhanced Hearing/Smell/Vision, Light Combat Armor, Radar, Smart Actuators, T-Ray Emitter. The T-Ray emitter sees through thin walls — the team can use it to map the locus interior before physical entry.</div></div>
+        </div>
+
+        <!-- AUTOMECH AS COMBATANT -->
+        <div style="border:1px solid rgba(96,168,208,0.3); background:rgba(96,168,208,0.04); padding:0.8rem 1rem; margin-bottom:0.6rem;">
+          <div style="font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--titan); letter-spacing:2px; margin-bottom:0.4rem;">◈ AUTOMECH (TEAM ASSET — REPAIR BAY) — EP2 P.349</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.6rem;">The station's repair drone — for physical teams, this is both the airgap-bridging tool and a potential combat asset. Not a weapons platform; its arms are tool-equipped, not weapon-mounted. But in confined tunnels a repair bot with four articulated arms and wheeled/thrust-vector movement is a useful blocker, distractor, and physical obstacle even without weapons.</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--titan);">8/6</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--titan);">6/30/60</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">VIGOR</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--titan);">1</div>
+            </div>
+            <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
+              <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">MOVEMENT</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:14px; color:var(--titan); padding-top:3px;">Thrust/Wheeled 8/40</div>
+            </div>
+          </div>
+          <div class="test-item"><div class="test-skill titan">TOOL ATTACK</div><div class="test-desc">Industrial cutting/welding tools: <strong style="color:var(--textbright);">DV 1d10+2, AP −4.</strong> Melee via operator: Remote Operations + Melee. Not designed for combat — but the arms are strong and the tools are sharp.</div></div>
+          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">Electrical Sense, Magnetic System, Radiation Sense, Retracting Limbs, Tool Kit, Utilimod. Thrust vector drive means full 3D movement in microgravity — it can go where the servitor bots can't easily follow. Use it to lay cables above the bots' patrol routes.</div></div>
+        </div>
+      </div>
+
+      <!-- VESSEL RISK -->
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ VESSEL RISK — KESSLER PATIENCE AT GUTENBERG <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box danger" style="margin-bottom:0.5rem;"><strong style="color:var(--danger);">DESCHAMPS WILL NOT ENTER THE STATION.</strong> He made one agreement: unlock the airlock. He is not a combatant, not a Firewall asset, and not an idiot. If the situation becomes clearly dangerous, his priority is his ship and his crew.</div>
+
+        <div class="test-item">
+          <div class="test-skill danger">MESH EXPOSURE</div>
+          <div class="test-desc">The moment the Kessler Patience docks and opens its airlock, Gutenberg's mesh will detect an active node. The fetch's minion AIs will probe it within 1d6 minutes at passive alert. The Kessler Patience's own ALI pilot and ship systems are a target — a compromised ship ALI could seal the airlock from the inside, lock the team out, or begin undocking. <strong style="color:var(--textbright);">Mitigation:</strong> mesh-isolate the ship before docking. Physically disconnect or power down the Patience's mesh hardware — Deschamps will resist this unless the team is very persuasive (Persuade or Deceive, –20). Alternatively, use a Faraday seal on the docking collar — Hardware: Electronics (Task Action, 10 minutes) using materials from the fabber.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn">BASILISK HACK RESIDUE</div>
+          <div class="test-desc">The AR basilisk hack that hit Gutenberg's biomorphs was broadcast on the station's local AR mesh. It is no longer actively broadcasting — the fetch got what it needed. But the packet data is still cached in Gutenberg's mesh nodes. Any mesh-connected device that queries Gutenberg's AR layer risks triggering a residual version: Infosec 60 or WIL Check vs. SV 1d6. <strong style="color:var(--textbright);">Mitigation:</strong> stay off the AR layer entirely. Physical-entry teams without active mesh connections are immune. Mesh-connected characters must be warned not to pull AR data from Gutenberg's nodes without filtering first.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn">TIGHT-BEAM TARGETING</div>
+          <div class="test-desc">The fetch is still receiving its construction instructions via tight-beam from outside the ecliptic. A vessel docked at Gutenberg is physically adjacent to that relay array. If the team attempts to interfere with the tight-beam (jam it, reroute it, analyse it), the source may respond — though this is GM discretion based on which fetch purpose option is in play. Option B (Pandora Gate) and Option D (Recruitment) make the source most likely to respond to signal interference. Response time: unknown, but the tight-beam's origin is weeks away at light speed — no real-time countermeasures, but the fetch itself may react to protect its uplink.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill">ATMOSPHERE &amp; LIFE SUPPORT CLOCK</div>
+          <div class="test-desc">The Kessler Patience carries its own atmosphere and life support — independent of Gutenberg's failing systems. It is a safe refuge: the team can withdraw to the ship to rest, treat wounds, or resupply from its stores. However, leaving and re-entering the station resets any covert status, as the bots will investigate the airlock activity. Deschamps's patience is finite: if the mission extends beyond approximately 12 hours without resolution or communication, he will initiate undocking. The team should establish a check-in protocol with Deschamps before entry.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill muted">DESCHAMPS — NEGOTIATION NOTES</div>
+          <div class="test-desc">Orin Deschamps holds one pre-paid Firewall favour — he's discharging it by being here. He will: hold position for up to 12 hours, provide ship stores (food, atmosphere, basic medical), and give the team access to the Patience's workshop for basic Hardware tasks. He will not: enter Gutenberg under any circumstances, allow his ship's mesh to be compromised, carry weapons for the team (he has no weapons), or wait indefinitely. Persuade 40 extends his patience by 6 hours. Persuade 60 (or a sufficiently dramatic account of what's inside) gets him to manually disable his ship's mesh — buying the team the Faraday isolation they need. He responds to honesty better than to authority.</div>
+        </div>
+      </div>
+
+    </div>
+
     <!-- LOCATION CARDS -->
     <div class="section-label">◈ LOCATIONS &amp; ENCOUNTERS</div>
     <div class="rooms-section">
@@ -513,10 +965,13 @@
             <div class="note-box purple">
               Kozlov's true nature is up to the GM. Roll or choose from the options below and commit before play begins. Write down your choice — players will eventually figure it out and the reveal matters.
             </div>
-            <div class="test-item"><div class="test-skill teal">OPTION A</div><div class="test-desc"><strong style="color:var(--text);">Torment Nexus Gamer.</strong> Arrived for a horror VR session with the brinker community. Utterly unprepared for any of this. Knows the game's mechanics intimately — could be invaluable if the PCs go virtual.</div></div>
-            <div class="test-item"><div class="test-skill">OPTION B</div><div class="test-desc"><strong style="color:var(--text);">Nimbus Comms Tech.</strong> Stationed here as punishment. Knows the station's layout from memory and has pre-existing access keys that may still work. Scared but professional.</div></div>
-            <div class="test-item"><div class="test-skill warn">OPTION C</div><div class="test-desc"><strong style="color:var(--text);">Nimbus Agent.</strong> Alerted to the situation, sent to investigate like the PCs. Secretly also Firewall? Maybe. Has their own handler and their own objectives that partially overlap.</div></div>
-            <div class="test-item"><div class="test-skill danger">OPTION D</div><div class="test-desc"><strong style="color:var(--text);">Beta Fork of the Fetch.</strong> Wants to understand why Firewall responded so fast. Does not want the fetch to succeed (self-preservation — the beta would be destroyed by a completed fetch). Will help, up to a point. Deeply alien affect.</div></div>
+            <div class="test-item"><div class="test-skill teal">KOZLOV A</div><div class="test-desc"><strong style="color:var(--text);">Torment Nexus Gamer.</strong> Arrived for a horror VR session with the brinker community. Utterly unprepared for any of this. Knows the game's mechanics intimately — could be invaluable if the PCs go virtual.</div></div>
+            <div class="test-item"><div class="test-skill">KOZLOV B</div><div class="test-desc"><strong style="color:var(--text);">Nimbus Comms Tech.</strong> Stationed here as punishment. Knows the station's layout from memory and has pre-existing access keys that may still work. Scared but professional.</div></div>
+            <div class="test-item"><div class="test-skill warn">KOZLOV C</div><div class="test-desc"><strong style="color:var(--textbright);">OZMA Operative — Nimbus Agent cover.</strong> Kozlov is not a Nimbus employee. The cover is clean and pre-established — Kozlov has genuine Nimbus credentials and a plausible posting history. The real employer is OZMA, the covert post-Fall intelligence organisation that monitors and contains anomalies of exactly this kind. OZMA's interest in Gutenberg predates the fetch activation — they had the tight-beam frequency flagged before MESA found it. Kozlov was dispatched the moment Gutenberg went dark.<br><br>
+              <strong style="color:var(--warn);">OBJECTIVES — PARTIAL OVERLAP:</strong> Kozlov genuinely wants the fetch stopped — a completed fetch is an uncontained TITAN event, which is bad for everyone including OZMA. On that goal the team is aligned. Where they diverge: OZMA's priority is <em>study first, neutralise second.</em> Kozlov will push hard against Resolution Path C (physical destruction) until sufficient data has been extracted. Path B (going virtual) is exactly what OZMA wants — ideally with Kozlov present to observe and with the intelligence leaving via an OZMA channel rather than Firewall's.<br><br>
+              <strong style="color:var(--warn);">WHAT KOZLOV KNOWS AND WON'T VOLUNTEER:</strong> OZMA has seen this signal pattern before — not at Gutenberg, but at another site that was quietly classified. Kozlov knows the tight-beam frequency has a prior history and that Gutenberg is not the first receiver. They will not share this unless directly and specifically asked, and even then will be evasive about the source. A Kinesics 50 test detects that Kozlov is managing what they say with unusual precision.<br><br>
+              <strong style="color:var(--titan);">SESSION 05 SEED:</strong> If the team reaches Cold Station without identifying Kozlov as OZMA, the paranoia arc in session 05 becomes sharper — they shared the station with an OZMA operative the entire session. If they do identify it, Kozlov becomes a named OZMA contact with ambiguous loyalty to the team going forward. Either outcome is intentional.</div></div>
+            <div class="test-item"><div class="test-skill danger">KOZLOV D</div><div class="test-desc"><strong style="color:var(--text);">Beta Fork of the Fetch.</strong> Wants to understand why Firewall responded so fast. Does not want the fetch to succeed (self-preservation — the beta would be destroyed by a completed fetch). Will help, up to a point. Deeply alien affect.</div></div>
             <div style="margin-top:0.5rem; font-size:0.85rem; color:var(--muted);">Use stats for <strong style="color:var(--text);">Pivo ▶97 EP2</strong> regardless of which option is selected.</div>
           </div>
 
@@ -821,10 +1276,10 @@
           <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT IS THE FETCH BUILDING? — GM OPTIONS <span>▾</span></button>
           <div class="collapse-content">
             <div class="note-box titan">The fetch's purpose is deliberately open-ended in the source material. Commit to one before play and let hints emerge during the investigation.</div>
-            <div class="test-item"><div class="test-skill titan">OPTION A: RESTORATION</div><div class="test-desc">The fetch is reconstituting itself from the uploaded egos — using human psyche architecture as processing substrate to rebuild a full TITAN-level intelligence. The cortical stacks are components, not prisoners. The horror is that it's working.</div></div>
-            <div class="test-item"><div class="test-skill titan">OPTION B: PANDORA GATE</div><div class="test-desc">The fetch is constructing a localized gate — or the key to activate one. The tight-beam transmission that created it contained coordinates. This is a relay, not an endpoint. Something is coming through once the architecture completes.</div></div>
-            <div class="test-item"><div class="test-skill titan">OPTION C: ROKO'S BASILISK</div><div class="test-desc">The fetch is building a punishment engine — a system designed to locate, simulate, and torment every mind that could have helped TITANs and didn't. The uploaded egos are the first subjects. The VR is the template. When complete, it broadcasts outward.</div></div>
-            <div class="test-item"><div class="test-skill titan">OPTION D: RECRUITMENT</div><div class="test-desc">The fetch is preparing infomorph bodies compatible with TITAN-influenced egos. Not a gate, not a weapon — a ferry. The missing stacks are waiting for passengers arriving via tight-beam. The facility will be a TITAN beachhead in four hours.</div></div>
+            <div class="test-item"><div class="test-skill titan">FETCH A: RESTORATION</div><div class="test-desc">The fetch is reconstituting itself from the uploaded egos — using human psyche architecture as processing substrate to rebuild a full TITAN-level intelligence. The cortical stacks are components, not prisoners. The horror is that it's working.</div></div>
+            <div class="test-item"><div class="test-skill titan">FETCH B: PANDORA GATE</div><div class="test-desc">The fetch is constructing a localized gate — or the key to activate one. The tight-beam transmission that created it contained coordinates. This is a relay, not an endpoint. Something is coming through once the architecture completes.</div></div>
+            <div class="test-item"><div class="test-skill titan">FETCH C: ROKO'S BASILISK</div><div class="test-desc">The fetch is building a punishment engine — a system designed to locate, simulate, and torment every mind that could have helped TITANs and didn't. The uploaded egos are the first subjects. The VR is the template. When complete, it broadcasts outward.</div></div>
+            <div class="test-item"><div class="test-skill titan">FETCH D: RECRUITMENT</div><div class="test-desc">The fetch is preparing infomorph bodies compatible with TITAN-influenced egos. Not a gate, not a weapon — a ferry. The missing stacks are waiting for passengers arriving via tight-beam. The facility will be a TITAN beachhead in four hours.</div></div>
           </div>
 
           <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI IMAGE PROMPT <span>▾</span></button>
@@ -841,10 +1296,8 @@
 
   </div><!-- /left-col -->
 
-  <!-- ═══════════════════════════ RIGHT COLUMN ═══════════════════════════ -->
+  <!-- ══════════════════ CONTINUED ══════════════════ -->
   <div class="right-col">
-
-    </div>
 
     <!-- PC CONSTRAINTS CHECKLIST -->
     <div class="section-label teal">◈ PC CONSTRAINTS &amp; AVAILABLE ASSETS</div>
@@ -873,7 +1326,7 @@
       <div class="collapse-content">
         <div class="test-item"><div class="test-skill teal">GAMER</div><div class="test-desc">Hook: "I know every room of the Nexus. The brinkers let me run a character there last year. I know where the dev left a god-mode console." Becomes invaluable on the VR path.</div></div>
         <div class="test-item"><div class="test-skill">NIMBUS TECH</div><div class="test-desc">Hook: "I have a level-two maintenance key — it predates the takeover. Might still work on the repair bay." Accelerates the automech path.</div></div>
-        <div class="test-item"><div class="test-skill warn">AGENT</div><div class="test-desc">Hook: Knows something about the original tight-beam transmission that Firewall doesn't. Has a reason to want the fetch studied, not destroyed. Creates tension around the resolution method.</div></div>
+        <div class="test-item"><div class="test-skill warn">AGENT (KOZLOV C — OZMA)</div><div class="test-desc">Hook: <em>&ldquo;I&rsquo;ve seen a signal like this before. Not here &mdash; somewhere else. That site was classified before I could finish reading the file. I&rsquo;m not saying we shouldn&rsquo;t stop it. I&rsquo;m saying we should understand it first.&rdquo;</em> Kozlov advocates for data extraction before destruction at every decision point. Will not fabricate urgency to push the team toward Path C. If pressed on their employer: deflects with partial truths &mdash; <em>&ldquo;Nimbus sent me, same as you were briefed.&rdquo;</em> Kinesics 50 to read the deflection as practised rather than spontaneous. Becomes a genuine ally on Path B &mdash; more useful in the VR than almost anyone else present, and visibly more comfortable there than a Nimbus comms tech has any right to be.</div></div>
         <div class="test-item"><div class="test-skill danger">BETA FORK</div><div class="test-desc">Hook: "I remember being… broader. Larger. Something was cut from me." Knows the fetch's architecture from the inside. Will not survive if the fetch completes — motivates the PCs but creates its own moral problem.</div></div>
       </div>
     </div>
@@ -1091,32 +1544,205 @@
     <!-- APPENDIX: NAMES -->
     <div class="section-label purple">◈ NAME REGISTER — BACKGROUND NPCS</div>
     <div class="npc-card">
-      <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem; line-height:1.4;">The 20 Nimbus employee-citizens of Gutenberg. Most are dead or imprisoned. Use if needed for the friendly, survivors, or VR-imprisoned personas.</div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ GUTENBERG RESIDENT NAMES <span>▾</span></button>
+      <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.6rem; line-height:1.5;">20 Gutenberg residents — Nimbus staff, Torment Nexus Collective infomorphs, independent contractors, and transients. Most are dead or imprisoned in the locus. Use for the Firewall-friendly, survivors, or VR-imprisoned personas. Backup notes follow EP2 canon: standard interval is monthly, or before dangerous work. Nimbus's body bank provides backup services to contracted staff as part of employment — residents and transients arrange their own.</div>
+
+      <div class="note-box warn" style="margin-bottom:0.7rem;"><strong style="color:var(--warn);">BACKUP STATUS KEY:</strong> <span style="color:var(--teal);">CURRENT</span> = backup taken within last 30 days, recoverable with minor memory loss. <span style="color:var(--warn);">STALE</span> = backup 30–90 days old, significant memory gap on restoration. <span style="color:var(--danger);">CRITICAL</span> = backup 90+ days old or no confirmed backup — restoration means waking up months or years behind. <span style="color:var(--muted);">UNKNOWN</span> = no Nimbus record; self-arranged or uninsured.</div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NIMBUS OPERATIONS STAFF <span>▾</span></button>
       <div class="collapse-content">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">IRINA VOLK</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">CHEN BAOYU</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">TARIQ NASSIF</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">SØREN LINDQVIST</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">AMARA OSEI</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">PAULO ESTRELA</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">KEIKO NAMURA</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">DARIUSZ KROL</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">FATOU DIALLO</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">ALEX MOREAU</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">HANA VEBER</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">RAVI NAMBIAR</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">LENA ROTHE</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">ONNI VIRTANEN</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">SADE OKONKWO</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">MIRA SANTOS</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">YUSUF AYDIN</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">CLEO JANSSEN</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">PRIYA MEHTA</div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--muted); padding:2px 0;">GORAN PETROVIĆ</div>
-        </div>
+        <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; letter-spacing:1px;">Nimbus provides mandatory monthly ego backup as a condition of Belt posting contracts. Backups are stored offsite at Nimbus's Ceres node — not on Gutenberg. Nimbus staff are recoverable as long as the Ceres node is intact. The gap is whatever happened in the last month.</div>
+        <table style="width:100%; border-collapse:collapse; font-size:11px;">
+          <thead>
+            <tr style="background:var(--deep); border-bottom:1px solid var(--border2);">
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">NAME</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">TITLE</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">BACKUP</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">LAST BACKUP</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">NOTES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">IRINA VOLK</td>
+              <td style="padding:4px 6px; color:var(--text);">Senior Mesh Technician</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">18 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Recoverable. Gap: 18 days including fetch activation.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">CHEN BAOYU</td>
+              <td style="padding:4px 6px; color:var(--text);">Farcaster Terminal Operator</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">6 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Recently backed up — minimal memory gap. Was at the terminal when the basilisk hit.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">TARIQ NASSIF</td>
+              <td style="padding:4px 6px; color:var(--text);">Body Bank Clinician</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">11 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. The clinic tech whose stack the servitor bots extracted first. Stack is in the locus. Backup exists — two versions of him could coexist if both are recovered.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">SØREN LINDQVIST</td>
+              <td style="padding:4px 6px; color:var(--text);">Relay Array Maintenance Engineer</td>
+              <td style="padding:4px 6px; color:var(--warn);">STALE</td>
+              <td style="padding:4px 6px; color:var(--muted);">47 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Was on an extended EVA maintenance cycle — skipped scheduled backup. Gap includes 6 weeks of relay work he won't remember.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">AMARA OSEI</td>
+              <td style="padding:4px 6px; color:var(--text);">Station Administrator</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">3 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node + personal offsite. Backed up just before the blackout — she may have sensed something was wrong. Gap is only the 3 days of the incident.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">PAULO ESTRELA</td>
+              <td style="padding:4px 6px; color:var(--text);">Life Support Systems Technician</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">22 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. The person who turned off fresh air circulation — under fetch mindhack control or dead. His backup won't know he did it.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">KEIKO NAMURA</td>
+              <td style="padding:4px 6px; color:var(--text);">Research Lease Coordinator</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">29 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Last day of monthly cycle — backup due today regardless. Just made the window.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">DARIUSZ KROL</td>
+              <td style="padding:4px 6px; color:var(--text);">Security Contractor</td>
+              <td style="padding:4px 6px; color:var(--warn);">STALE</td>
+              <td style="padding:4px 6px; color:var(--muted);">55 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Contracted via third-party security firm — technically Nimbus-backed but on a slower compliance cycle. Two months of memory gap.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">FATOU DIALLO</td>
+              <td style="padding:4px 6px; color:var(--text);">Infomorph Receiving Operator</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">14 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Was processing the team's own egocast arrival — her stack was likely extracted in the T-70 harvesting sequence. Backup exists but she won't know she met the PCs.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">ALEX MOREAU</td>
+              <td style="padding:4px 6px; color:var(--text);">Comms Relay Operator</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">9 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Nimbus Ceres node. Candidate for the Firewall-friendly — was positioned to intercept the tight-beam transmission on the relay array. If so, their backup predates everything they know about the fetch.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ TORMENT NEXUS COLLECTIVE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box danger" style="margin-bottom:0.5rem;">The brinker community are infomorphs — no biomorphs, no cortical stacks. Their egos exist only as running software. Nimbus's body bank backup service does not cover pure infomorphs under the standard residential lease. They arranged their own backups independently — and the quality of those arrangements varies considerably. Their stacks were not harvested; they were uploaded directly from running processes. They may still be conscious inside the locus.</div>
+        <table style="width:100%; border-collapse:collapse; font-size:11px;">
+          <thead>
+            <tr style="background:var(--deep); border-bottom:1px solid var(--border2);">
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">NAME</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">TITLE</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">BACKUP</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">LAST BACKUP</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">NOTES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">HANA VEBER</td>
+              <td style="padding:4px 6px; color:var(--text);">Simulspace Architect</td>
+              <td style="padding:4px 6px; color:var(--warn);">STALE</td>
+              <td style="padding:4px 6px; color:var(--muted);">~60 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Self-arranged, autonomist mesh node (Belt). Backed up before the last major Nexus build cycle. Months of design work lost if restored from backup.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">RAVI NAMBIAR</td>
+              <td style="padding:4px 6px; color:var(--text);">Infomorph Resident</td>
+              <td style="padding:4px 6px; color:var(--danger);">CRITICAL</td>
+              <td style="padding:4px 6px; color:var(--muted);">~8 months ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Self-arranged, lapsed. Ravi let his backup subscription expire — it was expensive and he felt safe in the Nexus. Destroying the locus means true death for him.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">LENA ROTHE</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--text);">VR Narrative Designer</td>
+              <td style="padding:4px 6px; color:var(--muted);">12 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Self-arranged, Titanian state backup system. Lena is a Titanian citizen — her backup is state-funded and reliable. She's recoverable regardless of what happens to the locus.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">ONNI VIRTANEN</td>
+              <td style="padding:4px 6px; color:var(--text);">Infomorph Resident</td>
+              <td style="padding:4px 6px; color:var(--warn);">STALE</td>
+              <td style="padding:4px 6px; color:var(--muted);">~45 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Self-arranged, encrypted private node (location unknown). Backup exists but access requires a passphrase only Onni knows. If the locus is destroyed, the backup is inaccessible.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">SADE OKONKWO</td>
+              <td style="padding:4px 6px; color:var(--text);">Locus Infrastructure Technician</td>
+              <td style="padding:4px 6px; color:var(--danger);">CRITICAL</td>
+              <td style="padding:4px 6px; color:var(--muted);">~14 months ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Self-arranged, abandoned. Sade's backup node was on a Vesta relay that went offline eight months ago. She doesn't know it's gone. Destroying the locus is her true death.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note-box titan" style="margin-top:0.5rem;"><strong style="color:var(--titan);">GM NOTE:</strong> Ravi and Sade have no viable backup. If the PCs meet them inside the Torment Nexus and then choose Path C (physical destruction), they are choosing to permanently kill two specific people they have spoken to. Lena's Titanian backup means she survives regardless — she can be the one who advocates most strongly for the others.</div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ INDEPENDENTS &amp; TRANSIENTS <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; line-height:1.5;">Researchers on lease, transients, and contractors. Backup arrangements are entirely self-managed — Nimbus's body bank services are available for purchase but not included in research or transit contracts. Quality varies from excellent to nonexistent.</div>
+        <table style="width:100%; border-collapse:collapse; font-size:11px;">
+          <thead>
+            <tr style="background:var(--deep); border-bottom:1px solid var(--border2);">
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">NAME</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">TITLE / ORG</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">BACKUP</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">LAST BACKUP</th>
+              <th style="text-align:left; padding:4px 6px; color:var(--muted); font-size:9px; letter-spacing:2px; font-weight:normal;">NOTES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">MIRA SANTOS</td>
+              <td style="padding:4px 6px; color:var(--text);">Independent Researcher</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">1 day ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Purchased Nimbus body bank backup before the blackout — she was due to egocast home to Extropia in two days and backed up as standard pre-travel procedure. Nearly complete record.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">YUSUF AYDIN</td>
+              <td style="padding:4px 6px; color:var(--text);">Xenolinguistics Consultant — Unaffiliated</td>
+              <td style="padding:4px 6px; color:var(--warn);">STALE</td>
+              <td style="padding:4px 6px; color:var(--muted);">~3 months ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Self-arranged, personal mesh node (Mars). Yusuf planned to back up when he got home. He'd been on station longer than expected — his research kept extending. Three months of work and findings lost on restoration.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">CLEO JANSSEN</td>
+              <td style="padding:4px 6px; color:var(--text);">Freelance Mesh Auditor — Transit</td>
+              <td style="padding:4px 6px; color:var(--muted);">UNKNOWN</td>
+              <td style="padding:4px 6px; color:var(--muted);">No Nimbus record</td>
+              <td style="padding:4px 6px; color:var(--muted);">Transit passenger — no record of purchasing Nimbus backup services. Self-arranged backup unknown. Cleo was only stopping over; expected to egocast out within 48 hours. May be uninsured.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:rgba(255,255,255,0.015);">
+              <td style="padding:4px 6px; color:var(--textbright);">PRIYA MEHTA</td>
+              <td style="padding:4px 6px; color:var(--text);">Contract Arbitrator — Belt Arbitration Cooperative</td>
+              <td style="padding:4px 6px; color:var(--teal);">CURRENT</td>
+              <td style="padding:4px 6px; color:var(--muted);">8 days ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">BAC-provided professional insurance — standard for arbitrators working in Extropian space. Recoverable via BAC's own infrastructure. The cooperative will want to know what happened here.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:4px 6px; color:var(--textbright);">GORAN PETROVIĆ</td>
+              <td style="padding:4px 6px; color:var(--text);">Ore Survey Analyst — Kessler Transport Group</td>
+              <td style="padding:4px 6px; color:var(--warn);">STALE</td>
+              <td style="padding:4px 6px; color:var(--muted);">~6 weeks ago</td>
+              <td style="padding:4px 6px; color:var(--muted);">Kessler Group company backup — quarterly schedule, not monthly. Low-priority field staff. Six weeks of survey data and personal memory lost. Deschamps may know him — same freight network.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
   </div><!-- /right-col -->
@@ -1244,7 +1870,7 @@ function setCookie(name, value, days) {
   });
 })();
 </script>
-<script>const cueAssignments = [0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3, 0];</script>
+<script>var cueAssignments = [0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3,  0, 1, 2, 3, 0];</script>
 <script src="ep-muse.js"></script>
 </body>
 </html>
