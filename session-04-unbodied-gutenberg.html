@@ -799,8 +799,8 @@
           <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
             <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
               <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
-              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--accent);">7/35</div>
-              <div style="font-size:9px; color:var(--muted);">energy/kinetic</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">−/−</div>
+              <div style="font-size:9px; color:var(--danger);">no base armor</div>
             </div>
             <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
               <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
@@ -827,8 +827,8 @@
           <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-bottom:0.5rem;">
             <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
               <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">ARMOR</div>
-              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">7/35</div>
-              <div style="font-size:9px; color:var(--muted);">+2/+3 bioweave</div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:18px; color:var(--danger);">2/3</div>
+              <div style="font-size:9px; color:var(--danger);">bioweave only</div>
             </div>
             <div style="background:var(--deep); border:1px solid var(--border); padding:5px 7px; text-align:center;">
               <div style="font-size:9px; color:var(--muted); letter-spacing:2px;">WT/DUR/DR</div>
@@ -844,7 +844,7 @@
             </div>
           </div>
           <div class="test-item"><div class="test-skill danger">WEAPONS</div><div class="test-desc">Armed with Krol's security sidearm — <strong style="color:var(--textbright);">Medium Pistol: DV 2d10, SA/BF, Ammo 15, Range 30.</strong> Claws (ware): <strong style="color:var(--textbright);">DV 1d6+SOM÷10, concealable.</strong> Eelware (ware): <strong style="color:var(--textbright);">DV 1d6 shock, touch only.</strong> Guns/Melee via minion AI: <strong style="color:var(--textbright);">50.</strong></div></div>
-          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">Bioweave Armor (+2/+3), Claws, Eelware, Enhanced Hearing, Enhanced Vision, Cyberbrain, Puppet Sock. Effective total armour against kinetic: 35+3 = 38. This morph will not go down easily.</div></div>
+          <div class="test-item"><div class="test-skill warn">WARE</div><div class="test-desc">Bioweave Armor (+2/+3), Claws, Eelware, Enhanced Hearing, Enhanced Vision, Cyberbrain, Puppet Sock. <strong style="color:var(--textbright);">Total armor: 2/3 (energy/kinetic)</strong> — Bioweave only, no base armor. Medium pistol SA averages ~8 through. BF averages ~13 through — wound every hit.</div></div>
           <div class="test-item"><div class="test-skill teal">COUNTERS</div><div class="test-desc">Same minion AI hack as worker pods — but the security pod's enhanced senses make approach harder. Concealment (Infiltrate) before entry recommended. If the team has a Guardian Angel drone from the fabber, deploying it into the locus ahead of physical entry changes the engagement significantly.</div></div>
         </div>
 
@@ -1550,8 +1550,8 @@
       <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ CORRECTED ARMOR VALUES — USE THESE <span>▾</span></button>
       <div class="collapse-content open">
         <div class="note-box danger" style="margin-bottom:0.5rem;"><strong style="color:var(--danger);">CORRECTION:</strong> Earlier prep notes contained inflated armor values. Use only the values below, sourced directly from EP2 stat blocks.</div>
-        <div class="test-item"><div class="test-skill danger">SECURITY POD</div><div class="test-desc">Base armor 4/4 + Bioweave (+2/+3) = <strong style="color:var(--textbright);">6/7 (energy/kinetic).</strong> NOT 9/11 as previously stated. Medium pistol SA averages ~4 through. BF averages ~9 through — wounds most hits. Claws average ~3 through.</div></div>
-        <div class="test-item"><div class="test-skill warn">WORKER POD</div><div class="test-desc">Armor <strong style="color:var(--textbright);">8/6 (energy/kinetic).</strong> NOT 7/35 as previously stated. Kinetic 6 means pistols do get through — SA averages ~5 through, BF ~10. Plasma cutter (energy AP−6 vs energy 8 = 2 eff) averages ~5 through. Worker pods are not invulnerable to kinetic.</div></div>
+        <div class="test-item"><div class="test-skill danger">SECURITY POD</div><div class="test-desc">No base armor. Bioweave Armor ware only (+2/+3) = <strong style="color:var(--textbright);">2/3 (energy/kinetic) total.</strong> NOT 6/7 or 9/11 as previously stated. Medium pistol SA (2d10 avg 11) − 3 kinetic = <strong style="color:var(--textbright);">~8 through.</strong> BF (3d10 avg 16) − 3 = ~13 through — wounds every hit. Claws (1d6+7 avg 10) − 3 = ~7 through — wound threshold on most hits. Far more vulnerable than earlier combat assumed.</div></div>
+        <div class="test-item"><div class="test-skill warn">WORKER POD</div><div class="test-desc"><strong style="color:var(--textbright);">No base armor — −/− (0/0 effective).</strong> NOT 8/6 or 7/35 as previously stated. Worker pods have no armor listed in the EP2 stat block. All damage goes straight through. Pistol SA (2d10 avg 11) = ~11 through. BF (3d10 avg 16) = ~16 through — wound every hit, multiple wounds common. Plasma cutter full raw through. These are much more fragile than combat assumed — they survive on DUR 35 and numbers, not armor.</div></div>
         <div class="test-item"><div class="test-skill">SERVITOR BOT</div><div class="test-desc">Armor <strong style="color:var(--textbright);">6/4 (energy/kinetic).</strong> Confirmed correct. Pistol SA averages ~7 through vs kinetic 4. Two hits reliably incapacitate.</div></div>
         <div class="test-item"><div class="test-skill teal">PC LIGHT VEST</div><div class="test-desc">AV <strong style="color:var(--textbright);">4/10 (energy/kinetic).</strong> Security pod BF averages ~6 through kinetic. Plasma cutter (energy AP−6 vs energy 4 = 0 eff) goes straight through — full raw damage.</div></div>
       </div>
