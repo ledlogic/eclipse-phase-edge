@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL THAT GLITTERS | Eclipse Phase — Session 10 GM Reference</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav a.ep-nav-link, #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8); text-decoration: none;
+    border: 1px solid transparent; padding: 2px 6px; cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover, #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8); border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current, #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623); border-color: rgba(245,166,35,0.35);
+    cursor: default; pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file, #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35; cursor: default; pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep { color: var(--border, #1e2a3a); flex-shrink: 0; }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0); text-decoration: none;
+    border: 1px solid transparent; padding: 2px 7px; flex-shrink: 0;
+    cursor: pointer; transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover { border-color: var(--accent2, #60a8d0); color: var(--textbright, #c8d8e8); }
+  #ep-session-nav .ep-nav-arrow.ep-disabled { opacity: 0.2; pointer-events: none; }
+  #ep-session-nav .ep-nav-label { color: var(--accent, #f5a623); opacity: 0.6; flex-shrink: 0; }
+  #ep-session-nav .ep-nav-home {
+    color: var(--text, #8898a8); text-decoration: none;
+    border: 1px solid transparent; padding: 2px 6px; opacity: 0.55;
+    cursor: pointer; transition: color 0.15s, border-color 0.15s, opacity 0.15s; letter-spacing: 2px;
+  }
+  #ep-session-nav .ep-nav-home:hover { color: var(--textbright, #c8d8e8); border-color: var(--border, #1e2a3a); opacity: 1; }
+  #ep-session-nav .ep-nav-links { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; flex: 1; }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
+<nav id="ep-session-nav" data-current-file="session-10-all-that-glitters.html"></nav>
+
+
+<header>
+  <div class="header-tag">◈ SESSION 10 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>ALL THAT GLITTERS <span class="loc">PROFUNDA · ENCELADUS</span></h1>
+  <div class="header-sub">GLITTER BLOC SOIRÉE · PROFUNDA BEEHIVE · ENCELADUS · SATURN SYSTEM · POLITICAL ENDGAME</div>
+  <div class="stats-bar">
+    <span class="stat-chip">LOCATION: PROFUNDA, ENCELADUS, SATURN SYSTEM</span>
+    <span class="stat-chip warn">THREAT: CONSORTIUM SHIPYARD PLANS</span>
+    <span class="stat-chip">REGISTER: SOCIAL / POLITICAL / ESPIONAGE</span>
+    <span class="stat-chip teal">GRAVITY: 0.113g — LIGHT</span>
+    <span class="stat-chip ozma">OZMA ADJACENT</span>
+    <span class="stat-chip">SESSION 10 OF ARC — CODA</span>
+  </div>
+</header>
+
+<div class="main-grid">
+
+  <!-- ══════════════════════════════ LEFT COLUMN ══════════════════════════════ -->
+  <div class="left-col">
+
+    <!-- MISSION BRIEF -->
+    <div class="section-label">◈ SITUATION BRIEF</div>
+    <div class="brief-panel">
+      <div class="brief-text">
+        The team returns from the outer system carrying something most of the inner system doesn't know about yet — proof that a TITAN fetch was building something at Gutenberg, that the signal came from FK7, that the Lithohex exists, and that something ancient near the sun has been pointing at these threats for years. Firewall wants the report filed quietly. It wants nothing else to happen. It will not get what it wants.
+        <br><br>
+        Planetary Consortium ambassador Danzan Alciato is attending a Glitter Bloc product launch at Profunda — a subsurface beehive habitat on Saturn's moon Enceladus. Alciato carries encrypted headware containing the full operational plan for a Consortium shipyard at Albiorix, designed to project hypercorp military power into the outer system. That shipyard, if built, changes the strategic picture for everything the team has been working to prevent. The outer system stays dark and brinker and hard to surveil right up until the moment it doesn't.
+        <br><br>
+        The team is tasked to retrieve the shipyard plans. The method is their choice. The venue is a live-streamed invite-only soirée. Several hundred people are attending. The Glitter Bloc's security is contractually sovereign on site.
+      </div>
+      <div class="mission-goal">
+        <strong>◈ PRIMARY OBJECTIVE:</strong> Extract the encrypted data module from Danzan Alciato's headware implant by any means available — social, technical, physical, or pharmaceutical. Do not create an incident that makes the news.
+        <br><br>
+        <strong>◈ SECONDARY OBJECTIVE:</strong> Identify what the Consortium already knows about the outer-system arc. Did Alciato's intelligence service pick up the Gutenberg signal? Do they know about FK7? About the Lithohex? The answers change how much time the team has before hypercorp assets move into the Kuiper.
+        <br><br>
+        <strong>◈ CAMPAIGN THREAD:</strong> Kyo has the decryption key for Alciato's data module. She's Oversight — not Consortium. If she gets the key out, it either exposes Alciato or it disappears into another agency's filing system. Deciding who gets the decryption key, and what gets done with the data, is the session's moral question.
+      </div>
+    </div>
+
+    <!-- SETTING -->
+    <div class="section-label">◈ SETTING — PROFUNDA, ENCELADUS</div>
+    <div class="npc-card">
+      <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.4rem;">
+
+        <div class="test-item">
+          <div class="test-skill teal" style="min-width:110px;">LOCATION</div>
+          <div class="test-desc">Subsurface beehive habitat, Enceladus, Saturnian system. Privately owned by the Glitter Bloc morph-design house. Extravagant ballroom plus numerous side rooms for socialising, private conversations, and freshening up.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill teal" style="min-width:110px;">GRAVITY</div>
+          <div class="test-desc">0.113g — less than Luna. Everyone moves with exaggerated elegance or barely contained chaos depending on their morph and experience. Things drift. Drinks float if spilled. Glow-puffers will be everywhere in Phase 2.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill warn" style="min-width:110px;">GOVERNANCE</div>
+          <div class="test-desc">Extropian — no laws, only contracts. Glitter Bloc owns the venue and runs its own security and judiciary on retainer. Guests are contractually bound by Glitter Bloc security dictums on entry. No station police, no outside jurisdiction. Glitter Bloc security is the only law in the room.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill" style="min-width:110px;">ATMOSPHERE</div>
+          <div class="test-desc">Live-streamed to the mesh. Several hundred guests — figureheads, celebrities, diplomats, and outer-rim personalities. Everyone is dressed to kill. Designer drugs circulating openly. Runway presentation, fork burlesque, dueling DJs. The event is an occasion as much as a venue.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill danger" style="min-width:110px;">SECURITY</div>
+          <div class="test-desc">Glitter Bloc private guards and drones. All diplomats present have small armed personal details. Overt violence triggers immediate Glitter Bloc neutralisation — combatants removed, event continues. The show must go on. Covert action is not their problem unless it becomes visible.</div>
+        </div>
+
+        <div class="test-item">
+          <div class="test-skill signal" style="min-width:110px;">MESH</div>
+          <div class="test-desc">Open to all guests. VR pods installed for morph demo experiences — Riff-Raff has already compromised the pod session manager. The hack is three days old. It is not on Glitter Bloc's radar.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SITUATION TIMELINE -->
+    <div class="section-label">◈ EVENT TIMELINE — PARTY SEQUENCE</div>
+    <div class="timeline-panel">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">ARRIVAL · GUESTS ARRIVE</div>
+          <div class="timeline-desc">Mingling, drinks, appetisers. Entry point for introductions — Vox Maxine meets the team at the door. Alciato is already working the room. Kyo is three steps behind them at all times. Wadada is watching from the bar.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">PHASE 1 · OPENING SPEECH</div>
+          <div class="timeline-desc">Glitter Bloc spokes-avatar delivers the brand address. Harmonic overtone chorus with enhanced larynxes performs. All major NPCs are stationary and visible — ideal reconnaissance window. Riff-Raff pings Alciato for the first time via encrypted mesh.</div>
+        </div>
+        <div class="timeline-item mesa">
+          <div class="timeline-time mesa">PHASE 2 · CREATURE PRESENTATION</div>
+          <div class="timeline-desc">The latest Profundan designer creatures — aerial glow-puffers and winged spider gremlins — are unveiled. ◈ COMPLICATION WINDOW. The glow-puffers are intentionally released into the crowd. Six-armed taiko drummers provide cover for a great deal of private conversation.</div>
+        </div>
+        <div class="timeline-item warn">
+          <div class="timeline-time warn">PHASE 3 · MAIN RUNWAY PRESENTATION</div>
+          <div class="timeline-desc">New Glitter Bloc morph designs with full AR and holo overlays. The room's attention is completely captured. ◈ Alciato and Wadada use this window to step aside for private negotiations — the final terms of the Volkov contract. ◈ Halsema approaches Grix to discuss defection.</div>
+        </div>
+        <div class="timeline-item signal">
+          <div class="timeline-time signal">PHASE 4 · VR POD EXHIBITS</div>
+          <div class="timeline-desc">Guests experience new morph designs in virtual reality. ◈ CRITICAL WINDOW — Riff-Raff has hacked the pods. If Alciato enters a pod, Riff-Raff pulls them into a private meeting. Brainhacking is possible from inside a pod. The team can follow Alciato into VR or intercept before entry.</div>
+        </div>
+        <div class="timeline-item ozma">
+          <div class="timeline-time ozma">PHASE 5 · FORK BURLESQUE</div>
+          <div class="timeline-desc">The Diva Von Teases perform. A technical malfunction plunges the AR feeds out of sync with physical lighting — sensory chaos for several minutes. ◈ MAXIMUM COVER WINDOW for physical action, pickpocketing, or disappearing with Alciato somewhere private.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">PHASE 6 · DANCE PARTY</div>
+          <div class="timeline-desc">Dueling ring house DJs, designer drug samplers, early hours. The event's formal structure dissolves. NPCs are mobile, fluid, and increasingly compromised by substances. The team either has the data by now or is out of structured windows.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NPCS -->
+    <div class="section-label">◈ PRINCIPAL NPCS</div>
+
+    <!-- DANZAN ALCIATO -->
+    <div class="npc-card">
+      <div class="npc-name">DANZAN ALCIATO</div>
+      <div class="npc-role">PLANETARY CONSORTIUM AMBASSADOR — SYLPH WITH CYBERBRAIN</div>
+      <div class="npc-desc">Heads Consortium affairs for the Saturn system on behalf of the Hypercorp Council's Diplomatic Service. Manipulative but not ruthless — takes the long view, confident in the Consortium's eventual dominance, willing to absorb short-term losses. Currently in the final stages of arranging a private shipyard deal that will change the outer system's strategic balance permanently.</div>
+      <div><span class="npc-trait warn">CONSORTIUM</span><span class="npc-trait">SYLPH/CYBERBRAIN</span><span class="npc-trait danger">ENCRYPTED DATA MODULE</span><span class="npc-trait ozma">OZMA ADJACENT — UNKNOWING</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ ALCIATO — FULL PROFILE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="npc-stats">
+          <div class="npc-stat"><span>PERSONALITY</span> Confident, long-game thinker. Never appears rushed. Makes everyone feel like they have their full attention while processing four other things simultaneously.</div>
+          <div class="npc-stat"><span>PRIMARY AGENDA</span> Finalise the Volkov/Wadada contract tonight. Secure the Albiorix shipyard deal. Begin rimward Consortium expansion before the Titanians or Jovians can coordinate opposition.</div>
+          <div class="npc-stat"><span>SECRET</span> Their current initiative is the Albiorix shipyard — a new facility in orbit around Saturn's moon Albiorix, long-term goal of building an outer-system Consortium fleet to counter both Titanians and Jovians. Full operational plans are in an encrypted data module in their headware. They took a bribe from Volkov (intel on Titan antimatter facilities) to cut the contract.</div>
+          <div class="npc-stat"><span>OUTER SYSTEM INTEL</span> Alciato received a fragmentary report about the Gutenberg incident — classified it as a brinker habitat disaster, unknown cause. They have no knowledge of FK7, the Lithohex, or the Semaphore. If the team drops any of these names, Alciato's reaction is the tell — they'll record the conversation immediately.</div>
+          <div class="npc-stat"><span>EXTRACTION PATHS</span> Brainhacking via VR pod (Riff-Raff's window). Physical data module removal (requires incapacitation). Pharmaceutical (Vox has something appropriate). Social engineering with a convincing Deceive roll. Leverage via Wadada/Volkov connection.</div>
+        </div>
+      </div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">androgynous diplomat in sleek form-fitting silver-white sylph morph, cyberbrain port visible at temple, Saturn system diplomatic gala, Profunda beehive habitat interior, extravagant low-gravity ballroom, confident composed expression, subtle AR overlay reflections in eyes, high-fashion biopunk couture, Planetary Consortium insignia worked into clothing details, soft bioluminescent lighting, transhumanist sci-fi noir aesthetic, cinematic portrait, --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <!-- KYO -->
+    <div class="npc-card">
+      <div class="npc-name">JOLENA KYO</div>
+      <div class="npc-role">CONSORTIUM OVERSIGHT AGENT — GHOST MORPH</div>
+      <div class="npc-desc">Recently embedded within Alciato's staff to monitor suspected corruption. Competent, vigilant, and fiercely protective of her charge — not because she likes them, but because her job requires it. She suspects Alciato took a Volkov bribe. She needs evidence. She has the decryption key for Alciato's data module and doesn't know whether to use it.</div>
+      <div><span class="npc-trait">OVERSIGHT</span><span class="npc-trait signal">DECRYPTION KEY</span><span class="npc-trait warn">BIGOT — HIDDEN</span><span class="npc-trait">GHOST MORPH</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ KYO — FULL PROFILE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="npc-stats">
+          <div class="npc-stat"><span>PERSONALITY</span> Vigilant and doting in equal measure. Reads threat vectors the way other people read social cues. Protects Alciato like a vicious momma-bear — but this is professional obligation, not affection.</div>
+          <div class="npc-stat"><span>PRIMARY AGENDA</span> Get her hands on evidence of the Volkov bribe. Doesn't care about the shipyard plan — that's above her clearance. She wants the smoking gun on Alciato's corruption specifically.</div>
+          <div class="npc-stat"><span>SECRET — DECRYPTION KEY</span> Kyo holds the decryption key for Alciato's data module. She obtained it through a compromised Oversight contact. Using it without a warrant is illegal under Consortium law. She hasn't used it. She's been carrying it for eleven days.</div>
+          <div class="npc-stat"><span>SECRET — UPLIFT BIGOTRY</span> Hidden, carefully managed. A Kinesics test vs her Deceive will expose it if uplifts are present or discussed. She will not act on it in a professional context, but she will also never fully trust a non-human ego.</div>
+          <div class="npc-stat"><span>MORAL QUESTION</span> If the team approaches Kyo and makes clear they want the data module contents — not to expose Alciato but to prevent the shipyard — she has a choice. Hand over the key (illegal, career-ending if traced, prevents the outer-system arms buildup) or refuse (legal, preserves her position, the shipyard gets built). This is the session's central decision.</div>
+        </div>
+      </div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">ghost morph, lean and precise, close-protection body language, scanning the room over a subject's shoulder, Saturn gala party background soft-bokeh, minimal high-function clothing, no visible weapons but clearly armed, vigilant dark eyes, slight tension in jaw, professional stillness, biopunk security operative at a luxury diplomatic event, transhumanist sci-fi noir, cinematic three-quarter portrait, cool blue lighting --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <!-- VOX -->
+    <div class="npc-card">
+      <div class="npc-name">VOX MAXINE</div>
+      <div class="npc-role">NEO-PARROT SOCIALITE / DRUG DEALER — NEO-AVIAN MORPH</div>
+      <div class="npc-desc">One of Profunda's most visible party animals. Professional cynic, biting wit, knows everyone in the room and half of what they're hiding. She's been assigned by Firewall's local contact to meet the team at the door and show them around. She also deals all manner of drugs, has access to pharmaceutical-grade compliance agents, and is constitutionally incapable of not knowing other people's business.</div>
+      <div><span class="npc-trait teal">FIREWALL CONTACT</span><span class="npc-trait mesa">DRUG DEALER</span><span class="npc-trait">NEO-AVIAN</span><span class="npc-trait signal">SOCIAL NETWORK</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ VOX — FULL PROFILE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="npc-stats">
+          <div class="npc-stat"><span>ROLE FOR THE TEAM</span> Entry point, introduction engine, information broker. Vox knows who everyone is, what they want, and what they're likely to do. Any social approach to any NPC is easier with a Vox introduction first.</div>
+          <div class="npc-stat"><span>DRUGS AVAILABLE</span> Compliance agents (target becomes more forthcoming — Persuade tests at +20 for the operator). Amnesiacs (target loses 2–4 hours of memory). Stimulants. Whatever the team needs, Vox can source it within 30 minutes. Her price is information — specifically, she wants to know what the team is really doing here and will trade goods for a partial truth.</div>
+          <div class="npc-stat"><span>SECRET</span> Vox knows that Wadada has sometimes facilitated the sale of egos to black-market dealers. She hasn't reported this because Wadada has leverage on her in return. If the team surfaces this secret, Wadada becomes a liability — which changes his behaviour mid-session.</div>
+          <div class="npc-stat"><span>CAMPAIGN HOOK</span> Vox has heard rumours from a belt-mining contact about anomalous signals in the outer system. She doesn't know what they mean. If the team mentions Gutenberg or FK7 she'll go very still and very quiet and ask one very careful question: <em>"How many people know about this?"</em></div>
+        </div>
+      </div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">neo-avian neo-parrot uplift morph, vivid iridescent plumage with designer dye streaks in gold and teal, wearing an elaborate low-gravity party outfit with trailing fabric, Saturn system Profunda soirée, extravagant beehive ballroom background, sharp intelligent eyes, slight knowing smirk, drug dealer socialite energy, glow-puffers drifting in background low gravity, bioluminescent party lighting, transhumanist sci-fi celebration aesthetic, painterly wide portrait --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <!-- SECONDARY NPCS -->
+    <div class="section-label">◈ SECONDARY NPCS — FACTION REPRESENTATIVES</div>
+
+    <div class="npc-card">
+      <div class="npc-name">RIFF-RAFF</div>
+      <div class="npc-role">ID CREW HACKER — INFOMORPH ONLY</div>
+      <div class="npc-desc">A cartel hacker present only as an infomorph — no physical body at the event. Has already hacked the Glitter Bloc VR pods. Plans to pull Alciato into a private meeting inside VR to sell them silence about a compromised Jovian counter-agent. If Alciato's offer isn't good enough, Riff-Raff will sell to Contarato instead. Wanted by the Titanians for numerous crimes.</div>
+      <div><span class="npc-trait danger">ID CREW</span><span class="npc-trait">INFOMORPH</span><span class="npc-trait warn">VR PODS HACKED</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ RIFF-RAFF — FULL PROFILE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="npc-stats">
+          <div class="npc-stat"><span>THE VR HACK</span> Riff-Raff has compromised the VR pods' security layer. Any guest entering a pod can be isolated into a private instance. Riff-Raff will use this on Alciato in Phase 4. The team can exploit the same hack — it's an ideal window for brainhacking Alciato away from Kyo's supervision.</div>
+          <div class="npc-stat"><span>SECRET</span> The ID Crew has Contarato's son's ego in cold storage — thought lost during the Fall. The son sold himself to the ID Crew to secure passage for his father and family to Jupiter. Contarato doesn't know. This is the most dangerous piece of information at this party.</div>
+          <div class="npc-stat"><span>LEVERAGE</span> Riff-Raff recently cracked a Jovian Space Fleet Intelligence counter-agent's identity from intercepted comms. They are here to sell that silence to the Consortium. If the team gets access to Riff-Raff's infomorph data — either through the VR hack or a mesh intrusion — they own a very dangerous piece of intelligence about Jovian ops.</div>
+        </div>
+      </div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">infomorph hacker ghost presence, no physical body, visualised as fragmented glitch silhouette overlaid on VR pod interior, corrupted AR interface aesthetics, flickering mesh identity signature, ID Crew criminal data ghost, digital noir aesthetic, black and teal colour palette, corrupted transhumanist cyberspace visualization, abstract identity dissolution, --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">DÁRIO CONTARATO</div>
+      <div class="npc-role">JOVIAN DIPLOMAT — AMBASSADOR-AT-LARGE — SPLICER</div>
+      <div class="npc-desc">Jovian ambassador handling outer-system negotiations. Jovial and wise-cracking until it's time not to be. Considers the Consortium a bigger long-term threat to transhumanity than the outer-system autonomists. Does not know Riff-Raff has his son's ego.</div>
+      <div><span class="npc-trait">JOVIAN</span><span class="npc-trait warn">ANTI-CONSORTIUM</span><span class="npc-trait danger">HIDDEN GRIEF</span></div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">Splicer morph, Jovian ambassador-at-large, jovial wise-cracking energy hiding deadly seriousness, older distinguished appearance, comfortable in diplomatic formal wear, Saturn system soirée background, slight wariness in eyes behind the smile, carries weight of the Republic's interests, biopunk transhumanist diplomatic aesthetic, warm candlelit portrait --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">GRIX</div>
+      <div class="npc-role">TITANIAN MINISTRY OF STATE ENVOY — OLYMPIAN</div>
+      <div class="npc-desc">Ranking Titanian official with close Fleet Intelligence ties. Confident, direct, bitter around the edges. Uses various substances to manage Fall PTSD. Sometimes passes intel on Consortium/Jovian activity to anarchist direct-action allies. Tonight she is here to protect Titanian interests and to receive a defection request from Halsema.</div>
+      <div><span class="npc-trait teal">TITANIAN</span><span class="npc-trait signal">FLEET INTEL ADJACENT</span><span class="npc-trait">PTSD — MANAGED</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ GRIX — CAMPAIGN THREAD <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="npc-stats">
+          <div class="npc-stat"><span>SEMAPHORE THREAD</span> Grix has access to Titanian Fleet Intelligence's outer-system observation logs. If the team shares anything about FK7 or the tight-beam signal origin, Grix goes very quiet and asks to meet privately within ten minutes. Fleet Intelligence has a file. It is not labelled COEWS. It is labelled something else. She can get them access — at a cost.</div>
+          <div class="npc-stat"><span>HALSEMA SITUATION</span> Ayla Halsema (Jovian staff) will approach Grix in Phase 3 to request defection and Titan asylum, offering stolen Jovian intel-gathering details as a sweetener. Grix will arrange an extraction by end of evening. This is a side-plot but it creates an observable complication if the team is watching Grix when it happens.</div>
+        </div>
+      </div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">Olympian morph, tall and powerful build, abundant luminescent nanotats in shifting blue-green patterns, bioluminescent eyes that glow faintly, Titanian Ministry of State official at a luxury diplomatic event, unconventional striking appearance at odds with her formal role, slight melancholy in expression, direct confident gaze, Saturn system gala background, biopunk transhumanist aesthetic, painterly cinematic portrait, teal and deep blue lighting --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">ALI WADADA</div>
+      <div class="npc-role">EXTROPIAN FIXER / CUT-OUT — SYLPH</div>
+      <div class="npc-desc">High-priced intermediary between Alciato and Volkov energy corp. Self-obsessed, diligent, always looking for leverage. Here to finalise contract terms and engage in debauchery, in roughly that order. The real payment Volkov is handing to Alciato through Wadada isn't money — it's intel on Titan's antimatter-production facilities.</div>
+      <div><span class="npc-trait warn">EXTROPIAN</span><span class="npc-trait danger">VOLKOV CUT-OUT</span><span class="npc-trait">EGO DEALER HISTORY</span></div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">sylph morph, elegant and self-possessed, fixer energy in formal diplomatic wear, Extropian cut-out middleman at a luxury Profunda gala, always slightly calculating expression, watching for leverage, Saturn system beehive habitat ballroom background, biopunk luxury aesthetic, warm gold party lighting, transhumanist noir cinematic portrait --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">CLARITY UTHUP</div>
+      <div class="npc-role">ULTIMATE OLIGARCH AGENT — REMADE</div>
+      <div class="npc-desc">Presents as a ranking Ultimate from Kronos Cluster. Is secretly an agent for oligarch Ayn Zamyatin, who has her own Saturn-domination plans centred on Kronos. Here to sow division and limit Consortium influence. Delivers dry, monotonous ideological monologues and misreads humour consistently.</div>
+      <div><span class="npc-trait danger">ULTIMATE</span><span class="npc-trait ozma">ZAMYATIN ASSET</span><span class="npc-trait">REMADE</span></div>
+    
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">Remade morph, heavily modified posthuman physique with deliberate ideological aesthetic, Ultimate faction member from Kronos Cluster, right-wing intellectual bearing, delivers monologue expression — dry and certain, slightly condescending, high-end Saturn system gala attire with Ultimate insignia subtleties, cold platinum and grey colour palette, transhumanist oligarch aesthetic, biopunk formal wear, cinematic portrait --ar 2:3 --style raw</div>
+      </div>
+    </div>
+
+    <div class="npc-card">
+      <div class="npc-name">AYLA HALSEMA</div>
+      <div class="npc-role">JOVIAN DIPLOMATIC STAFF / DEFECTOR — SPLICER</div>
+      <div class="npc-desc">Former US congressional staffer, ended up in the Republic after the Fall. Unassuming go-getter. Has recently learned her sister survived the Fall and lives on Titan. Plans to approach Grix tonight and defect, carrying stolen Jovian intel-gathering details as her entry price. Has grown to despise bioconservatism but keeps it hidden.</div>
+      <div><span class="npc-trait">JOVIAN STAFF</span><span class="npc-trait signal">DEFECTOR — TONIGHT</span><span class="npc-trait teal">TITAN-BOUND</span></div>
+    </div>
+
+  
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.3rem;">◈ NEURAL.AI — IMAGE PROMPT <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--muted); margin-bottom:0.4rem;">COPY PROMPT — NEURAL.AI / MIDJOURNEY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--accent2); line-height:1.7; background:rgba(0,0,0,0.3); border:1px solid var(--border2); padding:0.6rem 0.8rem; user-select:all; cursor:text;">Splicer morph, unassuming go-getter appearance, Jovian diplomatic staff worker bee, dressed for the event but slightly out of place, tension of someone about to do something irreversible, searching the room for a specific person, Saturn gala background, quiet determination behind unremarkable surface, transhumanist sci-fi noir, soft background bokeh, cinematic portrait --ar 2:3 --style raw</div>
+      </div>
+    </div><!-- /left-col -->
+
+  <!-- ══════════════════════════════ RIGHT COLUMN ══════════════════════════════ -->
+  <div class="right-col">
+
+    <!-- EXTRACTION PATHS -->
+    <div class="section-label">◈ EXTRACTION PATHS — HOW TO GET THE DATA</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.7rem;">
+        The encrypted data module is a headware implant in Alciato's cyberbrain. Kyo has the decryption key. The team needs both. These are the viable approaches — most can be combined.
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill teal">SOCIAL</div>
+        <div class="test-desc"><strong>Favour-trading and Deceive.</strong> If the team can establish credibility with Alciato — posing as interested parties in the Volkov deal, as Consortium-friendly contractors, or as people with their own outer-system intelligence to sell — Alciato may disclose more than intended. Deceive at +20 after a Vox introduction. The goal isn't to get Alciato to hand over the module — it's to get them talking about the shipyard in enough detail to reconstruct intent without needing the raw data.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill warn">PHARMACEUTICAL</div>
+        <div class="test-desc"><strong>Via Vox.</strong> Compliance agent in Alciato's drink — Persuade tests against Alciato gain +20, and Alciato won't remember clearly what they disclosed. Requires getting close enough to administer it (Sleight of Hand or a cooperative bartender via Rep). The 0.113g gravity means metabolisation is unpredictable — the window is short and Kyo will notice Alciato behaving oddly.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill signal">VR — BRAINHACK</div>
+        <div class="test-desc"><strong>Via Riff-Raff's compromised pods.</strong> If the team identifies the VR hack (Research or Infosec vs Riff-Raff's installed Firewall), they can piggyback Alciato's pod session. Riff-Raff will be in the same instance — the team either works with the hacker (splitting the data or paying for access) or competes against them simultaneously inside VR. Brainhacking in VR: the standard rules apply but the session environment makes physical interruption impossible — Kyo can't pull Alciato out manually.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill mesa">PHYSICAL</div>
+        <div class="test-desc"><strong>Data module extraction — requires incapacitation first.</strong> The module is a headware implant — removal requires either a Medicine: Biotech test (at –30 without tools) or a Hardware: Electronics test on the cyberbrain interface. Not possible without getting Alciato alone and unconscious. The burlesque malfunction window (Phase 5) is the only realistic physical extraction opportunity without creating an incident. Kyo will notice absence within 4 minutes.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill ozma">DECRYPTION KEY — KYO</div>
+        <div class="test-desc"><strong>The session's moral question.</strong> The data module is encrypted — without Kyo's key, extracted data is unreadable. Kyo will not hand over the key without either: (a) evidence the team has legitimate Firewall sanction to act against Consortium interests, or (b) a genuine personal appeal that the shipyard will enable something catastrophic in the outer system. The team can show her what they found at FK7 and Arrokoth. They can tell her about the Lithohex. Whether that's enough depends on the roleplay and the roll.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill danger">FORKNAPPING</div>
+        <div class="test-desc"><strong>Last resort.</strong> Alciato's cyberbrain can be accessed to pull a fork — the fork can then be persuaded or psychosurgery'd for the information. Requires the physical access described above, plus Infosec vs Alciato's cyberbrain security. Creates a fork that Alciato will know exists. If the fork is not destroyed, Alciato will pursue recovery through every available channel. If it is destroyed, the team has committed a capital crime under most jurisdictions.</div>
+      </div>
+    </div>
+
+    <!-- COMPLICATIONS -->
+    <div class="section-label">◈ COMPLICATIONS — GM TRIGGERS</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">Deploy these as pressure, distraction, or consequence. They can be used reactively (the team triggers one by an action) or proactively (the GM drops one to move the session forward).</div>
+
+      <div class="test-item">
+        <div class="test-skill mesa">GLOW-PUFFER RELEASE</div>
+        <div class="test-desc">The aerial glow-puffers and winged spider gremlins are intentionally released into the crowd during Phase 2. In 0.113g they drift beautifully and chaotically. Cover for movement, conversation, and sleight of hand. Kyo will be distracted for exactly 90 seconds trying to maintain visual on Alciato through the swarm.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill warn">PUBLIC BREAKUP</div>
+        <div class="test-desc">A pair of dating socialites have an extremely public, possibly staged, breakup — caught on livestream. The entire room's attention pivots. 2–3 minute window of total NPC distraction. If this happens during an ongoing approach to Alciato, it either helps (Kyo looks away) or hurts (Alciato's attention is pulled to the drama).</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill warn">ALCIATO + WADADA SIDEBAR</div>
+        <div class="test-desc">During the runway presentation, Alciato and Wadada slip to a side room for 12 minutes of private negotiation. Kyo follows but waits outside — this is the only window all session where Alciato is physically alone with someone who isn't Kyo. If the team has a way into that side room, this is their unguarded conversation moment.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill signal">RIFF-RAFF CONTACTS ALCIATO</div>
+        <div class="test-desc">In Phase 4, Riff-Raff makes their move — encrypted mesh ping to Alciato requesting VR pod meeting. The team can intercept this ping with a Perceive (mesh) or Infosec test. If they know it's coming, they can prepare to follow Alciato into the pod, spoof the invitation, or warn Alciato (which creates an unexpected trust dynamic).</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill danger">BURLESQUE MALFUNCTION</div>
+        <div class="test-desc">Phase 5 — AR feeds and physical lighting fall out of sync during the Diva Von Teases performance. Sensory chaos. Fog. Lighting misfires. For 3–4 minutes, visual surveillance fails completely, livestream cuts to a holding slate, and Glitter Bloc security goes to heightened alert (they can't see either). Maximum action window. The team may not be the only ones using it.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill ozma">HALSEMA DEFECTION</div>
+        <div class="test-desc">Halsema approaches Grix in Phase 3. The exchange is quiet but legible to anyone watching Grix. If the team has been observing Grix, they witness this. The Jovian diplomatic staff will notice Halsema's absence by Phase 5 — Contarato will be visibly disturbed and begin asking questions. This creates pressure on the Jovian side of the room that can be used as distraction or leverage.</div>
+      </div>
+    </div>
+
+    <!-- PLAYER SPOTLIGHT -->
+    <div class="section-label">◈ PLAYER SPOTLIGHT — ROLE BY CHARACTER</div>
+    <div class="npc-card">
+      <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">Session 10 inverts the campaign's physical register. Every high-value skill in this session is social, technical, or pharmaceutical. Flash is the character under the most pressure — design his moments deliberately.</div>
+
+      <div class="test-item">
+        <div class="test-skill warn">FLASH</div>
+        <div class="test-desc"><strong>THREAT DETECTION / LAST LINE.</strong> Flash's Military Ops 75 and Weapons 75 are dormant here — but his Know: Black Markets 60 and Smuggling 40 are directly relevant. He will recognise Wadada's ego-trade history (Vox's secret) from market patterns if he talks to Wadada for more than five minutes. His combat readiness is the session's insurance policy — if the burlesque malfunction is used as a window for an aggressive move by any NPC (Uthup, Riff-Raff's physical backup, Glitter Bloc overreach), Flash is the only one who can respond before Kyo does. Give him one moment that only he can read as a threat.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill teal">LUZ</div>
+        <div class="test-desc"><strong>SOCIAL ENGINE / KYO APPROACH.</strong> Luz is the obvious lead here. Persuade 80, Deceive 80, Kinesics 80, Psychosurgery 80. Her Networking Talent trait (spend Moxie to use social skills for Rep tests) is ideal for the opening mingling phase. She is the person who talks to Kyo. The moral question — does Kyo hand over the decryption key — lives in this conversation. Luz's ability to read Kyo's hidden bigotry (Kinesics vs Deceive) gives her a lever most players won't find. Use it carefully: the bigotry isn't a weapon, it's a flaw that complicates an otherwise sympathetic character.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill mesa">NOVA</div>
+        <div class="test-desc"><strong>COUNTER-SURVEILLANCE / RIFF-RAFF.</strong> Nova's Situational Awareness and Perceive 60 make him the team's eyes on the room's mesh layer. He's the one who spots the VR pod hack before Phase 4 — the anomalous traffic signature from Riff-Raff's installed exploit reads to his military-trained threat pattern recognition. His Sharpshooter and Melee Mastery are background insurance, but his real role is information brokerage: he notices what everyone else misses, including the Halsema/Grix exchange and Wadada's sidebar with Alciato.</div>
+      </div>
+
+      <div class="test-item">
+        <div class="test-skill signal">R.A.I.D.</div>
+        <div class="test-desc"><strong>MESH OPERATIONS / VR LAYER.</strong> Interface 80, Infosec 80, Research 80 — R.A.I.D. owns the technical layer of this session. Identifying Riff-Raff's VR hack, running counter-intrusion on the pod network, pulling Alciato's mesh history, and brainhacking from inside the VR instance if the team goes that route. His saucer and speck drones can provide physical surveillance without requiring presence. The gray box from the Gutenberg session is still in inventory — it can be used to create a covert mesh connection to Alciato's cyberbrain if physical proximity is achieved.</div>
+      </div>
+    </div>
+
+    <!-- THE SEMAPHORE — SESSION 10 -->
+    <div class="section-label signal">◈ THE SEMAPHORE — WHAT ALCIATO KNOWS</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ CONSORTIUM OUTER-SYSTEM INTELLIGENCE <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.5rem;">
+          The encrypted data module contains the shipyard plans — but it also contains Alciato's intelligence summary on outer-system developments. If the team decrypts it, they find three items relevant to the campaign arc.
+        </div>
+        <div class="test-item">
+          <div class="test-skill warn">GUTENBERG REPORT</div>
+          <div class="test-desc">Consortium intelligence filed the Gutenberg incident as a brinker habitat catastrophe, cause unknown. The report notes unusual signal traffic in the weeks preceding the event but attributes it to a malfunctioning relay. No TITAN classification. No Firewall flag. The Consortium is three analytical steps behind.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill danger">FK7 — FLAGGED</div>
+          <div class="test-desc">A Consortium survey probe recorded the FK7 source object's transmission six months before the team arrived. The recording is in Alciato's intelligence annex. The Consortium doesn't know what it is — but they flagged it as a potential resource anomaly and assigned a survey mission. That mission is currently en route. ETA: fourteen weeks. If the team doesn't do something with this information, Consortium assets will reach FK7 first.</div>
+        </div>
+        <div class="test-item">
+          <div class="test-skill signal">COEWS — PARTIAL</div>
+          <div class="test-desc">There is a single line in the intelligence annex that reads: <em>"COEWS-ANOMALY-7741 — cross-reference Ozma file. Consortium assets have no access."</em> That's it. That's all Alciato has on the Semaphore — a file number and the knowledge that Ozma has something they don't. They filed it and moved on. The team now knows that Ozma's COEWS file is known to the Consortium, which means it will be acquired eventually. The clock just got shorter.</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ CAMPAIGN CONVERGENCE — WHAT THIS SESSION MEANS <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box signal">This is the last session of the arc. The team came back from the outer system with knowledge that changes everything. This session is the moment where that knowledge meets the political world that will decide what to do with it. The Consortium's shipyard plan isn't just a hypercorp land-grab — it's a fleet being built to project force into the region where the Lithohex exists, where FK7 is, where the Semaphore has been pointing. An outer-system Consortium fleet, without knowing what it's sailing toward, is an extinction-risk delivery mechanism. That's what's in the data module. That's what's at stake. Not a diplomatic incident. Not a career. The next X-risk.</div>
+        <div class="note-box warn" style="margin-top:0.5rem;">Whether the team treats this session as a heist, a social game, a moral argument, or a warning they're trying to deliver — the session's final beat should be the same: they leave knowing more about what's coming than anyone else in the solar system, and knowing that most of the solar system is not ready to hear it. The Semaphore's fourth arm is still pointing. Something else is out there. They haven't found it yet.</div>
+      </div>
+    </div>
+
+    <!-- MUSE INTEL CUES -->
+    <div id="muse-setup" style="border:1px solid rgba(0,201,177,0.3); background:rgba(0,201,177,0.04); padding:0.7rem 0.8rem; margin-bottom:0.8rem;">
+      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.5rem;">◈ ENTER MUSE NAMES — CUES WILL UPDATE AS YOU TYPE</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.4rem;">
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#f5a623; margin-bottom:0.2rem;">SENTINEL 01</div>
+          <input id="muse-1" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#f5a623; background:rgba(245,166,35,0.06); border:1px solid rgba(245,166,35,0.3); border-bottom:2px solid #f5a623; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#00c9b1; margin-bottom:0.2rem;">SENTINEL 02</div>
+          <input id="muse-2" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#00c9b1; background:rgba(0,201,177,0.06); border:1px solid rgba(0,201,177,0.3); border-bottom:2px solid #00c9b1; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; margin-bottom:0.2rem;">SENTINEL 03</div>
+          <input id="muse-3" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#8c52ff; background:rgba(140,82,255,0.06); border:1px solid rgba(140,82,255,0.3); border-bottom:2px solid #8c52ff; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+        <div>
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#ffc107; margin-bottom:0.2rem;">SENTINEL 04</div>
+          <input id="muse-4" type="text" placeholder="Muse name…" autocomplete="off"
+            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#ffc107; background:rgba(255,193,7,0.06); border:1px solid rgba(255,193,7,0.3); border-bottom:2px solid #ffc107; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
+            oninput="updateMuses()">
+        </div>
+      </div>
+      <div style="font-size:0.75rem; color:var(--muted); font-family:'Share Tech Mono',monospace;">Click any muse label to cycle which sentinel's muse speaks that line. Names save across pages.</div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.7rem;">Muses deliver intel privately — soft overlay, inner-ear ping, or a quiet mesh annotation. These cues are calibrated for the social register of the session — less tactical, more contextual.</div>
+
+    <div class="section-label">◈ MUSE INTEL CUES — BY PHASE</div>
+    <div class="brief-panel">
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="0" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈</span>
+        <span class="dl-text"><em>Vox Maxine. Neo-avian. Registered rep score on the Fame network is 62 — that's not just a party animal, that's a professional. She has three blackmail files open that I can see from her public mesh footprint. Whatever she tells you, she's already decided what she wants from you.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="1" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈</span>
+        <span class="dl-text"><em>The VR pods have an anomalous process running in their session manager. It's not Glitter Bloc code. Someone installed it recently — the timestamp is three days ago. I'd know more if I could get into the pod network. Someone should get closer to a pod terminal.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="2" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
+        <span class="dl-text"><em>Kyo hasn't looked away from Alciato in forty minutes. That's not protection detail — that's surveillance. She's building a file on them, not guarding them. Worth knowing which side she's on before we decide whether to involve her.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="3" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
+        <span class="dl-text"><em>Grix just received an encrypted ping. She read it once, deleted it, and changed her body language entirely. She's looking for someone specific in the room now. I don't know who sent it but the encryption signature is Titanian Fleet Intelligence. Something is happening on her end tonight.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="4" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈ — during creature presentation</span>
+        <span class="dl-text"><em>Ninety seconds of visual cover coming up. The glow-puffers in 0.113g are going to be everywhere. Kyo's going to lose Alciato for at least one of those minutes. If anything is going to happen tonight, the window opens now.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="5" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈ — on Wadada</span>
+        <span class="dl-text"><em>Wadada has a gap in his public mesh history — three months, eighteen months ago. That's not a privacy setting, that's a scrub. Someone paid for that. His rep on Guanxi dropped 8 points during that period and then recovered. Whatever he did, his network forgave him. That's the scarier thing.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="6" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈ — on Riff-Raff</span>
+        <span class="dl-text"><em>There's an infomorph signature in the venue mesh that isn't on the guest list. It's very good at not being noticed — I almost didn't. It's been pinging Alciato's ecto at irregular intervals since we arrived. Whoever it is, they've been watching Alciato since before we got here.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="7" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈ — burlesque malfunction</span>
+        <span class="dl-text"><em>Livestream just cut. Security just went to heightened posture. The malfunction is real — this wasn't planned. But someone is moving in the room right now who was waiting for exactly this. I don't know if it's us or someone else who got here first.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="8" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈ — if Kyo is approached</span>
+        <span class="dl-text"><em>She wants to say yes. I can see it. Whatever you told her about what you found out there — it landed. She's running the arithmetic on what happens if the shipyard gets built and Consortium ships go into the Kuiper without knowing what's there. She's almost there. Don't push. Let her arrive.</em></span>
+      </div>
+
+      <div class="dialogue-line">
+        <span class="muse-label dl-label" data-cue="9" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈ — end of session</span>
+        <span class="dl-text"><em>We got what we came for. Or we didn't. Either way — the survey probe is still heading for FK7. The Consortium still doesn't know what the Semaphore is. And she's still pointing. We bought time. I don't know how much.</em></span>
+      </div>
+
+    </div>
+
+    <!-- GM NOTES -->
+    <div class="section-label">◈ GM NOTES — RUNNING THIS SCENARIO</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ REGISTER AND TONE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box">This is the campaign's only pure social session. After nine sessions of outer-system horror, existential threat, and physical survival, the team is in a ballroom. The tonal inversion is the point. The stakes are identical — this is arguably the highest-stakes session in the arc — but the expression is entirely different. Let the players feel the dissonance. Flash will feel it most acutely. Use that.</div>
+        <div class="note-box teal" style="margin-top:0.5rem;">The 0.113g gravity is a constant atmospheric note. Drinks float if spilled. People move with exaggerated grace or barely contained chaos. Designer creatures drift overhead. Everything is slightly wrong in a way that is aesthetically beautiful. This is a world that has rebuilt itself after civilisational collapse and made it look like a party.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE MORAL QUESTION — KYO'S KEY <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box warn">The decryption key is the session's ethical centre. Kyo is not a villain. She is a competent professional who has been doing the right thing by the wrong system for a long time. The team asking her to hand over the key is asking her to commit career suicide, break the law, and trust strangers who won't tell her everything they know. The fact that they're right doesn't make it easy. Play this conversation with the weight it deserves. Don't let a single Persuade roll decide it.</div>
+        <div class="note-box" style="margin-top:0.5rem;">If Luz reveals what the team found at FK7, Arrokoth, and KBO 2119-HR4 — and if MESA's theory about the Semaphore is shared — Kyo will sit with it for a long moment. Then: <em>"If I give you this key, and this goes wrong, I lose everything. If I don't give you this key, and what you're describing is real —"</em> She doesn't finish the sentence. She hands over the key or she doesn't. Either answer is valid. Either answer has consequences that carry forward.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE CONSORTIUM SURVEY PROBE — FK7 <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box danger">The intelligence annex in Alciato's module reveals that a Consortium survey probe recorded the FK7 source object's transmission six months ago and has a survey mission en route — ETA fourteen weeks. This is a ticking clock the team didn't know existed. What they do with this information (tell Firewall, tell Grix and the Titanians, attempt to intercept the probe, do nothing) is a post-session consequence that shapes the next arc if there is one.</div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ENDING THE CAMPAIGN <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box signal">This is the last session of the arc. The team has been to the edge of the solar system and back. They've seen a TITAN fetch reconstruct itself, a dead colony, a silicon predator, and a temporal isolation weapon. They know something ancient near the sun has been trying to warn someone for years and nobody was listening. Now they're at a party. Let the ending be quiet. The last muse cue says it: <em>we bought time. I don't know how much.</em> That's the right note. Not triumph. Not defeat. Just the weight of knowing what's out there, and still being alive, and the Semaphore's arm still pointing somewhere they haven't gone yet.</div>
+      </div>
+    </div>
+
+  </div><!-- /right-col -->
+
+</div><!-- /main-grid -->
+
+<footer class="ep-legal-footer">
+  <div class="ep-legal-inner">
+    <div class="ep-legal-title">◈ ECLIPSE PHASE — EDGE OF THE LIGHT</div>
+    <div class="ep-legal-text">
+      Eclipse Phase was created by Rob Boyle and Brian Cross.
+      Eclipse Phase is a trademark of Posthuman Studios LLC.
+      All That Glitters is © 2021 Posthuman Studios LLC.
+      <br>
+      This work is licensed under the
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+      </a> license.
+      For details see <a href="https://eclipsephase.com/cclicense/" target="_blank" rel="noopener">eclipsephase.com/cclicense</a>
+    </div>
+    <div class="ep-legal-badges">
+      <span class="ep-legal-badge">© POSTHUMAN STUDIOS LLC</span>
+      <span class="ep-legal-badge">CC BY-NC-SA 4.0</span>
+      <span class="ep-legal-badge">NON-COMMERCIAL FAN WORK</span>
+      <span class="ep-legal-badge">ALL THAT GLITTERS — ROB BOYLE</span>
+    </div>
+  </div>
+</footer>
+
+<script>const cueAssignments = [0,1,2,3,0,1,2,3,0,1];</script>
+<script src="ep-muse.js"></script>
+
+<script>
+function toggleCollapse(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open', !isOpen);
+  btn.querySelector('span').textContent = isOpen ? '▾' : '▴';
+}
+</script>
+
+
+<script id="ep-nav-loader">
+(function () {
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "complete", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "current", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS", "progress": 80}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "IAPETUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG QUARANTINE · IAPETUS · OZMA INFILTRATION · SOCIAL / PARANOIA"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}, {"id": "session-10", "file": "session-10-all-that-glitters.html", "number": "10", "title": "All That Glitters", "location": "PROFUNDA · ENCELADUS · SATURN", "status": "upcoming", "header_tag": "◈ SESSION 10 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GLITTER BLOC SOIRÉE · PROFUNDA · ENCELADUS · SATURN SYSTEM · POLITICAL ENDGAME"}]};
+  const nav = document.getElementById('ep-session-nav');
+  if (!nav) return;
+  const sessions = manifest.sessions;
+  const thisFile = nav.dataset.currentFile;
+  const withFile = sessions.filter(s => s.file);
+  const fileIdx = withFile.findIndex(s => s.file === thisFile);
+  const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
+  const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span><span class="ep-nav-label">SESSIONS</span><span class="ep-nav-sep">|</span>';
+  if (prevSess) html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}">◀ ${prevSess.number}</span>`;
+  else html += '<span class="ep-nav-arrow ep-disabled">◀</span>';
+  html += '<div class="ep-nav-links">';
+  sessions.forEach(s => {
+    const isCurrent = s.file === thisFile;
+    const noFile = !s.file;
+    const cls = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const dhref = s.file ? ` data-href="${s.file}"` : '';
+    html += `<span class="${cls}"${dhref}>${s.number} — ${s.title.toUpperCase()}</span>`;
+  });
+  html += '</div>';
+  if (nextSess) html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}">${nextSess.number} ▶</span>`;
+  else html += '<span class="ep-nav-arrow ep-disabled">▶</span>';
+  nav.innerHTML = html;
+  $(document).on('click', '.ep-nav-go[data-href]', function() { window.location.href = $(this).data('href'); });
+})();
+</script>
+</body>
+</html>
