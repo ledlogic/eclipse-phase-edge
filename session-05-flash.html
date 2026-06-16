@@ -384,8 +384,15 @@ body {
 @media print { .print-btn { display: none; } }
 
 </style>
+<style id="ep-nav-style">
+  #ep-session-nav { font-family:'Share Tech Mono',monospace; background:var(--deep,#0a0e18); border-bottom:1px solid var(--border,#1e2a3a); padding:0.45rem 1.5rem; display:flex; align-items:center; gap:0.8rem; font-size:12px; letter-spacing:2px; color:var(--text,#8898a8); position:sticky; top:0; z-index:100; flex-wrap:wrap; }
+  #ep-session-nav .ep-nav-home { color:var(--text,#8898a8); text-decoration:none; border:1px solid transparent; padding:2px 6px; opacity:0.55; cursor:pointer; transition:color 0.15s,border-color 0.15s,opacity 0.15s; letter-spacing:2px; }
+  #ep-session-nav .ep-nav-home:hover { color:var(--textbright,#c8d8e8); border-color:var(--border,#1e2a3a); opacity:1; }
+  @media print { #ep-session-nav { display:none !important; } }
+</style>
 </head>
 <body>
+<nav id="ep-session-nav" data-current-file="session-05-flash.html"><span class="ep-nav-home ep-nav-go" data-href="index.html">◈ INDEX</span> <span style="opacity:0.4">|</span> <span style="opacity:0.5;font-size:11px;letter-spacing:2px;">FLASH — SESSION 05 CHARACTER REFERENCE</span></nav>
 
 <div class="flash-wrapper">
 
@@ -664,5 +671,45 @@ body {
 
 <button class="print-btn" onclick="window.print()">◈ PRINT</button>
 
+
+<footer class="ep-legal-footer">
+  <div class="ep-legal-inner">
+    <div class="ep-legal-title">◈ ECLIPSE PHASE — EDGE OF THE LIGHT</div>
+    <div class="ep-legal-text">
+      Eclipse Phase was created by Rob Boyle and Brian Cross.
+      Eclipse Phase is a trademark of Posthuman Studios LLC.
+      <br>
+      This work is licensed under the
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+      </a> license.
+    </div>
+    <div class="ep-legal-badges">
+      <span class="ep-legal-badge">© POSTHUMAN STUDIOS LLC</span>
+      <span class="ep-legal-badge">CC BY-NC-SA 4.0</span>
+      <span class="ep-legal-badge">NON-COMMERCIAL FAN WORK</span>
+    </div>
+  </div>
+</footer>
+<script>const cueAssignments = [0, 1, 2, 3];</script>
+<script src="ep-muse.js"></script>
+<script>
+function toggleCollapse(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen = content.classList.contains('open');
+  content.classList.toggle('open', !isOpen);
+  const arrow = btn.querySelector('span');
+  if (arrow) arrow.textContent = isOpen ? '&#9662;' : '&#9652;';
+}
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(all).some(c => c.classList.contains('open'));
+  all.forEach(c => c.classList.toggle('open', !anyOpen));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '&#9662;' : '&#9652;'; });
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
+</script>
 </body>
 </html>

@@ -591,6 +591,9 @@
 
 </div><!-- /main-grid -->
 
+
+<button class="print-btn" onclick="window.print()">&#9674; PRINT</button>
+<button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right:8rem;">&#9674; EXPAND ALL</button>
 <footer class="ep-legal-footer">
   <div class="ep-legal-inner">
     <div class="ep-legal-title">◈ ECLIPSE PHASE — EDGE OF THE LIGHT</div>
@@ -618,6 +621,16 @@
 <script src="ep-muse.js"></script>
 
 <script>
+
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(all).some(c => c.classList.contains('open'));
+  all.forEach(c => c.classList.toggle('open', !anyOpen));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '&#9662;' : '&#9652;'; });
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
 function toggleCollapse(btn) {
   const content = btn.nextElementSibling;
   const isOpen = content.classList.contains('open');

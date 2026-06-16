@@ -669,8 +669,19 @@
   </div>
 </footer>
 <button class="print-btn" onclick="window.print()">◈ PRINT</button>
+<button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right:8rem;">&#9674; EXPAND ALL</button>
 
 <script>
+
+function toggleAll() {
+  const btn = document.getElementById('expand-all-btn');
+  const all = document.querySelectorAll('.collapse-content');
+  const btns = document.querySelectorAll('.collapse-btn');
+  const anyOpen = Array.from(all).some(c => c.classList.contains('open'));
+  all.forEach(c => c.classList.toggle('open', !anyOpen));
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '&#9662;' : '&#9652;'; });
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
+}
 function toggleCollapse(btn) {
   const c = btn.nextElementSibling;
   const open = c.classList.contains('open');

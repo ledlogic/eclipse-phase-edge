@@ -685,7 +685,7 @@ function toggleAll() {
   const anyOpen = Array.from(all).some(c => c.classList.contains('open'));
   all.forEach(c => c.classList.toggle('open', !anyOpen));
   btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '&#9662;' : '&#9652;'; });
-  btn.textContent = anyOpen ? '&#9674; EXPAND ALL' : '&#9674; COLLAPSE ALL';
+  btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
 }
 
 const pipStates = { pip1: 0, pip2: 0, pip3: 0 };
