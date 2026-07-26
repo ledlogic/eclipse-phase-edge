@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL THAT GLITTERS — MISSION BRIEF | Player Handout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void:    #04070a;
+    --deep:    #080d12;
+    --panel:   #0c1219;
+    --border:  #172030;
+    --accent:  #f5a623;
+    --teal:    #00c9b1;
+    --danger:  #d94f3d;
+    --warn:    #e8b84b;
+    --signal:  #8c52ff;
+    --muted:   #48606e;
+    --text:    #b8cdd8;
+    --bright:  #e8f2f8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--void);
+    color: var(--text);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .handout {
+    width: 100%;
+    max-width: 680px;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    background: var(--deep);
+  }
+
+  /* ── header ── */
+  .handout-header {
+    padding: 1.4rem 1.8rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #050a10 0%, #0a1520 60%, #050a10 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .handout-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--teal), var(--accent), transparent);
+  }
+  .handout-tag {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    opacity: 0.6;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+  .handout-title {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--bright);
+    line-height: 1;
+    margin-bottom: 0.2rem;
+  }
+  .handout-title span {
+    color: var(--accent);
+  }
+  .handout-sub {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  /* ── objectives ── */
+  .objectives { padding: 1.2rem 1.8rem; border-bottom: 1px solid var(--border); }
+
+  .obj {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .obj:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+  .obj-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 3px 7px;
+    border: 1px solid;
+    align-self: flex-start;
+    margin-top: 1px;
+  }
+  .obj-label.primary  { color: var(--accent);  border-color: rgba(245,166,35,0.4);  background: rgba(245,166,35,0.06); }
+  .obj-label.secondary{ color: var(--teal);    border-color: rgba(0,201,177,0.4);   background: rgba(0,201,177,0.06); }
+  .obj-label.campaign { color: var(--signal);  border-color: rgba(140,82,255,0.4);  background: rgba(140,82,255,0.06); }
+
+  .obj-text {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── setting ── */
+  .setting { padding: 1.2rem 1.8rem; }
+
+  .setting-header {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .env-row {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+    font-size: 12px;
+  }
+  .env-key {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--teal);
+    text-transform: uppercase;
+    min-width: 80px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  .env-key.warn   { color: var(--warn); }
+  .env-key.danger { color: var(--danger); }
+  .env-key.signal { color: var(--signal); }
+  .env-val { color: var(--text); line-height: 1.6; }
+
+  /* ── footer ── */
+  .handout-footer {
+    padding: 0.6rem 1.8rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+
+  /* ── day mode ── */
+  body.day-mode {
+    --void: #f0f2f5; --deep: #e8ecf4; --panel: #e0e5ef;
+    --border: #c0cad8; --accent: #b06000; --teal: #007a6b;
+    --danger: #b03020; --warn: #8a5a00; --signal: #5a28cc;
+    --muted: #5a6878; --text: #1a2530; --bright: #080f18;
+    background: var(--void);
+  }
+  body.day-mode .handout { background: var(--deep); }
+  body.day-mode .handout-header {
+    background: linear-gradient(135deg, #dde2ea 0%, #e8ecf3 60%, #dde2ea 100%);
+  }
+  body.day-mode .handout-header::after {
+    background: linear-gradient(90deg, transparent, var(--accent), var(--teal), var(--accent), transparent);
+  }
+
+  /* ── toggle ── */
+  .day-toggle {
+    position: fixed; top: 0.7rem; right: 1rem; z-index: 200;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px; letter-spacing: 2px;
+    background: none; border: 1px solid var(--border);
+    color: var(--muted); padding: 3px 9px; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .day-toggle:hover { color: var(--bright); border-color: var(--accent); }
+
+  /* ── print ── */
+  .print-btn {
+    position: fixed; bottom: 1.5rem; right: 1rem; z-index: 200;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px; letter-spacing: 2px;
+    background: none; border: 1px solid var(--border);
+    color: var(--muted); padding: 4px 10px; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .print-btn:hover { color: var(--bright); border-color: var(--accent); }
+
+  @media print {
+    body { background: #fff; color: #111; padding: 0; }
+    .handout { border: 1px solid #ccc; border-top: 3px solid #8a5000; max-width: 100%; }
+    .handout-header { background: #f5f5f5 !important; }
+    .handout-header::after { display: none; }
+    .day-toggle, .print-btn { display: none; }
+    .obj-label.primary  { color: #8a5000; border-color: #8a5000; background: #fdf5e8; }
+    .obj-label.secondary{ color: #006b5e; border-color: #006b5e; background: #e8f5f3; }
+    .obj-label.campaign { color: #3a1890; border-color: #3a1890; background: #f0ecff; }
+    .env-key { color: #006b5e; }
+    .env-key.warn   { color: #7a4a00; }
+    .env-key.danger { color: #900; }
+    .env-key.signal { color: #3a1890; }
+    .handout-tag, .handout-sub { color: #666; }
+    .handout-title { color: #111; }
+    .handout-title span { color: #8a5000; }
+    .setting-header { color: #006b5e; }
+    .handout-footer { color: #888; }
+  }
+</style>
+
+
+<script src="ep-daymode.js"></script>
+</head>
+<body>
+
+<button id="day-toggle-btn" class="day-toggle">◈ DAY MODE</button>
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+
+<div class="handout">
+
+  <div class="handout-header">
+    <div class="handout-tag">◈ SESSION 10 — PLAYER HANDOUT — ECLIPSE PHASE 2E</div>
+    <div class="handout-title">ALL THAT <span>GLITTERS</span></div>
+    <div class="handout-sub">GLITTER BLOC SOIRÉE · PROFUNDA · ENCELADUS · SATURN SYSTEM</div>
+  </div>
+
+  <div class="objectives">
+
+    <div class="obj">
+      <div class="obj-label primary">PRIMARY</div>
+      <div class="obj-text">Extract the encrypted data module from Danzan Alciato's headware implant by any means available — social, technical, physical, or pharmaceutical. Do not create an incident that makes the news.</div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-label secondary">SECONDARY</div>
+      <div class="obj-text">Identify what the Consortium already knows about the outer-system arc. Did Alciato's intelligence service pick up the Gutenberg signal? Do they know about FK7? About the Lithohex? The answers change how much time the team has before hypercorp assets move into the Kuiper.</div>
+    </div>
+
+    <div class="obj">
+      <div class="obj-label campaign">CAMPAIGN</div>
+      <div class="obj-text">Kyo has the decryption key for Alciato's data module. She's Oversight — not Consortium. If she gets the key out, it either exposes Alciato or it disappears into another agency's filing system. Deciding who gets the decryption key, and what gets done with the data, is the session's moral question.</div>
+    </div>
+
+  </div>
+
+  <div class="setting">
+
+    <div class="setting-header">◈ SETTING — PROFUNDA, ENCELADUS</div>
+
+    <div class="env-row">
+      <div class="env-key">LOCATION</div>
+      <div class="env-val">Subsurface beehive habitat, Enceladus, Saturnian system. Privately owned by the Glitter Bloc morph-design house. Extravagant ballroom plus numerous side rooms for socialising, private conversations, and freshening up.</div>
+    </div>
+
+    <div class="env-row">
+      <div class="env-key">GRAVITY</div>
+      <div class="env-val">0.113g — less than Luna. Everyone moves with exaggerated elegance or barely contained chaos depending on their morph and experience. Things drift. Drinks float if spilled.</div>
+    </div>
+
+    <div class="env-row">
+      <div class="env-key warn">GOVERNANCE</div>
+      <div class="env-val">Extropian — no laws, only contracts. Glitter Bloc owns the venue and runs its own security and judiciary on retainer. Guests are contractually bound by Glitter Bloc security dictums on entry. No station police, no outside jurisdiction. Glitter Bloc security is the only law in the room.</div>
+    </div>
+
+    <div class="env-row">
+      <div class="env-key">ATMOSPHERE</div>
+      <div class="env-val">Live-streamed to the mesh. Several hundred guests — figureheads, celebrities, diplomats, and outer-rim personalities. Everyone is dressed to kill. Designer drugs circulating openly. Runway presentation, fork burlesque, dueling DJs.</div>
+    </div>
+
+    <div class="env-row">
+      <div class="env-key danger">SECURITY</div>
+      <div class="env-val">Glitter Bloc private guards and drones. All diplomats present have small armed personal details. Overt violence triggers immediate Glitter Bloc neutralisation — combatants removed, event continues. The show must go on. Covert action is not their problem unless it becomes visible.</div>
+    </div>
+
+    <div class="env-row">
+      <div class="env-key signal">MESH</div>
+      <div class="env-val">Open to all guests. VR pods installed for morph demo experiences.</div>
+    </div>
+
+  </div>
+
+  <div class="handout-footer">
+    <span>FIREWALL SENTINEL BRIEFING</span>
+    <span>SESSION 10 · ALL THAT GLITTERS</span>
+    <span>ECLIPSE PHASE 2E</span>
+  </div>
+
+</div>
+
+</body>
+</html>

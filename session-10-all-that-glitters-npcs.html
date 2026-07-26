@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL THAT GLITTERS — NPC STATS | Eclipse Phase Session 10</title>
+<link rel="stylesheet" href="ep-campaign.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="ep-daymode.js"></script>
+</head>
+<body>
+
+<nav id="ep-session-nav">
+  <span style="color:var(--accent,#f5a623); opacity:0.6; letter-spacing:2px;">◈ SESSION 10</span>
+  <span style="color:var(--border,#1e2a3a);">|</span>
+  <a href="session-10-all-that-glitters.html" style="color:var(--text,#8898a8); text-decoration:none; border:1px solid transparent; padding:2px 6px; letter-spacing:2px;" onmouseover="this.style.borderColor='var(--border,#1e2a3a)'" onmouseout="this.style.borderColor='transparent'">◀ MAIN SCENARIO</a>
+  <span style="color:var(--border,#1e2a3a);">|</span>
+  <a href="session-10-all-that-glitters-venue.html" style="color:var(--text,#8898a8); text-decoration:none; border:1px solid transparent; padding:2px 6px; letter-spacing:2px;" onmouseover="this.style.borderColor='var(--border,#1e2a3a)'" onmouseout="this.style.borderColor='transparent'">VENUE MAP</a>
+  <span style="color:var(--border,#1e2a3a);">|</span>
+  <span style="color:var(--accent,#f5a623); border:1px solid rgba(245,166,35,0.35); padding:2px 6px; letter-spacing:2px;">NPC STATS</span>
+  <span style="color:var(--border,#1e2a3a);">|</span>
+  <a href="index.html" style="color:var(--text,#8898a8); opacity:0.55; text-decoration:none; border:1px solid transparent; padding:2px 6px; letter-spacing:2px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.55'">◈ INDEX</a>
+
+  <button id="day-toggle-btn" class="day-toggle">◈ DAY MODE</button>
+</nav>
+
+<header>
+  <div class="header-tag">◈ SESSION 10 — NPC STATS — ECLIPSE PHASE 2E</div>
+  <h1>ALL THAT GLITTERS <span class="loc">NPC REFERENCE</span></h1>
+  <div class="header-sub">MORPH · APTITUDES · SKILLS · EQUIPMENT · ALL PRINCIPAL &amp; SECONDARY NPCS</div>
+  <div class="stats-bar">
+    <span class="stat-chip teal">9 NPCS STATTED</span>
+    <span class="stat-chip warn">GM REFERENCE ONLY</span>
+    <span class="stat-chip">EP2E RULES · STATS ARE ESTIMATES</span>
+    <span class="stat-chip">PROFUNDA · ENCELADUS · 0.113g</span>
+  </div>
+</header>
+
+<div class="main-grid">
+<div class="left-col">
+
+<!-- ══════════════════════════════════════════════════════
+     STAT BLOCK LEGEND
+═══════════════════════════════════════════════════════ -->
+<div class="section-label">◈ HOW TO READ THESE BLOCKS</div>
+<div class="npc-card" style="font-size:0.82rem; color:var(--muted); line-height:1.7; margin-bottom:1rem;">
+  <strong style="color:var(--textbright);">Aptitudes</strong> (COG/INT/REF/SAV/SOM/WIL) are rated 5–30 for most transhumans. Skills = Aptitude × 2 base + points spent; max 80 in chargen, no hard cap for NPCs. <strong style="color:var(--textbright);">Pools</strong> (Insight/Moxie/Vigor/Flex) refresh on recharge. <strong style="color:var(--textbright);">DUR/WT/DR</strong>: Durability / Wound Threshold / Death Rating. <strong style="color:var(--textbright);">INIT</strong> = (REF + INT) ÷ 5. All stats are GM estimates suited to narrative role — not min-maxed. Wing stats as needed per the scenario's social register.
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     DANZAN ALCIATO
+═══════════════════════════════════════════════════════ -->
+<div class="section-label">◈ DANZAN ALCIATO — PRIMARY TARGET</div>
+<div class="npc-card">
+  <div class="npc-name">DANZAN ALCIATO</div>
+  <div class="npc-role">PLANETARY CONSORTIUM AMBASSADOR · SYLPH / CYBERBRAIN</div>
+
+  <div class="npc-stats" style="margin-bottom:0.7rem;">
+    <div class="npc-stat hot">CONSORTIUM</div>
+    <div class="npc-stat warn">SYLPH MORPH</div>
+    <div class="npc-stat">CYBERBRAIN</div>
+    <div class="npc-stat danger">ENCRYPTED DATA MODULE</div>
+    <div class="npc-stat">THEY / THEM</div>
+  </div>
+
+  <!-- MORPH -->
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">MORPH — SYLPH (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR / WT / DR</div><div class="test-desc">35 / 7 / 53</div></div>
+  <div class="test-item"><div class="test-skill teal">POOLS</div><div class="test-desc">Insight 1 · Moxie 3 · Vigor 1 · Flex 1</div></div>
+  <div class="test-item"><div class="test-skill teal">MORPH BONUSES</div><div class="test-desc">+10 Deceive, Persuade, Impersonate, Kinesics · +5 all social skills · Enhanced Pheromones (+10 Persuade/Impersonate in person)</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Basic Mesh Inserts · Cortical Stack · Enhanced Pheromones · Sex Switch · Cyberbrain (see below)</div></div>
+
+  <!-- CYBERBRAIN NOTE -->
+  <div class="test-item" style="margin-top:0.3rem;"><div class="test-skill danger">CYBERBRAIN</div><div class="test-desc">Encrypted data module headware implant — contains Albiorix shipyard plans + outer-system intel annex. Module encryption rating: 80. Requires Medicine: Biotech or Hardware: Electronics to physically access; Infosec to crack remotely. Kyo holds the decryption key.</div></div>
+
+  <!-- APTITUDES -->
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">APTITUDES</div>
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:4px; margin-bottom:0.5rem;">
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">COG</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">INT</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">REF</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SAV</div><div class="test-desc" style="text-align:center; font-size:13px;">25</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SOM</div><div class="test-desc" style="text-align:center; font-size:13px;">10</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">WIL</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+  </div>
+  <div class="test-item"><div class="test-skill">INIT</div><div class="test-desc">7 &nbsp;·&nbsp; LUC 40 &nbsp;·&nbsp; TT 8 &nbsp;·&nbsp; IR 80</div></div>
+
+  <!-- SKILLS -->
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">ACTIVE SKILLS</div>
+  <div class="test-item"><div class="test-skill warn">Deceive</div><div class="test-desc">75 &nbsp;·&nbsp; <span style="color:var(--muted);">SAV-linked · +10 morph bonus</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Persuade</div><div class="test-desc">80 &nbsp;·&nbsp; <span style="color:var(--muted);">SAV-linked · +10 morph · +10 pheromones in person</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Kinesics</div><div class="test-desc">70 &nbsp;·&nbsp; <span style="color:var(--muted);">SAV-linked · reads social cues with professional precision</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Impersonate</div><div class="test-desc">60</div></div>
+  <div class="test-item"><div class="test-skill">Research</div><div class="test-desc">65 &nbsp;·&nbsp; <span style="color:var(--muted);">COG-linked · diplomatic intelligence work</span></div></div>
+  <div class="test-item"><div class="test-skill">Perceive</div><div class="test-desc">50 &nbsp;·&nbsp; <span style="color:var(--muted);">INT-linked</span></div></div>
+  <div class="test-item"><div class="test-skill">Fray</div><div class="test-desc">30 &nbsp;·&nbsp; <span style="color:var(--muted);">REF × 2 — not a fighter</span></div></div>
+  <div class="test-item"><div class="test-skill">Know: Hypercorp Politics</div><div class="test-desc">85</div></div>
+  <div class="test-item"><div class="test-skill">Know: Outer System Affairs</div><div class="test-desc">75</div></div>
+  <div class="test-item"><div class="test-skill">Know: Diplomatic Protocol</div><div class="test-desc">80</div></div>
+
+  <!-- EQUIPMENT -->
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">EQUIPMENT &amp; GEAR</div>
+  <div class="test-item"><div class="test-skill danger">Encrypted Data Module</div><div class="test-desc">Headware implant in cyberbrain. Albiorix shipyard plans + outer-system intel. Encryption 80. Physical removal requires incapacitation + Medicine: Biotech –30 or Hardware: Electronics.</div></div>
+  <div class="test-item"><div class="test-skill">Ecto</div><div class="test-desc">High-end diplomatic model. Encrypted comms. Scrambler app active.</div></div>
+  <div class="test-item"><div class="test-skill">Dress Clothing</div><div class="test-desc">AR-enabled couture. Glitter Bloc loan for the evening — records body metrics for sales follow-up.</div></div>
+  <div class="test-item"><div class="test-skill">Medichines</div><div class="test-desc">Standard biotech. Ignore wound modifiers, recover 1 DUR/turn.</div></div>
+  <div class="test-item"><div class="test-skill warn">Personal Security Detail</div><div class="test-desc">2 guards stationed outside private rooms. Armed (medium pistols). Not Kyo — Kyo is embedded staff, not personal security.</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     JOLENA KYO
+═══════════════════════════════════════════════════════ -->
+<div class="section-label">◈ JOLENA KYO — OVERSIGHT AGENT</div>
+<div class="npc-card">
+  <div class="npc-name">JOLENA KYO</div>
+  <div class="npc-role">CONSORTIUM OVERSIGHT · GHOST MORPH · EMBEDDED IN ALCIATO STAFF</div>
+
+  <div class="npc-stats" style="margin-bottom:0.7rem;">
+    <div class="npc-stat">OVERSIGHT</div>
+    <div class="npc-stat teal">GHOST MORPH</div>
+    <div class="npc-stat hot">DECRYPTION KEY</div>
+    <div class="npc-stat warn">UPLIFT BIGOT — HIDDEN</div>
+    <div class="npc-stat">SHE / HER</div>
+  </div>
+
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">MORPH — GHOST (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR / WT / DR</div><div class="test-desc">45 / 9 / 68</div></div>
+  <div class="test-item"><div class="test-skill teal">POOLS</div><div class="test-desc">Insight 3 · Moxie 1 · Vigor 2 · Flex 2</div></div>
+  <div class="test-item"><div class="test-skill teal">MORPH BONUSES</div><div class="test-desc">+10 Infiltrate, Perceive · +5 Fray · Chameleon Skin · Enhanced Vision · Adrenal Surge (spend Vigor: +10 melee/ranged, ignore 1 wound)</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Basic Mesh Inserts · Cortical Stack · Chameleon Skin · Enhanced Vision · Adrenal Surge · Muscle Augmentation · Grip Pads · Medichines</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">APTITUDES</div>
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:4px; margin-bottom:0.5rem;">
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">COG</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">INT</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">REF</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SAV</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SOM</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">WIL</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+  </div>
+  <div class="test-item"><div class="test-skill">INIT</div><div class="test-desc">8 &nbsp;·&nbsp; LUC 30 &nbsp;·&nbsp; TT 6 &nbsp;·&nbsp; IR 60</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">ACTIVE SKILLS</div>
+  <div class="test-item"><div class="test-skill warn">Infiltrate</div><div class="test-desc">70 &nbsp;·&nbsp; <span style="color:var(--muted);">+10 morph · chameleon skin adds +20 in appropriate lighting</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Perceive</div><div class="test-desc">75 &nbsp;·&nbsp; <span style="color:var(--muted);">+10 morph · enhanced vision · threat pattern recognition</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Kinesics</div><div class="test-desc">65 &nbsp;·&nbsp; <span style="color:var(--muted);">reads body language professionally</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Deceive</div><div class="test-desc">60 &nbsp;·&nbsp; <span style="color:var(--muted);">hides uplift bigotry; covers Oversight role as "personal staff"</span></div></div>
+  <div class="test-item"><div class="test-skill danger">Guns</div><div class="test-desc">65 &nbsp;·&nbsp; <span style="color:var(--muted);">REF-linked · primary combat skill</span></div></div>
+  <div class="test-item"><div class="test-skill danger">Melee</div><div class="test-desc">55</div></div>
+  <div class="test-item"><div class="test-skill danger">Fray</div><div class="test-desc">50 &nbsp;·&nbsp; <span style="color:var(--muted);">+5 morph bonus</span></div></div>
+  <div class="test-item"><div class="test-skill">Research</div><div class="test-desc">60 &nbsp;·&nbsp; <span style="color:var(--muted);">building the Alciato corruption file</span></div></div>
+  <div class="test-item"><div class="test-skill">Know: Oversight Procedure</div><div class="test-desc">80</div></div>
+  <div class="test-item"><div class="test-skill">Know: Criminal Investigation</div><div class="test-desc">70</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">EQUIPMENT</div>
+  <div class="test-item"><div class="test-skill hot">Decryption Key</div><div class="test-desc">Stored in encrypted personal cortical stack partition. Decrypts Alciato's data module. Obtained through a compromised Oversight contact — using it without a warrant is illegal.</div></div>
+  <div class="test-item"><div class="test-skill danger">Concealed Pistol</div><div class="test-desc">Medium pistol (2d10+2 DV, SA/BF, 15 shots). Passed foyer security via Oversight credentials. Kyo is the only non-Glitter-Bloc armed person at the event.</div></div>
+  <div class="test-item"><div class="test-skill">Ecto</div><div class="test-desc">Oversight-encrypted. Tight-beam comms to a cutout relay — cannot be traced to Oversight directly.</div></div>
+  <div class="test-item"><div class="test-skill">Surveillance Suite App</div><div class="test-desc">Passive mesh monitor. Logs all Alciato mesh traffic in range. She has 11 days of Alciato's communications.</div></div>
+  <div class="test-item"><div class="test-skill">Smart Clothes</div><div class="test-desc">Appear as upscale party wear. AR-enabled. Contains three concealed pockets (Perceive DV 30 to spot).</div></div>
+</div>
+
+</div><!-- /left-col -->
+<div class="right-col">
+
+<!-- ══════════════════════════════════════════════════════
+     VOX MAXINE
+═══════════════════════════════════════════════════════ -->
+<div class="section-label">◈ VOX MAXINE — FIREWALL CONTACT</div>
+<div class="npc-card">
+  <div class="npc-name">VOX MAXINE</div>
+  <div class="npc-role">NEO-AVIAN SOCIALITE / DRUG DEALER · FIREWALL ASSET · SHE / HER</div>
+
+  <div class="npc-stats" style="margin-bottom:0.7rem;">
+    <div class="npc-stat teal">FIREWALL</div>
+    <div class="npc-stat">NEO-AVIAN MORPH</div>
+    <div class="npc-stat hot">DRUG INVENTORY</div>
+    <div class="npc-stat">UPLIFT</div>
+  </div>
+
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">MORPH — NEO-AVIAN (UPLIFT BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR / WT / DR</div><div class="test-desc">25 / 5 / 38 &nbsp;·&nbsp; <span style="color:var(--muted);">small frame — fragile but quick</span></div></div>
+  <div class="test-item"><div class="test-skill teal">POOLS</div><div class="test-desc">Insight 2 · Moxie 3 · Vigor 0 · Flex 1</div></div>
+  <div class="test-item"><div class="test-skill teal">MORPH TRAITS</div><div class="test-desc">Flight (low-g trivial) · Beak/Talon attack (1d6 DV) · Enhanced Vision · Prehensile Feet · +10 Perceive · Small size (–10 to be hit) · 360° vision arc</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Mesh Inserts · Cortical Stack · Enhanced Vision · Prehensile Feet</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">APTITUDES</div>
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:4px; margin-bottom:0.5rem;">
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">COG</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">INT</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">REF</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SAV</div><div class="test-desc" style="text-align:center; font-size:13px;">25</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SOM</div><div class="test-desc" style="text-align:center; font-size:13px;">10</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">WIL</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+  </div>
+  <div class="test-item"><div class="test-skill">INIT</div><div class="test-desc">8 &nbsp;·&nbsp; LUC 30 &nbsp;·&nbsp; TT 6 &nbsp;·&nbsp; IR 60</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">ACTIVE SKILLS</div>
+  <div class="test-item"><div class="test-skill warn">Persuade</div><div class="test-desc">75 &nbsp;·&nbsp; <span style="color:var(--muted);">SAV-linked · professional social operator</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Kinesics</div><div class="test-desc">80 &nbsp;·&nbsp; <span style="color:var(--muted);">knows everyone's tells. Oppose her with Deceive.</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Deceive</div><div class="test-desc">65</div></div>
+  <div class="test-item"><div class="test-skill">Perceive</div><div class="test-desc">65 &nbsp;·&nbsp; <span style="color:var(--muted);">+10 morph · 360° arc</span></div></div>
+  <div class="test-item"><div class="test-skill">Research</div><div class="test-desc">60 &nbsp;·&nbsp; <span style="color:var(--muted);">knows where to look for dirt</span></div></div>
+  <div class="test-item"><div class="test-skill">Know: Profunda Social Scene</div><div class="test-desc">90 &nbsp;·&nbsp; <span style="color:var(--muted);">unmatched. She knows everyone.</span></div></div>
+  <div class="test-item"><div class="test-skill">Know: Drugs &amp; Chems</div><div class="test-desc">80</div></div>
+  <div class="test-item"><div class="test-skill">Know: Firewall Operations</div><div class="test-desc">40 &nbsp;·&nbsp; <span style="color:var(--muted);">asset, not an agent — limited operational knowledge</span></div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">DRUG INVENTORY — AVAILABLE TO PCS</div>
+  <div class="test-item"><div class="test-skill warn">Compliance Agent</div><div class="test-desc">Target more forthcoming; +20 to operator's Persuade/Deceive tests vs target. Duration 2 hours. Subtle taste — DV 20 Perceive to detect in a drink. Quantity: 3 doses.</div></div>
+  <div class="test-item"><div class="test-skill warn">Amnesiac (Nepenthe)</div><div class="test-desc">Target loses 2–4 hours of episodic memory. Onset 20 min. Target WIL Check to resist partial memory loss. Quantity: 2 doses.</div></div>
+  <div class="test-item"><div class="test-skill">Jazz (Stimulant)</div><div class="test-desc">+20 INIT, ignore 1 wound, –10 WIL checks. Duration 1 hour. Quantity: abundant.</div></div>
+  <div class="test-item"><div class="test-skill">Orbital Hash</div><div class="test-desc">Relaxant. Social situations feel easier; +10 Persuade received, –10 Perceive. Duration 2 hours. Vox's personal supply.</div></div>
+  <div class="test-item" style="border-top:1px solid var(--border); margin-top:0.3rem; padding-top:0.3rem;"><div class="test-skill teal">PRICE</div><div class="test-desc">Information. Vox trades drugs for secrets. She wants to know what the team is really doing here — a partial truth satisfies her. Full honesty earns a bonus dose and a useful introduction.</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     RIFF-RAFF
+═══════════════════════════════════════════════════════ -->
+<div class="section-label">◈ RIFF-RAFF — ID CREW HACKER</div>
+<div class="npc-card">
+  <div class="npc-name">RIFF-RAFF</div>
+  <div class="npc-role">ID CREW CARTEL HACKER · INFOMORPH · NO PHYSICAL PRESENCE · UNKNOWN PRONOUNS</div>
+
+  <div class="npc-stats" style="margin-bottom:0.7rem;">
+    <div class="npc-stat danger">ID CREW</div>
+    <div class="npc-stat">INFOMORPH</div>
+    <div class="npc-stat warn">VR PODS HACKED</div>
+    <div class="npc-stat">TITANIAN FUGITIVE</div>
+  </div>
+
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">MORPH — INFOMORPH (DIGIMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR / WT / DR</div><div class="test-desc">20 / 4 / 40 &nbsp;·&nbsp; <span style="color:var(--muted);">mesh wounds instead of physical — not in the room physically</span></div></div>
+  <div class="test-item"><div class="test-skill teal">POOLS</div><div class="test-desc">Insight 4 · Moxie 1 · Vigor 0 · Flex 2</div></div>
+  <div class="test-item"><div class="test-skill teal">INFOMORPH TRAITS</div><div class="test-desc">No physical vulnerability · runs at 4× subjective time · Copylock installed · E-veil meshware (–30 to detect mesh presence) · Speed app (extra action per turn)</div></div>
+  <div class="test-item"><div class="test-skill danger">LOCATION</div><div class="test-desc">Running from an anonymised relay node outside the venue. Physical presence: none. Can only be harmed via mesh intrusion or by locating and physically destroying their relay hardware (outside the venue — GM discretion on location).</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">APTITUDES</div>
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:4px; margin-bottom:0.5rem;">
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">COG</div><div class="test-desc" style="text-align:center; font-size:13px;">25</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">INT</div><div class="test-desc" style="text-align:center; font-size:13px;">20</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">REF</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SAV</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">SOM</div><div class="test-desc" style="text-align:center; font-size:13px;">—</div></div>
+    <div class="test-item" style="flex-direction:column; gap:1px;"><div class="test-skill" style="text-align:center; min-width:0;">WIL</div><div class="test-desc" style="text-align:center; font-size:13px;">15</div></div>
+  </div>
+  <div class="test-item"><div class="test-skill">INIT</div><div class="test-desc">7 (×4 subjective) &nbsp;·&nbsp; LUC 30 &nbsp;·&nbsp; TT 6 &nbsp;·&nbsp; IR 60</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">ACTIVE SKILLS</div>
+  <div class="test-item"><div class="test-skill warn">Infosec</div><div class="test-desc">85 &nbsp;·&nbsp; <span style="color:var(--muted);">primary skill. Already has VR pod session manager compromised.</span></div></div>
+  <div class="test-item"><div class="test-skill warn">Interface</div><div class="test-desc">75</div></div>
+  <div class="test-item"><div class="test-skill warn">Research</div><div class="test-desc">70</div></div>
+  <div class="test-item"><div class="test-skill">Deceive</div><div class="test-desc">55 &nbsp;·&nbsp; <span style="color:var(--muted);">dry and laconic — not a social specialist</span></div></div>
+  <div class="test-item"><div class="test-skill">Perceive</div><div class="test-desc">50</div></div>
+  <div class="test-item"><div class="test-skill">Know: Criminal Networks</div><div class="test-desc">80</div></div>
+  <div class="test-item"><div class="test-skill">Know: Blackmail Operations</div><div class="test-desc">75</div></div>
+
+  <div class="section-label" style="margin:0.6rem 0 0.3rem; font-size:9px;">ACTIVE EXPLOITS &amp; MESHWARE</div>
+  <div class="test-item"><div class="test-skill danger">VR Pod Exploit</div><div class="test-desc">Installed 3 days ago. Any guest entering a pod can be isolated into a private Riff-Raff-controlled instance. The team can piggyback if they identify the exploit first (Infosec DV 25 to detect; DV 35 to co-opt).</div></div>
+  <div class="test-item"><div class="test-skill danger">E-Veil</div><div class="test-desc">Meshware: –30 to detect Riff-Raff's presence in the venue mesh. R.A.I.D. with Interface 80 has a real shot; others unlikely without a lucky roll.</div></div>
+  <div class="test-item"><div class="test-skill">Spoofer</div><div class="test-desc">Can fake transmissions and mesh IDs. Uses this to appear as Glitter Bloc system traffic.</div></div>
+  <div class="test-item"><div class="test-skill">Blackmail Archive</div><div class="test-desc">Cracked Jovian Space Fleet Intelligence counter-agent identity. This is the commodity they're selling to Alciato. If the team accesses Riff-Raff's data (Infosec vs Riff-Raff's Firewall 75 in a VR instance), they can extract it.</div></div>
+</div>
+
+</div><!-- /right-col -->
+</div><!-- /main-grid -->
+
+<!-- Second grid for remaining NPCs — full width cards -->
+<div style="max-width:1200px; margin:0 auto; padding:0 1.5rem 1rem;">
+
+<div class="section-label">◈ SECONDARY NPCS — FULL STATS</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+
+<!-- GRIX -->
+<div class="npc-card teal-npc">
+  <div class="npc-name">GRIX</div>
+  <div class="npc-role">TITANIAN MINISTRY OF STATE · OLYMPIAN · SHE / THEY</div>
+  <div class="npc-stats" style="margin-bottom:0.6rem;">
+    <div class="npc-stat teal">TITANIAN</div>
+    <div class="npc-stat">OLYMPIAN</div>
+    <div class="npc-stat">FLEET INTEL TIES</div>
+    <div class="npc-stat warn">PTSD — MANAGED</div>
+  </div>
+  <div class="section-label" style="margin:0.3rem 0; font-size:9px;">MORPH — OLYMPIAN (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">50 / 10 / 75 &nbsp;·&nbsp; Pools: Insight 1 · Moxie 1 · Vigor 3 · Flex 1</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Cortical Stack · Mesh Inserts · Muscle Aug · Enhanced Respiration · Nanotats (luminescent, shifting geometric patterns) · Bioluminescent Eyes</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">KEY APTITUDES &amp; SKILLS</div>
+  <div class="test-item"><div class="test-skill">COG 15 · INT 20 · REF 20 · SAV 20 · SOM 25 · WIL 15</div><div class="test-desc">INIT 7</div></div>
+  <div class="test-item"><div class="test-skill warn">Persuade</div><div class="test-desc">65 &nbsp;·&nbsp; Deceive 50 &nbsp;·&nbsp; Kinesics 60</div></div>
+  <div class="test-item"><div class="test-skill danger">Guns</div><div class="test-desc">60 &nbsp;·&nbsp; Melee 65 &nbsp;·&nbsp; Fray 50</div></div>
+  <div class="test-item"><div class="test-skill">Know: Titan Politics 80 · Fleet Intel Procedure 65 · Fall History 75</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">EQUIPMENT</div>
+  <div class="test-item"><div class="test-skill">Concealed Knife</div><div class="test-desc">1d10+2 DV · SOM-linked · last resort only</div></div>
+  <div class="test-item"><div class="test-skill">Encrypted Ecto</div><div class="test-desc">Tight-beam Titan Fleet Intelligence uplink. Used to arrange the Halsema extraction.</div></div>
+  <div class="test-item"><div class="test-skill warn">Substances</div><div class="test-desc">Personal supply of Klar (clarity drug) and Orbital Hash for PTSD management. She is never impaired — she's managing precisely.</div></div>
+</div>
+
+<!-- ALI WADADA -->
+<div class="npc-card">
+  <div class="npc-name">ALI WADADA</div>
+  <div class="npc-role">EXTROPIAN FIXER · SYLPH · HE / HIM</div>
+  <div class="npc-stats" style="margin-bottom:0.6rem;">
+    <div class="npc-stat warn">EXTROPIAN</div>
+    <div class="npc-stat danger">VOLKOV CUT-OUT</div>
+    <div class="npc-stat">SYLPH</div>
+    <div class="npc-stat">EGO TRADE HISTORY</div>
+  </div>
+  <div class="section-label" style="margin:0.3rem 0; font-size:9px;">MORPH — SYLPH (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">35 / 7 / 53 &nbsp;·&nbsp; Pools: Insight 1 · Moxie 3 · Vigor 1 · Flex 1</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Cortical Stack · Mesh Inserts · Enhanced Pheromones · Sex Switch · Medichines</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">KEY APTITUDES &amp; SKILLS</div>
+  <div class="test-item"><div class="test-skill">COG 15 · INT 20 · REF 15 · SAV 25 · SOM 10 · WIL 15</div><div class="test-desc">INIT 7</div></div>
+  <div class="test-item"><div class="test-skill warn">Persuade</div><div class="test-desc">80 &nbsp;·&nbsp; Kinesics 70 &nbsp;·&nbsp; Deceive 65 &nbsp;·&nbsp; Negotiate 75</div></div>
+  <div class="test-item"><div class="test-skill">Research 60 &nbsp;·&nbsp; Know: Black Markets 80 &nbsp;·&nbsp; Know: Hypercorp Contracts 75</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">EQUIPMENT &amp; LEVERAGE</div>
+  <div class="test-item"><div class="test-skill danger">Volkov Intel Package</div><div class="test-desc">The real bribe: detailed intelligence on Titan antimatter-production facilities. Encrypted on a data chip in his inner jacket. This is what the team really wants to intercept — it's as valuable as Alciato's shipyard plans.</div></div>
+  <div class="test-item"><div class="test-skill warn">Blackmail Archive (Vox)</div><div class="test-desc">Mutual leverage with Vox Maxine. If surfaced, destabilises Wadada mid-session.</div></div>
+  <div class="test-item"><div class="test-skill">Personal Guard</div><div class="test-desc">1 Glitter Bloc security drone follows Wadada on rental. Medium pistol equivalent.</div></div>
+</div>
+
+<!-- DÁRIO CONTARATO -->
+<div class="npc-card">
+  <div class="npc-name">DÁRIO CONTARATO</div>
+  <div class="npc-role">JOVIAN AMBASSADOR-AT-LARGE · SPLICER · HE / HIM</div>
+  <div class="npc-stats" style="margin-bottom:0.6rem;">
+    <div class="npc-stat">JOVIAN REPUBLIC</div>
+    <div class="npc-stat warn">ANTI-CONSORTIUM</div>
+    <div class="npc-stat danger">SON'S EGO — UNKNOWN TO HIM</div>
+    <div class="npc-stat">SPLICER</div>
+  </div>
+  <div class="section-label" style="margin:0.3rem 0; font-size:9px;">MORPH — SPLICER (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">35 / 7 / 53 &nbsp;·&nbsp; Pools: Insight 1 · Moxie 1 · Vigor 1 · Flex 2</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Cortical Stack · Mesh Inserts · Medichines</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">KEY APTITUDES &amp; SKILLS</div>
+  <div class="test-item"><div class="test-skill">COG 15 · INT 20 · REF 15 · SAV 20 · SOM 15 · WIL 20</div><div class="test-desc">INIT 7</div></div>
+  <div class="test-item"><div class="test-skill warn">Persuade 70 · Kinesics 65 · Deceive 55</div></div>
+  <div class="test-item"><div class="test-skill">Know: Jovian Republic Politics 85 · Know: Outer System Trade 70</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">EQUIPMENT</div>
+  <div class="test-item"><div class="test-skill">Personal Security</div><div class="test-desc">2 guards, unarmed (disarmed by foyer check). They are watchers, not fighters. If the venue goes hot they evacuate Contarato.</div></div>
+  <div class="test-item"><div class="test-skill warn">Hidden Grief</div><div class="test-desc">Not equipment — a vulnerability. Contarato believes his son died in the Fall. Riff-Raff has the son's ego. Surfacing this — even partially — shifts Contarato's entire agenda mid-session.</div></div>
+</div>
+
+<!-- CLARITY UTHUP -->
+<div class="npc-card danger-npc">
+  <div class="npc-name">CLARITY UTHUP</div>
+  <div class="npc-role">ULTIMATE FACTION · ZAMYATIN OLIGARCH AGENT · REMADE · SHE / HER</div>
+  <div class="npc-stats" style="margin-bottom:0.6rem;">
+    <div class="npc-stat danger">ULTIMATE</div>
+    <div class="npc-stat ozma">ZAMYATIN ASSET</div>
+    <div class="npc-stat">REMADE MORPH</div>
+    <div class="npc-stat warn">SECRET ALLEGIANCE</div>
+  </div>
+  <div class="section-label" style="margin:0.3rem 0; font-size:9px;">MORPH — REMADE (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">60 / 12 / 90 &nbsp;·&nbsp; Pools: Insight 2 · Moxie 1 · Vigor 3 · Flex 2</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Cortical Stack · Mesh Inserts · Muscle Aug · Bone Lacing · Enhanced Vision · Medichines · Toxin Filters · Bioweave Armor (+2/+3)</div></div>
+  <div class="test-item" style="margin-top:0.2rem;"><div class="test-skill warn">NOTE</div><div class="test-desc">If combat occurs, Uthup is genuinely dangerous. She's also the most physically capable person in the room who isn't Glitter Bloc security.</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">KEY APTITUDES &amp; SKILLS</div>
+  <div class="test-item"><div class="test-skill">COG 20 · INT 15 · REF 20 · SAV 15 · SOM 25 · WIL 20</div><div class="test-desc">INIT 7</div></div>
+  <div class="test-item"><div class="test-skill warn">Persuade 55 · Kinesics 40 · Deceive 60</div><div class="test-desc"><span style="color:var(--muted);">She is not a social specialist. She monologues.</span></div></div>
+  <div class="test-item"><div class="test-skill danger">Melee 70 · Guns 65 · Fray 60</div></div>
+  <div class="test-item"><div class="test-skill">Know: Ultimate Philosophy 85 · Know: Kronos Cluster Politics 70 · Know: Zamyatin Interests 75</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">EQUIPMENT</div>
+  <div class="test-item"><div class="test-skill danger">Holdout Pistol</div><div class="test-desc">1d10+2 DV, SA, 10 shots. Passed foyer screening due to Ultimate diplomatic credentials. She's the second armed person in the room.</div></div>
+  <div class="test-item"><div class="test-skill">Know: Zamyatin Dossier</div><div class="test-desc">Encrypted ecto partition. Contains Zamyatin's Saturn-domination plan. If the team can access it (Infosec vs her ecto Firewall 70), they have leverage over both Uthup and the Oligarch.</div></div>
+</div>
+
+<!-- AYLA HALSEMA -->
+<div class="npc-card">
+  <div class="npc-name">AYLA HALSEMA</div>
+  <div class="npc-role">JOVIAN DIPLOMATIC STAFF / ACTIVE DEFECTOR · SPLICER · SHE / HER</div>
+  <div class="npc-stats" style="margin-bottom:0.6rem;">
+    <div class="npc-stat">JOVIAN STAFF</div>
+    <div class="npc-stat teal">DEFECTING TONIGHT</div>
+    <div class="npc-stat warn">STOLEN JOVIAN INTEL</div>
+    <div class="npc-stat">SPLICER</div>
+  </div>
+  <div class="section-label" style="margin:0.3rem 0; font-size:9px;">MORPH — SPLICER (BIOMORPH)</div>
+  <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">35 / 7 / 53 &nbsp;·&nbsp; Pools: Insight 1 · Moxie 1 · Vigor 1 · Flex 2</div></div>
+  <div class="test-item"><div class="test-skill teal">IMPLANTS</div><div class="test-desc">Basic Biomods · Cortical Stack · Mesh Inserts</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">KEY APTITUDES &amp; SKILLS</div>
+  <div class="test-item"><div class="test-skill">COG 15 · INT 15 · REF 15 · SAV 15 · SOM 15 · WIL 20</div><div class="test-desc">INIT 6</div></div>
+  <div class="test-item"><div class="test-skill warn">Persuade 55 · Kinesics 50 · Deceive 50</div></div>
+  <div class="test-item"><div class="test-skill">Know: Jovian Intel Operations 70 · Know: US Congressional Procedure 65</div></div>
+  <div class="section-label" style="margin:0.4rem 0 0.3rem; font-size:9px;">EQUIPMENT</div>
+  <div class="test-item"><div class="test-skill danger">Stolen Data Chip</div><div class="test-desc">Jovian intel-gathering operation details: sensor nets, agent covers, dead-drop protocols in the outer system. Her entry price for Titan asylum. If intercepted by the team — this is tradeable with Grix or directly damaging to Jovian operations.</div></div>
+  <div class="test-item"><div class="test-skill">Ecto</div><div class="test-desc">Personal only. Jovian diplomatic ecto left at the hotel. She doesn't want her communications logged tonight.</div></div>
+</div>
+
+</div><!-- /secondary npc grid -->
+
+<!-- GLITTER BLOC SECURITY REFERENCE -->
+<div class="section-label">◈ GLITTER BLOC SECURITY — GENERIC STATS</div>
+<div class="npc-card" style="margin-bottom:2rem;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+    <div>
+      <div class="npc-name" style="font-size:0.85rem;">SECURITY GUARD</div>
+      <div class="npc-role" style="font-size:10px;">BIOMORPH SPLICER · ×6 ACTIVE ON FLOOR</div>
+      <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">35 / 7 / 53</div></div>
+      <div class="test-item"><div class="test-skill">KEY SKILLS</div><div class="test-desc">Guns 55 · Melee 50 · Perceive 55 · Fray 40</div></div>
+      <div class="test-item"><div class="test-skill danger">WEAPON</div><div class="test-desc">Medium Pistol: 2d10+2 DV, SA/BF, 15 shots · Stunner: DV 1d6+, stun effect</div></div>
+      <div class="test-item"><div class="test-skill">ARMOUR</div><div class="test-desc">Smart Clothing (+2/+3 · appears as formal wear)</div></div>
+      <div class="test-item"><div class="test-skill warn">RESPONSE</div><div class="test-desc">Response to open violence: 2 guards converge in 30 sec, 4 in 90 sec. Priority: neutralise combatants, not protect any specific guest. The show continues.</div></div>
+    </div>
+    <div>
+      <div class="npc-name" style="font-size:0.85rem;">SECURITY DRONE</div>
+      <div class="npc-role" style="font-size:10px;">EXPLORENAUT FRAME · ×6 ACTIVE · CONTROLLED FROM HUB</div>
+      <div class="test-item"><div class="test-skill teal">DUR/WT/DR</div><div class="test-desc">25 / 5 / 50 · Armor 4/4</div></div>
+      <div class="test-item"><div class="test-skill">KEY SKILLS</div><div class="test-desc">Guns 50 · Perceive 60 (enhanced sensors) · Fray 40</div></div>
+      <div class="test-item"><div class="test-skill danger">WEAPON</div><div class="test-desc">Stunner: DV 1d6+, stun effect, 0.113g means stun knockback sends targets 2–3m</div></div>
+      <div class="test-item"><div class="test-skill">SENSORS</div><div class="test-desc">360° vision · IR · UV · Radar · Mesh scanner (logs all mesh IDs in range)</div></div>
+      <div class="test-item"><div class="test-skill warn">PATROL</div><div class="test-desc">2 active in ballroom at all times · 4 docked at hub · 6-min circuit pattern. Riff-Raff's exploit does not affect drone firmware — drones are isolated from guest mesh.</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /full-width section -->
+
+<button class="print-btn" onclick="window.print()">&#9674; PRINT</button>
+
+<footer class="ep-legal-footer">
+  <div class="ep-legal-inner">
+    <div class="ep-legal-title">◈ ECLIPSE PHASE — EDGE OF THE LIGHT</div>
+    <div class="ep-legal-text">
+      Eclipse Phase was created by Rob Boyle and Brian Cross.
+      Eclipse Phase is a trademark of Posthuman Studios LLC.
+      All That Glitters is © 2021 Posthuman Studios LLC.
+      <br>
+      This work is licensed under the
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+      </a> license.
+    </div>
+    <div class="ep-legal-badges">
+      <span class="ep-legal-badge">© POSTHUMAN STUDIOS LLC</span>
+      <span class="ep-legal-badge">CC BY-NC-SA 4.0</span>
+      <span class="ep-legal-badge">NON-COMMERCIAL FAN WORK</span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

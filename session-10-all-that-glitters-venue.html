@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>◈ ALL THAT GLITTERS — VENUE CHAPTER</title>
+<style>
+  /* ── EP Campaign palette (matching ep-campaign.css) ── */
+  :root {
+    --bg:       #0a0c0f;
+    --surface:  #111418;
+    --border:   rgba(104,152,200,0.18);
+    --accent:   #6898c8;
+    --teal:     #4ab8a0;
+    --amber:    #c8a050;
+    --danger:   #c85050;
+    --warn:     #c89850;
+    --signal:   #8868c8;
+    --text:     #c8d0d8;
+    --muted:    rgba(200,208,216,0.45);
+    --label-bg: rgba(104,152,200,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 2rem 1.5rem 4rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ── Chapter header ── */
+  .chapter-header {
+    border-top: 2px solid var(--teal);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 0 1rem;
+    margin-bottom: 2rem;
+  }
+  .chapter-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+  }
+  .chapter-title {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--teal);
+    text-transform: uppercase;
+  }
+  .chapter-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* ── Section headers ── */
+  .section-header {
+    border-left: 3px solid var(--accent);
+    padding: 0.6rem 0 0.6rem 0.9rem;
+    margin: 2rem 0 1rem;
+    background: var(--label-bg);
+  }
+  .section-header h2 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-header .section-sub {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  /* ── Room cards ── */
+  .room-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .room-grid.single { grid-template-columns: 1fr; }
+  @media (max-width: 640px) { .room-grid { grid-template-columns: 1fr; } }
+
+  .room-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    padding: 1rem;
+  }
+  .room-card.teal-top  { border-top-color: var(--teal); }
+  .room-card.amber-top { border-top-color: var(--amber); }
+  .room-card.warn-top  { border-top-color: var(--warn); }
+  .room-card.signal-top{ border-top-color: var(--signal); }
+  .room-card.danger-top{ border-top-color: var(--danger); }
+
+  .room-name {
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+  .room-card.teal-top  .room-name  { color: var(--teal); }
+  .room-card.amber-top .room-name  { color: var(--amber); }
+  .room-card.warn-top  .room-name  { color: var(--warn); }
+  .room-card.signal-top .room-name { color: var(--signal); }
+  .room-card.danger-top .room-name { color: var(--danger); }
+
+  .room-dims {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
+  /* ── Stat rows inside cards ── */
+  .room-stat {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+    font-size: 11px;
+  }
+  .stat-key {
+    min-width: 72px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    font-size: 9px;
+    padding-top: 1px;
+  }
+  .stat-val { color: var(--text); line-height: 1.5; }
+
+  /* ── Art callouts ── */
+  .art-block {
+    background: rgba(74,184,160,0.05);
+    border: 1px solid rgba(74,184,160,0.25);
+    border-left: 3px solid var(--teal);
+    padding: 0.7rem 0.9rem;
+    margin-top: 0.7rem;
+    font-size: 11px;
+  }
+  .art-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--teal);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+  }
+  .art-works {
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .art-works em {
+    color: var(--amber);
+    font-style: normal;
+  }
+
+  /* ── Flavor text ── */
+  .flavor {
+    background: rgba(200,160,80,0.05);
+    border: 1px solid rgba(200,160,80,0.2);
+    border-left: 3px solid var(--amber);
+    padding: 0.7rem 0.9rem;
+    margin-top: 0.6rem;
+    font-size: 11px;
+    font-style: italic;
+    color: rgba(200,208,216,0.75);
+    line-height: 1.7;
+  }
+  .flavor-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--amber);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* ── Low-g sidebar ── */
+  .low-g-note {
+    background: rgba(136,104,200,0.06);
+    border: 1px solid rgba(136,104,200,0.25);
+    border-left: 3px solid var(--signal);
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    font-size: 11px;
+  }
+  .low-g-note .note-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--signal);
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+  .low-g-note ul {
+    list-style: none;
+    padding: 0;
+  }
+  .low-g-note ul li::before {
+    content: "◈ ";
+    color: var(--signal);
+    opacity: 0.6;
+  }
+  .low-g-note ul li { margin-bottom: 0.25rem; }
+
+  /* ── Floor plan legend ── */
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  @media (max-width: 640px) { .legend-grid { grid-template-columns: 1fr 1fr; } }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 10px;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+
+  /* ── Test-item rows (matching existing session style) ── */
+  .test-item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+  }
+  .test-item:last-child { border-bottom: none; }
+  .test-skill {
+    background: var(--label-bg);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 8px;
+    letter-spacing: 2px;
+    padding: 2px 6px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .test-skill.teal   { color: var(--teal);   border-color: rgba(74,184,160,0.3); }
+  .test-skill.amber  { color: var(--amber);  border-color: rgba(200,160,80,0.3); }
+  .test-skill.warn   { color: var(--warn);   border-color: rgba(200,152,80,0.3); }
+  .test-skill.danger { color: var(--danger); border-color: rgba(200,80,80,0.3); }
+  .test-skill.signal { color: var(--signal); border-color: rgba(136,104,200,0.3); }
+  .test-desc { color: var(--text); line-height: 1.6; }
+
+  body.day-mode {
+    --bg: #f0f2f5; --surface: #e8ecf4; --border: rgba(0,0,0,0.12);
+    --accent: #b06000; --teal: #007a6b; --amber: #7a5000;
+    --danger: #b03020; --warn: #8a5000; --signal: #5a28cc;
+    --text: #1a2530; --muted: rgba(20,35,48,0.5);
+    background: #f0f2f5; color: #1a2530;
+  }
+  body.day-mode .room-card { background: #e8ecf4; border-color: rgba(0,0,0,0.12); }
+  body.day-mode .section-header { background: rgba(0,0,0,0.04); }
+  body.day-mode .low-g-note { background: rgba(90,40,204,0.04); }
+  body.day-mode .art-block { background: rgba(0,122,107,0.04); }
+  body.day-mode .flavor { background: rgba(122,80,0,0.04); }
+  body.day-mode .test-item { border-bottom-color: rgba(0,0,0,0.08); }
+  body.day-mode .test-skill { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+  .day-toggle {
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 11px; letter-spacing: 2px;
+    background: none; border: 1px solid rgba(0,0,0,0.2);
+    color: rgba(0,0,0,0.4); padding: 3px 10px; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .day-toggle:hover { color: #1a2530; border-color: #b06000; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script src="ep-daymode.js"></script>
+</head>
+<body>
+<button id="day-toggle-btn" class="day-toggle" style="position:fixed; top:0.6rem; right:1rem; z-index:200;">◈ DAY MODE</button>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CHAPTER: THE GLITTER BLOC VENUE
+     Drop this section into session-10-all-that-glitters.html
+     after the NPC block and before TACTICS / COMPLICATIONS
+═══════════════════════════════════════════════════════════════ -->
+
+<div class="chapter-header">
+  <div class="chapter-tag">◈ SESSION 10 — ALL THAT GLITTERS — VENUE REFERENCE</div>
+  <div class="chapter-title">The Glitter Bloc Venue</div>
+  <div class="chapter-sub">PROFUNDA BEEHIVE · ENCELADUS · SATURN SYSTEM · 0.113g · EXTROPIAN JURISDICTION</div>
+</div>
+
+<!-- ── Backstory block ── -->
+<div class="section-header">
+  <h2>Profunda &amp; Glitter Bloc — Backstory</h2>
+  <div class="section-sub">LORE SUMMARY FOR GM REFERENCE · RIMWARD P.74 · EP2E P.190</div>
+</div>
+
+<div style="display:flex; flex-direction:column; gap:0.35rem; margin-bottom:1.5rem;">
+  <div class="test-item">
+    <div class="test-skill teal">PROFUNDA</div>
+    <div class="test-desc">Largest settlement on Enceladus. 850,000 residents. Began as an automated mining station; built out rapidly during the Fall by Indonesian and New Zealand refugees. The dominant cultural character is Southeast Asian Muslim — the habitat once boasted the tallest minarets in the Saturnian system. Every citizen holds at least one share in Profunda Corp, which mines and refines organic chemicals from Enceladus's subsurface. Dividends cover basic necessities. The rich are very rich, but no one here is poor.</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill teal">ENCELADUS</div>
+    <div class="test-desc">Saturn's sixth-largest moon. Geologically active — famous for cryovolcanic plumes and water-ice geysers venting into space. Gravity: 0.011g surface (the venue interior is at a slightly higher effective 0.113g due to habitat engineering). Atmosphere dangerously toxic outside. Subsurface water-filled caverns extend 80km or more down — the beehive tunnels run through ice-rock above these.</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill amber">GOVERNANCE</div>
+    <div class="test-desc">Extropian — no laws, only contracts. The local Extropian judiciary is on retainer for disputes. Profunda Corp is not a government; it is a corporation whose shareholders happen to constitute the population. All business, including event attendance, is a contractual relationship. There is no outside police jurisdiction inside a private venue.</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill signal">GLITTER BLOC</div>
+    <div class="test-desc">Profunda's homegrown luxury morph design house. Undisputed leader in high-fashion sleeves system-wide — outclasses Skinaesthesia and Skinthetic in the prestige tier. Provides morphs to the most prominent metacelebrities and socialites across the solar system. Hits include multiple Sylph variants, the Saturn Elite, the ring flier, and numerous chimeric designer creature lines. They own the venue outright. Their security is the law inside it.</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill">BEEHIVE TYPE</div>
+    <div class="test-desc">Profunda is a classic beehive hab — tunnels, caverns, and excavated spaces in microgravity moon-rock. The event venue occupies a purpose-excavated ballroom cavern with adjacent carved side-chambers. Walls are dressed Enceladus ice-rock behind holo-paneling and bioluminescent fixtures. The largest surface domes (50km+ across) are where the wealthiest residents live; the venue is subsurface, which in Profunda means opulent rather than austere.</div>
+  </div>
+</div>
+
+<!-- ── Low-G note ── -->
+<div class="low-g-note">
+  <div class="note-label">◈ 0.113g — Low Gravity Effects on Play</div>
+  <ul>
+    <li>Champagne pours in lazy arcs and hangs in the air. Spilled drinks drift. Aerial glow-puffers float naturally through the space.</li>
+    <li>Guests move with exaggerated elegance — or barely contained chaos if their morph is gravity-optimised for higher-g environments.</li>
+    <li>A hard shove sends someone sailing 3–5 meters before they can arrest momentum. Combat in the ballroom becomes three-dimensional quickly.</li>
+    <li>Morph check (SOM×2) for anyone unaccustomed to low-g trying to sprint, dodge, or grapple in formal attire.</li>
+    <li>Glitter Bloc's house morphs are all tuned for Profunda gravity. Guests in off-world sleeves may be at a subtle social and physical disadvantage.</li>
+    <li>The VR pods are sealed and gravity-neutral — you float inside them, which is part of the designed experience.</li>
+  </ul>
+</div>
+
+<!-- ── Floor plan legend ── -->
+<div class="section-header">
+  <h2>Venue Floor Plan — Room Reference</h2>
+  <div class="section-sub">DIMENSIONS ARE GM ESTIMATES · NOT CANONICAL · CONSISTENT WITH BEEHIVE HAB ARCHITECTURE</div>
+</div>
+
+<div class="legend-grid">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--teal);"></div>Main Ballroom</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--accent);"></div>Runway / Stage</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--accent);"></div>Antechamber / Foyer</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--amber);"></div>Cocktail Lounges ×3</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--amber);"></div>Private Chat Rooms ×4</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--signal);"></div>VR Pod Alcove</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--warn);"></div>Observation Terrace</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--text);"></div>Catering / Fabber Bar</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--text);"></div>Refresher Suites ×2</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--danger);"></div>Security Hub</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--danger);"></div>Morph Staging (backstage)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--muted);"></div>Staff Corridors</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════ ROOM CARDS ═══════════════════ -->
+
+<div class="room-grid">
+
+  <!-- MAIN BALLROOM -->
+  <div class="room-card teal-top" style="grid-column: 1 / -1;">
+    <div class="room-name">Main Ballroom</div>
+    <div class="room-dims">≈ 80m × 50m footprint · ceiling 18–22m at apex · carved ice-rock vaulted ceiling · capacity ~600</div>
+
+    <div class="room-stat"><span class="stat-key">Walls</span><span class="stat-val">Dressed Enceladus ice-rock behind translucent holo-panels. Bioluminescent strip lighting traces the vault curves. Aerial plants — hydrogen gas-bag flora — drift near the ceiling, 8–10m up, genuinely floating.</span></div>
+    <div class="room-stat"><span class="stat-key">Floor</span><span class="stat-val">Polished composite with embedded AR markers invisible to the naked eye. In low-g, the floor is optional — people congregate in mid-air clusters near the high tables.</span></div>
+    <div class="room-stat"><span class="stat-key">Exits</span><span class="stat-val">4 tunnel archways (N, S, E, W). Northern arch leads to runway/stage. Eastern arch to VR alcove. Southern to foyer. Western to lounges and private rooms.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">Open sightlines 40m+ in any direction. Crowd of 300–400 provides cover and confusion. Drone patrol on 6-minute circuit — 2 security drones visible at any time, 4 more in adjacent corridors.</span></div>
+
+    <div class="art-block">
+      <div class="art-label">◈ Art on These Walls — Main Ballroom</div>
+      <div class="art-works">
+        <em>Borobudur Karmavibhangga Relief Panels</em> (Hutton / History of Asian Art) — Spanning the north wall, backlit in amber. The 9th-century Javanese bas-relief narrative of karma and consequence across 160 panels. An AR overlay has been added: the carved figures now wear contemporary morph designs. The joke is credited to Glitter Bloc's creative director.<br><br>
+        <em>Majapahit Gold Repoussé</em> (Hutton) — Two reproduction panels, east and west of the main arch. The great Javanese Hindu empire's goldsmithing; dancing figures surrounded by flame. Signals Profunda's Indonesian heritage to anyone who recognises the iconography.
+      </div>
+    </div>
+
+    <div class="flavor">
+      <div class="flavor-label">◈ Read Aloud</div>
+      The ballroom opens before you like the inside of a carved moon — which is exactly what it is. Vault ribs of dressed ice-rock rise twenty meters overhead, threaded with bioluminescent strips that pulse in slow amber-blue cycles. Aerial plants drift near the ceiling: globular, translucent, each one a hydrogen-filled bag trailing gossamer roots. The floor is forty meters away in any direction and, in this gravity, entirely optional. Several guests have given up on it entirely and are conducting conversations two meters off the ground, champagne floating in lazy spheres beside them.
+    </div>
+  </div>
+
+  <!-- RUNWAY / STAGE -->
+  <div class="room-card">
+    <div class="room-name">Runway / Stage</div>
+    <div class="room-dims">≈ 30m × 15m · raised 0.6m · integrated AR/holo rig overhead</div>
+
+    <div class="room-stat"><span class="stat-key">Purpose</span><span class="stat-val">Morph runway presentations, opening speech, harmonic chorus performance, fork burlesque (Diva Von Teases). Has its own AR overlay zone — guests' lenses see morph spec annotations floating beside each model as they walk.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">During presentations the crowd compresses toward the runway — best opportunity for pickpocketing, close Deceive actions, or slipping away unnoticed into side rooms while attention is focused forward.</span></div>
+    <div class="room-stat"><span class="stat-key">Backstage</span><span class="stat-val">A 10m × 8m prep area behind the stage curtain. Morph models, Glitter Bloc technicians, AR rig operators. Not publicly accessible — requires a staff pass or a Deceive/Infiltrate roll (DV 15).</span></div>
+
+    <div class="art-block">
+      <div class="art-label">◈ Art — Backstage Area</div>
+      <div class="art-works">
+        <em>Meiji-Era Advertising Posters</em> (Fracture / Japanese Graphic Design 1875–1975) — Bold flat colour, collision of Western geometry and Japanese visual language. Framed floor-to-ceiling backstage. Glitter Bloc's creative director apparently traces the house aesthetic back to this collision. Also present: 1960s–70s psychedelic Japanese concert poster reproductions.
+      </div>
+    </div>
+  </div>
+
+  <!-- ANTECHAMBER / FOYER -->
+  <div class="room-card">
+    <div class="room-name">Antechamber / Foyer</div>
+    <div class="room-dims">≈ 20m × 12m · ceiling 6m · airlock vestibule beyond</div>
+
+    <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">Guest check-in, identity verification, contract signing (guests agree to Glitter Bloc security dictums here), coat/morph-accessory check. Glitter Bloc drones visible but decorative-looking.</span></div>
+    <div class="room-stat"><span class="stat-key">Security</span><span class="stat-val">Two guards, one judiciary rep available for immediate dispute resolution. Mesh scanners log every entrant's mesh ID. Weapons check — concealed weapons require a Deceive vs. Perceive (opposed, guard skill ~50).</span></div>
+    <div class="room-stat"><span class="stat-key">Exit</span><span class="stat-val">Single tunnel back to Profunda hab corridors. Once inside, leaving requires passing the foyer — or using a staff corridor (Infiltrate DV 20).</span></div>
+
+    <div class="art-block">
+      <div class="art-label">◈ Art — Foyer</div>
+      <div class="art-works">
+        <em>Showa-Era Constructivist Poster</em> (Fracture) — Towering, black and red, aggressive geometry. Immediate power statement. Opposite it: a reproduction <em>Majapahit gold panel</em>, a dancing figure in flame. Old empires. Guests walk between them.
+      </div>
+    </div>
+
+    <div class="flavor">
+      <div class="flavor-label">◈ Read Aloud</div>
+      The foyer is a statement of intent. Two pieces face each other across the entry corridor: a two-meter Showa-era graphic design poster — black, red, geometry that wants to crush you — and opposite it, a reproduction Majapahit gold panel, a dancing figure ringed in hammered flame. The contract terminal is between them, blinking politely.
+    </div>
+  </div>
+
+</div><!-- end room-grid -->
+
+<hr class="divider">
+
+<div class="room-grid">
+
+  <!-- COCKTAIL LOUNGES -->
+  <div class="room-card amber-top">
+    <div class="room-name">Cocktail Lounges (×3)</div>
+    <div class="room-dims">Each ≈ 12m × 8m · alcove off main ballroom · semi-open archways · soft acoustic dampening</div>
+
+    <div class="room-stat"><span class="stat-key">Atmosphere</span><span class="stat-val">Plush low-g seating (anchored cushions and floating settees). Designer drug samplers circulating. Where NPCs congregate in smaller clusters — Wadada will be working one of these, as will Vox Maxine.</span></div>
+    <div class="room-stat"><span class="stat-key">Sightlines</span><span class="stat-val">Visible from the main ballroom through the archways. Conversations here are audible to anyone within 3m without dampening gear. With a micro-bug or good Kinesics roll (DV 15 at range), conversations can be read from the ballroom floor.</span></div>
+    <div class="room-stat"><span class="stat-key">NPCs Here</span><span class="stat-val">Wadada (negotiating with Alciato's aide), Vox Maxine (holding court), Contarato (watching everyone), Halsema (watching Grix).</span></div>
+
+    <div class="art-block">
+      <div class="art-label">◈ Art — Cocktail Lounges</div>
+      <div class="art-works">
+        <em>Utamaro Bijin-ga</em> (Fahr-Becker / Japanese Prints) — Kitagawa Utamaro's intimate close-up portraits of women in Edo elegance. Sophisticated, slightly transgressive. The similarity between the painted figures and the Glitter Bloc sylph morphs in the room is either homage or advertising — probably both.<br><br>
+        <em>Sharaku Actor Portraits</em> (Fahr-Becker) — Grotesque, exaggerated kabuki actor faces. Unsettling and fascinating in a room full of people in designer bodies. One guest is wearing a morph whose face unconsciously echoes the nearest print.
+      </div>
+    </div>
+
+    <div class="flavor">
+      <div class="flavor-label">◈ Read Aloud</div>
+      The lounge walls are lined with Utamaro prints — late Edo bijin-ga, women rendered in impossible perfection. Given that half the guests are currently wearing Glitter Bloc sylph morphs with the same impossible cheekbones, the similarity is either homage or an extremely confident advertisement. Between the bijin-ga, Sharaku's kabuki actors glare out from their frames, all exaggerated fury and theatrical menace. Nobody seems to notice them.
+    </div>
+  </div>
+
+  <!-- PRIVATE CHAT ROOMS -->
+  <div class="room-card amber-top">
+    <div class="room-name">Private Chat Rooms (×4)</div>
+    <div class="room-dims">Each ≈ 5m × 4m · sealed door · mesh-shielded · reservable by guests</div>
+
+    <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">Soundproofed and Faraday-shielded — no mesh signal in or out without active override. Guests reserve these via the Glitter Bloc event app. Booking is logged; Glitter Bloc knows who used each room and when.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">The ideal location for the PCs to interrogate, drug, or Brainhack a target without interruption. Also where Wadada and Alciato will finalise the Volkov contract. Hacking the booking log (Infosec DV 20) reveals the reservation schedule.</span></div>
+    <div class="room-stat"><span class="stat-key">Access</span><span class="stat-val">Each room has a simple key-card lock (Hardware: Electronics DV 15 to bypass) and a Glitter Bloc panic button inside. If the panic button is pressed, two guards arrive in 90 seconds.</span></div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<div class="room-grid">
+
+  <!-- VR POD ALCOVE -->
+  <div class="room-card signal-top">
+    <div class="room-name">VR Pod Alcove</div>
+    <div class="room-dims">≈ 18m × 10m · 8 pods · dim ambient lighting · attendants present</div>
+
+    <div class="room-stat"><span class="stat-key">Purpose</span><span class="stat-val">Full-immersion pods allowing guests to "try on" Glitter Bloc's new morph designs in virtual reality before purchase. The experience is approximately 8 minutes per session. Guests emerge knowing exactly how the morph feels.</span></div>
+    <div class="room-stat"><span class="stat-key">Aesthetic</span><span class="stat-val">Feels like a spa crossed with a showroom. Plush attendants. Soft lighting. The pods themselves are matte-white, body-length, sealed with a soft hiss. Deeply relaxing. Deeply compromised.</span></div>
+    <div class="room-stat"><span class="stat-key">⚠ RIFF-RAFF</span><span class="stat-val">The pod session manager was hacked 3 days ago. Riff-Raff can pull any user mid-session into a private VR meeting room rather than the Glitter Bloc demo environment. The hack is undetected. Alciato's session will be intercepted. Infosec scan of the pods (DV 25) detects the intrusion.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">A PC in a pod is physically unconscious and vulnerable for 8 minutes. Two pods can be used simultaneously for a shared VR session — the PCs could enter with Alciato if they move fast enough before Riff-Raff intercepts.</span></div>
+
+    <div class="art-block">
+      <div class="art-label">◈ Art — VR Pod Alcove</div>
+      <div class="art-works">
+        <em>Bubblegum Crisis Design Sheets</em> (BGC Art Book — Knight Sabers Analytics) — Framed concept art on every wall, presented as Glitter Bloc's own creative process: hard-suit schematics, anatomical overlays showing subdermal layers beneath perfect skin, character design sheets annotated in Japanese and English. In-universe these read as early design sketches for the morph lines guests are about to inhabit. The line between fashion illustration and medical diagram has been deliberately erased.
+      </div>
+    </div>
+
+    <div class="flavor">
+      <div class="flavor-label">◈ Read Aloud</div>
+      The walls of the pod alcove display what appear to be design schematics — elegant figures in various poses, annotated with measurement marks and anatomical notes in Japanese and English. They look like fashion sketches. Then you notice the subdermal layer diagrams visible through the illustrated skin, the neural interface mapping where the skull meets the neckline. The pods themselves are white and seamless, humming faintly. An attendant smiles and asks if you'd like to try the Saturn Elite. It only takes eight minutes.
+    </div>
+  </div>
+
+  <!-- OBSERVATION TERRACE -->
+  <div class="room-card warn-top">
+    <div class="room-name">Observation Terrace</div>
+    <div class="room-dims">≈ 15m × 8m · pressurised dome viewport · Saturn visible · upper level via lift-shaft</div>
+
+    <div class="room-stat"><span class="stat-key">Access</span><span class="stat-val">Upper level via a single low-g lift shaft (3 seconds). Semi-private — less traffic than the main floor. Status flex: being invited up here signals you matter.</span></div>
+    <div class="room-stat"><span class="stat-key">View</span><span class="stat-val">Through 4cm of transparent composite: Enceladus surface above, cryovolcanic plumes venting ice crystals into the void. Saturn and its rings visible on the horizon depending on orbital position. The sky is genuinely beautiful and genuinely lethal.</span></div>
+    <div class="room-stat"><span class="stat-key">NPCs Here</span><span class="stat-val">Grix (melancholy, watching the plumes). Uthup (delivering a monologue to a trapped guest). Alciato (occasionally steps up for privacy).</span></div>
+
+    <div class="art-block">
+      <div class="art-label">◈ Art — Observation Terrace</div>
+      <div class="art-works">
+        <em>Song Dynasty Landscape Scroll</em> (Sherman Lee / Far Eastern Art) — A single large reproduction hangs opposite the viewport. Ink mountains dissolving into mist, a tiny scholar on a bridge, the human figure rendered insignificant by the scale of the natural world. Outside, Enceladus vents a plume two hundred kilometres into the void. The scholar looks unbothered.<br><br>
+        <em>Zen Enso Brushwork</em> (Sherman Lee) — Three small ink circles, each by a different hand. Minimal. Contemplative. Good contrast to the maximalist party below.
+      </div>
+    </div>
+
+    <div class="flavor">
+      <div class="flavor-label">◈ Read Aloud</div>
+      A Song Dynasty landscape scroll hangs opposite the viewport — ink mountains dissolving into mist, a scholar so small you have to look for him, standing on a bridge that might be a brushstroke. Outside, Enceladus is venting. A cryovolcanic plume climbs two hundred kilometres into the black, catching Saturn's light into a column of ice-crystal fire. The scholar, as noted, is not concerned.
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<div class="room-grid">
+
+  <!-- CATERING / FABBER BAR -->
+  <div class="room-card">
+    <div class="room-name">Catering &amp; Fabber Bar</div>
+    <div class="room-dims">≈ 14m × 6m service counter · adjacent 8m × 6m kitchen/fab area (staff only)</div>
+
+    <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">High-end food and drink, including designer drugs circulating openly (Extropian norms — no laws). The fabber bar can produce almost any compound on request. Vox Maxine has a tab running and is the informal social hub of this counter.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">The drugging-Alciato approach runs through here. Chemistry (DV 20) or a Networking roll through Vox to acquire something appropriate. Staff access to the kitchen provides unmonitored food/drink injection points.</span></div>
+  </div>
+
+  <!-- REFRESHER SUITES -->
+  <div class="room-card">
+    <div class="room-name">Refresher Suites (×2)</div>
+    <div class="room-dims">Each ≈ 8m × 5m · individual stalls · morph maintenance stations</div>
+
+    <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">In EP terms: morph maintenance, minor cosmetic mods, sleeve-adjustment stations (fixing hair, correcting subdermal pigment shifts, minor nanotat refresh). Standard refresher amenities plus morph-specific stations unavailable in lower-end venues.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">Private individual stalls. An obvious ambush point if a PC can lure a target here. Also: Kyo will check the suites periodically on her protective circuit around Alciato.</span></div>
+  </div>
+
+  <!-- SECURITY HUB -->
+  <div class="room-card danger-top">
+    <div class="room-name">Security Hub</div>
+    <div class="room-dims">≈ 10m × 6m · staff-only · drone control station · judiciary office adjacent</div>
+
+    <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">Glitter Bloc drone control (6 drones total), mesh surveillance feeds, guest contract records, judiciary rep on standby. Two guards stationed here at all times; four more rotating the floor.</span></div>
+    <div class="room-stat"><span class="stat-key">Intel Value</span><span class="stat-val">Guest manifest with mesh IDs. Booking logs for private chat rooms. Drone feed archives. Accessing these (Infosec DV 30 remote / DV 20 physical access) would tell the PCs exactly where everyone has been all night.</span></div>
+    <div class="room-stat"><span class="stat-key">Access</span><span class="stat-key" style="min-width:auto;"></span><span class="stat-val">Staff-only. Locked door, two guards. Infiltrate DV 25 or a very good social cover to enter without triggering response.</span></div>
+  </div>
+
+  <!-- MORPH STAGING -->
+  <div class="room-card danger-top">
+    <div class="room-name">Morph Staging — Backstage</div>
+    <div class="room-dims">≈ 12m × 8m · behind runway · loading dock access beyond</div>
+
+    <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">Where Glitter Bloc's runway morph models are prepped, sleeved, and held before their presentation. Also where the fork burlesque performers (Diva Von Teases) are staged. Active and chaotic during presentations; quiet between events.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">The loading dock beyond provides a secondary exit to Profunda's service corridors — bypassing the foyer entirely. Useful for extraction. Also: an unconscious body could be moved through here during a runway presentation when all attention is forward.</span></div>
+    <div class="room-stat"><span class="stat-key">Contents</span><span class="stat-val">6 morph maintenance cradles. 3 Glitter Bloc technicians. 2 security drones (docked, not patrolling). The fork burlesque costumes are extraordinary and would make excellent disguises.</span></div>
+  </div>
+
+</div><!-- end room-grid -->
+
+<hr class="divider">
+
+<!-- ── Staff corridors note ── -->
+<div class="section-header">
+  <h2>Staff Corridors</h2>
+  <div class="section-sub">INFILTRATION REFERENCE</div>
+</div>
+
+<div style="display:flex; flex-direction:column; gap:0.35rem; margin-bottom:2rem;">
+  <div class="test-item">
+    <div class="test-skill">WIDTH</div>
+    <div class="test-desc">1.8–2.5m wide · ceiling 2.4m · rough-finished ice-rock, no decoration · utilitarian lighting strips at floor level only</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill">ACCESS</div>
+    <div class="test-desc">Four concealed staff access points in the main ballroom (behind holo-panels, Perceive DV 20 to spot). Unlocked from the staff side; keycard required from the guest side (Electronics DV 15 to bypass).</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill">LAYOUT</div>
+    <div class="test-desc">A service ring connecting all major rooms behind the scenes. Connects: kitchen → refresher suite service access → morph staging → security hub → VR pod maintenance hatch → loading dock exit. Running the full circuit takes ~3 minutes at a brisk low-g lope.</div>
+  </div>
+  <div class="test-item">
+    <div class="test-skill danger">PATROLS</div>
+    <div class="test-desc">One guard walks the staff corridor circuit on a 12-minute schedule. Two stationary drones at the loading dock and the security hub junction. The guard's mesh ID is logged on the venue system — spoofing it (Infosec DV 25) removes the patrol blip from the security feed.</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

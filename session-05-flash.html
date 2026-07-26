@@ -384,14 +384,11 @@ body {
 @media print { .print-btn { display: none; } }
 
 </style>
-<style id="ep-nav-style">
-  #ep-session-nav { font-family:'Share Tech Mono',monospace; background:var(--deep,#0a0e18); border-bottom:1px solid var(--border,#1e2a3a); padding:0.45rem 1.5rem; display:flex; align-items:center; gap:0.8rem; font-size:12px; letter-spacing:2px; color:var(--text,#8898a8); position:sticky; top:0; z-index:100; flex-wrap:wrap; }
-  #ep-session-nav .ep-nav-home { color:var(--text,#8898a8); text-decoration:none; border:1px solid transparent; padding:2px 6px; opacity:0.55; cursor:pointer; transition:color 0.15s,border-color 0.15s,opacity 0.15s; letter-spacing:2px; }
-  #ep-session-nav .ep-nav-home:hover { color:var(--textbright,#c8d8e8); border-color:var(--border,#1e2a3a); opacity:1; }
-  @media print { #ep-session-nav { display:none !important; } }
-</style>
+
+<script src="ep-daymode.js"></script>
 </head>
 <body>
+<button id="day-toggle-btn" class="day-toggle" style="position:fixed;top:0.45rem;right:1rem;z-index:200;">◈ DAY MODE</button>
 <nav id="ep-session-nav" data-current-file="session-05-flash.html"><span class="ep-nav-home ep-nav-go" data-href="index.html">◈ INDEX</span> <span style="opacity:0.4">|</span> <span style="opacity:0.5;font-size:11px;letter-spacing:2px;">FLASH — SESSION 05 CHARACTER REFERENCE</span></nav>
 
 <div class="flash-wrapper">

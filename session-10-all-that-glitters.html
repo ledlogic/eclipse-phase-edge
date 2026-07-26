@@ -6,60 +6,13 @@
 <title>ALL THAT GLITTERS | Eclipse Phase — Session 10 GM Reference</title>
 <link rel="stylesheet" href="ep-campaign.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="ep-daymode.js"></script>
 </head>
 <body>
 
-<style id="ep-nav-style">
-  #ep-session-nav {
-    font-family: 'Share Tech Mono', monospace;
-    background: var(--deep, #0a0e18);
-    border-bottom: 1px solid var(--border, #1e2a3a);
-    padding: 0.45rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: var(--text, #8898a8);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    flex-wrap: wrap;
-  }
-  #ep-session-nav a.ep-nav-link, #ep-session-nav span.ep-nav-link {
-    color: var(--text, #8898a8); text-decoration: none;
-    border: 1px solid transparent; padding: 2px 6px; cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  #ep-session-nav a.ep-nav-link:hover, #ep-session-nav span.ep-nav-link:hover {
-    color: var(--textbright, #c8d8e8); border-color: var(--border, #1e2a3a);
-  }
-  #ep-session-nav a.ep-nav-link.ep-current, #ep-session-nav span.ep-nav-link.ep-current {
-    color: var(--accent, #f5a623); border-color: rgba(245,166,35,0.35);
-    cursor: default; pointer-events: none;
-  }
-  #ep-session-nav a.ep-nav-link.ep-no-file, #ep-session-nav span.ep-nav-link.ep-no-file {
-    opacity: 0.35; cursor: default; pointer-events: none;
-  }
-  #ep-session-nav .ep-nav-sep { color: var(--border, #1e2a3a); flex-shrink: 0; }
-  #ep-session-nav .ep-nav-arrow {
-    color: var(--accent2, #60a8d0); text-decoration: none;
-    border: 1px solid transparent; padding: 2px 7px; flex-shrink: 0;
-    cursor: pointer; transition: color 0.15s, border-color 0.15s;
-  }
-  #ep-session-nav .ep-nav-arrow:hover { border-color: var(--accent2, #60a8d0); color: var(--textbright, #c8d8e8); }
-  #ep-session-nav .ep-nav-arrow.ep-disabled { opacity: 0.2; pointer-events: none; }
-  #ep-session-nav .ep-nav-label { color: var(--accent, #f5a623); opacity: 0.6; flex-shrink: 0; }
-  #ep-session-nav .ep-nav-home {
-    color: var(--text, #8898a8); text-decoration: none;
-    border: 1px solid transparent; padding: 2px 6px; opacity: 0.55;
-    cursor: pointer; transition: color 0.15s, border-color 0.15s, opacity 0.15s; letter-spacing: 2px;
-  }
-  #ep-session-nav .ep-nav-home:hover { color: var(--textbright, #c8d8e8); border-color: var(--border, #1e2a3a); opacity: 1; }
-  #ep-session-nav .ep-nav-links { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; flex: 1; }
-  @media print { #ep-session-nav { display: none !important; } }
-</style>
-<nav id="ep-session-nav" data-current-file="session-10-all-that-glitters.html"></nav>
+<nav id="ep-session-nav" data-current-file="session-10-all-that-glitters.html">
+</nav>
+<button id="day-toggle-btn" class="day-toggle" style="position:fixed;top:0.45rem;right:1rem;z-index:200;">◈ DAY MODE</button>
 
 
 <header>
@@ -75,6 +28,136 @@
     <span class="stat-chip">SESSION 10 OF ARC — CODA</span>
   </div>
 </header>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     RECOMMENDED CHARACTERS — FULL WIDTH BEFORE MAIN GRID
+═══════════════════════════════════════════════════════════════════════════ -->
+<div style="max-width:1200px; margin:0 auto 1.2rem; padding:0 1.5rem;">
+
+  <div class="section-label" style="display:flex; align-items:center; justify-content:space-between;">
+    <span>◈ RECOMMENDED CHARACTERS</span>
+    <span style="font-size:9px; letter-spacing:2px; color:var(--muted);">4-PLAYER: RIMWARD CORE · 6-PLAYER: ADD HEX + DANTE</span>
+  </div>
+
+  <div class="npc-card" style="margin-bottom:0;">
+
+    <div style="font-size:0.82rem; color:var(--muted); line-height:1.6; margin-bottom:0.8rem;">
+      The scenario recommends the <strong style="color:var(--textbright);">Firewall Rimward Ops team</strong> as the default four. For a six-player table, add <strong style="color:var(--accent2);">Hex</strong> and <strong style="color:var(--accent);">Dante</strong> from the Sunward Ops team — they fill the two gaps the Rimward four leave without creating redundancy. All characters are Firewall agents; all have plausible reasons to be at a Profunda soirée with the right rep strings pulled.
+    </div>
+
+    <!-- CORE FOUR -->
+    <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:3px; color:var(--accent2); margin-bottom:0.4rem; border-bottom:1px solid var(--border); padding-bottom:0.3rem;">RIMWARD OPS — CORE FOUR</div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem; margin-bottom:1rem;">
+
+      <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-top:2px solid var(--accent2); padding:0.6rem 0.7rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--textbright); margin-bottom:2px;">CHI</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--accent2); margin-bottom:0.5rem;">MINDHACKER &amp; NETWORKER</div>
+        <div style="font-size:11px; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">Social lead. Psi sleights for brainhacking. High Persuade, Kinesics, Deceive. The character who talks to Kyo and makes the moral argument. Async abilities are the session's most powerful tool in a venue full of social manipulation.</div>
+        <div style="display:flex; flex-wrap:wrap; gap:3px;">
+          <span class="npc-stat teal">PSI ASYNC</span>
+          <span class="npc-stat warn">SOCIAL LEAD</span>
+          <span class="npc-stat">BRAINHACK</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--muted); margin-top:0.5rem; line-height:1.5;"><strong style="color:var(--accent2);">SPOTLIGHT:</strong> The Kyo conversation. Psi sleights as a second vector on Alciato. Reading every NPC's surface thoughts during the opening mingling phase.</div>
+      </div>
+
+      <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-top:2px solid var(--accent2); padding:0.6rem 0.7rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--textbright); margin-bottom:2px;">KILLJOY</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--accent2); margin-bottom:0.5rem;">ANARCHIST TROUBLESHOOTER</div>
+        <div style="font-size:11px; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">Improvisation and black-market instincts. Knows the Extropian scene — fits Profunda's no-laws culture without effort. The character who recognises Wadada's ego-trade history from market patterns and who makes the burlesque malfunction window work.</div>
+        <div style="display:flex; flex-wrap:wrap; gap:3px;">
+          <span class="npc-stat">EXTROPIAN</span>
+          <span class="npc-stat warn">IMPROVISE</span>
+          <span class="npc-stat">BLACK MARKET</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--muted); margin-top:0.5rem; line-height:1.5;"><strong style="color:var(--accent2);">SPOTLIGHT:</strong> Recognising Wadada's history. Using the creature-release chaos. The physical extraction window during Phase 5.</div>
+      </div>
+
+      <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-top:2px solid var(--accent2); padding:0.6rem 0.7rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--textbright); margin-bottom:2px;">NJÁL</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--accent2); margin-bottom:0.5rem;">TITANIAN HACKER</div>
+        <div style="font-size:11px; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">Mesh operations layer. Spots Riff-Raff's VR pod exploit before Phase 4. Titanian background is credible in the Saturn system without triggering Consortium suspicion. Can run counter-intrusion on the pod network or co-opt the hack for the team's own brainhacking approach.</div>
+        <div style="display:flex; flex-wrap:wrap; gap:3px;">
+          <span class="npc-stat teal">TITANIAN</span>
+          <span class="npc-stat warn">INFOSEC</span>
+          <span class="npc-stat">VR LAYER</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--muted); margin-top:0.5rem; line-height:1.5;"><strong style="color:var(--accent2);">SPOTLIGHT:</strong> Detecting Riff-Raff's mesh signature. The VR pod exploit. Accessing Glitter Bloc security logs from the staff corridor junction.</div>
+      </div>
+
+      <div style="background:rgba(0,0,0,0.2); border:1px solid var(--border); border-top:2px solid var(--accent2); padding:0.6rem 0.7rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--textbright); margin-bottom:2px;">ZAHIRI</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--accent2); margin-bottom:0.5rem;">BRINKER SECURITY SPECIALIST</div>
+        <div style="font-size:11px; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">Combat insurance and threat detection. The character who clocks Kyo as surveillance rather than protection within the first ten minutes. Reads security patrol patterns. If the burlesque malfunction draws an aggressive response from any NPC or Glitter Bloc overreach, Zahiri is the only one who can respond before Kyo does.</div>
+        <div style="display:flex; flex-wrap:wrap; gap:3px;">
+          <span class="npc-stat">BRINKER</span>
+          <span class="npc-stat danger">COMBAT</span>
+          <span class="npc-stat">THREAT READ</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--muted); margin-top:0.5rem; line-height:1.5;"><strong style="color:var(--accent2);">SPOTLIGHT:</strong> Reading Kyo's true role. Clocking the guard patrol circuit. The one moment only they see coming.</div>
+      </div>
+
+    </div>
+
+    <!-- SIX PLAYER ADDITIONS -->
+    <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:3px; color:var(--accent); margin-bottom:0.4rem; border-bottom:1px solid var(--border); padding-bottom:0.3rem; border-top:1px solid var(--border); padding-top:0.6rem;">6-PLAYER ADDITIONS — SUNWARD OPS</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; margin-bottom:0.9rem;">
+
+      <div style="background:rgba(245,166,35,0.04); border:1px solid rgba(245,166,35,0.2); border-top:2px solid var(--accent); padding:0.6rem 0.7rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--textbright); margin-bottom:2px;">HEX</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--accent); margin-bottom:0.5rem;">LUNAR ASYNC FIXER · FUTURA MORPH · MOXIE 4</div>
+        <div style="font-size:11px; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">
+          Fills the inner-system social cover gap the Rimward team leaves. Hex's Lunar background and Futura morph (high Moxie, strong SAV, elegant appearance) lets them move in Consortium and Jovian diplomatic circles without the outer-system tells that mark Chi and Killjoy. As a second Async, Hex's sleights complement Chi's rather than duplicating — Chi handles the heavy Brainhack and Psychosurgery approach while Hex runs subtler real-time reads (Empathy, Penetrating Gaze) during live conversation. Hex's fixer background maps directly onto Profunda's Extropian no-laws environment: they know how to find leverage and trade it quietly.
+          <br><br>
+          <em style="color:var(--muted);">Narrative tension: Hex's async abilities are complicated, and a luxury gala full of people performing social manipulation is a rich environment for that. Their relationship with using sleights on people who haven't consented is the session's secondary ethical thread.</em>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:3px; margin-bottom:0.5rem;">
+          <span class="npc-stat hot">PSI ASYNC</span>
+          <span class="npc-stat hot">INNER-SYSTEM COVER</span>
+          <span class="npc-stat hot">FIXER REP</span>
+          <span class="npc-stat hot">FUTURA</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--muted); line-height:1.5;"><strong style="color:var(--accent);">WHY ADD:</strong> Inner-system credibility + second Async vector. Works the room Chi can't reach. The character Alciato actually enjoys talking to.<br><strong style="color:var(--accent);">SPOTLIGHT:</strong> Approaching Alciato as a peer. Real-time Empathy sleights during the Kyo negotiation. Reading Uthup's hidden Zamyatin allegiance before anyone else.</div>
+      </div>
+
+      <div style="background:rgba(245,166,35,0.04); border:1px solid rgba(245,166,35,0.2); border-top:2px solid var(--accent); padding:0.6rem 0.7rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; letter-spacing:2px; color:var(--textbright); margin-bottom:2px;">DANTE</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px; color:var(--accent); margin-bottom:0.5rem;">VENUSIAN GENEHACKER · MORNINGSTAR CONSTELLATION</div>
+        <div style="font-size:11px; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">
+          Fills the biotech/medical gap — the only pregen who can physically extract Alciato's data module without crippling penalties. Medicine: Biotech at a serious level makes the physical extraction route viable during the Phase 5 burlesque malfunction window. Dante's genehacker background also gives him a legitimate professional cover at a morph-design launch: he can discuss the new designs knowledgeably and use that as an entry point to Alciato, Glitter Bloc staff, or backstage access. Venusian Morningstar background is politically adjacent to Consortium space without being Consortium — credible here without suspicion.
+          <br><br>
+          <em style="color:var(--muted);">Narrative cover: Dante has genuine professional interest in everything on the runway, in the VR pods, and in the designer creatures. He is the character Glitter Bloc staff actually want to talk to. Backstage access is plausible with a single good Persuade roll.</em>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:3px; margin-bottom:0.5rem;">
+          <span class="npc-stat hot">MEDICINE: BIOTECH</span>
+          <span class="npc-stat hot">COVER IDENTITY</span>
+          <span class="npc-stat hot">CHEMISTRY</span>
+          <span class="npc-stat hot">VENUSIAN</span>
+        </div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:9px; color:var(--muted); line-height:1.5;"><strong style="color:var(--accent);">WHY ADD:</strong> Physical extraction capability + legitimate cover. The only character who makes the data module removal route viable without improvised –30 penalties.<br><strong style="color:var(--accent);">SPOTLIGHT:</strong> Backstage access via professional credibility. Advising on Vox's drug selection. The Phase 5 extraction window if the team goes physical.</div>
+      </div>
+
+    </div>
+
+    <!-- WHY NOT OTHERS -->
+    <div style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:3px; color:var(--muted); margin-bottom:0.4rem; border-bottom:1px solid var(--border); padding-bottom:0.3rem; border-top:1px solid var(--border); padding-top:0.6rem;">OTHER OPTIONS — NOT RECOMMENDED</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem;">
+      <div class="test-item" style="flex-direction:column; gap:0.2rem; border:1px solid var(--border); padding:0.5rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; font-weight:700; color:var(--muted);">SAVA — Freelance Spec Ops</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.5;">Duplicates Zahiri and Killjoy. A third combat specialist at a social event is a liability. No meaningful new capability.</div>
+      </div>
+      <div class="test-item" style="flex-direction:column; gap:0.2rem; border:1px solid var(--border); padding:0.5rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; font-weight:700; color:var(--muted);">QI — Barsoomian Hacktivist</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.5;">Near-duplicate of Njál. Two Barsoomian outer-system hackers draws Consortium scrutiny. Njál's Titanian background navigates the Saturn social space better.</div>
+      </div>
+      <div class="test-item" style="flex-direction:column; gap:0.2rem; border:1px solid var(--border); padding:0.5rem;">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; font-weight:700; color:var(--muted);">MERC / GATECRASH TEAMS</div>
+        <div style="font-size:11px; color:var(--muted); line-height:1.5;">Berk, Elis, Pivo, Shrike, Astika, Jinx, Whisper — built for combat ops and alien ruins. Wrong register for a diplomatic soirée.</div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /recommended characters full-width -->
 
 <div class="main-grid">
 
@@ -101,7 +184,15 @@
     </div>
 
     <!-- SETTING -->
-    <div class="section-label">◈ SETTING — PROFUNDA, ENCELADUS</div>
+    <div class="section-label" style="display:flex; align-items:center; justify-content:space-between;">
+      <span>◈ SETTING — PROFUNDA, ENCELADUS</span>
+      <span style="display:flex; gap:0.5rem;">
+        <a href="session-10-all-that-glitters-venue.html" style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--accent2); border:1px solid rgba(0,201,177,0.35); padding:2px 8px; text-decoration:none; white-space:nowrap;" onmouseover="this.style.background='rgba(0,201,177,0.08)'" onmouseout="this.style.background=''">◈ VENUE MAP ▶</a>
+        <a href="session-10-all-that-glitters-npcs.html" style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--accent); border:1px solid rgba(245,166,35,0.35); padding:2px 8px; text-decoration:none; white-space:nowrap;" onmouseover="this.style.background='rgba(245,166,35,0.08)'" onmouseout="this.style.background=''">◈ NPC STATS ▶</a>
+        <a href="session-10-all-that-glitters-speech.html" style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--purple,#8060c0); border:1px solid rgba(128,96,192,0.35); padding:2px 8px; text-decoration:none; white-space:nowrap;" onmouseover="this.style.background='rgba(128,96,192,0.08)'" onmouseout="this.style.background=''">◈ OPENING SPEECH ▶</a>
+        <a href="session-10-all-that-glitters-mission.html" style="font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--danger,#d94f3d); border:1px solid rgba(217,79,61,0.35); padding:2px 8px; text-decoration:none; white-space:nowrap;" onmouseover="this.style.background='rgba(217,79,61,0.08)'" onmouseout="this.style.background=''">◈ PLAYER HANDOUT ▶</a>
+      </span>
+    </div>
     <div class="npc-card">
       <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.4rem;">
 
@@ -147,7 +238,10 @@
           <div class="timeline-desc">Mingling, drinks, appetisers. Entry point for introductions — Vox Maxine meets the team at the door. Alciato is already working the room. Kyo is three steps behind them at all times. Wadada is watching from the bar.</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">PHASE 1 · OPENING SPEECH</div>
+          <div class="timeline-time" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.3rem;">
+            <span>PHASE 1 · OPENING SPEECH</span>
+            <a href="session-10-all-that-glitters-speech.html" style="font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:2px; color:var(--purple,#8060c0); border:1px solid rgba(128,96,192,0.35); padding:1px 6px; text-decoration:none;" onmouseover="this.style.background='rgba(128,96,192,0.08)'" onmouseout="this.style.background=''">◈ FULL SCRIPT ▶</a>
+          </div>
           <div class="timeline-desc">Glitter Bloc spokes-avatar delivers the brand address. Harmonic overtone chorus with enhanced larynxes performs. All major NPCs are stationary and visible — ideal reconnaissance window. Riff-Raff pings Alciato for the first time via encrypted mesh.</div>
         </div>
         <div class="timeline-item mesa">
@@ -476,94 +570,6 @@
       </div>
     </div>
 
-    <!-- MUSE INTEL CUES -->
-    <div id="muse-setup" style="border:1px solid rgba(0,201,177,0.3); background:rgba(0,201,177,0.04); padding:0.7rem 0.8rem; margin-bottom:0.8rem;">
-      <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--accent2); letter-spacing:2px; margin-bottom:0.5rem;">◈ ENTER MUSE NAMES — CUES WILL UPDATE AS YOU TYPE</div>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0.5rem; margin-bottom:0.4rem;">
-        <div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#f5a623; margin-bottom:0.2rem;">SENTINEL 01</div>
-          <input id="muse-1" type="text" placeholder="Muse name…" autocomplete="off"
-            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#f5a623; background:rgba(245,166,35,0.06); border:1px solid rgba(245,166,35,0.3); border-bottom:2px solid #f5a623; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
-            oninput="updateMuses()">
-        </div>
-        <div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#00c9b1; margin-bottom:0.2rem;">SENTINEL 02</div>
-          <input id="muse-2" type="text" placeholder="Muse name…" autocomplete="off"
-            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#00c9b1; background:rgba(0,201,177,0.06); border:1px solid rgba(0,201,177,0.3); border-bottom:2px solid #00c9b1; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
-            oninput="updateMuses()">
-        </div>
-        <div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#8c52ff; margin-bottom:0.2rem;">SENTINEL 03</div>
-          <input id="muse-3" type="text" placeholder="Muse name…" autocomplete="off"
-            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#8c52ff; background:rgba(140,82,255,0.06); border:1px solid rgba(140,82,255,0.3); border-bottom:2px solid #8c52ff; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
-            oninput="updateMuses()">
-        </div>
-        <div>
-          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#ffc107; margin-bottom:0.2rem;">SENTINEL 04</div>
-          <input id="muse-4" type="text" placeholder="Muse name…" autocomplete="off"
-            style="font-family:'Share Tech Mono',monospace; font-size:13px; color:#ffc107; background:rgba(255,193,7,0.06); border:1px solid rgba(255,193,7,0.3); border-bottom:2px solid #ffc107; padding:0.3rem 0.5rem; width:100%; outline:none; box-sizing:border-box; letter-spacing:1px;"
-            oninput="updateMuses()">
-        </div>
-      </div>
-      <div style="font-size:0.75rem; color:var(--muted); font-family:'Share Tech Mono',monospace;">Click any muse label to cycle which sentinel's muse speaks that line. Names save across pages.</div>
-    </div>
-    <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.7rem;">Muses deliver intel privately — soft overlay, inner-ear ping, or a quiet mesh annotation. These cues are calibrated for the social register of the session — less tactical, more contextual.</div>
-
-    <div class="section-label">◈ MUSE INTEL CUES — BY PHASE</div>
-    <div class="brief-panel">
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="0" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈</span>
-        <span class="dl-text"><em>Vox Maxine. Neo-avian. Registered rep score on the Fame network is 62 — that's not just a party animal, that's a professional. She has three blackmail files open that I can see from her public mesh footprint. Whatever she tells you, she's already decided what she wants from you.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="1" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈</span>
-        <span class="dl-text"><em>The VR pods have an anomalous process running in their session manager. It's not Glitter Bloc code. Someone installed it recently — the timestamp is three days ago. I'd know more if I could get into the pod network. Someone should get closer to a pod terminal.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="2" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈</span>
-        <span class="dl-text"><em>Kyo hasn't looked away from Alciato in forty minutes. That's not protection detail — that's surveillance. She's building a file on them, not guarding them. Worth knowing which side she's on before we decide whether to involve her.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="3" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈</span>
-        <span class="dl-text"><em>Grix just received an encrypted ping. She read it once, deleted it, and changed her body language entirely. She's looking for someone specific in the room now. I don't know who sent it but the encryption signature is Titanian Fleet Intelligence. Something is happening on her end tonight.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="4" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈ — during creature presentation</span>
-        <span class="dl-text"><em>Ninety seconds of visual cover coming up. The glow-puffers in 0.113g are going to be everywhere. Kyo's going to lose Alciato for at least one of those minutes. If anything is going to happen tonight, the window opens now.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="5" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈ — on Wadada</span>
-        <span class="dl-text"><em>Wadada has a gap in his public mesh history — three months, eighteen months ago. That's not a privacy setting, that's a scrub. Someone paid for that. His rep on Guanxi dropped 8 points during that period and then recovered. Whatever he did, his network forgave him. That's the scarier thing.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="6" onclick="cycleMuse(this)" style="color:#8c52ff;border-color:#8c52ff;background:rgba(140,82,255,0.12);">◈ — on Riff-Raff</span>
-        <span class="dl-text"><em>There's an infomorph signature in the venue mesh that isn't on the guest list. It's very good at not being noticed — I almost didn't. It's been pinging Alciato's ecto at irregular intervals since we arrived. Whoever it is, they've been watching Alciato since before we got here.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="7" onclick="cycleMuse(this)" style="color:#ffc107;border-color:#ffc107;background:rgba(255,193,7,0.12);">◈ — burlesque malfunction</span>
-        <span class="dl-text"><em>Livestream just cut. Security just went to heightened posture. The malfunction is real — this wasn't planned. But someone is moving in the room right now who was waiting for exactly this. I don't know if it's us or someone else who got here first.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="8" onclick="cycleMuse(this)" style="color:#f5a623;border-color:#f5a623;background:rgba(245,166,35,0.12);">◈ — if Kyo is approached</span>
-        <span class="dl-text"><em>She wants to say yes. I can see it. Whatever you told her about what you found out there — it landed. She's running the arithmetic on what happens if the shipyard gets built and Consortium ships go into the Kuiper without knowing what's there. She's almost there. Don't push. Let her arrive.</em></span>
-      </div>
-
-      <div class="dialogue-line">
-        <span class="muse-label dl-label" data-cue="9" onclick="cycleMuse(this)" style="color:#00c9b1;border-color:#00c9b1;background:rgba(0,201,177,0.12);">◈ — end of session</span>
-        <span class="dl-text"><em>We got what we came for. Or we didn't. Either way — the survey probe is still heading for FK7. The Consortium still doesn't know what the Semaphore is. And she's still pointing. We bought time. I don't know how much.</em></span>
-      </div>
-
-    </div>
-
     <!-- GM NOTES -->
     <div class="section-label">◈ GM NOTES — RUNNING THIS SCENARIO</div>
     <div class="npc-card">
@@ -583,7 +589,7 @@
       </div>
       <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ENDING THE CAMPAIGN <span>▾</span></button>
       <div class="collapse-content">
-        <div class="note-box signal">This is the last session of the arc. The team has been to the edge of the solar system and back. They've seen a TITAN fetch reconstruct itself, a dead colony, a silicon predator, and a temporal isolation weapon. They know something ancient near the sun has been trying to warn someone for years and nobody was listening. Now they're at a party. Let the ending be quiet. The last muse cue says it: <em>we bought time. I don't know how much.</em> That's the right note. Not triumph. Not defeat. Just the weight of knowing what's out there, and still being alive, and the Semaphore's arm still pointing somewhere they haven't gone yet.</div>
+        <div class="note-box signal">This is the last session of the arc. The team has been to the edge of the solar system and back. They've seen a TITAN fetch reconstruct itself, a dead colony, a silicon predator, and a temporal isolation weapon. They know something ancient near the sun has been trying to warn someone for years and nobody was listening. Now they're at a party. Let the ending be quiet. The last line belongs to whichever muse has been speaking all session: <em>we bought time. I don't know how much.</em> That's the right note. Not triumph. Not defeat. Just the weight of knowing what's out there, and still being alive, and the Semaphore's arm still pointing somewhere they haven't gone yet.</div>
       </div>
     </div>
 
@@ -617,8 +623,6 @@
   </div>
 </footer>
 
-<script>const cueAssignments = [0,1,2,3,0,1,2,3,0,1];</script>
-<script src="ep-muse.js"></script>
 
 <script>
 
@@ -670,5 +674,8 @@ function toggleCollapse(btn) {
   $(document).on('click', '.ep-nav-go[data-href]', function() { window.location.href = $(this).data('href'); });
 })();
 </script>
+
 </body>
 </html>
+
+

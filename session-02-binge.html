@@ -6,8 +6,11 @@
 <title>BINGE | Eclipse Phase — Session 02 GM Reference</title>
 <link rel="stylesheet" href="ep-campaign.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="ep-daymode.js"></script>
 </head>
 <body>
+<button id="day-toggle-btn" class="day-toggle" style="position:fixed;top:0.45rem;right:1rem;z-index:200;">◈ DAY MODE</button>
 
 <!-- NAV PLACEHOLDER — run inject_nav.py to populate -->
 
@@ -15,103 +18,6 @@
 
 
 
-<style id="ep-nav-style">
-  #ep-session-nav {
-    font-family: 'Share Tech Mono', monospace;
-    background: var(--deep, #0a0e18);
-    border-bottom: 1px solid var(--border, #1e2a3a);
-    padding: 0.45rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: var(--text, #8898a8);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    flex-wrap: wrap;
-  }
-  #ep-session-nav .ep-nav-label {
-    color: var(--accent, #f5a623);
-    opacity: 0.6;
-    flex-shrink: 0;
-  }
-  #ep-session-nav a.ep-nav-home,
-  #ep-session-nav span.ep-nav-home {
-    color: var(--text, #8898a8);
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 2px 6px;
-    flex-shrink: 0;
-    opacity: 0.55;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
-    letter-spacing: 2px;
-  }
-  #ep-session-nav a.ep-nav-home:hover,
-  #ep-session-nav span.ep-nav-home:hover {
-    color: var(--textbright, #c8d8e8);
-    border-color: var(--border, #1e2a3a);
-    opacity: 1;
-  }
-  #ep-session-nav .ep-nav-links {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    flex: 1;
-  }
-  #ep-session-nav a.ep-nav-link,
-  #ep-session-nav span.ep-nav-link {
-    color: var(--text, #8898a8);
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 2px 6px;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  #ep-session-nav a.ep-nav-link:hover,
-  #ep-session-nav span.ep-nav-link:hover {
-    color: var(--textbright, #c8d8e8);
-    border-color: var(--border, #1e2a3a);
-  }
-  #ep-session-nav a.ep-nav-link.ep-current,
-  #ep-session-nav span.ep-nav-link.ep-current {
-    color: var(--accent, #f5a623);
-    border-color: rgba(245,166,35,0.35);
-    cursor: default;
-    pointer-events: none;
-  }
-  #ep-session-nav a.ep-nav-link.ep-no-file,
-  #ep-session-nav span.ep-nav-link.ep-no-file {
-    opacity: 0.35;
-    cursor: default;
-    pointer-events: none;
-  }
-  #ep-session-nav .ep-nav-sep {
-    color: var(--border, #1e2a3a);
-    flex-shrink: 0;
-  }
-  #ep-session-nav .ep-nav-arrow {
-    color: var(--accent2, #60a8d0);
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 2px 7px;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  #ep-session-nav .ep-nav-arrow:hover {
-    border-color: var(--accent2, #60a8d0);
-    color: var(--textbright, #c8d8e8);
-  }
-  #ep-session-nav .ep-nav-arrow.ep-disabled {
-    opacity: 0.2;
-    pointer-events: none;
-  }
-  @media print { #ep-session-nav { display: none !important; } }
-</style>
 <nav id="ep-session-nav" data-current-file="session-02-binge.html"></nav>
 <header>
   <div class="header-tag">◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
