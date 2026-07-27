@@ -676,3 +676,246 @@ body.day-mode .timeline-item::before { background: var(--border); }
   pointer-events: none;
 }
 @media print { #ep-session-nav { display: none !important; } }
+
+/* ══════════════════════════════════════════════════════════
+   VENUE EXTENSION — session-10-all-that-glitters-venue.html
+   Variables and classes specific to the venue chapter.
+   Appended to ep-campaign.css so the venue file needs no
+   inline <style> block.
+══════════════════════════════════════════════════════════ */
+
+/* ── Venue-specific variable aliases on body ─────────────── */
+body {
+  --bg:       var(--void);
+  --surface:  var(--panel);
+  --teal:     #4ab8a0;
+  --amber:    #c8a050;
+  --signal:   #8868c8;
+  --label-bg: rgba(104,152,200,0.10);
+}
+body.day-mode {
+  --bg:       #f0f2f5;
+  --surface:  #e8ecf4;
+  --teal:     #007a6b;
+  --amber:    #7a5000;
+  --signal:   #5a28cc;
+  --label-bg: rgba(0,0,0,0.05);
+}
+
+/* ── Venue content wrapper ───────────────────────────────── */
+.venue-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Venue layout ────────────────────────────────────────── */
+.chapter-header {
+  border-top: 2px solid var(--teal);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0 1rem;
+  margin-bottom: 2rem;
+}
+.chapter-tag {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--teal);
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+}
+.chapter-title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+.chapter-sub {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* ── Room cards ──────────────────────────────────────────── */
+.room-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.room-grid.single { grid-template-columns: 1fr; }
+@media (max-width: 640px) { .room-grid { grid-template-columns: 1fr; } }
+
+.room-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--accent);
+  padding: 1rem;
+}
+.room-card.teal-top   { border-top-color: var(--teal); }
+.room-card.amber-top  { border-top-color: var(--amber); }
+.room-card.warn-top   { border-top-color: var(--warn); }
+.room-card.signal-top { border-top-color: var(--signal); }
+.room-card.danger-top { border-top-color: var(--danger); }
+
+.room-name {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+.room-card.teal-top   .room-name  { color: var(--teal); }
+.room-card.amber-top  .room-name  { color: var(--amber); }
+.room-card.warn-top   .room-name  { color: var(--warn); }
+.room-card.signal-top .room-name  { color: var(--signal); }
+.room-card.danger-top .room-name  { color: var(--danger); }
+
+.room-dims {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+.room-stat {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+  font-size: 11px;
+}
+.stat-key {
+  min-width: 72px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  font-size: 9px;
+  padding-top: 1px;
+}
+.stat-val { color: var(--text); line-height: 1.5; }
+
+/* ── Art & flavor callouts ───────────────────────────────── */
+.art-block {
+  background: rgba(74,184,160,0.05);
+  border: 1px solid rgba(74,184,160,0.25);
+  border-left: 3px solid var(--teal);
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.7rem;
+  font-size: 11px;
+}
+.art-label {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--teal);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+.art-works { color: var(--text); line-height: 1.6; }
+.art-works em { color: var(--amber); font-style: normal; }
+
+.flavor {
+  background: rgba(200,160,80,0.05);
+  border: 1px solid rgba(200,160,80,0.2);
+  border-left: 3px solid var(--amber);
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.6rem;
+  font-size: 11px;
+  font-style: italic;
+  color: rgba(200,208,216,0.75);
+  line-height: 1.7;
+}
+body.day-mode .flavor { color: rgba(20,35,48,0.75); }
+.flavor-label {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--amber);
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* ── Low-g sidebar ───────────────────────────────────────── */
+.low-g-note {
+  background: rgba(136,104,200,0.06);
+  border: 1px solid rgba(136,104,200,0.25);
+  border-left: 3px solid var(--signal);
+  padding: 0.8rem 1rem;
+  margin: 1.5rem 0;
+  font-size: 11px;
+}
+.low-g-note .note-label {
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--signal);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+.low-g-note ul { list-style: none; padding: 0; }
+.low-g-note ul li::before { content: "◈ "; color: var(--signal); opacity: 0.6; }
+.low-g-note ul li { margin-bottom: 0.25rem; }
+
+/* ── Legend ──────────────────────────────────────────────── */
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+@media (max-width: 640px) { .legend-grid { grid-template-columns: 1fr 1fr; } }
+.legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 10px; }
+.legend-dot  { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── Section header (venue style) ────────────────────────── */
+.section-header {
+  border-left: 3px solid var(--accent);
+  padding: 0.6rem 0 0.6rem 0.9rem;
+  margin: 2rem 0 1rem;
+  background: var(--label-bg);
+}
+.section-header h2 {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.section-header .section-sub {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* ── Venue day-mode overrides ────────────────────────────── */
+body.day-mode .room-card           { background: #e8ecf4; border-color: rgba(0,0,0,0.14); }
+body.day-mode .room-card.teal-top  { border-top-color: #007a6b; }
+body.day-mode .room-card.amber-top { border-top-color: #7a5000; }
+body.day-mode .room-card.warn-top  { border-top-color: #8a5000; }
+body.day-mode .room-card.signal-top{ border-top-color: #5a28cc; }
+body.day-mode .room-card.danger-top{ border-top-color: #b03020; }
+body.day-mode .room-card.teal-top   .room-name { color: #007a6b; }
+body.day-mode .room-card.amber-top  .room-name { color: #7a5000; }
+body.day-mode .room-card.warn-top   .room-name { color: #8a5000; }
+body.day-mode .room-card.signal-top .room-name { color: #5a28cc; }
+body.day-mode .room-card.danger-top .room-name { color: #b03020; }
+body.day-mode .section-header      { background: rgba(0,0,0,0.04); border-left-color: #b06000; }
+body.day-mode .section-header h2   { color: #b06000; }
+body.day-mode .chapter-header      { border-top-color: #007a6b; }
+body.day-mode .chapter-title       { color: #007a6b; }
+body.day-mode .low-g-note          { background: rgba(90,40,204,0.04); border-color: rgba(90,40,204,0.2); }
+body.day-mode .art-block           { background: rgba(0,122,107,0.04); border-color: rgba(0,122,107,0.2); }
+body.day-mode .art-works em        { color: #7a5000; }
+body.day-mode .flavor              { background: rgba(122,80,0,0.04); border-color: rgba(122,80,0,0.2); }
+body.day-mode .stat-key            { color: rgba(20,35,48,0.55); }
+body.day-mode .room-dims           { color: rgba(20,35,48,0.55); border-bottom-color: rgba(0,0,0,0.1); }
+body.day-mode .note-label          { color: #5a28cc; }
+body.day-mode .low-g-note ul li::before { color: #5a28cc; }
+body.day-mode .art-label           { color: #007a6b; }
+body.day-mode .flavor-label        { color: #7a5000; }
