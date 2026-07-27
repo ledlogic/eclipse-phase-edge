@@ -6,118 +6,242 @@
 <title>COLD STATION | Eclipse Phase — Session 05 GM Reference</title>
 <link rel="stylesheet" href="ep-campaign.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<script src="ep-daymode.js"></script>
 </head>
 <body>
-<button id="day-toggle-btn" class="day-toggle" style="position:fixed;top:0.45rem;right:1rem;z-index:200;">◈ DAY MODE</button>
 
+<style id="ep-nav-style">
+  #ep-session-nav {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--deep, #0a0e18);
+    border-bottom: 1px solid var(--border, #1e2a3a);
+    padding: 0.45rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text, #8898a8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+  }
+  #ep-session-nav .ep-nav-label {
+    color: var(--accent, #f5a623);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  #ep-session-nav a.ep-nav-home,
+  #ep-session-nav span.ep-nav-home {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    flex-shrink: 0;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
+    letter-spacing: 2px;
+  }
+  #ep-session-nav a.ep-nav-home:hover,
+  #ep-session-nav span.ep-nav-home:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+    opacity: 1;
+  }
+  #ep-session-nav .ep-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  #ep-session-nav a.ep-nav-link,
+  #ep-session-nav span.ep-nav-link {
+    color: var(--text, #8898a8);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav a.ep-nav-link:hover,
+  #ep-session-nav span.ep-nav-link:hover {
+    color: var(--textbright, #c8d8e8);
+    border-color: var(--border, #1e2a3a);
+  }
+  #ep-session-nav a.ep-nav-link.ep-current,
+  #ep-session-nav span.ep-nav-link.ep-current {
+    color: var(--accent, #f5a623);
+    border-color: rgba(245,166,35,0.35);
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav a.ep-nav-link.ep-no-file,
+  #ep-session-nav span.ep-nav-link.ep-no-file {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #ep-session-nav .ep-nav-sep {
+    color: var(--border, #1e2a3a);
+    flex-shrink: 0;
+  }
+  #ep-session-nav .ep-nav-arrow {
+    color: var(--accent2, #60a8d0);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 2px 7px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  #ep-session-nav .ep-nav-arrow:hover {
+    border-color: var(--accent2, #60a8d0);
+    color: var(--textbright, #c8d8e8);
+  }
+  #ep-session-nav .ep-nav-arrow.ep-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  @media print { #ep-session-nav { display: none !important; } }
+</style>
 <nav id="ep-session-nav" data-current-file="session-05-cold-station.html"></nav>
-
 <header>
-  <div class="header-tag">&#9674; SESSION 05 &mdash; GM REFERENCE DOCUMENT &mdash; ECLIPSE PHASE 2E</div>
-  <h1>COLD STATION <span class="loc">VESTA &middot; DOCKING RING</span></h1>
-  <div class="header-sub">POST-GUTENBERG EXFIL &middot; VESTA STATION &middot; OZMA NET CLOSING &middot; PHYSICAL ESCAPE</div>
+  <div class="header-tag">◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
+  <h1>COLD STATION <span class="loc">VESTA · DOCKING RING</span></h1>
+  <div class="header-sub">POST-GUTENBERG EXFIL · VESTA STATION · OZMA NET CLOSING · PHYSICAL ESCAPE</div>
   <div class="stats-bar">
     <span class="stat-chip">LOCATION: VESTA, MAIN BELT</span>
     <span class="stat-chip warn">THREAT: OZMA CLOSURE TEAM</span>
     <span class="stat-chip danger">STATUS: COMPROMISED</span>
     <span class="stat-chip green">REGISTER: PHYSICAL / CHASE / ACTION</span>
-    <span class="stat-chip ozma">LIXIA LOK &mdash; FIELD ACTIVE</span>
+    <span class="stat-chip ozma">LIXIA LOK — FIELD ACTIVE</span>
     <span class="stat-chip">SESSION 05 OF ARC</span>
   </div>
 </header>
 
+
 <div class="main-grid">
+
+  <!-- ══════════════════════ LEFT COLUMN ══════════════════════ -->
   <div class="left-col">
 
-    <div class="section-label">&#9674; SITUATION BRIEF</div>
+    <!-- MISSION BRIEF -->
+    <div class="section-label">◈ SITUATION BRIEF</div>
     <div class="brief-panel">
       <div class="brief-text">
-        The team returns to Vesta in the wake of Gutenberg &mdash; back in their own morphs, MESA's device in hand, looking for a quiet handoff and a way out of the Belt. They don't get it. Project Ozma's net is already closing: fabricated rep deposits have poisoned their standing with Firewall, a closure team is moving through Vesta's Docking Ring District, and Lixia Lok &mdash; last seen in Binge &mdash; is already on station running point for the extraction. The session is a race: get to their ship, get MESA out, and break burn before the net pulls tight.
+        The team returns to Vesta in the wake of Gutenberg — back in their own morphs, MESA's device in hand, looking for a quiet handoff and a way out of the Belt. They don't get it. Project Ozma's net is already closing: fabricated rep deposits have poisoned their standing with Firewall, a closure team is moving through Vesta's Docking Ring District, and Lixia Lok — last seen in Binge — is already on station running point for the extraction. The session is a race: get to their ship, get MESA out, and break burn before the net pulls tight.
       </div>
       <div class="mission-goal">
-        <strong>&#9674; WHAT THE TEAM KNOWS ON ARRIVAL</strong>
-        Firewall has gone cold. No handler contact. Rep deposits in all accounts &mdash; identical amounts, simultaneous &mdash; flagged by Firewall's automated monitoring. They are persons of interest. They are not formally detained. Yet. MESA's device is with them and they know Ozma wants it.
+        <strong>◈ WHAT THE TEAM KNOWS ON ARRIVAL</strong>
+        Firewall has gone cold. No handler contact. Rep deposits in all accounts — identical amounts, simultaneous — flagged by Firewall's automated monitoring. They are persons of interest. They are not formally detained. Yet. MESA's device is with them and they know Ozma wants it.
       </div>
       <div class="mission-goal warn" style="margin-top:0.5rem;">
-        <strong>&#9674; WHAT IS ACTUALLY HAPPENING</strong>
-        Lok is coordinating a three-stage closure: a Firewall-adjacent hold order to freeze the team's transit credentials, a physical acquisition team in the Docking Ring to intercept them before they reach their berth, and a contingency extraction that activates if the team breaks through the first two layers. Ozma wants MESA's data. Firewall has been fed enough fabricated evidence that it won't intervene &mdash; it's watching.
+        <strong>◈ WHAT IS ACTUALLY HAPPENING</strong>
+        Lok is coordinating a three-stage closure: a Firewall-adjacent hold order to freeze the team's transit credentials, a physical acquisition team in the Docking Ring to intercept them before they reach their berth, and a contingency extraction that activates if the team breaks through the first two layers. Ozma wants MESA's data. Firewall has been fed enough fabricated evidence that it won't intervene — it's watching.
       </div>
       <div class="mission-goal ozma" style="margin-top:0.5rem;">
-        <strong>&#9674; PC WIN CONDITION</strong>
+        <strong>◈ PC WIN CONDITION</strong>
         Reach their ship with MESA's device intact. Break Vesta orbit before the hold order activates their berth lockout. Expose or evade Lok without losing MESA to the extraction team.
       </div>
     </div>
 
-    <div class="section-label">&#9674; SITUATION TIMELINE</div>
+    <!-- TIMELINE -->
+    <div class="section-label">◈ SITUATION TIMELINE</div>
     <div class="timeline-panel">
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-time">T-UNKNOWN &middot; OZMA FLAGS GUTENBERG</div>
+          <div class="timeline-time">T-UNKNOWN · OZMA FLAGS GUTENBERG</div>
           <div class="timeline-desc">Project Ozma identifies the Gutenberg tight-beam signal origin as a matter of extreme sensitivity. The team's survival and recovery of MESA puts them directly in Ozma's acquisition priority. A decision is made to neutralize the team's credibility and acquire the device before they can deliver their report to Firewall.</div>
         </div>
         <div class="timeline-item ozma">
-          <div class="timeline-time ozma">T-72 HRS &middot; REP DEPOSITS PLANTED</div>
-          <div class="timeline-desc">Simultaneous anonymous rep deposits arrive across all PC accounts &mdash; identical amounts, traceable to a shell that looks like a handler payment. Firewall's automated monitoring flags the pattern within hours. The team's handler goes cold. No contact, no explanation.</div>
+          <div class="timeline-time ozma">T-72 HRS · REP DEPOSITS PLANTED</div>
+          <div class="timeline-desc">Simultaneous anonymous rep deposits arrive across all PC accounts — identical amounts, traceable to a shell that looks like a handler payment. Firewall's automated monitoring flags the pattern within hours. The team's handler goes cold. No contact, no explanation. The team is now traveling with the operational equivalent of a scarlet letter on their mesh IDs.</div>
         </div>
         <div class="timeline-item ozma">
-          <div class="timeline-time ozma">T-36 HRS &middot; LOK DEPLOYS TO VESTA</div>
-          <div class="timeline-desc">Lixia Lok arrives at Vesta under a new identity: a Firewall coordinator here to manage the team's "voluntary debriefing." She has 36 hours to establish position in the Docking Ring, identify the team's berth, and pre-position her closure team.</div>
+          <div class="timeline-time ozma">T-36 HRS · LOK DEPLOYS TO VESTA</div>
+          <div class="timeline-desc">Lixia Lok — last active in Pathfinder City under a Consortium Oversight cover — arrives at Vesta under a new identity: a Firewall coordinator here to manage the team's "voluntary debriefing." She has 36 hours to establish position in the Docking Ring, identify the team's berth, and pre-position her closure team.</div>
         </div>
         <div class="timeline-item warn">
-          <div class="timeline-time warn">T-12 HRS &middot; HOLD ORDER STAGED</div>
-          <div class="timeline-desc">Lok files the transit credential freeze order through a compromised Vesta port authority contact &mdash; but with a deliberate 12-hour activation delay. She needs the team physically on the station before the hold activates. The delay is a trap: they feel like they have time. They don't.</div>
+          <div class="timeline-time warn">T-12 HRS · HOLD ORDER STAGED</div>
+          <div class="timeline-desc">Lok files the transit credential freeze order through a compromised Vesta port authority contact — but it has a deliberate 12-hour activation delay. She needs the team physically on the station before the hold activates. If they go to ground, she loses them. The delay is a trap: they feel like they have time. They don't.</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">T-NOW &middot; TEAM ARRIVES AT VESTA</div>
-          <div class="timeline-desc">The team docks or egocasts in from the Gutenberg vicinity. Vesta's Docking Ring is familiar territory. But the station feels different. Their Firewall contact hasn't responded in two days. Their rep is flagged. And somewhere in this press of ships and bodies, Lok's team is already watching the airlocks.</div>
+          <div class="timeline-time">T-NOW · TEAM ARRIVES AT VESTA</div>
+          <div class="timeline-desc">The team docks or egocasts in from the Gutenberg vicinity. Vesta's Docking Ring is familiar territory — they were here in Session 03. But the station feels different. Their Firewall contact hasn't responded in two days. Their rep is flagged. And somewhere in this press of ships and bodies, Lok's team is already watching the airlocks.</div>
         </div>
         <div class="timeline-item danger">
-          <div class="timeline-time danger">T+12 HRS &middot; HOLD ORDER ACTIVATES</div>
-          <div class="timeline-desc">When the hold order goes live, the team's ship berth locks. Fuel transfers and departure clearance are denied. After this point, the only exit is illegal &mdash; cutting the berth locks, commandeering a vessel, or egocasting out without their ship and abandoning the physical MESA device on station.</div>
+          <div class="timeline-time danger">T+12 HRS · HOLD ORDER ACTIVATES</div>
+          <div class="timeline-desc">When the hold order goes live, the team's ship berth locks. Fuel transfers and departure clearance are denied. Vesta port authority won't lift it without a Firewall authorization that Lok controls. After this point, the only exit is illegal — cutting the berth locks, commandeering a vessel, or egocasting out without their ship and abandoning the physical MESA device on station.</div>
         </div>
       </div>
     </div>
 
-    <div class="section-label">&#9674; VESTA DOCKING RING &mdash; OPERATIONAL AREA</div>
+    <!-- STATION OVERVIEW -->
+    <div class="section-label">◈ VESTA DOCKING RING — OPERATIONAL AREA</div>
     <div class="brief-panel">
       <div style="font-size:0.88rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">
-        <strong>The team's ground:</strong> Vesta's Docking Ring District &mdash; familiar from Session 03. Dense with commercial berths, maintenance bays, transit hostels. High foot traffic. Multiple redundant access corridors. Low-g throughout &mdash; Vesta's gravity is barely 0.025g.
+        <strong style="color:var(--text);">The team's ground:</strong> Vesta's Docking Ring District — familiar from Session 03. The outer ring of Vesta's hab structure, dense with commercial berths, maintenance bays, transit hostels, and the kind of businesses that exist because ships stop here. High foot traffic. Multiple redundant access corridors. Low-g throughout — Vesta's gravity is barely 0.025g, meaning jumping the wrong way across a corridor costs seconds the team doesn't have.
       </div>
+      <div style="font-size:0.88rem; color:var(--text); line-height:1.6; margin-bottom:0.8rem;">
+        FLASH knows this district. The team spent time here in the run-up to Gutenberg — sourcing morphs, making contacts, moving through the maintenance tunnels. That familiarity is now an operational edge. Lok's team is good, but they're working from surveillance data. FLASH has walked these corridors.
+      </div>
+
+      <!-- Station map SVG -->
       <div style="background:#030508; border:1px solid var(--border); padding:0.75rem; margin-bottom:0.6rem;">
         <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
           <rect width="640" height="260" fill="#030508"/>
+
+          <!-- Ring corridor arc suggestion -->
           <path d="M 60 200 Q 320 20 580 200" fill="none" stroke="rgba(126,184,212,0.08)" stroke-width="18"/>
           <path d="M 60 200 Q 320 20 580 200" fill="none" stroke="rgba(126,184,212,0.18)" stroke-width="1" stroke-dasharray="4,3"/>
+
+          <!-- AIRLOCK / ENTRY — left -->
           <rect x="20" y="155" width="95" height="70" rx="2" fill="rgba(126,184,212,0.06)" stroke="rgba(126,184,212,0.35)" stroke-width="1"/>
           <text x="67" y="178" font-family="Share Tech Mono" font-size="7" fill="#7eb8d4" text-anchor="middle" letter-spacing="1">AIRLOCK 7</text>
           <text x="67" y="190" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">TEAM ENTRY</text>
-          <text x="67" y="202" font-family="Share Tech Mono" font-size="7" fill="rgba(126,184,212,0.7)" text-anchor="middle">&#9733; START</text>
+          <text x="67" y="202" font-family="Share Tech Mono" font-size="7" fill="rgba(126,184,212,0.7)" text-anchor="middle">★ START</text>
           <text x="67" y="214" font-family="Share Tech Mono" font-size="7" fill="rgba(200,120,80,0.7)" text-anchor="middle">LOK WATCHER</text>
+
+          <!-- Connector to transit hub -->
           <line x1="115" y1="190" x2="155" y2="165" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+          <!-- TRANSIT HUB — centre-left -->
           <rect x="155" y="120" width="110" height="80" rx="2" fill="rgba(160,196,160,0.05)" stroke="rgba(160,196,160,0.3)" stroke-width="1"/>
           <text x="210" y="143" font-family="Share Tech Mono" font-size="7" fill="#a0c4a0" text-anchor="middle" letter-spacing="1">TRANSIT HUB</text>
           <text x="210" y="155" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Hostel row</text>
           <text x="210" y="167" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Commerce strip</text>
           <text x="210" y="179" font-family="Share Tech Mono" font-size="7" fill="rgba(200,120,80,0.7)" text-anchor="middle">ACQUISITION TEAM</text>
+
+          <!-- Connector to maintenance tunnel -->
           <line x1="265" y1="160" x2="295" y2="135" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+          <!-- MAINTENANCE TUNNELS — centre -->
           <rect x="295" y="85" width="100" height="80" rx="2" fill="rgba(212,184,112,0.05)" stroke="rgba(212,184,112,0.3)" stroke-width="1"/>
           <text x="345" y="108" font-family="Share Tech Mono" font-size="7" fill="#d4b870" text-anchor="middle" letter-spacing="1">MAINT. TUNNELS</text>
           <text x="345" y="120" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">FLASH route</text>
           <text x="345" y="132" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Low-g bypass</text>
-          <text x="345" y="144" font-family="Share Tech Mono" font-size="7" fill="rgba(212,184,112,0.8)" text-anchor="middle">&#9733; SHORTCUT</text>
+          <text x="345" y="144" font-family="Share Tech Mono" font-size="7" fill="rgba(212,184,112,0.8)" text-anchor="middle">★ SHORTCUT</text>
+
+          <!-- Connector to berth -->
           <line x1="395" y1="125" x2="430" y2="140" stroke="rgba(126,184,212,0.3)" stroke-width="1"/>
+
+          <!-- BERTH 44 — right -->
           <rect x="430" y="120" width="110" height="80" rx="2" fill="rgba(144,64,192,0.06)" stroke="rgba(144,64,192,0.35)" stroke-width="1"/>
           <text x="485" y="143" font-family="Share Tech Mono" font-size="7" fill="#9040c0" text-anchor="middle" letter-spacing="1">BERTH 44</text>
           <text x="485" y="155" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">Team's ship</text>
           <text x="485" y="167" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">MESA device held</text>
-          <text x="485" y="179" font-family="Share Tech Mono" font-size="7" fill="rgba(200,80,80,0.8)" text-anchor="middle">&#9733; OBJECTIVE</text>
+          <text x="485" y="179" font-family="Share Tech Mono" font-size="7" fill="rgba(200,80,80,0.8)" text-anchor="middle">★ OBJECTIVE</text>
+
+          <!-- LOK POSITION — upper -->
           <rect x="260" y="20" width="120" height="55" rx="2" fill="rgba(144,64,192,0.06)" stroke="rgba(144,64,192,0.4)" stroke-width="1" stroke-dasharray="3,2"/>
           <text x="320" y="40" font-family="Share Tech Mono" font-size="7" fill="#9040c0" text-anchor="middle" letter-spacing="1">COMMAND NODE</text>
-          <text x="320" y="52" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">LOK &mdash; MOBILE</text>
+          <text x="320" y="52" font-family="Share Tech Mono" font-size="7" fill="rgba(168,188,200,0.5)" text-anchor="middle">LOK — MOBILE</text>
           <text x="320" y="64" font-family="Share Tech Mono" font-size="7" fill="rgba(144,64,192,0.8)" text-anchor="middle">OZMA FIELD OPS</text>
           <line x1="320" y1="75" x2="320" y2="85" stroke="rgba(144,64,192,0.3)" stroke-width="1" stroke-dasharray="2,2"/>
+
+          <!-- Legend -->
           <rect x="20" y="238" width="7" height="7" fill="rgba(126,184,212,0.4)" stroke="rgba(126,184,212,0.6)"/>
           <text x="32" y="245" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.55)">TEAM AREA</text>
           <rect x="110" y="238" width="7" height="7" fill="rgba(212,184,112,0.4)" stroke="rgba(212,184,112,0.6)"/>
@@ -128,19 +252,21 @@
           <text x="392" y="245" font-family="Share Tech Mono" font-size="6" fill="rgba(168,188,200,0.55)">OBJECTIVE</text>
         </svg>
       </div>
+
       <div class="note-box ice">
         <strong style="color:var(--ice); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px;">VESTA LOW-G ENVIRONMENT</strong><br>
-        The Docking Ring runs at roughly 0.025g. Movement here is a skill. FLASH excels at this. Lok's acquisition team are belt-adapted but not ring-native. Jumps cover six to eight meters horizontally. The ceiling is four meters. The walls are curved.
+        The Docking Ring runs at roughly 0.025g — just enough to keep loose gear from floating away, not enough to run normally. Movement here is a skill. FLASH excels at this. Lok's acquisition team are belt-adapted but not ring-native. In a foot chase, the terrain favors whoever knows the angles. Use this. Jumps cover six to eight meters horizontally. The ceiling is four meters. The walls are curved.
       </div>
     </div>
 
-    <div class="section-label">&#9674; SCENES &amp; ENCOUNTERS</div>
+    <!-- SCENE CARDS -->
+    <div class="section-label">◈ SCENES &amp; ENCOUNTERS</div>
     <div class="rooms-section">
 
-      <!-- SCENE 00 — EGOCAST HUB (COLD OPEN) -->
+      <!-- SCENE 00 — EGOCAST HUB -->
       <div class="room-card" data-num="00 — EGOCAST HUB">
         <div class="room-header">
-          <div class="room-name">Vesta Egocast Receiving Hub &mdash; Level 4, Docking Ring</div>
+          <div class="room-name">Vesta Egocast Receiving Hub — Level 4, Docking Ring</div>
           <div class="room-tags">
             <span class="tag explore">COLD OPEN</span>
             <span class="tag warn">BIOMETRIC SCAN</span>
@@ -149,56 +275,87 @@
         </div>
         <div class="room-body">
           <div class="room-description">
-            They've been here before. That's the first thing &mdash; the specific disorientation of arriving somewhere familiar in an unfamiliar body. The hub is a low-ceilinged oval chamber carved directly into Level 4's inner regolith, sealed with spray-resin that's yellowed at the joints. Eight reclining instantiation slabs in two rows. An AR overlay shimmers in the middle distance: <em>WELCOME TO VESTA STATION &mdash; DOCKING RING DISTRICT. GRAVITY: 0.025g. LOCAL TIME: [CYCLE 14 &mdash; VESTAN AFTERNOON].</em> The centrifuge hum is louder here than in the commercial zones, a low groan through the rock.
+            They've been here before. That's the first thing — the specific disorientation of arriving somewhere familiar in an unfamiliar body. The hub is a low-ceilinged oval chamber carved directly into Level 4's inner regolith, sealed with spray-resin that's yellowed at the joints. Eight reclining instantiation slabs in two rows, half occupied by other arrivals in various states of orientation. An AR overlay shimmers in the middle distance: <em>WELCOME TO VESTA STATION — DOCKING RING DISTRICT. GRAVITY: 0.025g. LOCAL TIME: [CYCLE 14 — VESTAN AFTERNOON].</em> The centrifuge hum is louder here than in the commercial zones, a low groan through the rock. It never quite lets you forget you're inside a spinning body.
           </div>
           <div class="room-description" style="margin-top:0.5rem;">
-            Petra Vosse is behind the reinforced booth, same as always. Eleven years at this desk. She has watched ten thousand strangers wake up wrong in borrowed morphs, and she has the professional patience of someone who no longer finds it remarkable. She is already looking at the team before they have finished orienting.
+            Petra Vosse is behind the reinforced booth, same as always. Eleven years at this desk. She has watched ten thousand strangers wake up wrong in borrowed morphs, and she has the professional patience of someone who no longer finds it remarkable. She logs each arrival automatically — has done since the audit — and she is already looking at the team before they have finished orienting.
           </div>
 
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; ENVIRONMENT &mdash; SOUND, SMELL, SENSATION <span>&#9662;</span></button>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ ENVIRONMENT — SOUND, SMELL, SENSATION <span>▾</span></button>
           <div class="collapse-content open">
-            <div class="note-box">The hub is sensory grounding. Run it slowly. Give the players a moment to be in the room before anything happens.</div>
-            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">The centrifuge hum &mdash; a 5.34-hour Vestan rotation felt as much as heard. Low, steady, through the soles of their feet and the base of their skulls. The body remembers it before the mind does.</div></div>
-            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">Mineral dust and recycled air. The specific smell of Vesta &mdash; basaltic regolith, machine oil, the faint acetylene note from the maintenance tunnels two sub-levels down.</div></div>
-            <div class="sound-item"><div class="sound-icon warn"></div><div class="sound-text">The AR overlay is slightly different from last time. A new data layer at the edge of the hub's ambient mesh. The biometric scan that Petra wasn't briefed on, running passively since the audit. It logs every arriving ego's mesh signature and compares them against a flag list updated three days ago.</div></div>
-            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">Another arrival two slabs over is talking quietly to their muse. A dock worker in a worker-caste splicer is drinking something from a thermos. Nobody is paying attention to the team yet.</div></div>
+            <div class="note-box">The hub is sensory grounding. Run it slowly. The team has just transmitted across interplanetary space. Their morphs are familiar — their own, back from secure storage — but resleeving always costs something. Give the players a moment to be in the room before anything happens.</div>
+            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">The centrifuge hum — a 5.34-hour Vestan rotation felt as much as heard. Low, steady, through the soles of their feet and the base of their skulls. They felt it last time. The body remembers it before the mind does.</div></div>
+            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">Mineral dust and recycled air. The specific smell of Vesta — basaltic regolith, machine oil, the faint acetylene note from the maintenance tunnels two sub-levels down. The inner system smells of people and climate systems. Vesta smells of rock.</div></div>
+            <div class="sound-item"><div class="sound-icon warn"></div><div class="sound-text">The AR overlay is slightly different from last time. Subtle — a new data layer at the edge of the hub's ambient mesh. The biometric scan that Petra wasn't briefed on, running passively since the audit. It logs every arriving ego's mesh signature. The team's signatures are already being compared against a flag list that was updated three days ago.</div></div>
+            <div class="sound-item"><div class="sound-icon"></div><div class="sound-text">Another arrival two slabs over is talking quietly to their muse, running what sounds like a transit checklist. A dock worker in a worker-caste splicer is drinking something from a thermos with the unhurried ease of someone who does this commute regularly. Nobody is paying attention to the team yet.</div></div>
           </div>
 
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; PETRA VOSSE &mdash; THE CLERK <span>&#9662;</span></button>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE HUB — PHYSICAL SPACE <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box green">Petra is not a threat and not an asset in the immediate sense &mdash; she is the texture of this place. She noticed the audit change. She noticed Lok's team arriving three days ago. She will share this if the team gives her a reason to.</div>
+            <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
+              The receiving hub is modest by inner-system standards — Vesta is a working-class Belt waystation, not a transit palace. The chamber seats eight in the slab rows. A corridor leads left toward Level 4's main ring passage and the Docking Ring District beyond. A second corridor leads right toward the medical bay where difficult instantiations are managed, and the customs inspection point that handles freight imports. There is one exit into the commercial ring, and it passes the booth.
+            </div>
+            <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
+              The walls are carved regolith sealed with resin — dark basaltic rock, the volcanic kind, a deep red-brown that the lighting makes look almost black. The ceiling is low enough that a tall morph needs to be aware of it. In Vesta's 0.025g, this means a slight permanent tendency to drift toward the ceiling if you stop paying attention to your posture. New arrivals do this within the first minute. Regulars don't.
+            </div>
+            <div class="note-box ice">
+              <strong style="color:var(--ice); font-family:'Share Tech Mono',monospace; font-size:12px; letter-spacing:1px;">WHAT VESTA FEELS LIKE TO STAND IN</strong><br>
+              0.025g is barely gravity. It is the suggestion of down. A slow walk generates enough momentum that stopping takes conscious effort — you don't stop, you arrest your motion. Picking something up feels right until the moment it leaves the surface and you realise you have applied exactly the wrong amount of force. New arrivals spend their first ten minutes slightly embarrassed. Experienced Belt travelers don't break stride. The team has been here before. They remember.
+            </div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ PETRA VOSSE — THE CLERK <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box green">Petra is not a threat and not an asset in the immediate sense — she is the texture of this place. She notices things and files them. She noticed the audit change. She noticed Lok's team arriving three days ago on standard commercial permits that didn't quite add up. She will share this if the team gives her a reason to.</div>
+            <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">
+              Petra Vosse. Mid-forties apparent age, eleven years at this desk. Practical uniform, personal AR overlay running arrival data at the corner of her vision. She has a photographic professional memory for faces and permit types, and a personal archive of arrival records going back four years — kept out of habit long before the audit doubled the official retention window. She was not briefed on the audit's purpose. She signed something and three things changed, and she noticed all three, and she has opinions about all three that she keeps to herself unless someone asks.
+            </div>
             <div class="dialogue-line">
-              <span class="dl-label">PETRA &mdash; ON ARRIVAL</span>
-              <span class="dl-text"><em>[Looking at her overlay, not the team]</em> "Commercial survey continuation. You were here &mdash; " <em>[cross-referencing]</em> " &mdash; eleven weeks ago. Same permits. Same names." <em>[Now looks up, professionally neutral]</em> "Scan's running. You'll be clear in twenty seconds. There's a notice on your credentials. You'll want to deal with that before you try to leave via docking." <em>[Back to the overlay]</em> "I'm not the one to ask about it. Just flagging."</span>
+              <span class="dl-label">PETRA — ON ARRIVAL</span>
+              <span class="dl-text"><em>[Looking at her overlay, not the team, tapping a confirmation]</em> "Commercial survey continuation. You were here — " <em>[a beat, cross-referencing]</em> " — eleven weeks ago. Same permits. Same names." <em>[Now looks up, professionally neutral]</em> "Scan's running. You'll be clear in twenty seconds. There's a notice on your credentials. You'll want to deal with that before you try to leave via docking." <em>[Back to the overlay]</em> "I'm not the one to ask about it. Just flagging."</span>
             </div>
-            <div class="note-box warn" style="margin-top:0.4rem;">The "notice" is the rep-deposit flag &mdash; not yet the hold order, which hasn't activated. Petra sees it as an administrative flag. She doesn't know what it means. She knows it wasn't there last time.</div>
-            <div class="test-item"><div class="test-skill green">PERSUADE / RAPPORT &mdash; PETRA</div><div class="test-desc">If the team engages Petra as a person, she will mention: three people came through on commercial survey permits four days ago. Two women, one man. The permits had a Firewall-adjacent authorization code. They haven't come back through. She assumes they're still on station. She did not file anything because the permits were technically valid.</div></div>
-            <div class="test-item"><div class="test-skill warn">KNOW: VESTA / RESEARCH 40</div><div class="test-desc">The biometric scan was installed during a quiet audit three months ago. The requester is listed as a compliance subsidiary &mdash; Research 50 links it to a Cognite Luna shell. The scan logs mesh signatures and cross-references them against a flag list whose source Petra was not shown.</div></div>
+            <div class="note-box warn" style="margin-top:0.4rem;">The "notice" is the rep-deposit flag — not yet the hold order, which hasn't activated. Petra sees it as an administrative flag on their mesh IDs, the kind that means someone filed a query against their accounts. She doesn't know what it means. She knows it wasn't there last time they came through.</div>
+            <div class="test-item"><div class="test-skill green">PERSUADE / RAPPORT — PETRA</div><div class="test-desc">If the team engages Petra as a person rather than a bureaucrat, she will mention: three people came through on commercial survey permits four days ago. Two women, one man. The permits had a Firewall-adjacent authorization code Petra has seen before — she keeps a mental catalog. They haven't come back through. She assumes they're still on station. She did not file anything about this because the permits were technically valid.</div></div>
+            <div class="test-item"><div class="test-skill warn">KNOW: VESTA / RESEARCH (MUSE) 40</div><div class="test-desc">The biometric scan running on arrivals was installed during a quiet audit three months ago. The audit requester is listed as a compliance subsidiary — Research 50 links it to a Cognite Luna shell. The scan logs mesh signatures and cross-references them against a flag list whose source Petra was not shown. She knows her desk was modified while she was on leave. She doesn't like it.</div></div>
+            <div class="neural-prompt-box" style="margin-top:0.5rem;">
+              <div class="neural-label">◈ NEURAL.AI — PETRA VOSSE PORTRAIT</div>
+              <div class="prompt-text">eclipse phase RPG character portrait, Petra Vosse, woman appears mid-40s, eleven years behind an egocast receiving hub desk on Vesta asteroid station, practical station uniform with worn sleeve edges, personal AR overlay faintly visible at the edge of her vision showing arrival data fields, expression of complete professional unhurriedness — someone who has seen ten thousand strangers wake up in borrowed bodies and finds it neither remarkable nor boring, warm but neutral gaze, reinforced booth window faint reflection in background, Vesta docking ring interior lighting warm amber, painterly sci-fi character portrait --ar 2:3 --style raw</div>
+            </div>
           </div>
 
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; THE BIOMETRIC SCAN &mdash; WHAT IT CATCHES <span>&#9662;</span></button>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE BIOMETRIC SCAN — WHAT IT CATCHES <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box ozma">The scan was installed three months ago during the Cognite audit. Its flag list was updated four days ago &mdash; shortly before Lok's advance team arrived. The team's mesh signatures are now on the list. The scan has already fired.</div>
-            <div class="test-item"><div class="test-skill danger">WHAT THE SCAN DOES</div><div class="test-desc">Logs mesh signature, cross-references against flag list, generates a timestamped alert packet if there's a match. Alert goes to two recipients: Vesta's commercial security mesh (low priority, batch reviewed) and a secondary endpoint &mdash; Lok's operations relay. The team's arrival was flagged to Lok's team before they finished instantiation.</div></div>
-            <div class="test-item"><div class="test-skill warn">INFOSEC 50 (muse passive)</div><div class="test-desc">The scan's outbound alert traffic is detectable as a two-packet burst within fifteen seconds of arrival. The destination address format matches Ozma's known relay taxonomy for anyone with Research 60 and prior Ozma exposure.</div></div>
-            <div class="note-box danger" style="margin-top:0.4rem;"><strong style="color:var(--danger);">CLOCK NOTE:</strong> The moment the team instantiates, Lok's team knows they are on station. Every minute spent in the hub is a minute the acquisition team has to reposition.</div>
+            <div class="note-box ozma">The scan was installed three months ago during the Cognite audit. Its flag list was updated four days ago — shortly before Lok's advance team arrived. This is not a coincidence. The team's mesh signatures are now on the list. The scan has already fired. The question is who receives the alert and how fast they act on it.</div>
+            <div class="test-item"><div class="test-skill danger">WHAT THE SCAN DOES</div><div class="test-desc">Logs mesh signature, cross-references against flag list, generates a timestamped alert packet if there's a match. The alert goes to two recipients: Vesta's commercial security mesh (logged, low priority, reviewed in batch) and a secondary endpoint outside the official registry — a private mesh address Petra doesn't have visibility into. That second endpoint is Lok's operations relay. The team's arrival was flagged to Lok's team before they finished instantiation.</div></div>
+            <div class="test-item"><div class="test-skill warn">INFOSEC 50 (muse passive)</div><div class="test-desc">The scan's outbound alert traffic is detectable as a two-packet burst within fifteen seconds of arrival. Source is the hub's ambient mesh layer. Destination is an address that resolves to a commercial relay — non-descript, but the address format matches Ozma's known relay taxonomy for anyone with Research 60 and prior Ozma exposure.</div></div>
+            <div class="test-item"><div class="test-skill">KNOW: FIREWALL / OZMA 50</div><div class="test-desc">Cognite audit infrastructure being used as an Ozma early-warning layer is consistent with known Ozma methodology — they don't build their own surveillance where they can quietly leverage existing infrastructure. The audit gave them legal cover. The scan gives them a trigger. This is exactly how Lok would set up an approach.</div></div>
+            <div class="note-box danger" style="margin-top:0.4rem;"><strong style="color:var(--danger);">CLOCK NOTE:</strong> The moment the team instantiates, Lok's team knows they are on station. The twelve-hour hold order window began ticking before they arrived — but their position is now confirmed. Every minute they spend in the hub is a minute the acquisition team has to reposition.</div>
           </div>
 
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; FLASH &mdash; FIRST MOMENT BACK <span>&#9662;</span></button>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FLASH — FIRST MOMENT BACK <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">FLASH has instantiated here before. Their body remembers this gravity before their mind finishes orienting. While other characters are finding their footing, FLASH is already standing correctly, already compensating for the 0.025g without thinking about it.</div>
+            <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">FLASH has been here before. More than that — FLASH has instantiated here before. Their body remembers this gravity before their mind finishes orienting. Run this as a moment of competence in the middle of the standard resleeving confusion: while other characters are finding their footing, FLASH is already standing correctly, already compensating for the 0.025g without thinking about it.</div>
             <div class="dialogue-line" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.025);">
-              <span class="dl-label" style="color:var(--flash,#f5a623); border-color:rgba(245,166,35,0.3);">GM &mdash; TO FLASH'S PLAYER, PRIVATELY</span>
-              <span class="dl-text">You're up before the others finish their scan loops. The hub is exactly as you left it. The difference is the AR overlay. There's a layer running that wasn't here last time. Passive mesh traffic, nothing you can read without querying, but the footprint is wrong for a commercial hub. Someone added a scan layer since you were last through. You clock this automatically, without deciding to.</span>
+              <span class="dl-label" style="color:var(--flash,#f5a623); border-color:rgba(245,166,35,0.3);">GM — TO FLASH'S PLAYER, PRIVATELY</span>
+              <span class="dl-text">You're up before the others finish their scan loops. The hub is exactly as you left it — same resin-yellowed ceiling, same centrifuge groan, same Petra behind the glass not quite looking at anyone. The difference is the AR overlay. There's a layer running that wasn't here last time. Passive mesh traffic, nothing you can read without querying, but the footprint is wrong for a commercial hub. Someone added a scan layer since you were last through. You clock this the way you clock everything: automatically, without deciding to.</span>
             </div>
           </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI IMAGE PROMPT — HUB ESTABLISHING <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="neural-prompt-box">
+              <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+              <div class="prompt-text">eclipse phase RPG interior establishing shot, egocast receiving hub inside Vesta asteroid station docking ring Level 4, low-ceilinged oval chamber carved from dark basaltic regolith sealed with yellowed resin, eight reclining instantiation slabs in two rows, three figures in various states of post-resleeving disorientation — one sitting up and staring at their own hands, one already standing and adjusting to the near-zero gravity, one still reclined, reinforced clerk's booth with frosted transparisteel at one end, AR overlay data faintly visible in the air above the slabs, centrifuge hum implied by the slight curvature of the floor, warm amber and cold industrial blue-white lighting, transhumanist sci-fi utilitarian atmosphere —  a functional place, not a comfortable one --ar 16:9 --style raw</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <!-- SCENE 01 — ARRIVAL -->
       <div class="room-card" data-num="01 — ARRIVAL">
         <div class="room-header">
-          <div class="room-name">Airlock 7 &mdash; Docking Ring Entry</div>
+          <div class="room-name">Airlock 7 — Docking Ring Entry</div>
           <div class="room-tags">
             <span class="tag explore">START</span>
             <span class="tag warn">WATCHER PRESENT</span>
@@ -207,37 +364,40 @@
         </div>
         <div class="room-body">
           <div class="room-description">
-            The team comes through Airlock 7 &mdash; the same entry point they used in Session 03. The ring is as they remember it: the smell of recycled air and lubricant, the hum of berth machinery, the constant low-grade noise of a working dock. Everything looks normal. Everything is not normal. Someone is watching Airlock 7 and has been for the past six hours.
+            The team comes through Airlock 7 — the same entry point they used in Session 03. The ring is as they remember it: the smell of recycled air and lubricant, the hum of berth machinery, the constant low-grade noise of a working dock. Everything looks normal. Everything is not normal. Someone is watching Airlock 7 and has been for the past six hours.
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; WHAT THEY'D NOTICE &mdash; PERCEIVE CHECKS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT THEY'D NOTICE — PERCEIVE CHECKS <span>▾</span></button>
           <div class="collapse-content open">
-            <div class="note-box green">Run these as the team clears the airlock. The watcher isn't doing anything overtly wrong. The tells are behavioral, not equipment.</div>
-            <div class="test-item"><div class="test-skill green">PERCEIVE (FREE)</div><div class="test-desc">The coffee stand across from Airlock 7 has a customer who has been there long enough that their drink should be finished. It isn't. They're nursing it.</div></div>
-            <div class="test-item"><div class="test-skill warn">PERCEIVE 40</div><div class="test-desc">The watcher clocked the team within one second of clearing the airlock seal &mdash; before they were even fully through. This person's eye moved to the team. Kinesics check as follow-up: they're maintaining cover but also pinging mesh.</div></div>
-            <div class="test-item"><div class="test-skill warn">KINESICS 40 (watcher)</div><div class="test-desc">Not military affect &mdash; they're trying not to look like security. But the stillness under the performance gives it away. They're waiting for a signal, not watching idly. They pinged someone when the team came through.</div></div>
-            <div class="test-item"><div class="test-skill danger">INFOSEC 50 (passive scan)</div><div class="test-desc">Mesh traffic from their position includes a burst-encrypted two-kilobyte packet sent within thirty seconds of the team's arrival. The team's transit credentials were just queried by an entity with Firewall-adjacent authorization.</div></div>
+            <div class="note-box green">Run these as the team clears the airlock. The watcher isn't doing anything overtly wrong — just drinking bad coffee and watching foot traffic. The tells are behavioral, not equipment.</div>
+            <div class="test-item"><div class="test-skill green">PERCEIVE (FREE)</div><div class="test-desc">The dock is busy. Normal transit volume for Vesta at this cycle. Nothing physically wrong. But the coffee stand across from Airlock 7 has a customer who has been there long enough that their drink should be finished. It isn't. They're nursing it.</div></div>
+            <div class="test-item"><div class="test-skill warn">PERCEIVE 40</div><div class="test-desc">The watcher clocked the team within one second of clearing the airlock seal — before they were even fully through. A casual observer's eye moves with the crowd. This person's eye moved to the team. Kinesics check as a follow-up: they're maintaining cover but they're also pinging mesh.</div></div>
+            <div class="test-item"><div class="test-skill warn">KINESICS 40 (watcher)</div><div class="test-desc">Not military affect — they're trying not to look like security. But the stillness under the performance gives it away. They're waiting for a signal, not watching idly. They pinged someone when the team came through.</div></div>
+            <div class="test-item"><div class="test-skill danger">INFOSEC 50 (passive scan)</div><div class="test-desc">Mesh traffic from their position includes a burst-encrypted two-kilobyte packet sent within thirty seconds of the team's arrival. It went somewhere local. The team's transit credentials were just queried by an entity with Firewall-adjacent authorization.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; FLASH &mdash; RING KNOWLEDGE ADVANTAGES <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FLASH — RING KNOWLEDGE ADVANTAGES <span>▾</span></button>
           <div class="collapse-content open">
-            <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">FLASH was here in Session 03. This is home terrain. Present these advantages proactively.</div>
-            <div class="test-item"><div class="test-skill">FLASH &mdash; FREE INTEL</div><div class="test-desc">The coffee stand watcher is in Line of Sight to Berth 44 approach. Two routes to Berth 44: the main ring corridor (faster, exposed, passes through the Transit Hub) and the maintenance tunnel access point behind the fuel manifold service station three bays down (slower by two minutes, completely off mesh coverage).</div></div>
-            <div class="test-item"><div class="test-skill">FLASH &mdash; LOW-G ROUTING</div><div class="test-desc">FLASH knows the ceiling bounce points. In Vesta's 0.025g, a skilled mover can cut transit time by 40% using push-off/ceiling-traverse. This looks completely normal here. To an observer watching at ground level, the team simply disappears into foot traffic.</div></div>
-            <div class="test-item"><div class="test-skill">FLASH &mdash; MAINTENANCE TUNNELS</div><div class="test-desc">FLASH knows the maintenance access code for Sub-Level 2 tunnels (obtained in Session 03). If it doesn't work, FLASH also knows the tunnel section with the faulty lock panel that can be bypassed with a flat tool.</div></div>
+            <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">FLASH was here in Session 03. This is home terrain. Present these advantages proactively — they are not things the player needs to ask about. FLASH knows them the way you know your own building.</div>
+            <div class="test-item"><div class="test-skill">FLASH — FREE INTEL</div><div class="test-desc">The coffee stand watcher is in Line of Sight to Berth 44 approach. There are two ways to reach Berth 44 from here: the main ring corridor (faster, exposed, passes through the Transit Hub) and the maintenance tunnel access point behind the fuel manifold service station three bays down (slower by two minutes, completely off mesh coverage).</div></div>
+            <div class="test-item"><div class="test-skill">FLASH — LOW-G ROUTING</div><div class="test-desc">FLASH knows the ceiling bounce points. In Vesta's 0.025g, a skilled mover can cut transit time through the ring by 40% using push-off/ceiling-traverse rather than running. This is how dock workers move. It looks completely normal here. To an observer watching at ground level, the team simply disappears into foot traffic.</div></div>
+            <div class="test-item"><div class="test-skill">FLASH — MAINTENANCE TUNNELS</div><div class="test-desc">FLASH knows the maintenance access code for Sub-Level 2 tunnels (obtained in Session 03 from a contact). This code should still work — it's a 90-day rolling cycle. If it doesn't, FLASH also knows the tunnel section with the faulty lock panel that can be bypassed with a flat tool.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; FIRST DECISION POINT &mdash; HOW TO MOVE <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FIRST DECISION POINT — HOW TO MOVE <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box warn">Don't push the team toward a route. Let them decide.</div>
-            <div class="test-item"><div class="test-skill">MAIN CORRIDOR ROUTE</div><div class="test-desc">Faster. Three minutes to Berth 44. Passes through the Transit Hub where the acquisition team is currently positioned. High foot traffic helps cover but the acquisition team has eyes on the Hub.</div></div>
-            <div class="test-item"><div class="test-skill green">MAINTENANCE TUNNEL ROUTE</div><div class="test-desc">Slower. Five minutes. Completely off mesh surveillance. No acquisition team presence. FLASH knows this route. Single locked access point risk.</div></div>
-            <div class="test-item"><div class="test-skill warn">SPLIT THE TEAM</div><div class="test-desc">One or two take the main corridor as distraction/decoy while FLASH leads the others through the tunnels with MESA's device. Rewards player creativity.</div></div>
+            <div class="note-box warn">Don't push the team toward a route. Let them decide. Each path has different encounter shapes. The watcher will relay their direction regardless — the question is whether they get to the berth before the acquisition team repositions.</div>
+            <div class="test-item"><div class="test-skill">MAIN CORRIDOR ROUTE</div><div class="test-desc">Faster. Three minutes to Berth 44. Passes through the Transit Hub where the acquisition team is currently positioned. High foot traffic helps cover — the team won't be alone. But the acquisition team has eyes on the Hub.</div></div>
+            <div class="test-item"><div class="test-skill green">MAINTENANCE TUNNEL ROUTE</div><div class="test-desc">Slower. Five minutes. Completely off mesh surveillance. No acquisition team presence. FLASH knows this route. The risk is a single locked access point that may or may not be bypassed cleanly. If the bypass fails, they lose three minutes and come out in a less favorable position.</div></div>
+            <div class="test-item"><div class="test-skill warn">SPLIT THE TEAM</div><div class="test-desc">One or two take the main corridor as distraction/decoy while FLASH leads the others through the tunnels with MESA's device. More complex. The decoy needs to handle the acquisition team's attention without triggering the hold order early. Rewards player creativity.</div></div>
           </div>
         </div>
       </div>
 
-      <!-- SCENE 02 — TRANSIT HUB -->
+      <!-- SCENE 02 — TRANSIT HUB (MAIN CORRIDOR ROUTE) -->
       <div class="room-card warn-room" data-num="02 — TRANSIT HUB">
         <div class="room-header">
-          <div class="room-name">Transit Hub &mdash; Commerce Strip &amp; Hostel Row</div>
+          <div class="room-name">Transit Hub — Commerce Strip &amp; Hostel Row</div>
           <div class="room-tags">
             <span class="tag warn">ACQUISITION TEAM</span>
             <span class="tag social">CROWD NAVIGATION</span>
@@ -246,27 +406,31 @@
         </div>
         <div class="room-body">
           <div class="room-description">
-            The Transit Hub is the busiest point in the Docking Ring &mdash; hostel row, three food stalls, a parts exchange, and a constant flow of dock workers, transients, and traders moving between berths. The acquisition team is here: two people, positioned at opposite ends of the strip, with a clear sightline between them covering all approaches to the Berth 44 corridor. They are not in uniform. They are very good.
+            The Transit Hub is the busiest point in the Docking Ring — hostel row, three food stalls, a parts exchange, and a constant flow of dock workers, transients, and traders moving between berths. The acquisition team is here: two people, positioned at opposite ends of the strip, with a clear sightline between them covering all approaches to the Berth 44 corridor. They are not in uniform. They are very good.
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; THE ACQUISITION TEAM &mdash; WHO THEY ARE <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE ACQUISITION TEAM — WHO THEY ARE <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box ozma">Two Ozma field assets. Belt-adapted morphs &mdash; practical, unremarkable, built for function. Under standing orders to physically intercept and detain, not to engage with lethal force unless MESA's device is at immediate risk of exfiltration.</div>
-            <div class="test-item"><div class="test-skill ozma">ASSET ALPHA</div><div class="test-desc">Near the parts exchange. Heavyset, industrial coveralls, looks like a maintenance tech. Carries a contact stunner concealed in a tool belt. Alert level: moderate.</div></div>
-            <div class="test-item"><div class="test-skill ozma">ASSET BETA</div><div class="test-desc">Near the hostel row entrance. Female-presenting, transit clothes, holding a bag. Moves like someone very comfortable in low-g &mdash; belt native or long-timer. Is the one who received the watcher's ping from Airlock 7.</div></div>
-            <div class="test-item"><div class="test-skill warn">TEAM TACTICS</div><div class="test-desc">If one spots the team, they don't immediately move. They ping each other and wait for a clean intercept point &mdash; somewhere without witnesses. They want to do this quietly. A loud public struggle is not in their brief.</div></div>
+            <div class="note-box ozma">Two Ozma field assets. Belt-adapted morphs — practical, unremarkable, built for function. They have the team's biometric profile from Lok's prep work. They are under standing orders to physically intercept and detain, not to engage with lethal force unless MESA's device is at immediate risk of exfiltration.</div>
+            <div class="test-item"><div class="test-skill ozma">ASSET ALPHA</div><div class="test-desc">Near the parts exchange. Heavyset, industrial coveralls, looks like a maintenance tech. Carries a contact stunner concealed in a tool belt. Has the team's images on a mesh overlay. Alert level: moderate — they don't know which route the team took yet.</div></div>
+            <div class="test-item"><div class="test-skill ozma">ASSET BETA</div><div class="test-desc">Near the hostel row entrance. Female-presenting, transit clothes, holding a bag. Moves like someone very comfortable in low-g — belt native or long-timer. Carries the same stunner config. Is the one who received the watcher's ping from Airlock 7.</div></div>
+            <div class="test-item"><div class="test-skill warn">TEAM TACTICS</div><div class="test-desc">If one spots the team, they don't immediately move. They ping each other and wait for a clean intercept point — somewhere without witnesses. They want to do this quietly. A loud public struggle is not in their brief. Use this: the team can survive the Hub if they move through it without pausing.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; NAVIGATING THE HUB &mdash; ACTIONS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NAVIGATING THE HUB — ACTIONS <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill green">INFILTRATE / FREE RUN 50</div><div class="test-desc">Move through the crowd using low-g ceiling traversal. The acquisition team is watching at ground level &mdash; a ceiling traverse crosses the Hub without ever entering their sightlines. FLASH's ring knowledge gives +20.</div></div>
-            <div class="test-item"><div class="test-skill warn">DECEIVE 50 (face change / disguise)</div><div class="test-desc">Changing their silhouette in the transit hostel bathroom delays biometric recognition long enough to clear the Hub before confirmation.</div></div>
-            <div class="test-item"><div class="test-skill danger">SPOTTED &mdash; CONTACT TRIGGERS</div><div class="test-desc">If an asset locks identification, they move to intercept at the nearest low-witness point. At this range they go for a quiet physical grab rather than a stunner discharge in public.</div></div>
-            <div class="test-item"><div class="test-skill">SOCIAL PLAY</div><div class="test-desc">The assets aren't police. If confronted openly &mdash; "I think you're following us, and I think a quiet conversation serves you better than a scene" &mdash; they will pause. This buys time, not escape.</div></div>
+            <div class="test-item"><div class="test-skill green">INFILTRATE / FREE RUN 50</div><div class="test-desc">Move through the crowd using the natural cover of foot traffic and low-g ceiling traversal. The acquisition team is watching at ground level — a ceiling traverse crosses the Hub without ever entering their sightlines. FLASH's ring knowledge makes this a reasonable +20 modifier.</div></div>
+            <div class="test-item"><div class="test-skill warn">DECEIVE 50 (face change / disguise)</div><div class="test-desc">If the team has any basic appearance modification gear — even just different surface clothing — changing their silhouette in the transit hostel bathroom is fast. Not foolproof, but delays the biometric recognition long enough to clear the Hub before confirmation.</div></div>
+            <div class="test-item"><div class="test-skill danger">SPOTTED — CONTACT TRIGGERS</div><div class="test-desc">If an asset locks identification, they move to intercept at the nearest low-witness point — the gap between the parts exchange and the hostel entrance. Alpha blocks forward, Beta circles. At this range they go for a quiet physical grab rather than a stunner discharge in public. FLASH can break this physically: see Chase/Combat rules below.</div></div>
+            <div class="test-item"><div class="test-skill">SOCIAL PLAY</div><div class="test-desc">The assets aren't police. If confronted openly and conversationally — "I think you're following us, and I think you know what we're carrying, and I think a quiet conversation serves you better than a scene" — they will pause. They are operating under Lok's authority and they don't have independent mandate to escalate. This buys time, not escape. They will relay the conversation to Lok immediately.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; FLASH &mdash; PHYSICAL ENGAGEMENT OPTIONS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FLASH — PHYSICAL ENGAGEMENT OPTIONS <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill">FREE RUNNING &mdash; LOW-G BREAK</div><div class="test-desc">FLASH's free running skill in Vesta's microgravity makes them essentially unchase-able in the ring corridors if they have three seconds' lead time. A trained pursuit asset stays within range for about forty seconds before losing ground to ceiling-bounce routing.</div></div>
-            <div class="test-item"><div class="test-skill warn">UNARMED &mdash; CROWD DISRUPTION</div><div class="test-desc">A precisely timed collision &mdash; FLASH redirecting an asset into a cargo rack or food stall &mdash; reads as an accident in 0.025g. Fray test vs the asset's reaction. On success, clean break.</div></div>
-            <div class="test-item"><div class="test-skill danger">DISABLE &mdash; STUN AND MOVE</div><div class="test-desc">A swift takedown in a low-witness alcove puts them down for two to four minutes. Creates a body that will be found. Lok will know within minutes.</div></div>
+            <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">FLASH is built for this environment. These are not combat options — they are the specific physical advantages FLASH brings to a low-g transit confrontation.</div>
+            <div class="test-item"><div class="test-skill">FREE RUNNING — LOW-G BREAK</div><div class="test-desc">FLASH's free running skill in Vesta's microgravity makes them essentially unchase-able in the ring corridors if they have three seconds' lead time. A trained pursuit asset stays within range for about forty seconds before losing ground to ceiling-bounce routing. This ends a pursuit, it doesn't disable the asset.</div></div>
+            <div class="test-item"><div class="test-skill warn">UNARMED — CROWD DISRUPTION</div><div class="test-desc">In the Transit Hub, a precisely timed collision — FLASH redirecting an asset into a cargo rack or food stall — reads as an accident in 0.025g. Apologies exchanged. The asset recovers in twenty seconds but loses visual on the team. Fray test vs the asset's reaction. On success, clean break.</div></div>
+            <div class="test-item"><div class="test-skill danger">DISABLE — STUN AND MOVE</div><div class="test-desc">If FLASH can get behind an asset unobserved, a swift takedown in a low-witness alcove puts them down for two to four minutes — long enough to clear the Hub and reach the berth approach. Requires a Fray or Melee test. Creates a body that will be found. Lok will know within minutes.</div></div>
           </div>
         </div>
       </div>
@@ -283,20 +447,22 @@
         </div>
         <div class="room-body">
           <div class="room-description">
-            The maintenance tunnels run parallel to the main ring corridor at Sub-Level 2 &mdash; narrower, darker, not climate-controlled to the same standard. The air tastes of acetylene and cold metal. No surveillance nodes here by design. This is the blind spot in Lok's net.
+            The maintenance tunnels run parallel to the main ring corridor at Sub-Level 2 — narrower, darker, not climate-controlled to the same standard. The air tastes of acetylene and cold metal. The access panels are stenciled with cycle maintenance logs. There are no surveillance nodes here by design — the dock authority doesn't want mesh coverage in the service infrastructure. This is the blind spot in Lok's net.
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; NAVIGATING THE TUNNELS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NAVIGATING THE TUNNELS <span>▾</span></button>
           <div class="collapse-content open">
-            <div class="note-box green">FLASH navigates this. Run this section as fast-moving and atmospheric, not obstacle-heavy. The challenge is time, not difficulty.</div>
-            <div class="test-item"><div class="test-skill green">FLASH &mdash; TUNNEL NAVIGATION (FREE)</div><div class="test-desc">FLASH knows this route. No roll required. They know which junctions lead to Berth 44 access and the one section where the ceiling is low enough that non-FLASH members need to duck-traverse or lose thirty seconds.</div></div>
-            <div class="test-item"><div class="test-skill">ACCESS CODE / BYPASS (IF NEEDED)</div><div class="test-desc">If the primary access code has been cycled, the faulty panel section is a Hardware: Industrial (30) check with any improvised flat tool. On a fail, the team comes out one corridor away &mdash; adds two minutes and exits near the watcher's sightline.</div></div>
-            <div class="test-item"><div class="test-skill warn">PERCEIVE 40 (mid-tunnel)</div><div class="test-desc">Halfway through: sounds of movement ahead. A dock worker running maintenance on a fuel line junction. They will hear the team pass unless the team moves at half-pace. Adds ninety seconds.</div></div>
+            <div class="note-box green">FLASH navigates this. Other team members follow. This is explicitly FLASH's domain — they led contacts through here in Session 03. Run this section as fast-moving and atmospheric, not obstacle-heavy. The challenge is time, not difficulty.</div>
+            <div class="test-item"><div class="test-skill green">FLASH — TUNNEL NAVIGATION (FREE)</div><div class="test-desc">FLASH knows this route. No roll required for navigation. They know which junctions lead to Berth 44 access, which sections have active equipment that narrows the passage, and the one section where the ceiling is low enough that non-FLASH members need to duck-traverse or lose thirty seconds.</div></div>
+            <div class="test-item"><div class="test-skill">ACCESS CODE / BYPASS (IF NEEDED)</div><div class="test-desc">If the primary access code from Session 03 has been cycled, the faulty panel section is a Hardware: Industrial (30) check with any improvised flat tool. On a fail, the team pushes through a different access point that deposits them one corridor away from the target — adds two minutes and comes out near the watcher's sightline.</div></div>
+            <div class="test-item"><div class="test-skill warn">PERCEIVE 40 (mid-tunnel)</div><div class="test-desc">Halfway through: sounds of movement ahead. A dock worker running maintenance on a fuel line junction. They're not watching the corridor — they're looking at their work. They will hear the team pass unless the team moves at half-pace. Adds ninety seconds. FLASH can signal this without rolling.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; THE TUNNEL SHORTCUT &mdash; BERTH 44 BACK ACCESS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ THE TUNNEL SHORTCUT — BERTH 44 BACK ACCESS <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box warn">The maintenance tunnel route exits at Berth 44's service access &mdash; the ship's maintenance hatch rather than the main airlock approach. The berth lockout applies to the main docking collar. The service access uses a different authorization layer.</div>
-            <div class="test-item"><div class="test-skill green">HARDWARE: NAUTICAL / INTERFACE 40</div><div class="test-desc">The service access into a docked ship bypasses the docking collar lockout entirely. The hold order freezes departure clearance and the collar seal &mdash; it doesn't touch the ship's internal systems accessed via service hatch.</div></div>
-            <div class="test-item"><div class="test-skill warn">TIMING NOTE</div><div class="test-desc">Service access boarding takes eight minutes for a full system check before they can break collar seal manually.</div></div>
+            <div class="note-box warn">The maintenance tunnel route exits at Berth 44's service access — the ship's maintenance hatch rather than the main airlock approach. This is significant: the berth lockout applies to the main docking collar. The service access uses a different authorization layer.</div>
+            <div class="test-item"><div class="test-skill green">HARDWARE: NAUTICAL / INTERFACE 40</div><div class="test-desc">The service access into a docked ship bypasses the docking collar lockout entirely. The hold order Lok filed freezes the departure clearance and the collar seal — it doesn't touch the ship's internal systems accessed via service hatch. The team can board their ship through the back door.</div></div>
+            <div class="test-item"><div class="test-skill warn">TIMING NOTE</div><div class="test-desc">Service access boarding takes eight minutes for a full system check before they can break collar seal manually. The hold order's twelve-hour window needs to still be open. If the team was significantly delayed (watcher contact + asset contact + tunnel complications), the window may already be closing.</div></div>
           </div>
         </div>
       </div>
@@ -304,7 +470,7 @@
       <!-- SCENE 04 — BERTH 44 -->
       <div class="room-card warn-room" data-num="04 — BERTH 44">
         <div class="room-header">
-          <div class="room-name">Berth 44 &mdash; The Ship &amp; MESA</div>
+          <div class="room-name">Berth 44 — The Ship &amp; MESA</div>
           <div class="room-tags">
             <span class="tag loot">MESA DEVICE</span>
             <span class="tag warn">HOLD ORDER THREAT</span>
@@ -313,19 +479,22 @@
         </div>
         <div class="room-body">
           <div class="room-description warn-desc">
-            The team's ship, berth 44. MESA's device is aboard. The berth collar is thirty meters from the Transit Hub approach. From the tunnel service access it's an eight-meter climb up a maintenance ladder to the hull hatch.
+            The team's ship, berth 44. MESA's device is aboard — the team chose to leave it on the ship rather than carry it through Vesta. Smart then. Potentially catastrophic now if they can't reach it. The berth collar is thirty meters from the Transit Hub approach — fully visible to anyone standing in the Hub. From the tunnel service access it's an eight-meter climb up a maintenance ladder to the hull hatch.
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; REACHING MESA &mdash; ACCESS SCENARIOS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ REACHING MESA — ACCESS SCENARIOS <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill green">VIA TUNNEL / SERVICE HATCH (CLEAN)</div><div class="test-desc">If the team came through the maintenance tunnels, they arrive at the service hatch unobserved. Board, secure MESA's device, initiate departure prep. Eight minutes of prep work before they can attempt manual collar release.</div></div>
-            <div class="test-item"><div class="test-skill warn">VIA MAIN CORRIDOR (CONTESTED)</div><div class="test-desc">If the team came through the Hub, the acquisition team may have repositioned. The team can bluff through if they haven't already made contact. Once the hold order is filed officially, port authority will respond.</div></div>
-            <div class="test-item"><div class="test-skill danger">HOLD ORDER ACTIVATES (LATE ARRIVAL)</div><div class="test-desc">If the twelve-hour window has passed, the docking collar is locked. A port authority bot has been dispatched. The team has roughly four minutes before it arrives &mdash; enough time for a Hardware: Nautical check to manually disengage the collar clamps.</div></div>
+            <div class="test-item"><div class="test-skill green">VIA TUNNEL / SERVICE HATCH (CLEAN)</div><div class="test-desc">If the team came through the maintenance tunnels, they arrive at the service hatch unobserved. Board, secure MESA's device, initiate departure prep. The hold order hasn't activated yet. Eight minutes of prep work before they can attempt manual collar release.</div></div>
+            <div class="test-item"><div class="test-skill warn">VIA MAIN CORRIDOR (CONTESTED)</div><div class="test-desc">If the team came through the Hub, the acquisition team may have repositioned to the berth approach. They don't yet have authority to physically bar access — but they are present and they are watching. The team can bluff through ("we're just picking up gear") if they haven't already made contact. Once the hold order is filed officially, port authority will respond.</div></div>
+            <div class="test-item"><div class="test-skill danger">HOLD ORDER ACTIVATES (LATE ARRIVAL)</div><div class="test-desc">If the twelve-hour window has passed, the docking collar is locked from outside. A port authority bot has been dispatched. The team has roughly four minutes before it arrives — enough time for a Hardware: Nautical check to manually disengage the collar clamps, if FLASH can get to the external coupling junction without being stopped by the acquisition assets who are now operating with official authorization.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; FLASH &mdash; MANUAL COLLAR RELEASE <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FLASH — MANUAL COLLAR RELEASE <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill">HARDWARE: NAUTICAL 50</div><div class="test-desc">Manual collar release requires accessing an external junction panel on the berth structure. FLASH knows where it is. Getting there in 0.025g is a ceiling-bounce traverse of twelve meters. Thirty seconds of work.</div></div>
-            <div class="test-item"><div class="test-skill warn">FREEFALL / FREE RUN 40</div><div class="test-desc">The berth structure is not designed for combat &mdash; no footholds, no stable firing positions. An asset who pushes off wrong is tumbling for twenty seconds before they reorient. FLASH can use this deliberately.</div></div>
-            <div class="test-item"><div class="test-skill danger">CONTESTED RELEASE</div><div class="test-desc">If both assets are at the berth, the team needs to split function: FLASH handles the external collar release while another PC creates engagement at the main docking collar approach.</div></div>
+            <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">This is the session's physical climax if things went sideways. FLASH is in their element: outside the ship, in microgravity, working fast, with assets possibly pursuing and a timer counting down.</div>
+            <div class="test-item"><div class="test-skill">HARDWARE: NAUTICAL 50</div><div class="test-desc">Manual collar release requires accessing an external junction panel — on the berth structure, not the ship. FLASH knows where it is. Getting there in 0.025g is a ceiling-bounce traverse of twelve meters. The panel is recessed behind a maintenance cover. Thirty seconds of work. Test to succeed without triggering a station alert.</div></div>
+            <div class="test-item"><div class="test-skill warn">FREEFALL / FREE RUN 40</div><div class="test-desc">If an asset pursues into the external berth structure, low-g close-quarters is entirely FLASH's advantage. The berth structure is not designed for combat — there are no footholds, no stable firing positions. An asset who pushes off wrong is tumbling for twenty seconds before they reorient. FLASH can use this deliberately: one well-timed push and the asset is out of play.</div></div>
+            <div class="test-item"><div class="test-skill danger">CONTESTED RELEASE</div><div class="test-desc">If both acquisition assets are at the berth and moving to physically prevent collar release, the team needs to split function: FLASH handles the external collar release while another PC creates engagement at the main docking collar approach. Two tasks, simultaneous, against a clock. The scene resolves on the slowest completion — whoever finishes second determines the outcome.</div></div>
           </div>
         </div>
       </div>
@@ -333,7 +502,7 @@
       <!-- SCENE 05 — LOK INTERCEPT -->
       <div class="room-card ozma-room" data-num="05 — LOK">
         <div class="room-header">
-          <div class="room-name">Lixia Lok &mdash; The Intercept</div>
+          <div class="room-name">Lixia Lok — The Intercept</div>
           <div class="room-tags">
             <span class="tag ozma">OZMA FIELD LEAD</span>
             <span class="tag social">NEGOTIATION</span>
@@ -342,32 +511,43 @@
         </div>
         <div class="room-body">
           <div class="room-description ozma-desc">
-            Lok activates when the acquisition team's position is compromised. She is mobile, on the ring, and she moves toward the berth. She will try to intercept before they break collar seal &mdash; not because she can physically stop them, but because she wants one last conversation.
+            Lok activates when the acquisition team's position is compromised — either when the team breaks past them or when she reads the situation as slipping. She is mobile, on the ring, and she moves toward the berth. This is her contingency and she is calm about running it. She will try to intercept the team before they break collar seal — not because she can physically stop them, but because she wants one last conversation.
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; LOK'S INTERCEPT APPROACH <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ LOK'S INTERCEPT APPROACH <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box ozma">Lok does not lead with force. She leads with information. She knows what MESA's data contains and she knows the team doesn't fully understand what they're carrying. She will use that asymmetry.</div>
+            <div class="note-box ozma">Lok does not lead with force. She leads with information. She knows what MESA's data contains and she knows the team doesn't fully understand yet what they're carrying. She will use that asymmetry. She is also armed — a concealed sidearm, not a stunner — and she will use it if MESA's device is about to leave her reach permanently.</div>
             <div class="dialogue-line ozma">
-              <span class="dl-label ozma">LOK &mdash; INTERCEPT OPENING</span>
+              <span class="dl-label ozma">LOK — INTERCEPT OPENING</span>
               <span class="dl-text"><em>[Moving to place herself between the team and the berth approach, unhurried, hands visible]</em> "I'm not going to tell you to stop. You're clearly not going to. I'm going to tell you what you're carrying, because you're about to take it somewhere and you should know what it is before you hand it to Firewall." <em>[Beat]</em> "Thirty seconds. That's all I'm asking for."</span>
             </div>
             <div class="dialogue-line ozma">
-              <span class="dl-label ozma">LOK &mdash; IF PRESSED ON THE HOLD ORDER</span>
-              <span class="dl-text">"The hold order is mine. I can pull it from here &mdash; one mesh ping. I will do that. In exchange for letting me make a copy of the signal data before you leave Vesta. Not the device. Just the data." <em>[Very level]</em> "You keep MESA. You keep your clearance. Firewall never hears about this conversation. That's what I'm offering."</span>
+              <span class="dl-label ozma">LOK — IF PRESSED ON THE HOLD ORDER</span>
+              <span class="dl-text">"The hold order is mine. I can pull it from here — one mesh ping. I will do that. In exchange for letting me make a copy of the signal data before you leave Vesta. Not the device. Just the data." <em>[Very level]</em> "You keep MESA. You keep your clearance. Firewall never hears about this conversation. That's what I'm offering."</span>
             </div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; WHAT LOK KNOWS (GM ONLY) <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT LOK KNOWS (GM ONLY) <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill ozma">GUTENBERG SIGNAL</div><div class="test-desc">Ozma has partial data on the tight-beam origin. MESA's data would confirm the coordinates and the secondary signal braided around the fetch's carrier wave.</div></div>
-            <div class="test-item"><div class="test-skill ozma">THE SECONDARY SIGNAL</div><div class="test-desc">The secondary signal didn't come from outside the ecliptic. It came from sunward &mdash; from inside the solar system. Ozma has known this for decades and has kept it from Firewall. If MESA's data reaches Firewall analysis, this secret may not hold.</div></div>
-            <div class="test-item"><div class="test-skill ozma">THE FETCH &mdash; OZMA'S READ</div><div class="test-desc">Lok knows what a self-activating TITAN fetch is. The team surviving contact with it marks them as extraordinary. She has filed a detailed capability report. This team is worth watching &mdash; and worth keeping alive if possible.</div></div>
+            <div class="test-item"><div class="test-skill ozma">GUTENBERG SIGNAL</div><div class="test-desc">Ozma has partial data on the tight-beam origin. MESA's data would confirm the coordinates and the secondary signal braided around the fetch's carrier wave. This is worth Lok's entire cover if necessary.</div></div>
+            <div class="test-item"><div class="test-skill ozma">THE SECONDARY SIGNAL</div><div class="test-desc">The secondary signal didn't come from outside the ecliptic. It came from sunward — from inside the solar system. Ozma has known this for decades and has kept it from Firewall. If MESA's data reaches Firewall analysis, this secret may not hold. Lok's actual mission is as much about concealment as acquisition.</div></div>
+            <div class="test-item"><div class="test-skill ozma">THE FETCH — OZMA'S READ</div><div class="test-desc">Lok knows what a self-activating TITAN fetch is. The team surviving contact with it marks them as extraordinary. She has filed a detailed capability report already. This team is worth watching — and worth keeping alive if possible.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; RESOLUTION PATHS &mdash; LOK OUTCOME <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ RESOLUTION PATHS — LOK OUTCOME <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill green">TEAM ESCAPES &mdash; LOK PULLS ORDER</div><div class="test-desc">If the team negotiates &mdash; or convincingly demonstrates they have evidence of the fabricated rep deposits &mdash; Lok may decide cutting her losses serves Ozma better. She pulls the hold order. They leave. She knows their faces and what they're carrying.</div></div>
-            <div class="test-item"><div class="test-skill warn">TEAM ESCAPES &mdash; LOK BLOCKED</div><div class="test-desc">If FLASH's tunnel route worked cleanly, Lok has no physical intercept. She pings them from outside the docking seal &mdash; a mesh message, her voice, that one offer. The hold order activates behind them as they break orbit.</div></div>
-            <div class="test-item"><div class="test-skill danger">CONFRONTATION TURNS VIOLENT</div><div class="test-desc">Lok does not want this. She will disengage before taking a fatal injury. She will attempt to reach an emergency egocast relay and depart Vesta. The team has made a real enemy who knows exactly what they are.</div></div>
-            <div class="note-box warn" style="margin-top:0.4rem;"><strong style="color:var(--warn);">GM NOTE:</strong> Letting Lok go is the best outcome narratively. She becomes a recurring presence &mdash; appearing later as an unexpected ally when Ozma's interests briefly align with Firewall's. Her ambiguity is more useful than her elimination.</div>
+            <div class="test-item"><div class="test-skill green">TEAM ESCAPES — LOK PULLS ORDER</div><div class="test-desc">If the team negotiates — or convincingly demonstrates they have evidence of the fabricated rep deposits and will present it to Firewall — Lok may decide cutting her losses serves Ozma better than an escalating confrontation in a public dock. She pulls the hold order. They leave. She knows their faces and she knows what they're carrying.</div></div>
+            <div class="test-item"><div class="test-skill warn">TEAM ESCAPES — LOK BLOCKED</div><div class="test-desc">If FLASH's tunnel route worked cleanly and the team is in the ship before Lok reaches the berth, she has no physical intercept. She pings them from outside the docking seal — a mesh message, her voice, that one offer. They can take it or burn out without responding. The hold order activates behind them as they break orbit — filed spite, operational cost Ozma will absorb.</div></div>
+            <div class="test-item"><div class="test-skill danger">CONFRONTATION TURNS VIOLENT</div><div class="test-desc">Lok does not want this. If it comes to it, she is dangerous but she is not suicidal. She will disengage before taking a fatal injury — an Ozma asset alive and loose is worth more than a confirmed kill. She will attempt to reach an emergency egocast relay and depart Vesta. The team has made a real enemy who knows exactly what they are.</div></div>
+            <div class="note-box warn" style="margin-top:0.4rem;"><strong style="color:var(--warn);">GM NOTE:</strong> Letting Lok go is the best outcome narratively. She becomes a recurring presence — appearing later as an unexpected ally when Ozma's interests briefly align with Firewall's, or as the person who knows too much about what the team is carrying. Her ambiguity is more useful than her elimination.</div>
+          </div>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI PORTRAIT PROMPT <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="neural-prompt-box">
+              <div class="neural-label">◈ NEURAL.AI — CHARACTER PORTRAIT</div>
+              <div class="prompt-text">eclipse phase RPG character portrait, Lixia Lok, East Asian woman in her late thirties in practical belt-wear clothing in greys and blues, short efficient haircut, hands visible and deliberately open at her sides, standing in a low-gravity docking ring corridor with ship berths visible behind her, expression of composed professionalism — someone who has made their offer and is waiting for the answer, the specific quality of someone who is always slightly more alert than they appear, transhumanist sci-fi field operative, dramatic cold industrial lighting --ar 2:3 --style raw</div>
+            </div>
           </div>
         </div>
       </div>
@@ -375,7 +555,7 @@
       <!-- SCENE 06 — DEPARTURE -->
       <div class="room-card green-room" data-num="06 — DEPARTURE">
         <div class="room-header">
-          <div class="room-name">Breaking Orbit &mdash; The Exit</div>
+          <div class="room-name">Breaking Orbit — The Exit</div>
           <div class="room-tags">
             <span class="tag green">RESOLUTION</span>
             <span class="tag social">AFTERMATH</span>
@@ -384,27 +564,32 @@
         </div>
         <div class="room-body">
           <div class="room-description">
-            The session ends when the ship clears Vesta and burns toward the next waypoint. How it ends depends entirely on what the team managed.
+            The session ends when the ship clears Vesta and burns toward the next waypoint. How it ends depends entirely on what the team managed: did MESA leave intact, did Lok make her copy, did the acquisition team get neutralized or simply evaded, is the rep deposit fabrication now something Firewall is investigating rather than acting on. These outcomes shape the campaign's next movement.
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; OUTCOME STATES &mdash; WHAT MESA MEANS <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ OUTCOME STATES — WHAT MESA MEANS <span>▾</span></button>
           <div class="collapse-content">
-            <div class="test-item"><div class="test-skill green">CLEAN EXIT &mdash; MESA INTACT</div><div class="test-desc">The team made it out without Lok getting a copy of the signal data. MESA's fork is intact. When they reactivate her in transit, she comes online disoriented. Her first question is whether the signal is still active.</div></div>
-            <div class="test-item"><div class="test-skill warn">LOK MADE HER COPY</div><div class="test-desc">The team is out, but Lok has the Gutenberg signal data. MESA herself is intact; Ozma has coordinates but not MESA's analysis of the secondary signal. The team still has the analytical edge. Barely.</div></div>
-            <div class="test-item"><div class="test-skill warn">REP DEPOSITS &mdash; STATUS</div><div class="test-desc">If the team documented the rep deposit shell account creation timestamp relative to the mission, they have a counter-evidence package to transmit to Firewall from transit. Their handler will respond within hours.</div></div>
+            <div class="note-box green">Regardless of outcome, MESA's device should be with the team as they leave Vesta. She is a campaign asset. Her reactivation — when the team is clear of Vesta and alone with the device — is the session's closing beat.</div>
+            <div class="test-item"><div class="test-skill green">CLEAN EXIT — MESA INTACT</div><div class="test-desc">The team made it out without Lok getting a copy of the signal data. MESA's fork is intact. When they reactivate her in transit, she comes online disoriented — she doesn't know how much time has passed. Her first question is whether the signal is still active. That question carries the campaign forward to Signal Zero.</div></div>
+            <div class="test-item"><div class="test-skill warn">LOK MADE HER COPY</div><div class="test-desc">The team is out, but Lok has the Gutenberg signal data — a read-only snapshot. MESA herself is intact; Ozma has coordinates but not the fork. The difference matters later: Ozma can navigate to the signal source, but they don't have MESA's analysis of the secondary signal. The team still has the analytical edge. Barely.</div></div>
+            <div class="test-item"><div class="test-skill warn">REP DEPOSITS — STATUS</div><div class="test-desc">If the team took time to document the rep deposit shell account creation timestamp relative to the mission (a muse research check, offline, during the escape), they have a counter-evidence package they can transmit to Firewall from transit. Their handler will respond within hours. If they didn't — the rep cloud follows them into the next session.</div></div>
+            <div class="test-item"><div class="test-skill danger">ACQUISITION TEAM LEFT STANDING</div><div class="test-desc">If the team evaded rather than neutralized both assets, Lok still has physical operatives on Vesta who can make statements and provide biometric records of the encounter. Ozma will file a secondary report implicating the team in "unauthorized departure under a security hold." This doesn't stop the campaign but gives Ozma a paper trail on the team.</div></div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; MESA &mdash; REACTIVATION SCENE <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MESA — REACTIVATION SCENE <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box green">Run this scene after the ship has cleared Vesta. It's a quiet beat in the middle of the exhale.</div>
+            <div class="note-box green">Run this scene after the ship has cleared Vesta and the immediate crisis is over. It's a quiet beat in the middle of the exhale. MESA has been in storage since Gutenberg. She has no experience of the time that passed.</div>
             <div class="dialogue-line" style="border-color:rgba(0,201,177,0.3); background:rgba(0,201,177,0.03);">
-              <span class="dl-label" style="color:var(--accent2); border-color:rgba(0,201,177,0.3);">MESA &mdash; FIRST WORDS</span>
-              <span class="dl-text"><em>[A pause. Then:]</em> "What time is it?" <em>[Another pause while she orients]</em> "The signal. Is the signal still &mdash; " <em>[She stops herself]</em> "How long was I in storage? No. Don't answer that yet. Tell me where we are first."</span>
+              <span class="dl-label" style="color:var(--accent2); border-color:rgba(0,201,177,0.3);">MESA — FIRST WORDS</span>
+              <span class="dl-text"><em>[A pause. Then:]</em> "What time is it?" <em>[Another pause while she orients]</em> "The signal. Is the signal still — " <em>[She stops herself]</em> "How long was I in storage? No. Don't answer that yet. Tell me where we are first."</span>
             </div>
-            <div class="note-box" style="border-color:rgba(0,201,177,0.3); background:rgba(0,201,177,0.03);">MESA's reactivation is how the campaign moves into Signal Zero. She holds the analysis of the Gutenberg tight-beam &mdash; including the secondary signal's sunward origin &mdash; and she knows where to begin looking for the source.</div>
+            <div class="note-box" style="border-color:rgba(0,201,177,0.3); background:rgba(0,201,177,0.03);">MESA's reactivation is how the campaign moves into Signal Zero. She holds the analysis of the Gutenberg tight-beam — including the secondary signal's sunward origin — and she knows where to begin looking for the source. The question she doesn't ask yet, but carries: why did something inside the solar system send a warning to Gutenberg?</div>
           </div>
-          <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; BRIDGE TO SIGNAL ZERO <span>&#9662;</span></button>
+
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ BRIDGE TO SIGNAL ZERO <span>▾</span></button>
           <div class="collapse-content">
-            <div class="note-box green">After reactivation, MESA provides the mission's next vector: FK7 Kuiper coordinates. The signal's secondary source is consistent with a deep outer-system survey baseline. Signal Zero begins in transit.</div>
-            <div class="note-box warn">The Ozma question remains open: Lok knows where they're going. When the team arrives at FK7, they may not be the only ones looking.</div>
+            <div class="note-box green" style="margin-bottom:0.4rem;">After reactivation, MESA provides the mission's next vector: the dead drop analysis she archived before Gutenberg contains a set of FK7 Kuiper coordinates. The signal's secondary source is consistent with a deep outer-system survey baseline. The trail doesn't go to the Belt. It goes outward. Signal Zero begins in transit — the team already moving toward the outer system as the session ends.</div>
+            <div class="note-box warn">The Ozma question remains open: Lok knows where they're going, even if she doesn't have MESA's specific coordinates. She will be working the same lead from a different direction. When the team arrives at FK7, they may not be the only ones looking.</div>
           </div>
         </div>
       </div>
@@ -412,35 +597,35 @@
     </div><!-- /rooms-section -->
 
     <!-- CLEARANCE TRACKER -->
-    <div class="section-label warn">&#9674; MISSION TRACKER &mdash; STATUS FLAGS</div>
+    <div class="section-label warn">◈ MISSION TRACKER — STATUS FLAGS</div>
     <div class="npc-card">
       <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Track operational status as the session progresses. Two flags secured needed for a clean departure.</div>
       <div class="clearance-track">
         <div class="clearance-row">
           <div class="clearance-pip red" id="pip1"></div>
-          <div style="font-size:0.85rem; color:var(--text); flex:1;">FLAG 1 &mdash; Airlock 7 watcher avoided / neutralized without alert to Lok</div>
+          <div style="font-size:0.85rem; color:var(--text); flex:1;">FLAG 1 — Airlock 7 watcher avoided / neutralized without alert to Lok</div>
           <button onclick="cyclePip('pip1')" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:1px 5px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">CYCLE</button>
         </div>
         <div class="clearance-row">
           <div class="clearance-pip red" id="pip2"></div>
-          <div style="font-size:0.85rem; color:var(--text); flex:1;">FLAG 2 &mdash; Acquisition team in Hub evaded / blocked before berth</div>
+          <div style="font-size:0.85rem; color:var(--text); flex:1;">FLAG 2 — Acquisition team in Hub evaded / blocked before berth</div>
           <button onclick="cyclePip('pip2')" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:1px 5px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">CYCLE</button>
         </div>
         <div class="clearance-row">
           <div class="clearance-pip red" id="pip3"></div>
-          <div style="font-size:0.85rem; color:var(--text); flex:1;">FLAG 3 &mdash; Hold order bypassed / pulled before departure clearance denied</div>
+          <div style="font-size:0.85rem; color:var(--text); flex:1;">FLAG 3 — Hold order bypassed / pulled before departure clearance denied</div>
           <button onclick="cyclePip('pip3')" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:1px 5px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">CYCLE</button>
         </div>
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); margin-top:0.3rem; letter-spacing:1px;">&#9674; RED = INCOMPLETE &nbsp; AMBER = PARTIAL / MESSY &nbsp; GREEN = SECURED</div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text); margin-top:0.3rem; letter-spacing:1px;">◈ RED = INCOMPLETE &nbsp; AMBER = PARTIAL / MESSY &nbsp; GREEN = SECURED</div>
       </div>
     </div>
 
-    <!-- LOK ACTIVATION TRACKER -->
-    <div class="section-label ozma">&#9674; LOK ACTIVATION TRACKER</div>
+    <!-- LOK SUSPICION TRACKER -->
+    <div class="section-label ozma">◈ LOK ACTIVATION TRACKER</div>
     <div class="npc-card">
-      <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Track how much operational pressure Lok is applying.</div>
+      <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Track how much operational pressure Lok is applying. As this rises her behavior changes from patient management to active field intervention.</div>
       <div class="clearance-track" style="border-color:rgba(144,64,192,0.2); background:rgba(144,64,192,0.025);">
-        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--ozma); margin-bottom:0.4rem; letter-spacing:1px;">ACTIVATION LEVEL: <span id="suspicion-label">PASSIVE &mdash; ASSETS MANAGING</span></div>
+        <div style="font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--ozma); margin-bottom:0.4rem; letter-spacing:1px;">ACTIVATION LEVEL: <span id="suspicion-label">PASSIVE — ASSETS MANAGING</span></div>
         <div style="display:flex; gap:4px; margin-bottom:0.5rem;">
           <div class="clearance-pip" id="sp1" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
           <div class="clearance-pip" id="sp2" style="background:var(--muted); border:1px solid rgba(144,64,192,0.3);"></div>
@@ -450,7 +635,7 @@
         </div>
         <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
           <button onclick="setSuspicion(1)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(144,64,192,0.3); color:var(--ozma); cursor:pointer;">+1</button>
-          <button onclick="setSuspicion(-1)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">&minus;1</button>
+          <button onclick="setSuspicion(-1)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--muted); cursor:pointer;">–1</button>
           <button onclick="setSuspicion(0)" style="font-family:'Share Tech Mono',monospace; font-size:12px; padding:2px 6px; background:transparent; border:1px solid rgba(255,255,255,0.08); color:var(--muted); cursor:pointer;">RESET</button>
         </div>
         <div id="suspicion-behavior" style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-top:0.5rem; font-family:'Crimson Pro',serif;">Assets are managing the approach. Lok is monitoring mesh traffic and maintaining position. She is not yet in the field.</div>
@@ -458,18 +643,19 @@
     </div>
 
     <!-- NPCS -->
-    <div class="section-label">&#9674; NPCS</div>
+    <div class="section-label">◈ NPCS</div>
 
     <!-- LIXIA LOK -->
     <div class="npc-card">
       <div class="npc-name">LIXIA LOK</div>
-      <div class="npc-role">PROJECT OZMA FIELD LEAD &mdash; VESTA CLOSURE OPERATION</div>
-      <div class="npc-desc">Last encountered in Binge (NanoOp5) under a Consortium Oversight cover identity. Now operating on Vesta as a Firewall coordinator. She coordinated the rep deposit fabrication, positioned the acquisition team, filed the transit hold order, and is managing this closure personally. She is patient, competent, and playing a longer game than the current session.</div>
+      <div class="npc-role">PROJECT OZMA FIELD LEAD — VESTA CLOSURE OPERATION</div>
+      <div class="npc-desc">Last encountered in Binge (NanoOp5) under a Consortium Oversight cover identity. Now operating on Vesta as a Firewall coordinator — a deeper and better-documented cover. She coordinated the rep deposit fabrication, positioned the acquisition team, filed the transit hold order, and is managing this closure personally. She is patient, competent, and playing a longer game than the current session. She wants MESA's data. She does not want to make enemies she doesn't have to make.</div>
       <div><span class="npc-trait ozma">OZMA FIELD LEAD</span><span class="npc-trait warn">ARMED</span><span class="npc-trait">BELT MOBILE</span><span class="npc-trait danger">HOLD ORDER CONTROLLER</span></div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">&#9674; LOK STAT BLOCK <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ LOK STAT BLOCK (FROM BINGE) <span>▾</span></button>
       <div class="collapse-content">
         <div class="stat-block">
-          <div class="stat-block-name">&#9674; LIXIA LOK &mdash; PROJECT OZMA</div>
+          <div class="stat-block-name">◈ LIXIA LOK — PROJECT OZMA</div>
+          <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.4rem;">Cover: Consortium Oversight (Binge) / Firewall Coordinator (here). Stats from NanoOp5 Binge. Adapt as needed.</div>
           <div class="stat-row">
             <span class="stat-pill hi">OZMA INVESTIGATOR</span>
             <span class="stat-pill med">COVER: DEEP LEGEND</span>
@@ -479,11 +665,32 @@
       </div>
     </div>
 
-    <!-- REN ACHEBE — FULL DETAIL -->
+    <!-- ACQUISITION ASSETS -->
+    <div class="npc-card">
+      <div class="npc-name">ACQUISITION ASSET ALPHA / BETA</div>
+      <div class="npc-role">PROJECT OZMA FIELD OPERATIVES — DOCKING RING</div>
+      <div class="npc-desc">Two belt-adapted field operatives on Lok's closure team. Not Lok's level — these are reliable mid-tier assets, good at surveillance and physical intercept, operating under instructions not to create public incidents. They will escalate to physical restraint but not lethal force unless the device is about to leave permanently. They are not a match for FLASH in Vesta's microgravity environment.</div>
+      <div><span class="npc-trait warn">STUNNER ARMED</span><span class="npc-trait">BELT-ADAPTED</span><span class="npc-trait danger">BIOMETRIC LOCK</span></div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ ASSET STATS — SIMPLIFIED <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="stat-block">
+          <div class="stat-block-name">◈ OZMA FIELD ASSET — STANDARD</div>
+          <div class="stat-row">
+            <span class="stat-pill med">PERCEIVE 60</span>
+            <span class="stat-pill med">INFILTRATE 50</span>
+            <span class="stat-pill med">FRAY 45</span>
+            <span class="stat-pill lo">FREEFALL 35</span>
+          </div>
+        </div>
+        <div class="note-box warn" style="margin-top:0.4rem;">The Freefall 35 is the key number. In Vesta's ring, FLASH (or any PC with Freefall 50+) has a meaningful physical edge in any foot chase or close-quarters situation. Use this to make FLASH feel capable rather than just fast.</div>
+      </div>
+    </div>
+
+    <!-- REN ACHEBE -->
     <div class="npc-card" style="border-color:rgba(245,166,35,0.25); background:rgba(245,166,35,0.02);">
       <div class="npc-name" style="color:var(--accent);">REN ACHEBE</div>
-      <div class="npc-role" style="color:var(--muted);">PROJECT OZMA FIELD OPERATIVE &mdash; ASSET ALPHA &mdash; FLASH CONNECTION</div>
-      <div class="npc-desc">One of the two acquisition assets on Lok's closure team. Belt-native, non-binary, mid-thirties apparent age, currently sleeved in an unremarkable worker-caste splicer with the slightly-too-clean hands of someone who doesn't actually work docks. FLASH knows this face &mdash; not from Firewall, not from any sanctioned operation, but from a job they both did for the same employer without either knowing the other had been hired. A Belt gangster named <strong style="color:var(--textbright);">Cass Voronova</strong> ran them as parallel bodyguards for three weeks across four stations, each convinced they were the primary protection. They weren't. They were the performance. Flash and Ren figured this out at roughly the same time, on the last station, after the job was done and the credits had cleared. They never saw Voronova again. They had a drink about it. That was three years ago.</div>
+      <div class="npc-role" style="color:var(--muted);">PROJECT OZMA FIELD OPERATIVE — ASSET ALPHA — FLASH CONNECTION</div>
+      <div class="npc-desc">One of the two acquisition assets on Lok's closure team. Belt-native, non-binary, mid-thirties apparent age, currently sleeved in an unremarkable worker-caste splicer with the slightly-too-clean hands of someone who doesn't actually work docks. FLASH knows this face — not from Firewall, not from any sanctioned operation, but from a job they both did for the same employer without either knowing the other had been hired. A Belt gangster named <strong style="color:var(--textbright);">Cass Voronova</strong> ran them as parallel bodyguards for three weeks across four stations, each convinced they were the primary protection. They weren't. They were the performance — two credible hard contacts circling Voronova at all times while the real business happened in rooms just out of their eyeline, with g-rep contacts who wouldn't have sat still if Voronova hadn't looked sufficiently insulated. Flash and Ren figured this out at roughly the same time, on the last station, after the job was done and the credits had cleared. They never saw Voronova again. They had a drink about it. That was three years ago.</div>
       <div style="margin:0.5rem 0;">
         <span class="npc-trait" style="border-color:rgba(245,166,35,0.3); color:var(--accent);">FLASH CONNECTION</span>
         <span class="npc-trait warn">PRIOR JOB: VORONOVA CIRCUIT</span>
@@ -492,40 +699,47 @@
         <span class="npc-trait warn">STUNNER ARMED</span>
       </div>
 
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">&#9674; THE VORONOVA JOB &mdash; FULL ACCOUNT (GM ONLY) <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem; border-color:rgba(245,166,35,0.2);">◈ THE VORONOVA JOB — FULL ACCOUNT (GM ONLY) <span>▾</span></button>
       <div class="collapse-content">
         <div class="note-box" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.04);">
-          Cass Voronova was a mid-level Belt g-rep fixer &mdash; a specialist in high-margin short-window deals that required social credibility that only comes from being visibly hard to get to. The Voronova Circuit was three weeks, four stations: Ceres, Pallas, a mining platform in the outer Main Belt called Sard-7, and Vesta. Each stop involved Voronova meeting with g-rep representatives under the cover of legitimate freight brokering. Each meeting required the attending parties to feel that approaching Voronova carried a physical cost.
+          Cass Voronova was a mid-level Belt g-rep fixer — not a crime boss in any grand sense, more a specialist in high-margin short-window deals that required the kind of social credibility that only comes from being visibly hard to get to. The Voronova Circuit was three weeks, four stations: Ceres, Pallas, a mining platform in the outer Main Belt called Sard-7, and Vesta. Each stop involved Voronova meeting with g-rep representatives of various organisations under the cover of legitimate freight brokering. Each meeting required the attending parties to feel that approaching Voronova carried a physical cost — that the muscle around her was real, capable, and attentive.
         </div>
-        <div class="test-item"><div class="test-skill">THE SETUP</div><div class="test-desc">Flash was hired through a Belt security broker. The brief: travel with the client, look capable, respond to threats. Flash was told they were the primary protection and a second operator would be present for "logistical support." Ren was told exactly the same thing in mirror image. Neither was told the other's name. They met at the first station handshake and immediately read each other as competitors for the same role. Voronova watched this dynamic develop and did nothing to correct it.</div></div>
-        <div class="test-item"><div class="test-skill warn">HOW VORONOVA USED THEM</div><div class="test-desc">During every substantive meeting, Voronova kept Flash and Ren visibly occupied: stationed at entrances, running counter-surveillance, managing arrival logistics. Meanwhile Voronova was negotiating deals with g-rep contacts who wouldn't have extended trust to an uninsulated fixer. The two credible hard presences circling Voronova were the insulation. The deals closed. Voronova paid both contractors in full and disappeared. They were props.</div></div>
-        <div class="test-item"><div class="test-skill">THE LAST NIGHT &mdash; VESTA</div><div class="test-desc">The final station was Vesta. After the last handoff, Flash and Ren both clocked the shape of what had happened at roughly the same moment &mdash; comparing notes on what they'd each been doing during meetings and realising neither had any idea what the meetings had actually been about. They had a drink in a Docking Ring bar &mdash; this bar, on this station &mdash; and arrived at a mutual assessment: Voronova was good. They weren't angry. They were impressed. They parted with no obligations and the understanding that if they ever crossed paths again it wouldn't be as strangers.</div></div>
-        <div class="test-item"><div class="test-skill ozma">WHAT REN WAS ACTUALLY DOING</div><div class="test-desc">Ren was already an Ozma operative when they took the Voronova contract. The contract was sanctioned &mdash; Ozma wanted eyes on one of the g-rep contacts Voronova was meeting. Flash's presence was incidental. The fact that Flash was professionally competent, adaptable, and morally uncomplicated about grey-market work was something Ren noted and filed. The Ozma dossier on Flash begins with that contract. Lok has read it.</div></div>
-        <div class="test-item"><div class="test-skill warn">WHAT FLASH DOESN'T KNOW</div><div class="test-desc">Flash doesn't know Ren was running a parallel operation. Doesn't know there's an Ozma file on them that starts with the Voronova job. From Flash's perspective, Ren is a capable independent operator they once worked alongside, got played alongside, and had a drink with about it. The shared experience of being outmanoeuvred is the actual texture of the relationship.</div></div>
+        <div class="test-item"><div class="test-skill">THE SETUP</div><div class="test-desc">Flash was hired through a Belt security broker — a legitimate middleman who placed independent operators on short-term protection contracts. The brief was straightforward: travel with the client, look capable, respond to threats. Good money. Clean paperwork. Flash was told they were the primary protection and that a second operator would be present for "logistical support." Ren was told exactly the same thing in mirror image. Neither was told the other's name or background. They met at the first station handshake and immediately read each other as competitors for the same role. Voronova watched this dynamic develop and did nothing to correct it.</div></div>
+        <div class="test-item"><div class="test-skill warn">HOW VORONOVA USED THEM</div><div class="test-desc">During every substantive meeting, Voronova kept Flash and Ren visibly occupied: stationed at entrances, running counter-surveillance, managing arrival logistics. Anything that looked like real protection work and kept both of them in positions where they could see Voronova but not hear her conversations. Meanwhile Voronova was negotiating deals with g-rep contacts — organisations that would not have extended trust to an uninsulated fixer. The two credible hard presences circling Voronova at all times were the insulation. The deals closed. Voronova paid both contractors in full, thanked them professionally, and disappeared. She got what she came for. So did Flash and Ren. Nobody was cheated in any technical sense. They were just props.</div></div>
+        <div class="test-item"><div class="test-skill">THE LAST NIGHT — VESTA</div><div class="test-desc">The final station was Vesta. After the last handoff, Flash and Ren both clocked the shape of what had happened at roughly the same moment — comparing notes on what they'd each been doing during meetings and realising neither had any idea what the meetings had actually been about. The specific feeling of being professionally outmanoeuvred by someone who had used their own competence against them. They had a drink in a Docking Ring bar — this bar, on this station — and arrived at a mutual assessment: Voronova was good. They weren't angry. They were impressed, in the guarded way of people who respect the move even while resenting being the pieces. They parted with no obligations and no mesh IDs exchanged. Just a shared joke that only made sense to the two of them, and the understanding that if they ever crossed paths again it wouldn't be as strangers.</div></div>
+        <div class="test-item"><div class="test-skill ozma">WHAT REN WAS ACTUALLY DOING</div><div class="test-desc">Ren was already an Ozma operative when they took the Voronova contract. The contract was sanctioned — Ozma wanted eyes on one of the g-rep contacts Voronova was meeting, and the bodyguard position gave Ren passive access to that contact's travel pattern and security posture. Flash's presence was incidental — a genuine independent hire that Voronova had made separately and that Ren had to work around. The fact that Flash was professionally competent, adaptable, and morally uncomplicated about grey-market work was something Ren noted and filed. The Ozma dossier on Flash begins with that contract. Lok has read it.</div></div>
+        <div class="test-item"><div class="test-skill warn">WHAT FLASH DOESN'T KNOW</div><div class="test-desc">Flash knows they were used as window dressing by a smart fixer. They don't know Ren was running a parallel operation the entire time. They don't know there's an Ozma file on them that starts with the Voronova job. From Flash's perspective, Ren is a capable independent operator they once worked alongside, got played alongside, and had a drink with about it. Someone who knows what it feels like to be the prop in someone else's deal. That shared experience of being outmanoeuvred is the actual texture of the relationship — not mutual respect built through hardship, but mutual embarrassment that became respect because neither of them pretended it hadn't happened.</div></div>
       </div>
 
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">&#9674; THE RECOGNITION MOMENT &mdash; HOW TO PLAY IT <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">◈ CASS VORONOVA — THE GANGSTER (FOR FUTURE USE) <span>▾</span></button>
       <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">Voronova is not present in this session. She is a ghost in the backstory — the person who set Flash and Ren's dynamic in motion without either of them knowing. Whether she ever becomes a live character is a campaign decision. What exists now: she is somewhere in the Belt, running the same kind of operation, and she is very good at reading people's professional pride and using it against them. If the GM ever wants to bring her in, she already has detailed files on both Flash and Ren's capabilities, habits, and blind spots.</div>
+        <div class="note-box warn">The one live thread from the Voronova job: one of the g-rep contacts she was meeting had Ozma adjacency. That contact is in Ren's file. Flash doesn't know this exists. But if the campaign ever surfaces the Voronova connection in a context where Ozma's prior Belt network becomes relevant — sessions 07 onward, post-Signal Zero — the Voronova job is already a documented node.</div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">◈ THE RECOGNITION MOMENT — HOW TO PLAY IT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.04);">Ren is positioned at the Transit Hub or the berth approach. They don't call Flash's name. They don't break cover. But if Flash makes a Perceive check and passes — or simply if Flash gets close enough to make eye contact — they know that face. And the face is in a context that makes no sense given where they last saw each other.</div>
         <div class="dialogue-line" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.02);">
-          <span class="dl-label" style="color:var(--accent); border-color:rgba(245,166,35,0.3);">REN &mdash; EYE CONTACT, NO ONE ELSE WATCHING</span>
-          <span class="dl-text"><em>[The professional stillness doesn't crack. But something behind it does &mdash; just for a moment. Not guilt. Not apology. The specific expression of someone who knew this was going to be complicated and has arrived at the part where it actually is.]</em> <em>[The smallest possible nod. Then away.]</em></span>
+          <span class="dl-label" style="color:var(--accent); border-color:rgba(245,166,35,0.3);">REN — EYE CONTACT, NO ONE ELSE WATCHING</span>
+          <span class="dl-text"><em>[The professional stillness doesn't crack. But something behind it does — just for a moment. Not guilt. Not apology. The specific expression of someone who knew this was going to be complicated and has arrived at the part where it actually is.]</em> <em>[The smallest possible nod. Then away.]</em></span>
         </div>
         <div class="dialogue-line" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.02);">
-          <span class="dl-label" style="color:var(--accent); border-color:rgba(245,166,35,0.3);">REN &mdash; IF FLASH REFERENCES THE VORONOVA JOB DIRECTLY</span>
+          <span class="dl-label" style="color:var(--accent); border-color:rgba(245,166,35,0.3);">REN — IF FLASH REFERENCES THE VORONOVA JOB DIRECTLY</span>
           <span class="dl-text"><em>[A beat. They were not expecting that to land as precisely as it did.]</em> "Turns out we were both window dressing." <em>[Flat. Genuinely wry, despite everything.]</em> "Different windows. Different show." <em>[Pause.]</em> "This isn't what you think it is. Walk away clean and I'll make sure it goes that way."</span>
         </div>
         <div class="dialogue-line" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.02);">
-          <span class="dl-label" style="color:var(--accent); border-color:rgba(245,166,35,0.3);">REN &mdash; IF FLASH ASKS WHO THEY WORK FOR NOW</span>
-          <span class="dl-text"><em>[Long pause.]</em> "Bigger room. Bigger fixer. Same principle." <em>[That's all they're giving.]</em></span>
+          <span class="dl-label" style="color:var(--accent); border-color:rgba(245,166,35,0.3);">REN — IF FLASH ASKS DIRECTLY WHO THEY WORK FOR NOW</span>
+          <span class="dl-text"><em>[Long pause. They look at Flash in a way that is not quite an answer and not quite a refusal.]</em> "Bigger room. Bigger fixer. Same principle." <em>[That's all they're giving.]</em></span>
         </div>
-        <div class="test-item"><div class="test-skill">KINESICS &mdash; FLASH ONLY (40)</div><div class="test-desc">Ren is not comfortable with this assignment in a way that goes beyond professional reluctance. They're a professional. They will execute the job. But they won't be first to escalate against Flash, and if Flash needs the one half-second that changes the geometry of the situation, Ren is the one who will be fractionally slow to close it.</div></div>
-        <div class="test-item"><div class="test-skill warn">IF FLASH GETS REN ALONE &mdash; THIRTY SECONDS</div><div class="test-desc">Ren won't burn Lok or the mission. But they'll pay what's owed: they'll tell Flash, quietly, that the device is the only thing Ozma actually wants &mdash; not the team, not MESA herself, just the signal data. If the team can copy the data and route it through a dead relay before leaving, Lok gets her win and has no operational reason to maintain the hold order.</div></div>
+        <div class="test-item"><div class="test-skill">KINESICS — FLASH ONLY (40)</div><div class="test-desc">Ren is not comfortable with this assignment in a way that goes beyond professional reluctance. The discomfort is specific — it's this target, this station, this prior knowledge. They're a professional. They will execute the job. But they won't be first to escalate against Flash, and if Flash needs the one half-second that changes the geometry of the situation, Ren is the one who will be fractionally slow to close it.</div></div>
+        <div class="test-item"><div class="test-skill warn">IF FLASH GETS REN ALONE — THIRTY SECONDS</div><div class="test-desc">Ren won't burn Lok or the mission. But they'll pay what's owed: they'll tell Flash, quietly, that the device is the only thing Ozma actually wants — not the team, not MESA herself, just the signal data. If the team can copy the data and route it through a dead relay before leaving, Lok gets her win and has no operational reason to maintain the hold order. This is not sanctioned intelligence. It is the specific debt settlement of someone who has been on the other side of being the prop, and who doesn't intend to let that happen twice to the same person.</div></div>
       </div>
 
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">&#9674; REN'S STAT BLOCK &mdash; ACQUISITION ASSET ALPHA <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">◈ REN'S STAT BLOCK — ACQUISITION ASSET ALPHA <span>▾</span></button>
       <div class="collapse-content">
         <div class="stat-block">
-          <div class="stat-block-name">&#9674; REN ACHEBE &mdash; OZMA FIELD OPERATIVE</div>
+          <div class="stat-block-name">◈ REN ACHEBE — OZMA FIELD OPERATIVE</div>
           <div class="stat-row">
             <span class="stat-pill med">PERCEIVE 65</span>
             <span class="stat-pill hi">INFILTRATE 60</span>
@@ -535,102 +749,162 @@
             <span class="stat-pill med">DECEIVE 60</span>
           </div>
         </div>
-        <div class="note-box warn" style="margin-top:0.4rem;">Freefall 35 remains the number that matters in Vesta's ring. Kinesics 55 means any attempt to read Ren is a real contest.</div>
+        <div class="note-box warn" style="margin-top:0.4rem;">Ren is the senior of the two assets — better stats across the board except Freefall, which remains 35 and remains the number that matters in Vesta's ring. Kinesics 55 means any attempt to read Ren is a real contest. Deceive 60 means they will not give themselves away unless they choose to. What they choose to give is the scene.</div>
       </div>
 
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">&#9674; GM NOTE &mdash; USING THIS CONNECTION <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">◈ NEURAL.AI — REN ACHEBE PORTRAIT <span>▾</span></button>
       <div class="collapse-content">
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">The Voronova job gives the connection a specific flavour that matters at the table: Flash and Ren don't have a history of trust built through hardship. They have a history of being simultaneously outmanoeuvred by the same person. That shared embarrassment is the actual bond &mdash; and it's more durable than trust built through success, because neither of them can pretend the Voronova job went well.</div>
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">Don't engineer the moment. If Flash's player doesn't pick up on the recognition or the session is moving too fast, let it pass. Surface the Perceive opportunity, run Ren's behaviour accurately, and let the table's instincts do the rest.</div>
-        <div class="note-box" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.04);">Long-term: Flash now knows a face that belongs to Ozma. Ozma knows Flash knows. That's a live asymmetry that can be spent any time the campaign wants to complicate either party's situation.</div>
-      </div>
-    </div>
-
-    <!-- ACQUISITION ASSETS (generic) -->
-    <div class="npc-card">
-      <div class="npc-name">ACQUISITION ASSET BETA</div>
-      <div class="npc-role">PROJECT OZMA FIELD OPERATIVE &mdash; DOCKING RING</div>
-      <div class="npc-desc">Belt-adapted field operative on Lok's closure team. Reliable mid-tier asset, good at surveillance and physical intercept, operating under instructions not to create public incidents. Will not escalate to lethal force unless the device is about to leave permanently. Not a match for FLASH in Vesta's microgravity environment.</div>
-      <div><span class="npc-trait warn">STUNNER ARMED</span><span class="npc-trait">BELT-ADAPTED</span><span class="npc-trait danger">BIOMETRIC LOCK</span></div>
-      <div class="stat-block" style="margin-top:0.5rem;">
-        <div class="stat-block-name">&#9674; OZMA FIELD ASSET &mdash; STANDARD</div>
-        <div class="stat-row">
-          <span class="stat-pill med">PERCEIVE 60</span>
-          <span class="stat-pill med">INFILTRATE 50</span>
-          <span class="stat-pill med">FRAY 45</span>
-          <span class="stat-pill lo">FREEFALL 35</span>
+        <div class="neural-prompt-box" style="border-color:rgba(245,166,35,0.2);">
+          <div class="neural-label">◈ NEURAL.AI — CHARACTER PORTRAIT</div>
+          <div class="prompt-text">eclipse phase RPG character portrait, Ren Achebe, non-binary person mid-thirties apparent age, dark skin, currently sleeved in a nondescript worker-caste splicer morph — practical dock clothing with hands slightly too clean for the role, expression of complete professional composure over something genuinely complicated, the specific quality of someone who has spent years being unremarkable on purpose and is currently deciding whether this situation is an exception, Vesta asteroid station docking ring background, warm industrial amber lighting, transhumanist sci-fi character portrait --ar 2:3 --style raw</div>
         </div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border-color:rgba(245,166,35,0.2);">◈ GM NOTE — USING THIS CONNECTION <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">The Voronova job gives the connection a specific flavour that matters at the table: Flash and Ren don't have a history of trust built through hardship. They have a history of being simultaneously outmanoeuvred by the same person. That shared embarrassment is the actual bond — and it's more durable than trust built through success, because neither of them can pretend the Voronova job went well. They both know what it looks like when they're being used as furniture. The irony of this session is that Ren is, again, a piece in someone else's operation — and they know it, and Flash knowing it too is the specific complication.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">Don't engineer the moment. If Flash's player doesn't pick up on the recognition or the session is moving too fast, let it pass. The best version of this beat is the one the player finds themselves rather than the one the GM walks them to. Surface the Perceive opportunity, run Ren's behaviour accurately, and let the table's instincts do the rest.</div>
+        <div class="note-box" style="border-color:rgba(245,166,35,0.3); background:rgba(245,166,35,0.04);">Long-term: Flash now knows a face that belongs to Ozma — in a morph that will change. Ozma knows Flash knows — or will, when Ren files the post-mission report. That's a live asymmetry that can be spent any time the campaign wants to complicate either party's situation. Ren is not a recurring villain. They're something stranger: a professional acquaintance on the wrong side, doing a job that put them here, who paid their debt and is now square. What either of them does with that is the ongoing question.</div>
       </div>
     </div>
 
     <!-- GM NOTES -->
-    <div class="section-label warn">&#9674; GM NOTES &mdash; RUNNING THIS SCENARIO</div>
+    <div class="section-label warn">◈ GM NOTES — RUNNING THIS SCENARIO</div>
     <div class="npc-card">
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">&#9674; THE PHYSICAL REGISTER <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ THE PHYSICAL REGISTER <span>▾</span></button>
       <div class="collapse-content open">
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">This session runs on momentum and environmental awareness, not interrogation. The PCs are in familiar territory, moving fast, with a clock running. Every scene should feel like it has a pace &mdash; Vesta's microgravity is the texture, not a mechanic. The twelve-hour window is generous if the team is decisive. It becomes tight if they stop to have long conversations or freeze at decision points.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">This session runs on momentum and environmental awareness, not interrogation. The PCs are in familiar territory, moving fast, with a clock running. Every scene should feel like it has a pace — Vesta's microgravity is the texture, not a mechanic. Use it constantly: things float, jumps cover unexpected distances, a push in the wrong direction costs precious seconds. The Docking Ring is a labyrinth that FLASH knows better than anyone coming after them.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">The GM discipline here is keeping the clock present without making it punitive. The twelve-hour window is generous if the team is decisive. It becomes tight if they stop to have long conversations, run full investigations, or freeze at decision points. Keep the watcher's mesh ping in the back of their minds — every minute they spend in one place is a minute Lok's team is repositioning.</div>
       </div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; FLASH AS PROTAGONIST <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ FLASH AS PROTAGONIST <span>▾</span></button>
       <div class="collapse-content">
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">This session is designed to center FLASH. The maintenance tunnel route, the low-g traversal advantages, the collar release sequence, the knowledge of the ring &mdash; these are all FLASH moments. Present them proactively. Don't make these rolls &mdash; make them facts.</div>
-        <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">The exception is when FLASH's knowledge gaps matter narratively. Pick one moment of FLASH uncertainty per session, not five.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">This session is designed to center FLASH. The maintenance tunnel route, the low-g traversal advantages, the collar release sequence, the knowledge of the ring — these are all FLASH moments. Present them proactively. When the team reaches the Transit Hub, FLASH should already know the ceiling traversal route. When they need the maintenance access code, FLASH has it. Don't make these rolls — make them facts.</div>
+        <div class="note-box" style="border-color:rgba(245,166,35,0.4); background:rgba(245,166,35,0.04);">The exception is when FLASH's knowledge gaps matter narratively — if the code has cycled, that creates genuine tension. Pick one moment of FLASH uncertainty per session, not five. The contrast between capable-and-certain and uncertain-and-pressured is what makes the uncertain moment land.</div>
       </div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; LOK AS RECURRING PRESENCE <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ LOK AS RECURRING PRESENCE <span>▾</span></button>
       <div class="collapse-content">
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.4rem;">Lok's intercept scene is the session's narrative peak, not its action peak. The action is the escape. Lok is the moment where the team understands what they escaped from &mdash; and who is still watching.</div>
-        <div class="note-box ozma">If the team takes Lok's deal: clean exit, but Ozma has the coordinates and the team is in small debt to an Ozma asset. If they refuse: messier departure but MESA completely clean. If they fly past without engaging: the rep cloud persists into Signal Zero. All three are valid.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.4rem;">Lok's intercept scene is the session's narrative peak, not its action peak. The action is the escape. Lok is the moment where the team understands what they escaped from — and who is still watching. Her offer (pull the hold order in exchange for a data copy) is genuine and she means it. Whether they take it, refuse it, or fly past her without a word says something about the team's relationship with ambiguity and expedience.</div>
+        <div class="note-box ozma">If the team takes Lok's deal: they get a clean exit. Ozma has the coordinates. The team is now in debt to an Ozma asset — a small debt, but a real one. If they refuse: the departure is messier but MESA is completely clean. If they fly past her without engaging: she files the secondary report and the rep cloud persists into Signal Zero. All three are valid. None ends the Lok thread.</div>
       </div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; BRIDGE TO SIGNAL ZERO <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ BRIDGE TO SIGNAL ZERO <span>▾</span></button>
       <div class="collapse-content">
-        <div style="font-size:0.85rem; color:var(--text); line-height:1.5;">The session ends with the ship in burn toward the outer system. MESA is reactivated in transit. Her first words close this session and open the next. Let the transit be peaceful. Let the players breathe. Then let MESA ask her question.</div>
-        <div class="note-box green">MESA's question &mdash; "Is the signal still active?" &mdash; is the campaign's through-line. The answer, as far as anyone knows: yes. It has been active since before any of them were born.</div>
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.4rem;">The session ends with the ship in burn toward the outer system. MESA is reactivated in transit — her first words close this session and open the next. The jump from Vesta to Signal Zero is a jump in register: from physical chase and social pressure to the vast quiet of the outer system and something genuinely unknown at FK7. Let the transit be peaceful. Let the players breathe. Then let MESA ask her question.</div>
+        <div class="note-box green">MESA's question — "Is the signal still active?" — is the campaign's through-line. It connects Gutenberg (where they found her) to Signal Zero (where she points them) to everything that follows. The answer, as far as anyone knows: yes. It is still active. It has been active since before any of them were born.</div>
+      </div>
+    </div>
+
+    <!-- VISUAL REFERENCE -->
+    <div class="section-label">◈ VISUAL REFERENCE — PORTRAIT PROMPTS</div>
+    <div class="npc-card">
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none;">◈ VESTA DOCKING RING — ESTABLISHING SHOT <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="neural-prompt-box" style="margin-bottom:0.5rem;">
+          <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+          <div class="prompt-text">eclipse phase RPG interior wide shot, Vesta asteroid station docking ring district, curving low-gravity corridor with ship berths visible through reinforced viewports, industrial ceiling with exposed conduit and periodic lighting strips, foot traffic of belt workers and transients moving in microgravity — some walking along the floor, some ceiling-traversing, the specific visual of people adapted to near-zero g, commercial strip with food stalls and a parts exchange, the atmospheric density of a working asteroid dock, transhumanist sci-fi industrial aesthetic, slightly warm golden lighting from sodium-discharge work lights --ar 16:9 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ BERTH 44 — EXTERIOR ACCESS <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+          <div class="prompt-text">eclipse phase RPG exterior view of a small Firewall-associated ship in an asteroid station berth, docking collar attached, maintenance ladder running up the hull to a service hatch, low-gravity environment — tools float on tethers near the hull, a figure in practical clothing climbing the ladder with the deliberate efficiency of someone very comfortable in microgravity, industrial dock lighting, the sense of urgency and careful movement, transhumanist sci-fi detail --ar 16:9 --style raw</div>
+        </div>
+      </div>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ MAINTENANCE TUNNEL — FLASH ROUTE <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — SCENE REFERENCE</div>
+          <div class="prompt-text">eclipse phase RPG interior view of an asteroid station maintenance tunnel, Sub-Level corridor barely wide enough for two people abreast, exposed fuel line conduits along one wall, acetylene smell implied by chemical residue on access panels, two figures moving through in microgravity — one in front navigating confidently from memory, the other following close, dim emergency lighting strips casting amber light, the specific feel of a shortcut that isn't officially a route, transhumanist sci-fi industrial aesthetic --ar 16:9 --style raw</div>
+        </div>
       </div>
     </div>
 
     <!-- SEMAPHORE THREAD -->
-    <div class="section-label signal">&#9674; THE SEMAPHORE &mdash; BURIED OZMA FILE</div>
+    <div class="section-label signal">◈ THE SEMAPHORE — BURIED OZMA FILE</div>
     <div class="npc-card">
-      <button class="collapse-btn" onclick="toggleCollapse(this)">&#9674; WHAT LOK IS PROTECTING (BEYOND MESA) <span>&#9662;</span></button>
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT LOK IS PROTECTING (BEYOND MESA) <span>▾</span></button>
       <div class="collapse-content">
         <div style="font-size:0.85rem; color:var(--muted); line-height:1.5; margin-bottom:0.6rem;">
-          Lok's primary objective is MESA's Gutenberg signal data. Her secondary objective &mdash; the one she hasn't articulated to her assets &mdash; is ensuring Firewall's analysts never see the secondary signal component of the Gutenberg transmission. Ozma's prior analysis contains a detail that has been buried internally for decades: the secondary signal came from sunward, not from beyond the ecliptic. Whatever sent the warning was already inside the solar system.
+          Lok's primary objective is MESA's Gutenberg signal data. Her secondary objective — the one she hasn't articulated to her assets — is ensuring Firewall's analysts never see the secondary signal component of the Gutenberg transmission. Ozma's prior analysis of that signal contains a detail that has been buried internally for decades: the secondary signal came from sunward, not from beyond the ecliptic. Whatever sent the warning was already inside the solar system. Has been for a long time.
         </div>
-        <div class="test-item"><div class="test-skill ozma">LOK'S SECONDARY MISSION</div><div class="test-desc">The true answer: COEWS-ANOMALY-7741. Ozma's internal designation for the sunward signal source. They have known for decades. They are not sharing.</div></div>
-        <div class="note-box"><strong style="color:var(--signal)">THE BURIED DETAIL:</strong> The secondary signal in the Gutenberg transmission did not originate from outside the ecliptic. It came from the direction of the Sun. Ozma confirmed this and filed it under a restricted access header: <em>COEWS-ANOMALY-7741</em>. COEWS stands for Composite Orbital Early Warning System. Ozma knows what the Semaphore is. They have known for decades.</div>
-        <div class="test-item"><div class="test-skill signal">MESA &mdash; IF REACTIVATED AND ASKED</div><div class="test-desc">There's a file reference in what I could access of Ozma's query logs &mdash; the header COEWS-ANOMALY-7741. COEWS is a Foundation-era acronym. Composite Orbital Early Warning System. The secondary signal in the Gutenberg data came from sunward. Not from outside the ecliptic &mdash; from inside it. Whatever sent the warning was already in the solar system.</div></div>
+        <div class="test-item"><div class="test-skill ozma">LOK'S SECONDARY MISSION</div><div class="test-desc">If asked directly why Ozma cares this much about a data set Firewall will eventually analyze anyway, Lok has a prepared answer about classification sensitivity and jurisdictional overlap. The true answer: COEWS-ANOMALY-7741. Ozma's internal designation for the sunward signal source. They have known for decades. They are not sharing.</div></div>
+        <div class="note-box"><strong style="color:var(--signal)">THE BURIED DETAIL:</strong> The secondary signal in the Gutenberg transmission did not originate from outside the ecliptic. It came from the direction of the Sun. Ozma's analysts confirmed this and filed it under a restricted access header: <em>COEWS-ANOMALY-7741</em>. COEWS stands for Composite Orbital Early Warning System. Ozma knows what the Semaphore is. They have known for decades. They are not sharing.</div>
+        <div class="test-item"><div class="test-skill signal">MESA — IF REACTIVATED AND ASKED</div><div class="test-desc">There's a file reference in what I could access of Ozma's query logs — the header COEWS-ANOMALY-7741. COEWS is a Foundation-era acronym. Composite Orbital Early Warning System. I don't have anything past that in accessible records. But the secondary signal in the Gutenberg data came from sunward. Not from outside the ecliptic — from inside it. Whatever sent the warning was already in the solar system.</div></div>
       </div>
     </div>
 
   </div><!-- /left-col -->
 </div><!-- /main-grid -->
 
-<footer class="ep-legal-footer">
+    <!-- COGNITE CONTACT TRAP -->
+    <div class="section-label warn">◈ THE COGNITE QUESTION — IF THE TEAM TRIES TO CLEAR THE SCAN</div>
+    <div class="npc-card">
+      <div style="font-size:0.88rem; color:var(--text); line-height:1.65; margin-bottom:0.7rem;">
+        Someone on the team will ask: <em>can we contact Cognite and get the biometric scan cleared?</em> The scan came from audit VSC-REG-0442, filed by a Cognite subsidiary. If the scan is the problem, Cognite is the obvious fix. This is reasonable logic. It is also, structurally, a trap — though not the kind with a lid that snaps shut immediately. The trap has a face, a title, and an agenda of her own.
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHO FILED THE AUDIT — THE COGNITE CHAIN <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="test-item"><div class="test-skill">VSC-REG-0442 — PUBLIC RECORD</div><div class="test-desc">Vesta's commercial registry lists the audit requester as <strong>Meridian Compliance Partners</strong> — a standard commercial compliance entity, ECB-registered on Luna. Nothing unusual in the filing. Research 50 surfaces the name. That's all the public record gives you.</div></div>
+        <div class="test-item"><div class="test-skill warn">RESEARCH 60 — SUPERIOR SUCCESS</div><div class="test-desc">Meridian Compliance Partners traces to a Luna law firm — Sesterov Tarrant LLP — that maintains approximately fourteen identical shell entities, all Cognite subsidiaries routed through the same address. The audit was filed by Cognite. The specific Cognite division is not listed.</div></div>
+        <div class="test-item"><div class="test-skill ozma">KNOW: COGNITE / RESEARCH 70</div><div class="test-desc">Cross-referencing the audit's regulatory scope — biometric scanning targeting specific IP marker categories, extended mesh log retention, synthmorph registration requirements — with known Cognite research divisions narrows the requester to one of two groups: their Continuity division (egocasting infrastructure) or their Applied Genetics group. The IP markers flagged by the scan are consistent with Applied Genetics research lines: proprietary uplift modifications, certain neural enhancement sequences, combat augmentation lineages. Someone in Cognite's Applied Genetics wanted arrival intelligence on people carrying their work.</div></div>
+        <div class="note-box warn">The scan was not built for Ozma. Lok piggybacked on infrastructure that was already in place. The Cognite audit and the Ozma operation are two separate things that happen to intersect at the egocast hub. Clearing the scan requires going to Cognite. Going to Cognite means going to the person who actually controls this — and she is not a neutral party.</div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ OKSANA CHETVERIKOVA — THE PERSON AT THE TOP <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box ozma">Oksana Chetverikova is a Cognite VP — Applied Genetics division, based on Luna. She did not commission the original experiment that created the Kuiper data trail the campaign is following. She inherited the coverup when the previous project lead had an accident. She has been managing the information gap between what Cognite's board knows and what actually happened at those coordinates for four years. Sable Index — Vanek's outfit — is her operational arm on Vesta, not Cognite's official security. The audit was her initiative. She shaped it to flag arrivals carrying Cognite-lineage augmentations because she is watching for a specific class of person: anyone connected to the Kuiper experiment's fallout who might now be moving through Vesta.</div>
+        <div class="test-item"><div class="test-skill">WHAT SHE KNOWS</div><div class="test-desc">Chetverikova knows that the Kuiper experiment produced something that shouldn't have been possible given Cognite's published research parameters at the time. She knows the previous project lead died before filing a complete report. She knows that fragments of that experiment's output are still in the Belt — in the form of uplift modifications that carry proprietary sequences no one should have been able to produce without Cognite's full research archive. She is hunting those modifications. The biometric scan is how she looks for them passively.</div></div>
+        <div class="test-item"><div class="test-skill warn">WHAT CONTACTING HER DOES</div><div class="test-desc">If the team contacts Meridian Compliance Partners to request audit review or scan clearance, they will reach a Sesterov Tarrant paralegal within four hours. Within twelve, a flag will reach Chetverikova's desk that someone on the current Vesta scan list is actively querying the audit. She will respond personally — not with legal action, but with interest. She will want to know who is asking and why. She will want to know if they are carrying what she is looking for. She will be extremely pleasant about all of this. That is the first warning sign.</div></div>
+        <div class="test-item"><div class="test-skill danger">WHAT SHE WANTS FROM THIS TEAM</div><div class="test-desc">Chetverikova doesn't know yet whether this team is relevant to her search. The contact request will tell her they were flagged by the scan and chose to investigate rather than ignore the flag — which is itself diagnostic. A Firewall team actively querying the audit source is a Firewall team that knows something about why that scan exists. She will assume they know more than they do, initially. This assumption is more dangerous than accurate knowledge would be.</div></div>
+        <div class="note-box danger" style="margin-top:0.4rem;"><strong style="color:var(--danger);">GM NOTE — THE THIRD PROBLEM:</strong> The team is currently dealing with Ozma (Lok's closure operation) and Firewall (rep deposit fabrication, handler silence). Contacting Cognite introduces Chetverikova as a third independent interest — one who has her own agenda, her own Belt operational arm (Vanek, Sable Index), and her own reasons to want intelligence on what this team is carrying. She is not aligned with Ozma. She is not aligned with Firewall. She is aligned with concealing what Cognite did at the Kuiper coordinates — which may or may not overlap with what MESA's data reveals. The team does not have the bandwidth for this conversation on Vesta. If they open it, it follows them.</div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ CAN THE SCAN ACTUALLY BE CLEARED? <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="test-item"><div class="test-skill green">INFOSEC 60 — DIRECT APPROACH</div><div class="test-desc">The biometric scan runs as a software layer on Petra Vosse's egocast terminal — it's a mesh application, not hardware. Someone with Infosec 60 and physical or mesh access to the terminal could modify the flag criteria or remove the scan entirely. Petra doesn't know the scan's source code; she just knows it was installed. This requires either Petra's cooperation (she'll give access if the team treats her as a person and explains the situation with some honesty) or unauthorized terminal access while Petra is away from the desk. Either way it clears the scan going forward — it does not retract the alert already sent to Lok's relay when the team arrived.</div></div>
+        <div class="test-item"><div class="test-skill warn">PETRA — IF ASKED DIRECTLY</div><div class="test-desc">If the team explains that the scan is being used to track them by an entity that is not Vesta Station authority, Petra will pause for a long time. She knows the scan made her desk into a surveillance node for someone she wasn't told about. She signed something during the audit without knowing what it enabled. She doesn't like this. She will ask one question: <em>"Is removing it going to cause me problems?"</em> A convincing honest answer — no, removing it just means one compliance app stops running, there's nothing in her contract requiring it to stay operational — gets her cooperation. She will look the other way while someone works on her terminal. She will not file a report about this conversation.</div></div>
+        <div class="test-item"><div class="test-skill ozma">WHAT CLEARING THE SCAN DOESN'T FIX</div><div class="test-desc">The scan already fired when the team arrived. The alert packet is already in Lok's relay — she knows they're on station. Clearing the scan is useful for future arrivals and for denying Chetverikova passive intelligence going forward, but it doesn't walk back the current situation. The hold order, the acquisition team, Lok in the ring — none of that changes. Clearing the scan is the right long-term move. It is not a solution to this session's immediate problem.</div></div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ SABLE INDEX — CURRENT VESTA STATUS <span>▾</span></button>
+      <div class="collapse-content">
+        <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.5rem;">Vanek's outfit — <strong>Vesta Salvage Assessors</strong>, the Sable Index cover entity — is still registered on Vesta from the Session 03 operation. Whether Vanek himself is still on station is a GM decision. He may have stood down after the Dead Drop operation concluded; he may have received new instructions following the Gutenberg signal event. If active, Sable Index and Lok's Ozma team are operating independently on the same station, for different clients, toward partially overlapping goals — and neither knows the other is there. This is a complexity the team could exploit if they discover it.</div>
+        <div class="note-box warn">Chetverikova and Lok do not know about each other's Vesta operations. Cognite and Ozma are not coordinating. If the team can surface this to either party — Cognite learning that an Ozma closure team is running an operation on a station where Cognite has active assets, or Ozma learning that Cognite's Kuiper coverup is connected to the same signal they're trying to suppress — the resulting institutional friction could create space for the team to move. Neither side would welcome the other's presence. That conflict is a resource if the team is smart enough to use it and fast enough to do it before leaving Vesta.</div>
+      </div>
+    </div>
+
+
   <div class="ep-legal-inner">
-    <div class="ep-legal-title">&#9674; ECLIPSE PHASE &mdash; EDGE OF THE LIGHT</div>
+    <div class="ep-legal-title">◈ ECLIPSE PHASE — EDGE OF THE LIGHT</div>
     <div class="ep-legal-text">
       Eclipse Phase was created by Rob Boyle and Brian Cross.
       Eclipse Phase is a trademark of Posthuman Studios LLC.
+      <br>
       This work is licensed under the
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> license.
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
+        Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+      </a> license.
+      For details see <a href="https://eclipsephase.com/cclicense/" target="_blank" rel="noopener">eclipsephase.com/cclicense</a>
     </div>
     <div class="ep-legal-badges">
-      <span class="ep-legal-badge">&copy; POSTHUMAN STUDIOS LLC</span>
+      <span class="ep-legal-badge">© POSTHUMAN STUDIOS LLC</span>
       <span class="ep-legal-badge">CC BY-NC-SA 4.0</span>
       <span class="ep-legal-badge">NON-COMMERCIAL FAN WORK</span>
     </div>
   </div>
 </footer>
-
-<button class="print-btn" onclick="window.print()">&#9674; PRINT</button>
-<button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right:8rem;">&#9674; EXPAND ALL</button>
+<button class="print-btn" onclick="window.print()">◈ PRINT</button>
+<button class="print-btn" id="expand-all-btn" onclick="toggleAll()" style="right:8rem;">◈ EXPAND ALL</button>
 
 <script>
+// ── Accordion ──────────────────────────────────────────────────
 function toggleCollapse(btn) {
   const content = btn.nextElementSibling;
   const isOpen = content.classList.contains('open');
   content.classList.toggle('open', !isOpen);
   const arrow = btn.querySelector('span');
-  if (arrow) arrow.textContent = isOpen ? '&#9662;' : '&#9652;';
+  if (arrow) arrow.textContent = isOpen ? '▾' : '▴';
 }
 function toggleAll() {
   const btn = document.getElementById('expand-all-btn');
@@ -638,10 +912,11 @@ function toggleAll() {
   const btns = document.querySelectorAll('.collapse-btn');
   const anyOpen = Array.from(all).some(c => c.classList.contains('open'));
   all.forEach(c => c.classList.toggle('open', !anyOpen));
-  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '&#9662;' : '&#9652;'; });
+  btns.forEach(b => { const a = b.querySelector('span'); if (a) a.textContent = anyOpen ? '▾' : '▴'; });
   btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
 }
 
+// ── Status pip tracker ─────────────────────────────────────────
 const pipStates = { pip1: 0, pip2: 0, pip3: 0 };
 const pipColors = ['#c04040', '#d4b870', '#a0c4a0'];
 function cyclePip(id) {
@@ -650,13 +925,14 @@ function cyclePip(id) {
   document.getElementById(id).style.boxShadow = `0 0 5px ${pipColors[pipStates[id]]}80`;
 }
 
+// ── Lok Activation tracker ─────────────────────────────────────
 let suspicionLevel = 0;
 const suspicionData = [
-  { label: 'PASSIVE &mdash; ASSETS MANAGING', behavior: 'Assets are managing the approach. Lok is monitoring mesh traffic and maintaining position. She is not yet in the field.' },
-  { label: 'ALERT &mdash; ASSET CONTACT MADE', behavior: 'One or both assets have made contact or been evaded. Lok begins moving toward the berth zone.' },
-  { label: 'ACTIVE &mdash; PERSONAL INTERCEPT', behavior: 'Lok is moving to personally intercept. She has activated the hold order contingency.' },
-  { label: 'HIGH &mdash; NEGOTIATION MODE', behavior: 'Lok is at the berth approach. She will offer terms. Her tone is professional and final.' },
-  { label: 'CRITICAL &mdash; ESCALATION', behavior: 'Lok has drawn her sidearm. She is not pointing it yet. The conversation is over.' }
+  { label: 'PASSIVE — ASSETS MANAGING', behavior: 'Assets are managing the approach. Lok is monitoring mesh traffic and maintaining position. She is not yet in the field.' },
+  { label: 'ALERT — ASSET CONTACT MADE', behavior: 'One or both assets have made contact or been evaded. Lok begins moving toward the berth zone. She is still patient — she does not rush.' },
+  { label: 'ACTIVE — PERSONAL INTERCEPT', behavior: 'Lok is moving to personally intercept. She has activated the hold order contingency. Her comms to Ozma become more frequent.' },
+  { label: 'HIGH — NEGOTIATION MODE', behavior: 'Lok is at the berth approach. She will offer terms. Her tone is professional and final — she has one offer and she means it.' },
+  { label: 'CRITICAL — ESCALATION', behavior: 'Lok has drawn her sidearm. She is not pointing it yet. She is making clear that the conversation is over and the next phase is not conversational.' }
 ];
 function setSuspicion(delta) {
   if (delta === 0) suspicionLevel = 0;
@@ -679,37 +955,56 @@ function setSuspicion(delta) {
 }
 </script>
 
-<script>const cueAssignments = [0, 1, 2, 3];</script>
-<script src="ep-muse.js"></script>
-
 <script id="ep-nav-loader">
+// ── Eclipse Phase Session Navigation ────────────────────────────────────────
 (function () {
-  const manifest = {"campaign":"ECLIPSE PHASE — TIME OF OUR LIVES","subtitle":"FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS","sessions":[{"id":"session-01","file":"session-01-better-on-the-inside.html","number":"01","title":"Better on the Inside","location":"YETTI EXOPLANET · GATE","status":"complete","header_tag":"◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"},{"id":"session-02","file":"session-02-binge.html","number":"02","title":"Binge","location":"PATHFINDER CITY · MARS","status":"complete","header_tag":"◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"},{"id":"session-03","file":"session-03-dead-drop-vesta.html","number":"03","title":"Dead Drop at Vesta","location":"VESTA · MAIN BELT","status":"complete","header_tag":"◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"},{"id":"session-04","file":"session-04-unbodied-gutenberg.html","number":"04","title":"Unbodied","location":"GUTENBERG · HIGH BELT","status":"current","header_tag":"◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"},{"id":"session-05","file":"session-05-cold-station.html","number":"05","title":"Cold Station","location":"VESTA · DOCKING RING","status":"upcoming","header_tag":"◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"POST-GUTENBERG EXFIL · VESTA · OZMA CLOSURE TEAM · PHYSICAL ESCAPE"},{"id":"session-06","file":"session-06-signal-zero.html","number":"06","title":"Signal Zero","location":"FK7 · KUIPER","status":"upcoming","header_tag":"◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"},{"id":"session-07","file":"session-07-cry-for-help.html","number":"07","title":"Cry for Help","location":"ARROKOTH · 44 AU","status":"upcoming","header_tag":"◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"},{"id":"session-08","file":"session-08-requiem-for-orcus.html","number":"08","title":"Requiem for Orcus","location":"ORCUS · 39 AU","status":"upcoming","header_tag":"◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"},{"id":"session-09","file":"session-09-still-life-with-teeth.html","number":"09","title":"Still Life with Teeth","location":"KBO 2119-HR4 · ~52 AU","status":"upcoming","header_tag":"◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E","header_sub":"SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
-  const nav = document.getElementById('ep-session-nav');
+  const manifest = {"campaign": "ECLIPSE PHASE — TIME OF OUR LIVES", "subtitle": "FIREWALL BELTER CAMPAIGN — GM REFERENCE DOCUMENTS", "sessions": [{"id": "session-01", "file": "session-01-better-on-the-inside.html", "number": "01", "title": "Better on the Inside", "location": "YETTI EXOPLANET · GATE", "status": "complete", "header_tag": "◈ SESSION 01 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "YETTI EXOPLANET · PANDORA GATE · ALIEN TOMB · MA'ADIM VALLIS DEPARTURE"}, {"id": "session-02", "file": "session-02-binge.html", "number": "02", "title": "Binge", "location": "PATHFINDER CITY · MARS", "status": "complete", "header_tag": "◈ SESSION 02 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "PATHFINDER CITY · MARS · MISSING PERSONS · TRIAD ENTANGLEMENT · LOK SEED"}, {"id": "session-03", "file": "session-03-dead-drop-vesta.html", "number": "03", "title": "Dead Drop at Vesta", "location": "VESTA · MAIN BELT", "status": "complete", "header_tag": "◈ SESSION 03 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "VESTA STATION · DOCKING RING DISTRICT · MAIN BELT · PRECURSOR TO OPERATION: UNBODIED"}, {"id": "session-04", "file": "session-04-unbodied-gutenberg.html", "number": "04", "title": "Unbodied", "location": "GUTENBERG · HIGH BELT", "status": "current", "header_tag": "◈ SESSION 04 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "GUTENBERG STATION · HIGH BELT · TITAN FETCH INCURSION · INFOMORPH OPERATIONS"}, {"id": "session-05", "file": "session-05-cold-station.html", "number": "05", "title": "Cold Station", "location": "VESTA · DOCKING RING", "status": "upcoming", "header_tag": "◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "POST-GUTENBERG EXFIL · VESTA · OZMA CLOSURE TEAM · PHYSICAL ESCAPE"}, {"id": "session-06", "file": "session-06-signal-zero.html", "number": "06", "title": "Signal Zero", "location": "FK7 · KUIPER", "status": "upcoming", "header_tag": "◈ SESSION 06 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "MESA COORDINATES · OUTER SYSTEM SURVEY · FIRST CONTACT THRESHOLD · OZMA CONVERGENCE"}, {"id": "session-07", "file": "session-07-cry-for-help.html", "number": "07", "title": "Cry for Help", "location": "ARROKOTH · 44 AU", "status": "upcoming", "header_tag": "◈ SESSION 07 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "DEAD COLONY · NANOSWARM INTELLIGENCE · MERIDIAN-ECHO-2 CONVERGENCE · POST-SIGNAL ZERO"}, {"id": "session-08", "file": "session-08-requiem-for-orcus.html", "number": "08", "title": "Requiem for Orcus", "location": "ORCUS · 39 AU", "status": "upcoming", "header_tag": "◈ SESSION 08 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "TRANSIT REST · DOWNTIME · SOCIAL / CONSEQUENCE · POST-ARROKOTH RECKONING"}, {"id": "session-09", "file": "session-09-still-life-with-teeth.html", "number": "09", "title": "Still Life with Teeth", "location": "KBO 2119-HR4 · ~52 AU", "status": "upcoming", "header_tag": "◈ SESSION 09 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E", "header_sub": "SILICON PREDATOR · TEMPORAL ISOLATION DEVICE · TRANSHUMAN EXISTENTIAL THREAT · POST-VANTH DEPLOYMENT"}]};
+
+  const nav      = document.getElementById('ep-session-nav');
   if (!nav) return;
+
   const sessions = manifest.sessions;
   const thisFile = nav.dataset.currentFile;
   const withFile = sessions.filter(s => s.file);
-  const fileIdx = withFile.findIndex(s => s.file === thisFile);
+
+  const fileIdx  = withFile.findIndex(s => s.file === thisFile);
   const prevSess = fileIdx > 0 ? withFile[fileIdx - 1] : null;
   const nextSess = fileIdx < withFile.length - 1 ? withFile[fileIdx + 1] : null;
-  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light">&#9674; INDEX</span>';
-  html += '<span class="ep-nav-sep">|</span><span class="ep-nav-label">SESSIONS</span><span class="ep-nav-sep">|</span>';
-  if (prevSess) html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}">&#9664; ${prevSess.number}</span>`;
-  else html += '<span class="ep-nav-arrow ep-disabled">&#9664;</span>';
+
+  let html = '<span class="ep-nav-home ep-nav-go" data-href="index.html" title="Edge of the Light — Campaign Index">◈ INDEX</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+  html += '<span class="ep-nav-label">SESSIONS</span>';
+  html += '<span class="ep-nav-sep">|</span>';
+
+  if (prevSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${prevSess.file}" title="Session ${prevSess.number}: ${prevSess.title}">◀ ${prevSess.number}</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">◀</span>`;
+  }
+
   html += '<div class="ep-nav-links">';
   sessions.forEach(s => {
     const isCurrent = s.file === thisFile;
-    const noFile = !s.file;
-    const cls = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
+    const noFile    = !s.file;
+    const cls   = isCurrent ? 'ep-nav-link ep-current' : noFile ? 'ep-nav-link ep-no-file' : 'ep-nav-link ep-nav-go';
     const dhref = s.file ? ` data-href="${s.file}"` : '';
-    html += `<span class="${cls}"${dhref} title="${s.title}">${s.number} — ${s.title.toUpperCase()}</span>`;
+    const label = s.number + ' — ' + s.title.toUpperCase();
+    const tip   = s.location ? `${s.title} · ${s.location}` : s.title;
+    html += `<span class="${cls}"${dhref} title="${tip}">${label}</span>`;
   });
   html += '</div>';
-  if (nextSess) html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}">${nextSess.number} &#9654;</span>`;
-  else html += '<span class="ep-nav-arrow ep-disabled">&#9654;</span>';
+
+  if (nextSess) {
+    html += `<span class="ep-nav-arrow ep-nav-go" data-href="${nextSess.file}" title="Session ${nextSess.number}: ${nextSess.title}">${nextSess.number} ▶</span>`;
+  } else {
+    html += `<span class="ep-nav-arrow ep-disabled">▶</span>`;
+  }
+
   nav.innerHTML = html;
-  $(document).on('click', '.ep-nav-go[data-href]', function() { window.location.href = $(this).data('href'); });
+
+  $(document).on('click', '.ep-nav-go[data-href]', function () {
+    window.location.href = $(this).data('href');
+  });
 })();
 </script>
 </body>
