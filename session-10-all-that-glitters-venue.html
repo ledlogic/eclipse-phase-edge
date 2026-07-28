@@ -28,6 +28,7 @@
   <button id="day-toggle-btn" class="day-toggle">◈ DAY MODE</button>
 </nav>
 
+<div class="venue-content">
 
 <!-- ═══════════════════════════════════════════════════════════════
      CHAPTER: THE GLITTER BLOC VENUE
@@ -246,7 +247,7 @@
   <!-- VR POD ALCOVE -->
   <div id="room-vr" class="room-card signal-top">
     <div class="room-name">VR Pod Alcove</div>
-    <div class="room-dims">≈ 18m × 10m (12sq × 7sq) · 8 pods · dim ambient lighting · attendants present</div>
+    <div class="room-dims">≈ 18m × 10m (12sq × 7sq) · 8 pods in two rows of four · individual pod: 2.2m × 0.9m × 0.9m (1sq footprint) · 0.5m attendant clearance each side · dim ambient lighting · attendants present</div>
     <div class="room-stat"><span class="stat-key" style="color:var(--teal);min-width:100px;">CONNECTIONS</span><span class="stat-val" style="font-size:11px;">← <a href="#room-ballroom" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(74,184,160,0.3);">Main Ballroom</a> (east arch) · Maintenance hatch (rear wall, concealed)→ <a href="#room-staff" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(74,184,160,0.3);">Staff Corridors</a> · No other exits — single-entry room</span></div>
 
 
@@ -271,13 +272,14 @@
   <!-- OBSERVATION TERRACE -->
   <div id="room-terrace" class="room-card warn-top">
     <div class="room-name">Observation Terrace</div>
-    <div class="room-dims">≈ 15m × 8m (10sq × 6sq) · pressurised dome viewport · Saturn visible · upper level via lift-shaft</div>
+    <div class="room-dims">≈ 15m × 8m (10sq × 6sq) · floor sits ~22m above ballroom floor · ceiling 4m (3sq) above terrace floor · pressurised dome viewport · Saturn visible · upper level via lift-shaft (3 sec, 0.113g)</div>
     <div class="room-stat"><span class="stat-key" style="color:var(--teal);min-width:100px;">CONNECTIONS</span><span class="stat-val" style="font-size:11px;">← <a href="#room-ballroom" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(74,184,160,0.3);">Main Ballroom</a> via single lift shaft (3 sec, low-g) · No other access — lift is the only route up or down</span></div>
 
 
     <div class="room-stat"><span class="stat-key">Access</span><span class="stat-val">Upper level via a single low-g lift shaft (3 seconds). Semi-private — less traffic than the main floor. Status flex: being invited up here signals you matter.</span></div>
     <div class="room-stat"><span class="stat-key">View</span><span class="stat-val">Through 4cm of transparent composite: Enceladus surface above, cryovolcanic plumes venting ice crystals into the void. Saturn and its rings visible on the horizon depending on orbital position. The sky is genuinely beautiful and genuinely lethal.</span></div>
     <div class="room-stat"><span class="stat-key">NPCs Here</span><span class="stat-val">Grix (melancholy, watching the plumes). Uthup (delivering a monologue to a trapped guest). Alciato (occasionally steps up for privacy).</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">22m above the ballroom floor — but at 0.113g a fall is survivable. Terminal velocity from this height in Enceladus gravity is roughly 7m/s; treat as a 3m fall in standard gravity for damage purposes (1d10 DV, no wound unless critical). A shove off the open terrace edge during a scuffle would be dramatic but not necessarily lethal — more likely to strand someone dangling from a decorative fitting while the lift is on the wrong floor. The lift shaft itself is the only way back up — and it can be called away.</span></div>
 
     <div class="art-block">
       <div class="art-label">◈ Art — Observation Terrace</div>
@@ -307,7 +309,9 @@
 
 
     <div class="room-stat"><span class="stat-key">Function</span><span class="stat-val">High-end food and drink, including designer drugs circulating openly (Extropian norms — no laws). The fabber bar can produce almost any compound on request. Vox Maxine has a tab running and is the informal social hub of this counter.</span></div>
-    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">The drugging-Alciato approach runs through here. Chemistry (DV 20) or a Networking roll through Vox to acquire something appropriate. Staff access to the kitchen provides unmonitored food/drink injection points.</span></div>
+    <div class="room-stat"><span class="stat-key">Kitchen</span><span class="stat-val">Staff-only. 8m × 6m (6sq × 4sq). Three Glitter Bloc catering staff on rotation. Two molecular fabricators (can synthesise any food compound, drug, or simple chemical given a template — Chemistry DV 15 to load a custom template). One large cold storage unit. Prep surfaces, plating stations. The room smells extraordinary. The staff are professional and incurious — they have seen everything at these events and will not volunteer information, but can be Persuaded (DV 20) or Deceived (DV 15 with a plausible cover) into looking the other way for sixty seconds.</span></div>
+    <div class="room-stat"><span class="stat-key">Tactical</span><span class="stat-val">The drugging-Alciato approach runs through here. Chemistry (DV 20) or a Networking roll through Vox to acquire something appropriate. The fabricators can synthesise a compliance agent or amnesiac from raw templates in approximately 4 minutes — unmonitored if staff are distracted. Food and drink leaving the kitchen passes through no further checks before reaching guests.</span></div>
+    <div class="room-stat"><span class="stat-key">Access</span><span class="stat-val">Staff door from the service counter side is unlocked during the event. Staff door from the <a href="#room-staff" style="color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(74,184,160,0.3);">Staff Corridors</a> is keycarded (Electronics DV 15). A PC posing as catering staff needs Smart Clothing or equivalent and a Deceive roll (DV 15 — staff are busy, not paranoid).</span></div>
   </div>
 
   <!-- REFRESHER SUITES -->
