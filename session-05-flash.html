@@ -385,8 +385,9 @@ body {
 
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="ep-daymode.js"></script>
+<script>/* ep: flash prevention — must stay in <head> */
+(function(){if(localStorage.getItem('ep-day-mode')==='true'){var s=document.createElement('style');s.id='ep-day-flash';s.textContent='body{--void:#f0f2f5!important;--deep:#e8ecf4!important;--panel:#e0e5ef!important;--border:#c0cad8!important;--accent:#b06000!important;--accent2:#007a6b!important;--warn:#8a5a00!important;--muted:#5a6878!important;--text:#1a2530!important;--textbright:#080f18!important;background:#f0f2f5!important;color:#1a2530!important;}';document.head.appendChild(s);}}());
+</script>
 </head>
 <body>
 <button id="day-toggle-btn" class="day-toggle" style="position:fixed;top:0.45rem;right:1rem;z-index:200;">◈ DAY MODE</button>
@@ -709,5 +710,7 @@ function toggleAll() {
   btn.textContent = anyOpen ? '◈ EXPAND ALL' : '◈ COLLAPSE ALL';
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="ep-daymode.js"></script>
 </body>
 </html>

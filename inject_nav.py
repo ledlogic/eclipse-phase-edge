@@ -26,105 +26,11 @@ sessions = manifest["sessions"]
 # Only sessions that have an actual file
 with_file = [s for s in sessions if s["file"]]
 
-NAV_STYLE = """
-<style id="ep-nav-style">
-  #ep-session-nav {
-    font-family: 'Share Tech Mono', monospace;
-    background: var(--deep, #0a0e18);
-    border-bottom: 1px solid var(--border, #1e2a3a);
-    padding: 0.45rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: var(--text, #8898a8);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    flex-wrap: wrap;
-  }
-  #ep-session-nav .ep-nav-label {
-    color: var(--accent, #f5a623);
-    opacity: 0.6;
-    flex-shrink: 0;
-  }
-  #ep-session-nav a.ep-nav-home,
-  #ep-session-nav span.ep-nav-home {
-    color: var(--text, #8898a8);
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 2px 6px;
-    flex-shrink: 0;
-    opacity: 0.55;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s, opacity 0.15s;
-    letter-spacing: 2px;
-  }
-  #ep-session-nav a.ep-nav-home:hover,
-  #ep-session-nav span.ep-nav-home:hover {
-    color: var(--textbright, #c8d8e8);
-    border-color: var(--border, #1e2a3a);
-    opacity: 1;
-  }
-  #ep-session-nav .ep-nav-links {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    flex: 1;
-  }
-  #ep-session-nav a.ep-nav-link,
-  #ep-session-nav span.ep-nav-link {
-    color: var(--text, #8898a8);
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 2px 6px;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  #ep-session-nav a.ep-nav-link:hover,
-  #ep-session-nav span.ep-nav-link:hover {
-    color: var(--textbright, #c8d8e8);
-    border-color: var(--border, #1e2a3a);
-  }
-  #ep-session-nav a.ep-nav-link.ep-current,
-  #ep-session-nav span.ep-nav-link.ep-current {
-    color: var(--accent, #f5a623);
-    border-color: rgba(245,166,35,0.35);
-    cursor: default;
-    pointer-events: none;
-  }
-  #ep-session-nav a.ep-nav-link.ep-no-file,
-  #ep-session-nav span.ep-nav-link.ep-no-file {
-    opacity: 0.35;
-    cursor: default;
-    pointer-events: none;
-  }
-  #ep-session-nav .ep-nav-sep {
-    color: var(--border, #1e2a3a);
-    flex-shrink: 0;
-  }
-  #ep-session-nav .ep-nav-arrow {
-    color: var(--accent2, #60a8d0);
-    text-decoration: none;
-    border: 1px solid transparent;
-    padding: 2px 7px;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  #ep-session-nav .ep-nav-arrow:hover {
-    border-color: var(--accent2, #60a8d0);
-    color: var(--textbright, #c8d8e8);
-  }
-  #ep-session-nav .ep-nav-arrow.ep-disabled {
-    opacity: 0.2;
-    pointer-events: none;
-  }
-  @media print { #ep-session-nav { display: none !important; } }
-</style>
-"""
+NAV_STYLE = ""  # CSS lives in ep-campaign.css
+
+FLASH_SCRIPT = """<script>/* ep: flash prevention — must stay in <head> */
+(function(){if(localStorage.getItem('ep-day-mode')==='true'){var s=document.createElement('style');s.id='ep-day-flash';s.textContent='body{--void:#f0f2f5!important;--deep:#e8ecf4!important;--panel:#e0e5ef!important;--border:#c0cad8!important;--accent:#b06000!important;--accent2:#007a6b!important;--warn:#8a5a00!important;--muted:#5a6878!important;--text:#1a2530!important;--textbright:#080f18!important;background:#f0f2f5!important;color:#1a2530!important;}';document.head.appendChild(s);}}());
+</script>"""
 
 NAV_SCRIPT_TEMPLATE = """
 <script id="ep-nav-loader">
@@ -185,6 +91,11 @@ NAV_SCRIPT_TEMPLATE = """
 </script>
 """
 
+BOTTOM_SCRIPTS = (
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>\n'
+    '<script src="ep-daymode.js"></script>\n'
+)
+
 def inject_file(session):
     path = Path(session["file"])
     if not path.exists():
@@ -218,12 +129,16 @@ def inject_file(session):
     html = re.sub(r'<nav id="ep-session-nav"[^>]*>.*?</nav>\s*', '', html, flags=re.DOTALL)
     html = re.sub(r'<script id="ep-nav-loader">.*?</script>\s*', '', html, flags=re.DOTALL)
 
-    # ── 4b. Ensure exactly one jQuery in <head> ──────────────────────────────
+    # ── 4b. Remove any jQuery / ep-daymode from <head> (they go at bottom) ──
     JQUERY = '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>'
-    # Remove all existing copies
-    html = html.replace(JQUERY + '\n', '').replace(JQUERY, '')
-    # Add one in <head>
-    html = html.replace('</head>', JQUERY + '\n</head>', 1)
+    DAYMODE = '<script src="ep-daymode.js"></script>'
+    for tag in (JQUERY, DAYMODE):
+        html = html.replace(tag + '\n', '').replace(tag, '')
+
+    # Ensure flash-prevention inline script is in <head> (idempotent)
+    html = re.sub(r'<script>\s*/\* ep: flash prevention.*?</script>\s*', '', html, flags=re.DOTALL)
+    html = html.replace('</head>', FLASH_SCRIPT + '\n</head>', 1)
+
 
     # ── 5. Inject nav style + bar after <body> (or before <header>) ─────────
     nav_bar = f'<nav id="ep-session-nav" data-current-file="{session["file"]}"></nav>\n'
@@ -235,10 +150,11 @@ def inject_file(session):
         # fallback: right after <body>
         html = re.sub(r'(<body[^>]*>)', rf'\1\n{NAV_STYLE}{nav_bar}', html, count=1)
 
-    # ── 6. Inject nav script (manifest embedded inline) before </body> ───────
+    # ── 6. Inject jQuery + ep-daymode + nav script before </body> ──────────
     manifest_json = json.dumps(manifest, ensure_ascii=False)
     nav_script = NAV_SCRIPT_TEMPLATE.replace("%%MANIFEST%%", manifest_json)
-    html = html.replace("</body>", nav_script + "\n</body>", 1)
+    bottom = BOTTOM_SCRIPTS + nav_script
+    html = html.replace("</body>", bottom + "\n</body>", 1)
 
     path.write_text(html, encoding="utf-8")
     print(f"  OK: {path}")
