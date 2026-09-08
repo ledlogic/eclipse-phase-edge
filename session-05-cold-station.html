@@ -12,7 +12,6 @@
 <body>
 <button id="day-toggle-btn" class="day-toggle" style="position:fixed;top:0.45rem;right:1rem;z-index:200;">◈ DAY MODE</button>
 
-
 <nav id="ep-session-nav" data-current-file="session-05-cold-station.html"></nav>
 <header>
   <div class="header-tag">◈ SESSION 05 — GM REFERENCE DOCUMENT — ECLIPSE PHASE 2E</div>
@@ -566,7 +565,58 @@
             </div>
           </div>
 
-          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ GM NOTE — WHEN TO USE THIS SCENE <span>▾</span></button>
+          <button class="collapse-btn" onclick="toggleCollapse(this)">◈ SECURITY BOT — VSC-7 SURFACE GUARDIAN <span>▾</span></button>
+          <div class="collapse-content">
+            <div class="note-box ozma">Chetverikova pre-positioned one VSC-7 surface guardian at the transmitter installation before Lok's operation began. Not Ozma hardware — Sable Index sourced it through a commercial mining security contractor. It's a standard piece of Belt surface infrastructure, the kind mineral extraction operations deploy to guard unmanned equipment caches. On a radar sweep it looks like a piece of survey equipment. Up close it is not.</div>
+
+            <div class="stat-block">
+              <div class="stat-block-name">◈ VSC-7 SURFACE GUARDIAN — SABLE INDEX DEPLOYMENT</div>
+              <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
+                A mid-size quadrupedal security synthmorph rated for vacuum and microgravity surface operations. Roughly the dimensions of a large dog, low-profile chassis, magnetic anchor feet for surface purchase in near-zero-g. Matte black finish with radar-absorbent coating — nearly invisible on surface radar at ranges over 500m. ALI-controlled with a basic threat assessment package and IFF transponder keyed to Sable Index mesh credentials. It does not negotiate. It does not warn. It identifies non-credentialed approach and responds.
+              </div>
+              <div class="stat-row">
+                <span class="stat-pill hi">INITIATIVE 10</span>
+                <span class="stat-pill med">THREAT 3</span>
+                <span class="stat-pill med">FRAY 50</span>
+                <span class="stat-pill hi">PERCEIVE 70</span>
+                <span class="stat-pill med">INFILTRATE 40</span>
+              </div>
+              <div class="stat-row" style="margin-top:0.3rem;">
+                <span class="stat-pill hi">ARMOR 12/10</span>
+                <span class="stat-pill med">DUR 40</span>
+                <span class="stat-pill med">DR 80</span>
+                <span class="stat-pill lo">WOUND 8</span>
+              </div>
+              <div class="stat-row" style="margin-top:0.3rem;">
+                <span class="stat-pill med">GUNS 55</span>
+                <span class="stat-pill med">MELEE 45</span>
+                <span class="stat-pill lo">FREEFALL 35</span>
+              </div>
+            </div>
+
+            <div class="test-item"><div class="test-skill danger">PRIMARY WEAPON — STUNNER ARRAY</div><div class="test-desc">Twin electrostatic stunner emitters, one each side of the chassis. Range 20m. DV 1d6 + stun, no kinetic damage, suit breach risk negligible. Fires both emitters simultaneously on confirmed threat lock — single action, both emitters. Against an unarmored target this is a reliable knockdown. Against a hardsuit or envirosuit it's an annoyance. The bot knows the difference and will close to melee range against armored targets.</div></div>
+
+            <div class="test-item"><div class="test-skill danger">SECONDARY — KINETIC SPIKE</div><div class="test-desc">A single pneumatic spike mounted ventrally — a close-quarters last resort. Short range (2m), DV 2d10+5 kinetic, armor piercing 5. Intended to defeat light suits. Will not fire in situations where the regolith behind the target would cause a ricochet hazard — the ALI has basic ballistic safety logic. This can be exploited: position a target against a hard surface and the bot hesitates before firing the spike.</div></div>
+
+            <div class="test-item"><div class="test-skill warn">SURFACE MOVEMENT</div><div class="test-desc">Magnetic anchor feet give the VSC-7 secure purchase on any ferrous surface — including processed regolith and the metallic asteroid substrate under Marcia's crater floor. Movement rate: 20 kph on flat regolith, 10 kph on crater wall traverse. In Vesta's 0.025g it can make controlled leaps of up to 15m horizontally. It does not tumble. It cannot be knocked over by impact alone — it requires a Knockdown result against its DUR to dislodge its anchor purchase.</div></div>
+
+            <div class="test-item"><div class="test-skill">ALI THREAT ASSESSMENT</div><div class="test-desc">The VSC-7 runs a commercial security ALI — not a combat AI. It identifies threats by IFF transponder absence, movement pattern analysis (approach vector toward the installation), and suit type recognition. It has a 300m active sensor radius in open terrain. The radar-absorbent coating on the bot itself means the team's sensor gear gets a –20 to detect it passively — it needs to move before passive scanning will find it. It will not move until a threat crosses the 100m threshold.</div></div>
+
+            <div class="test-item"><div class="test-skill green">VULNERABILITIES</div><div class="test-desc">The ALI has no tactical creativity — it follows a decision tree, not a strategy. If the team splits, it priority-targets whoever is closest to the installation, ignoring the other approach entirely. Its Freefall 35 means that in a 3D engagement — anyone with a thruster pack or High-Dive Suit moving above it — it loses significant combat effectiveness, as its weapon mounts are optimised for flat-surface threat vectors. It also has a mesh kill-switch keyed to Sable Index credentials: a successful Infosec 50 within 50m can attempt to transmit a shutdown command, though Sable Index's encryption means a Superior Success is needed to penetrate it cleanly.</div></div>
+
+            <div class="test-item"><div class="test-skill warn">THE DINOPET PROBLEM</div><div class="test-desc">If the team has a dinopet on the surface, the VSC-7's threat assessment will flag it — unusual biosignature in a vacuum suit, non-standard movement pattern, IFF absent. The ALI will classify it as an unknown and track it as a secondary threat. This is worth noting: the bot will split its sensor attention between the dinopet and the primary team members, which creates a small window of degraded focus on the main approach. Unintentional decoy. The dinopet is unlikely to appreciate its tactical contribution.</div></div>
+
+            <div class="note-box warn" style="margin-top:0.4rem;">
+              <strong style="color:var(--warn);">GM NOTE — ONE BOT:</strong> One VSC-7 is the right number. Two would make the Snowman scene a combat encounter rather than a tactical problem. The single bot creates a specific geometry — it can be bypassed, baited, hacked, or engaged directly — and each approach has a different cost in time and noise. The session clock is still running while the team is dealing with it. The bot is not the scene's climax. The transmitter is. The bot is the door.
+            </div>
+
+            <div class="neural-prompt-box" style="margin-top:0.5rem;">
+              <div class="neural-label">◈ NEURAL.AI — VSC-7 SURFACE GUARDIAN</div>
+              <div class="prompt-text">eclipse phase RPG concept art, VSC-7 quadrupedal security synthmorph on Vesta asteroid surface, low-profile matte black chassis the size of a large dog, four magnetic anchor legs with wide pad feet gripping the regolith, twin electrostatic stunner emitters visible on each flank, radar-absorbent surface texture with no reflective elements, crouched in the shadow of an impact crater wall with the absolute black of Marcia's shadow behind it, sensor cluster at the front oriented toward an approaching figure visible in the distance, hard vacuum environment, unfiltered sunlight casting perfect sharp shadows, no atmosphere scatter, transhumanist sci-fi security robot concept art --ar 16:9 --style raw</div>
+            </div>
+          </div>
+
+
           <div class="collapse-content">
             <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">The Snowman Crater scene is entirely optional and should never be forced. It exists for two player types: the ones who will trace every thread and want to understand the full operational picture before leaving Vesta, and the ones who specifically want to hit back at Lok's infrastructure rather than just escape it. Both are valid. Neither is required.</div>
             <div style="font-size:0.85rem; color:var(--text); line-height:1.5; margin-bottom:0.5rem;">The scene's best timing is before the hold order activates — the team has identified the transmitter from Infosec work in the hub, diverts a subset of the group to the surface while the rest handle the berth, and reconvenes at the ship with both the MESA device and the Ozma comms hardware. This is the session's complexity ceiling: two simultaneous objectives on different parts of Vesta, both time-pressured.</div>
@@ -755,8 +805,83 @@
       </div>
     </div>
 
-    <!-- GM NOTES -->
-    <div class="section-label warn">◈ GM NOTES — RUNNING THIS SCENARIO</div>
+    <!-- VSC SECURITY OFFICER -->
+    <div class="npc-card">
+      <div class="npc-name">INSPECTOR DAVORIN KEZIĆ</div>
+      <div class="npc-role">VESTA SECURITY COOPERATIVE — DOCKING RING WATCH COMMANDER</div>
+      <div class="npc-desc">Fifteen years with the VSC. Watch commander for the Docking Ring District — the specific patch of station that covers Airlock 7, the Transit Hub, Berth 44, and the maintenance sub-levels. Mid-fifties, Bosnian-lineage, currently sleeved in a heavily used worker-caste morph he's had for eight years and never bothered to upgrade. He knows his district the way Petra Vosse knows arrivals — not through surveillance, but through accumulated attention. He noticed Lok's team when they arrived four days ago. He noticed the biometric scan that appeared on Petra's terminal without going through his office. He has filed neither observation, because the Cognite audit produced paperwork that technically covers both, and Davorin Kezić does not pick fights with hypercorp legal instruments unless he has something solid in his hand.</div>
+      <div style="margin:0.5rem 0;">
+        <span class="npc-trait">VSC WATCH COMMANDER</span>
+        <span class="npc-trait warn">JURISDICTIONAL — DOCKING RING</span>
+        <span class="npc-trait green">POTENTIAL RESOURCE</span>
+        <span class="npc-trait">NOT LOK'S ASSET</span>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ WHAT KEZIĆ KNOWS AND HAS NOTICED <span>▾</span></button>
+      <div class="collapse-content open">
+        <div class="note-box green">Kezić is not working with Lok. He is not working against the team. He is a professional bureaucrat in a worn morph trying to keep his district from producing paperwork that makes the VSC look incompetent. He has noticed several things he has not yet acted on — and the team, if they approach him correctly, is talking to the only person on Vesta Station with both the institutional standing to contest the hold order and independent reasons to resent the people who filed it.</div>
+        <div class="test-item"><div class="test-skill">WHAT HE NOTICED — LOK'S TEAM</div><div class="test-desc">Three people on commercial survey permits, Firewall-adjacent authorization, arrived four days ago. They positioned themselves in his district without checking in with the VSC — which is technically required for any security-adjacent operation on station. He flagged their permits internally. He received an automated response from a Firewall compliance coordinator citing VSC-REG-0442 cross-authorization provisions. He looked up those provisions. They don't actually cover what Lok's team is doing. He has not escalated because hypercorp legal instruments have a way of making VSC officers look like they're obstructing legitimate operations, and he has twelve more years before his pension vests.</div></div>
+        <div class="test-item"><div class="test-skill warn">WHAT HE NOTICED — THE BIOMETRIC SCAN</div><div class="test-desc">The scan on Petra's terminal appeared during the Cognite audit without going through Kezić's office. VSC protocol requires that any surveillance apparatus installed in the Docking Ring is registered with the watch commander. This one wasn't. He knows it exists — Petra told him, quietly, because Petra has been on Vesta longer than Kezić and knows who is actually in charge of what. He has not removed it because the Cognite NDA technically covers it. He has not forgotten it either.</div></div>
+        <div class="test-item"><div class="test-skill warn">WHAT HE NOTICED — THE HOLD ORDER</div><div class="test-desc">The transit hold order on Berth 44 came through his port authority contact — which means it crossed his desk for countersignature. He countersigned it because the filing authority was listed as a Firewall compliance coordinator and the VSC does not refuse Firewall hold orders without cause. What he noticed: the filing timestamp was 72 hours after the commercial survey team arrived, and the authorization credential used was the same Firewall compliance coordinator who had waived the survey team's VSC check-in requirement. The same person filed the hold order against the team they had just exempted from oversight. He found this interesting. He has not acted on it.</div></div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ HOW THE TEAM CAN USE HIM <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box green">Kezić is the legitimate institutional lever in this scenario. Lok's operation is technically running on VSC territory without proper authorization, using a hold order filed by a credential that has a detectable conflict of interest. Kezić already has enough to act — he just needs a reason to do so that won't blow back on him.</div>
+        <div class="test-item"><div class="test-skill green">PERSUADE / NETWORKING 50 — GIVE HIM THE CONFLICT</div><div class="test-desc">If the team presents Kezić with the fact that the hold order was filed by the same credential that authorized the surveillance team's entry — in writing, on his terminal — he has a documented conflict of interest in a VSC-countersigned order. He can suspend the hold order pending review on his own authority. He will do this slowly, deliberately, and with the specific patience of someone who has waited fifteen years to have something solid in their hand. Timeline: thirty minutes from presentation to suspension. The clock needs to still have thirty minutes on it.</div></div>
+        <div class="test-item"><div class="test-skill green">RESEARCH / INFOSEC — GIVE HIM THE SCAN</div><div class="test-desc">If the team produces documentation that the biometric scan on Petra's terminal was installed without VSC watch commander registration — a clear protocol violation independent of the Cognite NDA — Kezić has grounds to remove it and file a formal VSC complaint against the installing party. This doesn't help the hold order directly, but it pulls the Cognite surveillance layer off Vesta's egocast hub permanently, and the formal complaint creates a paper trail that Chetverikova will find very inconvenient.</div></div>
+        <div class="test-item"><div class="test-skill warn">PERSUADE 40 — WHAT HE NEEDS TO HEAR</div><div class="test-desc">Kezić doesn't need to believe the team is innocent. He needs to believe that acting serves the VSC better than not acting. The framing that works: "Someone filed a hold order against us using the same credential that waived their own team's check-in. That's your paperwork. When this gets reviewed, the VSC countersigned a compromised order." He is motivated by institutional self-preservation as much as justice. Both are sufficient.</div></div>
+        <div class="test-item"><div class="test-skill">KINESICS 40 — READING HIM</div><div class="test-desc">Kezić is not a warm person and he is not going to pretend to like the team. What he projects is the specific weariness of someone who has been waiting for fifteen years for a situation where the right thing to do and the safe thing to do are the same thing. This might be that situation. He hasn't decided yet. He is listening very carefully to how the team frames it.</div></div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ HOW LOK MANAGES HIM <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="note-box ozma">Lok is aware of Kezić. She filed the correct Firewall compliance paperwork to neutralize his jurisdictional objections before arriving on station. She did not file the biometric scan registration — that was a deliberate cut corner because VSC watch commanders occasionally ask questions about what the scan is looking for, and that question has no safe answer. She is banking on Kezić being exactly what he appears to be: a tired professional who doesn't pick fights without solid ground. She assessed this correctly. She did not account for the team being the ones to hand him the ground.</div>
+        <div class="test-item"><div class="test-skill ozma">IF LOK FINDS OUT KEZIĆ IS MOVING</div><div class="test-desc">She will contact him directly — her Firewall compliance coordinator identity, professional tone, offering to come in and resolve the paperwork discrepancy in person. This buys her forty minutes, possibly more. Kezić will take the meeting because refusing it creates its own paperwork. The meeting is stalling — but it's stalling Kezić, not the team. If the team is already on the ship by the time Lok is managing Kezić, she has lost.</div></div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ KEZIĆ STAT BLOCK <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="stat-block">
+          <div class="stat-block-name">◈ DAVORIN KEZIĆ — VSC WATCH COMMANDER</div>
+          <div class="stat-row">
+            <span class="stat-pill med">PERCEIVE 60</span>
+            <span class="stat-pill hi">KNOW: VESTA LAW 75</span>
+            <span class="stat-pill hi">KNOW: VSC PROCEDURE 80</span>
+            <span class="stat-pill med">KINESICS 55</span>
+            <span class="stat-pill med">PERSUADE 50</span>
+            <span class="stat-pill lo">FREEFALL 30</span>
+          </div>
+        </div>
+        <div class="note-box warn" style="margin-top:0.4rem;">Not a combat NPC. Not a chase NPC. His entire value is institutional — he is the only person in the Docking Ring with the authority to suspend a VSC-countersigned hold order on his own initiative. His Freefall 30 is notable: he has lived on Vesta for fifteen years and still moves like someone who learned microgravity late and never fully trusted it.</div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ DIALOGUE SAMPLES <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="dialogue-line">
+          <span class="dl-label">KEZIĆ — FIRST CONTACT WITH TEAM</span>
+          <span class="dl-text"><em>[Not moving from his position, arms at his sides, the specific stillness of someone who has decided not to be threatening because threats cost energy he doesn't have]</em> "You're on the Berth 44 permit. There's a hold on that berth." <em>[Pause]</em> "I countersigned it. I'm telling you that because you'll find out anyway and I'd rather you find it out from me." <em>[Beat]</em> "I also noticed who filed it. Same credential that gave your opposition team a pass on check-in. That's a problem I have with my paperwork, not necessarily with you. Tell me why I should make it your problem too."</span>
+        </div>
+        <div class="dialogue-line">
+          <span class="dl-label">KEZIĆ — IF GIVEN THE CONFLICT OF INTEREST DOCUMENTATION</span>
+          <span class="dl-text"><em>[Long silence. He reads it twice.]</em> "Fifteen years." <em>[Not elaborating. Then, flatly, professionally:]</em> "I'm suspending the hold pending a credential review. That takes thirty minutes to process through the port authority system. I suggest you use those thirty minutes efficiently." <em>[He doesn't look up from the terminal]</em> "I don't know what you're carrying and I don't want to know. Get it off my station before someone files something I can't suspend."</span>
+        </div>
+        <div class="dialogue-line">
+          <span class="dl-label">KEZIĆ — IF THE TEAM ASKS ABOUT THE BIOMETRIC SCAN</span>
+          <span class="dl-text">"Installed during the Cognite audit. Without watch commander registration." <em>[Flat]</em> "I know. Petra told me." <em>[A pause that contains fifteen years of institutional frustration]</em> "I've been waiting for something solid."</span>
+        </div>
+      </div>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)">◈ NEURAL.AI — KEZIĆ PORTRAIT <span>▾</span></button>
+      <div class="collapse-content">
+        <div class="neural-prompt-box">
+          <div class="neural-label">◈ NEURAL.AI — CHARACTER PORTRAIT</div>
+          <div class="prompt-text">eclipse phase RPG character portrait, Davorin Kezić, man appears mid-fifties, Bosnian-lineage features, VSC Vesta Security Cooperative uniform worn and practical, sleeved in a worker-caste morph he has occupied for eight years — slightly mismatched to his manner, expression of absolute professional composure over fifteen years of contained frustration, the specific quality of someone who has been waiting a long time to have something solid in their hand and is not quite sure if this is the moment, Vesta docking ring district background, cool industrial lighting, transhumanist sci-fi character portrait --ar 2:3 --style raw</div>
+        </div>
+      </div>
+    </div>
+
+
     <div class="npc-card">
       <button class="collapse-btn" onclick="toggleCollapse(this)" style="border:none; margin-bottom:0;">◈ THE PHYSICAL REGISTER <span>▾</span></button>
       <div class="collapse-content open">
@@ -984,8 +1109,6 @@ function setSuspicion(delta) {
   document.getElementById('suspicion-behavior').textContent = suspicionData[suspicionLevel].behavior;
 }
 </script>
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="ep-daymode.js"></script>
