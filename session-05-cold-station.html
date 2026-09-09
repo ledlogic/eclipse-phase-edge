@@ -572,25 +572,23 @@
             <div class="stat-block">
               <div class="stat-block-name">◈ VSC-7 SURFACE GUARDIAN — SABLE INDEX DEPLOYMENT</div>
               <div style="font-size:0.85rem; color:var(--text); line-height:1.6; margin-bottom:0.6rem;">
-                A mid-size quadrupedal security synthmorph rated for vacuum and microgravity surface operations. Roughly the dimensions of a large dog, low-profile chassis, magnetic anchor feet for surface purchase in near-zero-g. Matte black finish with radar-absorbent coating — nearly invisible on surface radar at ranges over 500m. ALI-controlled with a basic threat assessment package and IFF transponder keyed to Sable Index mesh credentials. It does not negotiate. It does not warn. It identifies non-credentialed approach and responds.
+                A mid-size quadrupedal security synthmorph rated for vacuum and microgravity surface operations. Roughly the dimensions of a large dog, low-profile chassis, magnetic anchor feet for surface purchase in near-zero-g. Matte black finish with radar-absorbent coating — nearly invisible on surface radar at ranges over 500m. Running a standard Bot/Vehicle ALI. It does not negotiate. It does not warn. It identifies non-credentialed approach and responds.
               </div>
+              <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin-bottom:0.3rem;">BOT/VEHICLE ALI — CANONICAL EP2E SKILLS</div>
               <div class="stat-row">
-                <span class="stat-pill hi">INITIATIVE 10</span>
-                <span class="stat-pill med">THREAT 3</span>
-                <span class="stat-pill med">FRAY 50</span>
-                <span class="stat-pill hi">PERCEIVE 70</span>
-                <span class="stat-pill med">INFILTRATE 40</span>
+                <span class="stat-pill med">FRAY 30</span>
+                <span class="stat-pill med">GUNS 30</span>
+                <span class="stat-pill hi">PERCEIVE 40</span>
+                <span class="stat-pill med">INTERFACE 30</span>
+                <span class="stat-pill hi">PILOT: GROUNDCRAFT 70</span>
+                <span class="stat-pill lo">HARDWARE: INDUSTRIAL 30</span>
               </div>
-              <div class="stat-row" style="margin-top:0.3rem;">
+              <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">FRAME STATS</div>
+              <div class="stat-row">
                 <span class="stat-pill hi">ARMOR 12/10</span>
                 <span class="stat-pill med">DUR 40</span>
                 <span class="stat-pill med">DR 80</span>
-                <span class="stat-pill lo">WOUND 8</span>
-              </div>
-              <div class="stat-row" style="margin-top:0.3rem;">
-                <span class="stat-pill med">GUNS 55</span>
-                <span class="stat-pill med">MELEE 45</span>
-                <span class="stat-pill lo">FREEFALL 35</span>
+                <span class="stat-pill lo">WT 8</span>
               </div>
             </div>
 
@@ -602,7 +600,7 @@
 
             <div class="test-item"><div class="test-skill">ALI THREAT ASSESSMENT</div><div class="test-desc">The VSC-7 runs a commercial security ALI — not a combat AI. It identifies threats by IFF transponder absence, movement pattern analysis (approach vector toward the installation), and suit type recognition. It has a 300m active sensor radius in open terrain. The radar-absorbent coating on the bot itself means the team's sensor gear gets a –20 to detect it passively — it needs to move before passive scanning will find it. It will not move until a threat crosses the 100m threshold.</div></div>
 
-            <div class="test-item"><div class="test-skill green">VULNERABILITIES</div><div class="test-desc">The ALI has no tactical creativity — it follows a decision tree, not a strategy. If the team splits, it priority-targets whoever is closest to the installation, ignoring the other approach entirely. Its Freefall 35 means that in a 3D engagement — anyone with a thruster pack or High-Dive Suit moving above it — it loses significant combat effectiveness, as its weapon mounts are optimised for flat-surface threat vectors. It also has a mesh kill-switch keyed to Sable Index credentials: a successful Infosec 50 within 50m can attempt to transmit a shutdown command, though Sable Index's encryption means a Superior Success is needed to penetrate it cleanly.</div></div>
+            <div class="test-item"><div class="test-skill green">VULNERABILITIES</div><div class="test-desc">The ALI has no tactical creativity — it follows a decision tree, not a strategy. If the team splits, it priority-targets whoever is closest to the installation, ignoring the other approach entirely. Its Freefall 35 means that in a 3D engagement — anyone with a thruster pack or High-Dive Suit moving above it — it loses significant combat effectiveness, as its weapon mounts are optimised for flat-surface threat vectors. It also has a mesh kill-switch keyed to Sable Index credentials: a successful Infosec check against the bot's Infosec 20 within 50m can attempt to transmit a shutdown command, though Sable Index's encryption adds a −20 modifier. The ALI's own Infosec 20 means it will not detect a passive probe — it only responds to active intrusion attempts.</div></div>
 
             <div class="test-item"><div class="test-skill warn">THE DINOPET PROBLEM</div><div class="test-desc">If the team has a dinopet on the surface, the VSC-7's threat assessment will flag it — unusual biosignature in a vacuum suit, non-standard movement pattern, IFF absent. The ALI will classify it as an unknown and track it as a secondary threat. This is worth noting: the bot will split its sensor attention between the dinopet and the primary team members, which creates a small window of degraded focus on the main approach. Unintentional decoy. The dinopet is unlikely to appreciate its tactical contribution.</div></div>
 
@@ -686,19 +684,92 @@
     <div class="npc-card">
       <div class="npc-name">LIXIA LOK</div>
       <div class="npc-role">PROJECT OZMA FIELD LEAD — VESTA CLOSURE OPERATION</div>
-      <div class="npc-desc">Last encountered in Binge (NanoOp5) under a Consortium Oversight cover identity. Now operating on Vesta as a Firewall coordinator — a deeper and better-documented cover. She coordinated the rep deposit fabrication, positioned the acquisition team, filed the transit hold order, and is managing this closure personally. She is patient, competent, and playing a longer game than the current session. She wants MESA's data. She does not want to make enemies she doesn't have to make.</div>
+      <div class="npc-desc">Last encountered in Binge (Session 02) under a Consortium Oversight cover identity. Now operating on Vesta as a Firewall coordinator — a deeper and better-documented cover. She coordinated the rep deposit fabrication, positioned the acquisition team, filed the transit hold order, and is managing this closure personally. She is patient, competent, and playing a longer game than the current session. She wants MESA's data. She does not want to make enemies she doesn't have to make.</div>
       <div><span class="npc-trait ozma">OZMA FIELD LEAD</span><span class="npc-trait warn">ARMED</span><span class="npc-trait">BELT MOBILE</span><span class="npc-trait danger">HOLD ORDER CONTROLLER</span></div>
-      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ LOK STAT BLOCK (FROM BINGE) <span>▾</span></button>
+
+      <button class="collapse-btn" onclick="toggleCollapse(this)" style="margin-top:0.5rem;">◈ LOK — FULL STAT BLOCK <span>▾</span></button>
       <div class="collapse-content">
+        <div class="note-box ozma">Major NPC — full pools per EP2e rules rather than Threat pool. Red-level threat. Transhuman type. Sleeved in a Ruster morph under a cover identity — practical Belt-adapted biomorph, nothing that reads as military or corporate. Her threat is social and informational, not kinetic. She will not initiate violence unless MESA's device is permanently leaving her reach.</div>
+
         <div class="stat-block">
-          <div class="stat-block-name">◈ LIXIA LOK — PROJECT OZMA</div>
-          <div style="font-size:0.85rem; color:var(--text); margin-bottom:0.4rem;">Cover: Consortium Oversight (Binge) / Firewall Coordinator (here). Stats from NanoOp5 Binge. Adapt as needed.</div>
+          <div class="stat-block-name">◈ LIXIA LOK — PROJECT OZMA FIELD OPERATIVE</div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin-bottom:0.3rem;">APTITUDES</div>
           <div class="stat-row">
-            <span class="stat-pill hi">OZMA INVESTIGATOR</span>
-            <span class="stat-pill med">COVER: DEEP LEGEND</span>
+            <span class="stat-pill med">COG 15</span>
+            <span class="stat-pill hi">INT 20</span>
+            <span class="stat-pill med">REF 15</span>
+            <span class="stat-pill hi">SAV 20</span>
+            <span class="stat-pill med">SOM 15</span>
+            <span class="stat-pill hi">WIL 20</span>
+          </div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">SKILLS</div>
+          <div class="stat-row">
+            <span class="stat-pill hi">DECEIVE 70</span>
+            <span class="stat-pill hi">KINESICS 65</span>
+            <span class="stat-pill hi">PERSUADE 60</span>
+            <span class="stat-pill hi">INFILTRATE 65</span>
+          </div>
+          <div class="stat-row" style="margin-top:0.3rem;">
+            <span class="stat-pill med">PERCEIVE 55</span>
+            <span class="stat-pill med">RESEARCH 60</span>
+            <span class="stat-pill med">INFOSEC 55</span>
+            <span class="stat-pill med">FRAY 50</span>
+          </div>
+          <div class="stat-row" style="margin-top:0.3rem;">
+            <span class="stat-pill med">GUNS 50</span>
+            <span class="stat-pill lo">FREEFALL 40</span>
+            <span class="stat-pill med">PROVOKE 55</span>
+            <span class="stat-pill lo">MELEE 40</span>
+          </div>
+          <div class="stat-row" style="margin-top:0.3rem;">
+            <span class="stat-pill">KNOW: OZMA OPS 80</span>
+            <span class="stat-pill">KNOW: FIREWALL 70</span>
+            <span class="stat-pill">KNOW: BELT POLITICS 60</span>
+          </div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">MORPH — RUSTER (COVER IDENTITY)</div>
+          <div class="stat-row">
+            <span class="stat-pill med">ARMOR 4/4</span>
+            <span class="stat-pill med">DUR 35</span>
+            <span class="stat-pill med">DR 53</span>
+            <span class="stat-pill lo">WT 7</span>
+          </div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">POOLS</div>
+          <div class="stat-row">
+            <span class="stat-pill hi">INSIGHT 4</span>
+            <span class="stat-pill med">MOXIE 4</span>
+            <span class="stat-pill med">VIGOR 2</span>
+            <span class="stat-pill med">FLEX 2</span>
+          </div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">DERIVED STATS</div>
+          <div class="stat-row">
+            <span class="stat-pill med">INITIATIVE 7</span>
+            <span class="stat-pill hi">LUCIDITY 40</span>
+            <span class="stat-pill med">TRAUMA THRESHOLD 8</span>
+            <span class="stat-pill med">INSANITY RATING 80</span>
+          </div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">GEAR</div>
+          <div style="font-size:0.85rem; color:var(--text); line-height:1.6;">
+            Holdout pistol (kinetic, concealed, station-locked single-shot on Vesta) · Mesh inserts · Encrypted muse · Fake mesh ID (Firewall coordinator cover) · Hold order filing credentials · Ozma relay access · Neural lace
+          </div>
+
+          <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:1px; margin:0.4rem 0 0.3rem;">WARE</div>
+          <div style="font-size:0.85rem; color:var(--text); line-height:1.6;">
+            Chameleon Skin (inactive under cover) · Enhanced Vision · Mental Speed · Mnemonics · Multi-Tasking
           </div>
         </div>
-        <div class="note-box ozma" style="margin-top:0.4rem;">Full stats in Binge source material. Key capabilities for this scenario: Deceive (high), Kinesics (high), Freefall (moderate, belt-adapted), armed with a sidearm. Will not initiate combat. Will not allow permanent loss of the MESA data without attempting negotiation first.</div>
+
+        <div class="note-box warn" style="margin-top:0.5rem;">
+          <strong style="color:var(--warn);">COMBAT NOTE:</strong> Lok at Guns 50 with a holdout pistol (DV 2d10, station-locked single-shot) is dangerous but not her primary mode. Her real threat is Deceive 70 / Kinesics 65 — she reads the team faster than they read her and she will use that. If combat becomes unavoidable she will attempt to disengage rather than sustain it. She knows she cannot win a prolonged firefight against the full team and she values her continued operation over any single objective.
+        </div>
+        <div class="note-box ozma" style="margin-top:0.4rem;">
+          <strong style="color:var(--ozma);">THREAT LEVEL: RED.</strong> One-on-one she is a serious challenge for most PCs. Against the full team in open conflict she loses — but she will never put herself in that position by choice. Her threat is asymmetric: she operates through leverage, information, and institutional control rather than direct confrontation.
+        </div>
       </div>
     </div>
 
@@ -1109,6 +1180,7 @@ function setSuspicion(delta) {
   document.getElementById('suspicion-behavior').textContent = suspicionData[suspicionLevel].behavior;
 }
 </script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="ep-daymode.js"></script>
